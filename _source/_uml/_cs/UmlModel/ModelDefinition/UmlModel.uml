@@ -1,0 +1,717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="c9fbbde5-9f55-418b-96dd-3047c27e728e"
+  name="SoftwareProjekt" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="2fa1bab0-33dd-41e4-8dd5-ef54e664be38">
+      <body>Affine Abbildung</body>
+    </comment>
+    <comment
+      Id="ae522926-ac1d-4a0b-8dd1-4c36b14576b5">
+      <body>Affine Abbildung</body>
+    </comment>
+    <comment
+      Id="ae80141a-a6cb-40e0-8f1a-76b1a6aa5cd0">
+      <body>Interaktive einarbeitung in das Programm</body>
+    </comment>
+    <comment
+      Id="8a3ceae7-535c-4f68-9d48-503b94a0d5c0">
+      <body>Fraktal eingeben</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="f01d8dfd-3264-4459-ad8a-929eb1cd1c85"
+        name="User"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="48653a03-2584-46cf-8896-b0535df412b4"
+        name="Affineabbildung eingeben"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 10
+Ausgearbeitet von: Michael, Markus</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fc174c63-9d45-469e-80cd-81c9ec0e55b0"
+        name="Dreieck abclicken"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 10
+Ausgearbeitet von: Michael, Markus</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2578e926-2ffe-4061-9117-4b5cec6b5de2"
+        name="Hilfestellung abfragen"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1e66ffe4-9de1-4720-9ab3-2aea38fff83e"
+        name="Fraktal eingeben"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 10
+Ausgearbeitet von: Tilo</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="be8524ad-96e5-426c-9010-769edb2482a3"
+        name="Standart Fraktal wählen"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 3
+Ausgearbeitet von: Tilo</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="997ae7f2-e65e-4058-a738-65bbeafeff25"
+        name="Bedinungs hilfe"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 1
+Ausgearbeitet von: Marcel</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ef97bd30-a054-4195-9ee7-01c50b6d3d8c"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6e0e0b6c-b9bf-4a4d-9aba-a27f7964d0b9"
+        name="Dreieck der Abbildung abclicken"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 10
+Ausgearbeitet von: Michael, Markus</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3792ef42-4116-46b6-bd10-ee6ef17c5a16"
+        name="Affineabbildung ausgeben"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 10
+Ausgearbeitet von: Michael, Markus</description>
+        <suppliersInternal>
+          <dependency
+            Id="9e8f9b61-6130-425b-9e1c-3139421be489">
+            <useCaseMoniker
+              Id="fc174c63-9d45-469e-80cd-81c9ec0e55b0"
+              LastKnownName="Dreieck abclicken"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </dependency>
+          <dependency
+            Id="a0d74eb7-857c-4fed-8186-a0f862b3568d">
+            <useCaseMoniker
+              Id="6e0e0b6c-b9bf-4a4d-9aba-a27f7964d0b9"
+              LastKnownName="Dreieck der Abbildung abclicken"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </dependency>
+        </suppliersInternal>
+        <extendedCases>
+          <extend
+            Id="7b61717c-8135-4ba7-87b9-4ecabf87d582">
+            <useCaseMoniker
+              Id="53bb5662-3cf5-46de-be53-97b571a88ff4"
+              LastKnownName="Step-bye-Step"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ad73a8d5-62bc-49e3-b102-3b19f6fff7f0"
+        name=" Bild einlesen"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 7
+Ausgearbeitet von: Michael, Markus</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="96299dc9-10b2-44e2-86cb-637813e76226"
+        name="Übung starten"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 8
+Ausgearbeitet von: Rudi</description>
+        <suppliersInternal>
+          <dependency
+            Id="c496b0cf-b66c-4bf0-b3ed-e539e34c3217">
+            <useCaseMoniker
+              Id="13b1ecf1-935f-4375-b97b-431692a1d351"
+              LastKnownName="Neue Aufgaben Erstellen"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </dependency>
+          <dependency
+            Id="0ae30cec-fed6-4058-b2ab-231184648a66">
+            <useCaseMoniker
+              Id="3c246ccf-1b51-40fd-a0b6-6647d241f9c0"
+              LastKnownName="Übungsauswählen"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="bf9248e2-91dd-48ba-bfa7-a6cf0c0c0c0e"
+        name="Übungen Speichern"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 8
+Ausgearbeitet von: Wolfgang</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="41773780-d037-4ea7-8203-31f65e99bb7f"
+        name="Zoom out"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 4
+Ausgearbeitet von: Manuel</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8180d46c-81fa-469d-b6e7-57119bc60734"
+        name="Zoom in"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 4
+Ausgearbeitet von: Manuel</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="138086c4-cf3d-4701-a5b8-c84fb782a20a"
+        name="tutorial"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 1
+Ausgearbeitet von: Thomas</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="dc9a4fb0-cf2b-44f6-b349-6e878694a73e"
+        name="Kondensationsabbildung"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 9
+Ausgearbeitet von: Tilo</description>
+        <extendedCases>
+          <extend
+            Id="6e244247-d4f9-4c80-83e6-95c021db98fd">
+            <useCaseMoniker
+              Id="801ced69-256b-47c9-84df-730a236522a4"
+              LastKnownName="Fraktal eingeben"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="60733e6e-9e52-431a-ab41-833e14e1acf7"
+        name="Kondensationsabbildung"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 2
+Ausgearbeitet von: Tilo</description>
+        <extendedCases>
+          <extend
+            Id="3b654458-60b0-401a-b3ed-02ee2bcd142e">
+            <useCaseMoniker
+              Id="be8524ad-96e5-426c-9010-769edb2482a3"
+              LastKnownName="Standart Fraktal wählen"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ea5a5bc0-a269-4c3f-937a-c0ecfde61063"
+        name="Kondensationsabbildung2"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="548d4e04-b73e-4609-8d7c-4cd6fd541aaa"
+        name="Subsystem1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="75d311c8-a6b7-498b-92fd-e5ebd783a6e3"
+        name="Subsystem2"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="502afe02-460e-4cff-a9a4-4fd6abb1a1d5"
+        name="Prof"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="ad1c0001-b951-4911-a51d-022ebf722df1"
+            isDerived="false"
+            sourceEndRoleName="Prof"
+            targetEndRoleName="Neue Aufgaben Erstellen"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="13b1ecf1-935f-4375-b97b-431692a1d351"
+              LastKnownName="Neue Aufgaben Erstellen"
+              LastKnownLocation="SoftwareProjekt.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="79f63646-734d-4a7e-9e9e-85246f1593e7"
+                  name="Prof"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d468b96d-509a-4454-9722-6cd8542a8540"
+                  name="Neue Aufgaben Erstellen"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5df562b3-921a-4224-b14a-46c9bcfdcd81"
+            isDerived="false"
+            sourceEndRoleName="Prof"
+            targetEndRoleName="Neue Themengebiete erstellen"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="fdfe2f8e-5351-49ff-85ac-b3dc87d29a37"
+              LastKnownName="Neue Themengebiete erstellen"
+              LastKnownLocation="SoftwareProjekt.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="eda4083a-24aa-43a1-8007-5477ab8c6b84"
+                  name="Prof"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f4fd52fb-b6b8-423f-bbc2-4c595bd4582b"
+                  name="Neue Themengebiete erstellen"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="184cee78-8732-4d5a-a24c-7440b02b1c4f"
+            isDerived="false"
+            sourceEndRoleName="Prof"
+            targetEndRoleName="Aufgaben Löschen"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="da8ceb12-7a78-4918-9894-b61efa3d0f97"
+              LastKnownName="Aufgaben Löschen"
+              LastKnownLocation="SoftwareProjekt.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6c21e041-ccbf-4dc5-91d0-a2a29608a737"
+                  name="Prof"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="270231bb-ece6-43f2-8d80-5864cf260e80"
+                  name="Aufgaben Löschen"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="13b1ecf1-935f-4375-b97b-431692a1d351"
+        name="Neue Aufgaben Erstellen"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 2
+Ausgearbeitet von: Jan, Olaf</description>
+        <subjects>
+          <subsystemMoniker
+            Id="75d311c8-a6b7-498b-92fd-e5ebd783a6e3"
+            LastKnownName="Subsystem2"
+            LastKnownLocation="SoftwareProjekt.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fdfe2f8e-5351-49ff-85ac-b3dc87d29a37"
+        name="Neue Themengebiete erstellen"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 2
+Ausgearbeitet von: Jan, Olaf</description>
+        <subjects>
+          <subsystemMoniker
+            Id="75d311c8-a6b7-498b-92fd-e5ebd783a6e3"
+            LastKnownName="Subsystem2"
+            LastKnownLocation="SoftwareProjekt.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d7729697-f49e-4c9b-a04f-cb9fe0bfa2d4"
+        name="Bedinungs hilfe3"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="036e0eb1-9925-4ec9-85f4-72a0d362d1b6"
+        name="Übung Drucken"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 1
+Ausgearbeitet von: Marcel</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1716d551-e1da-45be-97d1-8856f421b5f2"
+        name="Übungen als PDF  Speichern"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 5
+Ausgearbeitet von: Marcel</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2b8e04e6-f611-4baa-9f2e-158d8e7e5927"
+        name="Notiz Einfügen"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 7
+Ausgearbeitet von: Wolfgang</description>
+        <extendedCases>
+          <extend
+            Id="f8be0775-755f-4dc7-b85f-5d6cdf0c0c52">
+            <useCaseMoniker
+              Id="bf9248e2-91dd-48ba-bfa7-a6cf0c0c0c0e"
+              LastKnownName="Übungen Speichern"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="53bb5662-3cf5-46de-be53-97b571a88ff4"
+        name="Step-bye-Step"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 3
+Ausgearbeitet von: Michael, Markus</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="da8ceb12-7a78-4918-9894-b61efa3d0f97"
+        name="Aufgaben Löschen"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 2
+Ausgearbeitet von: Jan, Olaf</description>
+        <subjects>
+          <subsystemMoniker
+            Id="75d311c8-a6b7-498b-92fd-e5ebd783a6e3"
+            LastKnownName="Subsystem2"
+            LastKnownLocation="SoftwareProjekt.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="73216448-4d47-4559-8f4c-ef4ebd9ac50a"
+        name="Beenden"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 8
+Ausgearbeitet von: Rudi</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6630900a-b9a7-49fc-a4a0-c51bcef8557c"
+        name="Übungen Laden"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 6
+Ausgearbeitet von: Julian</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="107cee0b-0f57-4ae8-9dee-e52ab3efbe4c"
+        name="Übungen Laden1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fb2758ac-9db2-4f3e-92f3-bc5e9d4e129e"
+        name="Übungen Löschen"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 6
+Ausgearbeitet von: Julian</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="efb31be0-7d4d-48b5-8aec-47fc64f33b3b"
+        name="Übungen Zurücksetzen"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 6
+Ausgearbeitet von: Julian</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3c246ccf-1b51-40fd-a0b6-6647d241f9c0"
+        name="Übungsauswählen"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 8
+Ausgearbeitet von: Rudi</description>
+        <suppliersInternal>
+          <dependency
+            Id="02cd9e5e-12f6-45be-9592-8369e6a5c32f">
+            <useCaseMoniker
+              Id="13b1ecf1-935f-4375-b97b-431692a1d351"
+              LastKnownName="Neue Aufgaben Erstellen"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </dependency>
+          <dependency
+            Id="60eebed6-3ac7-48de-ae3b-9a36714414a1">
+            <useCaseMoniker
+              Id="fdfe2f8e-5351-49ff-85ac-b3dc87d29a37"
+              LastKnownName="Neue Themengebiete erstellen"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </dependency>
+          <dependency
+            Id="4831de36-2c2f-4088-bcfb-21491d6a6afd">
+            <useCaseMoniker
+              Id="da8ceb12-7a78-4918-9894-b61efa3d0f97"
+              LastKnownName="Aufgaben Löschen"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1f54c0b9-2a20-4344-b5be-fcb1c2b91a21"
+        name="Fraktal Zeichnen"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 10
+Ausgearbeitet von: Tilo</description>
+        <suppliersInternal>
+          <dependency
+            Id="7a7d57ea-ec88-4ad8-911e-e2082dd169a9">
+            <useCaseMoniker
+              Id="be8524ad-96e5-426c-9010-769edb2482a3"
+              LastKnownName="Standart Fraktal wählen"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </dependency>
+          <dependency
+            Id="b75a7708-9017-4abd-8e24-5a0447291fc9">
+            <useCaseMoniker
+              Id="1e66ffe4-9de1-4720-9ab3-2aea38fff83e"
+              LastKnownName="Fraktal eingeben"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </dependency>
+          <dependency
+            Id="86760640-2209-4aa2-8fdc-54190395ad92">
+            <useCaseMoniker
+              Id="801ced69-256b-47c9-84df-730a236522a4"
+              LastKnownName="Fraktal eingeben"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </dependency>
+          <dependency
+            Id="99b203ba-fa9c-45e8-bca5-18bccf10a097">
+            <useCaseMoniker
+              Id="603e2b3d-a304-4ef2-99a1-0d2242e4d18e"
+              LastKnownName="Eingabe von Iterationsschritte"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </dependency>
+          <dependency
+            Id="9caa39ec-36dd-48e8-acfc-3dcbd3409e37">
+            <useCaseMoniker
+              Id="aa869620-f039-4267-b456-77b53c38c99c"
+              LastKnownName="Eingabe von Grundelement"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </dependency>
+          <dependency
+            Id="18242b15-35b2-4257-91ee-85eb2781bd96">
+            <useCaseMoniker
+              Id="cec5a107-5788-42ca-8be8-a78c1b6bc0ce"
+              LastKnownName="Eingabe der Affinen Abbildung"
+              LastKnownLocation="SoftwareProjekt.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="aa869620-f039-4267-b456-77b53c38c99c"
+        name="Eingabe von Grundelement"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 10
+Ausgearbeitet von: Tilo</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="cec5a107-5788-42ca-8be8-a78c1b6bc0ce"
+        name="Eingabe der Affinen Abbildung"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 10
+Ausgearbeitet von: Tilo</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="801ced69-256b-47c9-84df-730a236522a4"
+        name="Fraktal eingeben"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 10
+Ausgearbeitet von: Tilo</description>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="603e2b3d-a304-4ef2-99a1-0d2242e4d18e"
+        name="Eingabe von Iterationsschritte"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 10
+Ausgearbeitet von: Tilo</description>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

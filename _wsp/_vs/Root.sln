@@ -1,9 +1,23 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainProgram", "..\..\_source\_code\_cs\MainProgram\MainProgram.csproj", "{4F05EEA9-75CA-4B77-8B56-329A3819C89A}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UmlModel", "..\..\_source\_uml\_cs\UmlModel\UmlModel.modelproj", "{5896261C-E279-4598-A322-E49426F1A754}"
+EndProject
 Global
-	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 1
-		SccLocalPath0 = .
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F05EEA9-75CA-4B77-8B56-329A3819C89A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F05EEA9-75CA-4B77-8B56-329A3819C89A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F05EEA9-75CA-4B77-8B56-329A3819C89A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F05EEA9-75CA-4B77-8B56-329A3819C89A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5896261C-E279-4598-A322-E49426F1A754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5896261C-E279-4598-A322-E49426F1A754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5896261C-E279-4598-A322-E49426F1A754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5896261C-E279-4598-A322-E49426F1A754}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
