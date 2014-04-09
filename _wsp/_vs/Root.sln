@@ -2,7 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainProgram", "..\..\_source\_code\_cs\MainProgram\MainProgram.csproj", "{4F05EEA9-75CA-4B77-8B56-329A3819C89A}"
 EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UmlModel", "..\..\_source\_uml\_cs\UmlModel\UmlModel.modelproj", "{5896261C-E279-4598-A322-E49426F1A754}"
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UmlUseCaseModel", "..\..\_source\_uml\_cs\UmlModel\UmlUseCaseModel.modelproj", "{5896261C-E279-4598-A322-E49426F1A754}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UmlDataModel", "UmlDataModel\UmlDataModel.modelproj", "{BECADC2F-012D-4207-AF7F-94540A0D9F89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +20,10 @@ Global
 		{5896261C-E279-4598-A322-E49426F1A754}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5896261C-E279-4598-A322-E49426F1A754}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5896261C-E279-4598-A322-E49426F1A754}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BECADC2F-012D-4207-AF7F-94540A0D9F89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BECADC2F-012D-4207-AF7F-94540A0D9F89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BECADC2F-012D-4207-AF7F-94540A0D9F89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BECADC2F-012D-4207-AF7F-94540A0D9F89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
