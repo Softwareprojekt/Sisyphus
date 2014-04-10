@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="PackageOverview">
+  <logicalClassDesignerModelMoniker Id="cd699009-3b76-4101-9a6b-fc629fdd2b54" />
+  <nestedChildShapes>
+    <packageShape Id="2472dd14-1e4a-4dae-9e28-b53e559fdaf5" absoluteBounds="1.25, 1.625, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="020fc31d-5bf1-4a33-84b6-ce5423b6b6cd" LastKnownName="MindMap" />
+    </packageShape>
+    <packageShape Id="8af1130e-bae9-4109-b519-ca4a68d7c41b" absoluteBounds="7, 4.25, 2, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="ada11192-22bc-45ba-9f15-959baeec9615" LastKnownName="General" />
+    </packageShape>
+    <packageShape Id="7cde7d75-bda2-4625-afd2-9f76bf066935" absoluteBounds="1.25, 3, 2.625, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="f077aaa0-7bd4-4f80-a75e-9680c7886816" LastKnownName="AffineTransformation" />
+    </packageShape>
+    <packageShape Id="d6195836-9f6c-413b-8caf-ab1563dedbe8" absoluteBounds="1.25, 4.375, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="18e6f427-849a-4bdd-9ff6-10811a7fac87" LastKnownName="Fractals" />
+    </packageShape>
+    <packageShape Id="d85eff8a-9d14-4d98-9596-2c61a7574c70" absoluteBounds="7, 2.625, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="f1d73789-c574-4883-8dda-092fa2144c28" LastKnownName="Jotter" />
+    </packageShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="cd699009-3b76-4101-9a6b-fc629fdd2b54" name="PackageOverview" linkedPackageId="b1ac6d05-f7d5-4ab5-b044-61e47f53d0b7" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="020fc31d-5bf1-4a33-84b6-ce5423b6b6cd" name="MindMap">
+        <elementDefinition Id="8f20fa66-4044-48c9-9948-9ccbe6285c76" />
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="ada11192-22bc-45ba-9f15-959baeec9615" name="General">
+        <elementDefinition Id="6a285fa6-6657-4130-81a7-2ecb771b5fba" />
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="f077aaa0-7bd4-4f80-a75e-9680c7886816" name="AffineTransformation">
+        <elementDefinition Id="7bea93f8-ff3a-43a9-be4d-1b800703ffe1" />
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="18e6f427-849a-4bdd-9ff6-10811a7fac87" name="Fractals">
+        <elementDefinition Id="06e6c1aa-ad67-442e-831f-4652a708a41d" />
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="f1d73789-c574-4883-8dda-092fa2144c28" name="Jotter">
+        <elementDefinition Id="9d861d65-d9cc-442c-92c7-7cb8304103f5" />
+      </package>
+    </logicalClassDesignerModelHasPackages>
+  </packagedElements>
+  <package Id="b1ac6d05-f7d5-4ab5-b044-61e47f53d0b7" name="UmlDataModel">
+    <elementDefinition Id="09a4064f-68d5-405c-a029-219bb85c8923" />
+    <profileInstances>
+      <packageHasProfileInstances Id="29b56cce-3807-446d-867f-7c14ebcac490">
+        <profileInstance Id="7c861609-f172-4b07-ab8a-81b4b1c420b1" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="48f6ea99-c274-4da8-b942-3c13cc7e33ba">
+        <profileInstance Id="9888a247-d6de-4870-a293-429710ce4940" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>
