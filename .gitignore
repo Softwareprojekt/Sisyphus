@@ -3,19 +3,6 @@
 
 # User-specific files
 *.suo
-<<<<<<< HEAD
-_source/_code/_cs/MainProgram/bin/Debug/MainProgram.exe.config
-_source/_code/_cs/MainProgram/bin/Debug/MainProgram.vshost.exe.config
-_source/_code/_cs/MainProgram/bin/Debug/MainProgram.vshost.exe.manifest
-_source/_code/_cs/MainProgram/bin/Debug/MainProgram.vshost.exe
-_source/_code/_cs/MainProgram/obj/Debug/DesignTimeResolveAssemblyReferences.cache
-_source/_code/_cs/MainProgram/obj/Debug/MainProgram.csproj.FileListAbsolute.txt
-_source/_code/_cs/MainProgram/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
-_source/_code/_cs/MainProgram/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-_source/_code/_cs/MainProgram/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
-_source/_code/_cs/MainProgram/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
-_source/_code/_cs/MainProgram/obj/Debug/TempPE/Properties.Resources.Designer.cs.dll
-=======
 *.user
 *.sln.docstates
 
@@ -186,4 +173,3 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
->>>>>>> 9128bedacb6d6c6fcd375ae2214af01d19eaa374
