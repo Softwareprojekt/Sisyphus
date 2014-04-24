@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="b95e2daa-6584-402a-8d46-babe87dbc30f" name="Übung_löschen" linkedPackageId="b0b84d55-865b-40fa-a255-35d6c53ab36c" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="c857a727-1ef3-4c4b-899c-64e344c88939">
+      <elementDefinition Id="9746382b-6498-42db-8588-6dfe1088010f" />
+      <body>User wählt Übung löschen aus</body>
+      <annotatedElements>
+        <initialNodeMoniker Id="ea6640e3-12e4-4c7d-99d3-c3a508713535" LastKnownName="Initial1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="22119ee6-0d2b-4f32-becb-a6a19bc41f8b">
+      <elementDefinition Id="0d789cb5-5548-495d-ac01-3064769c0a5a" />
+      <body>Abbruch</body>
+      <annotatedElements>
+        <activityFinalNodeMoniker Id="cfa7e15f-7981-4a57-a95c-d543e94438ca" LastKnownName="Abbruch des Löschens" />
+      </annotatedElements>
+    </comment>
+    <comment Id="a54aff4d-9c64-424e-ad6c-72c90a503439">
+      <elementDefinition Id="38f3f321-4c1a-410c-b480-2ce714a0e086" />
+      <body>Übung gelöscht</body>
+      <annotatedElements>
+        <activityFinalNodeMoniker Id="4523df7f-e581-4ac1-91f5-41aae7266f2f" LastKnownName="ActivityFinal1" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="0d90054c-b9bf-495c-9382-ea69442a0817">
+      <profileInstance Id="55a978ae-9080-4056-9828-ada0d9fdbbd7" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="acae08b3-9c5a-4543-996c-0f1f1ffb3667">
+      <profileInstance Id="4a9c1c2e-a02a-4d20-80e5-78ffcb46bfb4" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="fa0591d2-7b9f-456c-a113-4ee9f5fa1db7" name="Übung_löschen" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="fa14155c-caf7-44a0-b1d1-299215c18982" />
+        <nodes>
+          <activityFinalNode Id="4523df7f-e581-4ac1-91f5-41aae7266f2f" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="beb82940-76c5-4546-b4db-6ad6bc7678cd" />
+          </activityFinalNode>
+          <decisionNode Id="f790a799-9efa-4ba4-938f-6459231ed004" name="Decision1" isLeaf="false">
+            <elementDefinition Id="aab4495e-a3e6-4823-a198-99c27f903db1" />
+            <flowNodeTargets>
+              <controlFlow Id="2533e96f-de77-47fe-a04f-d710a562b3ef" guard="keine Übung vorhanden" isLeaf="false">
+                <activityFinalNodeMoniker Id="cfa7e15f-7981-4a57-a95c-d543e94438ca" LastKnownName="Abbruch des Löschens" />
+                <elementDefinition Id="c5d8a692-5710-491a-af04-1d0615e381be" />
+              </controlFlow>
+              <controlFlow Id="ad076031-c207-470a-9b54-5df773ce7ea5" guard="Übung vorhanden" isLeaf="false">
+                <decisionNodeMoniker Id="6a62603e-0e7a-4f7e-ae35-b3aa4219c182" LastKnownName="Decision2" />
+                <elementDefinition Id="7d772f4f-7af2-49b4-8d65-53430c68aeed" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode Id="cfa7e15f-7981-4a57-a95c-d543e94438ca" name="Abbruch des Löschens" isLeaf="false">
+            <elementDefinition Id="d225c2e3-97c1-4a3d-bfaf-c5757811580e" />
+          </activityFinalNode>
+          <opaqueAction Id="566c1458-9121-47e2-b6cf-aa6c1888e636" name="Übung löschen" isLeaf="false">
+            <elementDefinition Id="1f807efa-53a3-4ad6-8f87-08c936d56f7b" />
+            <flowNodeTargets>
+              <controlFlow Id="aff65def-9a17-40f3-b18d-6136600e981f" isLeaf="false">
+                <activityFinalNodeMoniker Id="4523df7f-e581-4ac1-91f5-41aae7266f2f" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="3ce7aaee-9726-4821-99d1-be3849278222" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <initialNode Id="ea6640e3-12e4-4c7d-99d3-c3a508713535" name="Initial1" isLeaf="false">
+            <elementDefinition Id="2b52c4ce-9241-4f5f-a02e-bea712e400df" />
+            <flowNodeTargets>
+              <controlFlow Id="133def77-cfad-457b-8dca-6889343b8cbb" isLeaf="false">
+                <decisionNodeMoniker Id="f790a799-9efa-4ba4-938f-6459231ed004" LastKnownName="Decision1" />
+                <elementDefinition Id="cce3d678-7ab6-4968-8e02-058428166844" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <decisionNode Id="6a62603e-0e7a-4f7e-ae35-b3aa4219c182" name="Decision2" isLeaf="false">
+            <elementDefinition Id="d8831301-3ce7-45e3-8143-ad8124fe86c1" />
+            <flowNodeTargets>
+              <controlFlow Id="6a5d5dbd-33b7-45d0-b25a-a5f5f1e024eb" guard="Abbruch durch den Benutzer" isLeaf="false">
+                <activityFinalNodeMoniker Id="cfa7e15f-7981-4a57-a95c-d543e94438ca" LastKnownName="Abbruch des Löschens" />
+                <elementDefinition Id="6d5fb8ed-c438-4665-8ac5-4c10ecbeacab" />
+              </controlFlow>
+              <controlFlow Id="b171aa52-f5ab-4c78-988e-bcd3b6491c52" guard="kein Abbruch" isLeaf="false">
+                <opaqueActionMoniker Id="754bad72-69a4-422d-ac5b-840c1de04324" LastKnownName="Auswahl der Übung" />
+                <elementDefinition Id="baa8ebd4-db8b-4de9-a3f1-c23848e2e1d0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="754bad72-69a4-422d-ac5b-840c1de04324" name="Auswahl der Übung" isLeaf="false">
+            <elementDefinition Id="dcdaf138-23ab-4453-8d71-08e698b5b561" />
+            <flowNodeTargets>
+              <controlFlow Id="4fcdd249-b06c-48bf-bde3-0672dc8a7178" isLeaf="false">
+                <decisionNodeMoniker Id="77bcbb0f-2c4a-4734-86a0-aa0ee1fa471c" LastKnownName="Decision3" />
+                <elementDefinition Id="b16cfef8-095b-418d-8073-0fb118aa2db2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="77bcbb0f-2c4a-4734-86a0-aa0ee1fa471c" name="Decision3" isLeaf="false">
+            <elementDefinition Id="d80abe7e-4f70-40e2-b343-4536da85d61c" />
+            <flowNodeTargets>
+              <controlFlow Id="b0cf2665-708a-4c96-925f-8711548db7b1" guard="ausgewählte, gespeicherte Übung ist geöffnet" isLeaf="false">
+                <activityFinalNodeMoniker Id="cfa7e15f-7981-4a57-a95c-d543e94438ca" LastKnownName="Abbruch des Löschens" />
+                <elementDefinition Id="5eb4b021-de41-4c2b-8c3f-c21be43da8c5" />
+              </controlFlow>
+              <controlFlow Id="a2e0e9aa-481c-4910-94e3-ceca5a1ed33e" guard="zu löschende Übung nicht geöffnet" isLeaf="false">
+                <opaqueActionMoniker Id="566c1458-9121-47e2-b6cf-aa6c1888e636" LastKnownName="Übung löschen" />
+                <elementDefinition Id="d4d65160-739d-4d33-b342-37c19569db47" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="b0b84d55-865b-40fa-a255-35d6c53ab36c" name="ActivityDiagram">
+    <elementDefinition Id="44755596-ef36-4b32-be68-04b00064a432" />
+  </package>
+</activityRootModel>
