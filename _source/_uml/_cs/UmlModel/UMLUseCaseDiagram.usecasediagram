@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="6264a18c-b66d-44c6-aa55-20de0761558a" name="UMLUseCaseDiagram1" linkedPackageId="a9840d59-1561-4339-b62d-4fef47265709" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="6264a18c-b66d-44c6-aa55-20de0761558a" name="UMLUseCaseDiagram1" linkedPackageId="a9840d59-1561-4339-b62d-4fef47265709" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <ownedCommentsInternal>
-    <comment Id="d3d6f2a3-d379-412b-8c13-29bf93688d12">
-      <elementDefinition Id="2fa1bab0-33dd-41e4-8dd5-ef54e664be38" />
-      <body>Affine Abbildung</body>
-    </comment>
-    <comment Id="49aad4d2-c009-437f-a72d-88e68eb7bd8f">
-      <elementDefinition Id="ae522926-ac1d-4a0b-8dd1-4c36b14576b5" />
-      <body>Affine Abbildung</body>
-    </comment>
     <comment Id="d2b92074-54ba-432e-b7a6-a78d26686a30">
       <elementDefinition Id="ae80141a-a6cb-40e0-8f1a-76b1a6aa5cd0" />
       <body>Interaktive einarbeitung in das Programm</body>
@@ -25,85 +17,66 @@
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="54973b9d-14c4-4d7d-a714-fc1de8e27c9e" name="Affineabbildung eingeben" isAbstract="false" isLeaf="false">
+      <useCase Id="54973b9d-14c4-4d7d-a714-fc1de8e27c9e" name="Affine Abbildung eingeben" isAbstract="false" isLeaf="false">
         <description>Priorität: 10
 Ausgearbeitet von: Michael, Markus</description>
         <elementDefinition Id="48653a03-2584-46cf-8896-b0535df412b4" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="a5b7b4e6-c14e-45d3-821f-d5bee6e4b61a" name="Dreieck abclicken" isAbstract="false" isLeaf="false">
+      <useCase Id="a5b7b4e6-c14e-45d3-821f-d5bee6e4b61a" name="Dreieck abklicken" isAbstract="false" isLeaf="false">
         <description>Priorität: 10
 Ausgearbeitet von: Michael, Markus</description>
         <elementDefinition Id="fc174c63-9d45-469e-80cd-81c9ec0e55b0" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="fb83c052-e77e-41fb-ab8e-3cd22511829b" name="Standart Fraktal wählen" isAbstract="false" isLeaf="false">
+      <useCase Id="fb83c052-e77e-41fb-ab8e-3cd22511829b" name="Standard Fraktal wählen" isAbstract="false" isLeaf="false">
         <description>Priorität: 3
 Ausgearbeitet von: Tilo</description>
         <elementDefinition Id="be8524ad-96e5-426c-9010-769edb2482a3" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="03e828bf-30e4-45ed-837c-342746ebfd19" name="Bedinungs hilfe" isAbstract="false" isLeaf="false">
+      <useCase Id="03e828bf-30e4-45ed-837c-342746ebfd19" name="Bedienungshilfe anzeigen" isAbstract="false" isLeaf="false">
         <description>Priorität: 1
 Ausgearbeitet von: Marcel</description>
         <elementDefinition Id="997ae7f2-e65e-4058-a738-65bbeafeff25" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="f330d002-b87a-4b5a-bb9a-7537ee241afe" name="Dreieck der Abbildung abclicken" isAbstract="false" isLeaf="false">
-        <description>Priorität: 10
-Ausgearbeitet von: Michael, Markus</description>
+      <useCase Id="f330d002-b87a-4b5a-bb9a-7537ee241afe" name="Dreieck abklicken  Abbildung" isAbstract="false" isLeaf="false">
+        <description>Prio 10, Markus, Michael</description>
         <elementDefinition Id="6e0e0b6c-b9bf-4a4d-9aba-a27f7964d0b9" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="f182bb7c-9270-49bc-b281-78e42c6ca04e" name="Affineabbildung ausgeben" isAbstract="false" isLeaf="false">
+      <useCase Id="f182bb7c-9270-49bc-b281-78e42c6ca04e" name="Affine Abbildung ausgeben" isAbstract="false" isLeaf="false">
         <description>Priorität: 10
 Ausgearbeitet von: Michael, Markus</description>
         <elementDefinition Id="3792ef42-4116-46b6-bd10-ee6ef17c5a16" />
         <suppliersInternal>
           <dependency Id="1e78661d-7c67-420b-9bc1-8fde10c13067">
-            <useCaseMoniker Id="a5b7b4e6-c14e-45d3-821f-d5bee6e4b61a" LastKnownName="Dreieck abclicken" />
+            <useCaseMoniker Id="a5b7b4e6-c14e-45d3-821f-d5bee6e4b61a" LastKnownName="Dreieck abklicken" />
             <elementDefinition Id="9e8f9b61-6130-425b-9e1c-3139421be489" />
           </dependency>
           <dependency Id="31b0dea8-886e-4b0c-8f99-d72e858f1f4a">
-            <useCaseMoniker Id="f330d002-b87a-4b5a-bb9a-7537ee241afe" LastKnownName="Dreieck der Abbildung abclicken" />
+            <useCaseMoniker Id="f330d002-b87a-4b5a-bb9a-7537ee241afe" LastKnownName="Dreieck abklicken  Abbildung" />
             <elementDefinition Id="a0d74eb7-857c-4fed-8186-a0f862b3568d" />
           </dependency>
         </suppliersInternal>
         <extendedCases>
           <extend Id="458749f1-7a3c-4888-9766-28abc3c8606a">
-            <useCaseMoniker Id="b1630d42-ceb6-4d97-9f0f-f5ec5598e0a4" LastKnownName="Step-bye-Step" />
+            <useCaseMoniker Id="b1630d42-ceb6-4d97-9f0f-f5ec5598e0a4" LastKnownName="Step by Step" />
             <elementDefinition Id="7b61717c-8135-4ba7-87b9-4ecabf87d582" />
           </extend>
         </extendedCases>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="16b7693a-d60c-44ce-b72e-0fa353f052b0" name=" Bild einlesen" isAbstract="false" isLeaf="false">
-        <description>Priorität: 7
-Ausgearbeitet von: Michael, Markus</description>
+      <useCase Id="16b7693a-d60c-44ce-b72e-0fa353f052b0" name="Bild einlesen" isAbstract="false" isLeaf="false">
+        <description>Prio 7, Michael, Markus</description>
         <elementDefinition Id="ad73a8d5-62bc-49e3-b102-3b19f6fff7f0" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="b235cd24-d218-4b96-b76a-bc5035fe2c63" name="Übung starten" isAbstract="false" isLeaf="false">
-        <description>Priorität: 8
-Ausgearbeitet von: Rudi</description>
-        <elementDefinition Id="96299dc9-10b2-44e2-86cb-637813e76226" />
-        <suppliersInternal>
-          <dependency Id="e1696771-54a0-401c-bc3f-c4eb2f8467da">
-            <useCaseMoniker Id="592bd4bb-5f8d-4978-a8fc-f5399d70c286" LastKnownName="Neue Aufgaben Erstellen" />
-            <elementDefinition Id="c496b0cf-b66c-4bf0-b3ed-e539e34c3217" />
-          </dependency>
-          <dependency Id="4a5a256b-2637-4a21-841c-652a5b2f5f55">
-            <useCaseMoniker Id="c602be8f-3625-4f31-b876-de842d3d08ea" LastKnownName="Übungsauswählen" />
-            <elementDefinition Id="0ae30cec-fed6-4058-b2ab-231184648a66" />
-          </dependency>
-        </suppliersInternal>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
@@ -128,134 +101,44 @@ Ausgearbeitet von: Manuel</description>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="3d84931c-e1d3-4eae-b7cd-34ea0911ce0f" name="tutorial" isAbstract="false" isLeaf="false">
+      <useCase Id="3d84931c-e1d3-4eae-b7cd-34ea0911ce0f" name="Tutorial" isAbstract="false" isLeaf="false">
         <description>Priorität: 1
 Ausgearbeitet von: Thomas</description>
         <elementDefinition Id="138086c4-cf3d-4701-a5b8-c84fb782a20a" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="125b8567-2ba2-4df5-8765-e6e53315f24b" name="Kondensationsabbildung" isAbstract="false" isLeaf="false">
-        <description>Priorität: 9
-Ausgearbeitet von: Tilo</description>
-        <elementDefinition Id="dc9a4fb0-cf2b-44f6-b349-6e878694a73e" />
-        <extendedCases>
-          <extend Id="f35c3b63-5bde-4e1f-8030-64cadcabfe3a">
-            <useCaseMoniker Id="36b8ef1f-97c3-476c-9df0-73793185de4b" LastKnownName="Fraktal eingeben" />
-            <elementDefinition Id="6e244247-d4f9-4c80-83e6-95c021db98fd" />
-          </extend>
-        </extendedCases>
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="23826058-4dab-4512-b73e-687e2f86e7e5" name="Kondensationsabbildung" isAbstract="false" isLeaf="false">
-        <description>Priorität: 2
-Ausgearbeitet von: Tilo</description>
-        <elementDefinition Id="60733e6e-9e52-431a-ab41-833e14e1acf7" />
-        <extendedCases>
-          <extend Id="2bd16f36-5e84-4250-8ec6-a2f78df46d14">
-            <useCaseMoniker Id="fb83c052-e77e-41fb-ab8e-3cd22511829b" LastKnownName="Standart Fraktal wählen" />
-            <elementDefinition Id="3b654458-60b0-401a-b3ed-02ee2bcd142e" />
-          </extend>
-        </extendedCases>
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <subsystem Id="6a45c5e4-7577-4aa0-9e05-0af3801a349d" name="Subsystem2" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="75d311c8-a6b7-498b-92fd-e5ebd783a6e3" />
-      </subsystem>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
       <actor Id="3dd8fa55-d99e-41de-a0a5-ad04ca6f962e" name="Prof" isAbstract="false" isLeaf="false">
         <elementDefinition Id="502afe02-460e-4cff-a9a4-4fd6abb1a1d5" />
         <targetEnds>
-          <association Id="edbfccfc-443c-400f-9d97-449baa8a7a57" isDerived="false" sourceEndRoleName="Prof" targetEndRoleName="Neue Aufgaben Erstellen" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="592bd4bb-5f8d-4978-a8fc-f5399d70c286" LastKnownName="Neue Aufgaben Erstellen" />
+          <association Id="0692cfc1-c29c-4036-a445-464e823c1050" isDerived="false" sourceEndRoleName="Prof" targetEndRoleName="Zutritt geschützer Bereich" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="52feb21c-d3a4-4513-a4fc-f84f0dc48405" LastKnownName="Zutritt geschützer Bereich" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="9e05afdd-4f01-4f8e-962d-8bce86d6e64f" name="Prof" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="79f63646-734d-4a7e-9e9e-85246f1593e7" />
+                <memberEnd Id="5013ecde-e1a1-4255-b4e9-573facd02793" name="Prof" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="eee19acf-4912-4c81-a4ed-c0a3fc31ac84" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="b59c1514-f321-44cb-91f6-bd923862662d" name="Neue Aufgaben Erstellen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="d468b96d-509a-4454-9722-6cd8542a8540" />
+                <memberEnd Id="fd19942e-1f6d-4e4f-a7ce-a174fb184d66" name="Zutritt geschützer Bereich" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="39455821-15a1-4b62-b99a-3e3820b89cb1" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="ad1c0001-b951-4911-a51d-022ebf722df1" />
-          </association>
-          <association Id="afea0e6e-0bac-4016-8a1d-95d7219d35de" isDerived="false" sourceEndRoleName="Prof" targetEndRoleName="Neue Themengebiete erstellen" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="114600d3-df3f-432e-96c9-5aecff1b8601" LastKnownName="Neue Themengebiete erstellen" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="a65bb7d3-e6bd-471d-8667-97364281fd12" name="Prof" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="eda4083a-24aa-43a1-8007-5477ab8c6b84" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="f6d8bf7b-6f31-49d4-93ea-3c31a44fb263" name="Neue Themengebiete erstellen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="f4fd52fb-b6b8-423f-bbc2-4c595bd4582b" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="5df562b3-921a-4224-b14a-46c9bcfdcd81" />
-          </association>
-          <association Id="34b25a10-ba50-4a12-8083-9c23d1abcff2" isDerived="false" sourceEndRoleName="Prof" targetEndRoleName="Aufgaben Löschen" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="00fa1b71-0e39-4d54-8a6a-9f68306b168a" LastKnownName="Aufgaben Löschen" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="f17fe869-36b9-41a8-8496-b290364ce61b" name="Prof" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="6c21e041-ccbf-4dc5-91d0-a2a29608a737" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="ffe5e1de-ec1c-41f9-850b-dad245b49a0c" name="Aufgaben Löschen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="270231bb-ece6-43f2-8d80-5864cf260e80" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="184cee78-8732-4d5a-a24c-7440b02b1c4f" />
+            <elementDefinition Id="d51d3f59-f175-45ec-a9fb-5c63b2335123" />
           </association>
         </targetEnds>
       </actor>
     </useCaseModelRootHasTypes>
-    <packageHasNamedElement>
-      <useCase Id="592bd4bb-5f8d-4978-a8fc-f5399d70c286" name="Neue Aufgaben Erstellen" isAbstract="false" isLeaf="false">
-        <description>Priorität: 2
-Ausgearbeitet von: Jan, Olaf</description>
-        <elementDefinition Id="13b1ecf1-935f-4375-b97b-431692a1d351" />
-        <subjects>
-          <subsystemMoniker Id="6a45c5e4-7577-4aa0-9e05-0af3801a349d" LastKnownName="Subsystem2" />
-        </subjects>
-      </useCase>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <useCase Id="114600d3-df3f-432e-96c9-5aecff1b8601" name="Neue Themengebiete erstellen" isAbstract="false" isLeaf="false">
-        <description>Priorität: 2
-Ausgearbeitet von: Jan, Olaf</description>
-        <elementDefinition Id="fdfe2f8e-5351-49ff-85ac-b3dc87d29a37" />
-        <subjects>
-          <subsystemMoniker Id="6a45c5e4-7577-4aa0-9e05-0af3801a349d" LastKnownName="Subsystem2" />
-        </subjects>
-      </useCase>
-    </packageHasNamedElement>
     <useCaseModelRootHasTypes>
-      <useCase Id="0b2e4f74-8173-4606-a4a8-2f270206d32d" name="Übung Drucken" isAbstract="false" isLeaf="false">
-        <description>Priorität: 1
-Ausgearbeitet von: Marcel</description>
-        <elementDefinition Id="036e0eb1-9925-4ec9-85f4-72a0d362d1b6" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="8e611cde-f1da-4ff9-87e6-f3fa1b21f53f" name="Übungen als PDF  Speichern" isAbstract="false" isLeaf="false">
+      <useCase Id="8e611cde-f1da-4ff9-87e6-f3fa1b21f53f" name="PDF  Speichern" isAbstract="false" isLeaf="false">
         <description>Priorität: 5
 Ausgearbeitet von: Marcel</description>
         <elementDefinition Id="1716d551-e1da-45be-97d1-8856f421b5f2" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="f4820e33-1c92-4335-b995-b71199168ab3" name="Notiz Einfügen" isAbstract="false" isLeaf="false">
+      <useCase Id="f4820e33-1c92-4335-b995-b71199168ab3" name="Notiz eintragen" isAbstract="false" isLeaf="false">
         <description>Priorität: 7
 Ausgearbeitet von: Wolfgang</description>
         <elementDefinition Id="2b8e04e6-f611-4baa-9f2e-158d8e7e5927" />
@@ -268,26 +151,15 @@ Ausgearbeitet von: Wolfgang</description>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="b1630d42-ceb6-4d97-9f0f-f5ec5598e0a4" name="Step-bye-Step" isAbstract="false" isLeaf="false">
+      <useCase Id="b1630d42-ceb6-4d97-9f0f-f5ec5598e0a4" name="Step by Step" isAbstract="false" isLeaf="false">
         <description>Priorität: 3
 Ausgearbeitet von: Michael, Markus</description>
         <elementDefinition Id="53bb5662-3cf5-46de-be53-97b571a88ff4" />
       </useCase>
     </useCaseModelRootHasTypes>
-    <packageHasNamedElement>
-      <useCase Id="00fa1b71-0e39-4d54-8a6a-9f68306b168a" name="Aufgaben Löschen" isAbstract="false" isLeaf="false">
-        <description>Priorität: 2
-Ausgearbeitet von: Jan, Olaf</description>
-        <elementDefinition Id="da8ceb12-7a78-4918-9894-b61efa3d0f97" />
-        <subjects>
-          <subsystemMoniker Id="6a45c5e4-7577-4aa0-9e05-0af3801a349d" LastKnownName="Subsystem2" />
-        </subjects>
-      </useCase>
-    </packageHasNamedElement>
     <useCaseModelRootHasTypes>
       <useCase Id="1fad8af7-a2ff-453f-ac21-14d7fa9a0a44" name="Beenden" isAbstract="false" isLeaf="false">
-        <description>Priorität: 8
-Ausgearbeitet von: Rudi</description>
+        <description>Prio 10, Rudi</description>
         <elementDefinition Id="73216448-4d47-4559-8f4c-ef4ebd9ac50a" />
       </useCase>
     </useCaseModelRootHasTypes>
@@ -307,40 +179,25 @@ Ausgearbeitet von: Julian</description>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
       <useCase Id="c44d02c3-e760-4439-b648-bdb927b270b4" name="Übungen Zurücksetzen" isAbstract="false" isLeaf="false">
-        <description>Priorität: 6
+        <description>Priorität: 2
 Ausgearbeitet von: Julian</description>
         <elementDefinition Id="efb31be0-7d4d-48b5-8aec-47fc64f33b3b" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="c602be8f-3625-4f31-b876-de842d3d08ea" name="Übungsauswählen" isAbstract="false" isLeaf="false">
+      <useCase Id="c602be8f-3625-4f31-b876-de842d3d08ea" name="Übung auswählen" isAbstract="false" isLeaf="false">
         <description>Priorität: 8
 Ausgearbeitet von: Rudi</description>
         <elementDefinition Id="3c246ccf-1b51-40fd-a0b6-6647d241f9c0" />
-        <suppliersInternal>
-          <dependency Id="e08bfdce-18ea-403a-8120-0f402a9cd9e8">
-            <useCaseMoniker Id="592bd4bb-5f8d-4978-a8fc-f5399d70c286" LastKnownName="Neue Aufgaben Erstellen" />
-            <elementDefinition Id="02cd9e5e-12f6-45be-9592-8369e6a5c32f" />
-          </dependency>
-          <dependency Id="83d8a84c-2ce2-4d8d-b8bd-796e9737f5b6">
-            <useCaseMoniker Id="114600d3-df3f-432e-96c9-5aecff1b8601" LastKnownName="Neue Themengebiete erstellen" />
-            <elementDefinition Id="60eebed6-3ac7-48de-ae3b-9a36714414a1" />
-          </dependency>
-          <dependency Id="ab6c6e3f-8320-4cbd-8af0-3be489ad2f94">
-            <useCaseMoniker Id="00fa1b71-0e39-4d54-8a6a-9f68306b168a" LastKnownName="Aufgaben Löschen" />
-            <elementDefinition Id="4831de36-2c2f-4088-bcfb-21491d6a6afd" />
-          </dependency>
-        </suppliersInternal>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="b8f299b6-e1d6-4144-aee7-92e99e8c4d6f" name="Fraktal Zeichnen" isAbstract="false" isLeaf="false">
-        <description>Priorität: 10
-Ausgearbeitet von: Tilo</description>
+      <useCase Id="b8f299b6-e1d6-4144-aee7-92e99e8c4d6f" name="Fraktal zeichnen" isAbstract="false" isLeaf="false">
+        <description>Prio 10, Tilo</description>
         <elementDefinition Id="1f54c0b9-2a20-4344-b5be-fcb1c2b91a21" />
         <suppliersInternal>
           <dependency Id="e64bfa34-6174-4702-b452-2a6fa69d2578">
-            <useCaseMoniker Id="fb83c052-e77e-41fb-ab8e-3cd22511829b" LastKnownName="Standart Fraktal wählen" />
+            <useCaseMoniker Id="fb83c052-e77e-41fb-ab8e-3cd22511829b" LastKnownName="Standard Fraktal wählen" />
             <elementDefinition Id="7a7d57ea-ec88-4ad8-911e-e2082dd169a9" />
           </dependency>
           <dependency Id="d9d39e6a-deb8-47ee-acd2-15f5d2c5a231">
@@ -355,6 +212,92 @@ Ausgearbeitet von: Tilo</description>
         <description>Priorität: 10
 Ausgearbeitet von: Tilo</description>
         <elementDefinition Id="801ced69-256b-47c9-84df-730a236522a4" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="112354f2-2ce4-44c2-828c-a4c6a867feaa" name="Abbildung Summe Vektoren" isAbstract="false" isLeaf="false">
+        <description>Prio 10, Rudi</description>
+        <elementDefinition Id="ef97bd30-a054-4195-9ee7-01c50b6d3d8c" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="89228e35-7583-48de-9aaf-8f2d65621652" name="Abbildung vielfacher Vektoren" isAbstract="false" isLeaf="false">
+        <description>Prio 10, Rudi</description>
+        <elementDefinition Id="b5a38f02-3644-4bf0-994b-955c5ab664ff" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1d6a1d41-57cb-4216-a439-cd210abdb7e3" name="Affine Abbildung verstehen" isAbstract="false" isLeaf="false">
+        <description>Prio 10, Rudi</description>
+        <elementDefinition Id="b2df789e-7213-4545-91b0-8f3739cd86fc" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f5cbf49b-d68f-4b57-b2d1-c777fc028d7e" name="Drehung" isAbstract="false" isLeaf="false">
+        <description>Prio 10, Manuel</description>
+        <elementDefinition Id="9041d1a4-cbda-4c0b-a831-aab61c98c649" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="76548257-f8b5-4433-994c-7e605de208cf" name="Fraktal eingeben Kondensationsmenge" isAbstract="false" isLeaf="false">
+        <description>Prio 9, Tilo</description>
+        <elementDefinition Id="c22b3baa-e43e-4bed-a185-d945664b06b5" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0c63249f-067e-437d-ad7a-7ef9a63e54f5" name="Standard Fraktal wählen Kondensationsmenge" isAbstract="false" isLeaf="false">
+        <description>Priorität: 3
+Ausgearbeitet von: Tilo</description>
+        <elementDefinition Id="530305c7-7827-4ed6-9181-5725ea2027a5" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5f23ed6b-3217-4f17-a396-69cdd879029c" name="Fraktalerzeugung mit IFS" isAbstract="false" isLeaf="false">
+        <description>Prio 10, Rudi</description>
+        <elementDefinition Id="6d41ce7a-bfa7-4f55-9079-9773d3729ebd" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="3fce46c7-1df0-4f04-97a4-817de754c903" name="Hintereinanderausführung" isAbstract="false" isLeaf="false">
+        <description>Prio 10, Manuel</description>
+        <elementDefinition Id="0c04d85f-47af-4eff-90e9-70a031960053" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5bd59947-8d1f-40d7-a538-9f8a8c4d67f3" name="lineare Abbildung verstehen" isAbstract="false" isLeaf="false">
+        <description>Prio 10, Julian</description>
+        <elementDefinition Id="b528409a-fa34-4fe6-8f88-7e8265bc1d5c" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="093fbcb0-a38d-4512-a207-bbc378c4b483" name="Spiegelung" isAbstract="false" isLeaf="false">
+        <description>Prio 10, Manuel</description>
+        <elementDefinition Id="bd901892-2405-498c-ba24-e0441ed513a8" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a05acaa9-d32a-4ae4-a77a-886ae7808ce1" name="Umkehrung lin. Abbildung" isAbstract="false" isLeaf="false">
+        <description>Prio 10, Julian</description>
+        <elementDefinition Id="2b194df8-f311-430e-8c89-e924ab1d0d89" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="52feb21c-d3a4-4513-a4fc-f84f0dc48405" name="Zutritt geschützer Bereich" isAbstract="false" isLeaf="false">
+        <description>Prio ?, Jan Olaf</description>
+        <elementDefinition Id="955cdcc1-2787-4b09-88be-18d3de170951" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="81a409e5-39ac-449f-86ea-efa3234f52d1" name="Neues Thema hinzufügen" isAbstract="false" isLeaf="false">
+        <description>Priorität: 2
+Ausgearbeitet von: Jan, Olaf</description>
+        <elementDefinition Id="fdfe2f8e-5351-49ff-85ac-b3dc87d29a37" />
+        <suppliersInternal>
+          <dependency Id="3812c909-0d79-4f65-bb74-c12bd1c1c433">
+            <useCaseMoniker Id="52feb21c-d3a4-4513-a4fc-f84f0dc48405" LastKnownName="Zutritt geschützer Bereich" />
+            <elementDefinition Id="9ac7cb84-36d4-4da8-8b19-90d6b133a8d9" />
+          </dependency>
+        </suppliersInternal>
       </useCase>
     </useCaseModelRootHasTypes>
   </packagedElements>
