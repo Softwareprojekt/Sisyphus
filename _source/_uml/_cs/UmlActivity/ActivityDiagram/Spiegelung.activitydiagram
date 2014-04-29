@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="1b81c5da-f407-41af-a936-45ce6c70850d" name="Spiegelung" linkedPackageId="0e50e292-5caa-4bc2-a030-d8eeb943b067" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="0aa92d2e-ae38-45a8-9b0b-f09d4ae4f72f">
+      <profileInstance Id="fd6828cd-8484-4930-8f84-768874607369" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="67db3f34-84f4-41a1-b259-18a90dbaa183">
+      <profileInstance Id="0e004795-58a3-4341-b910-f6ac319d7dda" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="a08d2380-a54b-4447-b420-f7da3d20f53c" name="Spiegelung" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="3f0392bc-4b96-451f-8f05-b6a6ab335bd1" />
+        <nodes>
+          <initialNode Id="b9dbadb2-3f1d-4d8f-9418-5ed347f42b89" name="Initial1" isLeaf="false">
+            <elementDefinition Id="f5641313-debe-4f26-a8d5-88e418977143" />
+            <flowNodeTargets>
+              <controlFlow Id="16a0f69b-f63e-4e2d-8712-44cb12a1a3ea" isLeaf="false">
+                <opaqueActionMoniker Id="b4440581-ecb9-4c7c-bcd4-8b7b0d0a7828" LastKnownName="Vektor eingeben" />
+                <elementDefinition Id="38a673e3-b294-4907-b41d-a6d4492b29b9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="b4440581-ecb9-4c7c-bcd4-8b7b0d0a7828" name="Vektor eingeben" isLeaf="false">
+            <elementDefinition Id="12c61823-67e3-4a50-a35a-161273ef284f" />
+            <flowNodeTargets>
+              <controlFlow Id="ec7a1a54-0f9d-47eb-8cce-aedda66eff29" isLeaf="false">
+                <opaqueActionMoniker Id="fb4f7695-a692-4855-a942-fb2fb7e08c29" LastKnownName="System prüft Eingabe" />
+                <elementDefinition Id="52348c4a-004a-4085-b670-e1b7b4a168c5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="fb4f7695-a692-4855-a942-fb2fb7e08c29" name="System prüft Eingabe" isLeaf="false">
+            <elementDefinition Id="47ab1a6a-c4cc-4f5d-8b37-213952d32ef2" />
+            <flowNodeTargets>
+              <controlFlow Id="8f2017b0-6651-4b9b-9d6a-adec83fef617" isLeaf="false">
+                <decisionNodeMoniker Id="ac82e32f-d209-4b90-aa56-0384c089dd13" LastKnownName="Decision1" />
+                <elementDefinition Id="d11a33a6-94ae-4500-886a-1522d82def56" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="ac82e32f-d209-4b90-aa56-0384c089dd13" name="Decision1" isLeaf="false">
+            <elementDefinition Id="b5b1eb8a-e3dd-4b46-b830-54ec369a0898" />
+            <flowNodeTargets>
+              <controlFlow Id="4165c0b1-edd5-421b-8b03-e597ac64ec00" guard="fehlerhafte Eingabe" isLeaf="false">
+                <opaqueActionMoniker Id="d91546e8-4b05-4efb-a3ec-aeb7a742c24a" LastKnownName="Mitteilung an Benutzer" />
+                <elementDefinition Id="27eba63a-08a6-419e-ac9b-33ffc6a43247" />
+              </controlFlow>
+              <controlFlow Id="d9d518d4-6b7f-45d7-aca4-f46c4e76a1df" guard="korrekte Eingabe" isLeaf="false">
+                <opaqueActionMoniker Id="61ac2695-439b-45a0-b838-070d38442fea" LastKnownName="Winkel der Geraden zur x-Achse eingeben" />
+                <elementDefinition Id="001ccf80-cda5-4050-b90b-6af623df8208" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="d91546e8-4b05-4efb-a3ec-aeb7a742c24a" name="Mitteilung an Benutzer" isLeaf="false">
+            <elementDefinition Id="cdc524d7-ddda-4e15-91bb-c7fad5132bc1" />
+            <flowNodeTargets>
+              <controlFlow Id="915f42bc-8be4-4ed5-9e0f-7625b81e514c" isLeaf="false">
+                <opaqueActionMoniker Id="b4440581-ecb9-4c7c-bcd4-8b7b0d0a7828" LastKnownName="Vektor eingeben" />
+                <elementDefinition Id="50d069b3-50ad-4bf4-b643-9ab47a6fa45c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="61ac2695-439b-45a0-b838-070d38442fea" name="Winkel der Geraden zur x-Achse eingeben" isLeaf="false">
+            <elementDefinition Id="cd1a48b7-4781-4275-b420-d59c67ca9ea6" />
+            <flowNodeTargets>
+              <controlFlow Id="68b7b72f-172f-4532-b902-5c2fec98d4fe" isLeaf="false">
+                <opaqueActionMoniker Id="023d798c-719c-4f4d-a93a-c6de677db462" LastKnownName="System prüft Eingabe" />
+                <elementDefinition Id="1912038d-ead9-4563-85c9-84a1d2afe5b5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="e8edd1f0-2cc8-4c6a-9199-d97fd55e8ec7" name="Decision2" isLeaf="false">
+            <elementDefinition Id="b95be4cc-9906-4b23-8d2a-edb25215c93b" />
+            <flowNodeTargets>
+              <controlFlow Id="391d6486-065b-4a27-baf6-64ace11ecca4" guard="fehlerhafte Eingabe" isLeaf="false">
+                <opaqueActionMoniker Id="cfa56cb1-3167-4947-87ad-e33a8e647b28" LastKnownName="Mitteilung an Benutzer" />
+                <elementDefinition Id="f58582bd-f86e-4739-87d3-4927f92264bb" />
+              </controlFlow>
+              <controlFlow Id="159cf91d-9870-4673-8356-8c6c622968df" guard="korrekte Eingabe" isLeaf="false">
+                <opaqueActionMoniker Id="53e95816-e85e-4c58-bbdd-67f3cb4978dc" LastKnownName="System berechnet Spiegelung und zeigt sie an" />
+                <elementDefinition Id="933962e4-007c-4bb3-99d8-da8205fdf7e2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="cfa56cb1-3167-4947-87ad-e33a8e647b28" name="Mitteilung an Benutzer" isLeaf="false">
+            <elementDefinition Id="6195bd34-898e-4ba2-ad13-fa1205ad4612" />
+            <flowNodeTargets>
+              <controlFlow Id="7dc1eb9a-8c30-40b4-8bd3-fadb3e3410f8" isLeaf="false">
+                <opaqueActionMoniker Id="61ac2695-439b-45a0-b838-070d38442fea" LastKnownName="Winkel der Geraden zur x-Achse eingeben" />
+                <elementDefinition Id="1bc98c9a-29ff-4441-b4ce-1bf45a903487" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="53e95816-e85e-4c58-bbdd-67f3cb4978dc" name="System berechnet Spiegelung und zeigt sie an" isLeaf="false">
+            <elementDefinition Id="e3fc06c7-ba06-4e5f-b3f1-54d3cd1545ec" />
+            <flowNodeTargets>
+              <controlFlow Id="29c1fdec-41a8-4c3c-b04e-51903c3b272c" isLeaf="false">
+                <activityFinalNodeMoniker Id="b01a5c61-7af4-484e-967f-93390d820ae9" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="aae43af4-c15d-42eb-9768-8ac8729a0922" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="b01a5c61-7af4-484e-967f-93390d820ae9" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="44a6328d-63e6-4f32-9042-46c7dcef5ef8" />
+          </activityFinalNode>
+          <opaqueAction Id="023d798c-719c-4f4d-a93a-c6de677db462" name="System prüft Eingabe" isLeaf="false">
+            <elementDefinition Id="1987f825-0a4b-4b00-8500-9e9309d611c8" />
+            <flowNodeTargets>
+              <controlFlow Id="bc49ae44-f247-41c7-bb1a-e7b1749604bc" isLeaf="false">
+                <decisionNodeMoniker Id="e8edd1f0-2cc8-4c6a-9199-d97fd55e8ec7" LastKnownName="Decision2" />
+                <elementDefinition Id="dbea5344-3595-47d0-a54e-b35ed8b07e1a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="0e50e292-5caa-4bc2-a030-d8eeb943b067" name="ActivityDiagram">
+    <elementDefinition Id="44755596-ef36-4b32-be68-04b00064a432" />
+  </package>
+</activityRootModel>
