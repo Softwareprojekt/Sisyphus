@@ -1,7 +1,12 @@
 neu Eingefügtes ist unterstrichen,
 Sachen die ich weglassen würde sind durchgestrichen,
 Unklare Sachen mit (?) gekennzeichnet;
+(bei eindeutigen Rechtschreib- oder sprachlichen Fehlern
+ ohne Unterstreichung und Streichung)
 
 Wenn Reviews oder weitere Anpassungen an einzelnen 
-Use-Cases durchzuführen sind, steht unten eine
-fettgeschriebene Anmerkung dabei.
+Use-Cases durchzuführen sind, steht unter Use-Case
+eine fettgeschriebene Anmerkung dabei.
+
+TODO vor erster Abgabe: die durchgestrichenen Sachen
+entfernen, und Unterstreichungen wegmachen.
