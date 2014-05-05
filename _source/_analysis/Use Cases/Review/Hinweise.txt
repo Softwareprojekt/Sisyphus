@@ -1,0 +1,7 @@
+neu Eingefügtes ist unterstrichen,
+Sachen die ich weglassen würde sind durchgestrichen,
+Unklare Sachen mit (?) gekennzeichnet;
+
+Wenn Reviews oder weitere Anpassungen an einzelnen 
+Use-Cases durchzuführen sind, steht unten eine
+fettgeschriebene Anmerkung dabei.
