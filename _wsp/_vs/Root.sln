@@ -2,6 +2,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "UML", "..\..\_source\_uml\_cs\UML\UML.modelproj", "{5DFA1E89-4FE6-43A7-91B6-C7977909A7D3}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwareProjekt", "..\..\_source\_code\_cs\SoftwareProjekt\SoftwareProjekt.csproj", "{AAD2C464-32B4-436F-B1DD-70C751FF33FB}"
 EndProject
 Global
@@ -10,6 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DFA1E89-4FE6-43A7-91B6-C7977909A7D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DFA1E89-4FE6-43A7-91B6-C7977909A7D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DFA1E89-4FE6-43A7-91B6-C7977909A7D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DFA1E89-4FE6-43A7-91B6-C7977909A7D3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AAD2C464-32B4-436F-B1DD-70C751FF33FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AAD2C464-32B4-436F-B1DD-70C751FF33FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAD2C464-32B4-436F-B1DD-70C751FF33FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
