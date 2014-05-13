@@ -59,7 +59,9 @@
     <Compile Include="INotebook.cs" />
     <Compile Include="ITopic.cs" />
     <Compile Include="IView.cs" />
-    <Compile Include="MainWindow.cs" />
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MindMap.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
