@@ -9,8 +9,75 @@
       <body>Interaktive einarbeitung in das Programm</body>
     </comment>
     <comment
-      Id="8a3ceae7-535c-4f68-9d48-503b94a0d5c0">
-      <body>Fraktal eingeben</body>
+      Id="2450f576-6f1b-45d5-8885-b2c96bb005c3">
+      <body>Deckt Kondensationsmenge mit ab</body>
+      <annotatedElements>
+        <useCaseMoniker
+          Id="fc174c63-9d45-469e-80cd-81c9ec0e55b0"
+          LastKnownName="IFS definieren"
+          LastKnownLocation="UmlModel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="c7368316-ffc1-4816-b89d-2ba5c6d62718">
+      <body>Algorithmus kann gewählt werden: Zufallsalgorithmus oder wiederholte Bildung von Collagen.</body>
+      <annotatedElements>
+        <useCaseMoniker
+          Id="3792ef42-4116-46b6-bd10-ee6ef17c5a16"
+          LastKnownName="Fraktal rendern"
+          LastKnownLocation="UmlModel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="cc46a065-9208-46c4-8164-299a3d3c54ec">
+      <body>Mindmap aktualisieren
+</body>
+      <annotatedElements>
+        <useCaseMoniker
+          Id="be8524ad-96e5-426c-9010-769edb2482a3"
+          LastKnownName="Arbeitsheft laden"
+          LastKnownLocation="UmlModel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="756f6123-9ed3-4b4f-a223-779457d944b3">
+      <body>Nur PDF-Format nötig</body>
+      <annotatedElements>
+        <useCaseMoniker
+          Id="1f54c0b9-2a20-4344-b5be-fcb1c2b91a21"
+          LastKnownName="Arbeitsheft exportieren"
+          LastKnownLocation="UmlModel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="2d38eedf-7286-4918-ad46-aa4cf84c6373">
+      <body>In der Heftansicht dann Übung zum Laden auswählen</body>
+      <annotatedElements>
+        <useCaseMoniker
+          Id="530305c7-7827-4ed6-9181-5725ea2027a5"
+          LastKnownName="Heftinhalt anzeigen"
+          LastKnownLocation="UmlModel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="79384d68-7af3-4c34-94b7-d7dec3245f98">
+      <body>"Fraktalerzeugung mit IFS studieren" könnte ein Beispiel für "Übunsthema auswählen" sein (vordefinierte Fraktale werden studiert - unter IFS definiert)</body>
+      <annotatedElements>
+        <useCaseMoniker
+          Id="3c246ccf-1b51-40fd-a0b6-6647d241f9c0"
+          LastKnownName="Übungsthema auswählen"
+          LastKnownLocation="UmlModel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="14594447-b4a3-4fc6-9caa-746b5052b1aa">
+      <body>enthält Step by Step</body>
+      <annotatedElements>
+        <useCaseMoniker
+          Id="ce4d7008-fd8a-40d6-a09a-5094ad6f6555"
+          LastKnownName="Fraktalerzeugung mit IFS  studieren (9)"
+          LastKnownLocation="UmlModel.uml" />
+      </annotatedElements>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -38,7 +105,7 @@
     <packageHasNamedElement>
       <useCase
         Id="48653a03-2584-46cf-8896-b0535df412b4"
-        name="Affine Abbildung eingeben"
+        name="Affine Abbildung numerisch definieren"
         isAbstract="false"
         isLeaf="false">
         <description>Priorität: 10
@@ -48,11 +115,27 @@ Ausgearbeitet von: Michael, Markus</description>
     <packageHasNamedElement>
       <useCase
         Id="fc174c63-9d45-469e-80cd-81c9ec0e55b0"
-        name="Dreieck abklicken"
+        name="IFS definieren"
         isAbstract="false"
         isLeaf="false">
         <description>Priorität: 10
 Ausgearbeitet von: Michael, Markus</description>
+        <additions>
+          <include
+            Id="9745b533-7560-4100-941b-39f6bc08778d">
+            <useCaseMoniker
+              Id="48653a03-2584-46cf-8896-b0535df412b4"
+              LastKnownName="Affine Abbildung numerisch definieren"
+              LastKnownLocation="UmlModel.uml" />
+          </include>
+          <include
+            Id="6960e0c1-2ec6-4116-a22f-e87e985c1b6f">
+            <useCaseMoniker
+              Id="6e0e0b6c-b9bf-4a4d-9aba-a27f7964d0b9"
+              LastKnownName="Affine Abb. durch  Abklicken definieren"
+              LastKnownLocation="UmlModel.uml" />
+          </include>
+        </additions>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -68,7 +151,7 @@ Ausgearbeitet von: Tilo</description>
     <packageHasNamedElement>
       <useCase
         Id="be8524ad-96e5-426c-9010-769edb2482a3"
-        name="Standard Fraktal wählen"
+        name="Arbeitsheft laden"
         isAbstract="false"
         isLeaf="false">
         <description>Priorität: 3
@@ -88,7 +171,7 @@ Ausgearbeitet von: Marcel</description>
     <packageHasNamedElement>
       <useCase
         Id="ef97bd30-a054-4195-9ee7-01c50b6d3d8c"
-        name="Abbildung Summe Vektoren"
+        name="Zuordnungsvorschrift einer affinen Abb. studieren (8)"
         isAbstract="false"
         isLeaf="false">
         <description>Prio 10, Rudi</description>
@@ -97,45 +180,29 @@ Ausgearbeitet von: Marcel</description>
     <packageHasNamedElement>
       <useCase
         Id="6e0e0b6c-b9bf-4a4d-9aba-a27f7964d0b9"
-        name="Dreieck abklicken  Abbildung"
+        name="Affine Abb. durch  Abklicken definieren"
         isAbstract="false"
         isLeaf="false">
         <description>Prio 10, Markus, Michael</description>
+        <additions>
+          <include
+            Id="702566c8-b9c8-4be1-a38f-f1171f2e1f79">
+            <useCaseMoniker
+              Id="ad73a8d5-62bc-49e3-b102-3b19f6fff7f0"
+              LastKnownName="Bild einlesen"
+              LastKnownLocation="UmlModel.uml" />
+          </include>
+        </additions>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <useCase
         Id="3792ef42-4116-46b6-bd10-ee6ef17c5a16"
-        name="Affine Abbildung ausgeben"
+        name="Fraktal rendern"
         isAbstract="false"
         isLeaf="false">
         <description>Priorität: 10
 Ausgearbeitet von: Michael, Markus</description>
-        <suppliersInternal>
-          <dependency
-            Id="9e8f9b61-6130-425b-9e1c-3139421be489">
-            <useCaseMoniker
-              Id="fc174c63-9d45-469e-80cd-81c9ec0e55b0"
-              LastKnownName="Dreieck abklicken"
-              LastKnownLocation="UmlModel.uml" />
-          </dependency>
-          <dependency
-            Id="a0d74eb7-857c-4fed-8186-a0f862b3568d">
-            <useCaseMoniker
-              Id="6e0e0b6c-b9bf-4a4d-9aba-a27f7964d0b9"
-              LastKnownName="Dreieck abklicken  Abbildung"
-              LastKnownLocation="UmlModel.uml" />
-          </dependency>
-        </suppliersInternal>
-        <extendedCases>
-          <extend
-            Id="7b61717c-8135-4ba7-87b9-4ecabf87d582">
-            <useCaseMoniker
-              Id="53bb5662-3cf5-46de-be53-97b571a88ff4"
-              LastKnownName="Step by Step"
-              LastKnownLocation="UmlModel.uml" />
-          </extend>
-        </extendedCases>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -193,6 +260,15 @@ Ausgearbeitet von: Thomas</description>
         name="Prof"
         isAbstract="false"
         isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="159ba1a4-6e27-4e50-bbc7-ef87ef06dc91">
+            <useCaseMoniker
+              Id="fdfe2f8e-5351-49ff-85ac-b3dc87d29a37"
+              LastKnownName="Neues Thema hinzufügen / ändern"
+              LastKnownLocation="UmlModel.uml" />
+          </dependency>
+        </suppliersInternal>
         <targetEnds>
           <association
             Id="d51d3f59-f175-45ec-a9fb-5c63b2335123"
@@ -239,7 +315,7 @@ Ausgearbeitet von: Thomas</description>
     <packageHasNamedElement>
       <useCase
         Id="fdfe2f8e-5351-49ff-85ac-b3dc87d29a37"
-        name="Neues Thema hinzufügen"
+        name="Neues Thema hinzufügen / ändern"
         isAbstract="false"
         isLeaf="false">
         <description>Priorität: 2
@@ -258,7 +334,7 @@ Ausgearbeitet von: Jan, Olaf</description>
     <packageHasNamedElement>
       <useCase
         Id="1716d551-e1da-45be-97d1-8856f421b5f2"
-        name="PDF  Speichern"
+        name="Übung im Arbeitsheft speichern"
         isAbstract="false"
         isLeaf="false">
         <description>Priorität: 5
@@ -306,7 +382,7 @@ Ausgearbeitet von: Michael, Markus</description>
     <packageHasNamedElement>
       <useCase
         Id="6630900a-b9a7-49fc-a4a0-c51bcef8557c"
-        name="Übungen Laden"
+        name="Übungen aus Arbeitsheft laden"
         isAbstract="false"
         isLeaf="false">
         <description>Priorität: 6
@@ -316,7 +392,7 @@ Ausgearbeitet von: Julian</description>
     <packageHasNamedElement>
       <useCase
         Id="fb2758ac-9db2-4f3e-92f3-bc5e9d4e129e"
-        name="Übungen Löschen"
+        name="Übungen aus Arbeitsheft löschen"
         isAbstract="false"
         isLeaf="false">
         <description>Priorität: 6
@@ -336,7 +412,7 @@ Ausgearbeitet von: Julian</description>
     <packageHasNamedElement>
       <useCase
         Id="3c246ccf-1b51-40fd-a0b6-6647d241f9c0"
-        name="Übung auswählen"
+        name="Übungsthema auswählen"
         isAbstract="false"
         isLeaf="false">
         <description>Priorität: 8
@@ -346,29 +422,15 @@ Ausgearbeitet von: Rudi</description>
     <packageHasNamedElement>
       <useCase
         Id="1f54c0b9-2a20-4344-b5be-fcb1c2b91a21"
-        name="Fraktal zeichnen"
+        name="Arbeitsheft exportieren"
         isAbstract="false"
         isLeaf="false">
         <description>Prio 10, Tilo</description>
         <suppliersInternal>
           <dependency
-            Id="7a7d57ea-ec88-4ad8-911e-e2082dd169a9">
-            <useCaseMoniker
-              Id="be8524ad-96e5-426c-9010-769edb2482a3"
-              LastKnownName="Standard Fraktal wählen"
-              LastKnownLocation="UmlModel.uml" />
-          </dependency>
-          <dependency
             Id="b75a7708-9017-4abd-8e24-5a0447291fc9">
             <useCaseMoniker
               Id="1e66ffe4-9de1-4720-9ab3-2aea38fff83e"
-              LastKnownName="Fraktal eingeben"
-              LastKnownLocation="UmlModel.uml" />
-          </dependency>
-          <dependency
-            Id="86760640-2209-4aa2-8fdc-54190395ad92">
-            <useCaseMoniker
-              Id="801ced69-256b-47c9-84df-730a236522a4"
               LastKnownName="Fraktal eingeben"
               LastKnownLocation="UmlModel.uml" />
           </dependency>
@@ -378,7 +440,7 @@ Ausgearbeitet von: Rudi</description>
     <packageHasNamedElement>
       <useCase
         Id="801ced69-256b-47c9-84df-730a236522a4"
-        name="Fraktal eingeben"
+        name="Arbeitsheft anlegen"
         isAbstract="false"
         isLeaf="false">
         <description>Priorität: 10
@@ -388,7 +450,7 @@ Ausgearbeitet von: Tilo</description>
     <packageHasNamedElement>
       <useCase
         Id="b5a38f02-3644-4bf0-994b-955c5ab664ff"
-        name="Abbildung vielfacher Vektoren"
+        name="Lin. Abb. mit Vielfachem bel. Vektoren studieren (3)"
         isAbstract="false"
         isLeaf="false">
         <description>Prio 10, Rudi</description>
@@ -406,7 +468,7 @@ Ausgearbeitet von: Tilo</description>
     <packageHasNamedElement>
       <useCase
         Id="9041d1a4-cbda-4c0b-a831-aab61c98c649"
-        name="Drehung"
+        name="Drehungen lin. Abbildungen um den Ursprung studieren (6)"
         isAbstract="false"
         isLeaf="false">
         <description>Prio 10, Manuel</description>
@@ -424,7 +486,7 @@ Ausgearbeitet von: Tilo</description>
     <packageHasNamedElement>
       <useCase
         Id="530305c7-7827-4ed6-9181-5725ea2027a5"
-        name="Standard Fraktal wählen Kondensationsmenge"
+        name="Heftinhalt anzeigen"
         isAbstract="false"
         isLeaf="false">
         <description>Priorität: 3
@@ -443,7 +505,7 @@ Ausgearbeitet von: Tilo</description>
     <packageHasNamedElement>
       <useCase
         Id="0c04d85f-47af-4eff-90e9-70a031960053"
-        name="Hintereinanderausführung"
+        name="Hintereinanderausführung lin. Abbildungen studieren (4)"
         isAbstract="false"
         isLeaf="false">
         <description>Prio 10, Manuel</description>
@@ -461,7 +523,7 @@ Ausgearbeitet von: Tilo</description>
     <packageHasNamedElement>
       <useCase
         Id="bd901892-2405-498c-ba24-e0441ed513a8"
-        name="Spiegelung"
+        name="Spiegelung lin. Abb. an Ursprungsgeraden studieren (7)"
         isAbstract="false"
         isLeaf="false">
         <description>Prio 10, Manuel</description>
@@ -470,7 +532,7 @@ Ausgearbeitet von: Tilo</description>
     <packageHasNamedElement>
       <useCase
         Id="2b194df8-f311-430e-8c89-e924ab1d0d89"
-        name="Umkehrung lin. Abbildung"
+        name="Umkehrung lin. Abbildungen studieren (5)"
         isAbstract="false"
         isLeaf="false">
         <description>Prio 10, Julian</description>
@@ -484,6 +546,33 @@ Ausgearbeitet von: Tilo</description>
         isLeaf="false">
         <description>Prio ?, Jan Olaf</description>
       </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ce4d7008-fd8a-40d6-a09a-5094ad6f6555"
+        name="Fraktalerzeugung mit IFS  studieren (9)"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9709b986-d5d6-4fd4-b5d8-1a5661359df0"
+        name="Zuordnungsvorschrift einer lin. Abb. studieren (1)"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2288e637-e01a-4656-aeec-f4512662cbd1"
+        name="Lin. Abb. aus Summe bel. Vektoren studieren (2)"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2401951f-e6d2-4bdb-86db-b5a4577769c4"
+        isAbstract="false"
+        isLeaf="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
