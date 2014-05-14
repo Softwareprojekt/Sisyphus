@@ -5,9 +5,55 @@
       <elementDefinition Id="ae80141a-a6cb-40e0-8f1a-76b1a6aa5cd0" />
       <body>Interaktive einarbeitung in das Programm</body>
     </comment>
-    <comment Id="795ad797-32b8-4e5d-977e-83d5f1830d61">
-      <elementDefinition Id="8a3ceae7-535c-4f68-9d48-503b94a0d5c0" />
-      <body>Fraktal eingeben</body>
+    <comment Id="6fd7f14b-ec0d-4695-8e1c-d3419fa8c5b8">
+      <elementDefinition Id="2450f576-6f1b-45d5-8885-b2c96bb005c3" />
+      <body>Deckt Kondensationsmenge mit ab</body>
+      <annotatedElements>
+        <useCaseMoniker Id="a5b7b4e6-c14e-45d3-821f-d5bee6e4b61a" LastKnownName="IFS definieren" />
+      </annotatedElements>
+    </comment>
+    <comment Id="f13c355d-8703-4dd3-92ec-2be0f9ff02fe">
+      <elementDefinition Id="c7368316-ffc1-4816-b89d-2ba5c6d62718" />
+      <body>Algorithmus kann gewählt werden: Zufallsalgorithmus oder wiederholte Bildung von Collagen.</body>
+      <annotatedElements>
+        <useCaseMoniker Id="f182bb7c-9270-49bc-b281-78e42c6ca04e" LastKnownName="Fraktal rendern" />
+      </annotatedElements>
+    </comment>
+    <comment Id="c4983aaf-fd25-4396-8e7f-9bdde95c468d">
+      <elementDefinition Id="cc46a065-9208-46c4-8164-299a3d3c54ec" />
+      <body>Mindmap aktualisieren
+</body>
+      <annotatedElements>
+        <useCaseMoniker Id="fb83c052-e77e-41fb-ab8e-3cd22511829b" LastKnownName="Arbeitsheft laden" />
+      </annotatedElements>
+    </comment>
+    <comment Id="7188c751-713a-47e9-80c9-635aa2bf25c6">
+      <elementDefinition Id="756f6123-9ed3-4b4f-a223-779457d944b3" />
+      <body>Nur PDF-Format nötig</body>
+      <annotatedElements>
+        <useCaseMoniker Id="b8f299b6-e1d6-4144-aee7-92e99e8c4d6f" LastKnownName="Arbeitsheft exportieren" />
+      </annotatedElements>
+    </comment>
+    <comment Id="b7732ba9-6f60-4bea-86b9-216736b8386c">
+      <elementDefinition Id="2d38eedf-7286-4918-ad46-aa4cf84c6373" />
+      <body>In der Heftansicht dann Übung zum Laden auswählen</body>
+      <annotatedElements>
+        <useCaseMoniker Id="0c63249f-067e-437d-ad7a-7ef9a63e54f5" LastKnownName="Heftinhalt anzeigen" />
+      </annotatedElements>
+    </comment>
+    <comment Id="0e8b3c8a-00b3-4941-9383-9f58693c9a17">
+      <elementDefinition Id="79384d68-7af3-4c34-94b7-d7dec3245f98" />
+      <body>"Fraktalerzeugung mit IFS studieren" könnte ein Beispiel für "Übunsthema auswählen" sein (vordefinierte Fraktale werden studiert - unter IFS definiert)</body>
+      <annotatedElements>
+        <useCaseMoniker Id="c602be8f-3625-4f31-b876-de842d3d08ea" LastKnownName="Übungsthema auswählen" />
+      </annotatedElements>
+    </comment>
+    <comment Id="47e446e2-e4bb-4cdc-a089-ec1341a10357">
+      <elementDefinition Id="14594447-b4a3-4fc6-9caa-746b5052b1aa" />
+      <body>enthält Step by Step</body>
+      <annotatedElements>
+        <useCaseMoniker Id="48e5c0b8-6fe2-4b02-92c2-d742ce5c645c" LastKnownName="Fraktalerzeugung mit IFS  studieren (9)" />
+      </annotatedElements>
     </comment>
   </ownedCommentsInternal>
   <packagedElements>
@@ -17,21 +63,31 @@
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="54973b9d-14c4-4d7d-a714-fc1de8e27c9e" name="Affine Abbildung eingeben" isAbstract="false" isLeaf="false">
+      <useCase Id="54973b9d-14c4-4d7d-a714-fc1de8e27c9e" name="Affine Abbildung numerisch definieren" isAbstract="false" isLeaf="false">
         <description>Priorität: 10
 Ausgearbeitet von: Michael, Markus</description>
         <elementDefinition Id="48653a03-2584-46cf-8896-b0535df412b4" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="a5b7b4e6-c14e-45d3-821f-d5bee6e4b61a" name="Dreieck abklicken" isAbstract="false" isLeaf="false">
+      <useCase Id="a5b7b4e6-c14e-45d3-821f-d5bee6e4b61a" name="IFS definieren" isAbstract="false" isLeaf="false">
         <description>Priorität: 10
 Ausgearbeitet von: Michael, Markus</description>
         <elementDefinition Id="fc174c63-9d45-469e-80cd-81c9ec0e55b0" />
+        <additions>
+          <include Id="496fbe19-4661-4453-bd88-c66709ca2dfa">
+            <useCaseMoniker Id="54973b9d-14c4-4d7d-a714-fc1de8e27c9e" LastKnownName="Affine Abbildung numerisch definieren" />
+            <elementDefinition Id="9745b533-7560-4100-941b-39f6bc08778d" />
+          </include>
+          <include Id="caed1389-6d28-4b43-8bab-38b07f73982c">
+            <useCaseMoniker Id="f330d002-b87a-4b5a-bb9a-7537ee241afe" LastKnownName="Affine Abb. durch  Abklicken definieren" />
+            <elementDefinition Id="6960e0c1-2ec6-4116-a22f-e87e985c1b6f" />
+          </include>
+        </additions>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="fb83c052-e77e-41fb-ab8e-3cd22511829b" name="Standard Fraktal wählen" isAbstract="false" isLeaf="false">
+      <useCase Id="fb83c052-e77e-41fb-ab8e-3cd22511829b" name="Arbeitsheft laden" isAbstract="false" isLeaf="false">
         <description>Priorität: 3
 Ausgearbeitet von: Tilo</description>
         <elementDefinition Id="be8524ad-96e5-426c-9010-769edb2482a3" />
@@ -45,45 +101,28 @@ Ausgearbeitet von: Marcel</description>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="f330d002-b87a-4b5a-bb9a-7537ee241afe" name="Dreieck abklicken  Abbildung" isAbstract="false" isLeaf="false">
+      <useCase Id="f330d002-b87a-4b5a-bb9a-7537ee241afe" name="Affine Abb. durch  Abklicken definieren" isAbstract="false" isLeaf="false">
         <description>Prio 10, Markus, Michael</description>
         <elementDefinition Id="6e0e0b6c-b9bf-4a4d-9aba-a27f7964d0b9" />
+        <additions>
+          <include Id="f64a873d-5e2a-4c0a-9160-44bf83fef60a">
+            <useCaseMoniker Id="16b7693a-d60c-44ce-b72e-0fa353f052b0" LastKnownName="Bild einlesen" />
+            <elementDefinition Id="702566c8-b9c8-4be1-a38f-f1171f2e1f79" />
+          </include>
+        </additions>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="f182bb7c-9270-49bc-b281-78e42c6ca04e" name="Affine Abbildung ausgeben" isAbstract="false" isLeaf="false">
+      <useCase Id="f182bb7c-9270-49bc-b281-78e42c6ca04e" name="Fraktal rendern" isAbstract="false" isLeaf="false">
         <description>Priorität: 10
 Ausgearbeitet von: Michael, Markus</description>
         <elementDefinition Id="3792ef42-4116-46b6-bd10-ee6ef17c5a16" />
-        <suppliersInternal>
-          <dependency Id="1e78661d-7c67-420b-9bc1-8fde10c13067">
-            <useCaseMoniker Id="a5b7b4e6-c14e-45d3-821f-d5bee6e4b61a" LastKnownName="Dreieck abklicken" />
-            <elementDefinition Id="9e8f9b61-6130-425b-9e1c-3139421be489" />
-          </dependency>
-          <dependency Id="31b0dea8-886e-4b0c-8f99-d72e858f1f4a">
-            <useCaseMoniker Id="f330d002-b87a-4b5a-bb9a-7537ee241afe" LastKnownName="Dreieck abklicken  Abbildung" />
-            <elementDefinition Id="a0d74eb7-857c-4fed-8186-a0f862b3568d" />
-          </dependency>
-        </suppliersInternal>
-        <extendedCases>
-          <extend Id="458749f1-7a3c-4888-9766-28abc3c8606a">
-            <useCaseMoniker Id="b1630d42-ceb6-4d97-9f0f-f5ec5598e0a4" LastKnownName="Step by Step" />
-            <elementDefinition Id="7b61717c-8135-4ba7-87b9-4ecabf87d582" />
-          </extend>
-        </extendedCases>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
       <useCase Id="16b7693a-d60c-44ce-b72e-0fa353f052b0" name="Bild einlesen" isAbstract="false" isLeaf="false">
         <description>Prio 7, Michael, Markus</description>
         <elementDefinition Id="ad73a8d5-62bc-49e3-b102-3b19f6fff7f0" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="bc52aee6-edba-45c0-827f-e302ffd3dda8" name="Übungen Speichern" isAbstract="false" isLeaf="false">
-        <description>Priorität: 8
-Ausgearbeitet von: Wolfgang</description>
-        <elementDefinition Id="bf9248e2-91dd-48ba-bfa7-a6cf0c0c0c0e" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
@@ -110,51 +149,19 @@ Ausgearbeitet von: Thomas</description>
     <useCaseModelRootHasTypes>
       <actor Id="3dd8fa55-d99e-41de-a0a5-ad04ca6f962e" name="Prof" isAbstract="false" isLeaf="false">
         <elementDefinition Id="502afe02-460e-4cff-a9a4-4fd6abb1a1d5" />
-        <targetEnds>
-          <association Id="0692cfc1-c29c-4036-a445-464e823c1050" isDerived="false" sourceEndRoleName="Prof" targetEndRoleName="Zutritt geschützer Bereich" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="52feb21c-d3a4-4513-a4fc-f84f0dc48405" LastKnownName="Zutritt geschützer Bereich" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="5013ecde-e1a1-4255-b4e9-573facd02793" name="Prof" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="eee19acf-4912-4c81-a4ed-c0a3fc31ac84" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="fd19942e-1f6d-4e4f-a7ce-a174fb184d66" name="Zutritt geschützer Bereich" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="39455821-15a1-4b62-b99a-3e3820b89cb1" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="d51d3f59-f175-45ec-a9fb-5c63b2335123" />
-          </association>
-        </targetEnds>
+        <suppliersInternal>
+          <dependency Id="490231e0-9516-482a-9017-fe08d892306a">
+            <useCaseMoniker Id="81a409e5-39ac-449f-86ea-efa3234f52d1" LastKnownName="Neues Thema hinzufügen / ändern" />
+            <elementDefinition Id="159ba1a4-6e27-4e50-bbc7-ef87ef06dc91" />
+          </dependency>
+        </suppliersInternal>
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="8e611cde-f1da-4ff9-87e6-f3fa1b21f53f" name="PDF  Speichern" isAbstract="false" isLeaf="false">
+      <useCase Id="8e611cde-f1da-4ff9-87e6-f3fa1b21f53f" name="Übung im Arbeitsheft speichern" isAbstract="false" isLeaf="false">
         <description>Priorität: 5
 Ausgearbeitet von: Marcel</description>
         <elementDefinition Id="1716d551-e1da-45be-97d1-8856f421b5f2" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="f4820e33-1c92-4335-b995-b71199168ab3" name="Notiz eintragen" isAbstract="false" isLeaf="false">
-        <description>Priorität: 7
-Ausgearbeitet von: Wolfgang</description>
-        <elementDefinition Id="2b8e04e6-f611-4baa-9f2e-158d8e7e5927" />
-        <extendedCases>
-          <extend Id="20e2a864-3bff-4345-91ef-540383c4a807">
-            <useCaseMoniker Id="bc52aee6-edba-45c0-827f-e302ffd3dda8" LastKnownName="Übungen Speichern" />
-            <elementDefinition Id="f8be0775-755f-4dc7-b85f-5d6cdf0c0c52" />
-          </extend>
-        </extendedCases>
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="b1630d42-ceb6-4d97-9f0f-f5ec5598e0a4" name="Step by Step" isAbstract="false" isLeaf="false">
-        <description>Priorität: 3
-Ausgearbeitet von: Michael, Markus</description>
-        <elementDefinition Id="53bb5662-3cf5-46de-be53-97b571a88ff4" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
@@ -164,140 +171,102 @@ Ausgearbeitet von: Michael, Markus</description>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="f6531283-0abf-44b7-a25c-382d846442b1" name="Übungen Laden" isAbstract="false" isLeaf="false">
+      <useCase Id="f6531283-0abf-44b7-a25c-382d846442b1" name="Übungen aus Arbeitsheft laden" isAbstract="false" isLeaf="false">
         <description>Priorität: 6
 Ausgearbeitet von: Julian</description>
         <elementDefinition Id="6630900a-b9a7-49fc-a4a0-c51bcef8557c" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="81c4f5ac-2d38-40ce-80ce-e16aa8383746" name="Übungen Löschen" isAbstract="false" isLeaf="false">
+      <useCase Id="81c4f5ac-2d38-40ce-80ce-e16aa8383746" name="Übungen aus Arbeitsheft löschen" isAbstract="false" isLeaf="false">
         <description>Priorität: 6
 Ausgearbeitet von: Julian</description>
         <elementDefinition Id="fb2758ac-9db2-4f3e-92f3-bc5e9d4e129e" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="c44d02c3-e760-4439-b648-bdb927b270b4" name="Übungen Zurücksetzen" isAbstract="false" isLeaf="false">
-        <description>Priorität: 2
-Ausgearbeitet von: Julian</description>
-        <elementDefinition Id="efb31be0-7d4d-48b5-8aec-47fc64f33b3b" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="c602be8f-3625-4f31-b876-de842d3d08ea" name="Übung auswählen" isAbstract="false" isLeaf="false">
+      <useCase Id="c602be8f-3625-4f31-b876-de842d3d08ea" name="Übungsthema auswählen" isAbstract="false" isLeaf="false">
         <description>Priorität: 8
 Ausgearbeitet von: Rudi</description>
         <elementDefinition Id="3c246ccf-1b51-40fd-a0b6-6647d241f9c0" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="b8f299b6-e1d6-4144-aee7-92e99e8c4d6f" name="Fraktal zeichnen" isAbstract="false" isLeaf="false">
+      <useCase Id="b8f299b6-e1d6-4144-aee7-92e99e8c4d6f" name="Arbeitsheft exportieren" isAbstract="false" isLeaf="false">
         <description>Prio 10, Tilo</description>
         <elementDefinition Id="1f54c0b9-2a20-4344-b5be-fcb1c2b91a21" />
-        <suppliersInternal>
-          <dependency Id="e64bfa34-6174-4702-b452-2a6fa69d2578">
-            <useCaseMoniker Id="fb83c052-e77e-41fb-ab8e-3cd22511829b" LastKnownName="Standard Fraktal wählen" />
-            <elementDefinition Id="7a7d57ea-ec88-4ad8-911e-e2082dd169a9" />
-          </dependency>
-          <dependency Id="d9d39e6a-deb8-47ee-acd2-15f5d2c5a231">
-            <useCaseMoniker Id="36b8ef1f-97c3-476c-9df0-73793185de4b" LastKnownName="Fraktal eingeben" />
-            <elementDefinition Id="86760640-2209-4aa2-8fdc-54190395ad92" />
-          </dependency>
-        </suppliersInternal>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="36b8ef1f-97c3-476c-9df0-73793185de4b" name="Fraktal eingeben" isAbstract="false" isLeaf="false">
+      <useCase Id="36b8ef1f-97c3-476c-9df0-73793185de4b" name="Arbeitsheft anlegen" isAbstract="false" isLeaf="false">
         <description>Priorität: 10
 Ausgearbeitet von: Tilo</description>
         <elementDefinition Id="801ced69-256b-47c9-84df-730a236522a4" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="112354f2-2ce4-44c2-828c-a4c6a867feaa" name="Abbildung Summe Vektoren" isAbstract="false" isLeaf="false">
+      <useCase Id="112354f2-2ce4-44c2-828c-a4c6a867feaa" name="Zuordnungsvorschrift einer affinen Abb. studieren (8)" isAbstract="false" isLeaf="false">
         <description>Prio 10, Rudi</description>
         <elementDefinition Id="ef97bd30-a054-4195-9ee7-01c50b6d3d8c" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="89228e35-7583-48de-9aaf-8f2d65621652" name="Abbildung vielfacher Vektoren" isAbstract="false" isLeaf="false">
+      <useCase Id="89228e35-7583-48de-9aaf-8f2d65621652" name="Lin. Abb. mit Vielfachem bel. Vektoren studieren (3)" isAbstract="false" isLeaf="false">
         <description>Prio 10, Rudi</description>
         <elementDefinition Id="b5a38f02-3644-4bf0-994b-955c5ab664ff" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="1d6a1d41-57cb-4216-a439-cd210abdb7e3" name="Affine Abbildung verstehen" isAbstract="false" isLeaf="false">
-        <description>Prio 10, Rudi</description>
-        <elementDefinition Id="b2df789e-7213-4545-91b0-8f3739cd86fc" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="f5cbf49b-d68f-4b57-b2d1-c777fc028d7e" name="Drehung" isAbstract="false" isLeaf="false">
+      <useCase Id="f5cbf49b-d68f-4b57-b2d1-c777fc028d7e" name="Drehungen lin. Abbildungen um den Ursprung studieren (6)" isAbstract="false" isLeaf="false">
         <description>Prio 10, Manuel</description>
         <elementDefinition Id="9041d1a4-cbda-4c0b-a831-aab61c98c649" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="76548257-f8b5-4433-994c-7e605de208cf" name="Fraktal eingeben Kondensationsmenge" isAbstract="false" isLeaf="false">
-        <description>Prio 9, Tilo</description>
-        <elementDefinition Id="c22b3baa-e43e-4bed-a185-d945664b06b5" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="0c63249f-067e-437d-ad7a-7ef9a63e54f5" name="Standard Fraktal wählen Kondensationsmenge" isAbstract="false" isLeaf="false">
+      <useCase Id="0c63249f-067e-437d-ad7a-7ef9a63e54f5" name="Heftinhalt anzeigen" isAbstract="false" isLeaf="false">
         <description>Priorität: 3
 Ausgearbeitet von: Tilo</description>
         <elementDefinition Id="530305c7-7827-4ed6-9181-5725ea2027a5" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="5f23ed6b-3217-4f17-a396-69cdd879029c" name="Fraktalerzeugung mit IFS" isAbstract="false" isLeaf="false">
-        <description>Prio 10, Rudi</description>
-        <elementDefinition Id="6d41ce7a-bfa7-4f55-9079-9773d3729ebd" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="3fce46c7-1df0-4f04-97a4-817de754c903" name="Hintereinanderausführung" isAbstract="false" isLeaf="false">
+      <useCase Id="3fce46c7-1df0-4f04-97a4-817de754c903" name="Hintereinanderausführung lin. Abbildungen studieren (4)" isAbstract="false" isLeaf="false">
         <description>Prio 10, Manuel</description>
         <elementDefinition Id="0c04d85f-47af-4eff-90e9-70a031960053" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="5bd59947-8d1f-40d7-a538-9f8a8c4d67f3" name="lineare Abbildung verstehen" isAbstract="false" isLeaf="false">
-        <description>Prio 10, Julian</description>
-        <elementDefinition Id="b528409a-fa34-4fe6-8f88-7e8265bc1d5c" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="093fbcb0-a38d-4512-a207-bbc378c4b483" name="Spiegelung" isAbstract="false" isLeaf="false">
+      <useCase Id="093fbcb0-a38d-4512-a207-bbc378c4b483" name="Spiegelung lin. Abb. an Ursprungsgeraden studieren (7)" isAbstract="false" isLeaf="false">
         <description>Prio 10, Manuel</description>
         <elementDefinition Id="bd901892-2405-498c-ba24-e0441ed513a8" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="a05acaa9-d32a-4ae4-a77a-886ae7808ce1" name="Umkehrung lin. Abbildung" isAbstract="false" isLeaf="false">
+      <useCase Id="a05acaa9-d32a-4ae4-a77a-886ae7808ce1" name="Umkehrung lin. Abbildungen studieren (5)" isAbstract="false" isLeaf="false">
         <description>Prio 10, Julian</description>
         <elementDefinition Id="2b194df8-f311-430e-8c89-e924ab1d0d89" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="52feb21c-d3a4-4513-a4fc-f84f0dc48405" name="Zutritt geschützer Bereich" isAbstract="false" isLeaf="false">
-        <description>Prio ?, Jan Olaf</description>
-        <elementDefinition Id="955cdcc1-2787-4b09-88be-18d3de170951" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="81a409e5-39ac-449f-86ea-efa3234f52d1" name="Neues Thema hinzufügen" isAbstract="false" isLeaf="false">
+      <useCase Id="81a409e5-39ac-449f-86ea-efa3234f52d1" name="Neues Thema hinzufügen / ändern" isAbstract="false" isLeaf="false">
         <description>Priorität: 2
 Ausgearbeitet von: Jan, Olaf</description>
         <elementDefinition Id="fdfe2f8e-5351-49ff-85ac-b3dc87d29a37" />
-        <suppliersInternal>
-          <dependency Id="3812c909-0d79-4f65-bb74-c12bd1c1c433">
-            <useCaseMoniker Id="52feb21c-d3a4-4513-a4fc-f84f0dc48405" LastKnownName="Zutritt geschützer Bereich" />
-            <elementDefinition Id="9ac7cb84-36d4-4da8-8b19-90d6b133a8d9" />
-          </dependency>
-        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="48e5c0b8-6fe2-4b02-92c2-d742ce5c645c" name="Fraktalerzeugung mit IFS  studieren (9)" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ce4d7008-fd8a-40d6-a09a-5094ad6f6555" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2bd88d7f-4d70-4573-9bcd-4151ad68d3d9" name="Zuordnungsvorschrift einer lin. Abb. studieren (1)" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9709b986-d5d6-4fd4-b5d8-1a5661359df0" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bc602025-3c8f-4c82-ae16-037cb3a422ff" name="Lin. Abb. aus Summe bel. Vektoren studieren (2)" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2288e637-e01a-4656-aeec-f4512662cbd1" />
       </useCase>
     </useCaseModelRootHasTypes>
   </packagedElements>
