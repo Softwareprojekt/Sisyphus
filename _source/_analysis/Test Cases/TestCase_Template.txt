@@ -1,0 +1,14 @@
+Testfall: TestCase_XY_FOO
+
+Ziel: bar
+
+allgemeine Vorbedinung: yolo
+
+Testschritte:
+
+1. a
+2. b
+3. c
+
+Alternativen:
+	...
