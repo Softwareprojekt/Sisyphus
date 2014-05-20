@@ -1,0 +1,19 @@
+Testfall: TestCase_T8_Zuordnungsvorschrift_aff_Abb_studiere
+
+Ziel: Die Übung Zuordnungsvorschrift affine Abbildung studieren funktioniert
+
+allgemeine Vorbedinung: Die Übung Zuordnungsvorschrift affine Abbildung studieren ist geöffnet
+
+Testschritte:
+
+1. Als erstes werden 3 Punkte im Ausgangskoordinatensystem eingegeben, die nicht auf der Ursprungsgeraden liegen.
+2. Das System muss nun die 3 Punkte als ein Dreieck aus 3 Vektoren anzeigen.
+3. Das System muss die Transformation des Ursprungsvektordreicks aus den Einheitsvektoren berechnen und ausgeben.
+4. Jetzt kann in das Zielkoordinatensystem das Zieldreieck abgebildet werden.
+5. Das System muss nun die Gesamtübertragungsfunktion anzeigen.
+
+Alternativen:
+
+	Eingaben von drei Punkten auf einer Linie.
+
+	
