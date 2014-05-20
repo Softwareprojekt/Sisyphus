@@ -1,0 +1,35 @@
+Testfall: TestCase_A1_Arbeitsheft_anlegen
+
+Ziel: Arbeitsheft anlegen erfolgreich
+allgemeine Vorbedinung: Programm Sisyphus ist geöffnet
+
+Testschritte:
+
+1. In der Mindmap eine Übung öffnen.
+2. Arbeitsheft anlegen auswählen
+3. Im Dialog muss der Vor - und der Nachname eingegeben werden.
+4. Der Nutzer bestätigt mit OK das Anlegen des Arbeitshefts.
+5. Überprüfung, ob das Arbeitsheft angelegt wurde (entsprechende Datei im Ordner Arbeitsheft suchen.)
+6. Der Testfall ist erfolgreich, wenn die entsprechende Datei auffindbar ist.
+
+Test - Varianten:
+
+Variante 1:
+
+	1. In der Mindmap eine Übung öffnen.
+	2. Arbeitsheft anlegen auswählen
+	3. Im folgenden Dialog darf nur eines der Namensfehler ausgefüllt werden.
+	4. Das System muss nun eine Fehlermeldung ausgeben.
+
+
+Variante 2:
+
+Vorbedinung: Es ist bereits ein Arbeitsheft vorhanden und der Vor - und Nachname dafür ist bekannt.
+	
+	1. In der Mindmap eine Übung öffnen.
+	2. Arbeitsheft anlegen auswählen
+	3. Bekannten Vor - und Nachname eingeben.
+	4. Das System bietet dem Nutzer nun an entweder abzubrechen oder das Arbeitsheft zu überschreiben.
+	5. Das Überschreiben anwählen.
+	6. Überprüfung, ob überschrieben wurde.
+	
