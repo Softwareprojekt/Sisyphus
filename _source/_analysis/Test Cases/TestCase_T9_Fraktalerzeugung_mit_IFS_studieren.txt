@@ -1,0 +1,27 @@
+Testfall: TestCase_T9_Fraktalerzeugung_mit_IFS_studieren
+Autor: Jodli
+Datum: 20.05.2014
+
+Allgemeines:
+
+	Durchlaufen jeder Ablauf-Variante (auch mehrmalig)?
+
+Vorbedingung:
+	
+	Thema "Fraktalerzeugung mit IFS studieren" wurde ausgewaehlt.
+	
+Nachbedingung:
+
+	Thema "Fraktalerzeugung mit IFS studieren" wurde abgebrochen oder gespeichert und geschlossen.
+
+Normaler Ablauf:
+
+	zu 2.: Alle Steuerelemente korrekt dargestellt?
+	zu 4.:
+	zu 6.: Berechnung und Darstellung korrekt?
+	zu 7.: Uebung erfolgreich gespeichert? 2. zu 1. Koordinatensystem korrekt verschoben? Naechste Iteration mit korrekten Werten?
+
+Spezielle Anforderungen:
+
+	Kommentare/Notizen einfuegen moeglich? Korrektes Speichern/Laden der Notizen?
+	Uebung abbrechbar? "Nicht gespeichertes verwerfen" Dialog?

@@ -1,14 +1,17 @@
-Testfall: TestCase_XY_FOO
+Testfall: 
+Autor: 
+Datum: 
 
-Ziel: bar
+Allgemeines:
 
-allgemeine Vorbedinung: yolo
 
-Testschritte:
+Vorbedingung:
+	
+	
+Nachbedingung:
 
-1. a
-2. b
-3. c
 
-Alternativen:
-	...
+Normaler Ablauf:
+
+
+Spezielle Anforderungen:

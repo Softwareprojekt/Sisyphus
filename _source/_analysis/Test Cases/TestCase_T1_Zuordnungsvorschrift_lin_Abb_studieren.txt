@@ -1,0 +1,31 @@
+Testfall: TestCase_T1_Zuordnungsvorschrift_lin_Abb_studieren
+Autor: Jodli
+Datum: 20.05.2014
+
+Allgemeines:
+
+	Durchlaufen jeder Ablauf-Variante (auch mehrmalig)?
+
+Vorbedingung:
+	
+	Thema "Zuordnungsvorschrift lineare Abbildung studieren" wurde ausgewaehlt.
+	
+Nachbedingung:
+
+	Thema "Zuordnungsvorschrift lineare Abbildung studieren" wurde abgebrochen oder gespeichert und geschlossen.
+
+Normaler Ablauf:
+
+	zu 2.: Steuerelemente (Koordinatensysteme und Transformation) korrekt dargestellt?
+	zu 3.: Punkt im Ursprung? Punkt negativ? -> Abbrechen.
+	zu 4.: Vektoren x, e1, e2 und Funktion korrekt dargestellt?
+	zu 6.: Punkte m1, m2 auf einer Ursprungsgeraden? Punkte negativ?
+	zu 7.: Vektoren m1, m2 korrekt dargestellt?
+	zu 8.: Transformation f(x) korrekt berechnet?
+	zu 9.: Vektor f(x) korrekt dargestellt?
+	zu 10.: Determinante korrekt berechnet und dargestellt? Uebung korrekt gespeichert? Vektoren aenderbar + neu berechnet?
+
+Spezielle Anforderungen:
+
+	Kommentare/Notizen einfuegen moeglich? Korrektes Speichern/Laden der Notizen?
+	Uebung abbrechbar? "Nicht gespeichertes verwerfen" Dialog?
