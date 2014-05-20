@@ -28,11 +28,6 @@ namespace SoftwareProjekt
 {
     public interface IController
     {
-        IView IView
-        {
-            get;
-            set;
-        }
 
         void AddView(IView view);
     }

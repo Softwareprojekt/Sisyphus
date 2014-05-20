@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SoftwareProjekt.CoordinateSystem">
+    <Position X="9.5" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAABAAAAAgAAAEAAAAAAAIAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>CoordinateSystem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="XAxis" />
+      <Property Name="YAxis" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SoftwareProjekt.Axis">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAQAAAABAAAA=</HashCode>
+      <FileName>AbstractAxis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoftwareProjekt.Arrow">
+    <Position X="12.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEgAAQAAAAAAAAAIAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Vector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoftwareProjekt.Gerade">
+    <Position X="14" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Gerade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SoftwareProjekt.IAxis">
+    <Position X="6.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>IAxis.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

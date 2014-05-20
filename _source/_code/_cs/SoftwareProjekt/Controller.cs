@@ -28,28 +28,18 @@ namespace SoftwareProjekt
 {
     public class Controller : IController
     {
+        private List<IView> _viewList;
+    
         public Controller(IView view)
-        {
-            this.IView = view;
+        {            
             view.SetController(this);
             throw new System.NotImplementedException();
-        }
-
-        public IView IView
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
         }
 
 
         public void AddView(IView view)
         {
+            _viewList.Add(view);
             throw new NotImplementedException();
         }
     }

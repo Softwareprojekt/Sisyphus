@@ -26,10 +26,10 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public abstract class AbstractExcercise : IExcercise
+    public abstract class AbstractExcercise : IExcercise 
     {
-        private int _iID;
-        private int _sName;
+        private int _id;
+        private int _name;
     
         public void AbortWork()
         {

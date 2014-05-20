@@ -6,16 +6,18 @@
   <Class Name="SoftwareProjekt.AbstractExcercise">
     <Position X="6.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAgAAAgAABAQAAAIAAAgEGAEgAAACAAAAAEAAAQ=</HashCode>
+      <HashCode>AgAAIAgAAAgAABAQAABIAAAgECAEgAAACAAAAAEAAAA=</HashCode>
       <FileName>AbstractExcercise.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="SoftwareProjekt.Controller">
     <Position X="0.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Controller.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="SoftwareProjekt.UmkehrungLinAbbView">
     <Position X="1.75" Y="7.5" Width="2" />
@@ -23,6 +25,7 @@
       <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAEAAEAAAAAAAAAAAAAAg=</HashCode>
       <FileName>AffineAbbildungView.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="SoftwareProjekt.MainWindow">
     <Position X="6.75" Y="7.25" Width="1.5" />
@@ -53,6 +56,7 @@
       <HashCode>AAAAIAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>AbstractTopic.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="SoftwareProjekt.IExcercise">
     <Position X="4.5" Y="0.75" Width="1.5" />
@@ -86,24 +90,10 @@
   </Interface>
   <Interface Name="SoftwareProjekt.IController">
     <Position X="2.5" Y="4.25" Width="1.5" />
-    <AssociationLine Name="IView" Type="SoftwareProjekt.IView" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="3.688" Y="5.353" />
-        <Point X="3.688" Y="6.156" />
-        <Point X="5.25" Y="6.156" />
-        <Point X="5.25" Y="7.25" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.954" Y="1.602" />
-      </MemberNameLabel>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IController.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="IView" />
-    </ShowAsAssociation>
   </Interface>
   <Interface Name="SoftwareProjekt.IView">
     <Position X="4.75" Y="7.25" Width="1.5" />

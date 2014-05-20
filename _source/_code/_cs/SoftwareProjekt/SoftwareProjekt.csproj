@@ -48,26 +48,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractAxis.cs" />
     <Compile Include="AbstractExcercise.cs" />
     <Compile Include="AbstractTopic.cs" />
     <Compile Include="AffineAbbildung.cs" />
     <Compile Include="AffineAbbildungView.cs" />
     <Compile Include="Components.cs" />
     <Compile Include="Controller.cs" />
+    <Compile Include="CoordinateSystem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormulaDrawer.cs" />
+    <Compile Include="Gerade.cs" />
+    <Compile Include="IAxis.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="IExcercise.cs" />
+    <Compile Include="IGeometric.cs" />
+    <Compile Include="IMathObject.cs" />
     <Compile Include="INotebook.cs" />
     <Compile Include="ITopic.cs" />
     <Compile Include="IView.cs" />
+    <Compile Include="Linie.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Matrix.cs" />
     <Compile Include="MindMap.cs" />
+    <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Triangle.cs" />
+    <Compile Include="Vector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Winkel.cs" />
+    <Compile Include="XAxis.cs" />
+    <Compile Include="YAxis.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="CoordinateSystemUserControl.cd" />
+    <None Include="Math.cd" />
     <None Include="MVC.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
