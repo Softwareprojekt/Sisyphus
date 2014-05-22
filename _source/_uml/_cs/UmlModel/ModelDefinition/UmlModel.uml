@@ -19,16 +19,6 @@
       </annotatedElements>
     </comment>
     <comment
-      Id="c7368316-ffc1-4816-b89d-2ba5c6d62718">
-      <body>Algorithmus kann gewählt werden: Zufallsalgorithmus oder wiederholte Bildung von Collagen.</body>
-      <annotatedElements>
-        <useCaseMoniker
-          Id="3792ef42-4116-46b6-bd10-ee6ef17c5a16"
-          LastKnownName="Fraktal rendern"
-          LastKnownLocation="UmlModel.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
       Id="cc46a065-9208-46c4-8164-299a3d3c54ec">
       <body>Mindmap aktualisieren
 </body>
@@ -198,7 +188,7 @@ Ausgearbeitet von: Marcel</description>
     <packageHasNamedElement>
       <useCase
         Id="3792ef42-4116-46b6-bd10-ee6ef17c5a16"
-        name="Fraktal rendern"
+        name="Fraktal rendern  (Chaosspiel)"
         isAbstract="false"
         isLeaf="false">
         <description>Priorität: 10
@@ -573,6 +563,16 @@ Ausgearbeitet von: Tilo</description>
         Id="2401951f-e6d2-4bdb-86db-b5a4577769c4"
         isAbstract="false"
         isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6c95f522-745d-4deb-beba-7261f00923e5"
+        name="Fraktal rendern mit Rekursion (wiederholte Bildung von Collagen)"
+        isAbstract="false"
+        isLeaf="false">
+        <description>Priorität: 10
+Ausgearbeitet von: Michael, Markus</description>
+      </useCase>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

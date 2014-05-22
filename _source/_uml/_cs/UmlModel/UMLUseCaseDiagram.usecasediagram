@@ -12,13 +12,6 @@
         <useCaseMoniker Id="a5b7b4e6-c14e-45d3-821f-d5bee6e4b61a" LastKnownName="IFS definieren" />
       </annotatedElements>
     </comment>
-    <comment Id="f13c355d-8703-4dd3-92ec-2be0f9ff02fe">
-      <elementDefinition Id="c7368316-ffc1-4816-b89d-2ba5c6d62718" />
-      <body>Algorithmus kann gewählt werden: Zufallsalgorithmus oder wiederholte Bildung von Collagen.</body>
-      <annotatedElements>
-        <useCaseMoniker Id="f182bb7c-9270-49bc-b281-78e42c6ca04e" LastKnownName="Fraktal rendern" />
-      </annotatedElements>
-    </comment>
     <comment Id="c4983aaf-fd25-4396-8e7f-9bdde95c468d">
       <elementDefinition Id="cc46a065-9208-46c4-8164-299a3d3c54ec" />
       <body>Mindmap aktualisieren
@@ -113,7 +106,7 @@ Ausgearbeitet von: Marcel</description>
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="f182bb7c-9270-49bc-b281-78e42c6ca04e" name="Fraktal rendern" isAbstract="false" isLeaf="false">
+      <useCase Id="f182bb7c-9270-49bc-b281-78e42c6ca04e" name="Fraktal rendern  (Chaosspiel)" isAbstract="false" isLeaf="false">
         <description>Priorität: 10
 Ausgearbeitet von: Michael, Markus</description>
         <elementDefinition Id="3792ef42-4116-46b6-bd10-ee6ef17c5a16" />
@@ -267,6 +260,13 @@ Ausgearbeitet von: Jan, Olaf</description>
     <useCaseModelRootHasTypes>
       <useCase Id="bc602025-3c8f-4c82-ae16-037cb3a422ff" name="Lin. Abb. aus Summe bel. Vektoren studieren (2)" isAbstract="false" isLeaf="false">
         <elementDefinition Id="2288e637-e01a-4656-aeec-f4512662cbd1" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9125e87d-ae2b-45c8-b9b0-c3c49af62b60" name="Fraktal rendern mit Rekursion (wiederholte Bildung von Collagen)" isAbstract="false" isLeaf="false">
+        <description>Priorität: 10
+Ausgearbeitet von: Michael, Markus</description>
+        <elementDefinition Id="6c95f522-745d-4deb-beba-7261f00923e5" />
       </useCase>
     </useCaseModelRootHasTypes>
   </packagedElements>

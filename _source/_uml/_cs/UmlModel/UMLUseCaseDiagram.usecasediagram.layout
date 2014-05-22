@@ -14,7 +14,7 @@
       <useCaseMoniker Id="a5b7b4e6-c14e-45d3-821f-d5bee6e4b61a" LastKnownName="IFS definieren" />
       <relativeChildShapes />
     </useCaseShape>
-    <includeConnector edgePoints="[(6.27782197726898 : 4.6246022045792); (6.22217802273102 : 5.1253977954208)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«Einschließen»">
+    <includeConnector edgePoints="[(6.27782197726898 : 4.6246022045792); (6.22217802273102 : 5.1253977954208)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«Einschließen»">
       <includeMoniker Id="496fbe19-4661-4453-bd88-c66709ca2dfa" />
       <relativeChildShapes />
       <nodes>
@@ -34,7 +34,7 @@
       <useCaseMoniker Id="f330d002-b87a-4b5a-bb9a-7537ee241afe" LastKnownName="Affine Abb. durch  Abklicken definieren" />
       <relativeChildShapes />
     </useCaseShape>
-    <includeConnector edgePoints="[(6.66883242981417 : 4.57974932236063); (7.45616757018583 : 5.17025067763937)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«Einschließen»">
+    <includeConnector edgePoints="[(6.66883242981417 : 4.57974932236063); (7.45616757018583 : 5.17025067763937)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«Einschließen»">
       <includeMoniker Id="caed1389-6d28-4b43-8bab-38b07f73982c" />
       <relativeChildShapes />
       <nodes>
@@ -42,15 +42,15 @@
         <useCaseShapeMoniker Id="e2940034-4d58-42a5-af33-b0c23152cf6e" />
       </nodes>
     </includeConnector>
-    <useCaseShape Id="9aa0ff8e-be18-40d3-9c7d-11ffc0fcf320" absoluteBounds="10.75, 9.375, 1.375, 0.625" customColor="238, 237, 131" heightOffset="0">
-      <useCaseMoniker Id="f182bb7c-9270-49bc-b281-78e42c6ca04e" LastKnownName="Fraktal rendern" />
+    <useCaseShape Id="9aa0ff8e-be18-40d3-9c7d-11ffc0fcf320" absoluteBounds="11.125, 9.375, 1.375, 0.625" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="f182bb7c-9270-49bc-b281-78e42c6ca04e" LastKnownName="Fraktal rendern  (Chaosspiel)" />
       <relativeChildShapes />
     </useCaseShape>
     <useCaseShape Id="f57d7867-51e1-4fd5-b3be-3a6520c7cc2f" absoluteBounds="8.875, 5.25, 1.375, 0.625" customColor="238, 237, 131" heightOffset="0">
       <useCaseMoniker Id="16b7693a-d60c-44ce-b72e-0fa353f052b0" LastKnownName="Bild einlesen" />
       <relativeChildShapes />
     </useCaseShape>
-    <includeConnector edgePoints="[(8.49166552371558 : 5.48601182312254); (8.88333447628441 : 5.51398817687746)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black" useCaseStereotype="«Einschließen»">
+    <includeConnector edgePoints="[(8.49166552371558 : 5.48601182312254); (8.88333447628441 : 5.51398817687746)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black" useCaseStereotype="«Einschließen»">
       <includeMoniker Id="f64a873d-5e2a-4c0a-9160-44bf83fef60a" />
       <relativeChildShapes />
       <moveableDecoratorHostShapes>
@@ -141,7 +141,7 @@
       <useCaseMoniker Id="81a409e5-39ac-449f-86ea-efa3234f52d1" LastKnownName="Neues Thema hinzufügen / ändern" />
       <relativeChildShapes />
     </useCaseShape>
-    <useCaseDependencyConnector edgePoints="[(3.84375 : 8.125); (5.51637340947723 : 10.0365696108311)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+    <useCaseDependencyConnector edgePoints="[(3.84375 : 8.125); (5.51637340947723 : 10.0365696108311)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
       <dependencyMoniker Id="490231e0-9516-482a-9017-fe08d892306a" />
       <relativeChildShapes />
       <nodes>
@@ -165,29 +165,18 @@
       <commentMoniker Id="6fd7f14b-ec0d-4695-8e1c-d3419fa8c5b8" />
       <relativeChildShapes />
     </commentShape>
-    <commentConnector edgePoints="[(7.5 : 4.375); (6.98610967926537 : 4.375)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+    <commentConnector edgePoints="[(7.5 : 4.375); (6.98610967926537 : 4.375)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <nodes>
         <commentShapeMoniker Id="8e285766-411e-4674-86b0-1b6b6ec8ac9c" />
         <useCaseShapeMoniker Id="ae4a0d32-e309-45ee-be32-1d1048406a7c" />
       </nodes>
     </commentConnector>
-    <commentShape Id="95ab1501-2965-413a-a0bc-29cb7d4b6f85" absoluteBounds="12.875, 9.75, 1.25, 0.875" customColor="251, 247, 200">
-      <commentMoniker Id="f13c355d-8703-4dd3-92ec-2be0f9ff02fe" />
-      <relativeChildShapes />
-    </commentShape>
-    <commentConnector edgePoints="[(12.875 : 9.875); (11.9875 : 9.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
-      <relativeChildShapes />
-      <nodes>
-        <commentShapeMoniker Id="95ab1501-2965-413a-a0bc-29cb7d4b6f85" />
-        <useCaseShapeMoniker Id="9aa0ff8e-be18-40d3-9c7d-11ffc0fcf320" />
-      </nodes>
-    </commentConnector>
     <commentShape Id="3d0552e4-2745-4697-9462-cdb61b0cc60d" absoluteBounds="8.625, 1.625, 1.25, 0.5" customColor="251, 247, 200">
       <commentMoniker Id="c4983aaf-fd25-4396-8e7f-9bdde95c468d" />
       <relativeChildShapes />
     </commentShape>
-    <commentConnector edgePoints="[(8.625 : 1.875); (7.98610967926537 : 1.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+    <commentConnector edgePoints="[(8.625 : 1.875); (7.98610967926537 : 1.875)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <nodes>
         <commentShapeMoniker Id="3d0552e4-2745-4697-9462-cdb61b0cc60d" />
@@ -198,7 +187,7 @@
       <commentMoniker Id="7188c751-713a-47e9-80c9-635aa2bf25c6" />
       <relativeChildShapes />
     </commentShape>
-    <commentConnector edgePoints="[(8.625 : 2.5625); (8 : 2.5625)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+    <commentConnector edgePoints="[(8.625 : 2.5625); (8 : 2.5625)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <nodes>
         <commentShapeMoniker Id="8464dbba-c808-4889-8844-156a824253b3" />
@@ -209,7 +198,7 @@
       <commentMoniker Id="b7732ba9-6f60-4bea-86b9-216736b8386c" />
       <relativeChildShapes />
     </commentShape>
-    <commentConnector edgePoints="[(8.625 : 3.375); (7.98610967926537 : 3.375)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+    <commentConnector edgePoints="[(8.625 : 3.375); (7.98610967926537 : 3.375)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <nodes>
         <commentShapeMoniker Id="dc7e8aa9-9fab-4920-b52d-e756d9fc48ff" />
@@ -220,7 +209,7 @@
       <commentMoniker Id="0e8b3c8a-00b3-4941-9383-9f58693c9a17" />
       <relativeChildShapes />
     </commentShape>
-    <commentConnector edgePoints="[(11.625 : 6.875); (10.8459566021003 : 6.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+    <commentConnector edgePoints="[(11.625 : 6.875); (10.8459566021003 : 6.875)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <nodes>
         <commentShapeMoniker Id="fd64595e-1684-44da-b162-c500d9c92888" />
@@ -238,6 +227,10 @@
         <useCaseShapeMoniker Id="f8574a9d-8fb1-41c2-bbe7-099619e77616" />
       </nodes>
     </commentConnector>
+    <useCaseShape Id="5663ff08-793c-4619-bcb0-12534252330f" absoluteBounds="11.125, 10.125, 1.75, 0.75" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="9125e87d-ae2b-45c8-b9b0-c3c49af62b60" LastKnownName="Fraktal rendern mit Rekursion (wiederholte Bildung von Collagen)" />
+      <relativeChildShapes />
+    </useCaseShape>
     <rectangleShape Id="294730a6-7a9c-426c-b7df-f745503cc626" absoluteBounds="5.25, 0.625, 5, 3.125" outlineColor="83, 134, 191" outlineThickness="0.03125" />
     <rectangleShape Id="e88dd3ab-f554-4d32-a867-78c5747a8082" absoluteBounds="5.25, 3.875, 5.125, 2.5" outlineColor="83, 134, 191" outlineThickness="0.03125" />
     <rectangleShape Id="2fc12e6b-2066-4ace-84a6-fc26f42e0027" absoluteBounds="4.75, 0.5, 11.125, 10.625" outlineColor="83, 134, 191" outlineThickness="0.03125" />
