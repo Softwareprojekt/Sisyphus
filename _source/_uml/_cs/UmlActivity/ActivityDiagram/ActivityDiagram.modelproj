@@ -22,12 +22,33 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="Abbildung_Summe_Vektoren.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Abbildung_Summe_Vektoren.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Abbildung_Summe_Vektoren.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Abbildung_vielfacher_Vektoren.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Abbildung_vielfacher_Vektoren.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Abbildung_vielfacher_Vektoren.activitydiagram</DependentUpon>
+    </Content>
     <Content Include="Drehung.activitydiagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Drehung.activitydiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>Drehung.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Fraktalerzeugung_mit_IFS.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Fraktalerzeugung_mit_IFS.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Fraktalerzeugung_mit_IFS.activitydiagram</DependentUpon>
     </Content>
     <Content Include="Hintereinanderausfuehrung.activitydiagram">
       <SubType>Content</SubType>

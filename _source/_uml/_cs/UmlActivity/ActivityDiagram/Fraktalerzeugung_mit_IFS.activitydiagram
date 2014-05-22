@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="90126837-8f9a-4cd3-b9c1-106de25eafa8" name="Fraktalerzeugung_mit_IFS" linkedPackageId="d745f9b3-bbfb-42be-9824-178b480fa0a6" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="7a28f008-fa27-4130-8e20-b6bd6aa587c0">
+      <elementDefinition Id="cc482f37-2c65-4e62-94f7-83a1124a8715" />
+      <body>User waehlt Uebung Fraktalerzeugung mit IFS aus</body>
+      <annotatedElements>
+        <initialNodeMoniker Id="cd8820cb-5799-4393-b4a3-6128c6a27f2e" LastKnownName="Initial1" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="8a996b13-12c1-4657-adcb-93163cfeed91">
+      <profileInstance Id="7e959961-98fc-4f14-b864-c264074c52f3" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="80e63fc1-bfb3-4923-8ead-a6fd2d1cf907">
+      <profileInstance Id="6f8fc45d-5e68-4f4b-86e2-b8412082213e" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="ade3c02d-01eb-48b8-9761-3701082bd1ff" name="Fraktalerzeugung_mit_IFS" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="afbb8398-8747-46e9-8b89-39c4a167dcb2" />
+        <nodes>
+          <initialNode Id="cd8820cb-5799-4393-b4a3-6128c6a27f2e" name="Initial1" isLeaf="false">
+            <elementDefinition Id="194de7f4-dc89-4f95-b643-629c503a791c" />
+            <flowNodeTargets>
+              <controlFlow Id="53ce59dd-b005-42bb-9236-78e5772923c0" isLeaf="false">
+                <opaqueActionMoniker Id="1f1a73ef-ce55-4795-8fc5-6327b1ad7e39" LastKnownName="E/A-Plattform laden" />
+                <elementDefinition Id="e47b2299-4aee-4836-bf0c-aa9be2a45619" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="344c3cbd-b8bb-4b9a-83a3-6c1ac5a194ba" name="Ursprungselement anzeigen" isLeaf="false">
+            <elementDefinition Id="c839db19-105a-4816-917f-140f7cc264db" />
+            <flowNodeTargets>
+              <controlFlow Id="f7d26606-8850-43f2-b1d5-1bbc979af2ce" isLeaf="false">
+                <opaqueActionMoniker Id="36b3bf17-ea23-45e0-8b63-68c485ade1f2" LastKnownName="Funktionen der Iterationen anzeigen" />
+                <elementDefinition Id="b2133b96-37a6-4066-958c-7b694a08614d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="1f1a73ef-ce55-4795-8fc5-6327b1ad7e39" name="E/A-Plattform laden" isLeaf="false">
+            <elementDefinition Id="366bff19-c00e-4d53-82e0-abe64c4ed9f5" />
+            <flowNodeTargets>
+              <controlFlow Id="29380f59-5983-4c7a-9d29-4ad49ef78363" isLeaf="false">
+                <decisionNodeMoniker Id="a54c4f74-ae4a-47ca-983f-f00b46af3196" LastKnownName="Decision2" />
+                <elementDefinition Id="be026d08-9f93-40db-b4d7-f822fe311796" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasInputValues>
+                <inputPin Id="d29dade8-42bd-48e9-bdac-90efaff0f03c" name="Form, Iterationen" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="f88b92ae-66db-430c-85c5-abb3f4465d0f" />
+                  <upperBound>
+                    <literalInteger Id="8c0a41c7-581d-4a6c-b637-469c723b1256" name="2147483647" value="2147483647">
+                      <elementDefinition Id="4b293e88-95b3-4b6c-9973-dacf4b23a952" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </opaqueActionHasInputValues>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="350eaffa-004e-47a0-93c8-48172547644f" name="Ursprungselement, Funktionen, Fraktal" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="277306d6-6f80-4bee-b57a-a18a9c4fa86f" />
+                  <upperBound>
+                    <literalInteger Id="de448522-6301-4f96-98bb-c1c820fc93c0" name="2147483647" value="2147483647">
+                      <elementDefinition Id="92b2f485-9f43-4825-a6a1-f7b6d6dc9af0" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+          <opaqueAction Id="36b3bf17-ea23-45e0-8b63-68c485ade1f2" name="Funktionen der Iterationen anzeigen" isLeaf="false">
+            <elementDefinition Id="4f439b53-a062-419b-8fa9-db4b0e55879e" />
+            <flowNodeTargets>
+              <controlFlow Id="953d0739-4690-428f-be3a-bb5450b60901" isLeaf="false">
+                <opaqueActionMoniker Id="b49bc8ee-28dc-464c-820e-95d1b8faf8c4" LastKnownName="Fraktal anzeigen" />
+                <elementDefinition Id="1c18ce01-8d83-4b80-99fd-400dce68e53c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="b49bc8ee-28dc-464c-820e-95d1b8faf8c4" name="Fraktal anzeigen" isLeaf="false">
+            <elementDefinition Id="cbd8e89d-a16c-4178-9591-003a0170bf57" />
+            <flowNodeTargets>
+              <controlFlow Id="40ea30a4-1fba-4504-8d3c-4e65f04c17ff" isLeaf="false">
+                <decisionNodeMoniker Id="32849007-d9ac-4df3-afa1-bdbf715589c2" LastKnownName="Decision1" />
+                <elementDefinition Id="a8aaabf5-a34a-4969-a1f2-43c355ee3f79" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="74a4e1b4-bfb6-42d5-b5c6-de8ff88a9f01" name="Speichern" isLeaf="false">
+            <elementDefinition Id="06927a30-4736-4508-90be-6160acda83ef" />
+            <flowNodeTargets>
+              <controlFlow Id="75c2522d-90ee-4391-99ff-a152fc45dd91" isLeaf="false">
+                <opaqueActionMoniker Id="b49bc8ee-28dc-464c-820e-95d1b8faf8c4" LastKnownName="Fraktal anzeigen" />
+                <elementDefinition Id="1f027315-4e19-4a43-92aa-7e1d0db9a5d5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="32849007-d9ac-4df3-afa1-bdbf715589c2" name="Decision1" isLeaf="false">
+            <elementDefinition Id="5d5fefd0-c977-45c0-83df-28dddd759b32" />
+            <flowNodeTargets>
+              <controlFlow Id="81c9ed92-47be-4dd8-9fff-ab654a8ba78f" guard="User waehlt speichen" isLeaf="false">
+                <opaqueActionMoniker Id="74a4e1b4-bfb6-42d5-b5c6-de8ff88a9f01" LastKnownName="Speichern" />
+                <elementDefinition Id="fda84eeb-442e-4b07-b013-19db48b4581b" />
+              </controlFlow>
+              <controlFlow Id="c339383b-3922-4e1d-9f66-7030eebf8e35" guard="User waehlt Beenden" isLeaf="false">
+                <activityFinalNodeMoniker Id="12857946-3504-4458-9ba6-a0fc4e8312d6" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="f2d9436e-ad2d-49c1-88de-195e8c7bf72b" />
+              </controlFlow>
+              <controlFlow Id="0e570bca-ea38-4255-8900-a76d890e69e6" guard="User aendert Form oder Anzahl Iterationen" isLeaf="false">
+                <opaqueActionMoniker Id="344c3cbd-b8bb-4b9a-83a3-6c1ac5a194ba" LastKnownName="Ursprungselement anzeigen" />
+                <elementDefinition Id="24d9e0db-18f7-41b0-91c5-cbdd1b012698" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode Id="a54c4f74-ae4a-47ca-983f-f00b46af3196" name="Decision2" isLeaf="false">
+            <elementDefinition Id="c04adc5c-ac09-4e37-bb47-e01a04b90b83" />
+            <flowNodeTargets>
+              <controlFlow Id="b863eb55-1692-477a-8121-e79fb8074e56" guard="User waehlt Form, User waehlt Anzahl Iterationen" isLeaf="false">
+                <opaqueActionMoniker Id="344c3cbd-b8bb-4b9a-83a3-6c1ac5a194ba" LastKnownName="Ursprungselement anzeigen" />
+                <elementDefinition Id="252ddfff-32c2-4ad4-8994-9ac7cd975168" />
+              </controlFlow>
+              <controlFlow Id="db68c575-ea3b-4040-a160-eeae2226957d" guard="User waehlt Abbrechen" isLeaf="false">
+                <activityFinalNodeMoniker Id="12857946-3504-4458-9ba6-a0fc4e8312d6" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="6e34c9b1-0bd6-431e-b07d-ce8f9d2c2e6f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode Id="12857946-3504-4458-9ba6-a0fc4e8312d6" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="0eab0df7-f4ef-4ded-8da3-773c44f6f2d3" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="d745f9b3-bbfb-42be-9824-178b480fa0a6" name="ActivityDiagram">
+    <elementDefinition Id="44755596-ef36-4b32-be68-04b00064a432" />
+  </package>
+</activityRootModel>

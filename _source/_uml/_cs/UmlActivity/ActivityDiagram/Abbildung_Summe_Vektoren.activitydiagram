@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="1ad51063-138f-464f-b115-07977010c154" name="Activity1" linkedPackageId="5be47f6b-0f0c-4f22-83c4-e6a5afed97ad" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="9e4f62da-4b7b-4986-929d-87a1760746d5">
+      <elementDefinition Id="475ba461-fdf5-4af8-a286-5b743cdf2cc8" />
+      <body>User waehlt Uebung Abbildung Summe Vektoren aus</body>
+      <annotatedElements>
+        <initialNodeMoniker Id="d7ac472b-1f1c-4387-8214-cf8d9bf40d52" LastKnownName="Initial1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="5f877d1c-1eaf-4e4a-a88e-bf650ea72417">
+      <elementDefinition Id="963e3c56-d5b6-40a8-b3c7-92076f0d0873" />
+      <body>Der User kann jederzeit abbrechen</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="f589f902-dee6-4d0d-a470-0445444f5364">
+      <profileInstance Id="09d90ec1-6ed3-47ee-aed3-ed60be12c506" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="1327bd18-cb47-4916-b862-21dc45eeae41">
+      <profileInstance Id="42482eac-5005-4fde-871a-40b8a226bfb4" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="e86f343d-d5cd-449b-adec-6572202a234c" name="Activity1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="6a3b34c6-4344-486f-81ff-58376004c364" />
+        <nodes>
+          <initialNode Id="d7ac472b-1f1c-4387-8214-cf8d9bf40d52" name="Initial1" isLeaf="false">
+            <elementDefinition Id="e474ceca-ae35-45af-b0f7-4fb141d61188" />
+            <flowNodeTargets>
+              <controlFlow Id="3c16e496-b80a-462b-8d43-49b024b7118c" isLeaf="false">
+                <opaqueActionMoniker Id="25aa6026-5b2a-488d-8c3e-2ad0d64776fc" LastKnownName="E/A-Plattform laden" />
+                <elementDefinition Id="07105433-56ca-4794-90e7-a99fc23a3dec" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="76f3701d-aa2b-4d9d-b93b-ab39a8b1d28a" name="Vektor x(IN) anzeigen" isLeaf="false">
+            <elementDefinition Id="6456d1cd-6a84-4464-b5d2-63d26a0b0be1" />
+            <flowNodeTargets>
+              <controlFlow Id="0992c1bc-fab3-4af5-9fe4-dd47c0178280" guard="User gibt Punkt y(IN)  ein" isLeaf="false">
+                <decisionNodeMoniker Id="4aa64aee-b1ae-4e75-b083-9bb73be77505" LastKnownName="Decision1" />
+                <elementDefinition Id="c9de4391-a11a-43fe-a963-7e1a0bf817a3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="4654da98-fcce-429b-b36d-e63f9c6ba0b7" name="Vektor y(IN) anzeigen" isLeaf="false">
+            <elementDefinition Id="aca4936e-0561-4b27-b8c1-a69627ff40e9" />
+            <flowNodeTargets>
+              <controlFlow Id="cd9ae454-18b7-4919-a9f2-f9926af34413" isLeaf="false">
+                <opaqueActionMoniker Id="bf3635df-c7c8-42e4-b85f-af612c5f2839" LastKnownName="Vektor xy(IN) anzeigen" />
+                <elementDefinition Id="25598c3b-93ad-4478-bacf-5f40ca9c9559" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="25aa6026-5b2a-488d-8c3e-2ad0d64776fc" name="E/A-Plattform laden" isLeaf="false">
+            <elementDefinition Id="9d76aee3-0150-42ec-b1e5-01c722555769" />
+            <flowNodeTargets>
+              <controlFlow Id="17c31739-2414-449c-bf7d-d4d990b114c0" guard="User gibt Punkt x(IN) ein" isLeaf="false">
+                <opaqueActionMoniker Id="76f3701d-aa2b-4d9d-b93b-ab39a8b1d28a" LastKnownName="Vektor x(IN) anzeigen" />
+                <elementDefinition Id="b739247b-1ed6-4bd7-aa25-0403b7e626cb" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasInputValues>
+                <inputPin Id="17745354-270b-454b-9c14-f24666e38e75" name="Punkt x, Punkt y, Matrix" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="497d1f71-0de0-44d8-852a-ee0818d4ad18" />
+                  <upperBound>
+                    <literalInteger Id="edc93108-0b80-41b2-9f06-c6f5581b2c59" name="2147483647" value="2147483647">
+                      <elementDefinition Id="d007bca3-2858-48c4-b4cd-e76239483d35" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </opaqueActionHasInputValues>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="54fae9c3-1ffc-4dab-8512-fcf72b10e467" name="E/A-Koordinatensysteme, Transformationsgleichung" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="d91eee00-413c-43b2-8ef0-329547a14057" />
+                  <upperBound>
+                    <literalInteger Id="6189af74-4c62-407b-a4e5-7778d3d9e8ba" name="2147483647" value="2147483647">
+                      <elementDefinition Id="04a54783-e1ba-43d0-b0dd-a24d2ddf6b9c" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+          <opaqueAction Id="bf3635df-c7c8-42e4-b85f-af612c5f2839" name="Vektor xy(IN) anzeigen" isLeaf="false">
+            <elementDefinition Id="4d43837e-7b69-4e08-aab6-a44751440e1a" />
+            <flowNodeTargets>
+              <controlFlow Id="8bfc92f5-ed22-4b37-b828-984fa143560f" guard="User gibt Matrix ein" isLeaf="false">
+                <decisionNodeMoniker Id="cbb332b2-ce5f-475d-ad7e-a036ec5c839f" LastKnownName="Decision2" />
+                <elementDefinition Id="86411cc5-2c67-4d5b-83db-da957d398ca0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="4aa64aee-b1ae-4e75-b083-9bb73be77505" name="Decision1" isLeaf="false">
+            <elementDefinition Id="4f44f990-87b4-4722-b803-dbd8b5d23605" />
+            <flowNodeTargets>
+              <controlFlow Id="c3ba641c-ed2c-428c-8f1f-d76959990116" guard="x und y auf Ursprungsgeraden" isLeaf="false">
+                <opaqueActionMoniker Id="76f3701d-aa2b-4d9d-b93b-ab39a8b1d28a" LastKnownName="Vektor x(IN) anzeigen" />
+                <elementDefinition Id="989e6ee6-b122-4302-9e35-51dbf6eba186" />
+              </controlFlow>
+              <controlFlow Id="eafaa8cb-4555-4ab3-85eb-39b02d414f76" isLeaf="false">
+                <opaqueActionMoniker Id="4654da98-fcce-429b-b36d-e63f9c6ba0b7" LastKnownName="Vektor y(IN) anzeigen" />
+                <elementDefinition Id="00d1f3d8-9c22-49e5-944c-ec92cdb50618" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="72ee4780-e970-4246-9035-b92fa9d90d21" name="Berechnen/Ausgabe der  transformierten Vektoren (OUT)" isLeaf="false">
+            <elementDefinition Id="af56f088-19c3-4908-99f2-4d9ec57051f5" />
+            <flowNodeTargets>
+              <controlFlow Id="de9512e2-12e0-4f35-9faa-6bb458497a5e" isLeaf="false">
+                <mergeNodeMoniker Id="fa5ba193-ed43-420b-8bbb-a12ff012e858" LastKnownName="Merge1" />
+                <elementDefinition Id="2d3e6501-d995-4521-86bb-9d5db6300a1c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="cbb332b2-ce5f-475d-ad7e-a036ec5c839f" name="Decision2" isLeaf="false">
+            <elementDefinition Id="29f06327-d467-4b6a-acd5-547cd634c5ad" />
+            <flowNodeTargets>
+              <controlFlow Id="acb8e2ec-ae91-40fc-8d91-b6e6887d2b37" guard="Determinante = 0" isLeaf="false">
+                <opaqueActionMoniker Id="bf3635df-c7c8-42e4-b85f-af612c5f2839" LastKnownName="Vektor xy(IN) anzeigen" />
+                <elementDefinition Id="8d3d94bd-4c3d-4e53-ba4d-6d06f0d1d138" />
+              </controlFlow>
+              <controlFlow Id="e7f0117e-c725-404e-8bce-01fd49d7ff35" isLeaf="false">
+                <opaqueActionMoniker Id="72ee4780-e970-4246-9035-b92fa9d90d21" LastKnownName="Berechnen/Ausgabe der  transformierten Vektoren (OUT)" />
+                <elementDefinition Id="88614138-d769-4c2a-8e9f-b78cc51c248c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="ed7acc18-7814-42ef-b771-87c6bbd32072" name="Determinante anzeigen" isLeaf="false">
+            <elementDefinition Id="48a51ee2-a353-449c-a112-81ee1d5678e2" />
+            <flowNodeTargets>
+              <controlFlow Id="e6b49c3e-7ffe-4529-86cf-1e7aed02368f" isLeaf="false">
+                <mergeNodeMoniker Id="fa5ba193-ed43-420b-8bbb-a12ff012e858" LastKnownName="Merge1" />
+                <elementDefinition Id="7586b353-bb65-4d12-a168-15d85f91443f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="964c1789-f84d-4d57-8f43-b5d42b7f8e45" name="Decision4" isLeaf="false">
+            <elementDefinition Id="55baec1f-9819-4a14-b4b6-a5c0097a849c" />
+            <flowNodeTargets>
+              <controlFlow Id="5e2ee0e1-94ad-4524-aa02-3598cdbffa02" guard="User aendert Punkt y(OUT)" isLeaf="false">
+                <decisionNodeMoniker Id="f23be20e-c058-46af-a455-65cb0205a69b" LastKnownName="Decision9" />
+                <elementDefinition Id="cfd9998f-c564-4553-aa61-df6cd968f6e9" />
+              </controlFlow>
+              <controlFlow Id="5452db76-c1f7-48ea-83de-8d17f62c3b8d" guard="User aendert Punkt x(OUT)" isLeaf="false">
+                <decisionNodeMoniker Id="b2028ecd-0ef7-4fea-8c56-c8dc648267b9" LastKnownName="Decision8" />
+                <elementDefinition Id="1f1d6f2d-d2f3-4b8e-863e-68e4e9771016" />
+              </controlFlow>
+              <controlFlow Id="ac6bdbdc-718e-4acc-8101-e9e2f7afe2d2" guard="User aendert Punkt x(IN)" isLeaf="false">
+                <decisionNodeMoniker Id="3220b12e-3d84-421b-b3a3-23e0b433c860" LastKnownName="Decision5" />
+                <elementDefinition Id="a5144e98-8350-4132-80ce-1882e3b90246" />
+              </controlFlow>
+              <controlFlow Id="179433e0-4520-458e-b618-8115c68c4bae" guard="User aendert Punkt y(IN)" isLeaf="false">
+                <decisionNodeMoniker Id="0b1025e1-3931-40d4-90a9-7e944727dae7" LastKnownName="Decision6" />
+                <elementDefinition Id="62dc10ae-012b-42d0-8d8e-7584fb868586" />
+              </controlFlow>
+              <controlFlow Id="fd3cb773-e8e5-4540-9e74-64bea8691e38" guard="User aendert Matrix" isLeaf="false">
+                <decisionNodeMoniker Id="8c96d94d-4516-4305-8b9a-6e82a65b48c4" LastKnownName="Decision7" />
+                <elementDefinition Id="169db5e1-8dc0-49ca-b031-506d7926f564" />
+              </controlFlow>
+              <controlFlow Id="2f3ef0f5-9983-4ef7-9f33-1f7d46a6fad3" guard="User waehlt speichen" isLeaf="false">
+                <opaqueActionMoniker Id="b543d420-9b94-4291-9860-aff2bf57892e" LastKnownName="Speichern" />
+                <elementDefinition Id="f12ea896-f4f8-4250-a5f0-0628e789e8ac" />
+              </controlFlow>
+              <controlFlow Id="d737e535-c2ac-4972-9f4e-bd1518528735" guard="User aktiviert Det." isLeaf="false">
+                <decisionNodeMoniker Id="8da972e4-803e-49d3-9bc0-09822eb6bd93" LastKnownName="Decision3" />
+                <elementDefinition Id="fd66ec60-9a16-413e-96bb-92b3378d3c48" />
+              </controlFlow>
+              <controlFlow Id="c88d5740-7f17-4a60-96e4-1f810ea40f41" guard="User deaktiviert Det." isLeaf="false">
+                <decisionNodeMoniker Id="b3cd07a9-7670-45e7-a0ff-a8988ffca128" LastKnownName="Decision31" />
+                <elementDefinition Id="1ae2b089-3c7c-4794-b61a-22a14893ec40" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode Id="3220b12e-3d84-421b-b3a3-23e0b433c860" name="Decision5" isLeaf="false">
+            <elementDefinition Id="28f7e178-6791-4095-b311-44e3cca720ee" />
+            <flowNodeTargets>
+              <controlFlow Id="21cd90ac-8527-4c70-823c-ba9db0ece5b2" isLeaf="false">
+                <opaqueActionMoniker Id="79183e2c-32f9-4bba-b234-25200b104fef" LastKnownName="Vektor x(IN) aktualisieren" />
+                <elementDefinition Id="b9d68b18-be2b-4ef3-9c8c-5e90ba92b70c" />
+              </controlFlow>
+              <controlFlow Id="3eaa6af8-840e-4e6a-8712-07f79731f269" guard="x(IN) und y(IN) auf Ursprungsgeraden" isLeaf="false">
+                <opaqueActionMoniker Id="b2416fe6-1ad6-48df-b669-7413423ccc61" LastKnownName="Aenderungen verwerfen" />
+                <elementDefinition Id="b7772a83-1de5-4473-a3fa-905eb16b10d2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode Id="0b1025e1-3931-40d4-90a9-7e944727dae7" name="Decision6" isLeaf="false">
+            <elementDefinition Id="55ffd5da-79c7-4e47-bdc7-ce576afd4643" />
+            <flowNodeTargets>
+              <controlFlow Id="fafcf88b-f6d4-4870-9955-eb5c616609db" isLeaf="false">
+                <opaqueActionMoniker Id="75af2f3f-f3f9-4e61-b85d-1a790ba97466" LastKnownName="Vektor y(IN) aktualisieren" />
+                <elementDefinition Id="a7aa65b1-9fe7-40b5-9bf1-47d3fc219b69" />
+              </controlFlow>
+              <controlFlow Id="515067d1-75e4-4728-8238-cacf1b70930a" guard="x(IN) und y(IN) auf Ursprungsgeraden" isLeaf="false">
+                <opaqueActionMoniker Id="b2416fe6-1ad6-48df-b669-7413423ccc61" LastKnownName="Aenderungen verwerfen" />
+                <elementDefinition Id="6a738e46-7789-4c50-888b-0bf66a07112b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="79183e2c-32f9-4bba-b234-25200b104fef" name="Vektor x(IN) aktualisieren" isLeaf="false">
+            <elementDefinition Id="03c522f2-3270-4e24-83cd-976d81c3b7de" />
+            <flowNodeTargets>
+              <controlFlow Id="43690751-7b48-4b00-8682-01981de334a5" isLeaf="false">
+                <opaqueActionMoniker Id="fcfa9ca1-71b4-49c0-ad71-6e66e3284d02" LastKnownName="Vektor x+y(IN) aktualisieren" />
+                <elementDefinition Id="ddbb0ee9-5d74-40b5-8f94-33ad17ed4e92" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="75af2f3f-f3f9-4e61-b85d-1a790ba97466" name="Vektor y(IN) aktualisieren" isLeaf="false">
+            <elementDefinition Id="34d9791b-a17a-40e3-98c5-8b2a8ba8afde" />
+            <flowNodeTargets>
+              <controlFlow Id="fe619f76-9f23-4ec6-84b4-8cda97d71468" isLeaf="false">
+                <opaqueActionMoniker Id="fcfa9ca1-71b4-49c0-ad71-6e66e3284d02" LastKnownName="Vektor x+y(IN) aktualisieren" />
+                <elementDefinition Id="2a0c7c49-de18-4cfd-87b7-2c37d4991a87" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="fcfa9ca1-71b4-49c0-ad71-6e66e3284d02" name="Vektor x+y(IN) aktualisieren" isLeaf="false">
+            <elementDefinition Id="8a99291a-4b15-4355-9082-061b60df5588" />
+            <flowNodeTargets>
+              <controlFlow Id="8135e891-5319-4383-aa99-8cd873c9d129" isLeaf="false">
+                <opaqueActionMoniker Id="72ee4780-e970-4246-9035-b92fa9d90d21" LastKnownName="Berechnen/Ausgabe der  transformierten Vektoren (OUT)" />
+                <elementDefinition Id="b88bbf07-2a68-4759-b6d7-5db309e1c712" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="b543d420-9b94-4291-9860-aff2bf57892e" name="Speichern" isLeaf="false">
+            <elementDefinition Id="f69f6aab-bda5-4f28-812f-692ba70114f6" />
+            <flowNodeTargets>
+              <controlFlow Id="0480d845-cecc-476f-96e5-d6166a2a9838" isLeaf="false">
+                <mergeNodeMoniker Id="fa5ba193-ed43-420b-8bbb-a12ff012e858" LastKnownName="Merge1" />
+                <elementDefinition Id="719133b8-12d4-4cde-b5fe-f0be2233ea37" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="b2416fe6-1ad6-48df-b669-7413423ccc61" name="Aenderungen verwerfen" isLeaf="false">
+            <elementDefinition Id="525a47a0-2f85-4177-9a29-d6711177018e" />
+            <flowNodeTargets>
+              <controlFlow Id="c0cafa48-0924-4a7e-8a87-d9076dbdf59e" isLeaf="false">
+                <mergeNodeMoniker Id="fa5ba193-ed43-420b-8bbb-a12ff012e858" LastKnownName="Merge1" />
+                <elementDefinition Id="59940314-44cc-4a81-bb5e-22c96eeede0c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="8c96d94d-4516-4305-8b9a-6e82a65b48c4" name="Decision7" isLeaf="false">
+            <elementDefinition Id="1451ee72-7a36-4147-84aa-d497413a3fb5" />
+            <flowNodeTargets>
+              <controlFlow Id="5f43b014-bd3a-4a5d-92c4-435b383ca817" guard="Determinante = 0" isLeaf="false">
+                <opaqueActionMoniker Id="b2416fe6-1ad6-48df-b669-7413423ccc61" LastKnownName="Aenderungen verwerfen" />
+                <elementDefinition Id="4c559124-f8fd-47d0-86ec-b3baa468aa5b" />
+              </controlFlow>
+              <controlFlow Id="a72fdab2-be07-4527-a049-c99b5c886534" isLeaf="false">
+                <opaqueActionMoniker Id="72ee4780-e970-4246-9035-b92fa9d90d21" LastKnownName="Berechnen/Ausgabe der  transformierten Vektoren (OUT)" />
+                <elementDefinition Id="272f8b7b-ff96-46bd-a4e7-c7ccbd75ca4d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode Id="b2028ecd-0ef7-4fea-8c56-c8dc648267b9" name="Decision8" isLeaf="false">
+            <elementDefinition Id="998babd3-10a9-49dc-9bfb-a22fbc458b72" />
+            <flowNodeTargets>
+              <controlFlow Id="c1161738-632f-4f09-9404-61d693dd1759" isLeaf="false">
+                <opaqueActionMoniker Id="d7c39fd7-d76f-4cb3-a47b-3e7e015737f5" LastKnownName="Vektor x(OUT) aktualisieren" />
+                <elementDefinition Id="5af36f2d-147d-4aab-9247-bdc5d9657d77" />
+              </controlFlow>
+              <controlFlow Id="3a5f4b5c-d1d3-4d59-99ad-8882cdc26b3f" guard="x(OUT) und y(OUT) auf Ursprungsgeraden" isLeaf="false">
+                <opaqueActionMoniker Id="b2416fe6-1ad6-48df-b669-7413423ccc61" LastKnownName="Aenderungen verwerfen" />
+                <elementDefinition Id="a2b46357-74b5-4585-b044-f9773f544e45" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode Id="f23be20e-c058-46af-a455-65cb0205a69b" name="Decision9" isLeaf="false">
+            <elementDefinition Id="11943f8c-6714-4665-9a7d-d45bb582ca12" />
+            <flowNodeTargets>
+              <controlFlow Id="49e8f2f2-c17d-42cb-b719-5d402c3f47a9" isLeaf="false">
+                <opaqueActionMoniker Id="feca70cd-a28c-4cf7-9552-9332d8825cfa" LastKnownName="Vektor y(OUT) aktualisieren" />
+                <elementDefinition Id="07892e83-9db3-42c1-987b-78e566607c62" />
+              </controlFlow>
+              <controlFlow Id="f886635e-90f5-4805-aaae-e89869fa2b01" guard="x(OUT) und y(OUT) auf Ursprungsgeraden" isLeaf="false">
+                <opaqueActionMoniker Id="b2416fe6-1ad6-48df-b669-7413423ccc61" LastKnownName="Aenderungen verwerfen" />
+                <elementDefinition Id="e44158a4-1852-4f16-9407-fa2df6da9a90" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="d7c39fd7-d76f-4cb3-a47b-3e7e015737f5" name="Vektor x(OUT) aktualisieren" isLeaf="false">
+            <elementDefinition Id="31e89093-16f5-4c34-80bf-5a63462ff336" />
+            <flowNodeTargets>
+              <controlFlow Id="c3d1126d-6c79-4eed-862e-1c8526f5e873" isLeaf="false">
+                <opaqueActionMoniker Id="a48a8328-ca9e-4e03-9820-56dc5d7f2bfe" LastKnownName="Vektor x+y(OUT) aktualisieren" />
+                <elementDefinition Id="aa0a9d39-3687-43ef-856e-916c5aa5896f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="feca70cd-a28c-4cf7-9552-9332d8825cfa" name="Vektor y(OUT) aktualisieren" isLeaf="false">
+            <elementDefinition Id="f8049ce2-cbb7-444b-ad8d-a6da36385907" />
+            <flowNodeTargets>
+              <controlFlow Id="45383c19-070f-462d-9c7a-0abaff7b374c" isLeaf="false">
+                <opaqueActionMoniker Id="a48a8328-ca9e-4e03-9820-56dc5d7f2bfe" LastKnownName="Vektor x+y(OUT) aktualisieren" />
+                <elementDefinition Id="c23b003e-c660-4ffd-ada8-f77932119499" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a48a8328-ca9e-4e03-9820-56dc5d7f2bfe" name="Vektor x+y(OUT) aktualisieren" isLeaf="false">
+            <elementDefinition Id="5119f84a-cc8b-45d8-a92f-e47c21e37974" />
+            <flowNodeTargets>
+              <controlFlow Id="aeb5b4ef-a1e8-4fb4-bd25-1cc6829d0466" isLeaf="false">
+                <opaqueActionMoniker Id="43302688-74cb-43da-b8af-4b529ff765af" LastKnownName="Berechnen/Ausgabe der  transformierten Vektoren (In)" />
+                <elementDefinition Id="917dc238-3f41-4d4c-beb0-7b9523652d19" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="43302688-74cb-43da-b8af-4b529ff765af" name="Berechnen/Ausgabe der  transformierten Vektoren (In)" isLeaf="false">
+            <elementDefinition Id="15366565-9ca4-4248-9c5e-1d04e2cc80ff" />
+            <flowNodeTargets>
+              <controlFlow Id="831b766f-409f-4580-81f6-12ecf4c46c60" isLeaf="false">
+                <mergeNodeMoniker Id="fa5ba193-ed43-420b-8bbb-a12ff012e858" LastKnownName="Merge1" />
+                <elementDefinition Id="3c732f76-5d5a-4a07-9f84-1f03055d4d18" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode Id="fa5ba193-ed43-420b-8bbb-a12ff012e858" name="Merge1" isLeaf="false">
+            <elementDefinition Id="b89fc0ae-581e-40aa-80f2-7ec32e25b4a3" />
+            <flowNodeTargets>
+              <controlFlow Id="1076e6ba-395d-4fa5-b91e-b0fbbdb3afb7" isLeaf="false">
+                <decisionNodeMoniker Id="964c1789-f84d-4d57-8f43-b5d42b7f8e45" LastKnownName="Decision4" />
+                <elementDefinition Id="505ad1b0-aa4c-4caf-b3ba-1fe998345ef8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <decisionNode Id="8da972e4-803e-49d3-9bc0-09822eb6bd93" name="Decision3" isLeaf="false">
+            <elementDefinition Id="898b17f2-57af-4a8e-82a7-a2e187222a05" />
+            <flowNodeTargets>
+              <controlFlow Id="1928b13d-4f74-4977-96d6-b7fbd55343df" guard="Det. ist bereits aktiv" isLeaf="false">
+                <mergeNodeMoniker Id="fa5ba193-ed43-420b-8bbb-a12ff012e858" LastKnownName="Merge1" />
+                <elementDefinition Id="dfabbc18-1f7e-4ac9-a7fd-17dc518bc368" />
+              </controlFlow>
+              <controlFlow Id="f3df236e-3e61-4c63-b6f5-3c7b178c92ca" isLeaf="false">
+                <opaqueActionMoniker Id="ed7acc18-7814-42ef-b771-87c6bbd32072" LastKnownName="Determinante anzeigen" />
+                <elementDefinition Id="70c13351-8fdd-4651-946d-a1cd0df812f4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="f214c64c-6f7b-4977-9bf0-4ea80475727a" name="Determinante ausblenden" isLeaf="false">
+            <elementDefinition Id="fc611ca1-347a-43cf-8dd0-03af3b9052d6" />
+            <flowNodeTargets>
+              <controlFlow Id="1044c953-5a3c-420d-a7b9-c51e2cc34422" isLeaf="false">
+                <mergeNodeMoniker Id="fa5ba193-ed43-420b-8bbb-a12ff012e858" LastKnownName="Merge1" />
+                <elementDefinition Id="da2039db-8c8d-489e-9915-f5b4870948aa" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="b3cd07a9-7670-45e7-a0ff-a8988ffca128" name="Decision31" isLeaf="false">
+            <elementDefinition Id="e4fe0e2d-d854-421d-90d1-1e8b3ed52118" />
+            <flowNodeTargets>
+              <controlFlow Id="9fb32cbd-679a-44eb-ab0f-ff4dbebec1ad" isLeaf="false">
+                <opaqueActionMoniker Id="f214c64c-6f7b-4977-9bf0-4ea80475727a" LastKnownName="Determinante ausblenden" />
+                <elementDefinition Id="15200762-43bb-4575-b514-55d04c8bb7c7" />
+              </controlFlow>
+              <controlFlow Id="6eb7f37a-6224-4f2c-b7a4-3e0739c42af0" guard="Det. ist bereits inaktiv" isLeaf="false">
+                <mergeNodeMoniker Id="fa5ba193-ed43-420b-8bbb-a12ff012e858" LastKnownName="Merge1" />
+                <elementDefinition Id="3a2d96e2-f128-48a9-a838-35876077e59c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="5be47f6b-0f0c-4f22-83c4-e6a5afed97ad" name="ActivityDiagram">
+    <elementDefinition Id="44755596-ef36-4b32-be68-04b00064a432" />
+  </package>
+</activityRootModel>
