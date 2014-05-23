@@ -27,7 +27,7 @@ using System.Windows.Forms;
 
 namespace SoftwareProjekt
 {
-    public class MainWindow : Form, IView
+    public class FrmMain : Form, IView
     {
 
         public void Show()
