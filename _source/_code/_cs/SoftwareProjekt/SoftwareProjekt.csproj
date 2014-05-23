@@ -59,6 +59,60 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="FormulaDrawer.cs" />
+    <Compile Include="FrmDrehLinAbbUrsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDrehLinAbbUrsp.Designer.cs">
+      <DependentUpon>FrmDrehLinAbbUrsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFraktalErzIFS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFraktalErzIFS.Designer.cs">
+      <DependentUpon>FrmFraktalErzIFS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHinterLinAbb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHinterLinAbb.Designer.cs">
+      <DependentUpon>FrmHinterLinAbb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLinAbbSumBelVek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLinAbbSumBelVek.Designer.cs">
+      <DependentUpon>FrmLinAbbSumBelVek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLinAbbVielBelVek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLinAbbVielBelVek.Designer.cs">
+      <DependentUpon>FrmLinAbbVielBelVek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSpiegLinAbbUrsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSpiegLinAbbUrsp.Designer.cs">
+      <DependentUpon>FrmSpiegLinAbbUrsp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUmkehrungLinAbb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUmkehrungLinAbb.Designer.cs">
+      <DependentUpon>FrmUmkehrungLinAbb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmZuordAffAbb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmZuordAffAbb.Designer.cs">
+      <DependentUpon>FrmZuordAffAbb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmZuordvorLinAbb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmZuordvorLinAbb.Designer.cs">
+      <DependentUpon>FrmZuordvorLinAbb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gerade.cs" />
     <Compile Include="IAxis.cs" />
     <Compile Include="IController.cs" />
@@ -69,7 +123,7 @@
     <Compile Include="ITopic.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="Linie.cs" />
-    <Compile Include="MainWindow.cs">
+    <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Matrix.cs" />
@@ -90,6 +144,17 @@
     <None Include="CoordinateSystemUserControl.cd" />
     <None Include="Math.cd" />
     <None Include="MVC.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmLinAbbSumBelVek.resx">
+      <DependentUpon>FrmLinAbbSumBelVek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUmkehrungLinAbb.resx">
+      <DependentUpon>FrmUmkehrungLinAbb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmZuordvorLinAbb.resx">
+      <DependentUpon>FrmZuordvorLinAbb.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

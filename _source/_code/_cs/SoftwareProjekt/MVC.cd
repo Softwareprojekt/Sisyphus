@@ -27,7 +27,7 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="SoftwareProjekt.MainWindow">
+  <Class Name="SoftwareProjekt.FrmMain">
     <Position X="6.75" Y="7.25" Width="1.5" />
     <AssociationLine Name="MindMap" Type="SoftwareProjekt.MindMap">
       <MemberNameLabel ManuallyPlaced="true">
@@ -36,7 +36,7 @@
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAEAAEAAAAAAAAAAIAAAA=</HashCode>
-      <FileName>MainWindow.cs</FileName>
+      <FileName>FrmMain.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="MindMap" />
@@ -131,7 +131,7 @@
     </TypeIdentifier>
   </Interface>
   <Enum Name="SoftwareProjekt.Excercises">
-    <Position X="13.5" Y="1.25" Width="1.5" />
+    <Position X="13.25" Y="1.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AgAABAAAAAAAAAAAQBEABAAAAAAAAAAAIAAIAAAAAAA=</HashCode>
       <FileName>Components.cs</FileName>
