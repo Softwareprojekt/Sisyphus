@@ -58,6 +58,12 @@
     <Compile Include="CoordinateSystem.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="CtlMatrixEingabe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtlMatrixEingabe.Designer.cs">
+      <DependentUpon>CtlMatrixEingabe.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormulaDrawer.cs" />
     <Compile Include="FrmDrehLinAbbUrsp.cs">
       <SubType>Form</SubType>
