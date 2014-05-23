@@ -152,6 +152,9 @@
     <None Include="MVC.cd" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CtlMatrixEingabe.resx">
+      <DependentUpon>CtlMatrixEingabe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLinAbbSumBelVek.resx">
       <DependentUpon>FrmLinAbbSumBelVek.cs</DependentUpon>
     </EmbeddedResource>
