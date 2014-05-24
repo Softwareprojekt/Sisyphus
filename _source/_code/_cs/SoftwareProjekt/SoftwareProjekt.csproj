@@ -36,6 +36,8 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Deployment" />
@@ -58,9 +60,7 @@
     <Compile Include="CoordinateSystem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CtlMatrixEingabe.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="CtlMatrixEingabe.cs" />
     <Compile Include="CtlMatrixEingabe.Designer.cs">
       <DependentUpon>CtlMatrixEingabe.cs</DependentUpon>
     </Compile>
@@ -158,8 +158,14 @@
     <EmbeddedResource Include="FrmLinAbbSumBelVek.resx">
       <DependentUpon>FrmLinAbbSumBelVek.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmUmkehrungLinAbb.resx">
       <DependentUpon>FrmUmkehrungLinAbb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmZuordAffAbb.resx">
+      <DependentUpon>FrmZuordAffAbb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmZuordvorLinAbb.resx">
       <DependentUpon>FrmZuordvorLinAbb.cs</DependentUpon>
