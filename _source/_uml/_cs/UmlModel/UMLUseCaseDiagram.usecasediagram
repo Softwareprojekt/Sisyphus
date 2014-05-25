@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="6264a18c-b66d-44c6-aa55-20de0761558a" name="UMLUseCaseDiagram1" linkedPackageId="a9840d59-1561-4339-b62d-4fef47265709" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="6264a18c-b66d-44c6-aa55-20de0761558a" name="UMLUseCaseDiagram1" linkedPackageId="a9840d59-1561-4339-b62d-4fef47265709" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <ownedCommentsInternal>
     <comment Id="d2b92074-54ba-432e-b7a6-a78d26686a30">
       <elementDefinition Id="ae80141a-a6cb-40e0-8f1a-76b1a6aa5cd0" />
@@ -116,20 +116,6 @@ Ausgearbeitet von: Michael, Markus</description>
       <useCase Id="16b7693a-d60c-44ce-b72e-0fa353f052b0" name="Bild einlesen" isAbstract="false" isLeaf="false">
         <description>Prio 7, Michael, Markus</description>
         <elementDefinition Id="ad73a8d5-62bc-49e3-b102-3b19f6fff7f0" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="3f3ee6ee-ca66-4755-a9c6-2c6c9c5c8bbe" name="Zoom out" isAbstract="false" isLeaf="false">
-        <description>Priorität: 4
-Ausgearbeitet von: Manuel</description>
-        <elementDefinition Id="41773780-d037-4ea7-8203-31f65e99bb7f" />
-      </useCase>
-    </useCaseModelRootHasTypes>
-    <useCaseModelRootHasTypes>
-      <useCase Id="7a761310-c736-4eaf-b71b-8d47a7505a25" name="Zoom in" isAbstract="false" isLeaf="false">
-        <description>Priorität: 4
-Ausgearbeitet von: Manuel</description>
-        <elementDefinition Id="8180d46c-81fa-469d-b6e7-57119bc60734" />
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>

@@ -26,7 +26,7 @@
       <useCaseMoniker Id="fb83c052-e77e-41fb-ab8e-3cd22511829b" LastKnownName="Arbeitsheft laden" />
       <relativeChildShapes />
     </useCaseShape>
-    <useCaseShape Id="a45bf919-4340-4e66-bc65-7da03c78a5c5" absoluteBounds="11, 1.75, 1.375, 0.625" customColor="238, 237, 131" heightOffset="0">
+    <useCaseShape Id="a45bf919-4340-4e66-bc65-7da03c78a5c5" absoluteBounds="10.5, 1.75, 1.375, 0.625" customColor="238, 237, 131" heightOffset="0">
       <useCaseMoniker Id="03e828bf-30e4-45ed-837c-342746ebfd19" LastKnownName="Bedienungshilfe anzeigen" />
       <relativeChildShapes />
     </useCaseShape>
@@ -61,19 +61,11 @@
         <useCaseShapeMoniker Id="f57d7867-51e1-4fd5-b3be-3a6520c7cc2f" />
       </nodes>
     </includeConnector>
-    <useCaseShape Id="47e74ec7-63f0-4018-80bc-42d009eeec0e" absoluteBounds="12.5, 1, 1.375, 0.625" customColor="238, 237, 131" heightOffset="0">
-      <useCaseMoniker Id="3f3ee6ee-ca66-4755-a9c6-2c6c9c5c8bbe" LastKnownName="Zoom out" />
-      <relativeChildShapes />
-    </useCaseShape>
-    <useCaseShape Id="6fff20d8-8d1b-4856-8818-8f67ddfa5b43" absoluteBounds="11, 1, 1.375, 0.625" customColor="238, 237, 131" heightOffset="0">
-      <useCaseMoniker Id="7a761310-c736-4eaf-b71b-8d47a7505a25" LastKnownName="Zoom in" />
-      <relativeChildShapes />
-    </useCaseShape>
-    <useCaseShape Id="4c4fecdf-c167-4867-9bad-f3670e44e2c8" absoluteBounds="12.5, 1.75, 1.375, 0.625" customColor="238, 237, 131" heightOffset="0">
+    <useCaseShape Id="4c4fecdf-c167-4867-9bad-f3670e44e2c8" absoluteBounds="12, 1.75, 1.375, 0.625" customColor="238, 237, 131" heightOffset="0">
       <useCaseMoniker Id="3d84931c-e1d3-4eae-b7cd-34ea0911ce0f" LastKnownName="Tutorial" />
       <relativeChildShapes />
     </useCaseShape>
-    <commentShape Id="064ae93b-d2e6-4990-9862-412ddf0f72ff" absoluteBounds="13.5, 1.75, 1.25, 0.5" customColor="251, 247, 200">
+    <commentShape Id="064ae93b-d2e6-4990-9862-412ddf0f72ff" absoluteBounds="13, 1.875, 1.25, 0.5" customColor="251, 247, 200">
       <commentMoniker Id="d2b92074-54ba-432e-b7a6-a78d26686a30" />
       <relativeChildShapes />
     </commentShape>
@@ -85,7 +77,7 @@
       <useCaseMoniker Id="8e611cde-f1da-4ff9-87e6-f3fa1b21f53f" LastKnownName="Übung im Arbeitsheft speichern" />
       <relativeChildShapes />
     </useCaseShape>
-    <useCaseShape Id="6f5d6eba-a169-4423-b81b-26e9a989692e" absoluteBounds="14.125, 1, 1.375, 0.625" customColor="238, 237, 131" heightOffset="0">
+    <useCaseShape Id="6f5d6eba-a169-4423-b81b-26e9a989692e" absoluteBounds="14.25, 1.75, 1.375, 0.625" customColor="238, 237, 131" heightOffset="0">
       <useCaseMoniker Id="1fad8af7-a2ff-453f-ac21-14d7fa9a0a44" LastKnownName="Beenden" />
       <relativeChildShapes />
     </useCaseShape>
@@ -220,7 +212,7 @@
       <commentMoniker Id="47e446e2-e4bb-4cdc-a089-ec1341a10357" />
       <relativeChildShapes />
     </commentShape>
-    <commentConnector edgePoints="[(13 : 8.6875); (12.2368874661093 : 8.6875)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+    <commentConnector edgePoints="[(13 : 8.6875); (12.2368874661093 : 8.6875)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <nodes>
         <commentShapeMoniker Id="c5f56451-bbf0-4035-b754-53cadd4e8496" />
