@@ -20,7 +20,7 @@ namespace SoftwareProjekt
             throw new System.NotImplementedException();
         }
 
-        public int Legend
+        public string Legend
         {
             get
             {
@@ -32,7 +32,7 @@ namespace SoftwareProjekt
             }
         }
 
-        public int StartValue
+        public float StartValue
         {
             get
             {
@@ -44,7 +44,7 @@ namespace SoftwareProjekt
             }
         }
 
-        public int EndValue
+        public float EndValue
         {
             get
             {
@@ -56,7 +56,7 @@ namespace SoftwareProjekt
             }
         }
 
-        public int Scale
+        public float Scale
         {
             get
             {

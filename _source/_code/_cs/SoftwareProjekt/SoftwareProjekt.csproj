@@ -50,139 +50,131 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractAxis.cs" />
-    <Compile Include="AbstractExcercise.cs" />
-    <Compile Include="AbstractTopic.cs" />
-    <Compile Include="AffineAbbildung.cs" />
-    <Compile Include="AffineAbbildungView.cs" />
-    <Compile Include="Components.cs" />
-    <Compile Include="Controller.cs" />
-    <Compile Include="CoordinateSystem.cs">
+    <Compile Include="Classes\AbstractAxis.cs" />
+    <Compile Include="Classes\AbstractExcercise.cs" />
+    <Compile Include="Classes\AbstractTopic.cs" />
+    <Compile Include="Classes\AffineAbbildung.cs" />
+    <Compile Include="Classes\AffineAbbildungView.cs" />
+    <Compile Include="Classes\Components.cs" />
+    <Compile Include="Classes\Controller.cs" />
+    <Compile Include="UserControls\CoordinateSystem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CtlMatrixInput.cs">
+    <Compile Include="UserControls\CtlMatrixInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CtlMatrixInput.Designer.cs">
+    <Compile Include="UserControls\CtlMatrixInput.Designer.cs">
       <DependentUpon>CtlMatrixInput.cs</DependentUpon>
     </Compile>
-    <Compile Include="CtlVektorInput.cs">
+    <Compile Include="UserControls\CtlVektorInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CtlVektorInput.Designer.cs">
+    <Compile Include="UserControls\CtlVektorInput.Designer.cs">
       <DependentUpon>CtlVektorInput.cs</DependentUpon>
-
     </Compile>
-    <Compile Include="FormulaDrawer.cs" />
-    <Compile Include="FrmDrehLinAbbUrsp.cs">
+    <Compile Include="Classes\FormulaDrawer.cs" />
+    <Compile Include="Forms\FrmDrehLinAbbUrsp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDrehLinAbbUrsp.Designer.cs">
+    <Compile Include="Forms\FrmDrehLinAbbUrsp.Designer.cs">
       <DependentUpon>FrmDrehLinAbbUrsp.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmFraktalErzIFS.cs">
+    <Compile Include="Forms\FrmFraktalErzIFS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmFraktalErzIFS.Designer.cs">
+    <Compile Include="Forms\FrmFraktalErzIFS.Designer.cs">
       <DependentUpon>FrmFraktalErzIFS.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmHinterLinAbb.cs">
+    <Compile Include="Forms\FrmHinterLinAbb.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmHinterLinAbb.Designer.cs">
+    <Compile Include="Forms\FrmHinterLinAbb.Designer.cs">
       <DependentUpon>FrmHinterLinAbb.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLinAbbSumBelVek.cs">
+    <Compile Include="Forms\FrmLinAbbSumBelVek.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLinAbbSumBelVek.Designer.cs">
+    <Compile Include="Forms\FrmLinAbbSumBelVek.Designer.cs">
       <DependentUpon>FrmLinAbbSumBelVek.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLinAbbVielBelVek.cs">
+    <Compile Include="Forms\FrmLinAbbVielBelVek.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLinAbbVielBelVek.Designer.cs">
+    <Compile Include="Forms\FrmLinAbbVielBelVek.Designer.cs">
       <DependentUpon>FrmLinAbbVielBelVek.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSpiegLinAbbUrsp.cs">
+    <Compile Include="Forms\FrmSpiegLinAbbUrsp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSpiegLinAbbUrsp.Designer.cs">
+    <Compile Include="Forms\FrmSpiegLinAbbUrsp.Designer.cs">
       <DependentUpon>FrmSpiegLinAbbUrsp.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmUmkehrungLinAbb.cs">
+    <Compile Include="Forms\FrmUmkehrungLinAbb.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmUmkehrungLinAbb.Designer.cs">
+    <Compile Include="Forms\FrmUmkehrungLinAbb.Designer.cs">
       <DependentUpon>FrmUmkehrungLinAbb.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmZuordAffAbb.cs">
+    <Compile Include="Forms\FrmZuordAffAbb.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmZuordAffAbb.Designer.cs">
+    <Compile Include="Forms\FrmZuordAffAbb.Designer.cs">
       <DependentUpon>FrmZuordAffAbb.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmZuordvorLinAbb.cs">
+    <Compile Include="Forms\FrmZuordvorLinAbb.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmZuordvorLinAbb.Designer.cs">
+    <Compile Include="Forms\FrmZuordvorLinAbb.Designer.cs">
       <DependentUpon>FrmZuordvorLinAbb.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gerade.cs" />
-    <Compile Include="IAxis.cs" />
-    <Compile Include="IController.cs" />
-    <Compile Include="IExcercise.cs" />
-    <Compile Include="IGeometric.cs" />
-    <Compile Include="IMathObject.cs" />
-    <Compile Include="INotebook.cs" />
-    <Compile Include="ITopic.cs" />
-    <Compile Include="IView.cs" />
-    <Compile Include="Linie.cs" />
-    <Compile Include="FrmMain.cs">
+    <Compile Include="Classes\Line.cs" />
+    <Compile Include="Interfaces\IAxis.cs" />
+    <Compile Include="Interfaces\IController.cs" />
+    <Compile Include="Interfaces\IExcercise.cs" />
+    <Compile Include="Interfaces\IMathObject.cs" />
+    <Compile Include="Interfaces\INotebook.cs" />
+    <Compile Include="Interfaces\ITopic.cs" />
+    <Compile Include="Interfaces\IView.cs" />
+    <Compile Include="Forms\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Matrix.cs" />
-    <Compile Include="MindMap.cs" />
-    <Compile Include="Point.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Classes\LineSegement.cs" />
+    <Compile Include="Classes\Matrix.cs" />
+    <Compile Include="Classes\MindMap.cs" />
+    <Compile Include="Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Triangle.cs" />
-    <Compile Include="Vector.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Winkel.cs" />
-    <Compile Include="XAxis.cs" />
-    <Compile Include="YAxis.cs" />
+    <Compile Include="Classes\Vector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="CoordinateSystemUserControl.cd" />
-    <None Include="Math.cd" />
-    <None Include="MVC.cd" />
+    <None Include="ClassDiagrams\CoordinateSystemUserControl.cd" />
+    <None Include="ClassDiagrams\Math.cd" />
+    <None Include="ClassDiagrams\MVC.cd" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CtlMatrixInput.resx">
+    <EmbeddedResource Include="UserControls\CtlMatrixInput.resx">
       <DependentUpon>CtlMatrixInput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CtlVektorInput.resx">
+    <EmbeddedResource Include="UserControls\CtlVektorInput.resx">
       <DependentUpon>CtlVektorInput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLinAbbSumBelVek.resx">
+    <EmbeddedResource Include="Forms\FrmLinAbbSumBelVek.resx">
       <DependentUpon>FrmLinAbbSumBelVek.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMain.resx">
+    <EmbeddedResource Include="Forms\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmUmkehrungLinAbb.resx">
+    <EmbeddedResource Include="Forms\FrmUmkehrungLinAbb.resx">
       <DependentUpon>FrmUmkehrungLinAbb.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmZuordAffAbb.resx">
+    <EmbeddedResource Include="Forms\FrmZuordAffAbb.resx">
       <DependentUpon>FrmZuordAffAbb.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmZuordvorLinAbb.resx">
+    <EmbeddedResource Include="Forms\FrmZuordvorLinAbb.resx">
       <DependentUpon>FrmZuordvorLinAbb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

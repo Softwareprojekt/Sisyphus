@@ -3,8 +3,8 @@
   <Class Name="SoftwareProjekt.CoordinateSystem">
     <Position X="9" Y="3" Width="2" />
     <TypeIdentifier>
-      <HashCode>gAiAAQAFACAAEAEAAAAAAAACAAAAAAAAAkAAAQAAAAA=</HashCode>
-      <FileName>CoordinateSystem.cs</FileName>
+      <HashCode>gAiAAQAFAAAAUAEAAAAAAAACAAAAAAAAAkAAAQAAAAA=</HashCode>
+      <FileName>UserControls\CoordinateSystem.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="XAxis" />
@@ -15,15 +15,20 @@
     <Position X="3.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAQAAAACIAAAAAAIAAAAAAAQAAAABAAAA=</HashCode>
-      <FileName>AbstractAxis.cs</FileName>
+      <FileName>Classes\AbstractAxis.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SoftwareProjekt.Line">
     <Position X="13" Y="5.25" Width="1.5" />
+    <AssociationLine Name="LineSegment" Type="SoftwareProjekt.LineSegment">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.089" Y="0.143" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Gerade.cs</FileName>
+      <FileName>Classes\Line.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="LineSegment" />
@@ -33,7 +38,7 @@
     <Position X="16" Y="1" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAEAAAAAAAAAIBAABAkAAAAAAAAAAAAAAAYAA=</HashCode>
-      <FileName>Vector.cs</FileName>
+      <FileName>Classes\Vector.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -41,7 +46,7 @@
     <Position X="13" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAQAAAAAAAAQIAAAAAAAAAAEAAgAAAAAg=</HashCode>
-      <FileName>LineSegement.cs</FileName>
+      <FileName>Classes\LineSegement.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Vector" />
@@ -51,7 +56,7 @@
     <Position X="5.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAQAAAACIAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
-      <FileName>IAxis.cs</FileName>
+      <FileName>Interfaces\IAxis.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

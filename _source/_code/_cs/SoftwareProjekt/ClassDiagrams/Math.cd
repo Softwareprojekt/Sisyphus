@@ -6,19 +6,11 @@
   <Comment CommentText="Was für eine Art von Daten?">
     <Position X="4.552" Y="3.479" Height="0.75" Width="1.7" />
   </Comment>
-  <Class Name="SoftwareProjekt.Vector">
-    <Position X="7.25" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
-      <FileName>Vector.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="SoftwareProjekt.Matrix">
-    <Position X="8.25" Y="3.5" Width="1.5" />
+    <Position X="7.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Matrix.cs</FileName>
+      <HashCode>AAAAAEAAEAAAAAAAAAABAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Matrix.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -26,17 +18,25 @@
     <Position X="1.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
-      <FileName>FormulaDrawer.cs</FileName>
+      <FileName>Classes\FormulaDrawer.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="IMathObject" />
     </ShowAsAssociation>
   </Class>
+  <Class Name="SoftwareProjekt.Vector">
+    <Position X="7.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAEAAAAAAAAAIBAABAkAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Classes\Vector.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
   <Interface Name="SoftwareProjekt.IMathObject">
     <Position X="4.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IMathObject.cs</FileName>
+      <FileName>Interfaces\IMathObject.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

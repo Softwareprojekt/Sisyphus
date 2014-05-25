@@ -7,25 +7,25 @@ namespace SoftwareProjekt
 {
     public interface IAxis
     {
-        int Legend
+        string Legend
+        {
+            get;
+            set; 
+        }
+         
+        float StartValue
+        {
+            get;
+            set ;
+        }
+
+        float EndValue
         {
             get;
             set;
         }
 
-        int StartValue
-        {
-            get;
-            set;
-        }
-
-        int EndValue
-        {
-            get;
-            set;
-        }
-
-        int Scale
+        float Scale
         {
             get;
             set;

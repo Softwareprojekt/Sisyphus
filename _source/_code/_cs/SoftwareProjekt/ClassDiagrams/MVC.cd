@@ -7,7 +7,7 @@
     <Position X="6.75" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAIAgAAAgAABAQAABIAAAgECAEgAAACAAAAAEAAAA=</HashCode>
-      <FileName>AbstractExcercise.cs</FileName>
+      <FileName>Classes\AbstractExcercise.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -15,7 +15,7 @@
     <Position X="0.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAgAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Controller.cs</FileName>
+      <FileName>Classes\Controller.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -23,7 +23,7 @@
     <Position X="1.75" Y="7.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAEAAEAAAAAAAAAAAAAAg=</HashCode>
-      <FileName>AffineAbbildungView.cs</FileName>
+      <FileName>Classes\AffineAbbildungView.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -35,8 +35,8 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAEAAEAAAAAAAAAAIAAAA=</HashCode>
-      <FileName>FrmMain.cs</FileName>
+      <HashCode>BQAAABEgAAAAANAyfgAAQAACUAAEAAIABAAAAAoQAAA=</HashCode>
+      <FileName>Forms\FrmMain.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="MindMap" />
@@ -47,14 +47,14 @@
     <Position X="10" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
-      <FileName>MindMap.cs</FileName>
+      <FileName>Classes\MindMap.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoftwareProjekt.AbstractTopic">
     <Position X="10.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAIAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>AbstractTopic.cs</FileName>
+      <FileName>Classes\AbstractTopic.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -81,7 +81,7 @@
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>AgAAAAgAAAgAABAQAAAIAAAAEAAEAAAACAAAAAAAAAA=</HashCode>
-      <FileName>IExcercise.cs</FileName>
+      <FileName>Interfaces\IExcercise.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="IController" />
@@ -92,7 +92,7 @@
     <Position X="2.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IController.cs</FileName>
+      <FileName>Interfaces\IController.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SoftwareProjekt.IView">
@@ -110,7 +110,7 @@
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAEAAEAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IView.cs</FileName>
+      <FileName>Interfaces\IView.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="IController" />
@@ -120,21 +120,21 @@
     <Position X="8.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAIAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ITopic.cs</FileName>
+      <FileName>Interfaces\ITopic.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SoftwareProjekt.INotebook">
     <Position X="2.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAEAAAA=</HashCode>
-      <FileName>INotebook.cs</FileName>
+      <FileName>Interfaces\INotebook.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="SoftwareProjekt.Excercises">
     <Position X="13.25" Y="1.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AgAABAAAAAAAAAAAQBEABAAAAAAAAAAAIAAIAAAAAAA=</HashCode>
-      <FileName>Components.cs</FileName>
+      <FileName>Classes\Components.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

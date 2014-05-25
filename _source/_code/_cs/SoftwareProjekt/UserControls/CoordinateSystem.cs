@@ -49,7 +49,7 @@ namespace SoftwareProjekt
 
         /// <summary>
         /// </summary>
-        public void AddVector(SoftwareProjekt.Line v)
+        public void AddLineSegment(LineSegment lineSegment)
         {
             throw new System.NotImplementedException();
         }
@@ -65,13 +65,13 @@ namespace SoftwareProjekt
         /// <summary>
         /// iterates the List and draws the figures
         /// </summary>
-        public void DrawVector(System.Drawing.Graphics g)
+        private void DrawVector(System.Drawing.Graphics g)
         {
                        
             throw new System.NotImplementedException();
         }
 
-        public void DrawLine(System.Drawing.Graphics g)
+        private void DrawLine(System.Drawing.Graphics g)
         {
             throw new System.NotImplementedException();
         }
@@ -79,10 +79,9 @@ namespace SoftwareProjekt
         /// <summary>
         /// Sets Name, Size, Events etc
         /// </summary>
-        public void InitializeComponent()
+        private void InitializeComponent()
         {
             this.Paint += CoordinateSystem_Paint;
-            throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -93,7 +92,10 @@ namespace SoftwareProjekt
             throw new NotImplementedException();
         }
 
-        public void DrawAxis(System.Drawing.Graphics g)
+        /// <summary>
+        /// draws Axis and scale
+        /// </summary>
+        private void DrawAxis(System.Drawing.Graphics g)
         {
             throw new System.NotImplementedException();
         }
