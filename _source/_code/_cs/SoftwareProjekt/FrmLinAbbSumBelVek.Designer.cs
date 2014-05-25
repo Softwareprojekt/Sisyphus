@@ -86,7 +86,7 @@
             this.lblPointX.Name = "lblPointX";
             this.lblPointX.Size = new System.Drawing.Size(58, 17);
             this.lblPointX.TabIndex = 0;
-            this.lblPointX.Text = "Punkt x:";
+            this.lblPointX.Text = "Punkt x1:";
             // 
             // label6
             // 
@@ -119,7 +119,7 @@
             this.lblPointY.Name = "lblPointY";
             this.lblPointY.Size = new System.Drawing.Size(59, 17);
             this.lblPointY.TabIndex = 8;
-            this.lblPointY.Text = "Punkt y:";
+            this.lblPointY.Text = "Punkt x2:";
             // 
             // txtMatrix
             // 
@@ -135,7 +135,7 @@
             this.lblMatrix.Name = "lblMatrix";
             this.lblMatrix.Size = new System.Drawing.Size(49, 17);
             this.lblMatrix.TabIndex = 10;
-            this.lblMatrix.Text = "Matrix:";
+            this.lblMatrix.Text = "scaleMatrix:";
             // 
             // label7
             // 
@@ -183,7 +183,7 @@
             this.lblVectorXY.Name = "lblVectorXY";
             this.lblVectorXY.Size = new System.Drawing.Size(73, 17);
             this.lblVectorXY.TabIndex = 10;
-            this.lblVectorXY.Text = "f(x->+y->):";
+            this.lblVectorXY.Text = "f(x1->+x2->):";
             // 
             // txtVectorY
             // 
@@ -199,7 +199,7 @@
             this.lblVectorY.Name = "lblVectorY";
             this.lblVectorY.Size = new System.Drawing.Size(46, 17);
             this.lblVectorY.TabIndex = 8;
-            this.lblVectorY.Text = "f(y->):";
+            this.lblVectorY.Text = "f(x2->):";
             // 
             // txtVectorX
             // 
@@ -215,7 +215,7 @@
             this.lblFX.Name = "lblFX";
             this.lblFX.Size = new System.Drawing.Size(45, 17);
             this.lblFX.TabIndex = 0;
-            this.lblFX.Text = "f(x->):";
+            this.lblFX.Text = "f(x1->):";
             // 
             // butFuncionXPlusY
             // 
@@ -241,7 +241,7 @@
             this.lblXPlusY.Name = "lblXPlusY";
             this.lblXPlusY.Size = new System.Drawing.Size(33, 17);
             this.lblXPlusY.TabIndex = 28;
-            this.lblXPlusY.Text = "x+y:";
+            this.lblXPlusY.Text = "x1+x2:";
             // 
             // FrmLinAbbSumBelVek
             // 

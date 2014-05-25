@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public class Axis
+    public class Axis : IAxis
     {
         private bool _isXAxis;
         private bool _isYAxis;
@@ -21,6 +21,42 @@ namespace SoftwareProjekt
         }
 
         public int Legend
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public int StartValue
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public int EndValue
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public int Scale
         {
             get
             {

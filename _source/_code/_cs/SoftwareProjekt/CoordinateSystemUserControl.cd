@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="SoftwareProjekt.CoordinateSystem">
-    <Position X="9.5" Y="3" Width="2" />
+    <Position X="9" Y="3" Width="2" />
     <TypeIdentifier>
-      <HashCode>gAAAAAABAAAAAgAAAEAAAAAAAIAAAAACAAAAAAAAAAA=</HashCode>
+      <HashCode>gAiAAQAFACAAEAEAAAAAAAACAAAAAAAAAkAAAQAAAAA=</HashCode>
       <FileName>CoordinateSystem.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -12,30 +12,45 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="SoftwareProjekt.Axis">
-    <Position X="4" Y="3" Width="1.5" />
+    <Position X="3.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAQAAAABAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAQAAAACIAAAAAAIAAAAAAAQAAAABAAAA=</HashCode>
       <FileName>AbstractAxis.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="SoftwareProjekt.Arrow">
-    <Position X="12.5" Y="1" Width="1.5" />
+  <Class Name="SoftwareProjekt.Line">
+    <Position X="13" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEgAAQAAAAAAAAAIAAAAAAAAAAAAAgAAAAAA=</HashCode>
-      <FileName>Vector.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SoftwareProjekt.Gerade">
-    <Position X="14" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gerade.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LineSegment" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SoftwareProjekt.Vector">
+    <Position X="16" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAEAAAAAAAAAIBAABAkAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Vector.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SoftwareProjekt.LineSegment">
+    <Position X="13" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAQAAAAAAAAQIAAAAAAAAAAEAAgAAAAAg=</HashCode>
+      <FileName>LineSegement.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Vector" />
+    </ShowAsAssociation>
   </Class>
   <Interface Name="SoftwareProjekt.IAxis">
-    <Position X="6.25" Y="3" Width="1.5" />
+    <Position X="5.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAQAAAACIAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>IAxis.cs</FileName>
     </TypeIdentifier>
   </Interface>

@@ -47,7 +47,7 @@
             this.grpMatrixEingabe.Size = new System.Drawing.Size(106, 76);
             this.grpMatrixEingabe.TabIndex = 0;
             this.grpMatrixEingabe.TabStop = false;
-            this.grpMatrixEingabe.Text = "Matrix Eingabe";
+            this.grpMatrixEingabe.Text = "scaleMatrix Eingabe";
             // 
             // txtEle11
             // 

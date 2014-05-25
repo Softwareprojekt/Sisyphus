@@ -121,7 +121,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 17);
             this.label2.TabIndex = 12;
-            this.label2.Text = "f(x):";
+            this.label2.Text = "f(x1):";
             // 
             // txtPointM2
             // 
@@ -169,7 +169,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 14;
-            this.label1.Text = "f(x->):";
+            this.label1.Text = "f(x1->):";
             // 
             // lblPointX
             // 
@@ -178,7 +178,7 @@
             this.lblPointX.Name = "lblPointX";
             this.lblPointX.Size = new System.Drawing.Size(58, 17);
             this.lblPointX.TabIndex = 0;
-            this.lblPointX.Text = "Punkt x:";
+            this.lblPointX.Text = "Punkt x1:";
             // 
             // txtPointX
             // 
@@ -226,7 +226,7 @@
             this.lblVectorX.Name = "lblVectorX";
             this.lblVectorX.Size = new System.Drawing.Size(45, 17);
             this.lblVectorX.TabIndex = 12;
-            this.lblVectorX.Text = "f(x->):";
+            this.lblVectorX.Text = "f(x1->):";
             // 
             // txVectorX
             // 

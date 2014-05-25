@@ -24,5 +24,11 @@ namespace SoftwareProjekt
             get;
             set;
         }
+
+        int Scale
+        {
+            get;
+            set;
+        }
     }
 }

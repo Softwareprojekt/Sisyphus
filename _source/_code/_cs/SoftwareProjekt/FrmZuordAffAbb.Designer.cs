@@ -160,7 +160,7 @@
             this.lblInverseFunction1X.Name = "lblInverseFunction1X";
             this.lblInverseFunction1X.Size = new System.Drawing.Size(52, 17);
             this.lblInverseFunction1X.TabIndex = 1;
-            this.lblInverseFunction1X.Text = "f^-1(x):";
+            this.lblInverseFunction1X.Text = "f^-1(x1):";
             // 
             // lblFunction1X
             // 
@@ -169,7 +169,7 @@
             this.lblFunction1X.Name = "lblFunction1X";
             this.lblFunction1X.Size = new System.Drawing.Size(40, 17);
             this.lblFunction1X.TabIndex = 2;
-            this.lblFunction1X.Text = "f1(x):";
+            this.lblFunction1X.Text = "f1(x1):";
             // 
             // lblPointB1
             // 
@@ -266,7 +266,7 @@
             this.lblFunction2X.Name = "lblFunction2X";
             this.lblFunction2X.Size = new System.Drawing.Size(40, 17);
             this.lblFunction2X.TabIndex = 2;
-            this.lblFunction2X.Text = "f2(x):";
+            this.lblFunction2X.Text = "f2(x1):";
             // 
             // lblPointB2
             // 
@@ -301,7 +301,7 @@
             this.butFx.Name = "butFx";
             this.butFx.Size = new System.Drawing.Size(221, 74);
             this.butFx.TabIndex = 24;
-            this.butFx.Text = "f(x)";
+            this.butFx.Text = "f(x1)";
             this.butFx.UseVisualStyleBackColor = true;
             // 
             // txtFx

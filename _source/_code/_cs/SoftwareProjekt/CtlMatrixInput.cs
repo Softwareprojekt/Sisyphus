@@ -1,5 +1,5 @@
 ﻿/**
- * @title: Matrix Eingabe
+ * @title: scaleMatrix Eingabe
  * @author: Michael Eimer
  * @date: 23.05.2014
  * @version: 0.1
