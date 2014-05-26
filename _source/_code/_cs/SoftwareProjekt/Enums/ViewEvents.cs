@@ -26,7 +26,9 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public class AffineAbbildung : AbstractExcercise
+    public enum ViewEvents
     {
+        ButtonClick,
+        TextChange,
     }
 }

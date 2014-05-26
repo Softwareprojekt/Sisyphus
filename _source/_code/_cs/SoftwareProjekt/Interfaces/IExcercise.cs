@@ -26,35 +26,46 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public interface IExcercise : INotebook
+    public interface IExcercise
     {
-        IController IController
-        {
-            get;
-            set;
-        }
+        /// <summary>
+        /// Notify View that excercise has changed.
+        /// </summary>
+        event ExcerciseHandler<AbstractExcercise> ExcerciseChanged;
 
         /// <summary>
-        /// Shows the results in the View
+        /// Kill worker thread immediately.
         /// </summary>
-        IView IView
-        {
-            get;
-            set;
-        }
-    
         void AbortWork();
 
+        /// <summary>
+        /// Load state of excercise from file.
+        /// </summary>
         void LoadState();
 
+        /// <summary>
+        /// Reset state of excercise. Default values.
+        /// </summary>
         void ResetState();
 
+        /// <summary>
+        /// Save state of excercise to file.
+        /// </summary>
         void SaveState();
 
-        void SetController();
+        /// <summary>
+        /// Start worker thread and calculate.
+        /// </summary>
+        void StartWork();
 
-        void StartExcercise();
+        /// <summary>
+        /// Stop worker thread gracefully.
+        /// </summary>
+        void StopWork();
 
-        void StopExcercise();
+        /// <summary>
+        /// Attach View to Excercise. Used to notify View of new data.
+        /// </summary>
+        void AttachView(IExcerciseObserver observer);
     }
 }

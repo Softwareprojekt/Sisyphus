@@ -23,20 +23,34 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace SoftwareProjekt
 {
-    public class FormulaDrawer
+    public abstract class AbstractView : Form, IView, IExcerciseObserver
     {
-        public IMathObject IMathObject
+        public abstract void xyzChanged(IExcercise sender, ExcerciseEventArgs e);
+
+        public event ViewHandler<IView> ViewChanged;
+
+        public AbstractView()
         {
-            get
-            {                
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+
+        }
+
+        /// <summary>
+        /// </summary>
+        public void SetController(IController controller)
+        {
+            this.Controller = controller;
+        }
+
+        /// <summary>
+        /// </summary>
+        public IController Controller
+        {
+            get;
+            set;
         }
     }
 }

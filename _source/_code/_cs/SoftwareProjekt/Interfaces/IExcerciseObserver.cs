@@ -26,17 +26,8 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public class FormulaDrawer
+    public interface IExcerciseObserver
     {
-        public IMathObject IMathObject
-        {
-            get
-            {                
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+        void xyzChanged(IExcercise sender, ExcerciseEventArgs e);
     }
 }

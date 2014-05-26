@@ -26,17 +26,7 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public class FormulaDrawer
+    public class ExcerciseEventArgs : EventArgs
     {
-        public IMathObject IMathObject
-        {
-            get
-            {                
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
     }
 }

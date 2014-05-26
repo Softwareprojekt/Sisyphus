@@ -26,17 +26,5 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public class FormulaDrawer
-    {
-        public IMathObject IMathObject
-        {
-            get
-            {                
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-    }
+    public delegate void ViewHandler<IView>(IView sender, ViewEventArgs e);
 }

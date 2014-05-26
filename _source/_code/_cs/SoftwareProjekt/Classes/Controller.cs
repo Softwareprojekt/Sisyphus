@@ -28,19 +28,53 @@ namespace SoftwareProjekt
 {
     public class Controller : IController
     {
+        /// <summary>
+        /// List with open Views.
+        /// </summary>
         private List<IView> _viewList;
-    
-        public Controller(IView view)
-        {            
-            view.SetController(this);
-            throw new System.NotImplementedException();
-        }
+        /// <summary>
+        /// List with open Excercises.
+        /// </summary>
+        private List<IExcercise> _excerciseList;
 
+        public Controller()
+        {
+            _viewList = new List<IView>();
+            _excerciseList = new List<IExcercise>();
+        }
 
         public void AddView(IView view)
         {
             _viewList.Add(view);
-            throw new NotImplementedException();
+        }
+
+        public void AddExcercise(IExcercise excercise)
+        {
+            _excerciseList.Add(excercise);
+        }
+
+        public void FireEvent(IView v, ViewEventArgs e)
+        {
+            switch (e.ViewEvent)
+            {
+                case ViewEvents.ButtonClick:
+                    break;
+                case ViewEvents.TextChange:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
+        public void RemoveExcercise(IExcercise excercise)
+        {
+            _excerciseList.Remove(excercise);
+        }
+
+        public void RemoveView(IView view)
+        {
+            _viewList.Remove(view);
         }
     }
 }

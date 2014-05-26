@@ -34,7 +34,13 @@ namespace SoftwareProjekt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+
+            IController cont = new Controller();
+            FrmMain mainView = new FrmMain();
+
+            cont.AddView(mainView);
+
+            Application.Run(mainView);
         }
     }
 }

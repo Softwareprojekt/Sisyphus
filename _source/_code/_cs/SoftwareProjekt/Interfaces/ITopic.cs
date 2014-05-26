@@ -36,8 +36,4 @@ namespace SoftwareProjekt
 
         void StartExcercise(Excercises id);
     }
-
-    public interface CopyOfITopic
-    {
-    }
 }

@@ -30,7 +30,7 @@ using System.Drawing;
 
 namespace SoftwareProjekt
 {
-    public class FrmMain : Form, IView
+    public class FrmMain : AbstractView
     {
         private MenuStrip menuStrip1;
         private ToolStripMenuItem dateiToolStripMenuItem;
@@ -40,18 +40,6 @@ namespace SoftwareProjekt
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
         private PrintDialog printDialog1;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape5;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape6;
-        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape5;
-        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape4;
-        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape3;
-        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape2;
-        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape1;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -59,23 +47,6 @@ namespace SoftwareProjekt
         private Label label5;
         private Label label6;
         private System.Drawing.Printing.PrintDocument printDocument1;
-
-        public void Show()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IController IController
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
 
         public MindMap MindMap
         {
@@ -86,12 +57,6 @@ namespace SoftwareProjekt
             set
             {
             }
-        }
-
-
-        public void SetController(IController controller)
-        {
-            throw new NotImplementedException();
         }
 
         private void InitializeComponent()
@@ -105,18 +70,6 @@ namespace SoftwareProjekt
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.ovalShape2 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.ovalShape3 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.ovalShape4 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.ovalShape5 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.ovalShape6 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -174,109 +127,6 @@ namespace SoftwareProjekt
             // printDialog1
             // 
             this.printDialog1.UseEXDialog = true;
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape5,
-            this.lineShape4,
-            this.lineShape3,
-            this.lineShape2,
-            this.lineShape1,
-            this.ovalShape6,
-            this.ovalShape5,
-            this.ovalShape4,
-            this.ovalShape3,
-            this.ovalShape2,
-            this.ovalShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(1255, 701);
-            this.shapeContainer1.TabIndex = 17;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // ovalShape1
-            // 
-            this.ovalShape1.FillGradientColor = System.Drawing.Color.Turquoise;
-            this.ovalShape1.Location = new System.Drawing.Point(728, 541);
-            this.ovalShape1.Name = "ovalShape1";
-            this.ovalShape1.Size = new System.Drawing.Size(197, 116);
-            // 
-            // ovalShape2
-            // 
-            this.ovalShape2.FillGradientColor = System.Drawing.Color.Turquoise;
-            this.ovalShape2.Location = new System.Drawing.Point(927, 104);
-            this.ovalShape2.Name = "ovalShape2";
-            this.ovalShape2.Size = new System.Drawing.Size(197, 116);
-            // 
-            // ovalShape3
-            // 
-            this.ovalShape3.FillGradientColor = System.Drawing.Color.Turquoise;
-            this.ovalShape3.Location = new System.Drawing.Point(902, 329);
-            this.ovalShape3.Name = "ovalShape3";
-            this.ovalShape3.Size = new System.Drawing.Size(197, 116);
-            // 
-            // ovalShape4
-            // 
-            this.ovalShape4.FillGradientColor = System.Drawing.Color.Turquoise;
-            this.ovalShape4.Location = new System.Drawing.Point(225, 111);
-            this.ovalShape4.Name = "ovalShape4";
-            this.ovalShape4.Size = new System.Drawing.Size(197, 116);
-            // 
-            // ovalShape5
-            // 
-            this.ovalShape5.FillGradientColor = System.Drawing.Color.Turquoise;
-            this.ovalShape5.Location = new System.Drawing.Point(108, 435);
-            this.ovalShape5.Name = "ovalShape5";
-            this.ovalShape5.Size = new System.Drawing.Size(197, 116);
-            // 
-            // ovalShape6
-            // 
-            this.ovalShape6.FillGradientColor = System.Drawing.Color.Turquoise;
-            this.ovalShape6.Location = new System.Drawing.Point(494, 222);
-            this.ovalShape6.Name = "ovalShape6";
-            this.ovalShape6.Size = new System.Drawing.Size(276, 188);
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 389;
-            this.lineShape1.X2 = 496;
-            this.lineShape1.Y1 = 210;
-            this.lineShape1.Y2 = 294;
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 288;
-            this.lineShape2.X2 = 513;
-            this.lineShape2.Y1 = 463;
-            this.lineShape2.Y2 = 367;
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 714;
-            this.lineShape3.X2 = 785;
-            this.lineShape3.Y1 = 389;
-            this.lineShape3.Y2 = 547;
-            // 
-            // lineShape4
-            // 
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 737;
-            this.lineShape4.X2 = 938;
-            this.lineShape4.Y1 = 257;
-            this.lineShape4.Y2 = 188;
-            // 
-            // lineShape5
-            // 
-            this.lineShape5.Name = "lineShape5";
-            this.lineShape5.X1 = 906;
-            this.lineShape5.X2 = 767;
-            this.lineShape5.Y1 = 373;
-            this.lineShape5.Y2 = 336;
             // 
             // label1
             // 
@@ -349,7 +199,6 @@ namespace SoftwareProjekt
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.shapeContainer1);
             this.Name = "FrmMain";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -370,7 +219,6 @@ namespace SoftwareProjekt
 
                 FileStream imageStream = new FileStream(filename, FileMode.Open, FileAccess.Read);
 
-                pictureBox1.Image = System.Drawing.Image.FromStream(imageStream);
 
             }
         }
@@ -412,6 +260,11 @@ namespace SoftwareProjekt
             {
                 printDocument1.Print();
             }
+        }
+
+        public override void xyzChanged(IExcercise sender, ExcerciseEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

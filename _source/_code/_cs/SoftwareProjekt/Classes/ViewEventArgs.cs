@@ -26,12 +26,12 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public class FormulaDrawer
+    public class ViewEventArgs : EventArgs
     {
-        public IMathObject IMathObject
+        public ViewEvents ViewEvent
         {
             get
-            {                
+            {
                 throw new System.NotImplementedException();
             }
             set
@@ -39,4 +39,5 @@ namespace SoftwareProjekt
             }
         }
     }
+
 }

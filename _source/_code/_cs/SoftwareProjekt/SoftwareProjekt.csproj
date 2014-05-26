@@ -36,8 +36,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Deployment" />
@@ -50,13 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AbstractView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Classes\AbstractAxis.cs" />
     <Compile Include="Classes\AbstractExcercise.cs" />
     <Compile Include="Classes\AbstractTopic.cs" />
     <Compile Include="Classes\AffineAbbildung.cs" />
-    <Compile Include="Classes\AffineAbbildungView.cs" />
-    <Compile Include="Classes\Components.cs" />
+    <Compile Include="Enums\Components.cs" />
     <Compile Include="Classes\Controller.cs" />
+    <Compile Include="Delegates\ExcerciseHandler.cs" />
+    <Compile Include="Classes\ExcerciseEventArgs.cs" />
+    <Compile Include="Interfaces\IExcerciseObserver.cs" />
     <Compile Include="UserControls\CoordinateSystem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -144,6 +147,9 @@
     <Compile Include="Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Vector.cs" />
+    <Compile Include="Classes\ViewEventArgs.cs" />
+    <Compile Include="Enums\ViewEvents.cs" />
+    <Compile Include="Delegates\ViewHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

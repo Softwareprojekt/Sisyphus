@@ -29,6 +29,29 @@ namespace SoftwareProjekt
     public interface IController
     {
 
+        /// <summary>
+        /// Adds a ViewChanged to the List.
+        /// </summary>
         void AddView(IView view);
+
+        /// <summary>
+        /// Adds an Excercise to the List.
+        /// </summary>
+        void AddExcercise(IExcercise excercise);
+
+        /// <summary>
+        /// Event in a ViewChanged gets redirected.
+        /// </summary>
+        void FireEvent(IView v, ViewEventArgs e);
+
+        /// <summary>
+        /// Remove an Excercise from the List.
+        /// </summary>
+        void RemoveExcercise(IExcercise excercise);
+
+        /// <summary>
+        /// Remove a ViewChanged from the List.
+        /// </summary>
+        void RemoveView(IView view);
     }
 }

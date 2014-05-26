@@ -26,7 +26,7 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public class AbstractTopic : ITopic
+    public abstract class AbstractTopic : ITopic
     {
         public List<IExcercise> ExcerciseList
         {

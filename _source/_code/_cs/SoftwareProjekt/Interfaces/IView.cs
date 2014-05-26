@@ -28,18 +28,23 @@ namespace SoftwareProjekt
 {
     public interface IView
     {
-    
-        IController IController
+        /// <summary>
+        /// Redirect events fired on the View to the Controller.
+        /// </summary>
+        event ViewHandler<IView> ViewChanged;
+
+        /// <summary>
+        /// Associated Controller.
+        /// </summary>
+        IController Controller
         {
             get;
             set;
         }
 
-        void SetController(IController controller);
-
         /// <summary>
-        /// Shows results from Calculation
+        /// Set associated Controller.
         /// </summary>
-        void Show();
+        void SetController(IController controller);
     }
 }

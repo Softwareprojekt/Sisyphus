@@ -26,91 +26,81 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public abstract class AbstractExcercise : IExcercise 
+    public abstract class AbstractExcercise : IExcercise
     {
+        /// <summary>
+        /// Id of excercise.
+        /// </summary>
         private int _id;
+        /// <summary>
+        /// Name of excercise.
+        /// </summary>
         private int _name;
-    
+
+        /// <summary>
+        /// </summary>
         public void AbortWork()
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// </summary>
         public void LoadState()
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// </summary>
         public void ResetState()
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// </summary>
         public void SaveState()
         {
             throw new NotImplementedException();
         }
 
-        public void SetController()
+        /// <summary>
+        /// </summary>
+        public void StartWork()
         {
             throw new NotImplementedException();
-        }
-
-        public void StartExcercise()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void StopExcercise()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Calculate()
-        {
-            throw new System.NotImplementedException();
         }
 
         /// <summary>
-        /// @TODO: should be renamed (GC)
         /// </summary>
-        public void Finalize()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public IController IController
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public IView IView
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public void Read()
+        public void StopWork()
         {
             throw new NotImplementedException();
         }
 
-        public void Write()
+        /// <summary>
+        /// </summary>
+        public event ExcerciseHandler<AbstractExcercise> ExcerciseChanged;
+
+        /// <summary>
+        /// </summary>
+        public void AttachView(IExcerciseObserver observer)
         {
-            throw new NotImplementedException();
+            ExcerciseChanged += new ExcerciseHandler<AbstractExcercise>(observer.xyzChanged);
+        }
+
+        /// <summary>
+        /// Much calculation.
+        /// </summary>
+        protected void DoWork()
+        {
+            // many calculation.
+            // much results.
+            // wow.
+
+            // fire event to notify view that stuff has changed.
+            ExcerciseChanged.Invoke(this, new ExcerciseEventArgs());
         }
     }
 }
