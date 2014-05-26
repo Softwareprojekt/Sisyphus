@@ -152,6 +152,12 @@
     <None Include="ClassDiagrams\MVC.cd" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\FrmDrehLinAbbUrsp.resx">
+      <DependentUpon>FrmDrehLinAbbUrsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSpiegLinAbbUrsp.resx">
+      <DependentUpon>FrmSpiegLinAbbUrsp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CtlMatrixInput.resx">
       <DependentUpon>CtlMatrixInput.cs</DependentUpon>
     </EmbeddedResource>
