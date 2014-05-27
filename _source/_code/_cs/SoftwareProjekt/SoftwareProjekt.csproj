@@ -161,6 +161,12 @@
     <EmbeddedResource Include="Forms\FrmDrehLinAbbUrsp.resx">
       <DependentUpon>FrmDrehLinAbbUrsp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHinterLinAbb.resx">
+      <DependentUpon>FrmHinterLinAbb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmLinAbbVielBelVek.resx">
+      <DependentUpon>FrmLinAbbVielBelVek.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSpiegLinAbbUrsp.resx">
       <DependentUpon>FrmSpiegLinAbbUrsp.cs</DependentUpon>
     </EmbeddedResource>
