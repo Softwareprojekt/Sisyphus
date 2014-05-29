@@ -168,6 +168,9 @@
     <EmbeddedResource Include="Forms\FrmDrehLinAbbUrsp.resx">
       <DependentUpon>FrmDrehLinAbbUrsp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmFraktalErzIFS.resx">
+      <DependentUpon>FrmFraktalErzIFS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmHinterLinAbb.resx">
       <DependentUpon>FrmHinterLinAbb.cs</DependentUpon>
     </EmbeddedResource>
