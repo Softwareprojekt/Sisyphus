@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FrmUmkehrungLinAbb
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "FrmUmkehrung";
+            this.ClientSize = new System.Drawing.Size(808, 362);
+            this.Name = "FrmUmkehrungLinAbb";
+            this.Text = "Umkehrung einer linearen Abbildung";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
