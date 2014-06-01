@@ -26,7 +26,7 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public class Line
+    public class Line : IComparable
     {
         public Line(LineSegment lineSegment)
         {
@@ -47,6 +47,20 @@ namespace SoftwareProjekt
             set
             {
             }
+        }
+
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

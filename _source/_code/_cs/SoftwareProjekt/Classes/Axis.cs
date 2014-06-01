@@ -21,8 +21,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace SoftwareProjekt
 {
@@ -37,56 +39,14 @@ namespace SoftwareProjekt
         public Axis(bool isXAxis)
         {
             _isXAxis = isXAxis;
-            _isYAxis = !isXAxis;
-            throw new System.NotImplementedException();
+            _isYAxis = !isXAxis;            
         }
 
-        public string Legend
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public string Legend { get; set; }
+        public float StartValue { get; set; }
+        public float EndValue { get; set; }
+        public float Scale { get; set; }
 
-        public float StartValue
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
 
-        public float EndValue
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public float Scale
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
     }
 }

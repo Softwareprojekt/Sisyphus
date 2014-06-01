@@ -3,7 +3,7 @@
   <Class Name="SoftwareProjekt.CoordinateSystem">
     <Position X="9" Y="3" Width="2" />
     <TypeIdentifier>
-      <HashCode>gAiAAQAFAAAAUAEAAAAAAAACAAAAAAAAAkAAAQAAAAA=</HashCode>
+      <HashCode>ghiAAgCFGEAQUAEAAAAAAAACAAAAAAAAAkAgJQAAEgA=</HashCode>
       <FileName>UserControls\CoordinateSystem.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -15,24 +15,25 @@
     <Position X="3.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAQAAAACIAAAAAAIAAAAAAAQAAAABAAAA=</HashCode>
-      <FileName>Classes\AbstractAxis.cs</FileName>
+      <FileName>Classes\Axis.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SoftwareProjekt.Line">
-    <Position X="13" Y="5.25" Width="1.5" />
+    <Position X="13" Y="5.75" Width="1.5" />
     <AssociationLine Name="LineSegment" Type="SoftwareProjekt.LineSegment">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.089" Y="0.143" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>CAAAAAAAAAAAAAQAgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Line.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="LineSegment" />
     </ShowAsAssociation>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="SoftwareProjekt.Vector">
     <Position X="16" Y="1" Width="2.25" />
@@ -45,12 +46,13 @@
   <Class Name="SoftwareProjekt.LineSegment">
     <Position X="13" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEAAAQAAAAAAAAQIAAAAAAAAAAEAAgAAAAAg=</HashCode>
-      <FileName>Classes\LineSegement.cs</FileName>
+      <HashCode>AAAAAAAAEAAAQAQAgAAAAQIAAAAAAAAAAEAAgAAAAAg=</HashCode>
+      <FileName>Classes\LineSegment.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Vector" />
     </ShowAsAssociation>
+    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="SoftwareProjekt.IAxis">
     <Position X="5.75" Y="3" Width="1.5" />

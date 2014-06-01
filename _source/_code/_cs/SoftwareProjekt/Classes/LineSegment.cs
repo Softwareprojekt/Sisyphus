@@ -26,7 +26,7 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public class LineSegment
+    public class LineSegment : IComparable
     {
         public LineSegment(System.Drawing.PointF startPoint, Vector directionalVector)
         {
@@ -43,9 +43,6 @@ namespace SoftwareProjekt
             get
             {
                 throw new System.NotImplementedException();
-            }
-            set
-            {
             }
         }
 
@@ -113,6 +110,16 @@ namespace SoftwareProjekt
             set
             {
             }
+        }
+
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
         }
     }
 }
