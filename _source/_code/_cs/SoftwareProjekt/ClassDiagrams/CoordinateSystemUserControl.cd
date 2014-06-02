@@ -3,7 +3,7 @@
   <Class Name="SoftwareProjekt.CoordinateSystem">
     <Position X="9" Y="3" Width="2" />
     <TypeIdentifier>
-      <HashCode>ghiAAgCFGEAQUAEAAAAAAAACAAAAAAAAAkAgJQAAEgA=</HashCode>
+      <HashCode>ghiAAgCFGEAQUAEAAIAACAACAAAAAAAAAkAgJQAAEgA=</HashCode>
       <FileName>UserControls\CoordinateSystem.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -20,25 +20,25 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SoftwareProjekt.Line">
-    <Position X="13" Y="5.75" Width="1.5" />
-    <AssociationLine Name="LineSegment" Type="SoftwareProjekt.LineSegment">
+    <Position X="13" Y="6.25" Width="1.5" />
+    <AssociationLine Name="InnerLineSegment" Type="SoftwareProjekt.LineSegment">
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.089" Y="0.143" />
+        <Position X="0.089" Y="0.32" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>CAAAAAAAAAAAAAQAgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAQAgAAAAAAAAAAAAIAAAAAAIAAAAAA=</HashCode>
       <FileName>Classes\Line.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="LineSegment" />
+      <Property Name="InnerLineSegment" />
     </ShowAsAssociation>
-    <Lollipop Position="0.2" />
+    <Lollipop Orientation="Left" Position="0.206" />
   </Class>
   <Class Name="SoftwareProjekt.Vector">
     <Position X="16" Y="1" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAEAAAAAAAAAIBAABAkAAAAAAAAAAAAAAAYAA=</HashCode>
+      <HashCode>AAIAAAAAEAAAAAAAAAIBAABAkIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Vector.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -46,13 +46,20 @@
   <Class Name="SoftwareProjekt.LineSegment">
     <Position X="13" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEAAAQAQAgAAAAQIAAAAAAAAAAEAAgAAAAAg=</HashCode>
+      <HashCode>AAAAAAAAEAAAQAQAgAAAAQIAAAAAAIAAAEAAgAAAAAg=</HashCode>
       <FileName>Classes\LineSegment.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Vector" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SoftwareProjekt.DrawingPoint">
+    <Position X="13" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>DrawingPoint.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Interface Name="SoftwareProjekt.IAxis">
     <Position X="5.75" Y="3" Width="1.5" />

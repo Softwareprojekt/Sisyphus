@@ -25,6 +25,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 
 namespace SoftwareProjekt
@@ -34,7 +35,7 @@ namespace SoftwareProjekt
     {
         /// <summary>
         /// </summary>
-        private System.Collections.Generic.List<SoftwareProjekt.LineSegment> _lineSegementList;
+        private List<LineSegment> _lineSegementList;
         private List<Line> _lineList;
 
         private IAxis _xAxis;
@@ -42,7 +43,7 @@ namespace SoftwareProjekt
 
 
         public CoordinateSystemClickHandler CoordinateClick;
-        private int _pointsList;
+        private List<PointF> _pointsList;
 
         /// <summary>
         /// ctor
@@ -51,6 +52,8 @@ namespace SoftwareProjekt
         {
             _lineList = new List<Line>();
             _lineSegementList = new List<LineSegment>();
+            _pointsList = new List<PointF>();
+
 
             InitializeComponent();
         }
@@ -99,13 +102,102 @@ namespace SoftwareProjekt
         /// </summary>
         private void DrawVector(Graphics g)
         {
-                       
-            throw new System.NotImplementedException();
+            foreach (LineSegment ls in _lineSegementList)
+            {
+                DrawSingleVector(ls, g);
+            }
+        }
+
+        private void DrawSingleVector(LineSegment ls, Graphics g)
+        {
+            Point internalStartPoint = CalculateInternalCoordinates(ls.StartPoint.X, ls.StartPoint.Y);
+            Point internalEndPoint = CalculateInternalCoordinates(ls.EndPoint.X, ls.EndPoint.Y);
+
+            if (internalEndPoint.X == -1.0f || internalEndPoint.Y == -1.0f)
+            {
+                return;
+            }
+
+            if (internalStartPoint.X == -1.0f || internalStartPoint.Y == -1.0f)
+            {
+                return;
+            }
+
+            g.DrawLine(ls.Color, internalStartPoint, internalEndPoint);
+
+            // calculate 45° angle to line at endpoint
+            float deltaY = Math.Abs(ls.EndPoint.Y - ls.StartPoint.Y);
+            float deltaX = Math.Abs(ls.EndPoint.X - ls.StartPoint.X);
+            float tan = 0;
+
+            if (deltaX == 0)
+            {
+                tan = float.MaxValue;
+            }
+            else
+            {
+                tan = deltaY / deltaX;
+            }
+
+            float piAngle = (float)Math.Atan(tan);
+            float angle = (piAngle / (float)Math.PI) * 180;
+
+
+            System.Drawing.Drawing2D.Matrix mRot = new System.Drawing.Drawing2D.Matrix();
+            mRot.RotateAt(45, new PointF(internalEndPoint.X, internalEndPoint.Y), MatrixOrder.Append);
+
+            g.Transform = mRot;
+
+            Pen localPen = new Pen(ls.Color.Color, 0.4f);
+            float lengthOfLine = (float)Math.Sqrt((float)Math.Pow(Math.Abs(internalEndPoint.X - internalStartPoint.X), 2.0f) + Math.Pow(Math.Abs(internalEndPoint.Y - internalStartPoint.Y), 2.0f));
+            localPen.DashPattern = new float[] { 10.0f, lengthOfLine - 10.0f};
+            localPen.DashStyle = DashStyle.Custom;
+
+            g.DrawLine(localPen, internalEndPoint, internalStartPoint);
+
+
+            mRot.RotateAt(-90, new PointF(internalEndPoint.X, internalEndPoint.Y), MatrixOrder.Append);
+            g.Transform = mRot;
+
+            localPen.DashPattern = new float[] { 10.0f, lengthOfLine - 10.0f };
+            localPen.DashStyle = DashStyle.Custom;
+
+            g.DrawLine(localPen, internalEndPoint, internalStartPoint);
+
+            mRot.RotateAt(45, new PointF(internalEndPoint.X, internalEndPoint.Y), MatrixOrder.Append);
+
+            g.Transform = mRot;
+
+            
+        }
+
+        private void DrawSingleLine(Line l, Graphics g)
+        {
+            Pen dashingPen = new Pen(l.InnerLineSegment.Color.Color);
+            dashingPen.DashStyle = DashStyle.Dash;
+
+            PointF internalStartPoint = CalculateInternalCoordinates(l.InnerLineSegment.StartPoint.X, l.InnerLineSegment.StartPoint.Y);
+            PointF internalEndPoint = CalculateInternalCoordinates(l.InnerLineSegment.EndPoint.X, l.InnerLineSegment.EndPoint.Y);
+
+            if (internalEndPoint.X == -1.0f || internalEndPoint.Y == -1.0f)
+            {
+                return;
+            }
+
+            if (internalStartPoint.X == -1.0f || internalStartPoint.Y == -1.0f)
+            {
+                return;
+            }
+
+            g.DrawLine(l.InnerLineSegment.Color, internalStartPoint, internalEndPoint);
         }
 
         private void DrawLine(Graphics g)
         {
-            throw new System.NotImplementedException();
+            foreach (Line l in _lineList)
+            {
+                DrawSingleLine(l, g);
+            }
         }
 
         /// <summary>
@@ -118,9 +210,10 @@ namespace SoftwareProjekt
             this._xAxis = new Axis(true);
             this._yAxis = new Axis(false);
             this._xAxis.EndValue = 5.0f;
-            this._xAxis.StartValue = 3.0f;
+            this._xAxis.StartValue = 0.0f;
             this._xAxis.Scale = 0.5f;
             this._xAxis.Legend = "X-axis";
+
 
 
             this._yAxis.EndValue = 5.0f;
@@ -131,11 +224,15 @@ namespace SoftwareProjekt
             this.Paint +=CoordinateSystem_Paint;
             this.Resize += CoordinateSystem_Resize;
             this.MouseClick += CoordinateSystem_MouseClick;
+
+            this._lineSegementList.Add(new LineSegment(new PointF(1.0f, 1.5f), new Vector(4.0f, 1.0f)));
             // 
             // CoordinateSystem
             // 
             this.Name = "CoordinateSystem";
             this.ResumeLayout(false);
+
+
 
         }
 
@@ -170,6 +267,9 @@ namespace SoftwareProjekt
         void CoordinateSystem_Paint(object sender, PaintEventArgs e)
         {
             DrawAxes(e.Graphics);
+            DrawVector(e.Graphics);
+            DrawPoints(e.Graphics);
+            DrawSinglePoint(new PointF(5.0f, 4.5f), e.Graphics);
         }
 
         /// <summary>
@@ -179,6 +279,29 @@ namespace SoftwareProjekt
         {
             DrawXAxis(g);
             DrawYAxis(g);
+        }
+
+
+        private void DrawPoints(Graphics g)
+        {
+            foreach (PointF p in _pointsList)
+            {
+                DrawSinglePoint(p, g);
+            }
+        }
+
+        private void DrawSinglePoint(PointF p, Graphics g)
+        {
+            Point internalPoint = CalculateInternalCoordinates(p.X, p.Y);
+
+
+            if (internalPoint.X == -1 || internalPoint.Y == -1)
+            {
+                return;
+            }
+
+            g.DrawLine(Pens.Black, new Point(internalPoint.X - 3, internalPoint.Y - 3), new Point(internalPoint.X + 3, internalPoint.Y + 3));
+            g.DrawLine(Pens.Black, new Point(internalPoint.X - 3, internalPoint.Y + 3), new Point(internalPoint.X + 3, internalPoint.Y - 3));
         }
 
         private void DrawXAxis(Graphics g)
@@ -345,12 +468,44 @@ namespace SoftwareProjekt
             return new PointF(localXValue, localYValue);
         }
 
-        private PointF CalculateInternalCoordinates(int xValue, int yValue)
+        private Point CalculateInternalCoordinates(float xValue, float yValue)
         {
-            int localXValue = xValue;
-            int localYValue = yValue;
+            int localXValue = 0;
+            int localYValue = 0;
 
-            return new PointF(localXValue, localYValue);
+            if (xValue > _xAxis.EndValue || xValue < _xAxis.StartValue)
+            {
+                return new Point(-1, -1);
+            }
+
+            if (yValue > _yAxis.EndValue || yValue < _yAxis.StartValue)
+            {
+                return new Point(-1, -1);
+            }
+
+            // calculate X
+
+            float numericOffsetX = xValue - _xAxis.StartValue;
+            float rangeX = _xAxis.EndValue -_xAxis.StartValue;
+            int localOffsetPixelX = this.Width / 10;
+
+            int numericArrowLengthX = this.Width - 2 * (this.Width / 10) - 20;
+            float rangePerValueX = numericArrowLengthX / rangeX;
+
+            localXValue = (int) (numericOffsetX * rangePerValueX) + localOffsetPixelX;
+
+            // calculate Y
+            float numericOffsetY = yValue - _yAxis.StartValue;
+            float rangeY = _yAxis.EndValue - _yAxis.StartValue;
+            int localOffsetPixelY = this.Height - this.Height / 10;
+
+            int numericArrowLengthY = this.Height - 2 * (this.Height / 10) - 20;
+            float rangePerValueY = numericArrowLengthY / rangeY;
+
+            localYValue = localOffsetPixelY - (int)(numericOffsetY * rangePerValueY);
+
+
+            return new Point(localXValue, localYValue);
         }
 
         public void AddLine(Line line)
@@ -363,14 +518,14 @@ namespace SoftwareProjekt
             _lineList.Remove(line);
         }
 
-        public void AddPoint()
+        public void AddPoint(PointF p)
         {
-            throw new System.NotImplementedException();
+            _pointsList.Add(p);
         }
 
-        public void RemovePoint()
+        public void RemovePoint(PointF p)
         {
-            throw new System.NotImplementedException();
+            _pointsList.Remove(p);
         }
 
     }

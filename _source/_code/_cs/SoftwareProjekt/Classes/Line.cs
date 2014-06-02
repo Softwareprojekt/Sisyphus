@@ -21,6 +21,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -30,33 +31,29 @@ namespace SoftwareProjekt
     {
         public Line(LineSegment lineSegment)
         {
-            throw new System.NotImplementedException();
+            InnerLineSegment = lineSegment;
         }
 
-        public Line(Vector firstVector, string secondVector)
+        public Line(Vector firstVector, Vector secondVector)
         {
-            throw new System.NotImplementedException();
+            InnerLineSegment = new LineSegment(new PointF(firstVector.X1, firstVector.X2), secondVector);
         }
-    
-        public LineSegment LineSegment
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+
+        public LineSegment InnerLineSegment { get; set; }
 
         public int CompareTo(object obj)
         {
-            throw new NotImplementedException();
+            if (!(obj is Line))
+            {
+                return -1;
+            }
+
+            return InnerLineSegment.CompareTo((obj as Line).InnerLineSegment);
         }
 
         public override bool Equals(object obj)
         {
-            return base.Equals(obj);
+            return this.CompareTo(obj) == 0;
         }
         public override int GetHashCode()
         {

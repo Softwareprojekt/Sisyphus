@@ -33,30 +33,13 @@ namespace SoftwareProjekt
         /// </summary>
         public Vector(float x1, float x2)
         {
-            throw new System.NotImplementedException();
-        }
-    
-        public int X
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            X1 = x1;
+            X2 = x2;
         }
 
-        public int Y
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+        public float X1 { get; set; }
+
+        public float X2 { get; set; }
 
         public void Add(Vector newVector)
         {

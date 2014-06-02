@@ -21,6 +21,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -28,98 +29,71 @@ namespace SoftwareProjekt
 {
     public class LineSegment : IComparable
     {
-        public LineSegment(System.Drawing.PointF startPoint, Vector directionalVector)
+        public LineSegment(PointF startPoint, Vector directionalVector)
         {
-            throw new System.NotImplementedException();
+            this.StartPoint = new PointF(startPoint.X, startPoint.Y);
+            this.Vector = directionalVector;
+
+            this.AngleVisible = false;
+            this.Color = Pens.Black;
         }
 
         public LineSegment()
         {
-            throw new System.NotImplementedException();
-        }
-    
-        public System.Drawing.PointF StartPoint
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+            this.StartPoint = new PointF(0.0f, 0.0f);
+            this.Vector = new Vector(0.0f, 0.0f);
+
+            this.AngleVisible = false;
+            this.Color = Pens.Black;
         }
 
-        public Vector Vector
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+        public PointF StartPoint { get; private set; }
+
+        public Vector Vector { get; set; }
 
         /// <summary>
         /// Is read-only; calculated from StartPoint and Vector
         /// </summary>
-        public System.Drawing.PointF EndPoint
+        public PointF EndPoint
         {
             get
             {
-                throw new System.NotImplementedException();
-            }           
-        }
-
-        public System.Drawing.Pens Color
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
+                return new PointF(this.StartPoint.X + this.Vector.X1, this.StartPoint.Y + this.Vector.X2);                
             }
         }
 
-        public bool AngleVisible
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+        public Pen Color { get; set; }
 
-        public string Label
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+        public bool AngleVisible { get; set; }
 
-        public string AngleLabel
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+        public string Label { get; set; }
+
+        public string AngleLabel { get; set; }
 
         public int CompareTo(object obj)
         {
-            throw new NotImplementedException();
+            if (!(obj is LineSegment))
+            {
+                return -1;
+            }
+
+            LineSegment ls = obj as LineSegment;
+            if (this.Label == ls.Label && this.EndPoint == ls.EndPoint && this.AngleLabel == ls.AngleLabel && this.StartPoint == this.StartPoint)
+            {
+                return 0;
+            }
+
+            return -1;
         }
 
         public override bool Equals(object obj)
         {
-            return base.Equals(obj);
+            return this.CompareTo(obj) == 0;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }
