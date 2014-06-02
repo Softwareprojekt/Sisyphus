@@ -140,7 +140,7 @@ namespace SoftwareProjekt
             }
 
             float piAngle = (float)Math.Atan(tan);
-            float angle = (piAngle / (float)Math.PI) * 180;
+            float angle = 360 - (piAngle / (float)Math.PI) * 180;
 
 
             System.Drawing.Drawing2D.Matrix mRot = new System.Drawing.Drawing2D.Matrix();
@@ -167,6 +167,23 @@ namespace SoftwareProjekt
             mRot.RotateAt(45, new PointF(internalEndPoint.X, internalEndPoint.Y), MatrixOrder.Append);
 
             g.Transform = mRot;
+
+            if (!String.IsNullOrEmpty(ls.Label))
+            {
+                float steigung = (float)Math.Abs(ls.EndPoint.Y - ls.StartPoint.Y) / (float)Math.Abs(ls.StartPoint.X - ls.EndPoint.X);
+
+                float printPointX = internalStartPoint.X + (internalEndPoint.X - internalStartPoint.X) / 2;
+                float printPointY = internalStartPoint.Y - steigung * (printPointX - internalStartPoint.X) + 5;
+
+                if (float.IsInfinity(steigung))
+                {
+                    printPointY = internalStartPoint.Y - ((internalStartPoint.Y - internalEndPoint.Y) / 2);
+                }
+
+                PointF printPoint = new PointF(printPointX, printPointY);
+                g.DrawString(ls.Label, new Font("Arial", 9.0f), new SolidBrush(ls.Color.Color), printPoint);
+
+            }
 
             
         }
