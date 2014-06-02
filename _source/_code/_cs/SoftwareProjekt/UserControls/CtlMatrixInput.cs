@@ -1,8 +1,8 @@
 ﻿/**
- * @title: scaleMatrix Eingabe
+ * @title: Matrix Eingabe
  * @author: Michael Eimer
  * @date: 23.05.2014
- * @version: 0.1
+ * @version: 0.2
  * 
  */ 
  
@@ -18,7 +18,7 @@ namespace SoftwareProjekt
 {
     public partial class CtlMatrixInput : UserControl
     {
-        private double[,] _dmatrix;
+        private Matrix _mmatrix;
         private string _sname;
 
         public CtlMatrixInput()
@@ -26,10 +26,10 @@ namespace SoftwareProjekt
             InitializeComponent();
         }           
 
-        public double[,] Matrix
+        public Matrix Matrix
         {
-            get { return _dmatrix; }
-            set { _dmatrix = value; }
+            get { return _mmatrix; }
+            set { _mmatrix = value; }
         }        
 
         public string Name

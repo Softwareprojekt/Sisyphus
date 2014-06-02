@@ -1,8 +1,8 @@
 ﻿/**
- * @title: Vektor Eingabe
- * @author: Michael Eimer
+ * @title: Vector Input
+ * @author: 
  * @date: 23.05.2014
- * @version: 0.1
+ * @version: 0.2
  * 
  * 
  */
@@ -20,7 +20,7 @@ namespace SoftwareProjekt
 {
     public partial class CtlVektorInput : UserControl
     {
-        private double[,] _dVektor;
+        private Vector _vVektor;
         private string _sName;
 
         public CtlVektorInput()
@@ -34,10 +34,10 @@ namespace SoftwareProjekt
             set { _sName = value; }
         }       
 
-        public double[,] MyProperty
+        public Vector MyProperty
         {
-            get { return _dVektor; }
-            set { _dVektor = value; }
+            get { return _vVektor; }
+            set { _vVektor = value; }
         }       
         
     }

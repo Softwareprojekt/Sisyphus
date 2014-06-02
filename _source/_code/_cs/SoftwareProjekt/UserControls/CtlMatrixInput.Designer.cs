@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.grpMatrixEingabe = new System.Windows.Forms.GroupBox();
-            this.txtEle11 = new System.Windows.Forms.TextBox();
-            this.txtEle12 = new System.Windows.Forms.TextBox();
-            this.txtEle21 = new System.Windows.Forms.TextBox();
             this.txtEle22 = new System.Windows.Forms.TextBox();
+            this.txtEle21 = new System.Windows.Forms.TextBox();
+            this.txtEle12 = new System.Windows.Forms.TextBox();
+            this.txtEle11 = new System.Windows.Forms.TextBox();
             this.grpMatrixEingabe.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,31 +44,10 @@
             this.grpMatrixEingabe.Controls.Add(this.txtEle11);
             this.grpMatrixEingabe.Location = new System.Drawing.Point(3, 3);
             this.grpMatrixEingabe.Name = "grpMatrixEingabe";
-            this.grpMatrixEingabe.Size = new System.Drawing.Size(106, 76);
+            this.grpMatrixEingabe.Size = new System.Drawing.Size(112, 75);
             this.grpMatrixEingabe.TabIndex = 0;
             this.grpMatrixEingabe.TabStop = false;
-            this.grpMatrixEingabe.Text = "scaleMatrix Eingabe";
-            // 
-            // txtEle11
-            // 
-            this.txtEle11.Location = new System.Drawing.Point(6, 19);
-            this.txtEle11.Name = "txtEle11";
-            this.txtEle11.Size = new System.Drawing.Size(42, 20);
-            this.txtEle11.TabIndex = 0;
-            // 
-            // txtEle12
-            // 
-            this.txtEle12.Location = new System.Drawing.Point(54, 19);
-            this.txtEle12.Name = "txtEle12";
-            this.txtEle12.Size = new System.Drawing.Size(42, 20);
-            this.txtEle12.TabIndex = 1;
-            // 
-            // txtEle21
-            // 
-            this.txtEle21.Location = new System.Drawing.Point(6, 45);
-            this.txtEle21.Name = "txtEle21";
-            this.txtEle21.Size = new System.Drawing.Size(42, 20);
-            this.txtEle21.TabIndex = 2;
+            this.grpMatrixEingabe.Text = "Matrix Eingabe";
             // 
             // txtEle22
             // 
@@ -77,13 +56,34 @@
             this.txtEle22.Size = new System.Drawing.Size(42, 20);
             this.txtEle22.TabIndex = 3;
             // 
-            // CtlMatrixEingabe
+            // txtEle21
+            // 
+            this.txtEle21.Location = new System.Drawing.Point(6, 45);
+            this.txtEle21.Name = "txtEle21";
+            this.txtEle21.Size = new System.Drawing.Size(42, 20);
+            this.txtEle21.TabIndex = 2;
+            // 
+            // txtEle12
+            // 
+            this.txtEle12.Location = new System.Drawing.Point(54, 19);
+            this.txtEle12.Name = "txtEle12";
+            this.txtEle12.Size = new System.Drawing.Size(42, 20);
+            this.txtEle12.TabIndex = 1;
+            // 
+            // txtEle11
+            // 
+            this.txtEle11.Location = new System.Drawing.Point(6, 19);
+            this.txtEle11.Name = "txtEle11";
+            this.txtEle11.Size = new System.Drawing.Size(42, 20);
+            this.txtEle11.TabIndex = 0;
+            // 
+            // CtlMatrixInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grpMatrixEingabe);
-            this.Name = "CtlMatrixEingabe";
-            this.Size = new System.Drawing.Size(115, 85);
+            this.Name = "CtlMatrixInput";
+            this.Size = new System.Drawing.Size(125, 89);
             this.grpMatrixEingabe.ResumeLayout(false);
             this.grpMatrixEingabe.PerformLayout();
             this.ResumeLayout(false);
