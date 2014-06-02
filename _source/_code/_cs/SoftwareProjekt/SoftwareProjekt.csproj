@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DrawingPoint.cs" />
+    <Compile Include="Classes\DrawingPoint.cs" />
     <Compile Include="Forms\AbstractView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,11 +67,6 @@
     </Compile>
     <Compile Include="Interfaces\IExcerciseObserver.cs" />
     <Compile Include="Classes\ScreenshotCreator.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\CoordinateSystem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -198,10 +193,6 @@
     <EmbeddedResource Include="Classes\Axis.resx">
       <DependentUpon>Axis.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CoordinateSystem.resx">
       <DependentUpon>CoordinateSystem.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,9 +221,7 @@
       <DependentUpon>WorkBookControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

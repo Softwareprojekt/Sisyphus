@@ -189,7 +189,11 @@ namespace SoftwareProjekt
                 return;
             }
 
-            g.DrawLine(l.InnerLineSegment.Color, internalStartPoint, internalEndPoint);
+            Pen localPen = new Pen(l.InnerLineSegment.Color.Color, 0.4f);
+            localPen.DashPattern = new float[] { 10.0f, 5.0f };
+            localPen.DashStyle = DashStyle.Custom;
+            
+            g.DrawLine(localPen, internalStartPoint, internalEndPoint);
         }
 
         private void DrawLine(Graphics g)
@@ -225,7 +229,7 @@ namespace SoftwareProjekt
             this.Resize += CoordinateSystem_Resize;
             this.MouseClick += CoordinateSystem_MouseClick;
 
-            this._lineSegementList.Add(new LineSegment(new PointF(1.0f, 1.5f), new Vector(4.0f, 1.0f)));
+            
             // 
             // CoordinateSystem
             // 
@@ -268,8 +272,8 @@ namespace SoftwareProjekt
         {
             DrawAxes(e.Graphics);
             DrawVector(e.Graphics);
+            DrawLine(e.Graphics);
             DrawPoints(e.Graphics);
-            DrawSinglePoint(new PointF(5.0f, 4.5f), e.Graphics);
         }
 
         /// <summary>
