@@ -172,8 +172,15 @@ namespace SoftwareProjekt
             {
                 float steigung = (float)Math.Abs(ls.EndPoint.Y - ls.StartPoint.Y) / (float)Math.Abs(ls.StartPoint.X - ls.EndPoint.X);
 
+                if ((ls.EndPoint.Y - ls.StartPoint.Y) < 0 && (ls.StartPoint.X - ls.EndPoint.X) < 0)
+                {
+                    steigung *= -1;
+                }
+
                 float printPointX = internalStartPoint.X + (internalEndPoint.X - internalStartPoint.X) / 2;
-                float printPointY = internalStartPoint.Y - steigung * (printPointX - internalStartPoint.X) + 5;
+                float printPointYPart1 = (printPointX - internalStartPoint.X);
+                float printPointYPart2 = steigung * printPointYPart1;
+                float printPointY = internalStartPoint.Y - printPointYPart2 + 10;
 
                 if (float.IsInfinity(steigung))
                 {
