@@ -46,7 +46,15 @@ namespace SoftwareProjekt
             {
             }
         }
-    
+
+        public float X11 { get; set; }
+
+        public float X12 { get; set; }
+
+        public float X21 { get; set; }
+
+        public float X22 { get; set; }
+
         public void GetData()
         {
             throw new NotImplementedException();
