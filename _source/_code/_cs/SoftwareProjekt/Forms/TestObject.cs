@@ -37,18 +37,23 @@ namespace SoftwareProjekt.Forms
             ls5.Color = Pens.Orange;
             ls5.Label = "e1";
 
+            LineSegment ls6 = new LineSegment(new PointF(3.0f, 5.0f), new Vector(1.0f, -3.0f));
+            ls6.Label = "ls6";
+            ls6.Color = Pens.Orange;
+
             coordinateSystem1.AddLineSegment(ls1);
             coordinateSystem1.AddLineSegment(ls2);
             coordinateSystem1.AddLineSegment(ls3);
             coordinateSystem1.AddLineSegment(ls4);
             coordinateSystem1.AddLineSegment(ls5);
+            coordinateSystem1.AddLineSegment(ls6);
 
 
             Line l1 = new Line(new LineSegment(new PointF(0.0f, 0.0f), new Vector(2.0f, 4.0f)));
             l1.InnerLineSegment.Color = Pens.YellowGreen;
             coordinateSystem1.AddLine(l1);
 
-            PointF point = new PointF(2.5f, 1.25f);
+            PointF point = new PointF(1.0f, 1.5f);
             coordinateSystem1.AddPoint(point);
 
         }
