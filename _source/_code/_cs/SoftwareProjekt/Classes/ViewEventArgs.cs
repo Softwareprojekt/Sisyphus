@@ -28,15 +28,33 @@ namespace SoftwareProjekt
 {
     public class ViewEventArgs : EventArgs
     {
+    	/// <summary>
+    	/// Holds the event that happened on the View.
+    	/// </summary>
         public ViewEvents ViewEvent
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+        	get;
+        	private set;
+        }
+        
+        /// <summary>
+        /// Holds the x, y coordinates in case of ViewEvent is Coordinate.
+        /// </summary>
+        public Vector Coordinates
+        {
+        	get;
+        	private set;
+        }
+        
+        /// <summary>
+        /// Creates a new ViewEventArgs object holding coordinates in a Vector object..
+        /// </summary>
+        /// <param name="x">X coordinate.</param>
+        /// <param name="y">Y coordinate.</param>
+        public ViewEventArgs(float x, float y)
+        {
+        	this.ViewEvent = ViewEvents.Coordinate;
+        	this.Coordinates = new Vector(x, y);
         }
     }
 

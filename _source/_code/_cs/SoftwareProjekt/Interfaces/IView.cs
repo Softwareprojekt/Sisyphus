@@ -31,7 +31,7 @@ namespace SoftwareProjekt
         /// <summary>
         /// Redirect events fired on the View to the Controller.
         /// </summary>
-        event ViewHandler<IView> ViewChanged;
+        event ViewHandler<ViewEventArgs> ViewChanged;
 
         /// <summary>
         /// Associated Controller.
@@ -41,10 +41,5 @@ namespace SoftwareProjekt
             get;
             set;
         }
-
-        /// <summary>
-        /// Set associated Controller.
-        /// </summary>
-        void SetController(IController controller);
     }
 }

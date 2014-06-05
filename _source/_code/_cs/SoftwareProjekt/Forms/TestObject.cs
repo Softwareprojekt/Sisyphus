@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class TestObject : Form
+    public partial class TestObject : AbstractView
     {
         public TestObject()
         {
@@ -55,7 +55,17 @@ namespace SoftwareProjekt.Forms
 
             PointF point = new PointF(1.0f, 1.5f);
             coordinateSystem1.AddPoint(point);
-
+            
+            this.coordinateSystem1.CoordinateClick += CoordinateClickHandler;
         }
+
+		void CoordinateClickHandler(float x, float y)
+		{
+			this.OnViewChanged(new ViewEventArgs(x, y));
+		}
+		public override void xyzChanged(IExcercise sender, ExcerciseEventArgs e)
+		{
+			throw new NotImplementedException();
+		}
     }
 }

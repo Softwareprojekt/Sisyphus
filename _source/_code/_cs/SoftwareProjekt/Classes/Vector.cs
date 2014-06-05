@@ -26,7 +26,7 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public class Vector : IMathObject
+    public class Vector
     {
         /// <summary>
         /// ctor
@@ -237,9 +237,9 @@ namespace SoftwareProjekt
             X2 = X1 * newMatrix.X21 + X2 * newMatrix.X22;
         }
 
-        public void GetData()
-        {
-            throw new NotImplementedException();
-        }
+		public override string ToString()
+		{
+			return string.Format("[Vector X1={0}, X2={1}]", this.X1, this.X2);
+		}
     }
 }

@@ -31,20 +31,20 @@ namespace SoftwareProjekt
     {
         public abstract void xyzChanged(IExcercise sender, ExcerciseEventArgs e);
 
-        public event ViewHandler<IView> ViewChanged;
-
-        public AbstractView()
-        {
-
-        }
+        public event ViewHandler<ViewEventArgs> ViewChanged;
 
         /// <summary>
+        /// Throws an event to subscribed listeners.
         /// </summary>
-        public void SetController(IController controller)
-        {
-            this.Controller = controller;
-        }
-
+        /// <param name="e">ViewEventArgs object containing the data.</param>
+		protected virtual void OnViewChanged(ViewEventArgs e)
+		{
+			ViewHandler<ViewEventArgs> handler = ViewChanged;
+			if (handler != null)
+			{
+				handler(this, e);
+			}
+		}
         /// <summary>
         /// </summary>
         public IController Controller

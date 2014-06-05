@@ -40,7 +40,7 @@ namespace SoftwareProjekt
             FrmMain mainView = new FrmMain();
             TestObject to = new TestObject();
 
-            //cont.AddView(to);
+            cont.AddView(to);
 
             Application.Run(to);
         }
