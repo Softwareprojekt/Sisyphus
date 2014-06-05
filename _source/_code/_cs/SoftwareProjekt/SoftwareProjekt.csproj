@@ -49,7 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DrawingPoint.cs" />
-    <Compile Include="EAlignType.cs" />
+    <Compile Include="Enums\EAlignType.cs" />
+    <Compile Include="Enums\EConnectionType.cs" />
+    <Compile Include="Enums\ETopic.cs" />
+    <Compile Include="Classes\XmlExcercise.cs" />
+    <Compile Include="Classes\XmlMindMap.cs" />
+    <Compile Include="Classes\XmlTopic.cs" />
+    <Compile Include="Classes\XmlTopicConnect.cs" />
     <Compile Include="Forms\AbstractView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,7 @@
     <Compile Include="Enums\Excercises.cs" />
     <Compile Include="Classes\Controller.cs" />
     <Compile Include="Delegates\ExcerciseHandler.cs" />
+    <Compile Include="Delegates\ExcerciseClickEvent.cs" />
     <Compile Include="Classes\ExcerciseEventArgs.cs" />
     <Compile Include="Forms\TestObject.cs">
       <SubType>Form</SubType>

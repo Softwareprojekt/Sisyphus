@@ -28,15 +28,5 @@ namespace SoftwareProjekt
 {
     public class FormulaDrawer
     {
-        public IMathObject IMathObject
-        {
-            get
-            {                
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
     }
 }
