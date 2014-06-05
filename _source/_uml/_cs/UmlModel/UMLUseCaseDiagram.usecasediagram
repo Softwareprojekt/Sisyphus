@@ -53,6 +53,52 @@
     <useCaseModelRootHasTypes>
       <actor Id="2300f8b2-07c1-44d2-aaef-1434815d1a43" name="User" isAbstract="false" isLeaf="false">
         <elementDefinition Id="f01d8dfd-3264-4459-ad8a-929eb1cd1c85" />
+        <suppliersInternal>
+          <dependency Id="00261fa9-d24e-4965-b4e1-5ebc6261d3ec">
+            <useCaseMoniker Id="c602be8f-3625-4f31-b876-de842d3d08ea" LastKnownName="Übungsthema auswählen" />
+            <elementDefinition Id="d8da8e9e-7fa0-4361-b700-bdcfcb99b829" />
+          </dependency>
+          <dependency Id="46bd0402-2fe0-450f-9c89-0bbe9a385918">
+            <useCaseMoniker Id="36b8ef1f-97c3-476c-9df0-73793185de4b" LastKnownName="Arbeitsheft anlegen" />
+            <elementDefinition Id="8008ef7b-a055-4082-8e5b-6945f9f2cc9d" />
+          </dependency>
+          <dependency Id="7434ff39-0561-4585-8270-9bf44cbb5dfe">
+            <useCaseMoniker Id="fb83c052-e77e-41fb-ab8e-3cd22511829b" LastKnownName="Arbeitsheft laden" />
+            <elementDefinition Id="0b54e5e9-aeb1-4ff8-8a46-96fa6ab113ed" />
+          </dependency>
+          <dependency Id="421e2ab0-08b7-4775-a3d6-ffd3f71603ec">
+            <useCaseMoniker Id="b8f299b6-e1d6-4144-aee7-92e99e8c4d6f" LastKnownName="Arbeitsheft exportieren" />
+            <elementDefinition Id="952b5a39-e67c-4dbc-b014-fdd7622f7d9f" />
+          </dependency>
+          <dependency Id="105958c8-ab52-46d6-8339-d98b930a42c3">
+            <useCaseMoniker Id="0c63249f-067e-437d-ad7a-7ef9a63e54f5" LastKnownName="Heftinhalt anzeigen" />
+            <elementDefinition Id="4d00001e-6590-4083-bc32-de96cc719e05" />
+          </dependency>
+          <dependency Id="9b591f04-575b-46cf-9c79-6a10521fbfc5">
+            <useCaseMoniker Id="03e828bf-30e4-45ed-837c-342746ebfd19" LastKnownName="Bedienungshilfe anzeigen" />
+            <elementDefinition Id="0fedb90a-c05f-451e-8089-68e3958b42a6" />
+          </dependency>
+          <dependency Id="664e490e-11c5-4de6-bf1b-fd6b47d4d619">
+            <useCaseMoniker Id="3d84931c-e1d3-4eae-b7cd-34ea0911ce0f" LastKnownName="Tutorial" />
+            <elementDefinition Id="692d65c3-043b-4322-8bf0-2b16b2bb75f1" />
+          </dependency>
+          <dependency Id="5a414d5f-a86f-4f2f-8b89-eee15b381b02">
+            <useCaseMoniker Id="1fad8af7-a2ff-453f-ac21-14d7fa9a0a44" LastKnownName="Beenden" />
+            <elementDefinition Id="815924fb-da43-4dab-91a4-aac532be48fb" />
+          </dependency>
+          <dependency Id="1b8f6940-257d-4487-96b5-090e7ac679d9">
+            <useCaseMoniker Id="81c4f5ac-2d38-40ce-80ce-e16aa8383746" LastKnownName="Übungen aus Arbeitsheft löschen" />
+            <elementDefinition Id="6b35ce38-9418-4c2a-9b0f-0b5dd33a6ad4" />
+          </dependency>
+          <dependency Id="6116c5e7-9091-4d03-b4ed-12a687a51287">
+            <useCaseMoniker Id="f6531283-0abf-44b7-a25c-382d846442b1" LastKnownName="Übungen aus Arbeitsheft laden" />
+            <elementDefinition Id="b3b1d607-7993-4d2a-a4bb-27886276fe9f" />
+          </dependency>
+          <dependency Id="09d145f9-19b5-44b9-b197-653fd8199b94">
+            <useCaseMoniker Id="8e611cde-f1da-4ff9-87e6-f3fa1b21f53f" LastKnownName="Übung im Arbeitsheft speichern" />
+            <elementDefinition Id="ab2f9902-b17d-44a1-a51b-26dbbe8e047c" />
+          </dependency>
+        </suppliersInternal>
       </actor>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
