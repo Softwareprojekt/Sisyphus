@@ -148,7 +148,6 @@
     <Compile Include="Interfaces\IAxis.cs" />
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Interfaces\IExcercise.cs" />
-    <Compile Include="Interfaces\IMathObject.cs" />
     <Compile Include="Interfaces\INotebook.cs" />
     <Compile Include="Interfaces\ITopic.cs" />
     <Compile Include="Interfaces\IView.cs" />
@@ -157,7 +156,6 @@
     </Compile>
     <Compile Include="Classes\LineSegment.cs" />
     <Compile Include="Classes\Matrix.cs" />
-    <Compile Include="Classes\MindMap.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Vector.cs" />
@@ -165,6 +163,7 @@
     <Compile Include="Enums\ViewEvents.cs" />
     <Compile Include="Delegates\ViewHandler.cs" />
     <Compile Include="Classes\WorkBook.cs" />
+    <Compile Include="UserControls\MindMap.cs" />
     <Compile Include="UserControls\WorkBookControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
