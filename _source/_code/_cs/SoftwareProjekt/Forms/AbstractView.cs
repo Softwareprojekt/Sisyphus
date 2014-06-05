@@ -27,10 +27,8 @@ using System.Windows.Forms;
 
 namespace SoftwareProjekt
 {
-    public abstract class AbstractView : Form, IView, IExcerciseObserver
+    public abstract class AbstractView : Form, IView, IExerciseObserver
     {
-        public abstract void xyzChanged(IExcercise sender, ExcerciseEventArgs e);
-
         public event ViewHandler<ViewEventArgs> ViewChanged;
 
         /// <summary>
@@ -52,5 +50,7 @@ namespace SoftwareProjekt
             get;
             set;
         }
+        
+        public abstract void ExerciseChanged(IExercise sender, ExerciseEventArgs e);
     }
 }

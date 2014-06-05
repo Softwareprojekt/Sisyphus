@@ -261,10 +261,10 @@ namespace SoftwareProjekt
                 printDocument1.Print();
             }
         }
-
-        public override void xyzChanged(IExcercise sender, ExcerciseEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        
+		public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
+		{
+			throw new NotImplementedException();
+		}
     }
 }

@@ -5,12 +5,12 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public class XmlExcercise
+    public class XmlExercise
     {
-        private int _excerciseID;
-        private string _excerciseName;
+        private int _exerciseID;
+        private string _exerciseName;
 
-        public int ExcerciseID
+        public int ExerciseID
         {
             get
             {
@@ -21,7 +21,7 @@ namespace SoftwareProjekt
             }
         }
 
-        public int ExcerciseName
+        public int ExerciseName
         {
             get
             {

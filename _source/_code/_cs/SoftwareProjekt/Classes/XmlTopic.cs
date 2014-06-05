@@ -8,11 +8,11 @@ namespace SoftwareProjekt
     public class XmlTopic
     {
         private string _topicName;
-        private int _xmlExcerciseList;
+        private int _xmlExerciseList;
         private int _topicID;
         private List<TopicConnect> _connectionList;
 
-        public int ExcerciseList
+        public int ExerciseList
         {
             get
             {

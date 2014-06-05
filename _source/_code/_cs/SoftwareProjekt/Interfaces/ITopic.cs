@@ -28,12 +28,12 @@ namespace SoftwareProjekt
 {
     public interface ITopic
     {
-        List<IExcercise> ExcerciseList
+        List<IExercise> ExerciseList
         {
             get;
             set;
         }
 
-        void StartExcercise(Excercises id);
+        void StartExercise(Exercises id);
     }
 }

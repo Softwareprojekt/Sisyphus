@@ -84,7 +84,8 @@ namespace SoftwareProjekt.Forms
 		{
 			this.OnViewChanged(new ViewEventArgs(x, y));
 		}
-		public override void xyzChanged(IExcercise sender, ExcerciseEventArgs e)
+		
+		public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
 		{
 			throw new NotImplementedException();
 		}

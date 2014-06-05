@@ -28,7 +28,7 @@ namespace SoftwareProjekt
 {
     public abstract class AbstractTopic : ITopic
     {
-        public List<IExcercise> ExcerciseList
+        public List<IExercise> ExerciseList
         {
             get
             {
@@ -41,7 +41,7 @@ namespace SoftwareProjekt
         }
 
 
-        public void StartExcercise(Excercises id)
+        public void StartExercise(Exercises id)
         {
             throw new NotImplementedException();
         }

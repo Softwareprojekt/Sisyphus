@@ -26,7 +26,8 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public class ExcerciseEventArgs : EventArgs
+    public interface IExerciseObserver
     {
+        void ExerciseChanged(IExercise sender, ExerciseEventArgs e);
     }
 }

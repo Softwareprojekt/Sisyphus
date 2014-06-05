@@ -47,7 +47,7 @@ namespace SoftwareProjekt
         }
         
         /// <summary>
-        /// Creates a new ViewEventArgs object holding coordinates in a Vector object..
+        /// Creates a new ViewEventArgs object holding coordinates in a Vector object.
         /// </summary>
         /// <param name="x">X coordinate.</param>
         /// <param name="y">Y coordinate.</param>

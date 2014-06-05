@@ -35,14 +35,14 @@ namespace SoftwareProjekt
         void AddView(IView view);
 
         /// <summary>
-        /// Adds an Excercise to the List.
+        /// Adds an Exercise to the List.
         /// </summary>
-        void AddExcercise(IExcercise excercise);
+        void AddExercise(IExercise exercise);
 
         /// <summary>
-        /// Remove an Excercise from the List.
+        /// Remove an Exercise from the List.
         /// </summary>
-        void RemoveExcercise(IExcercise excercise);
+        void RemoveExercise(IExercise exercise);
 
         /// <summary>
         /// Remove a ViewChanged from the List.

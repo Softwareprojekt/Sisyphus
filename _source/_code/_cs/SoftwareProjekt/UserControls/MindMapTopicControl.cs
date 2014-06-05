@@ -76,7 +76,7 @@ namespace SoftwareProjekt
             throw new System.NotImplementedException();
         }
 
-        public void OnExcerciseButtonClicked(int excerciseID)
+        public void OnExerciseButtonClicked(int exerciseID)
         {
             throw new System.NotImplementedException();
         }

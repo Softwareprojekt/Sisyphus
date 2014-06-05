@@ -26,12 +26,12 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public interface IExcercise
+    public interface IExercise
     {
         /// <summary>
-        /// Notify View that excercise has changed.
+        /// Notify View that exercise has changed.
         /// </summary>
-        event ExcerciseHandler<AbstractExcercise> ExcerciseChanged;
+        event ExerciseHandler<ExerciseEventArgs> ExerciseChanged;
 
         /// <summary>
         /// Kill worker thread immediately.
@@ -39,17 +39,17 @@ namespace SoftwareProjekt
         void AbortWork();
 
         /// <summary>
-        /// Load state of excercise from file.
+        /// Load state of exercise from file.
         /// </summary>
         void LoadState();
 
         /// <summary>
-        /// Reset state of excercise. Default values.
+        /// Reset state of exercise. Default values.
         /// </summary>
         void ResetState();
 
         /// <summary>
-        /// Save state of excercise to file.
+        /// Save state of exercise to file.
         /// </summary>
         void SaveState();
 
@@ -64,8 +64,8 @@ namespace SoftwareProjekt
         void StopWork();
 
         /// <summary>
-        /// Attach View to Excercise. Used to notify View of new data.
+        /// Attach View to Exercise. Used to notify View of new data.
         /// </summary>
-        void AttachView(IExcerciseObserver observer);
+        void AttachView(IExerciseObserver observer);
     }
 }

@@ -33,14 +33,14 @@ namespace SoftwareProjekt
         /// </summary>
         private List<IView> _viewList;
         /// <summary>
-        /// List with open Excercises.
+        /// List with open Exercises.
         /// </summary>
-        private List<IExcercise> _excerciseList;
+        private List<IExercise> _exerciseList;
 
         public Controller()
         {
             _viewList = new List<IView>();
-            _excerciseList = new List<IExcercise>();
+            _exerciseList = new List<IExercise>();
         }
 
         /// <summary>
@@ -70,14 +70,14 @@ namespace SoftwareProjekt
 			}
 		}
 		
-        public void AddExcercise(IExcercise excercise)
+        public void AddExercise(IExercise exercise)
         {
-            _excerciseList.Add(excercise);
+            _exerciseList.Add(exercise);
         }
 
-        public void RemoveExcercise(IExcercise excercise)
+        public void RemoveExercise(IExercise exercise)
         {
-            _excerciseList.Remove(excercise);
+            _exerciseList.Remove(exercise);
         }
     }
 }

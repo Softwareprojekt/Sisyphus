@@ -5,5 +5,5 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public delegate void ExcerciseClickEvent(int excerciseID);
+    public delegate void ExerciseClickEvent(int exerciseID);
 }

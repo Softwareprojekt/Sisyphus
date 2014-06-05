@@ -31,9 +31,9 @@ namespace SoftwareProjekt
     {
         private EAlignType _alignment;
         private string _buttonText;
-        private int _excerciseID;
+        private int _exerciseID;
 
-        public event ExcerciseClickEvent ButtonClicked;
+        public event ExerciseClickEvent ButtonClicked;
 
         public MindMapButtonControl(string text, EAlignType alignment)
         {
@@ -98,7 +98,7 @@ namespace SoftwareProjekt
             }
         }
 
-        public int ExcerciseID
+        public int ExerciseID
         {
             get
             {

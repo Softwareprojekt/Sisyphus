@@ -30,7 +30,7 @@ namespace SoftwareProjekt
 {
     public class WorkBookView : UserControl
     {
-        private int _excerciseID;
+        private int _exerciseID;
         private string _imagePath;
         private string _notices;
         private Image _savedImage;
@@ -68,7 +68,7 @@ namespace SoftwareProjekt
             }
         }
 
-        public int ExcerciseID
+        public int ExerciseID
         {
             get
             {
