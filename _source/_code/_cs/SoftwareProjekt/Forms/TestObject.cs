@@ -56,6 +56,9 @@ namespace SoftwareProjekt.Forms
             PointF point = new PointF(1.0f, 1.5f);
             coordinateSystem1.AddPoint(point);
 
+
+
         }
+
     }
 }

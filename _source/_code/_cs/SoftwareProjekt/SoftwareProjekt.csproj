@@ -49,7 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DrawingPoint.cs" />
-    <Compile Include="EAlignType.cs" />
+    <Compile Include="Enums\EConnectionType.cs" />
+    <Compile Include="Enums\EAlignType.cs" />
+    <Compile Include="Enums\ETopic.cs" />
+    <Compile Include="Delegates\ExcerciseClickEvent.cs" />
+    <Compile Include="EWorkingState.cs" />
     <Compile Include="Forms\AbstractView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,7 +161,9 @@
     </Compile>
     <Compile Include="Classes\LineSegment.cs" />
     <Compile Include="Classes\Matrix.cs" />
-    <Compile Include="Classes\MindMap.cs" />
+    <Compile Include="UserControls\MindMap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Vector.cs" />
@@ -169,6 +175,10 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Classes\XmlWorkbook.cs" />
+    <Compile Include="Classes\XmlExcercise.cs" />
+    <Compile Include="Classes\XmlMindMap.cs" />
+    <Compile Include="Classes\XmlTopic.cs" />
+    <Compile Include="Classes\XmlTopicConnect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -223,6 +233,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmZuordvorLinAbb.resx">
       <DependentUpon>FrmZuordvorLinAbb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MindMapButtonControl.resx">
+      <DependentUpon>MindMapButtonControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MindMapTopicControl.resx">
+      <DependentUpon>MindMapTopicControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\WorkBookControl.resx">
       <DependentUpon>WorkBookControl.cs</DependentUpon>

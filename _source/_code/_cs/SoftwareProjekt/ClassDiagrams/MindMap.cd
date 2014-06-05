@@ -9,7 +9,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SoftwareProjekt.MindMap">
-    <Position X="5.5" Y="1.25" Width="1.75" />
+    <Position X="7" Y="1.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAYAAACAAAAQAAAAgAAAAAAAAAAAEAA=</HashCode>
       <FileName>UserControls\MindMap.cs</FileName>
@@ -19,42 +19,42 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="SoftwareProjekt.MindMapButtonControl">
-    <Position X="11.25" Y="0.5" Width="2" />
+    <Position X="13" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAAAAAAAAAAAgEAAAAABAAAAQAACEIAAAAAIgA=</HashCode>
+      <HashCode>gAAAAQAAAAAAAEAAAgEAAAACBAAAAQAAjEIAAAAAIgA=</HashCode>
       <FileName>UserControls\MindMapButtonControl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoftwareProjekt.MindMapTopicControl">
-    <Position X="8.25" Y="0.5" Width="2" />
+    <Position X="10" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAACAAEAAAAAAAAgAAAAIAAAAASAAAAQACAAAAAAEAA=</HashCode>
+      <HashCode>AAACAAEAAAAACAAgAAAAIAACAASAAAAQACAAAAAAEAA=</HashCode>
       <FileName>UserControls\MindMapTopicControl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoftwareProjekt.XmlMindMap">
-    <Position X="3" Y="2" Width="1.5" />
+    <Position X="4.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAAAAAAAAAAQAAAAQAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\XmlMindMap.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoftwareProjekt.XmlTopic">
-    <Position X="3" Y="5" Width="1.5" />
+    <Position X="4.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAIAAAAAAAAABAAAAAAACAAAAAAEAAAAAAABAACAA=</HashCode>
       <FileName>Classes\XmlTopic.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoftwareProjekt.XmlExcercise">
-    <Position X="3" Y="8" Width="1.5" />
+    <Position X="4.5" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAEAAAAIAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Classes\XmlExcercise.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoftwareProjekt.TopicConnect">
-    <Position X="8.5" Y="5.25" Width="1.5" />
+    <Position X="10" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAAIAAAIAAAAAAAAAAAAAAAAIAA=</HashCode>
       <FileName>Classes\XmlTopicConnect.cs</FileName>
@@ -88,8 +88,15 @@
       <FileName>Enums\EConnectionType.cs</FileName>
     </TypeIdentifier>
   </Enum>
+  <Enum Name="SoftwareProjekt.EMachiningCondtion">
+    <Position X="2.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAACAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>EWorkingState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Delegate Name="SoftwareProjekt.ExcerciseClickEvent">
-    <Position X="3" Y="0.5" Width="1.75" />
+    <Position X="4.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Delegates\ExcerciseClickEvent.cs</FileName>

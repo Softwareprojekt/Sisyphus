@@ -12,14 +12,29 @@ namespace SoftwareProjekt
         private ITopic _logicalTopic;
         private List<TopicConnect> _topicConnectionList;
 
-        public System.Collections.Generic.List<SoftwareProjekt.MindMapButtonControl> ButtonList
+
+        public MindMapTopicControl()
+        {
+            _mindMapButtonList = new List<MindMapButtonControl>();
+            _topicConnectionList = new List<TopicConnect>();
+
+            _logicalTopic = null;
+
+            InitializeComponent();
+        }
+
+        public List<MindMapButtonControl> ButtonList
         {
             get
             {
-                throw new System.NotImplementedException();
+                return _mindMapButtonList;
             }
-            set
+        }
+        public List<TopicConnect> TopicConnectionList
+        {
+            get
             {
+                return _topicConnectionList;
             }
         }
 
@@ -27,37 +42,45 @@ namespace SoftwareProjekt
         {
             get
             {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
-        public System.Collections.Generic.List<SoftwareProjekt.TopicConnect> TopicConnectionList
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
+                return _logicalTopic;
             }
         }
 
         public void RegisterTopic(ITopic topic)
         {
-            throw new System.NotImplementedException();
+            _logicalTopic = topic;
         }
 
         public void UnregisterTopic()
         {
-            throw new System.NotImplementedException();
+            _logicalTopic = null;
         }
 
         public void OnExcerciseButtonClicked(int excerciseID)
         {
-            throw new System.NotImplementedException();
+            if (_logicalTopic == null)
+            {
+                return;
+            }
+
+            _logicalTopic.StartExcercise((Excercises)excerciseID);
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // MindMapTopicControl
+            // 
+            this.Name = "MindMapTopicControl";
+            this.Paint += MindMapTopicControl_Paint;
+            this.ResumeLayout(false);
+
+        }
+
+        void MindMapTopicControl_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
     }
 }
