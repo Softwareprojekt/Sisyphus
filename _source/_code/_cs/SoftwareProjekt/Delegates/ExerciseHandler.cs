@@ -26,5 +26,5 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public delegate void ExcerciseHandler<IExcercise>(IExcercise sender, ExcerciseEventArgs e);
+    public delegate void ExerciseHandler<ExerciseEventArgs>(IExercise sender, ExerciseEventArgs e);
 }

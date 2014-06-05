@@ -54,23 +54,31 @@
     <Compile Include="Enums\ETopic.cs" />
     <Compile Include="Delegates\ExcerciseClickEvent.cs" />
     <Compile Include="EWorkingState.cs" />
+    <Compile Include="Enums\EAlignType.cs" />
+    <Compile Include="Enums\EConnectionType.cs" />
+    <Compile Include="Enums\ETopic.cs" />
+    <Compile Include="Classes\XmlExercise.cs" />
+    <Compile Include="Classes\XmlMindMap.cs" />
+    <Compile Include="Classes\XmlTopic.cs" />
+    <Compile Include="Classes\XmlTopicConnect.cs" />
     <Compile Include="Forms\AbstractView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Classes\Axis.cs" />
-    <Compile Include="Classes\AbstractExcercise.cs" />
+    <Compile Include="Classes\AbstractExercise.cs" />
     <Compile Include="Classes\AbstractTopic.cs" />
-    <Compile Include="Enums\Excercises.cs" />
+    <Compile Include="Enums\Exercises.cs" />
     <Compile Include="Classes\Controller.cs" />
-    <Compile Include="Delegates\ExcerciseHandler.cs" />
-    <Compile Include="Classes\ExcerciseEventArgs.cs" />
+    <Compile Include="Delegates\ExerciseHandler.cs" />
+    <Compile Include="Delegates\ExerciseClickEvent.cs" />
+    <Compile Include="Classes\ExerciseEventArgs.cs" />
     <Compile Include="Forms\TestObject.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\TestObject.Designer.cs">
       <DependentUpon>TestObject.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\IExcerciseObserver.cs" />
+    <Compile Include="Interfaces\IExerciseObserver.cs" />
     <Compile Include="Classes\ScreenshotCreator.cs" />
     <Compile Include="UserControls\MindMapButtonControl.cs">
       <SubType>UserControl</SubType>
@@ -151,8 +159,7 @@
     <Compile Include="Classes\Line.cs" />
     <Compile Include="Interfaces\IAxis.cs" />
     <Compile Include="Interfaces\IController.cs" />
-    <Compile Include="Interfaces\IExcercise.cs" />
-    <Compile Include="Interfaces\IMathObject.cs" />
+    <Compile Include="Interfaces\IExercise.cs" />
     <Compile Include="Interfaces\INotebook.cs" />
     <Compile Include="Interfaces\ITopic.cs" />
     <Compile Include="Interfaces\IView.cs" />
@@ -171,6 +178,7 @@
     <Compile Include="Enums\ViewEvents.cs" />
     <Compile Include="Delegates\ViewHandler.cs" />
     <Compile Include="Classes\WorkBook.cs" />
+    <Compile Include="UserControls\MindMap.cs" />
     <Compile Include="UserControls\WorkBookControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

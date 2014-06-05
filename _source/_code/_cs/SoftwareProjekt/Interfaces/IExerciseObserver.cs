@@ -26,8 +26,8 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public interface IMathObject
+    public interface IExerciseObserver
     {
-        void GetData();
+        void ExerciseChanged(IExercise sender, ExerciseEventArgs e);
     }
 }

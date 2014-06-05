@@ -1,4 +1,25 @@
-﻿using System;
+﻿
+#region LicenseHeader
+/*
+ * Copyright (C) 2014 Technische Hochschule Amberg
+ * 
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+#endregion
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +30,7 @@ using System.Windows.Forms;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class TestObject : Form
+    public partial class TestObject : AbstractView
     {
         public TestObject()
         {
@@ -55,10 +76,26 @@ namespace SoftwareProjekt.Forms
 
             PointF point = new PointF(1.0f, 1.5f);
             coordinateSystem1.AddPoint(point);
+<<<<<<< HEAD
 
 
 
         }
 
+=======
+            
+            this.coordinateSystem1.CoordinateClick += CoordinateClickHandler;
+        }
+
+		void CoordinateClickHandler(float x, float y)
+		{
+			this.OnViewChanged(new ViewEventArgs(x, y));
+		}
+		
+		public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
+		{
+			throw new NotImplementedException();
+		}
+>>>>>>> fd4dd7492afb0d6b72945ea892f7f96353eeec03
     }
 }

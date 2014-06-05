@@ -26,7 +26,7 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public class Matrix : IMathObject
+    public class Matrix
     {
         /// <summary>
         /// ctor
@@ -58,10 +58,10 @@ namespace SoftwareProjekt
 
         public float X22 { get; set; }
 
-        public void GetData()
-        {
-            throw new NotImplementedException();
-        }
+		public override string ToString()
+		{
+			return string.Format("[Matrix X11={0}, X12={1}, X21={2}, X22={3}]", this.X11, this.X12, this.X21, this.X22);
+		}
 
         /// <summary>
         /// Inverts this Matrix

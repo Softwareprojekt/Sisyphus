@@ -26,14 +26,14 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public abstract class AbstractExcercise : IExcercise
+    public abstract class AbstractExercise : IExercise
     {
         /// <summary>
-        /// Id of excercise.
+        /// Id of exercise.
         /// </summary>
         private int _id;
         /// <summary>
-        /// Name of excercise.
+        /// Name of exercise.
         /// </summary>
         private int _name;
 
@@ -81,13 +81,13 @@ namespace SoftwareProjekt
 
         /// <summary>
         /// </summary>
-        public event ExcerciseHandler<AbstractExcercise> ExcerciseChanged;
+		public event ExerciseHandler<ExerciseEventArgs> ExerciseChanged;
 
         /// <summary>
         /// </summary>
-        public void AttachView(IExcerciseObserver observer)
+        public void AttachView(IExerciseObserver observer)
         {
-            ExcerciseChanged += new ExcerciseHandler<AbstractExcercise>(observer.xyzChanged);
+            ExerciseChanged += new ExerciseHandler<ExerciseEventArgs>(observer.ExerciseChanged);
         }
 
         /// <summary>
@@ -100,7 +100,9 @@ namespace SoftwareProjekt
             // wow.
 
             // fire event to notify view that stuff has changed.
-            ExcerciseChanged.Invoke(this, new ExcerciseEventArgs());
+            if (this.ExerciseChanged != null) {
+            	this.ExerciseChanged(this, new ExerciseEventArgs());
+            }
         }
     }
 }

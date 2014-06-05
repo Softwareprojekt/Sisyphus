@@ -30,5 +30,6 @@ namespace SoftwareProjekt
     {
         ButtonClick,
         TextChange,
+        Coordinate,
     }
 }

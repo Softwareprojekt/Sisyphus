@@ -33,48 +33,51 @@ namespace SoftwareProjekt
         /// </summary>
         private List<IView> _viewList;
         /// <summary>
-        /// List with open Excercises.
+        /// List with open Exercises.
         /// </summary>
-        private List<IExcercise> _excerciseList;
+        private List<IExercise> _exerciseList;
 
         public Controller()
         {
             _viewList = new List<IView>();
-            _excerciseList = new List<IExcercise>();
+            _exerciseList = new List<IExercise>();
         }
 
+        /// <summary>
+        /// Adds a new View to the List. Also sets the Controller and subscribes to ViewChanged event handler.
+        /// </summary>
+        /// <param name="view">Newly created View.</param>
         public void AddView(IView view)
         {
             _viewList.Add(view);
-        }
-
-        public void AddExcercise(IExcercise excercise)
-        {
-            _excerciseList.Add(excercise);
-        }
-
-        public void FireEvent(IView v, ViewEventArgs e)
-        {
-            switch (e.ViewEvent)
-            {
-                case ViewEvents.ButtonClick:
-                    break;
-                case ViewEvents.TextChange:
-                    break;
-                default:
-                    break;
-            }
-        }
-
-
-        public void RemoveExcercise(IExcercise excercise)
-        {
-            _excerciseList.Remove(excercise);
+            view.Controller = this;
+            view.ViewChanged += HandleViewChanged;
         }
 
         public void RemoveView(IView view)
         {
             _viewList.Remove(view);
+        }
+
+		void HandleViewChanged(IView sender, ViewEventArgs e)
+		{
+			switch (e.ViewEvent) {
+				case ViewEvents.Coordinate:
+					Console.WriteLine(sender + " " + e.Coordinates.ToString());
+					break;
+				default:
+					throw new ArgumentException("Not a valid ViewEvent.", "e");
+			}
+		}
+		
+        public void AddExercise(IExercise exercise)
+        {
+            _exerciseList.Add(exercise);
+        }
+
+        public void RemoveExercise(IExercise exercise)
+        {
+            _exerciseList.Remove(exercise);
         }
     }
 }

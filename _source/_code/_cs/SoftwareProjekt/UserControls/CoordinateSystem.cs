@@ -271,6 +271,7 @@ namespace SoftwareProjekt
             if (p.X == -1 || p.Y == -1)
             {
                 Console.WriteLine("Outside valid range!\n");
+                return;
             }
             float roundX = (float)Math.Round(p.X, 1, MidpointRounding.AwayFromZero);
             float roundY = (float)Math.Round(p.Y, 1, MidpointRounding.AwayFromZero);

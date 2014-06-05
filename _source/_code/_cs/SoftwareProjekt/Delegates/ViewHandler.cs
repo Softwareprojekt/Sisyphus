@@ -26,5 +26,5 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public delegate void ViewHandler<IView>(IView sender, ViewEventArgs e);
+    public delegate void ViewHandler<ViewEventArgs>(IView sender, ViewEventArgs e);
 }

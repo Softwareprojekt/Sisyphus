@@ -5,5 +5,10 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public delegate void ExcerciseClickEvent(int excerciseID);
+    public enum EMachiningCondtion
+    {
+        SaveExists,
+        Aborted,
+        NotDone,
+    }
 }
