@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="Interfaces\IExerciseObserver.cs" />
     <Compile Include="Classes\ScreenshotCreator.cs" />
+    <Compile Include="Interfaces\IMathObject.cs" />
     <Compile Include="UserControls\MindMapButtonControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,7 +178,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Classes\XmlWorkbook.cs" />
-    <Compile Include="Classes\XmlTopicConnect.cs" />
+    <Compile Include="Classes\TopicConnect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

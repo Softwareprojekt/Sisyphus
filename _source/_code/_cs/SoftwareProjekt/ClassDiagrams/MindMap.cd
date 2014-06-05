@@ -3,7 +3,7 @@
   <Class Name="SoftwareProjekt.AbstractTopic">
     <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Classes\AbstractTopic.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -18,20 +18,6 @@
       <Field Name="_xmlParser" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="SoftwareProjekt.MindMapButtonControl">
-    <Position X="13" Y="0.5" Width="2" />
-    <TypeIdentifier>
-      <HashCode>gAAAAQAAAAAAAEAAAgEAAAACBAAAAQAAjEIAAAAAIgA=</HashCode>
-      <FileName>UserControls\MindMapButtonControl.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SoftwareProjekt.MindMapTopicControl">
-    <Position X="10" Y="0.5" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAACAAEAAAAACAAgAAAAIAACAASAAAAQACAAAAAAEAA=</HashCode>
-      <FileName>UserControls\MindMapTopicControl.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="SoftwareProjekt.XmlMindMap">
     <Position X="4.5" Y="2" Width="1.5" />
     <TypeIdentifier>
@@ -42,22 +28,36 @@
   <Class Name="SoftwareProjekt.XmlTopic">
     <Position X="4.5" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAABAAAAAAACAAAAAAEAAAAAAABAACAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAFAAAAAAACAAAAAAEAAAEAAAAAACAA=</HashCode>
       <FileName>Classes\XmlTopic.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SoftwareProjekt.XmlExcercise">
-    <Position X="4.5" Y="8" Width="1.5" />
+  <Class Name="SoftwareProjekt.MindMapButtonControl">
+    <Position X="13" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAAAAEAAAAIAAAAAAAACAAAAAAAAAA=</HashCode>
-      <FileName>Classes\XmlExcercise.cs</FileName>
+      <HashCode>gAAAAQAAAAAAAEAAAgAAAAACBAAAARABhEIAAAAAIgA=</HashCode>
+      <FileName>UserControls\MindMapButtonControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoftwareProjekt.MindMapTopicControl">
+    <Position X="10" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAEAIAAACAAgAAAAIAACAACAAAAQACAAAAAAEAA=</HashCode>
+      <FileName>UserControls\MindMapTopicControl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoftwareProjekt.TopicConnect">
-    <Position X="10" Y="5.25" Width="1.5" />
+    <Position X="10" Y="5.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAAIAAAIAAAAAAAAAAAAAAAAIAA=</HashCode>
-      <FileName>Classes\XmlTopicConnect.cs</FileName>
+      <FileName>Classes\TopicConnect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoftwareProjekt.XmlExercise">
+    <Position X="4.5" Y="8" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAACA=</HashCode>
+      <FileName>Classes\XmlExercise.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="SoftwareProjekt.ITopic">
@@ -67,13 +67,6 @@
       <FileName>Interfaces\ITopic.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Enum Name="SoftwareProjekt.EAlignType">
-    <Position X="0.5" Y="6.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAgAAAAEAAAAAAAAgAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
-      <FileName>Enums\EAlignType.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
   <Enum Name="SoftwareProjekt.ETopic">
     <Position X="0.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
@@ -95,11 +88,18 @@
       <FileName>EWorkingState.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Delegate Name="SoftwareProjekt.ExcerciseClickEvent">
+  <Enum Name="SoftwareProjekt.EAlignType">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAEAAAAAAAAgAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\EAlignType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="SoftwareProjekt.ExerciseClickEvent">
     <Position X="4.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Delegates\ExcerciseClickEvent.cs</FileName>
+      <FileName>Delegates\ExerciseClickEvent.cs</FileName>
     </TypeIdentifier>
   </Delegate>
   <Font Name="Segoe UI" Size="9" />
