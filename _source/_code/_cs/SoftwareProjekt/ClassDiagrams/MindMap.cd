@@ -63,7 +63,7 @@
   <Interface Name="SoftwareProjekt.ITopic">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Interfaces\ITopic.cs</FileName>
     </TypeIdentifier>
   </Interface>

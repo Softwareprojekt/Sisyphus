@@ -32,12 +32,8 @@ namespace SoftwareProjekt
     {
         private EAlignType _alignment;
         private string _buttonText;
-<<<<<<< HEAD
-        private int _excerciseID;
         private EMachiningCondtion _machiningCondition;
-=======
         private int _exerciseID;
->>>>>>> fd4dd7492afb0d6b72945ea892f7f96353eeec03
 
         public event ExerciseClickEvent ButtonClicked;
 
@@ -45,7 +41,7 @@ namespace SoftwareProjekt
         {
             _alignment = alignment;
             _buttonText = text;
-            _excerciseID = excerciseID;
+            _exerciseID = excerciseID;
 
             _machiningCondition = EMachiningCondtion.NotDone;
 
@@ -113,11 +109,11 @@ namespace SoftwareProjekt
         {
             get
             {
-                return _excerciseID;
+                return _exerciseID;
             }
             set
             {
-                _excerciseID = value;
+                _exerciseID = value;
             }
         }
 
@@ -152,7 +148,7 @@ namespace SoftwareProjekt
 
             if (ButtonClicked != null)
             {
-                this.ButtonClicked(_excerciseID);
+                this.ButtonClicked(_exerciseID);
             }
         }
 

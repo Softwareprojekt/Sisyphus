@@ -84,7 +84,7 @@ namespace SoftwareProjekt
                 return;
             }
 
-            _logicalTopic.StartExcercise((Excercises)excerciseID);
+            _logicalTopic.StartExercise((Exercises)exerciseID);
         }
 
         private void InitializeComponent()
