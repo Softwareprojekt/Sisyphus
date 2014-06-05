@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DrawingPoint.cs" />
+    <Compile Include="EAlignType.cs" />
     <Compile Include="Forms\AbstractView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +68,12 @@
     </Compile>
     <Compile Include="Interfaces\IExcerciseObserver.cs" />
     <Compile Include="Classes\ScreenshotCreator.cs" />
+    <Compile Include="UserControls\MindMapButtonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MindMapTopicControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\CoordinateSystem.cs">
       <SubType>UserControl</SubType>
     </Compile>

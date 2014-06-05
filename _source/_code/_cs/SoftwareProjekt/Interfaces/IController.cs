@@ -40,7 +40,7 @@ namespace SoftwareProjekt
         void AddExcercise(IExcercise excercise);
 
         /// <summary>
-        /// Event in a ViewChanged gets redirected.
+        /// ButtonClicked in a ViewChanged gets redirected.
         /// </summary>
         void FireEvent(IView v, ViewEventArgs e);
 

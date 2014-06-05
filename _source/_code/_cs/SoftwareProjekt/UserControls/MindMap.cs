@@ -23,15 +23,29 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace SoftwareProjekt
 {
-    public class MindMap
+    public class MindMap : UserControl
     {
+        private const string _filename = "config.xml";
+        private List<MindMapTopicControl> _graphicalTopicList;
+        private List<ITopic> _logicalTopicList;
+        private XmlMindMap _xmlParser;
+
+        public MindMap ()
+        {
+            _graphicalTopicList = new List<MindMapTopicControl>();
+            _logicalTopicList = new List<ITopic>();
+            _xmlParser = new XmlMindMap();
+
+        }
 
         public void ArrangeMindMap()
         {
-            throw new System.NotImplementedException();
+            _xmlParser.ParseXml(_filename);
+
         }
 
         public void ParseXML()
