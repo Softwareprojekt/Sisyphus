@@ -7,9 +7,9 @@
     <Position X="4.552" Y="3.479" Height="0.75" Width="1.7" />
   </Comment>
   <Class Name="SoftwareProjekt.Matrix">
-    <Position X="7.5" Y="4" Width="1.5" />
+    <Position X="7.5" Y="4" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAEAAAAAAAAAABAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAEAAEAAAAAAAAAABAAAAAIAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Matrix.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
