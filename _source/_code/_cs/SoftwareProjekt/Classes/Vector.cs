@@ -33,39 +33,72 @@ namespace SoftwareProjekt
         /// </summary>
         public Vector(float x1, float x2)
         {
-            X1 = x1;
-            X2 = x2;
+            this.X1 = x1;
+            this.X2 = x2;
         }
 
         public float X1 { get; set; }
 
         public float X2 { get; set; }
 
+        /// <summary>
+        /// Gets the Length of this Vector
+        /// </summary>
         public float Length
         {
             get
             {
-                return (float)Math.Sqrt(X1 * X1 + X2 * X2);
+                return (float)Math.Sqrt(this.X1 * this.X1 + this.X2 * this.X2);
             }
         }
 
+        /// <summary>
+        /// Gets the Angle between this Vector and the X-Axis
+        /// </summary>
+        public float AngleToXAxis
+        {
+            get
+            {
+                return (float) Math.Atan(this.X2 / this.X1);
+            }
+        }
+        /// <summary>
+        /// Adds a Vector to this Vector
+        /// </summary>
         public void Add(Vector newVector)
         {
-            X1 += newVector.X1;
-            X2 += newVector.X2;
+            this.X1 += newVector.X1;
+            this.X2 += newVector.X2;
         }
-
+        /// <summary>
+        /// Adds two Vectors an returns the new one
+        /// </summary>
         static public Vector Add(Vector firstVector, Vector secondVector)
         {
             return new Vector(firstVector.X1 + secondVector.X1, firstVector.X2 + secondVector.X2);
         }
 
+        /// <summary>
+        /// Rotates this Vector around a certain degree
+        /// </summary>
         public void Rotate(double degree)
         {
             Matrix m = new Matrix((float)Math.Cos(degree), (float)-Math.Sin(degree), (float)Math.Sin(degree), (float)Math.Cos(degree));
             this.Rotate(m);
         }
 
+        /// <summary>
+        /// Rotates a Vector around a certain degree and retruns the new one
+        /// </summary>
+        static public Vector Rotate(Vector vector, double degree)
+        {            
+            Matrix m = new Matrix((float)Math.Cos(degree), (float)-Math.Sin(degree), (float)Math.Sin(degree), (float)Math.Cos(degree));
+            return Vector.Rotate(m, vector);
+        }
+
+        /// <summary>
+        /// Rotates this Vector with a matrix
+        /// </summary>
         public void Rotate(Matrix matrix)
         {
             if (matrix.X11 == matrix.X22 && matrix.X12 == -matrix.X21)
@@ -77,10 +110,27 @@ namespace SoftwareProjekt
                 throw new ArgumentException("The Matrix values are not vaild for this operation");
             }
         }
+        /// <summary>
+        /// Rotates a Vector with a matrix and retruns the new one
+        /// </summary>
+        static public Vector Rotate(Matrix matrix, Vector vector)
+        {
+            if (matrix.X11 == matrix.X22 && matrix.X12 == -matrix.X21)
+            {
+                return Vector.Multiply(vector, matrix);
+            }
+            else
+            {
+                throw new ArgumentException("The Matrix values are not vaild for this operation");
+            }
+        }
 
+        /// <summary>
+        /// Scales this Vector
+        /// </summary>
         public void Scale(Matrix scaleMatrix)
         {
-            if (scaleMatrix.X12 == 0 && scaleMatrix.X21 == 0)
+            if (scaleMatrix.X12 == 0f && scaleMatrix.X21 == 0f)
             {
                 this.Multiply(scaleMatrix);
             }
@@ -90,19 +140,54 @@ namespace SoftwareProjekt
             }
         }
 
-        public void Mirror(Line line)
+        /// <summary>
+        /// Scales a Vector with an Matrix an retruns the new one
+        /// </summary>
+        static public Vector Scale(Matrix scaleMatrix, Vector vector)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void Multiply(float scalar)
-        {
-            X1 *= scalar;
-            X2 *= scalar;
+            if (scaleMatrix.X12 == 0f && scaleMatrix.X21 == 0f)
+            {
+                return Vector.Multiply(vector, scaleMatrix);
+            }
+            else
+            {
+                throw new ArgumentException("The Matrix values are not vaild for this operation");
+            }
         }
 
         /// <summary>
-        /// Retruns a new Vector
+        /// Mirrors this Vector at a line through origin
+        /// </summary>
+        public void Mirror(Line line)
+        {
+            float angle = line.InnerLineSegment.Vector.AngleToXAxis;
+            Matrix m = new Matrix((float)Math.Cos(2 * angle), (float)Math.Sin(2 * angle), (float)Math.Sin(2 * angle), (float)-Math.Cos(2 * angle));
+            this.Multiply(m);
+        }
+
+        /// <summary>
+        /// Mirrors a Vector at a line through origin and returns the new one
+        /// </summary>
+        public Vector Mirror(Line line, Vector vector)
+        {
+            float angle = line.InnerLineSegment.Vector.AngleToXAxis;
+            Matrix m = new Matrix((float)Math.Cos(2 * angle), (float)Math.Sin(2 * angle), (float)Math.Sin(2 * angle), (float)-Math.Cos(2 * angle));
+            Vector v = new Vector(vector.X1, vector.X2);
+            v.Multiply(m);
+            return v;
+        }
+
+        /// <summary>
+        /// Multiplies this Vector with an scalar
+        /// </summary>
+        public void Multiply(float scalar)
+        {
+            this.X1 *= scalar;
+            this.X2 *= scalar;
+        }
+
+        /// <summary>
+        /// Multiplies this Vector with an scalar and retruns the new Vector
         /// </summary>
         /// <param name="vector"></param>
         /// <param name="scalar"></param>
@@ -134,7 +219,7 @@ namespace SoftwareProjekt
         }
 
         /// <summary>
-        /// Multiplies this Vector with a Matrix
+        /// Multiplies a Vector with a Matrix and retruns the new one
         /// </summary>
         /// <param name="Matrix">the Matrix this Vector will be multiplied</param>
         /// <returns>a new Matrix</returns>
@@ -143,6 +228,9 @@ namespace SoftwareProjekt
             return new Vector(vector.X1 * Matrix.X11 + vector.X2 * Matrix.X12, vector.X1 * Matrix.X21 + vector.X2 * Matrix.X22);
         }
 
+        /// <summary>
+        /// Multiplies this Vector with a Matrix
+        /// </summary>
         public void Multiply(Matrix newMatrix)
         {
             X1 = X1 * newMatrix.X11 + X2 * newMatrix.X12;

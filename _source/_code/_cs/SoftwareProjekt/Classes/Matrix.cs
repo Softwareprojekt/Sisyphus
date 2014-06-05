@@ -33,10 +33,10 @@ namespace SoftwareProjekt
         /// </summary>
         public Matrix(float x_11, float x_12, float x_21, float x_22)
         {
-            X11 = x_11;
-            X12 = x_12;
-            X21 = x_21;
-            X22 = x_22;
+            this.X11 = x_11;
+            this.X12 = x_12;
+            this.X21 = x_21;
+            this.X22 = x_22;
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace SoftwareProjekt
         }
 
         /// <summary>
-        /// Inverts a Matrix
+        /// Inverts a Matrix and returns the new one
         /// </summary>
         static public Matrix Invert(Matrix matrix)
         {
@@ -110,10 +110,10 @@ namespace SoftwareProjekt
         /// </summary>
         public void Multiply(float scalar)
         {
-            X11 *= scalar;
-            X12 *= scalar;
-            X21 *= scalar;
-            X22 *= scalar;
+            this.X11 *= scalar;
+            this.X12 *= scalar;
+            this.X21 *= scalar;
+            this.X22 *= scalar;
         }
         /// <summary>
         /// Multiplies a Matrix with an scalar and retruns the new Matrix
@@ -142,7 +142,7 @@ namespace SoftwareProjekt
         }
 
         /// <summary>
-        /// Multiplies two Matrices and retruns a new Matrix
+        /// Multiplies two Matrices and retruns the new Matrix
         /// </summary>
         public Matrix Multiply(Matrix firstMatrix, Matrix secondMatrix)
         {
@@ -165,7 +165,7 @@ namespace SoftwareProjekt
         }
 
         /// <summary>
-        /// Adds two Matrices and returns a new one
+        /// Adds two Matrices and returns the new one
         /// </summary>
         static public Matrix Add(Matrix firstMatrix, Matrix secondMatrix)
         {

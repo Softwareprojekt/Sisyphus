@@ -7,7 +7,7 @@
     <Position X="4.552" Y="3.479" Height="0.75" Width="1.7" />
   </Comment>
   <Class Name="SoftwareProjekt.Matrix">
-    <Position X="7.5" Y="4" Width="2.75" />
+    <Position X="7.5" Y="3.75" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAIAAEAAEAAAAAAAAAABAAAAAIAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Matrix.cs</FileName>
@@ -25,9 +25,9 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="SoftwareProjekt.Vector">
-    <Position X="7.5" Y="0.5" Width="2.5" />
+    <Position X="6.75" Y="0.5" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAEAAAAAAAAAIBAABAkIAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAEAAAAAAEAAIBAABAkIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Vector.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
