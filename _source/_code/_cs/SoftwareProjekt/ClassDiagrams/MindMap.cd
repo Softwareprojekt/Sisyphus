@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="SoftwareProjekt.AbstractTopic">
-    <Position X="0.5" Y="2.5" Width="1.5" />
+    <Position X="0.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAABAAAAAAAAAI=</HashCode>
       <FileName>Classes\AbstractTopic.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SoftwareProjekt.MindMap">
-    <Position X="7" Y="1.25" Width="1.75" />
+    <Position X="9.25" Y="1.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAYAAACAAAAQAAAAgAAAAAAAAAAAEAA=</HashCode>
       <FileName>UserControls\MindMap.cs</FileName>
@@ -19,84 +19,91 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="SoftwareProjekt.XmlMindMap">
-    <Position X="4.5" Y="2" Width="1.5" />
+    <Position X="6.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAAAAAAAAAAQAAAAQAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\XmlMindMap.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoftwareProjekt.XmlTopic">
-    <Position X="4.5" Y="5" Width="1.5" />
+    <Position X="6.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAFAAAAAAACAAAAAAEAAAEAAAAAACAA=</HashCode>
       <FileName>Classes\XmlTopic.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoftwareProjekt.MindMapButtonControl">
-    <Position X="13" Y="0.5" Width="2" />
+    <Position X="15.25" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>gAAAAQAAAAAAAEAAAgAAAAACBAAAARABhEIAAAAAIgA=</HashCode>
       <FileName>UserControls\MindMapButtonControl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoftwareProjekt.MindMapTopicControl">
-    <Position X="10" Y="0.5" Width="2" />
+    <Position X="12.25" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAACAAEAIAAACAAgAAAAIAACAACAAAAQACAAAAAAEAA=</HashCode>
       <FileName>UserControls\MindMapTopicControl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoftwareProjekt.TopicConnect">
-    <Position X="10" Y="5.25" Width="2.25" />
+    <Position X="12.25" Y="5.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAAIAAAIAAAAAAAAAAAAAAAAIAA=</HashCode>
       <FileName>Classes\TopicConnect.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoftwareProjekt.XmlExercise">
-    <Position X="4.5" Y="8" Width="2.5" />
+    <Position X="6.75" Y="8" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAACA=</HashCode>
       <FileName>Classes\XmlExercise.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="SoftwareProjekt.LinearTransformationTopic">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAI=</HashCode>
+      <FileName>Classes\LinearTransformationTopic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="SoftwareProjekt.ITopic">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAABAAAAAAAAAI=</HashCode>
       <FileName>Interfaces\ITopic.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="SoftwareProjekt.ETopic">
-    <Position X="0.5" Y="8.25" Width="1.5" />
+    <Position X="3.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAEAAEAAAAAA=</HashCode>
+      <HashCode>IAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAEAAEAAAAAA=</HashCode>
       <FileName>Enums\ETopic.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="SoftwareProjekt.EConnectionType">
-    <Position X="0.5" Y="4.5" Width="1.5" />
+    <Position X="3.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAQAAAAQA=</HashCode>
       <FileName>Enums\EConnectionType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="SoftwareProjekt.EMachiningCondtion">
-    <Position X="2.5" Y="0.5" Width="1.75" />
+    <Position X="3.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAACAAAAAAAAAAAAAAAgA=</HashCode>
-      <FileName>EWorkingState.cs</FileName>
+      <FileName>Enums\EWorkingState.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="SoftwareProjekt.EAlignType">
-    <Position X="0.5" Y="6.25" Width="1.5" />
+    <Position X="3.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAEAAAAAAAAgAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Enums\EAlignType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Delegate Name="SoftwareProjekt.ExerciseClickEvent">
-    <Position X="4.5" Y="0.5" Width="1.75" />
+    <Position X="6.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Delegates\ExerciseClickEvent.cs</FileName>

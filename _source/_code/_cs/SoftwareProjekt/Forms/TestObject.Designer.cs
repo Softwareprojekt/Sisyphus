@@ -30,6 +30,9 @@
         {
             this.coordinateSystem1 = new SoftwareProjekt.CoordinateSystem();
             this.mindMapButtonControl1 = new MindMapButtonControl("Hallo, hier ist Julian", 2, EAlignType.AlignRight);
+            this.mindMapTopicControl1 = new MindMapTopicControl();
+            this.mindMapTopicControl1.RegisterTopic(new LinearTransformationTopic());
+
             this.SuspendLayout();
             // 
             // coordinateSystem1
@@ -45,6 +48,12 @@
             this.mindMapButtonControl1.Name = "mindMapButtonControl1";
             this.mindMapButtonControl1.Size = new System.Drawing.Size(150, 30);
             this.mindMapButtonControl1.TabIndex = 1;
+
+
+            this.mindMapTopicControl1.Location = new System.Drawing.Point(40, 600);
+            this.mindMapTopicControl1.Size = new System.Drawing.Size(200, 150);
+            this.mindMapButtonControl1.TabIndex = 1;
+            this.mindMapButtonControl1.Name = "mindMapTopicControl1";
             // 
             // TestObject
             // 
@@ -53,6 +62,7 @@
             this.ClientSize = new System.Drawing.Size(762, 778);
             this.Controls.Add(this.mindMapButtonControl1);
             this.Controls.Add(this.coordinateSystem1);
+            this.Controls.Add(this.mindMapTopicControl1);
             this.Name = "TestObject";
             this.Text = "TestObject";
             this.ResumeLayout(false);
@@ -63,6 +73,7 @@
 
         private CoordinateSystem coordinateSystem1;
         private MindMapButtonControl mindMapButtonControl1;
+        private MindMapTopicControl mindMapTopicControl1;
 
     }
 }

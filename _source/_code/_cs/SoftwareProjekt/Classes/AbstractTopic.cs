@@ -41,9 +41,15 @@ namespace SoftwareProjekt
         }
 
 
-        public void StartExercise(Exercises id)
+        virtual public void StartExercise(Exercises id)
         {
             throw new NotImplementedException();
+        }
+
+
+        virtual public ETopic TopicType()
+        {
+            return ETopic.InvalidTopic;
         }
     }
 }

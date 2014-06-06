@@ -10,6 +10,7 @@ namespace SoftwareProjekt
         AffineTransformation,
         LinearTransformation,
         Fractals,
-        ComplexNumbers
+        ComplexNumbers,
+        InvalidTopic
     }
 }

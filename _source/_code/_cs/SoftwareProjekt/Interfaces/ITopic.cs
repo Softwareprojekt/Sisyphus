@@ -35,5 +35,7 @@ namespace SoftwareProjekt
         }
 
         void StartExercise(Exercises id);
+
+        ETopic TopicType();
     }
 }

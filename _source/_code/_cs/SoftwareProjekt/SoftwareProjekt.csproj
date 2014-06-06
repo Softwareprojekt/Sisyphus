@@ -51,7 +51,7 @@
     <Compile Include="Classes\DrawingPoint.cs" />
     <Compile Include="Enums\EAlignType.cs" />
     <Compile Include="Enums\EConnectionType.cs" />
-    <Compile Include="EWorkingState.cs" />
+    <Compile Include="Enums\EWorkingState.cs" />
     <Compile Include="Enums\ETopic.cs" />
     <Compile Include="Classes\XmlExercise.cs" />
     <Compile Include="Classes\XmlMindMap.cs" />
@@ -76,6 +76,7 @@
     <Compile Include="Interfaces\IExerciseObserver.cs" />
     <Compile Include="Classes\ScreenshotCreator.cs" />
     <Compile Include="Interfaces\IMathObject.cs" />
+    <Compile Include="Classes\LinearTransformationTopic.cs" />
     <Compile Include="UserControls\MindMapButtonControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

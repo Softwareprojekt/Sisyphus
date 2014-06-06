@@ -104,8 +104,16 @@ namespace SoftwareProjekt
         {
             Graphics g = e.Graphics;
 
-            g.DrawEllipse(Pens.Black, 0, 0, this.Width, this.Height);
-           // g.DrawString(this._
+            if (this._logicalTopic == null)
+            {
+                return;
+            }
+
+            string topicName = this._logicalTopic.TopicType().ToString();
+
+            g.DrawEllipse(Pens.Black, 0, 0, this.Width - 2, this.Height - 2);
+
+            g.DrawString(topicName, new Font("Arial", 12.0f), new SolidBrush(Color.Black), new PointF(this.Width / 2 - (topicName.Length * 7.5f / 2), this.Height / 2 - 10));
         }
     }
 }
