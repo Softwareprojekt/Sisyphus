@@ -38,18 +38,58 @@ namespace SoftwareProjekt
         public CtlVektorInput()
         {
             InitializeComponent();
-        }       
+        }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public string Name
         {
             get { return _sName; }
             set { _sName = value; }
-        }       
+        }
 
-        public Vector MyProperty
+        /// <summary>
+        /// 
+        /// </summary>
+        public Vector Vector
         {
             get { return _vVektor; }
             set { _vVektor = value; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void txtEle11_TextChanged(object sender, EventArgs e)
+        {
+            Vector.X1 = float.Parse(txtEle11.Text);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void txtEle11_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 48 && e.KeyChar <= 57 && e.KeyChar != 8))
+                e.Handled = true; 
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void txtEle21_TextChanged(object sender, EventArgs e)
+        {
+            Vector.X2 = float.Parse(txtEle21.Text);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void txtEle21_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 48 && e.KeyChar <= 57 && e.KeyChar != 8))
+                e.Handled = true; 
         }       
         
     }

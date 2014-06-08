@@ -37,20 +37,93 @@ namespace SoftwareProjekt
         public CtlMatrixInput()
         {
             InitializeComponent();
-        }           
+        }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public Matrix Matrix
         {
             get { return _mmatrix; }
             set { _mmatrix = value; }
-        }        
+        }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public string Name
         {
             get { return _sname; }
             set { _sname = value; }
         }
-        
 
+        /// <summary>
+        /// 
+        /// </summary>
+        private void txtEle11_TextChanged(object sender, EventArgs e)
+        {
+            Matrix.X11 = float.Parse(txtEle11.Text);
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void txtEle11_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 48 && e.KeyChar <= 57 && e.KeyChar != 8))
+                e.Handled = true; 
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void txtEle12_TextChanged(object sender, EventArgs e)
+        {
+            Matrix.X12 = float.Parse(txtEle12.Text);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void txtEle12_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 48 && e.KeyChar <= 57 && e.KeyChar != 8))
+                e.Handled = true; 
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void txtEle21_TextChanged(object sender, EventArgs e)
+        {
+            Matrix.X21 = float.Parse(txtEle21.Text);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void txtEle21_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 48 && e.KeyChar <= 57 && e.KeyChar != 8))
+                e.Handled = true; 
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void txtEle22_TextChanged(object sender, EventArgs e)
+        {
+            Matrix.X22 = float.Parse(txtEle22.Text);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void txtEle22_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 48 && e.KeyChar <= 57 && e.KeyChar != 8))
+                e.Handled = true; 
+        }   
     }
 }

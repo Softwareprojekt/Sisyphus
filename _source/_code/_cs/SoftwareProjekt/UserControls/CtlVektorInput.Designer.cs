@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.grpVektorInput = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEle21 = new System.Windows.Forms.TextBox();
+            this.txtEle11 = new System.Windows.Forms.TextBox();
             this.grpVektorInput.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpVektorInput
             // 
-            this.grpVektorInput.Controls.Add(this.textBox2);
-            this.grpVektorInput.Controls.Add(this.textBox1);
+            this.grpVektorInput.Controls.Add(this.txtEle21);
+            this.grpVektorInput.Controls.Add(this.txtEle11);
             this.grpVektorInput.Location = new System.Drawing.Point(4, 4);
             this.grpVektorInput.Name = "grpVektorInput";
             this.grpVektorInput.Size = new System.Drawing.Size(105, 72);
@@ -45,19 +45,25 @@
             this.grpVektorInput.TabStop = false;
             this.grpVektorInput.Text = "Vektor Eingabe";
             // 
-            // textBox2
+            // txtEle21
             // 
-            this.textBox2.Location = new System.Drawing.Point(38, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(35, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtEle21.Location = new System.Drawing.Point(38, 45);
+            this.txtEle21.MaxLength = 5;
+            this.txtEle21.Name = "txtEle21";
+            this.txtEle21.Size = new System.Drawing.Size(35, 20);
+            this.txtEle21.TabIndex = 1;
+            this.txtEle21.TextChanged += new System.EventHandler(this.txtEle21_TextChanged);
+            this.txtEle21.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEle21_KeyPress);
             // 
-            // textBox1
+            // txtEle11
             // 
-            this.textBox1.Location = new System.Drawing.Point(38, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(35, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtEle11.Location = new System.Drawing.Point(38, 19);
+            this.txtEle11.MaxLength = 5;
+            this.txtEle11.Name = "txtEle11";
+            this.txtEle11.Size = new System.Drawing.Size(35, 20);
+            this.txtEle11.TabIndex = 0;
+            this.txtEle11.TextChanged += new System.EventHandler(this.txtEle11_TextChanged);
+            this.txtEle11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEle11_KeyPress);
             // 
             // CtlVektorInput
             // 
@@ -75,7 +81,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grpVektorInput;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEle21;
+        private System.Windows.Forms.TextBox txtEle11;
     }
 }

@@ -52,30 +52,42 @@
             // txtEle22
             // 
             this.txtEle22.Location = new System.Drawing.Point(54, 45);
+            this.txtEle22.MaxLength = 5;
             this.txtEle22.Name = "txtEle22";
             this.txtEle22.Size = new System.Drawing.Size(42, 20);
             this.txtEle22.TabIndex = 3;
+            this.txtEle22.TextChanged += new System.EventHandler(this.txtEle22_TextChanged);
+            this.txtEle22.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEle22_KeyPress);
             // 
             // txtEle21
             // 
             this.txtEle21.Location = new System.Drawing.Point(6, 45);
+            this.txtEle21.MaxLength = 5;
             this.txtEle21.Name = "txtEle21";
             this.txtEle21.Size = new System.Drawing.Size(42, 20);
             this.txtEle21.TabIndex = 2;
+            this.txtEle21.TextChanged += new System.EventHandler(this.txtEle21_TextChanged);
+            this.txtEle21.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEle21_KeyPress);
             // 
             // txtEle12
             // 
             this.txtEle12.Location = new System.Drawing.Point(54, 19);
+            this.txtEle12.MaxLength = 5;
             this.txtEle12.Name = "txtEle12";
             this.txtEle12.Size = new System.Drawing.Size(42, 20);
             this.txtEle12.TabIndex = 1;
+            this.txtEle12.TextChanged += new System.EventHandler(this.txtEle12_TextChanged);
+            this.txtEle12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEle12_KeyPress);
             // 
             // txtEle11
             // 
             this.txtEle11.Location = new System.Drawing.Point(6, 19);
+            this.txtEle11.MaxLength = 5;
             this.txtEle11.Name = "txtEle11";
             this.txtEle11.Size = new System.Drawing.Size(42, 20);
             this.txtEle11.TabIndex = 0;
+            this.txtEle11.TextChanged += new System.EventHandler(this.txtEle11_TextChanged);
+            this.txtEle11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEle11_KeyPress);
             // 
             // CtlMatrixInput
             // 
