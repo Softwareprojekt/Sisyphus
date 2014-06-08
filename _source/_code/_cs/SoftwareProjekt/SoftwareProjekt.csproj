@@ -67,6 +67,12 @@
     <Compile Include="Delegates\ExerciseHandler.cs" />
     <Compile Include="Delegates\ExerciseClickEvent.cs" />
     <Compile Include="Classes\ExerciseEventArgs.cs" />
+    <Compile Include="Forms\FrmFraktalChaos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFraktalChaos.Designer.cs">
+      <DependentUpon>FrmFraktalChaos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TestObject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     <EmbeddedResource Include="Forms\FrmDrehLinAbbUrsp.resx">
       <DependentUpon>FrmDrehLinAbbUrsp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmFraktalChaos.resx">
+      <DependentUpon>FrmFraktalChaos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmFraktalErzIFS.resx">
       <DependentUpon>FrmFraktalErzIFS.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,9 +254,7 @@
       <DependentUpon>WorkBookControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\config.xml" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

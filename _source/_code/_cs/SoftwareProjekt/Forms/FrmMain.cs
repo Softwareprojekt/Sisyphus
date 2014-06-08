@@ -170,7 +170,7 @@ namespace SoftwareProjekt
             this.ResumeLayout(false);
 
         }
-
+/*
         private void öffnenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -225,7 +225,7 @@ namespace SoftwareProjekt
                 printDocument1.Print();
             }
         }
-        
+    */    
 		public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
 		{
 			throw new NotImplementedException();
