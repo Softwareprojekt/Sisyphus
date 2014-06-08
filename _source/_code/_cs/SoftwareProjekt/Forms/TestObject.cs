@@ -36,6 +36,8 @@ namespace SoftwareProjekt.Forms
         {
             InitializeComponent();
 
+            MindMap mm = new MindMap();
+            mm.ArrangeMindMap();
             
             LineSegment ls1 = new LineSegment(new PointF(1.0f, 1.5f), new Vector(4.0f, 1.0f));
             ls1.Color = Pens.Blue;

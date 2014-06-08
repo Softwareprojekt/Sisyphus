@@ -52,5 +52,27 @@ namespace SoftwareProjekt
         {
             throw new System.NotImplementedException();
         }
+
+        private void InitializeComponent()
+        {
+            if (!this._xmlParser.ParseXml(_filename))
+            {
+                return;
+            }
+            this.SuspendLayout();
+            // 
+            // MindMap
+            // 
+            this.Name = "MindMap";
+            this.Paint += MindMap_Paint;
+            this.ResumeLayout(false);
+
+        }
+
+        void MindMap_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }

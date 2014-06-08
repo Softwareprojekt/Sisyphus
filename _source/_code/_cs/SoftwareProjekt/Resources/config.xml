@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<content>
+
+    <Topic id="0">
+      <Name>Topic1</Name>
+      <DLLPath>n.A.</DLLPath>
+      <Connections>
+          <Connection type="1">1</Connection>
+          <Connection type="1">2</Connection>
+      </Connections>
+
+      <Exercises>
+        <Exercise id="0">Ex 1</Exercise>
+        <Exercise id="1">Ex 2</Exercise>
+        <Exercise id="2">Ex 3</Exercise>
+      </Exercises>
+    </Topic>
+  
+    <Topic id="1">
+      <Name>Topic2</Name>
+      <DLLPath>n.A.</DLLPath>
+
+      <Exercises>
+        <Exercise id="3">Ex 4</Exercise>
+        <Exercise id="4">Ex 5</Exercise>
+        <Exercise id="5">Ex 6</Exercise>
+      </Exercises>
+    </Topic>
+  
+    <Topic id="2">
+      <Name>Topic3</Name>
+      <DLLPath>n.A.</DLLPath>
+
+      <Exercises>
+        <Exercise id="6">Ex 12</Exercise>
+      </Exercises>
+    </Topic>
+  
+</content>
+

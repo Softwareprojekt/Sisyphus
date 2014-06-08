@@ -8,16 +8,17 @@ namespace SoftwareProjekt
     public class TopicConnect
     {
         private EConnectionType _connectionType;
-        private ETopic _foreignTopicID;
+        private int _foreignTopicID;
 
-        public int ConnectionType
+        public EConnectionType ConnectionType
         {
             get
             {
-                throw new System.NotImplementedException();
+                return _connectionType;
             }
             set
             {
+                _connectionType = value;
             }
         }
 
@@ -25,10 +26,11 @@ namespace SoftwareProjekt
         {
             get
             {
-                throw new System.NotImplementedException();
+                return _foreignTopicID;
             }
             set
             {
+                _foreignTopicID = value;
             }
         }
     }

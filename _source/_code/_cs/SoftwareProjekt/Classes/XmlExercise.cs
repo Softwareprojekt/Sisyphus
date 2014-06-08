@@ -14,21 +14,23 @@ namespace SoftwareProjekt
         {
             get
             {
-                throw new System.NotImplementedException();
+                return _exerciseID;
             }
             set
             {
+                _exerciseID = value;
             }
         }
 
-        public int ExerciseName
+        public string ExerciseName
         {
             get
             {
-                throw new System.NotImplementedException();
+                return _exerciseName;
             }
             set
             {
+                _exerciseName = value;
             }
         }
     }
