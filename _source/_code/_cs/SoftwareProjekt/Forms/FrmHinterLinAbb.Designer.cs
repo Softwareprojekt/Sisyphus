@@ -59,6 +59,8 @@
             this.cosInput = new SoftwareProjekt.CoordinateSystem();
             this.cosOutput1 = new SoftwareProjekt.CoordinateSystem();
             this.cosOutput2 = new SoftwareProjekt.CoordinateSystem();
+            this.lblNotes = new System.Windows.Forms.Label();
+            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.grpAusgabe.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -70,9 +72,9 @@
             this.grpAusgabe.Controls.Add(this.txtVectorFX);
             this.grpAusgabe.Controls.Add(this.lblVectorFX);
             this.grpAusgabe.Location = new System.Drawing.Point(367, 69);
-            this.grpAusgabe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpAusgabe.Margin = new System.Windows.Forms.Padding(2);
             this.grpAusgabe.Name = "grpAusgabe";
-            this.grpAusgabe.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpAusgabe.Padding = new System.Windows.Forms.Padding(2);
             this.grpAusgabe.Size = new System.Drawing.Size(170, 62);
             this.grpAusgabe.TabIndex = 41;
             this.grpAusgabe.TabStop = false;
@@ -81,7 +83,7 @@
             // txtVectorFX
             // 
             this.txtVectorFX.Location = new System.Drawing.Point(43, 23);
-            this.txtVectorFX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVectorFX.Margin = new System.Windows.Forms.Padding(2);
             this.txtVectorFX.Name = "txtVectorFX";
             this.txtVectorFX.Size = new System.Drawing.Size(116, 20);
             this.txtVectorFX.TabIndex = 2;
@@ -100,7 +102,7 @@
             // 
             this.butFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butFx.Location = new System.Drawing.Point(281, 81);
-            this.butFx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butFx.Margin = new System.Windows.Forms.Padding(2);
             this.butFx.Name = "butFx";
             this.butFx.Size = new System.Drawing.Size(81, 38);
             this.butFx.TabIndex = 38;
@@ -110,7 +112,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(340, 159);
+            this.label7.Location = new System.Drawing.Point(460, 159);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(146, 13);
@@ -120,7 +122,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(51, 159);
+            this.label6.Location = new System.Drawing.Point(122, 159);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(137, 13);
@@ -138,9 +140,9 @@
             this.groupBox1.Controls.Add(this.txtPointX);
             this.groupBox1.Controls.Add(this.lblPointX);
             this.groupBox1.Location = new System.Drawing.Point(10, 45);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(267, 107);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
@@ -149,7 +151,7 @@
             // txtDeterminante
             // 
             this.txtDeterminante.Location = new System.Drawing.Point(130, 67);
-            this.txtDeterminante.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDeterminante.Margin = new System.Windows.Forms.Padding(2);
             this.txtDeterminante.Name = "txtDeterminante";
             this.txtDeterminante.Size = new System.Drawing.Size(99, 20);
             this.txtDeterminante.TabIndex = 36;
@@ -157,7 +159,7 @@
             // txtX
             // 
             this.txtX.Location = new System.Drawing.Point(63, 45);
-            this.txtX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtX.Margin = new System.Windows.Forms.Padding(2);
             this.txtX.Name = "txtX";
             this.txtX.Size = new System.Drawing.Size(64, 20);
             this.txtX.TabIndex = 32;
@@ -166,7 +168,7 @@
             // 
             this.butDeterminante.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDeterminante.Location = new System.Drawing.Point(130, 34);
-            this.butDeterminante.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butDeterminante.Margin = new System.Windows.Forms.Padding(2);
             this.butDeterminante.Name = "butDeterminante";
             this.butDeterminante.Size = new System.Drawing.Size(98, 28);
             this.butDeterminante.TabIndex = 35;
@@ -176,7 +178,7 @@
             // txtMatrix
             // 
             this.txtMatrix.Location = new System.Drawing.Point(63, 67);
-            this.txtMatrix.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMatrix.Margin = new System.Windows.Forms.Padding(2);
             this.txtMatrix.Name = "txtMatrix";
             this.txtMatrix.Size = new System.Drawing.Size(64, 20);
             this.txtMatrix.TabIndex = 15;
@@ -204,7 +206,7 @@
             // txtPointX
             // 
             this.txtPointX.Location = new System.Drawing.Point(63, 22);
-            this.txtPointX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPointX.Margin = new System.Windows.Forms.Padding(2);
             this.txtPointX.Name = "txtPointX";
             this.txtPointX.Size = new System.Drawing.Size(64, 20);
             this.txtPointX.TabIndex = 7;
@@ -223,7 +225,7 @@
             // 
             this.butGx.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butGx.Location = new System.Drawing.Point(784, 59);
-            this.butGx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butGx.Margin = new System.Windows.Forms.Padding(2);
             this.butGx.Name = "butGx";
             this.butGx.Size = new System.Drawing.Size(81, 38);
             this.butGx.TabIndex = 42;
@@ -233,7 +235,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(46, 23);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(64, 20);
             this.textBox1.TabIndex = 38;
@@ -251,7 +253,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(113, 48);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(99, 20);
             this.textBox2.TabIndex = 38;
@@ -260,7 +262,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(113, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 28);
             this.button1.TabIndex = 37;
@@ -274,9 +276,9 @@
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Location = new System.Drawing.Point(541, 45);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(239, 107);
             this.groupBox2.TabIndex = 43;
             this.groupBox2.TabStop = false;
@@ -285,7 +287,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(745, 159);
+            this.label2.Location = new System.Drawing.Point(822, 159);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 13);
@@ -299,9 +301,9 @@
             this.groupBox3.Controls.Add(this.txtVectorGFx);
             this.groupBox3.Controls.Add(this.lblVectorGFx);
             this.groupBox3.Location = new System.Drawing.Point(870, 59);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(170, 83);
             this.groupBox3.TabIndex = 42;
             this.groupBox3.TabStop = false;
@@ -310,7 +312,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(56, 45);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(103, 20);
             this.textBox3.TabIndex = 4;
@@ -328,7 +330,7 @@
             // txtVectorGFx
             // 
             this.txtVectorGFx.Location = new System.Drawing.Point(56, 22);
-            this.txtVectorGFx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVectorGFx.Margin = new System.Windows.Forms.Padding(2);
             this.txtVectorGFx.Name = "txtVectorGFx";
             this.txtVectorGFx.Size = new System.Drawing.Size(103, 20);
             this.txtVectorGFx.TabIndex = 2;
@@ -347,7 +349,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(784, 104);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 38);
             this.button2.TabIndex = 46;
@@ -375,11 +377,30 @@
             this.cosOutput2.Size = new System.Drawing.Size(327, 303);
             this.cosOutput2.TabIndex = 49;
             // 
+            // lblNotes
+            // 
+            this.lblNotes.AutoSize = true;
+            this.lblNotes.Location = new System.Drawing.Point(274, 525);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(46, 13);
+            this.lblNotes.TabIndex = 51;
+            this.lblNotes.Text = "Notizen:";
+            // 
+            // rtxtNotes
+            // 
+            this.rtxtNotes.Location = new System.Drawing.Point(274, 544);
+            this.rtxtNotes.Name = "rtxtNotes";
+            this.rtxtNotes.Size = new System.Drawing.Size(478, 124);
+            this.rtxtNotes.TabIndex = 50;
+            this.rtxtNotes.Text = "";
+            // 
             // FrmHinterLinAbb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 506);
+            this.ClientSize = new System.Drawing.Size(1121, 683);
+            this.Controls.Add(this.lblNotes);
+            this.Controls.Add(this.rtxtNotes);
             this.Controls.Add(this.cosOutput2);
             this.Controls.Add(this.cosOutput1);
             this.Controls.Add(this.cosInput);
@@ -393,9 +414,9 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmHinterLinAbb";
-            this.Text = "FrmHinterLinAbb";
+            this.Text = "Hintereinanderausführung linearer Abbildungen";
             this.grpAusgabe.ResumeLayout(false);
             this.grpAusgabe.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -442,5 +463,7 @@
         private CoordinateSystem cosInput;
         private CoordinateSystem cosOutput1;
         private CoordinateSystem cosOutput2;
+        private System.Windows.Forms.Label lblNotes;
+        private System.Windows.Forms.RichTextBox rtxtNotes;
     }
 }

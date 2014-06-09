@@ -32,6 +32,8 @@
             this.cosLeft = new SoftwareProjekt.CoordinateSystem();
             this.cosRight = new SoftwareProjekt.CoordinateSystem();
             this.maiMatrix = new SoftwareProjekt.CtlMatrixInput();
+            this.lblNotes = new System.Windows.Forms.Label();
+            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -66,11 +68,30 @@
             this.maiMatrix.Size = new System.Drawing.Size(125, 89);
             this.maiMatrix.TabIndex = 3;
             // 
+            // lblNotes
+            // 
+            this.lblNotes.AutoSize = true;
+            this.lblNotes.Location = new System.Drawing.Point(323, 565);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(46, 13);
+            this.lblNotes.TabIndex = 6;
+            this.lblNotes.Text = "Notizen:";
+            // 
+            // rtxtNotes
+            // 
+            this.rtxtNotes.Location = new System.Drawing.Point(323, 584);
+            this.rtxtNotes.Name = "rtxtNotes";
+            this.rtxtNotes.Size = new System.Drawing.Size(478, 124);
+            this.rtxtNotes.TabIndex = 5;
+            this.rtxtNotes.Text = "";
+            // 
             // FrmUmkehrungLinAbb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1136, 720);
+            this.Controls.Add(this.lblNotes);
+            this.Controls.Add(this.rtxtNotes);
             this.Controls.Add(this.maiMatrix);
             this.Controls.Add(this.cosRight);
             this.Controls.Add(this.cosLeft);
@@ -89,5 +110,7 @@
         private CoordinateSystem cosLeft;
         private CoordinateSystem cosRight;
         private CtlMatrixInput maiMatrix;
+        private System.Windows.Forms.Label lblNotes;
+        private System.Windows.Forms.RichTextBox rtxtNotes;
     }
 }

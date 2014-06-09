@@ -51,6 +51,8 @@
             this.lblVectorFX = new System.Windows.Forms.Label();
             this.coordinateSystem1 = new SoftwareProjekt.CoordinateSystem();
             this.coordinateSystem2 = new SoftwareProjekt.CoordinateSystem();
+            this.lblNotes = new System.Windows.Forms.Label();
+            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.grpAusgabe.SuspendLayout();
             this.SuspendLayout();
@@ -80,9 +82,9 @@
             this.groupBox1.Controls.Add(this.txtPointX);
             this.groupBox1.Controls.Add(this.lblPointX);
             this.groupBox1.Location = new System.Drawing.Point(84, 31);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(267, 146);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
@@ -91,7 +93,7 @@
             // txtDeterminante
             // 
             this.txtDeterminante.Location = new System.Drawing.Point(146, 90);
-            this.txtDeterminante.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDeterminante.Margin = new System.Windows.Forms.Padding(2);
             this.txtDeterminante.Name = "txtDeterminante";
             this.txtDeterminante.Size = new System.Drawing.Size(99, 20);
             this.txtDeterminante.TabIndex = 36;
@@ -99,7 +101,7 @@
             // txtX
             // 
             this.txtX.Location = new System.Drawing.Point(63, 67);
-            this.txtX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtX.Margin = new System.Windows.Forms.Padding(2);
             this.txtX.Name = "txtX";
             this.txtX.Size = new System.Drawing.Size(64, 20);
             this.txtX.TabIndex = 32;
@@ -108,7 +110,7 @@
             // 
             this.butDeterminante.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDeterminante.Location = new System.Drawing.Point(146, 57);
-            this.butDeterminante.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butDeterminante.Margin = new System.Windows.Forms.Padding(2);
             this.butDeterminante.Name = "butDeterminante";
             this.butDeterminante.Size = new System.Drawing.Size(98, 28);
             this.butDeterminante.TabIndex = 35;
@@ -118,7 +120,7 @@
             // txtMatrix
             // 
             this.txtMatrix.Location = new System.Drawing.Point(63, 113);
-            this.txtMatrix.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMatrix.Margin = new System.Windows.Forms.Padding(2);
             this.txtMatrix.Name = "txtMatrix";
             this.txtMatrix.Size = new System.Drawing.Size(64, 20);
             this.txtMatrix.TabIndex = 15;
@@ -136,7 +138,7 @@
             // txtAMultY
             // 
             this.txtAMultY.Location = new System.Drawing.Point(63, 90);
-            this.txtAMultY.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAMultY.Margin = new System.Windows.Forms.Padding(2);
             this.txtAMultY.Name = "txtAMultY";
             this.txtAMultY.Size = new System.Drawing.Size(64, 20);
             this.txtAMultY.TabIndex = 13;
@@ -164,7 +166,7 @@
             // txtEV1
             // 
             this.txtEV1.Location = new System.Drawing.Point(63, 45);
-            this.txtEV1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEV1.Margin = new System.Windows.Forms.Padding(2);
             this.txtEV1.Name = "txtEV1";
             this.txtEV1.Size = new System.Drawing.Size(64, 20);
             this.txtEV1.TabIndex = 9;
@@ -182,7 +184,7 @@
             // txtPointX
             // 
             this.txtPointX.Location = new System.Drawing.Point(63, 22);
-            this.txtPointX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPointX.Margin = new System.Windows.Forms.Padding(2);
             this.txtPointX.Name = "txtPointX";
             this.txtPointX.Size = new System.Drawing.Size(64, 20);
             this.txtPointX.TabIndex = 7;
@@ -201,7 +203,7 @@
             // 
             this.butFunctionAMultX.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butFunctionAMultX.Location = new System.Drawing.Point(479, 84);
-            this.butFunctionAMultX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butFunctionAMultX.Margin = new System.Windows.Forms.Padding(2);
             this.butFunctionAMultX.Name = "butFunctionAMultX";
             this.butFunctionAMultX.Size = new System.Drawing.Size(81, 38);
             this.butFunctionAMultX.TabIndex = 32;
@@ -225,9 +227,9 @@
             this.grpAusgabe.Controls.Add(this.lblVectorAMultX);
             this.grpAusgabe.Controls.Add(this.lblVectorFX);
             this.grpAusgabe.Location = new System.Drawing.Point(725, 73);
-            this.grpAusgabe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpAusgabe.Margin = new System.Windows.Forms.Padding(2);
             this.grpAusgabe.Name = "grpAusgabe";
-            this.grpAusgabe.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpAusgabe.Padding = new System.Windows.Forms.Padding(2);
             this.grpAusgabe.Size = new System.Drawing.Size(170, 85);
             this.grpAusgabe.TabIndex = 34;
             this.grpAusgabe.TabStop = false;
@@ -236,7 +238,7 @@
             // txtVectorAMultX
             // 
             this.txtVectorAMultX.Location = new System.Drawing.Point(57, 45);
-            this.txtVectorAMultX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVectorAMultX.Margin = new System.Windows.Forms.Padding(2);
             this.txtVectorAMultX.Name = "txtVectorAMultX";
             this.txtVectorAMultX.Size = new System.Drawing.Size(76, 20);
             this.txtVectorAMultX.TabIndex = 3;
@@ -244,7 +246,7 @@
             // txtVectorFX
             // 
             this.txtVectorFX.Location = new System.Drawing.Point(57, 22);
-            this.txtVectorFX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVectorFX.Margin = new System.Windows.Forms.Padding(2);
             this.txtVectorFX.Name = "txtVectorFX";
             this.txtVectorFX.Size = new System.Drawing.Size(76, 20);
             this.txtVectorFX.TabIndex = 2;
@@ -283,11 +285,30 @@
             this.coordinateSystem2.Size = new System.Drawing.Size(360, 348);
             this.coordinateSystem2.TabIndex = 36;
             // 
+            // lblNotes
+            // 
+            this.lblNotes.AutoSize = true;
+            this.lblNotes.Location = new System.Drawing.Point(284, 620);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(46, 13);
+            this.lblNotes.TabIndex = 38;
+            this.lblNotes.Text = "Notizen:";
+            // 
+            // rtxtNotes
+            // 
+            this.rtxtNotes.Location = new System.Drawing.Point(284, 639);
+            this.rtxtNotes.Name = "rtxtNotes";
+            this.rtxtNotes.Size = new System.Drawing.Size(478, 124);
+            this.rtxtNotes.TabIndex = 37;
+            this.rtxtNotes.Text = "";
+            // 
             // FrmLinAbbVielBelVek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 619);
+            this.ClientSize = new System.Drawing.Size(1078, 777);
+            this.Controls.Add(this.lblNotes);
+            this.Controls.Add(this.rtxtNotes);
             this.Controls.Add(this.coordinateSystem2);
             this.Controls.Add(this.coordinateSystem1);
             this.Controls.Add(this.grpAusgabe);
@@ -295,7 +316,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLinAbbVielBelVek";
             this.Text = "FrmLinAbbVielBelVek";
             this.groupBox1.ResumeLayout(false);
@@ -332,5 +353,7 @@
         private System.Windows.Forms.Label lblVectorFX;
         private CoordinateSystem coordinateSystem1;
         private CoordinateSystem coordinateSystem2;
+        private System.Windows.Forms.Label lblNotes;
+        private System.Windows.Forms.RichTextBox rtxtNotes;
     }
 }

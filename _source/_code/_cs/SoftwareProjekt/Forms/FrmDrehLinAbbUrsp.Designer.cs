@@ -52,6 +52,8 @@
             this.grpDataOutput = new System.Windows.Forms.GroupBox();
             this.cosInput = new SoftwareProjekt.CoordinateSystem();
             this.cosOutput = new SoftwareProjekt.CoordinateSystem();
+            this.lblNotes = new System.Windows.Forms.Label();
+            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.grpDataInput.SuspendLayout();
             this.grpDataOutput.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +61,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(598, 196);
+            this.label7.Location = new System.Drawing.Point(595, 196);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(140, 13);
@@ -69,7 +71,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(146, 207);
+            this.label6.Location = new System.Drawing.Point(139, 196);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(137, 13);
@@ -88,10 +90,10 @@
             this.grpDataInput.Controls.Add(this.lblEV1);
             this.grpDataInput.Controls.Add(this.txtPointX);
             this.grpDataInput.Controls.Add(this.lblPointX);
-            this.grpDataInput.Location = new System.Drawing.Point(130, 59);
-            this.grpDataInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpDataInput.Location = new System.Drawing.Point(142, 44);
+            this.grpDataInput.Margin = new System.Windows.Forms.Padding(2);
             this.grpDataInput.Name = "grpDataInput";
-            this.grpDataInput.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpDataInput.Padding = new System.Windows.Forms.Padding(2);
             this.grpDataInput.Size = new System.Drawing.Size(146, 146);
             this.grpDataInput.TabIndex = 26;
             this.grpDataInput.TabStop = false;
@@ -100,7 +102,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(52, 115);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(64, 20);
             this.textBox3.TabIndex = 15;
@@ -118,7 +120,7 @@
             // txtVectorX
             // 
             this.txtVectorX.Location = new System.Drawing.Point(52, 92);
-            this.txtVectorX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVectorX.Margin = new System.Windows.Forms.Padding(2);
             this.txtVectorX.Name = "txtVectorX";
             this.txtVectorX.Size = new System.Drawing.Size(64, 20);
             this.txtVectorX.TabIndex = 13;
@@ -136,7 +138,7 @@
             // txtEV2
             // 
             this.txtEV2.Location = new System.Drawing.Point(52, 69);
-            this.txtEV2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEV2.Margin = new System.Windows.Forms.Padding(2);
             this.txtEV2.Name = "txtEV2";
             this.txtEV2.Size = new System.Drawing.Size(64, 20);
             this.txtEV2.TabIndex = 11;
@@ -154,7 +156,7 @@
             // txtEV1
             // 
             this.txtEV1.Location = new System.Drawing.Point(52, 46);
-            this.txtEV1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEV1.Margin = new System.Windows.Forms.Padding(2);
             this.txtEV1.Name = "txtEV1";
             this.txtEV1.Size = new System.Drawing.Size(64, 20);
             this.txtEV1.TabIndex = 9;
@@ -172,7 +174,7 @@
             // txtPointX
             // 
             this.txtPointX.Location = new System.Drawing.Point(52, 24);
-            this.txtPointX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPointX.Margin = new System.Windows.Forms.Padding(2);
             this.txtPointX.Name = "txtPointX";
             this.txtPointX.Size = new System.Drawing.Size(64, 20);
             this.txtPointX.TabIndex = 7;
@@ -191,7 +193,7 @@
             // 
             this.butFunctionTransfX.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butFunctionTransfX.Location = new System.Drawing.Point(7, 20);
-            this.butFunctionTransfX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butFunctionTransfX.Margin = new System.Windows.Forms.Padding(2);
             this.butFunctionTransfX.Name = "butFunctionTransfX";
             this.butFunctionTransfX.Size = new System.Drawing.Size(48, 26);
             this.butFunctionTransfX.TabIndex = 32;
@@ -201,7 +203,7 @@
             // txtFunctionTransfX
             // 
             this.txtFunctionTransfX.Location = new System.Drawing.Point(60, 24);
-            this.txtFunctionTransfX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFunctionTransfX.Margin = new System.Windows.Forms.Padding(2);
             this.txtFunctionTransfX.Name = "txtFunctionTransfX";
             this.txtFunctionTransfX.Size = new System.Drawing.Size(64, 20);
             this.txtFunctionTransfX.TabIndex = 34;
@@ -209,7 +211,7 @@
             // txtVectorFunctionX
             // 
             this.txtVectorFunctionX.Location = new System.Drawing.Point(60, 57);
-            this.txtVectorFunctionX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVectorFunctionX.Margin = new System.Windows.Forms.Padding(2);
             this.txtVectorFunctionX.Name = "txtVectorFunctionX";
             this.txtVectorFunctionX.Size = new System.Drawing.Size(64, 20);
             this.txtVectorFunctionX.TabIndex = 35;
@@ -237,7 +239,7 @@
             // txtVectorM1
             // 
             this.txtVectorM1.Location = new System.Drawing.Point(60, 80);
-            this.txtVectorM1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVectorM1.Margin = new System.Windows.Forms.Padding(2);
             this.txtVectorM1.Name = "txtVectorM1";
             this.txtVectorM1.Size = new System.Drawing.Size(64, 20);
             this.txtVectorM1.TabIndex = 37;
@@ -255,7 +257,7 @@
             // txtVectorM2
             // 
             this.txtVectorM2.Location = new System.Drawing.Point(60, 103);
-            this.txtVectorM2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVectorM2.Margin = new System.Windows.Forms.Padding(2);
             this.txtVectorM2.Name = "txtVectorM2";
             this.txtVectorM2.Size = new System.Drawing.Size(64, 20);
             this.txtVectorM2.TabIndex = 39;
@@ -270,7 +272,7 @@
             this.grpDataOutput.Controls.Add(this.lblVectorM1);
             this.grpDataOutput.Controls.Add(this.lblVectorFunctionX);
             this.grpDataOutput.Controls.Add(this.txtVectorM1);
-            this.grpDataOutput.Location = new System.Drawing.Point(598, 59);
+            this.grpDataOutput.Location = new System.Drawing.Point(598, 55);
             this.grpDataOutput.Name = "grpDataOutput";
             this.grpDataOutput.Size = new System.Drawing.Size(140, 135);
             this.grpDataOutput.TabIndex = 41;
@@ -291,18 +293,37 @@
             this.cosOutput.Size = new System.Drawing.Size(378, 266);
             this.cosOutput.TabIndex = 43;
             // 
+            // lblNotes
+            // 
+            this.lblNotes.AutoSize = true;
+            this.lblNotes.Location = new System.Drawing.Point(226, 552);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(46, 13);
+            this.lblNotes.TabIndex = 44;
+            this.lblNotes.Text = "Notizen:";
+            // 
+            // rtxtNotes
+            // 
+            this.rtxtNotes.Location = new System.Drawing.Point(229, 568);
+            this.rtxtNotes.Name = "rtxtNotes";
+            this.rtxtNotes.Size = new System.Drawing.Size(435, 136);
+            this.rtxtNotes.TabIndex = 45;
+            this.rtxtNotes.Text = "";
+            // 
             // FrmDrehLinAbbUrsp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 672);
+            this.ClientSize = new System.Drawing.Size(938, 716);
+            this.Controls.Add(this.rtxtNotes);
+            this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.cosOutput);
             this.Controls.Add(this.cosInput);
             this.Controls.Add(this.grpDataOutput);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.grpDataInput);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmDrehLinAbbUrsp";
             this.Text = "Drehung linearer Abbildungen am Ursprung";
             this.grpDataInput.ResumeLayout(false);
@@ -340,5 +361,7 @@
         private System.Windows.Forms.GroupBox grpDataOutput;
         private CoordinateSystem cosInput;
         private CoordinateSystem cosOutput;
+        private System.Windows.Forms.Label lblNotes;
+        private System.Windows.Forms.RichTextBox rtxtNotes;
     }
 }

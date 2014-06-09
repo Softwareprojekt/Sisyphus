@@ -56,6 +56,8 @@
             this.cosInputLeft = new SoftwareProjekt.CoordinateSystem();
             this.cosOutput = new SoftwareProjekt.CoordinateSystem();
             this.cosInputRight = new SoftwareProjekt.CoordinateSystem();
+            this.lblNotes = new System.Windows.Forms.Label();
+            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -93,9 +95,9 @@
             this.groupBox1.Controls.Add(this.lblFunction1X);
             this.groupBox1.Controls.Add(this.lblPointB1);
             this.groupBox1.Location = new System.Drawing.Point(301, 18);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(362, 95);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
@@ -104,7 +106,7 @@
             // txtPointC1
             // 
             this.txtPointC1.Location = new System.Drawing.Point(77, 69);
-            this.txtPointC1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPointC1.Margin = new System.Windows.Forms.Padding(2);
             this.txtPointC1.Name = "txtPointC1";
             this.txtPointC1.Size = new System.Drawing.Size(64, 20);
             this.txtPointC1.TabIndex = 11;
@@ -122,7 +124,7 @@
             // txtFunction1X
             // 
             this.txtFunction1X.Location = new System.Drawing.Point(229, 24);
-            this.txtFunction1X.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFunction1X.Margin = new System.Windows.Forms.Padding(2);
             this.txtFunction1X.Name = "txtFunction1X";
             this.txtFunction1X.Size = new System.Drawing.Size(124, 20);
             this.txtFunction1X.TabIndex = 9;
@@ -130,7 +132,7 @@
             // txtInverseFunction1X
             // 
             this.txtInverseFunction1X.Location = new System.Drawing.Point(229, 46);
-            this.txtInverseFunction1X.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtInverseFunction1X.Margin = new System.Windows.Forms.Padding(2);
             this.txtInverseFunction1X.Name = "txtInverseFunction1X";
             this.txtInverseFunction1X.Size = new System.Drawing.Size(124, 20);
             this.txtInverseFunction1X.TabIndex = 8;
@@ -138,7 +140,7 @@
             // txtPointB1
             // 
             this.txtPointB1.Location = new System.Drawing.Point(77, 46);
-            this.txtPointB1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPointB1.Margin = new System.Windows.Forms.Padding(2);
             this.txtPointB1.Name = "txtPointB1";
             this.txtPointB1.Size = new System.Drawing.Size(64, 20);
             this.txtPointB1.TabIndex = 6;
@@ -146,7 +148,7 @@
             // txtPointA1
             // 
             this.txtPointA1.Location = new System.Drawing.Point(77, 24);
-            this.txtPointA1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPointA1.Margin = new System.Windows.Forms.Padding(2);
             this.txtPointA1.Name = "txtPointA1";
             this.txtPointA1.Size = new System.Drawing.Size(64, 20);
             this.txtPointA1.TabIndex = 7;
@@ -202,9 +204,9 @@
             this.groupBox2.Controls.Add(this.lblFunction2X);
             this.groupBox2.Controls.Add(this.lblPointB2);
             this.groupBox2.Location = new System.Drawing.Point(721, 18);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(362, 95);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
@@ -213,7 +215,7 @@
             // txtPointC2
             // 
             this.txtPointC2.Location = new System.Drawing.Point(77, 69);
-            this.txtPointC2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPointC2.Margin = new System.Windows.Forms.Padding(2);
             this.txtPointC2.Name = "txtPointC2";
             this.txtPointC2.Size = new System.Drawing.Size(64, 20);
             this.txtPointC2.TabIndex = 11;
@@ -231,7 +233,7 @@
             // txtFunction2X
             // 
             this.txtFunction2X.Location = new System.Drawing.Point(229, 24);
-            this.txtFunction2X.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFunction2X.Margin = new System.Windows.Forms.Padding(2);
             this.txtFunction2X.Name = "txtFunction2X";
             this.txtFunction2X.Size = new System.Drawing.Size(124, 20);
             this.txtFunction2X.TabIndex = 9;
@@ -239,7 +241,7 @@
             // txtPointB2
             // 
             this.txtPointB2.Location = new System.Drawing.Point(77, 46);
-            this.txtPointB2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPointB2.Margin = new System.Windows.Forms.Padding(2);
             this.txtPointB2.Name = "txtPointB2";
             this.txtPointB2.Size = new System.Drawing.Size(64, 20);
             this.txtPointB2.TabIndex = 6;
@@ -247,7 +249,7 @@
             // txtPointA2
             // 
             this.txtPointA2.Location = new System.Drawing.Point(77, 24);
-            this.txtPointA2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPointA2.Margin = new System.Windows.Forms.Padding(2);
             this.txtPointA2.Name = "txtPointA2";
             this.txtPointA2.Size = new System.Drawing.Size(64, 20);
             this.txtPointA2.TabIndex = 7;
@@ -296,7 +298,7 @@
             // 
             this.butFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butFx.Location = new System.Drawing.Point(512, 575);
-            this.butFx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butFx.Margin = new System.Windows.Forms.Padding(2);
             this.butFx.Name = "butFx";
             this.butFx.Size = new System.Drawing.Size(166, 60);
             this.butFx.TabIndex = 24;
@@ -306,7 +308,7 @@
             // txtFx
             // 
             this.txtFx.Location = new System.Drawing.Point(696, 597);
-            this.txtFx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFx.Margin = new System.Windows.Forms.Padding(2);
             this.txtFx.Name = "txtFx";
             this.txtFx.Size = new System.Drawing.Size(133, 20);
             this.txtFx.TabIndex = 12;
@@ -332,11 +334,30 @@
             this.cosInputRight.Size = new System.Drawing.Size(381, 319);
             this.cosInputRight.TabIndex = 27;
             // 
+            // lblNotes
+            // 
+            this.lblNotes.AutoSize = true;
+            this.lblNotes.Location = new System.Drawing.Point(466, 683);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(46, 13);
+            this.lblNotes.TabIndex = 29;
+            this.lblNotes.Text = "Notizen:";
+            // 
+            // rtxtNotes
+            // 
+            this.rtxtNotes.Location = new System.Drawing.Point(466, 702);
+            this.rtxtNotes.Name = "rtxtNotes";
+            this.rtxtNotes.Size = new System.Drawing.Size(478, 124);
+            this.rtxtNotes.TabIndex = 28;
+            this.rtxtNotes.Text = "";
+            // 
             // FrmZuordAffAbb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1388, 676);
+            this.ClientSize = new System.Drawing.Size(1388, 841);
+            this.Controls.Add(this.lblNotes);
+            this.Controls.Add(this.rtxtNotes);
             this.Controls.Add(this.cosInputRight);
             this.Controls.Add(this.cosOutput);
             this.Controls.Add(this.cosInputLeft);
@@ -347,7 +368,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmZuordAffAbb";
             this.Text = "FrmZuordAffAbb";
             this.groupBox1.ResumeLayout(false);
@@ -389,5 +410,7 @@
         private CoordinateSystem cosInputLeft;
         private CoordinateSystem cosOutput;
         private CoordinateSystem cosInputRight;
+        private System.Windows.Forms.Label lblNotes;
+        private System.Windows.Forms.RichTextBox rtxtNotes;
     }
 }

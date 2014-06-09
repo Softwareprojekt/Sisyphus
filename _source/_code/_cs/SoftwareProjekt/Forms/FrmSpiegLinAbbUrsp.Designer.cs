@@ -54,6 +54,8 @@
             this.grpDatenausgabe = new System.Windows.Forms.GroupBox();
             this.coordinateSystem1 = new SoftwareProjekt.CoordinateSystem();
             this.coordinateSystem2 = new SoftwareProjekt.CoordinateSystem();
+            this.lblNotes = new System.Windows.Forms.Label();
+            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.grpDateneingabe.SuspendLayout();
             this.grpDatenausgabe.SuspendLayout();
             this.SuspendLayout();
@@ -315,11 +317,30 @@
             this.coordinateSystem2.Size = new System.Drawing.Size(369, 283);
             this.coordinateSystem2.TabIndex = 58;
             // 
+            // lblNotes
+            // 
+            this.lblNotes.AutoSize = true;
+            this.lblNotes.Location = new System.Drawing.Point(204, 544);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(46, 13);
+            this.lblNotes.TabIndex = 60;
+            this.lblNotes.Text = "Notizen:";
+            // 
+            // rtxtNotes
+            // 
+            this.rtxtNotes.Location = new System.Drawing.Point(204, 563);
+            this.rtxtNotes.Name = "rtxtNotes";
+            this.rtxtNotes.Size = new System.Drawing.Size(478, 124);
+            this.rtxtNotes.TabIndex = 59;
+            this.rtxtNotes.Text = "";
+            // 
             // FrmSpiegLinAbbUrsp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 533);
+            this.ClientSize = new System.Drawing.Size(914, 695);
+            this.Controls.Add(this.lblNotes);
+            this.Controls.Add(this.rtxtNotes);
             this.Controls.Add(this.coordinateSystem2);
             this.Controls.Add(this.coordinateSystem1);
             this.Controls.Add(this.grpDatenausgabe);
@@ -366,5 +387,7 @@
         private System.Windows.Forms.GroupBox grpDatenausgabe;
         private CoordinateSystem coordinateSystem1;
         private CoordinateSystem coordinateSystem2;
+        private System.Windows.Forms.Label lblNotes;
+        private System.Windows.Forms.RichTextBox rtxtNotes;
     }
 }
