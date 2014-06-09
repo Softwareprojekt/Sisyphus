@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="SoftwareProjekt.AbstractTopic">
-    <Position X="0.5" Y="2.75" Width="1.5" />
+    <Position X="0.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAABAAAAAAAAAI=</HashCode>
+      <HashCode>QAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAABAAAAAAAAAI=</HashCode>
       <FileName>Classes\AbstractTopic.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -11,7 +11,7 @@
   <Class Name="SoftwareProjekt.MindMap">
     <Position X="9.25" Y="1.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAYAAACAAAAQAAAAgAAAAAAAAAAAEAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAYAAAGAAAASABAAgAAAAAAAQAAAEAA=</HashCode>
       <FileName>UserControls\MindMap.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -28,7 +28,7 @@
   <Class Name="SoftwareProjekt.XmlTopic">
     <Position X="6.75" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAFAAAAAAACAAAAAAEAAAEAAAAAACAA=</HashCode>
+      <HashCode>AAAAAAAAgAAAAAHAAAAAAACAAAAAAkAAAkAAAAAACAA=</HashCode>
       <FileName>Classes\XmlTopic.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -54,7 +54,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SoftwareProjekt.XmlExercise">
-    <Position X="6.75" Y="8" Width="2.5" />
+    <Position X="6.75" Y="8.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAACA=</HashCode>
       <FileName>Classes\XmlExercise.cs</FileName>
@@ -70,7 +70,7 @@
   <Interface Name="SoftwareProjekt.ITopic">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAABAAAAAAAAAI=</HashCode>
+      <HashCode>QAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAABAAAAAAAAAI=</HashCode>
       <FileName>Interfaces\ITopic.cs</FileName>
     </TypeIdentifier>
   </Interface>

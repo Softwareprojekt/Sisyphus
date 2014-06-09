@@ -104,5 +104,10 @@ namespace SoftwareProjekt
             	this.ExerciseChanged(this, new ExerciseEventArgs());
             }
         }
+
+        public int GetExerciseID()
+        {
+            return _id;
+        }
     }
 }

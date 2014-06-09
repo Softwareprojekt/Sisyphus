@@ -16,5 +16,18 @@ namespace SoftwareProjekt
         {
             return ETopic.LinearTransformation;
         }
+
+        public override bool ContainsExercise(int exerciseID)
+        {
+            foreach (IExercise exercise in this.ExerciseList)
+            {
+                if (exercise.GetExerciseID() == exerciseID)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

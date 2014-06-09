@@ -51,5 +51,10 @@ namespace SoftwareProjekt
         {
             return ETopic.InvalidTopic;
         }
+        
+        virtual public bool ContainsExercise(int exerciseID)
+        {
+            return false;
+        }
     }
 }

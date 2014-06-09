@@ -67,5 +67,11 @@ namespace SoftwareProjekt
         /// Attach View to Exercise. Used to notify View of new data.
         /// </summary>
         void AttachView(IExerciseObserver observer);
+
+        /// <summary>
+        /// returns the exercise id
+        /// </summary>
+        /// <returns>the exercise id</returns>
+        int GetExerciseID();
     }
 }
