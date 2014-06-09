@@ -30,23 +30,18 @@ using System.Drawing;
 
 namespace SoftwareProjekt
 {
-    public class FrmMain : AbstractView
+    // AbstractView
+    public class FrmMain : Form
     {
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem dateiToolStripMenuItem;
-        private ToolStripMenuItem öffnenToolStripMenuItem;
-        private ToolStripMenuItem speichernToolStripMenuItem;
-        private ToolStripMenuItem druckenToolStripMenuItem;
-        private OpenFileDialog openFileDialog1;
-        private SaveFileDialog saveFileDialog1;
-        private PrintDialog printDialog1;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private System.Drawing.Printing.PrintDocument printDocument1;
+        private TabControl tabMainMenu;
+        private TabPage tabMenu;
+        private TabPage tabNotebook;
+        private GroupBox grpLogin;
+        private Label lblPassword;
+        private Label lblUser;
+        private TextBox textPassword;
+        private TextBox txtUser;
+        private TabPage tabProtectArea;
 
         public MindMap MindMap
         {
@@ -61,152 +56,121 @@ namespace SoftwareProjekt
 
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.öffnenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.speichernToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.druckenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
+            this.tabMainMenu = new System.Windows.Forms.TabControl();
+            this.tabMenu = new System.Windows.Forms.TabPage();
+            this.tabNotebook = new System.Windows.Forms.TabPage();
+            this.tabProtectArea = new System.Windows.Forms.TabPage();
+            this.grpLogin = new System.Windows.Forms.GroupBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.textPassword = new System.Windows.Forms.TextBox();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.tabMainMenu.SuspendLayout();
+            this.tabProtectArea.SuspendLayout();
+            this.grpLogin.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // tabMainMenu
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dateiToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1255, 28);
-            this.menuStrip1.TabIndex = 16;
-            this.menuStrip1.Text = "menuStrip1";
+            this.tabMainMenu.Controls.Add(this.tabMenu);
+            this.tabMainMenu.Controls.Add(this.tabNotebook);
+            this.tabMainMenu.Controls.Add(this.tabProtectArea);
+            this.tabMainMenu.Location = new System.Drawing.Point(12, 27);
+            this.tabMainMenu.Name = "tabMainMenu";
+            this.tabMainMenu.SelectedIndex = 0;
+            this.tabMainMenu.Size = new System.Drawing.Size(1231, 662);
+            this.tabMainMenu.TabIndex = 0;
             // 
-            // dateiToolStripMenuItem
+            // tabMenu
             // 
-            this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.öffnenToolStripMenuItem,
-            this.speichernToolStripMenuItem,
-            this.druckenToolStripMenuItem});
-            this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
-            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
-            this.dateiToolStripMenuItem.Text = "Datei";
+            this.tabMenu.Location = new System.Drawing.Point(4, 22);
+            this.tabMenu.Name = "tabMenu";
+            this.tabMenu.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMenu.Size = new System.Drawing.Size(1223, 636);
+            this.tabMenu.TabIndex = 0;
+            this.tabMenu.Text = "Übungen";
+            this.tabMenu.UseVisualStyleBackColor = true;
             // 
-            // öffnenToolStripMenuItem
+            // tabNotebook
             // 
-            this.öffnenToolStripMenuItem.Name = "öffnenToolStripMenuItem";
-            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.öffnenToolStripMenuItem.Text = "Öffnen";
-            this.öffnenToolStripMenuItem.Click += new System.EventHandler(this.öffnenToolStripMenuItem_Click);
+            this.tabNotebook.Location = new System.Drawing.Point(4, 22);
+            this.tabNotebook.Name = "tabNotebook";
+            this.tabNotebook.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNotebook.Size = new System.Drawing.Size(1223, 636);
+            this.tabNotebook.TabIndex = 1;
+            this.tabNotebook.Text = "Arbeitsheft";
+            this.tabNotebook.UseVisualStyleBackColor = true;
             // 
-            // speichernToolStripMenuItem
+            // tabProtectArea
             // 
-            this.speichernToolStripMenuItem.Name = "speichernToolStripMenuItem";
-            this.speichernToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.speichernToolStripMenuItem.Text = "Speichern";
-            this.speichernToolStripMenuItem.Click += new System.EventHandler(this.speichernToolStripMenuItem_Click);
+            this.tabProtectArea.Controls.Add(this.grpLogin);
+            this.tabProtectArea.Location = new System.Drawing.Point(4, 22);
+            this.tabProtectArea.Name = "tabProtectArea";
+            this.tabProtectArea.Padding = new System.Windows.Forms.Padding(3);
+            this.tabProtectArea.Size = new System.Drawing.Size(1223, 636);
+            this.tabProtectArea.TabIndex = 2;
+            this.tabProtectArea.Text = "Geschützter Bereich";
+            this.tabProtectArea.UseVisualStyleBackColor = true;
             // 
-            // druckenToolStripMenuItem
+            // grpLogin
             // 
-            this.druckenToolStripMenuItem.Name = "druckenToolStripMenuItem";
-            this.druckenToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.druckenToolStripMenuItem.Text = "Drucken";
-            this.druckenToolStripMenuItem.Click += new System.EventHandler(this.druckenToolStripMenuItem_Click);
+            this.grpLogin.Controls.Add(this.lblPassword);
+            this.grpLogin.Controls.Add(this.lblUser);
+            this.grpLogin.Controls.Add(this.textPassword);
+            this.grpLogin.Controls.Add(this.txtUser);
+            this.grpLogin.Location = new System.Drawing.Point(506, 240);
+            this.grpLogin.Name = "grpLogin";
+            this.grpLogin.Size = new System.Drawing.Size(206, 106);
+            this.grpLogin.TabIndex = 0;
+            this.grpLogin.TabStop = false;
+            this.grpLogin.Text = "Login";
             // 
-            // openFileDialog1
+            // txtUser
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.txtUser.Location = new System.Drawing.Point(90, 37);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(100, 20);
+            this.txtUser.TabIndex = 0;
             // 
-            // printDialog1
+            // textPassword
             // 
-            this.printDialog1.UseEXDialog = true;
+            this.textPassword.Location = new System.Drawing.Point(90, 63);
+            this.textPassword.Name = "textPassword";
+            this.textPassword.Size = new System.Drawing.Size(100, 20);
+            this.textPassword.TabIndex = 1;
             // 
-            // label1
+            // lblUser
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(234, 157);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 20);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Lineare Abbildungen";
+            this.lblUser.AutoSize = true;
+            this.lblUser.Location = new System.Drawing.Point(6, 40);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(78, 13);
+            this.lblUser.TabIndex = 2;
+            this.lblUser.Text = "Benutzername:";
             // 
-            // label2
+            // lblPassword
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(126, 482);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 20);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Komplexe Zahlen";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(571, 299);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 29);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Sisyphus";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(787, 590);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 20);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Fraktale";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(923, 377);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(166, 20);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Affine Abbildungen";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(932, 148);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(184, 20);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Parallelverschiebung";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(6, 66);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(53, 13);
+            this.lblPassword.TabIndex = 3;
+            this.lblPassword.Text = "Passwort:";
             // 
             // FrmMain
             // 
             this.ClientSize = new System.Drawing.Size(1255, 701);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.tabMainMenu);
             this.Name = "FrmMain";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Text = "Hauptfenster";
+            this.tabMainMenu.ResumeLayout(false);
+            this.tabProtectArea.ResumeLayout(false);
+            this.grpLogin.ResumeLayout(false);
+            this.grpLogin.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
-
+/*
         private void öffnenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -261,7 +225,7 @@ namespace SoftwareProjekt
                 printDocument1.Print();
             }
         }
-        
+    */    
 		public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
 		{
 			throw new NotImplementedException();
