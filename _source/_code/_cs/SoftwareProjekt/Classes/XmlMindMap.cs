@@ -30,7 +30,19 @@ namespace SoftwareProjekt
         {
             _filename = filename;
 
-            XPathDocument xPathDocument = new XPathDocument(_filename);
+            
+            XPathDocument xPathDocument = null;
+
+            try
+            {
+                xPathDocument = new XPathDocument(_filename);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+
             XPathNavigator nav = xPathDocument.CreateNavigator();
 
             if (!nav.MoveToFirstChild())
