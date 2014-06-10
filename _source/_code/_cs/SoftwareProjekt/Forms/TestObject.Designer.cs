@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.coordinateSystem1 = new SoftwareProjekt.CoordinateSystem();
-            this.mindMapButtonControl1 = new MindMapButtonControl("Hallo, hier ist Julian", 2, EAlignType.AlignRight);
-            this.mindMapTopicControl1 = new MindMapTopicControl();
-            this.mindMapTopicControl1.RegisterTopic(new LinearTransformationTopic());
-
+            this.mindMapTopicControl1 = new SoftwareProjekt.MindMapTopicControl();
+            this.mindMap1 = new SoftwareProjekt.MindMap();
             this.SuspendLayout();
             // 
             // coordinateSystem1
@@ -41,25 +39,50 @@
             this.coordinateSystem1.Name = "coordinateSystem1";
             this.coordinateSystem1.Size = new System.Drawing.Size(398, 387);
             this.coordinateSystem1.TabIndex = 0;
+
+           
             // 
             // mindMapButtonControl1
             // 
+            this.mindMapButtonControl1 = new MindMapButtonControl("Hallo", 1, EAlignType.AlignRight);
+            this.mindMapButtonControl1.BottomAlign = false;
+            this.mindMapButtonControl1.ButtonText = "Hallo, hier ist Julian";
+            this.mindMapButtonControl1.ExerciseID = 2;
+            this.mindMapButtonControl1.LeftAlign = false;
             this.mindMapButtonControl1.Location = new System.Drawing.Point(41, 477);
+            this.mindMapButtonControl1.MachiningCondition = SoftwareProjekt.EMachiningCondtion.NotDone;
             this.mindMapButtonControl1.Name = "mindMapButtonControl1";
+            this.mindMapButtonControl1.RightAlign = true;
             this.mindMapButtonControl1.Size = new System.Drawing.Size(150, 30);
             this.mindMapButtonControl1.TabIndex = 1;
-
-
+            this.mindMapButtonControl1.TopAlign = false;
+            // 
+            // mindMapTopicControl1
+            // 
             this.mindMapTopicControl1.Location = new System.Drawing.Point(40, 600);
+            this.mindMapTopicControl1.Name = "mindMapTopicControl1";
             this.mindMapTopicControl1.Size = new System.Drawing.Size(200, 150);
-            this.mindMapButtonControl1.TabIndex = 1;
-            this.mindMapButtonControl1.Name = "mindMapTopicControl1";
+            this.mindMapTopicControl1.TabIndex = 2;
+            this.mindMapTopicControl1.TopicName = "";
+            // 
+            // mindMap1
+            // 
+            this.mindMap1.Location = new System.Drawing.Point(430, 48);
+            this.mindMap1.Name = "mindMap1";
+            this.mindMap1.Size = new System.Drawing.Size(320, 320);
+            this.mindMap1.TabIndex = 3;
+
+            if (mindMap1.ParseXML())
+            {
+                mindMap1.ArrangeMindMap();
+            }
             // 
             // TestObject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 778);
+            this.ClientSize = new System.Drawing.Size(762, 684);
+            this.Controls.Add(this.mindMap1);
             this.Controls.Add(this.mindMapButtonControl1);
             this.Controls.Add(this.coordinateSystem1);
             this.Controls.Add(this.mindMapTopicControl1);
@@ -74,6 +97,7 @@
         private CoordinateSystem coordinateSystem1;
         private MindMapButtonControl mindMapButtonControl1;
         private MindMapTopicControl mindMapTopicControl1;
+        private MindMap mindMap1;
 
     }
 }

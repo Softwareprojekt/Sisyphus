@@ -14,8 +14,6 @@ namespace SoftwareProjekt
         private int _topicID;
         private List<TopicConnect> _connectionList;
 
-
-
         public XmlTopic()
         {
             _connectionList = new List<TopicConnect>();

@@ -68,7 +68,10 @@ namespace SoftwareProjekt
             }
             set
             {
-                _alignment = EAlignType.AlignLeft;
+                if (value)
+                {
+                    _alignment = EAlignType.AlignLeft;
+                }
             }
         }
         public bool RightAlign
@@ -79,7 +82,10 @@ namespace SoftwareProjekt
             }
             set
             {
-                _alignment = EAlignType.AlignRight;
+                if (value)
+                {
+                    _alignment = EAlignType.AlignRight;
+                }
             }
         }
         public bool TopAlign
@@ -90,7 +96,10 @@ namespace SoftwareProjekt
             }
             set
             {
-                _alignment = EAlignType.AlignTop;
+                if (value)
+                {
+                    _alignment = EAlignType.AlignTop;
+                }
             }
         }
         public bool BottomAlign
@@ -101,7 +110,10 @@ namespace SoftwareProjekt
             }
             set
             {
-                _alignment = EAlignType.AlignBottom;
+                if (value)
+                {
+                    _alignment = EAlignType.AlignBottom;
+                }
             }
         }
 

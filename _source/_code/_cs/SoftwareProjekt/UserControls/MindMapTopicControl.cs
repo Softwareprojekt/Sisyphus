@@ -32,7 +32,12 @@ namespace SoftwareProjekt
     {
         private List<MindMapButtonControl> _mindMapButtonList;
         private ITopic _logicalTopic;
+        private dynamic _dynamicalLoadedTopic;
+
+        private bool _logicalTopicUsed;
+
         private List<TopicConnect> _topicConnectionList;
+        private string _topicName;
 
 
         public MindMapTopicControl()
@@ -41,8 +46,25 @@ namespace SoftwareProjekt
             _topicConnectionList = new List<TopicConnect>();
 
             _logicalTopic = null;
+            _dynamicalLoadedTopic = null;
+
+            _logicalTopicUsed = true;
+
+            _topicName = "";
 
             InitializeComponent();
+        }
+
+        public string TopicName
+        {
+            get
+            {
+                return _topicName;
+            }
+            set
+            {
+                _topicName = value;
+            }
         }
 
         public List<MindMapButtonControl> ButtonList
@@ -68,9 +90,21 @@ namespace SoftwareProjekt
             }
         }
 
+        public void RegisterDynamicData(dynamic topic)
+        {
+            _dynamicalLoadedTopic = topic;
+            _logicalTopicUsed = false;
+        }
+
+        public void UnregisterDynamic()
+        {
+            _dynamicalLoadedTopic = null;
+        }
+
         public void RegisterTopic(ITopic topic)
         {
             _logicalTopic = topic;
+            _logicalTopicUsed = true;
         }
 
         public void UnregisterTopic()
@@ -80,12 +114,22 @@ namespace SoftwareProjekt
 
         public void OnExerciseButtonClicked(int exerciseID)
         {
-            if (_logicalTopic == null)
+            if (_logicalTopicUsed)
             {
-                return;
-            }
+                if (_logicalTopic == null)
+                {
+                    return;
+                }
 
-            _logicalTopic.StartExercise((Exercises)exerciseID);
+                _logicalTopic.StartExercise((Exercises)exerciseID);
+            }
+            else
+            {
+                if (_dynamicalLoadedTopic == null)
+                {
+                    _dynamicalLoadedTopic.StartExercise((Exercises)exerciseID);
+                }
+            }
         }
 
         private void InitializeComponent()
@@ -108,12 +152,11 @@ namespace SoftwareProjekt
             {
                 return;
             }
-
-            string topicName = this._logicalTopic.TopicType().ToString();
-
+            
             g.DrawEllipse(Pens.Black, 0, 0, this.Width - 2, this.Height - 2);
 
-            g.DrawString(topicName, new Font("Arial", 12.0f), new SolidBrush(Color.Black), new PointF(this.Width / 2 - (topicName.Length * 7.5f / 2), this.Height / 2 - 10));
+            g.DrawString(this.TopicName, new Font("Arial", 12.0f), new SolidBrush(Color.Black),
+                new PointF(this.Width / 2 - (this.TopicName.Length * 7.5f / 2), this.Height / 2 - 10));
         }
     }
 }

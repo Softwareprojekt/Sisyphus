@@ -2,7 +2,7 @@
 
 <content>
 
-    <Topic id="0">
+    <Topic id="1">
       <Name>Topic1</Name>
       <DLLPath>n.A.</DLLPath>
       <Connections>
@@ -17,7 +17,7 @@
       </Exercises>
     </Topic>
   
-    <Topic id="1">
+    <Topic id="0">
       <Name>Topic2</Name>
       <DLLPath>n.A.</DLLPath>
 

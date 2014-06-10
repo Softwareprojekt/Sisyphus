@@ -22,6 +22,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
@@ -32,25 +33,191 @@ namespace SoftwareProjekt
         private const string _filename = "config.xml";
         private List<MindMapTopicControl> _graphicalTopicList;
         private List<ITopic> _logicalTopicList;
+        private List<dynamic> _dynamicExternalDll;
         private XmlMindMap _xmlParser;
+
+        private bool _initialised;
 
         public MindMap ()
         {
             _graphicalTopicList = new List<MindMapTopicControl>();
             _logicalTopicList = new List<ITopic>();
+            _dynamicExternalDll = new List<dynamic>();
             _xmlParser = new XmlMindMap();
 
+            _initialised = false;
         }
 
         public void ArrangeMindMap()
         {
-            _xmlParser.ParseXml(_filename);
+            this.SuspendLayout();
 
+            this.Controls.Clear();
+
+            int nrOfTopics = _graphicalTopicList.Count;
+
+            int innerQuaderStartX = this.Width / 4;
+            int innerQuaderStartY = this.Height / 4;
+
+            int innerQuaderEndX = this.Width - innerQuaderStartX;
+            int innerQuaderEndY = this.Height - innerQuaderStartY;
+
+            int innerQuaderHeight = innerQuaderEndY - innerQuaderStartY;
+            int innerQuaderHalfWidth = (innerQuaderEndX - innerQuaderStartX) / 2;
+
+            int dividerTopX = innerQuaderStartX + 
+                    (innerQuaderEndX - innerQuaderStartX);
+
+            int dividerTopY = innerQuaderStartY;
+
+            int dividerBottomX = dividerTopX;
+            int dividerBottomY = innerQuaderEndY;
+            
+            int nrOfLines = (nrOfTopics - 1) / 2;
+
+            int possibleNrOfTopics = (nrOfLines + 1) * 2;
+            int heightPerLine = innerQuaderHeight / (nrOfLines + 1);
+
+            int lineOffset = 0;
+            for (int i = 0; i < _graphicalTopicList.Count; i++)
+            {
+                if (_graphicalTopicList.Count % 2 == 1 && i == 0)
+                {
+                    this._graphicalTopicList[i].Size = new System.Drawing.Size(innerQuaderHalfWidth - 10, heightPerLine);
+                    this._graphicalTopicList[i].Location = new System.Drawing.Point(innerQuaderStartX + innerQuaderHalfWidth / 2, dividerTopY);
+                    lineOffset += 1;
+
+                }
+                else
+                {
+                    this._graphicalTopicList[i].Size = new System.Drawing.Size(innerQuaderHalfWidth -  10, heightPerLine);
+
+                    int xValueOffset = 0;
+
+                    if (nrOfTopics % 2 == 1)
+                    {
+                        if (i % 2 == 0)
+                        {
+                            xValueOffset = innerQuaderStartX + innerQuaderHalfWidth + 10;
+                        }
+                        else
+                        {
+                            xValueOffset = innerQuaderStartX;
+                        }
+                    }
+                    else
+                    {
+                        if (i % 2 == 1)
+                        {
+                            xValueOffset = innerQuaderStartX + innerQuaderHalfWidth + 10;
+                        }
+                        else
+                        {
+                            xValueOffset = innerQuaderStartX;
+                        }
+                    }
+                    
+
+                    this._graphicalTopicList[i].Location = 
+                        new System.Drawing.Point(xValueOffset, innerQuaderStartY + lineOffset * heightPerLine);
+
+                    if (nrOfTopics % 2 != i % 2 && i != 0)
+                    {
+                        lineOffset++;
+                    }
+                }
+
+
+                this.Controls.Add(_graphicalTopicList[i]);
+                                
+            }
+
+            this.ResumeLayout(false);
+
+            this.Invalidate();
         }
 
-        public void ParseXML()
+        private void createEntriesFromXml()
         {
-            throw new System.NotImplementedException();
+            foreach (XmlTopic topic in _xmlParser.ListTopic)
+            {
+                MindMapTopicControl topicControl = new MindMapTopicControl();
+                foreach (TopicConnect connection in topic.ConnectionList)
+                {
+                    topicControl.TopicConnectionList.Add(connection);
+                }
+
+                foreach (XmlExercise exercise in topic.ExerciseList)
+                {
+                    MindMapButtonControl buttonControl =
+                        new MindMapButtonControl(exercise.ExerciseName, exercise.ExerciseID, EAlignType.AlignLeft);
+                    topicControl.ButtonList.Add(buttonControl);
+                }
+
+                topicControl.TopicName = topic.TopicName;
+                if (topic.DllPath == "n.A.")
+                {
+                    switch ((ETopic)topic.TopicID)
+                    {
+                        case ETopic.AffineTransformation:
+                            break;
+
+                        case ETopic.ComplexNumbers:
+                            break;
+
+                        case ETopic.Fractals:
+                            break;
+
+                        case ETopic.LinearTransformation:
+                            topicControl.RegisterTopic(new LinearTransformationTopic());
+                            break;
+
+                        default:
+                            Console.WriteLine
+                                ("Got a real problem --> invalid TopicID and no external Lib used!\n");
+                            continue;
+                    }
+                }
+                else
+                {
+                    dynamic externalDll = LoadDllDynamically(topic.DllPath, topic.TopicName);
+                    _dynamicExternalDll.Add(externalDll);
+                    topicControl.RegisterDynamicData(externalDll);
+                }
+
+                this._graphicalTopicList.Add(topicControl);
+
+            }
+        }
+
+        private dynamic LoadDllDynamically(string dllPath, string TopicName)
+        {
+            var DLL = Assembly.LoadFile(dllPath);
+
+            foreach (Type t in DLL.GetExportedTypes())
+            {
+                if (t.AssemblyQualifiedName == TopicName)
+                {
+                    return Activator.CreateInstance(t);
+                }
+
+            }
+
+            return null;
+        }
+
+        public bool ParseXML()
+        {
+            bool bRetVal = _xmlParser.ParseXml(_filename);
+            if (_xmlParser.ListTopic == null)
+            {
+                return false;
+            }
+
+            createEntriesFromXml();
+            _initialised = true;
+
+            return true;
         }
 
         private void InitializeComponent()
