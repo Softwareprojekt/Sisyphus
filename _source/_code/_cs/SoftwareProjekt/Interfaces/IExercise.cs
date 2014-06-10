@@ -23,6 +23,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
+//using System.Threading;
 
 namespace SoftwareProjekt
 {
@@ -36,27 +38,27 @@ namespace SoftwareProjekt
         /// <summary>
         /// Kill worker thread immediately.
         /// </summary>
-        void AbortWork();
+        void AbortWork(); 
 
         /// <summary>
         /// Load state of exercise from file.
         /// </summary>
-        void LoadState();
+        bool LoadState(FileStream file);
 
         /// <summary>
         /// Reset state of exercise. Default values.
         /// </summary>
-        void ResetState();
+        bool ResetState(FileStream file);
 
         /// <summary>
         /// Save state of exercise to file.
         /// </summary>
-        void SaveState();
+        bool SaveState(FileStream file, string data);
 
         /// <summary>
         /// Start worker thread and calculate.
         /// </summary>
-        void StartWork();
+        void StartWork(Matrix a, Vector v); // ???
 
         /// <summary>
         /// Stop worker thread gracefully.
