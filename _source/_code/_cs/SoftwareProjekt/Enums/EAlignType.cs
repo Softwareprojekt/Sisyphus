@@ -9,7 +9,7 @@ namespace SoftwareProjekt
     {
         AlignTop = 1,
         AlignBottom = 2,
-        AlignLeft = 3,
-        AlignRight = 4
+        AlignLeft = 4,
+        AlignRight = 8
     }
 }

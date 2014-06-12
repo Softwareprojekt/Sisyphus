@@ -83,14 +83,16 @@ namespace SoftwareProjekt
             {
                 if (_graphicalTopicList.Count % 2 == 1 && i == 0)
                 {
-                    this._graphicalTopicList[i].Size = new System.Drawing.Size(innerQuaderHalfWidth - 10, heightPerLine);
-                    this._graphicalTopicList[i].Location = new System.Drawing.Point(innerQuaderStartX + innerQuaderHalfWidth / 2, dividerTopY);
+                    this._graphicalTopicList[i].Size = new System.Drawing.Size(innerQuaderHalfWidth - 15, heightPerLine - 30);
+                    this._graphicalTopicList[i].Location = new System.Drawing.Point(innerQuaderStartX + innerQuaderHalfWidth / 2, dividerTopY + 15);
                     lineOffset += 1;
 
+
+                    this.AddExercises(_graphicalTopicList[i], EAlignType.AlignBottom | EAlignType.AlignRight | EAlignType.AlignLeft, innerQuaderStartX + innerQuaderHalfWidth / 2, dividerTopY, heightPerLine);
                 }
                 else
                 {
-                    this._graphicalTopicList[i].Size = new System.Drawing.Size(innerQuaderHalfWidth -  10, heightPerLine);
+                    this._graphicalTopicList[i].Size = new System.Drawing.Size(innerQuaderHalfWidth -  15, heightPerLine - 30);
 
                     int xValueOffset = 0;
 
@@ -98,28 +100,34 @@ namespace SoftwareProjekt
                     {
                         if (i % 2 == 0)
                         {
-                            xValueOffset = innerQuaderStartX + innerQuaderHalfWidth + 10;
+                            xValueOffset = innerQuaderStartX + innerQuaderHalfWidth + 15;
+
+                            this.AddExercises(_graphicalTopicList[i], EAlignType.AlignLeft, xValueOffset, innerQuaderStartY + lineOffset * heightPerLine, heightPerLine);
                         }
                         else
                         {
                             xValueOffset = innerQuaderStartX;
+                            this.AddExercises(_graphicalTopicList[i], EAlignType.AlignRight, xValueOffset, innerQuaderStartY + lineOffset * heightPerLine, heightPerLine);
                         }
+
                     }
                     else
                     {
                         if (i % 2 == 1)
                         {
-                            xValueOffset = innerQuaderStartX + innerQuaderHalfWidth + 10;
+                            xValueOffset = innerQuaderStartX + innerQuaderHalfWidth + 15;
+                            this.AddExercises(_graphicalTopicList[i], EAlignType.AlignLeft, xValueOffset, innerQuaderStartY + lineOffset * heightPerLine, heightPerLine);
                         }
                         else
                         {
                             xValueOffset = innerQuaderStartX;
+                            this.AddExercises(_graphicalTopicList[i], EAlignType.AlignRight, xValueOffset, innerQuaderStartY + lineOffset * heightPerLine, heightPerLine);
                         }
                     }
                     
 
                     this._graphicalTopicList[i].Location = 
-                        new System.Drawing.Point(xValueOffset, innerQuaderStartY + lineOffset * heightPerLine);
+                        new System.Drawing.Point(xValueOffset, innerQuaderStartY + lineOffset * heightPerLine + 15);
 
                     if (nrOfTopics % 2 != i % 2 && i != 0)
                     {
@@ -129,12 +137,24 @@ namespace SoftwareProjekt
 
 
                 this.Controls.Add(_graphicalTopicList[i]);
-                                
+
+
             }
 
             this.ResumeLayout(false);
 
             this.Invalidate();
+        }
+
+        private void AddExercises(MindMapTopicControl mindMapTopicControl, EAlignType align, int x, int y, int lineHeight)
+        {
+            int numberOfExercises = mindMapTopicControl.ButtonList.Count;
+
+
+            for (int i = 0; i < mindMapTopicControl.ButtonList.Count; i++)
+            {
+                
+            }
         }
 
         private void createEntriesFromXml()
