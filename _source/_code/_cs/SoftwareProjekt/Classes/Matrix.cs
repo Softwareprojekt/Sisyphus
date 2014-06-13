@@ -29,6 +29,17 @@ namespace SoftwareProjekt
     public class Matrix
     {
         /// <summary>
+        /// Empty ctor.
+        /// </summary>
+        public Matrix()
+        {
+            this.X11 = 0f;
+            this.X12 = 0f;
+            this.X21 = 0f;
+            this.X22 = 0f;
+        }
+
+        /// <summary>
         /// ctor
         /// </summary>
         public Matrix(float x_11, float x_12, float x_21, float x_22)

@@ -31,30 +31,20 @@ namespace SoftwareProjekt
 {
     public partial class CtlMatrixInput : UserControl
     {
-        private Matrix _mmatrix;
-        private string _sname;
-
         public CtlMatrixInput()
         {
             InitializeComponent();
+
+            this.Matrix = new Matrix();
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public Matrix Matrix
+        private Matrix Matrix
         {
-            get { return _mmatrix; }
-            set { _mmatrix = value; }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public string Name
-        {
-            get { return _sname; }
-            set { _sname = value; }
+            get;
+            set;
         }
 
         /// <summary>
@@ -62,8 +52,9 @@ namespace SoftwareProjekt
         /// </summary>
         private void txtEle11_TextChanged(object sender, EventArgs e)
         {
-            Matrix.X11 = float.Parse(txtEle11.Text);
-
+            float f;
+            this.Parse(txtEle11.Text, out f);
+            this.Matrix.X11 = f;
         }
 
         /// <summary>
@@ -71,8 +62,10 @@ namespace SoftwareProjekt
         /// </summary>
         private void txtEle11_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(e.KeyChar >= 48 && e.KeyChar <= 57 && e.KeyChar != 8))
-                e.Handled = true; 
+            if (e.KeyChar == ',')
+            {
+                e.Handled = true;
+            }
         }
 
         /// <summary>
@@ -80,7 +73,9 @@ namespace SoftwareProjekt
         /// </summary>
         private void txtEle12_TextChanged(object sender, EventArgs e)
         {
-            Matrix.X12 = float.Parse(txtEle12.Text);
+            float f;
+            this.Parse(txtEle12.Text, out f);
+            this.Matrix.X12 = f;
         }
 
         /// <summary>
@@ -88,8 +83,10 @@ namespace SoftwareProjekt
         /// </summary>
         private void txtEle12_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(e.KeyChar >= 48 && e.KeyChar <= 57 && e.KeyChar != 8))
-                e.Handled = true; 
+            if (e.KeyChar == ',')
+            {
+                e.Handled = true;
+            }
         }
 
         /// <summary>
@@ -97,7 +94,9 @@ namespace SoftwareProjekt
         /// </summary>
         private void txtEle21_TextChanged(object sender, EventArgs e)
         {
-            Matrix.X21 = float.Parse(txtEle21.Text);
+            float f;
+            this.Parse(txtEle21.Text, out f);
+            this.Matrix.X21 = f;
         }
 
         /// <summary>
@@ -105,8 +104,10 @@ namespace SoftwareProjekt
         /// </summary>
         private void txtEle21_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(e.KeyChar >= 48 && e.KeyChar <= 57 && e.KeyChar != 8))
-                e.Handled = true; 
+            if (e.KeyChar == ',')
+            {
+                e.Handled = true;
+            }
         }
 
         /// <summary>
@@ -114,7 +115,9 @@ namespace SoftwareProjekt
         /// </summary>
         private void txtEle22_TextChanged(object sender, EventArgs e)
         {
-            Matrix.X22 = float.Parse(txtEle22.Text);
+            float f;
+            this.Parse(txtEle22.Text, out f);
+            this.Matrix.X22 = f;
         }
 
         /// <summary>
@@ -122,8 +125,26 @@ namespace SoftwareProjekt
         /// </summary>
         private void txtEle22_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(e.KeyChar >= 48 && e.KeyChar <= 57 && e.KeyChar != 8))
-                e.Handled = true; 
-        }   
+            if (e.KeyChar == ',')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private bool Parse(string s, out float f)
+        {
+            float retval = 0f;
+
+            if (float.TryParse(s, out retval))
+            {
+                f = retval;
+                Console.WriteLine("SUCCESS @ Matrix.Parse => " + f);
+                return true;
+            }
+
+            f = float.NaN;
+            Console.WriteLine("ERROR @ Matrix.Parse => " + f);
+            return false;
+        }
     }
 }
