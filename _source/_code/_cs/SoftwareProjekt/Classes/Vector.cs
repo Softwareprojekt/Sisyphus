@@ -33,8 +33,8 @@ namespace SoftwareProjekt
         /// </summary>
         public Vector()
         {
-            this.X1 = 0f;
-            this.X2 = 0f;
+            this.X1 = float.NaN;
+            this.X2 = float.NaN;
         }
 
         /// <summary>

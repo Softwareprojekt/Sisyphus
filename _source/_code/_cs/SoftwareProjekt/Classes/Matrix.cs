@@ -33,10 +33,10 @@ namespace SoftwareProjekt
         /// </summary>
         public Matrix()
         {
-            this.X11 = 0f;
-            this.X12 = 0f;
-            this.X21 = 0f;
-            this.X22 = 0f;
+            this.X11 = float.NaN;
+            this.X12 = float.NaN;
+            this.X21 = float.NaN;
+            this.X22 = float.NaN;
         }
 
         /// <summary>
@@ -91,13 +91,13 @@ namespace SoftwareProjekt
             }
             else
             {
-                 this.X11 = m.X11;
-                 this.X22  = m.X22;
-                 this.X12 = m.X12;
-                 this.X21 = m.X21;
-                 throw new ArgumentException("The Matrix values are not vaild for this operation, determinant = 0");
+                this.X11 = m.X11;
+                this.X22 = m.X22;
+                this.X12 = m.X12;
+                this.X21 = m.X21;
+                throw new ArgumentException("The Matrix values are not vaild for this operation, determinant = 0");
             }
-            
+
         }
 
         /// <summary>

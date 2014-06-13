@@ -18,7 +18,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 #endregion
- 
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,6 +31,7 @@ namespace SoftwareProjekt
 {
     public partial class CtlMatrixInput : UserControl
     {
+        Matrix _matrix = null;
         public CtlMatrixInput()
         {
             InitializeComponent();
@@ -39,12 +40,27 @@ namespace SoftwareProjekt
         }
 
         /// <summary>
-        /// 
+        /// Property for Matrix field. 
+        /// Setting this invokes a Refresh.
         /// </summary>
-        private Matrix Matrix
+        public Matrix Matrix
         {
-            get;
-            set;
+            get
+            {
+                return _matrix;
+            }
+            set
+            {
+                _matrix = value;
+
+                if (this.InvokeRequired)
+                {
+#if DEBUG
+                    Console.WriteLine("Invoking Matrix Refresh");
+#endif
+                    this.BeginInvoke(new Action(() => Refresh()));
+                }
+            }
         }
 
         /// <summary>
@@ -131,6 +147,12 @@ namespace SoftwareProjekt
             }
         }
 
+        /// <summary>
+        /// Parses float value entered in TextBox.
+        /// </summary>
+        /// <param name="s">String in TextBox.</param>
+        /// <param name="f">Out parameter: Parsed float value.</param>
+        /// <returns>True and float value if Parse successfull; Otherwise: false and NaN.</returns>
         private bool Parse(string s, out float f)
         {
             float retval = 0f;
@@ -138,13 +160,30 @@ namespace SoftwareProjekt
             if (float.TryParse(s, out retval))
             {
                 f = retval;
+#if DEBUG
                 Console.WriteLine("SUCCESS @ Matrix.Parse => " + f);
+#endif
                 return true;
             }
 
             f = float.NaN;
+#if DEBUG
             Console.WriteLine("ERROR @ Matrix.Parse => " + f);
+#endif
             return false;
+        }
+
+        /// <summary>
+        /// Refreshes TextBoxes with current Vector values.
+        /// </summary>
+        public override void Refresh()
+        {
+            txtEle11.Text = _matrix.X11.ToString();
+            txtEle12.Text = _matrix.X12.ToString();
+            txtEle21.Text = _matrix.X21.ToString();
+            txtEle22.Text = _matrix.X22.ToString();
+
+            base.Refresh();
         }
     }
 }

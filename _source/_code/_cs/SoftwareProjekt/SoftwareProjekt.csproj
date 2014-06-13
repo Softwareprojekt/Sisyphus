@@ -98,11 +98,11 @@
     <Compile Include="UserControls\CtlMatrixInput.Designer.cs">
       <DependentUpon>CtlMatrixInput.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\CtlVektorInput.cs">
+    <Compile Include="UserControls\CtlVectorInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\CtlVektorInput.Designer.cs">
-      <DependentUpon>CtlVektorInput.cs</DependentUpon>
+    <Compile Include="UserControls\CtlVectorInput.Designer.cs">
+      <DependentUpon>CtlVectorInput.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\FormulaDrawer.cs" />
     <Compile Include="Forms\FrmDrehLinAbbUrsp.cs">
@@ -226,8 +226,8 @@
     <EmbeddedResource Include="UserControls\CtlMatrixInput.resx">
       <DependentUpon>CtlMatrixInput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\CtlVektorInput.resx">
-      <DependentUpon>CtlVektorInput.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\CtlVectorInput.resx">
+      <DependentUpon>CtlVectorInput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmLinAbbSumBelVek.resx">
       <DependentUpon>FrmLinAbbSumBelVek.cs</DependentUpon>

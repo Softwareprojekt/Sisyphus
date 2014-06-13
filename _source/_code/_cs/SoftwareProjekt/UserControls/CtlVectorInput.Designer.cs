@@ -1,6 +1,6 @@
 ﻿namespace SoftwareProjekt
 {
-    partial class CtlVektorInput
+    partial class CtlVectorInput
     {
         /// <summary> 
         /// Erforderliche Designervariable.
@@ -65,12 +65,12 @@
             this.txtEle11.TextChanged += new System.EventHandler(this.txtEle11_TextChanged);
             this.txtEle11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEle11_KeyPress);
             // 
-            // CtlVektorInput
+            // CtlVectorInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grpVektorInput);
-            this.Name = "CtlVektorInput";
+            this.Name = "CtlVectorInput";
             this.Size = new System.Drawing.Size(121, 83);
             this.grpVektorInput.ResumeLayout(false);
             this.grpVektorInput.PerformLayout();
