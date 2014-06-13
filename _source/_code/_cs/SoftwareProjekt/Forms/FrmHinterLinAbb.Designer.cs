@@ -1,4 +1,4 @@
-﻿namespace SoftwareProjekt
+﻿namespace SoftwareProjekt.Forms
 {
     partial class FrmHinterLinAbb
     {
@@ -56,9 +56,9 @@
             this.txtVectorGFx = new System.Windows.Forms.TextBox();
             this.lblVectorGFx = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.cosInput = new SoftwareProjekt.CoordinateSystem();
-            this.cosOutput1 = new SoftwareProjekt.CoordinateSystem();
-            this.cosOutput2 = new SoftwareProjekt.CoordinateSystem();
+            this.cosInput = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.cosOutput1 = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.cosOutput2 = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.grpAusgabe.SuspendLayout();
@@ -460,9 +460,9 @@
         private System.Windows.Forms.TextBox txtVectorGFx;
         private System.Windows.Forms.Label lblVectorGFx;
         private System.Windows.Forms.Button button2;
-        private CoordinateSystem cosInput;
-        private CoordinateSystem cosOutput1;
-        private CoordinateSystem cosOutput2;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosInput;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosOutput1;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosOutput2;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
     }

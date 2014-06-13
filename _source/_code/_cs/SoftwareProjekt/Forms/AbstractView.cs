@@ -19,13 +19,14 @@
  */
 #endregion
 
+using SoftwareProjekt.Classes.EventArguments;
+using SoftwareProjekt.Delegates;
+using SoftwareProjekt.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Forms
 {
     public abstract class AbstractView : Form, IView
     {

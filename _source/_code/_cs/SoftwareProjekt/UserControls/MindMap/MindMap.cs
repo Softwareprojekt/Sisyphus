@@ -19,16 +19,18 @@
  */
 #endregion
 
+using SoftwareProjekt.Classes;
+using SoftwareProjekt.Classes.Xml;
+using SoftwareProjekt.Enums;
+using SoftwareProjekt.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Windows.Forms;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.UserControls.MindMap
 {
-    public class MindMap : UserControl
+    public class CtlMindMap : UserControl
     {
         private const string _filename = "config.xml";
         private List<MindMapTopicControl> _graphicalTopicList;
@@ -38,7 +40,7 @@ namespace SoftwareProjekt
 
         private bool _initialised;
 
-        public MindMap ()
+        public CtlMindMap()
         {
             _graphicalTopicList = new List<MindMapTopicControl>();
             _logicalTopicList = new List<ITopic>();
@@ -65,14 +67,14 @@ namespace SoftwareProjekt
             int innerQuaderHeight = innerQuaderEndY - innerQuaderStartY;
             int innerQuaderHalfWidth = (innerQuaderEndX - innerQuaderStartX) / 2;
 
-            int dividerTopX = innerQuaderStartX + 
+            int dividerTopX = innerQuaderStartX +
                     (innerQuaderEndX - innerQuaderStartX);
 
             int dividerTopY = innerQuaderStartY;
 
             int dividerBottomX = dividerTopX;
             int dividerBottomY = innerQuaderEndY;
-            
+
             int nrOfLines = (nrOfTopics - 1) / 2;
 
             int possibleNrOfTopics = (nrOfLines + 1) * 2;
@@ -92,7 +94,7 @@ namespace SoftwareProjekt
                 }
                 else
                 {
-                    this._graphicalTopicList[i].Size = new System.Drawing.Size(innerQuaderHalfWidth -  15, heightPerLine - 30);
+                    this._graphicalTopicList[i].Size = new System.Drawing.Size(innerQuaderHalfWidth - 15, heightPerLine - 30);
 
                     int xValueOffset = 0;
 
@@ -124,9 +126,9 @@ namespace SoftwareProjekt
                             this.AddExercises(_graphicalTopicList[i], EAlignType.AlignRight, xValueOffset, innerQuaderStartY + lineOffset * heightPerLine, heightPerLine);
                         }
                     }
-                    
 
-                    this._graphicalTopicList[i].Location = 
+
+                    this._graphicalTopicList[i].Location =
                         new System.Drawing.Point(xValueOffset, innerQuaderStartY + lineOffset * heightPerLine + 15);
 
                     if (nrOfTopics % 2 != i % 2 && i != 0)
@@ -153,7 +155,7 @@ namespace SoftwareProjekt
 
             for (int i = 0; i < mindMapTopicControl.ButtonList.Count; i++)
             {
-                
+
             }
         }
 
@@ -248,9 +250,9 @@ namespace SoftwareProjekt
             }
             this.SuspendLayout();
             // 
-            // MindMap
+            // CtlMindMap
             // 
-            this.Name = "MindMap";
+            this.Name = "CtlMindMap";
             this.Paint += MindMap_Paint;
             this.ResumeLayout(false);
 

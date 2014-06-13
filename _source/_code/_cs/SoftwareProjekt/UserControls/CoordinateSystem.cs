@@ -19,23 +19,22 @@
  */
 #endregion
 
+using SoftwareProjekt.Classes.Math;
+using SoftwareProjekt.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
-
-namespace SoftwareProjekt
+namespace SoftwareProjekt.UserControls
 {
-    public delegate void CoordinateSystemClickHandler (float x, float y);
+    public delegate void CoordinateSystemClickHandler(float x, float y);
     public class CoordinateSystem : UserControl
     {
         /// <summary>
         /// </summary>
-        private List<LineSegment> _lineSegementList;
+        private List<LineSegment> _lineSegmentList;
         private List<Line> _lineList;
 
         private IAxis _xAxis;
@@ -51,7 +50,7 @@ namespace SoftwareProjekt
         public CoordinateSystem()
         {
             _lineList = new List<Line>();
-            _lineSegementList = new List<LineSegment>();
+            _lineSegmentList = new List<LineSegment>();
             _pointsList = new List<PointF>();
 
 
@@ -86,15 +85,15 @@ namespace SoftwareProjekt
         /// </summary>
         public void AddLineSegment(LineSegment lineSegment)
         {
-            _lineSegementList.Add(lineSegment);
+            _lineSegmentList.Add(lineSegment);
         }
 
         /// <summary>
         /// removes a figure from the list, adjust axis
         /// </summary>
-        public void RemoveLineSegment(SoftwareProjekt.LineSegment lineSegment)
+        public void RemoveLineSegment(LineSegment lineSegment)
         {
-            _lineSegementList.Remove(lineSegment);
+            _lineSegmentList.Remove(lineSegment);
         }
 
         /// <summary>
@@ -102,7 +101,7 @@ namespace SoftwareProjekt
         /// </summary>
         private void DrawVector(Graphics g)
         {
-            foreach (LineSegment ls in _lineSegementList)
+            foreach (LineSegment ls in _lineSegmentList)
             {
                 DrawSingleVector(ls, g);
             }
@@ -150,7 +149,7 @@ namespace SoftwareProjekt
 
             Pen localPen = new Pen(ls.Color.Color, 0.4f);
             float lengthOfLine = (float)Math.Sqrt((float)Math.Pow(Math.Abs(internalEndPoint.X - internalStartPoint.X), 2.0f) + Math.Pow(Math.Abs(internalEndPoint.Y - internalStartPoint.Y), 2.0f));
-            localPen.DashPattern = new float[] { 10.0f, lengthOfLine - 10.0f};
+            localPen.DashPattern = new float[] { 10.0f, lengthOfLine - 10.0f };
             localPen.DashStyle = DashStyle.Custom;
 
             g.DrawLine(localPen, internalEndPoint, internalStartPoint);
@@ -192,7 +191,7 @@ namespace SoftwareProjekt
 
             }
 
-            
+
         }
 
         private void DrawSingleLine(Line l, Graphics g)
@@ -216,7 +215,7 @@ namespace SoftwareProjekt
             Pen localPen = new Pen(l.InnerLineSegment.Color.Color, 0.4f);
             localPen.DashPattern = new float[] { 10.0f, 5.0f };
             localPen.DashStyle = DashStyle.Custom;
-            
+
             g.DrawLine(localPen, internalStartPoint, internalEndPoint);
         }
 
@@ -234,7 +233,7 @@ namespace SoftwareProjekt
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            
+
             this._xAxis = new Axis(true);
             this._yAxis = new Axis(false);
             this._xAxis.EndValue = 5.0f;
@@ -249,11 +248,11 @@ namespace SoftwareProjekt
             this._yAxis.Scale = 0.5f;
             this._yAxis.Legend = "Y-axis";
 
-            this.Paint +=CoordinateSystem_Paint;
+            this.Paint += CoordinateSystem_Paint;
             this.Resize += CoordinateSystem_Resize;
             this.MouseClick += CoordinateSystem_MouseClick;
 
-            
+
             // 
             // CoordinateSystem
             // 
@@ -276,7 +275,7 @@ namespace SoftwareProjekt
             float roundX = (float)Math.Round(p.X, 1, MidpointRounding.AwayFromZero);
             float roundY = (float)Math.Round(p.Y, 1, MidpointRounding.AwayFromZero);
 
-            
+
             Console.WriteLine("X: " + roundX.ToString() + "\nY: " + roundY.ToString() + "\n");
 
             if (this.CoordinateClick != null)
@@ -339,7 +338,7 @@ namespace SoftwareProjekt
             int xCoordinateEndPoint = this.Width - this.Width / 10;
             int xCoordinateStartPoint = this.Width / 10;
             Point endPoint = new Point(xCoordinateEndPoint, yCoordinate);
-            Point startPoint =  new Point(xCoordinateStartPoint, yCoordinate);
+            Point startPoint = new Point(xCoordinateStartPoint, yCoordinate);
 
             // draw the arrows
             g.DrawLine(Pens.Black, startPoint, endPoint);
@@ -377,7 +376,7 @@ namespace SoftwareProjekt
 
             }
 
-            g.DrawString(_xAxis.Legend, new Font("Arial", 9.0f), new SolidBrush(Color.Black), new PointF(xCoordinateEndPoint,(float) (this.Height - 25))); 
+            g.DrawString(_xAxis.Legend, new Font("Arial", 9.0f), new SolidBrush(Color.Black), new PointF(xCoordinateEndPoint, (float)(this.Height - 25)));
 
         }
 
@@ -415,7 +414,7 @@ namespace SoftwareProjekt
             // build all the lines and add the strings
             for (int i = 0; i < numberOfValues; i++)
             {
-                int localYCoordinate = offsetAbove + i *  singleOffset;
+                int localYCoordinate = offsetAbove + i * singleOffset;
                 float localCoordinateValue = i * rangeLength / numberOfValues;
                 g.DrawLine(Pens.Black, new Point(xCoordinate - 5, localYCoordinate),
                     new Point(xCoordinate + 5, localYCoordinate));
@@ -424,7 +423,7 @@ namespace SoftwareProjekt
 
                 g.DrawString(coordinate, new Font("Arial", 9.0f), new SolidBrush(Color.Black),
                     new PointF(0.0f, (float)localYCoordinate - 8));
-                
+
             }
 
             g.DrawLine(Pens.Black, new Point(xCoordinate - 5, endPoint.Y),
@@ -448,7 +447,7 @@ namespace SoftwareProjekt
             int internalAllowedMaxRangeX = this.Width - this.Width / 10 - 15;
             int internalAllowedMaxRangeY = this.Height - this.Height / 10;
 
-            /* Check if click event was inside valid range */ 
+            /* Check if click event was inside valid range */
             if (xValue < internalAllowedMinRangeX || xValue > internalAllowedMaxRangeX)
             {
                 return new PointF(-1, -1);
@@ -459,7 +458,7 @@ namespace SoftwareProjekt
                 return new PointF(-1, -1);
             }
 
-            /* Calculate y - coordinate */ 
+            /* Calculate y - coordinate */
 
             int arrowLengthY = Math.Abs(this.Height - this.Height / 10 - this.Height / 10 - 20);
             float yRange = _yAxis.EndValue - _yAxis.StartValue;
@@ -515,13 +514,13 @@ namespace SoftwareProjekt
             // calculate X
 
             float numericOffsetX = xValue - _xAxis.StartValue;
-            float rangeX = _xAxis.EndValue -_xAxis.StartValue;
+            float rangeX = _xAxis.EndValue - _xAxis.StartValue;
             int localOffsetPixelX = this.Width / 10;
 
             int numericArrowLengthX = this.Width - 2 * (this.Width / 10) - 20;
             float rangePerValueX = numericArrowLengthX / rangeX;
 
-            localXValue = (int) (numericOffsetX * rangePerValueX) + localOffsetPixelX;
+            localXValue = (int)(numericOffsetX * rangePerValueX) + localOffsetPixelX;
 
             // calculate Y
             float numericOffsetY = yValue - _yAxis.StartValue;

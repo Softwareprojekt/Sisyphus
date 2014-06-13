@@ -1,4 +1,4 @@
-﻿namespace SoftwareProjekt
+﻿namespace SoftwareProjekt.UserControls
 {
     partial class CtlMatrixInput
     {

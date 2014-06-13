@@ -19,14 +19,11 @@
  */
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using SoftwareProjekt.Classes.EventArguments;
+using SoftwareProjekt.Delegates;
 using System.IO;
-//using System.Threading;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Interfaces
 {
     public interface IExercise
     {
@@ -44,7 +41,7 @@ namespace SoftwareProjekt
         /// <summary>
         /// Kill worker thread immediately.
         /// </summary>
-        void AbortWork(); 
+        void AbortWork();
 
         /// <summary>
         /// Load state of exercise from file.

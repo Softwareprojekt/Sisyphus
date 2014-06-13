@@ -26,8 +26,9 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using SoftwareProjekt.Classes.Math;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.UserControls
 {
     public partial class CtlMatrixInput : UserControl
     {

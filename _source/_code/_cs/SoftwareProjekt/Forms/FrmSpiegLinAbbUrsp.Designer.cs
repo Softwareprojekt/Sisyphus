@@ -1,4 +1,4 @@
-﻿namespace SoftwareProjekt
+﻿namespace SoftwareProjekt.Forms
 {
     partial class FrmSpiegLinAbbUrsp
     {
@@ -52,8 +52,8 @@
             this.lvlVectorG = new System.Windows.Forms.Label();
             this.txtVectorG = new System.Windows.Forms.TextBox();
             this.grpDatenausgabe = new System.Windows.Forms.GroupBox();
-            this.coordinateSystem1 = new SoftwareProjekt.CoordinateSystem();
-            this.coordinateSystem2 = new SoftwareProjekt.CoordinateSystem();
+            this.coordinateSystem1 = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.coordinateSystem2 = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.grpDateneingabe.SuspendLayout();
@@ -385,8 +385,8 @@
         private System.Windows.Forms.Label lvlVectorG;
         private System.Windows.Forms.TextBox txtVectorG;
         private System.Windows.Forms.GroupBox grpDatenausgabe;
-        private CoordinateSystem coordinateSystem1;
-        private CoordinateSystem coordinateSystem2;
+        private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem1;
+        private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem2;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
     }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this._coordSys = new SoftwareProjekt.CoordinateSystem();
-            this._matrix = new SoftwareProjekt.CtlMatrixInput();
-            this._vector = new SoftwareProjekt.CtlVectorInput();
+            this._coordSys = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this._matrix = new SoftwareProjekt.UserControls.CtlMatrixInput();
+            this._vector = new SoftwareProjekt.UserControls.CtlVectorInput();
             this._btnCalc = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -82,9 +82,9 @@
 
         #endregion
 
-        private CoordinateSystem _coordSys;
-        private CtlMatrixInput _matrix;
-        private CtlVectorInput _vector;
+        private SoftwareProjekt.UserControls.CoordinateSystem _coordSys;
+        private SoftwareProjekt.UserControls.CtlMatrixInput _matrix;
+        private SoftwareProjekt.UserControls.CtlVectorInput _vector;
         private System.Windows.Forms.Button _btnCalc;
     }
 }

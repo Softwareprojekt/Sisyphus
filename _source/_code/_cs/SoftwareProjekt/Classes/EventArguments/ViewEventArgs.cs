@@ -19,13 +19,11 @@
  */
 #endregion
 
+using SoftwareProjekt.Classes.Math;
 using SoftwareProjekt.Enums;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Classes.EventArguments
 {
     public class ViewEventArgs : EventArgs
     {

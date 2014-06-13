@@ -19,12 +19,12 @@
  */
 #endregion
 
+using SoftwareProjekt.Enums;
+using SoftwareProjekt.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Classes
 {
     public abstract class AbstractTopic : ITopic
     {
@@ -41,7 +41,7 @@ namespace SoftwareProjekt
         }
 
 
-        virtual public void StartExercise(Exercises id)
+        virtual public void StartExercise(EExercises id)
         {
             throw new NotImplementedException();
         }
@@ -51,7 +51,7 @@ namespace SoftwareProjekt
         {
             return ETopic.InvalidTopic;
         }
-        
+
         virtual public bool ContainsExercise(int exerciseID)
         {
             return false;

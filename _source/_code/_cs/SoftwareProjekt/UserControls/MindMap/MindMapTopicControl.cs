@@ -19,14 +19,14 @@
  */
 #endregion
 
-using System;
+using SoftwareProjekt.Classes;
+using SoftwareProjekt.Enums;
+using SoftwareProjekt.Interfaces;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.UserControls.MindMap
 {
     public class MindMapTopicControl : UserControl
     {
@@ -121,13 +121,13 @@ namespace SoftwareProjekt
                     return;
                 }
 
-                _logicalTopic.StartExercise((Exercises)exerciseID);
+                _logicalTopic.StartExercise((EExercises)exerciseID);
             }
             else
             {
                 if (_dynamicalLoadedTopic == null)
                 {
-                    _dynamicalLoadedTopic.StartExercise((Exercises)exerciseID);
+                    _dynamicalLoadedTopic.StartExercise((EExercises)exerciseID);
                 }
             }
         }
@@ -152,7 +152,7 @@ namespace SoftwareProjekt
             {
                 return;
             }
-            
+
             g.DrawEllipse(Pens.Black, 0, 0, this.Width - 2, this.Height - 2);
 
             g.DrawString(this.TopicName, new Font("Arial", 12.0f), new SolidBrush(Color.Black),

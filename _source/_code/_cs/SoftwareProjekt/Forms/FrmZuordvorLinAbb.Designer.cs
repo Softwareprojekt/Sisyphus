@@ -1,4 +1,4 @@
-﻿namespace SoftwareProjekt
+﻿namespace SoftwareProjekt.Forms
 {
     partial class FrmZuordvorLinAbb
     {
@@ -48,8 +48,8 @@
             this.lblVectorX = new System.Windows.Forms.Label();
             this.txVectorX = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.coordinateSystem1 = new SoftwareProjekt.CoordinateSystem();
-            this.coordinateSystem2 = new SoftwareProjekt.CoordinateSystem();
+            this.coordinateSystem1 = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.coordinateSystem2 = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.groupBox2.SuspendLayout();
@@ -335,8 +335,8 @@
         private System.Windows.Forms.Label lblVectorX;
         private System.Windows.Forms.TextBox txVectorX;
         private System.Windows.Forms.GroupBox groupBox1;
-        private CoordinateSystem coordinateSystem1;
-        private CoordinateSystem coordinateSystem2;
+        private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem1;
+        private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem2;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
     }

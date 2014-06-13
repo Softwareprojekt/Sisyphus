@@ -19,24 +19,9 @@
  */
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Classes.Math
 {
-    public class DrawingPoint
+    public class FormulaDrawer
     {
-        public PointF BaseCoordinate { get; set; }
-        public Pen Color { get; set; }
-
-        public DrawingPoint(PointF p)
-        {
-            Color = Pens.Black;
-            BaseCoordinate = p;
-        }
-
     }
 }

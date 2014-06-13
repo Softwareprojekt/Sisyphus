@@ -1,4 +1,4 @@
-﻿namespace SoftwareProjekt
+﻿namespace SoftwareProjekt.Forms
 {
     partial class FrmDrehLinAbbUrsp
     {
@@ -50,8 +50,8 @@
             this.lblVectorM2 = new System.Windows.Forms.Label();
             this.txtVectorM2 = new System.Windows.Forms.TextBox();
             this.grpDataOutput = new System.Windows.Forms.GroupBox();
-            this.cosInput = new SoftwareProjekt.CoordinateSystem();
-            this.cosOutput = new SoftwareProjekt.CoordinateSystem();
+            this.cosInput = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.grpDataInput.SuspendLayout();
@@ -359,8 +359,8 @@
         private System.Windows.Forms.Label lblVectorM2;
         private System.Windows.Forms.TextBox txtVectorM2;
         private System.Windows.Forms.GroupBox grpDataOutput;
-        private CoordinateSystem cosInput;
-        private CoordinateSystem cosOutput;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosInput;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosOutput;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
     }

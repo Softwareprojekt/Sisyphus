@@ -19,12 +19,13 @@
  */
 #endregion
 
+using SoftwareProjekt.Classes.EventArguments;
+using SoftwareProjekt.Classes.Math;
+using SoftwareProjekt.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Exercises
 {
     class TestExercise : AbstractExercise
     {

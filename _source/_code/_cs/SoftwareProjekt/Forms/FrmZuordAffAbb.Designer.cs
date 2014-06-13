@@ -1,4 +1,4 @@
-﻿namespace SoftwareProjekt
+﻿namespace SoftwareProjekt.Forms
 {
     partial class FrmZuordAffAbb
     {
@@ -53,9 +53,9 @@
             this.label13 = new System.Windows.Forms.Label();
             this.butFx = new System.Windows.Forms.Button();
             this.txtFx = new System.Windows.Forms.TextBox();
-            this.cosInputLeft = new SoftwareProjekt.CoordinateSystem();
-            this.cosOutput = new SoftwareProjekt.CoordinateSystem();
-            this.cosInputRight = new SoftwareProjekt.CoordinateSystem();
+            this.cosInputLeft = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.cosInputRight = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
@@ -407,9 +407,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button butFx;
         private System.Windows.Forms.TextBox txtFx;
-        private CoordinateSystem cosInputLeft;
-        private CoordinateSystem cosOutput;
-        private CoordinateSystem cosInputRight;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosInputLeft;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosOutput;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosInputRight;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
     }

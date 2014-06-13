@@ -19,6 +19,8 @@
  */
 #endregion
 
+using SoftwareProjekt.Delegates;
+using SoftwareProjekt.Enums;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -26,13 +28,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.UserControls.MindMap
 {
     public class MindMapButtonControl : UserControl
     {
         private EAlignType _alignment;
         private string _buttonText;
-        private EMachiningCondtion _machiningCondition;
+        private EMachiningCondition _machiningCondition;
         private int _exerciseID;
 
         public event ExerciseClickEvent ButtonClicked;
@@ -43,7 +45,7 @@ namespace SoftwareProjekt
             _buttonText = text;
             _exerciseID = excerciseID;
 
-            _machiningCondition = EMachiningCondtion.NotDone;
+            _machiningCondition = EMachiningCondition.NotDone;
 
             InitializeComponent();
         }
@@ -129,7 +131,7 @@ namespace SoftwareProjekt
             }
         }
 
-        public EMachiningCondtion MachiningCondition
+        public EMachiningCondition MachiningCondition
         {
             get
             {
@@ -175,15 +177,15 @@ namespace SoftwareProjekt
 
             switch (_machiningCondition)
             {
-                case EMachiningCondtion.Aborted:
+                case EMachiningCondition.Aborted:
                     linePen = Pens.Blue;
                     break;
 
-                case EMachiningCondtion.NotDone:
+                case EMachiningCondition.NotDone:
                     linePen = Pens.Black;
                     break;
 
-                case EMachiningCondtion.SaveExists:
+                case EMachiningCondition.SaveExists:
                     linePen = Pens.Green;
                     break;
             }

@@ -19,18 +19,14 @@
  */
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Classes
 {
     public class ScreenshotCreator
     {
         private string lastFile;
-    
+
         public string LastCreatedFile
         {
             get

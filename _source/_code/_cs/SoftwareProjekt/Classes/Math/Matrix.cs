@@ -20,11 +20,8 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Classes.Math
 {
     public class Matrix
     {
@@ -69,17 +66,17 @@ namespace SoftwareProjekt
 
         public float X22 { get; set; }
 
-		public override string ToString()
-		{
-			return string.Format("[Matrix X11={0}, X12={1}, X21={2}, X22={3}]", this.X11, this.X12, this.X21, this.X22);
-		}
+        public override string ToString()
+        {
+            return string.Format("[Matrix X11={0}, X12={1}, X21={2}, X22={3}]", this.X11, this.X12, this.X21, this.X22);
+        }
 
         /// <summary>
         /// Inverts this Matrix
         /// </summary>
         public void Invert()
         {
-            Matrix m = (Matrix) this.MemberwiseClone();
+            Matrix m = (Matrix)this.MemberwiseClone();
             float tmp = X11;
             this.X11 = X22;
             this.X22 = tmp;

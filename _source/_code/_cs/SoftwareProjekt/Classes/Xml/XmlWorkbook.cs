@@ -21,32 +21,46 @@
 
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Classes.Xml
 {
-    public class Axis : IAxis
+    public class XmlWorkbook
     {
-        private bool _isXAxis;
-        private bool _isYAxis;
-        /// <summary>
-        /// ctor
-        /// </summary>
-        /// <param name="isXAxis">XAxis: true; YAxis: false</param>
-        public Axis(bool isXAxis)
+        private List<Dictionary<string, string>> _parsedFileData;
+        private int _filename;
+
+        public string Filename
         {
-            _isXAxis = isXAxis;
-            _isYAxis = !isXAxis;            
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
         }
 
-        public string Legend { get; set; }
-        public float StartValue { get; set; }
-        public float EndValue { get; set; }
-        public float Scale { get; set; }
+        public System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>> ParsedData
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
 
+        public bool Load()
+        {
+            throw new System.NotImplementedException();
+        }
 
+        public bool Save()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

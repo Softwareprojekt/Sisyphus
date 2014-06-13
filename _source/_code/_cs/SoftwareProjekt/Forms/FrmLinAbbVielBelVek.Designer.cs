@@ -1,4 +1,4 @@
-﻿namespace SoftwareProjekt
+﻿namespace SoftwareProjekt.Forms
 {
     partial class FrmLinAbbVielBelVek
     {
@@ -49,8 +49,8 @@
             this.txtVectorFX = new System.Windows.Forms.TextBox();
             this.lblVectorAMultX = new System.Windows.Forms.Label();
             this.lblVectorFX = new System.Windows.Forms.Label();
-            this.coordinateSystem1 = new SoftwareProjekt.CoordinateSystem();
-            this.coordinateSystem2 = new SoftwareProjekt.CoordinateSystem();
+            this.coordinateSystem1 = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.coordinateSystem2 = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
@@ -351,8 +351,8 @@
         private System.Windows.Forms.TextBox txtVectorFX;
         private System.Windows.Forms.Label lblVectorAMultX;
         private System.Windows.Forms.Label lblVectorFX;
-        private CoordinateSystem coordinateSystem1;
-        private CoordinateSystem coordinateSystem2;
+        private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem1;
+        private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem2;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
     }

@@ -34,7 +34,7 @@
             this.lblNumIteration = new System.Windows.Forms.Label();
             this.txtNumIteration = new System.Windows.Forms.TextBox();
             this.butSaveFractal = new System.Windows.Forms.Button();
-            this.cosFractal = new SoftwareProjekt.CoordinateSystem();
+            this.cosFractal = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.lblNotes = new System.Windows.Forms.Label();
             this.butStart = new System.Windows.Forms.Button();
@@ -169,7 +169,7 @@
         private System.Windows.Forms.TextBox txtNumIteration;
         private System.Windows.Forms.Label lblNumIteration;
         private System.Windows.Forms.Button butSaveFractal;
-        private CoordinateSystem cosFractal;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosFractal;
         private System.Windows.Forms.RichTextBox rtxtNotes;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.Button butStart;

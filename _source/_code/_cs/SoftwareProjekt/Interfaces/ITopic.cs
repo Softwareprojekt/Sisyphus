@@ -19,12 +19,10 @@
  */
 #endregion
 
-using System;
+using SoftwareProjekt.Enums;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Interfaces
 {
     public interface ITopic
     {
@@ -34,7 +32,7 @@ namespace SoftwareProjekt
             set;
         }
 
-        void StartExercise(Exercises id);
+        void StartExercise(EExercises id);
 
         ETopic TopicType();
 
