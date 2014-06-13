@@ -29,6 +29,15 @@ namespace SoftwareProjekt
     public class Vector
     {
         /// <summary>
+        /// Empty ctor.
+        /// </summary>
+        public Vector()
+        {
+            this.X1 = 0f;
+            this.X2 = 0f;
+        }
+
+        /// <summary>
         /// ctor
         /// </summary>
         public Vector(float x1, float x2)

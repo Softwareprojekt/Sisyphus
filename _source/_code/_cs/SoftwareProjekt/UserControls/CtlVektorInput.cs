@@ -32,30 +32,20 @@ namespace SoftwareProjekt
 {
     public partial class CtlVektorInput : UserControl
     {
-        private Vector _vVektor;
-        private string _sName;
-
         public CtlVektorInput()
         {
             InitializeComponent();
+
+            this.Vector = new Vector();
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public string Name
+        private Vector Vector
         {
-            get { return _sName; }
-            set { _sName = value; }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Vector Vector
-        {
-            get { return _vVektor; }
-            set { _vVektor = value; }
+            get;
+            set;
         }
 
         /// <summary>
@@ -63,7 +53,9 @@ namespace SoftwareProjekt
         /// </summary>
         private void txtEle11_TextChanged(object sender, EventArgs e)
         {
-            Vector.X1 = float.Parse(txtEle11.Text);
+            float f;
+            this.Parse(txtEle11.Text, out f);
+            this.Vector.X1 = f;
         }
 
         /// <summary>
@@ -71,8 +63,10 @@ namespace SoftwareProjekt
         /// </summary>
         private void txtEle11_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(e.KeyChar >= 48 && e.KeyChar <= 57 && e.KeyChar != 8))
-                e.Handled = true; 
+            if (e.KeyChar == ',')
+            {
+                e.Handled = true;
+            }
         }
 
         /// <summary>
@@ -80,7 +74,9 @@ namespace SoftwareProjekt
         /// </summary>
         private void txtEle21_TextChanged(object sender, EventArgs e)
         {
-            Vector.X2 = float.Parse(txtEle21.Text);
+            float f;
+            this.Parse(txtEle21.Text, out f);
+            this.Vector.X2 = f;
         }
 
         /// <summary>
@@ -88,9 +84,25 @@ namespace SoftwareProjekt
         /// </summary>
         private void txtEle21_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(e.KeyChar >= 48 && e.KeyChar <= 57 && e.KeyChar != 8))
-                e.Handled = true; 
-        }       
-        
+            if (e.KeyChar == ',')
+            {
+                e.Handled = true;
+            }
+        }
+        private bool Parse(string s, out float f)
+        {
+            float retval = 0f;
+
+            if (float.TryParse(s, out retval))
+            {
+                f = retval;
+                Console.WriteLine("SUCCESS @ Vector.Parse => " + f);
+                return true;
+            }
+
+            f = float.NaN;
+            Console.WriteLine("ERROR @ Vector.Parse => " + f);
+            return false;
+        }
     }
 }
