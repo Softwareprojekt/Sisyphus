@@ -19,6 +19,7 @@
  */
 #endregion
 
+using SoftwareProjekt.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,24 +29,48 @@ namespace SoftwareProjekt
 {
     public class ViewEventArgs : EventArgs
     {
-    	/// <summary>
-    	/// Holds the event that happened on the View.
-    	/// </summary>
-        public ViewEvents ViewEvent
+        /// <summary>
+        /// Holds the event that happened on the View.
+        /// </summary>
+        public EViewEvents ViewEvent
         {
-        	get;
-        	private set;
+            get;
+            private set;
         }
-        
+
         /// <summary>
         /// Holds the x, y coordinates in case of ViewEvent is Coordinate.
         /// </summary>
         public Vector Coordinates
         {
-        	get;
-        	private set;
+            get;
+            private set;
         }
-        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Name
+        {
+            get;
+            private set;
+        }
+
+        public EClickedButton ClickedButton
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ViewEventArgs(EClickedButton e)
+        {
+            this.ViewEvent = EViewEvents.ButtonClick;
+            this.ClickedButton = e;
+        }
+
         /// <summary>
         /// Creates a new ViewEventArgs object holding coordinates in a Vector object.
         /// </summary>
@@ -53,8 +78,8 @@ namespace SoftwareProjekt
         /// <param name="y">Y coordinate.</param>
         public ViewEventArgs(float x, float y)
         {
-        	this.ViewEvent = ViewEvents.Coordinate;
-        	this.Coordinates = new Vector(x, y);
+            this.ViewEvent = EViewEvents.Coordinate;
+            this.Coordinates = new Vector(x, y);
         }
     }
 

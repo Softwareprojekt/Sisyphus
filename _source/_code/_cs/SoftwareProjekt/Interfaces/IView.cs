@@ -41,5 +41,14 @@ namespace SoftwareProjekt
             get;
             set;
         }
+
+        /// <summary>
+        /// Returns all data needed for calculation in the model.
+        /// </summary>
+        Dictionary<string, Object> GetInputData();
+
+        void ExerciseChanged(IExercise sender, ExerciseEventArgs e);
+
+        void Dispose();
     }
 }

@@ -35,6 +35,12 @@ namespace SoftwareProjekt
         /// </summary>
         event ExerciseHandler<ExerciseEventArgs> ExerciseChanged;
 
+        int Id
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// Kill worker thread immediately.
         /// </summary>
@@ -46,11 +52,6 @@ namespace SoftwareProjekt
         bool LoadState(FileStream file);
 
         /// <summary>
-        /// Reset state of exercise. Default values.
-        /// </summary>
-        bool ResetState(FileStream file);
-
-        /// <summary>
         /// Save state of exercise to file.
         /// </summary>
         bool SaveState(FileStream file, string data);
@@ -58,22 +59,11 @@ namespace SoftwareProjekt
         /// <summary>
         /// Start worker thread and calculate.
         /// </summary>
-        void StartWork(Matrix a, Vector v); // ???
-
-        /// <summary>
-        /// Stop worker thread gracefully.
-        /// </summary>
-        void StopWork();
+        void StartWork();
 
         /// <summary>
         /// Attach View to Exercise. Used to notify View of new data.
         /// </summary>
-        void AttachView(IExerciseObserver observer);
-
-        /// <summary>
-        /// returns the exercise id
-        /// </summary>
-        /// <returns>the exercise id</returns>
-        int GetExerciseID();
+        void AttachView(IView observer);
     }
 }

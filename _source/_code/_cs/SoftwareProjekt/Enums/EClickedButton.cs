@@ -19,15 +19,10 @@
  */
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Enums
 {
-    public interface IExerciseObserver
+    public enum EClickedButton
     {
-        void ExerciseChanged(IExercise sender, ExerciseEventArgs e);
+        StartCalculation,
     }
 }

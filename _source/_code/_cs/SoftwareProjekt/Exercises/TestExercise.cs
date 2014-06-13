@@ -26,10 +26,32 @@ using System.Text;
 
 namespace SoftwareProjekt
 {
-    public enum ViewEvents
+    class TestExercise : AbstractExercise
     {
-        ButtonClick,
-        TextChange,
-        Coordinate,
+        protected override void DoWork(IView view)
+        {
+            Dictionary<string, Object> dict = null;
+
+            // get data needed for calculations.
+            dict = view.GetInputData();
+
+            // check dict
+            if (!dict.ContainsKey("Matrix1") || !dict.ContainsKey("Vector1"))
+            {
+                return;
+            }
+
+            // calculate...
+            Matrix m = (Matrix)dict["Matrix1"];
+
+            m.Multiply(2f);
+
+            Vector v = (Vector)dict["Vector1"];
+
+            v.Multiply(2f);
+
+            // call base dowork and pass the calculated data.
+            base.Finalize(new ExerciseEventArgs(dict));
+        }
     }
 }

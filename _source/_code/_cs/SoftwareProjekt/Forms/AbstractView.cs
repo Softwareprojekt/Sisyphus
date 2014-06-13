@@ -27,7 +27,7 @@ using System.Windows.Forms;
 
 namespace SoftwareProjekt
 {
-    public abstract class AbstractView : Form, IView, IExerciseObserver
+    public abstract class AbstractView : Form, IView
     {
         public event ViewHandler<ViewEventArgs> ViewChanged;
 
@@ -35,14 +35,14 @@ namespace SoftwareProjekt
         /// Throws an event to subscribed listeners.
         /// </summary>
         /// <param name="e">ViewEventArgs object containing the data.</param>
-		protected virtual void OnViewChanged(ViewEventArgs e)
-		{
-			ViewHandler<ViewEventArgs> handler = ViewChanged;
-			if (handler != null)
-			{
-				handler(this, e);
-			}
-		}
+        protected virtual void OnViewChanged(ViewEventArgs e)
+        {
+            ViewHandler<ViewEventArgs> handler = ViewChanged;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+        }
         /// <summary>
         /// </summary>
         public IController Controller
@@ -50,7 +50,9 @@ namespace SoftwareProjekt
             get;
             set;
         }
-        
+
         public abstract void ExerciseChanged(IExercise sender, ExerciseEventArgs e);
+
+        public abstract Dictionary<string, Object> GetInputData();
     }
 }

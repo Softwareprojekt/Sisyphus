@@ -28,5 +28,38 @@ namespace SoftwareProjekt
 {
     public class ExerciseEventArgs : EventArgs
     {
+        public Dictionary<string, Object> CalcValues
+        {
+            get;
+            private set;
+        }
+        /// <summary>
+        /// Empty ctor.
+        /// </summary>
+        public ExerciseEventArgs()
+        {
+
+        }
+
+        /// <summary>
+        /// Ctor to return processed values to view.
+        /// </summary>
+        /// <param name="dict">Dictionary with processed values.</param>
+        public ExerciseEventArgs(Dictionary<string, Object> dict)
+        {
+            this.CalcValues = dict;
+        }
+
+        public override string ToString()
+        {
+            int i = 0;
+            string ret = string.Format("[ExerciseEventArgs Count={0}, ", this.CalcValues.Count);
+            for (; i < this.CalcValues.Keys.Count - 1; i++)
+            {
+                ret += "Key" + i + "='" + this.CalcValues.Keys.ToArray()[i] + "', ";
+            }
+            ret += "Key" + i + "='" + this.CalcValues.Keys.ToArray()[i] + "']";
+            return ret;
+        }
     }
 }

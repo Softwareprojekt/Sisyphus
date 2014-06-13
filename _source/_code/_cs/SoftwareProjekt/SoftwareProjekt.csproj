@@ -50,19 +50,21 @@
   <ItemGroup>
     <Compile Include="Classes\DrawingPoint.cs" />
     <Compile Include="Enums\EAlignType.cs" />
+    <Compile Include="Enums\EClickedButton.cs" />
     <Compile Include="Enums\EConnectionType.cs" />
     <Compile Include="Enums\EWorkingState.cs" />
     <Compile Include="Enums\ETopic.cs" />
     <Compile Include="Classes\XmlExercise.cs" />
     <Compile Include="Classes\XmlMindMap.cs" />
     <Compile Include="Classes\XmlTopic.cs" />
+    <Compile Include="Exercises\TestExercise.cs" />
     <Compile Include="Forms\AbstractView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Classes\Axis.cs" />
     <Compile Include="Classes\AbstractExercise.cs" />
     <Compile Include="Classes\AbstractTopic.cs" />
-    <Compile Include="Enums\Exercises.cs" />
+    <Compile Include="Enums\EExercises.cs" />
     <Compile Include="Classes\Controller.cs" />
     <Compile Include="Delegates\ExerciseHandler.cs" />
     <Compile Include="Delegates\ExerciseClickEvent.cs" />
@@ -79,8 +81,13 @@
     <Compile Include="Forms\TestObject.Designer.cs">
       <DependentUpon>TestObject.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\IExerciseObserver.cs" />
     <Compile Include="Classes\ScreenshotCreator.cs" />
+    <Compile Include="Forms\TestView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TestView.Designer.cs">
+      <DependentUpon>TestView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IMathObject.cs" />
     <Compile Include="Classes\LinearTransformationTopic.cs" />
     <Compile Include="UserControls\MindMapButtonControl.cs">
@@ -178,7 +185,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Vector.cs" />
     <Compile Include="Classes\ViewEventArgs.cs" />
-    <Compile Include="Enums\ViewEvents.cs" />
+    <Compile Include="Enums\EViewEvents.cs" />
     <Compile Include="Delegates\ViewHandler.cs" />
     <Compile Include="Classes\WorkBook.cs" />
     <Compile Include="UserControls\WorkBookControl.cs">
@@ -219,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Classes\Axis.resx">
       <DependentUpon>Axis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestView.resx">
+      <DependentUpon>TestView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CoordinateSystem.resx">
       <DependentUpon>CoordinateSystem.cs</DependentUpon>
