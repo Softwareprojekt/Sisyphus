@@ -30,6 +30,7 @@ namespace SoftwareProjekt.Forms
             _sfilepath = "";
             ctlFormular.Equation = _sequation;
             ctlFormular.Filename = _sfilepath;
+            ctlFormular.WriteEquationToPicBox(ctlFormular.Equation);
         }
        
 

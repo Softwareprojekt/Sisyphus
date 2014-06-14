@@ -13,10 +13,10 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
     public partial class CtlFormularDraw : UserControl
     {
         private string _seqation;
-        private string _sfilename;
+        private string _sfilepath;
 
         public string Equation { get; set; }
-        public string Filename { get; set; }
+        public string Filepath{ get; set; }
 
         public CtlFormularDraw()
         {
@@ -28,8 +28,8 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
             if (equation.Length > 0)
                 try
                 {
-                    NativeMethods.CreateGifFromEq(equation, _sfilename);
-                    picFormular.Image = Image.FromFile(_sfilename);
+                    NativeMethods.CreateGifFromEq(equation, _sfilepath);
+                    picFormular.Image = Image.FromFile(_sfilepath);
                 }
                 catch (Exception ex)
                 {
@@ -39,6 +39,11 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
             {
                 picFormular.Image = Image.FromFile("PathToImage");
             }
+        }
+
+        private string GetGifFilePath()
+        {
+            return Path.Combine(Path.GetTempPath(), "equation.gif");
         }            
 
         internal class NativeMethods
