@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            SoftwareProjekt.Classes.Math.Matrix matrix1 = new SoftwareProjekt.Classes.Math.Matrix();
+            SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
             this._coordSys = new SoftwareProjekt.UserControls.CoordinateSystem();
             this._matrix = new SoftwareProjekt.UserControls.CtlMatrixInput();
             this._vector = new SoftwareProjekt.UserControls.CtlVectorInput();
             this._btnCalc = new System.Windows.Forms.Button();
+            this.ctlFormDrawTest = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.SuspendLayout();
             // 
             // _coordSys
@@ -44,6 +47,11 @@
             // _matrix
             // 
             this._matrix.Location = new System.Drawing.Point(311, 12);
+            matrix1.X11 = float.NaN;
+            matrix1.X12 = float.NaN;
+            matrix1.X21 = float.NaN;
+            matrix1.X22 = float.NaN;
+            this._matrix.Matrix = matrix1;
             this._matrix.Name = "_matrix";
             this._matrix.Size = new System.Drawing.Size(122, 86);
             this._matrix.TabIndex = 1;
@@ -54,6 +62,9 @@
             this._vector.Name = "_vector";
             this._vector.Size = new System.Drawing.Size(122, 86);
             this._vector.TabIndex = 2;
+            vector1.X1 = float.NaN;
+            vector1.X2 = float.NaN;
+            this._vector.Vector = vector1;
             // 
             // _btnCalc
             // 
@@ -65,11 +76,21 @@
             this._btnCalc.UseVisualStyleBackColor = true;
             this._btnCalc.Click += new System.EventHandler(this._btnCalc_Click);
             // 
+            // ctlFormDrawTest
+            // 
+            this.ctlFormDrawTest.Equation = null;
+            this.ctlFormDrawTest.Filepath = null;
+            this.ctlFormDrawTest.Location = new System.Drawing.Point(499, 68);
+            this.ctlFormDrawTest.Name = "ctlFormDrawTest";
+            this.ctlFormDrawTest.Size = new System.Drawing.Size(329, 92);
+            this.ctlFormDrawTest.TabIndex = 4;
+            // 
             // TestView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 311);
+            this.ClientSize = new System.Drawing.Size(901, 311);
+            this.Controls.Add(this.ctlFormDrawTest);
             this.Controls.Add(this._btnCalc);
             this.Controls.Add(this._vector);
             this.Controls.Add(this._matrix);
@@ -86,5 +107,6 @@
         private SoftwareProjekt.UserControls.CtlMatrixInput _matrix;
         private SoftwareProjekt.UserControls.CtlVectorInput _vector;
         private System.Windows.Forms.Button _btnCalc;
+        private UserControls.FormulaDrawer.CtlFormularDraw ctlFormDrawTest;
     }
 }

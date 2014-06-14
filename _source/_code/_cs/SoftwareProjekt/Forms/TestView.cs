@@ -26,13 +26,16 @@ using SoftwareProjekt.Interfaces;
 using System;
 using System.Collections.Generic;
 
+
 namespace SoftwareProjekt.Forms
 {
-    public partial class TestView : AbstractView
+    public partial class TestView :AbstractView
     {
         public TestView()
         {
             InitializeComponent();
+           // ctlFormDrawTest.Equation = "f(x^(->)= sqrt(x))";
+            //ctlFormDrawTest.WriteEquationToPicBox(ctlFormDrawTest.Equation);
         }
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)

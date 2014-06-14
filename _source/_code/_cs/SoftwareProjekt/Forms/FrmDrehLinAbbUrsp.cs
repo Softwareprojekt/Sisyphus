@@ -29,7 +29,7 @@ namespace SoftwareProjekt.Forms
             _sequation = "f(x^(->) = ";
             _sfilepath = "";
             ctlFormular.Equation = _sequation;
-            ctlFormular.Filename = _sfilepath;
+            ctlFormular.Filepath = _sfilepath;
             ctlFormular.WriteEquationToPicBox(ctlFormular.Equation);
         }
        

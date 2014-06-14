@@ -314,7 +314,7 @@
             // ctlFormular
             // 
             this.ctlFormular.Equation = null;
-            this.ctlFormular.Filename = null;
+            this.ctlFormular.Filepath = null;
             this.ctlFormular.Location = new System.Drawing.Point(253, 68);
             this.ctlFormular.Name = "ctlFormular";
             this.ctlFormular.Size = new System.Drawing.Size(329, 92);

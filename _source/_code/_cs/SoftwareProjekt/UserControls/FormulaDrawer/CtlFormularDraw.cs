@@ -8,36 +8,46 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
+
+/// MimeTex.dll ist eine 32bit dll, vor dem übersetzen von "any cpu" auf x86 umstellen!
+
+
 namespace SoftwareProjekt.UserControls.FormulaDrawer
 {
     public partial class CtlFormularDraw : UserControl
     {
-        private string _seqation;
+        private string _sequation;
         private string _sfilepath;
+        private string _sfilename;
 
         public string Equation { get; set; }
-        public string Filepath{ get; set; }
+        public string Filepath { get; set; }
+        public string Filename { get; set; }
 
         public CtlFormularDraw()
         {
             InitializeComponent();
+            Filename = "expr.gif";
+            Filepath = Path.GetDirectoryName(Application.ExecutablePath);
         }
 
         public void WriteEquationToPicBox(string equation)
         {
+            if (picFormular.Image != null) picFormular.Image.Dispose();
+
             if (equation.Length > 0)
                 try
                 {
-                    NativeMethods.CreateGifFromEq(equation, _sfilepath);
-                    picFormular.Image = Image.FromFile(_sfilepath);
+                    NativeMethods.CreateGifFromEq(equation, _sfilename);
+                    picFormular.Image = Image.FromFile(_sfilename);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
-            else  // TODO: Fehlerbild anzeigen
+            else  
             {
-                picFormular.Image = Image.FromFile("PathToImage");
+                picFormular.Image = Image.FromFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath),"error.gif"));
             }
         }
 
