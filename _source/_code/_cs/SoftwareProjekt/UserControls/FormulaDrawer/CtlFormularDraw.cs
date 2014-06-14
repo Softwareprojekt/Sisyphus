@@ -18,28 +18,44 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
     {
         private string _sequation;
         private string _sfilepath;
-        private string _sfilename;
-
-        public string Equation { get; set; }
-        public string Filepath { get; set; }
-        public string Filename { get; set; }
+        private string _sfilename;      
 
         public CtlFormularDraw()
         {
             InitializeComponent();
-            Filename = "expr.gif";
-            Filepath = Path.GetDirectoryName(Application.ExecutablePath);
+            this.Filename = "expr.gif";
+            this.Equation = "";
+            this.Filepath = Path.GetDirectoryName(Application.ExecutablePath);
+        }
+
+        public string Equation
+        {
+            get { return _sequation; }
+            set { _sequation = value; }
+        }
+
+        public string Filepath
+        {
+            get { return _sfilepath; }
+            set { _sfilepath = value; }
+        }
+
+        public string Filename
+        {
+            get { return _sfilename; }
+            set { _sfilename = value; }
         }
 
         public void WriteEquationToPicBox(string equation)
         {
+           this.Equation = equation;
             if (picFormular.Image != null) picFormular.Image.Dispose();
 
             if (equation.Length > 0)
                 try
                 {
-                    NativeMethods.CreateGifFromEq(equation, _sfilename);
-                    picFormular.Image = Image.FromFile(_sfilename);
+                    NativeMethods.CreateGifFromEq(this.Equation, this.Filename);
+                    picFormular.Image = Image.FromFile(this.Filename);
                 }
                 catch (Exception ex)
                 {
@@ -47,15 +63,23 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
                 }
             else  
             {
-                picFormular.Image = Image.FromFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath),"error.gif"));
+                try
+                {
+                    picFormular.Image = Image.FromFile(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "error.gif"));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
         }
 
+        /*
         private string GetGifFilePath()
         {
             return Path.Combine(Path.GetTempPath(), "equation.gif");
         }            
-
+        */
         internal class NativeMethods
         {
             private NativeMethods()
