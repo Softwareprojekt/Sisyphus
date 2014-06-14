@@ -89,6 +89,12 @@
       <DependentUpon>TestView.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\LinearTransformationTopic.cs" />
+    <Compile Include="UserControls\FormulaDrawer\CtlFormularDraw.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\FormulaDrawer\CtlFormularDraw.Designer.cs">
+      <DependentUpon>CtlFormularDraw.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\MindMap\MindMapButtonControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmZuordvorLinAbb.resx">
       <DependentUpon>FrmZuordvorLinAbb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\FormulaDrawer\CtlFormularDraw.resx">
+      <DependentUpon>CtlFormularDraw.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MindMap\MindMapButtonControl.resx">
       <DependentUpon>MindMapButtonControl.cs</DependentUpon>

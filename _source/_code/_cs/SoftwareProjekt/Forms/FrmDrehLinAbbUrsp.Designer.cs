@@ -54,6 +54,7 @@
             this.cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
+            this.ctlFormular = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.grpDataInput.SuspendLayout();
             this.grpDataOutput.SuspendLayout();
             this.SuspendLayout();
@@ -90,7 +91,7 @@
             this.grpDataInput.Controls.Add(this.lblEV1);
             this.grpDataInput.Controls.Add(this.txtPointX);
             this.grpDataInput.Controls.Add(this.lblPointX);
-            this.grpDataInput.Location = new System.Drawing.Point(142, 44);
+            this.grpDataInput.Location = new System.Drawing.Point(63, 44);
             this.grpDataInput.Margin = new System.Windows.Forms.Padding(2);
             this.grpDataInput.Name = "grpDataInput";
             this.grpDataInput.Padding = new System.Windows.Forms.Padding(2);
@@ -272,7 +273,7 @@
             this.grpDataOutput.Controls.Add(this.lblVectorM1);
             this.grpDataOutput.Controls.Add(this.lblVectorFunctionX);
             this.grpDataOutput.Controls.Add(this.txtVectorM1);
-            this.grpDataOutput.Location = new System.Drawing.Point(598, 55);
+            this.grpDataOutput.Location = new System.Drawing.Point(618, 44);
             this.grpDataOutput.Name = "grpDataOutput";
             this.grpDataOutput.Size = new System.Drawing.Size(140, 135);
             this.grpDataOutput.TabIndex = 41;
@@ -310,11 +311,21 @@
             this.rtxtNotes.TabIndex = 45;
             this.rtxtNotes.Text = "";
             // 
+            // ctlFormular
+            // 
+            this.ctlFormular.Equation = null;
+            this.ctlFormular.Filename = null;
+            this.ctlFormular.Location = new System.Drawing.Point(253, 68);
+            this.ctlFormular.Name = "ctlFormular";
+            this.ctlFormular.Size = new System.Drawing.Size(329, 92);
+            this.ctlFormular.TabIndex = 46;
+            // 
             // FrmDrehLinAbbUrsp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 716);
+            this.Controls.Add(this.ctlFormular);
             this.Controls.Add(this.rtxtNotes);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.cosOutput);
@@ -363,5 +374,6 @@
         private SoftwareProjekt.UserControls.CoordinateSystem cosOutput;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
+        private UserControls.FormulaDrawer.CtlFormularDraw ctlFormular;
     }
 }
