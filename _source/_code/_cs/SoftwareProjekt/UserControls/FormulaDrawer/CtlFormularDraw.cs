@@ -25,7 +25,7 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
             InitializeComponent();
             this.Filename = "expr.gif";
             this.Equation = "";
-            this.Filepath = Path.GetDirectoryName(Application.ExecutablePath);
+            this.Filepath = GetGifFilePath();
         }
 
         public string Equation
@@ -48,7 +48,7 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
 
         public void WriteEquationToPicBox(string equation)
         {
-           this.Equation = equation;
+            this.Equation = equation;
             if (picFormular.Image != null) picFormular.Image.Dispose();
 
             if (equation.Length > 0)
@@ -61,7 +61,7 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
                 {
                     MessageBox.Show(ex.ToString());
                 }
-            else  
+            else
             {
                 try
                 {
@@ -73,13 +73,12 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
                 }
             }
         }
-
-        /*
+       
         private string GetGifFilePath()
         {
-            return Path.Combine(Path.GetTempPath(), "equation.gif");
+            return Path.GetDirectoryName(Application.ExecutablePath);
         }            
-        */
+        
         internal class NativeMethods
         {
             private NativeMethods()
