@@ -1,4 +1,4 @@
-﻿namespace SoftwareProjekt
+﻿namespace SoftwareProjekt.Forms
 {
     partial class FrmLinAbbSumBelVek
     {
@@ -47,8 +47,8 @@
             this.txtVectorX = new System.Windows.Forms.TextBox();
             this.lblFX = new System.Windows.Forms.Label();
             this.butFuncionXPlusY = new System.Windows.Forms.Button();
-            this.coordinateSystem1 = new SoftwareProjekt.CoordinateSystem();
-            this.coordinateSystem2 = new SoftwareProjekt.CoordinateSystem();
+            this.coordinateSystem1 = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.coordinateSystem2 = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
@@ -325,8 +325,8 @@
         private System.Windows.Forms.TextBox txtXPlusY;
         private System.Windows.Forms.Label lblXPlusY;
         private System.Windows.Forms.Button butFuncionXPlusY;
-        private CoordinateSystem coordinateSystem1;
-        private CoordinateSystem coordinateSystem2;
+        private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem1;
+        private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem2;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
     }

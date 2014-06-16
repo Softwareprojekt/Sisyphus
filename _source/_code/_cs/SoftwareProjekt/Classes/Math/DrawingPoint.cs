@@ -19,32 +19,20 @@
  */
 #endregion
 
-namespace SoftwareProjekt.Interfaces
+using System.Drawing;
+
+namespace SoftwareProjekt.Classes.Math
 {
-    public interface IAxis
+    public class DrawingPoint
     {
-        string Legend
+        public PointF BaseCoordinate { get; set; }
+        public Pen Color { get; set; }
+
+        public DrawingPoint(PointF p)
         {
-            get;
-            set;
+            Color = Pens.Black;
+            BaseCoordinate = p;
         }
 
-        float StartValue
-        {
-            get;
-            set;
-        }
-
-        float EndValue
-        {
-            get;
-            set;
-        }
-
-        float Scale
-        {
-            get;
-            set;
-        }
     }
 }

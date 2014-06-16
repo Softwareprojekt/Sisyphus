@@ -19,14 +19,29 @@
  */
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using SoftwareProjekt.Interfaces;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Classes.Math
 {
-    public class FormulaDrawer
+    public class Axis : IAxis
     {
+        private bool _isXAxis;
+        private bool _isYAxis;
+        /// <summary>
+        /// ctor
+        /// </summary>
+        /// <param name="isXAxis">XAxis: true; YAxis: false</param>
+        public Axis(bool isXAxis)
+        {
+            _isXAxis = isXAxis;
+            _isYAxis = !isXAxis;
+        }
+
+        public string Legend { get; set; }
+        public float StartValue { get; set; }
+        public float EndValue { get; set; }
+        public float Scale { get; set; }
+
+
     }
 }

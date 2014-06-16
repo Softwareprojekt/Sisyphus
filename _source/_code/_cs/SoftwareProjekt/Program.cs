@@ -19,11 +19,11 @@
  */
 #endregion
 
+using SoftwareProjekt.Classes;
+using SoftwareProjekt.Exercises;
 using SoftwareProjekt.Forms;
+using SoftwareProjekt.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SoftwareProjekt
@@ -37,12 +37,21 @@ namespace SoftwareProjekt
             Application.SetCompatibleTextRenderingDefault(false);
 
             IController cont = new Controller();
-            FrmMain mainView = new FrmMain();
-            TestObject to = new TestObject();
+
+            TestExercise exercise = new TestExercise();
+            TestView view = new TestView();
+
+            cont.AddExercise(exercise, view);
+
+            Application.Run(view);
+
+            //FrmMain mainView = new FrmMain();
+
+            //TestObject to = new TestObject();
 
             //cont.AddView(to);
 
-            Application.Run(to);
+            //Application.Run(to);
         }
     }
 }

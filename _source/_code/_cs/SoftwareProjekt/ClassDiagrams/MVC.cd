@@ -3,7 +3,7 @@
   <Class Name="SoftwareProjekt.AbstractExercise">
     <Position X="7.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAgIAAAAAQAABAAAABIAAQAAAAEAgAAAAAAAAAIAAA=</HashCode>
+      <HashCode>AgACIAAAABQAAAAAAAAIAAQCAAAEggAAACAAAAAIAAA=</HashCode>
       <FileName>Classes\AbstractExercise.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -11,7 +11,7 @@
   <Class Name="SoftwareProjekt.Controller">
     <Position X="7.75" Y="8.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAQAAAAAAAAAAgAAAAAEAACAAAAABAAAABAAAAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAEAAAAAAAABAAAABAAAAAAAA=</HashCode>
       <FileName>Classes\Controller.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.179" />
@@ -19,21 +19,21 @@
   <Class Name="SoftwareProjekt.FrmMain">
     <Position X="9.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BQAAABEgAAAAABAAEAAAQAACQAAAAgIABAAAAAoQAAA=</HashCode>
+      <HashCode>AkAAABgAIAAAAAAAAAAAAAACAAAAAAQAAmAAAAIAAAA=</HashCode>
       <FileName>Forms\FrmMain.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoftwareProjekt.ViewEventArgs">
-    <Position X="2.5" Y="2" Width="1.5" />
+    <Position X="2.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAIAAAAAAAEAAAgAAAAAA=</HashCode>
       <FileName>Classes\ViewEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoftwareProjekt.AbstractView">
-    <Position X="7.75" Y="5.25" Width="1.5" />
+    <Position X="7.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQCAAAAAAAAAAAAAAAAAAgAAAIAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAQCAAAAAAAAAAAAAAAAAAgAIAIAAAAAAAAA=</HashCode>
       <FileName>Forms\AbstractView.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -41,54 +41,47 @@
   <Class Name="SoftwareProjekt.ExerciseEventArgs">
     <Position X="0.5" Y="2.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
       <FileName>Classes\ExerciseEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="SoftwareProjekt.IExercise">
     <Position X="0.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAgAAAAAAAAABAAAAAIAAQAAAAEAgAAAAAAAAAIAAA=</HashCode>
+      <HashCode>AgACAAAAAAAAAAAAAAAIAAQAAAAEAgAAAAAAAAAIAAA=</HashCode>
       <FileName>Interfaces\IExercise.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SoftwareProjekt.IController">
     <Position X="2.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAQAAAAAAAAAAgAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IController.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SoftwareProjekt.IView">
     <Position X="4.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAASCAAAAAAAAAAAAAAAAAAgAIAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IView.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="SoftwareProjekt.IExerciseObserver">
-    <Position X="4.5" Y="0.75" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IExerciseObserver.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Enum Name="SoftwareProjekt.Exercises">
+  <Enum Name="SoftwareProjekt.Enums.EExercises">
     <Position X="9.75" Y="0.75" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AgAABAAAAAAAAAAAQBEABAAAAAAAAAAAIAAIAAAAAAA=</HashCode>
-      <FileName>Enums\Exercises.cs</FileName>
+      <FileName>Enums\EExercises.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="SoftwareProjekt.ViewEvents">
-    <Position X="2.5" Y="3.5" Width="1.5" />
+  <Enum Name="SoftwareProjekt.Enums.EViewEvents">
+    <Position X="2.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
-      <FileName>Enums\ViewEvents.cs</FileName>
+      <FileName>Enums\EViewEvents.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Delegate Name="SoftwareProjekt.ViewHandler&lt;ViewEventArgs&gt;">
-    <Position X="2.5" Y="0.75" Width="1.5" />
+    <Position X="2.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAIABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Delegates\ViewHandler.cs</FileName>

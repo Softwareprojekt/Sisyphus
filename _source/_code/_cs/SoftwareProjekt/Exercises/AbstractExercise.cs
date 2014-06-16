@@ -19,28 +19,31 @@
  */
 #endregion
 
+using SoftwareProjekt.Classes.EventArguments;
+using SoftwareProjekt.Delegates;
+using SoftwareProjekt.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Exercises
 {
     public abstract class AbstractExercise : IExercise
     {
         /// <summary>
-        /// Id of exercise.
-        /// </summary>
-        private int _id;
-        /// <summary>
         /// Name of exercise.
         /// </summary>
-        private int _name;
+        private string _name;
         private EventHandler _doWorkEvent;
         protected CancellationToken _abortToken;
+        private IView _view;
+
+        public int Id
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// </summary>
@@ -71,18 +74,6 @@ namespace SoftwareProjekt
 
         /// <summary>
         /// </summary>
-        public bool ResetState(FileStream File)
-        {
-            // works basically like LoadState, just with different 
-            // files and without loading the user inputs
-
-            // low priority, questionable if to-be-implemented 
-
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// </summary>
         public bool SaveState(FileStream File, string Data)
         {
             throw new NotImplementedException();
@@ -90,33 +81,35 @@ namespace SoftwareProjekt
 
         /// <summary>
         /// </summary>
-        public void StartWork(Matrix aMatrix, Vector vVector)
+        public void StartWork()
         {
             // create a separate thread for DoWork()
-            Task<Dictionary<string, double>> CalcTask = new Task<Dictionary<string, double>>(
-                resultDictionary => this.DoWork(aMatrix, (Vector)vVector), "required to compile"); // FIXME: anyone with C# Task experience, 
-                                                                                                  // please fix this or give advice to Wolfgang!
-            CalcTask.Start();
-            CalcTask.Wait(); // wait until the task completes
+            Task.Factory.StartNew(() => DoWork(_view), _abortToken);
         }
 
         /// <summary>
         /// </summary>
-        public void StopWork() 
-        {
-            // TOCLARIFY: should there be AbortWork and StopWork or is one sufficient??? 
-            throw new NotImplementedException();
-        }
+        public event ExerciseHandler<ExerciseEventArgs> ExerciseChanged;
 
         /// <summary>
         /// </summary>
-		public event ExerciseHandler<ExerciseEventArgs> ExerciseChanged;
-
-        /// <summary>
-        /// </summary>
-        public void AttachView(IExerciseObserver observer)
+        public void AttachView(IView observer)
         {
             ExerciseChanged += new ExerciseHandler<ExerciseEventArgs>(observer.ExerciseChanged);
+            _view = observer;
+        }
+
+        /// <summary>
+        /// Supply attached view with new calculated data.
+        /// </summary>
+        /// <param name="e">Calculated data.</param>
+        protected void Finalize(ExerciseEventArgs e)
+        {
+            // fire event to notify view that stuff has changed.
+            if (this.ExerciseChanged != null)
+            {
+                this.ExerciseChanged(this, e);
+            }
         }
 
         /// <summary>
@@ -125,21 +118,6 @@ namespace SoftwareProjekt
         // TODO: find out which input arguments are needed here
         // people who implement these methods should speak with each other, to clarify it;
         // the output result needs also clarification! Not sure if result of Type Dictionary makes sense.
-        protected Dictionary<string,double> DoWork(Matrix aMatrix, Vector vVector)
-        {
-            Dictionary<string, double> emptyDictionary = new Dictionary<string, double>();
-            emptyDictionary[""] = 0.0;
-
-            // fire event to notify view that stuff has changed.
-            if (this.ExerciseChanged != null) {
-            	this.ExerciseChanged(this, new ExerciseEventArgs());
-            }
-            return emptyDictionary;
-        }
-
-        public int GetExerciseID()
-        {
-            return _id;
-        }
+        protected abstract void DoWork(IView view);
     }
 }

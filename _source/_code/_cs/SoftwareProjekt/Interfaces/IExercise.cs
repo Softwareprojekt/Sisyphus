@@ -19,14 +19,11 @@
  */
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using SoftwareProjekt.Classes.EventArguments;
+using SoftwareProjekt.Delegates;
 using System.IO;
-//using System.Threading;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Interfaces
 {
     public interface IExercise
     {
@@ -35,20 +32,21 @@ namespace SoftwareProjekt
         /// </summary>
         event ExerciseHandler<ExerciseEventArgs> ExerciseChanged;
 
+        int Id
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// Kill worker thread immediately.
         /// </summary>
-        void AbortWork(); 
+        void AbortWork();
 
         /// <summary>
         /// Load state of exercise from file.
         /// </summary>
         bool LoadState(FileStream file);
-
-        /// <summary>
-        /// Reset state of exercise. Default values.
-        /// </summary>
-        bool ResetState(FileStream file);
 
         /// <summary>
         /// Save state of exercise to file.
@@ -58,22 +56,11 @@ namespace SoftwareProjekt
         /// <summary>
         /// Start worker thread and calculate.
         /// </summary>
-        void StartWork(Matrix a, Vector v); // ???
-
-        /// <summary>
-        /// Stop worker thread gracefully.
-        /// </summary>
-        void StopWork();
+        void StartWork();
 
         /// <summary>
         /// Attach View to Exercise. Used to notify View of new data.
         /// </summary>
-        void AttachView(IExerciseObserver observer);
-
-        /// <summary>
-        /// returns the exercise id
-        /// </summary>
-        /// <returns>the exercise id</returns>
-        int GetExerciseID();
+        void AttachView(IView observer);
     }
 }

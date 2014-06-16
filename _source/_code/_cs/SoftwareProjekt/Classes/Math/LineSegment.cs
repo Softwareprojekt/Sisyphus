@@ -20,12 +20,9 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Classes.Math
 {
     public class LineSegment : IComparable
     {
@@ -58,7 +55,7 @@ namespace SoftwareProjekt
         {
             get
             {
-                return new PointF(this.StartPoint.X + this.Vector.X1, this.StartPoint.Y + this.Vector.X2);                
+                return new PointF(this.StartPoint.X + this.Vector.X1, this.StartPoint.Y + this.Vector.X2);
             }
         }
 

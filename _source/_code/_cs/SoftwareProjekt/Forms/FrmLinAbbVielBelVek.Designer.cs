@@ -1,4 +1,4 @@
-﻿namespace SoftwareProjekt
+﻿namespace SoftwareProjekt.Forms
 {
     partial class FrmLinAbbVielBelVek
     {
@@ -36,9 +36,20 @@
             this.txtFactorA = new System.Windows.Forms.TextBox();
             this.lblFactorA = new System.Windows.Forms.Label();
             this.butFunctionAMultX = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.lblOutput = new System.Windows.Forms.Label();
             this.cosInput = new SoftwareProjekt.CoordinateSystem();
             this.cosOutput = new SoftwareProjekt.CoordinateSystem();
+=======
+            this.label7 = new System.Windows.Forms.Label();
+            this.grpAusgabe = new System.Windows.Forms.GroupBox();
+            this.txtVectorAMultX = new System.Windows.Forms.TextBox();
+            this.txtVectorFX = new System.Windows.Forms.TextBox();
+            this.lblVectorAMultX = new System.Windows.Forms.Label();
+            this.lblVectorFX = new System.Windows.Forms.Label();
+            this.coordinateSystem1 = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.coordinateSystem2 = new SoftwareProjekt.UserControls.CoordinateSystem();
+>>>>>>> 846a6a4aeea1b30f10d7f3efe8220e9a59087f38
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -248,8 +259,18 @@
         private System.Windows.Forms.Label lblOutput;
         private System.Windows.Forms.TextBox txtDeterminante;
         private System.Windows.Forms.Button butDeterminante;
+<<<<<<< HEAD
         private CoordinateSystem cosInput;
         private CoordinateSystem cosOutput;
+=======
+        private System.Windows.Forms.GroupBox grpAusgabe;
+        private System.Windows.Forms.TextBox txtVectorAMultX;
+        private System.Windows.Forms.TextBox txtVectorFX;
+        private System.Windows.Forms.Label lblVectorAMultX;
+        private System.Windows.Forms.Label lblVectorFX;
+        private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem1;
+        private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem2;
+>>>>>>> 846a6a4aeea1b30f10d7f3efe8220e9a59087f38
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
         private System.Windows.Forms.Label label1;

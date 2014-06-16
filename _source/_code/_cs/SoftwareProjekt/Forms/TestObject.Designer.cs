@@ -1,4 +1,5 @@
-﻿namespace SoftwareProjekt.Forms
+﻿using SoftwareProjekt.Enums;
+namespace SoftwareProjekt.Forms
 {
     partial class TestObject
     {
@@ -28,9 +29,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.coordinateSystem1 = new SoftwareProjekt.CoordinateSystem();
-            this.mindMapTopicControl1 = new SoftwareProjekt.MindMapTopicControl();
-            this.mindMap1 = new SoftwareProjekt.MindMap();
+            this.coordinateSystem1 = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.mindMapTopicControl1 = new SoftwareProjekt.UserControls.MindMap.MindMapTopicControl();
+            this.mindMap1 = new SoftwareProjekt.UserControls.MindMap.CtlMindMap();
             this.SuspendLayout();
             // 
             // coordinateSystem1
@@ -40,17 +41,17 @@
             this.coordinateSystem1.Size = new System.Drawing.Size(398, 387);
             this.coordinateSystem1.TabIndex = 0;
 
-           
+
             // 
             // mindMapButtonControl1
             // 
-            this.mindMapButtonControl1 = new MindMapButtonControl("Hallo", 1, EAlignType.AlignRight);
+            this.mindMapButtonControl1 = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl("Hallo", 1, EAlignType.AlignRight);
             this.mindMapButtonControl1.BottomAlign = false;
             this.mindMapButtonControl1.ButtonText = "Hallo, hier ist Julian";
             this.mindMapButtonControl1.ExerciseID = 2;
             this.mindMapButtonControl1.LeftAlign = false;
             this.mindMapButtonControl1.Location = new System.Drawing.Point(41, 477);
-            this.mindMapButtonControl1.MachiningCondition = SoftwareProjekt.EMachiningCondtion.NotDone;
+            this.mindMapButtonControl1.MachiningCondition = SoftwareProjekt.Enums.EMachiningCondition.NotDone;
             this.mindMapButtonControl1.Name = "mindMapButtonControl1";
             this.mindMapButtonControl1.RightAlign = true;
             this.mindMapButtonControl1.Size = new System.Drawing.Size(150, 30);
@@ -94,10 +95,10 @@
 
         #endregion
 
-        private CoordinateSystem coordinateSystem1;
-        private MindMapButtonControl mindMapButtonControl1;
-        private MindMapTopicControl mindMapTopicControl1;
-        private MindMap mindMap1;
+        private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem1;
+        private SoftwareProjekt.UserControls.MindMap.MindMapButtonControl mindMapButtonControl1;
+        private SoftwareProjekt.UserControls.MindMap.MindMapTopicControl mindMapTopicControl1;
+        private SoftwareProjekt.UserControls.MindMap.CtlMindMap mindMap1;
 
     }
 }

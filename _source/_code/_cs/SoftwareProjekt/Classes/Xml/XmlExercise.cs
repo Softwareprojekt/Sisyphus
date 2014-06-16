@@ -19,45 +19,35 @@
  */
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Classes.Xml
 {
-    public class Line : IComparable
+    public class XmlExercise
     {
-        public Line(LineSegment lineSegment)
-        {
-            InnerLineSegment = lineSegment;
-        }
+        private int _exerciseID;
+        private string _exerciseName;
 
-        public Line(Vector firstVector, Vector secondVector)
+        public int ExerciseID
         {
-            InnerLineSegment = new LineSegment(new PointF(firstVector.X1, firstVector.X2), secondVector);
-        }
-
-        public LineSegment InnerLineSegment { get; set; }
-
-        public int CompareTo(object obj)
-        {
-            if (!(obj is Line))
+            get
             {
-                return -1;
+                return _exerciseID;
             }
-
-            return InnerLineSegment.CompareTo((obj as Line).InnerLineSegment);
+            set
+            {
+                _exerciseID = value;
+            }
         }
 
-        public override bool Equals(object obj)
+        public string ExerciseName
         {
-            return this.CompareTo(obj) == 0;
-        }
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
+            get
+            {
+                return _exerciseName;
+            }
+            set
+            {
+                _exerciseName = value;
+            }
         }
     }
 }

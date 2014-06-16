@@ -1,3 +1,4 @@
+﻿
 #region LicenseHeader
 /*
  * Copyright (C) 2014 Technische Hochschule Amberg
@@ -18,15 +19,12 @@
  */
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Enums
 {
-    public interface IMathObject
+    public enum EViewEvents
     {
-        void GetData();
+        ButtonClick,
+        TextChange,
+        Coordinate,
     }
 }

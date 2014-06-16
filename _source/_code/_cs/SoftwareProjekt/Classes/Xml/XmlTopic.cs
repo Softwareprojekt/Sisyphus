@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Classes.Xml
 {
     public class XmlTopic
     {

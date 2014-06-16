@@ -1,4 +1,4 @@
-﻿namespace SoftwareProjekt
+﻿namespace SoftwareProjekt.Forms
 {
     partial class FrmUmkehrungLinAbb
     {
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.lblHeader = new System.Windows.Forms.Label();
-            this.cosLeft = new SoftwareProjekt.CoordinateSystem();
-            this.cosRight = new SoftwareProjekt.CoordinateSystem();
-            this.maiMatrix = new SoftwareProjekt.CtlMatrixInput();
+            this.cosLeft = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.cosRight = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.maiMatrix = new SoftwareProjekt.UserControls.CtlMatrixInput();
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
@@ -107,9 +107,9 @@
         #endregion
 
         private System.Windows.Forms.Label lblHeader;
-        private CoordinateSystem cosLeft;
-        private CoordinateSystem cosRight;
-        private CtlMatrixInput maiMatrix;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosLeft;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosRight;
+        private SoftwareProjekt.UserControls.CtlMatrixInput maiMatrix;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
     }

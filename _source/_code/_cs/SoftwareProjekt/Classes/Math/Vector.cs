@@ -20,14 +20,20 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Classes.Math
 {
     public class Vector
     {
+        /// <summary>
+        /// Empty ctor.
+        /// </summary>
+        public Vector()
+        {
+            this.X1 = float.NaN;
+            this.X2 = float.NaN;
+        }
+
         /// <summary>
         /// ctor
         /// </summary>
@@ -48,7 +54,7 @@ namespace SoftwareProjekt
         {
             get
             {
-                return (float)Math.Sqrt(this.X1 * this.X1 + this.X2 * this.X2);
+                return (float)System.Math.Sqrt(this.X1 * this.X1 + this.X2 * this.X2);
             }
         }
 
@@ -59,7 +65,7 @@ namespace SoftwareProjekt
         {
             get
             {
-                return (float) Math.Atan(this.X2 / this.X1);
+                return (float)System.Math.Atan(this.X2 / this.X1);
             }
         }
         /// <summary>
@@ -83,7 +89,7 @@ namespace SoftwareProjekt
         /// </summary>
         public void Rotate(double degree)
         {
-            Matrix m = new Matrix((float)Math.Cos(degree), (float)-Math.Sin(degree), (float)Math.Sin(degree), (float)Math.Cos(degree));
+            Matrix m = new Matrix((float)System.Math.Cos(degree), (float)-System.Math.Sin(degree), (float)System.Math.Sin(degree), (float)System.Math.Cos(degree));
             this.Rotate(m);
         }
 
@@ -91,8 +97,8 @@ namespace SoftwareProjekt
         /// Rotates a Vector around a certain degree and retruns the new one
         /// </summary>
         static public Vector Rotate(Vector vector, double degree)
-        {            
-            Matrix m = new Matrix((float)Math.Cos(degree), (float)-Math.Sin(degree), (float)Math.Sin(degree), (float)Math.Cos(degree));
+        {
+            Matrix m = new Matrix((float)System.Math.Cos(degree), (float)-System.Math.Sin(degree), (float)System.Math.Sin(degree), (float)System.Math.Cos(degree));
             return Vector.Rotate(m, vector);
         }
 
@@ -161,7 +167,7 @@ namespace SoftwareProjekt
         public void Mirror(Line line)
         {
             float angle = line.InnerLineSegment.Vector.AngleToXAxis;
-            Matrix m = new Matrix((float)Math.Cos(2 * angle), (float)Math.Sin(2 * angle), (float)Math.Sin(2 * angle), (float)-Math.Cos(2 * angle));
+            Matrix m = new Matrix((float)System.Math.Cos(2 * angle), (float)System.Math.Sin(2 * angle), (float)System.Math.Sin(2 * angle), (float)-System.Math.Cos(2 * angle));
             this.Multiply(m);
         }
 
@@ -171,7 +177,7 @@ namespace SoftwareProjekt
         public Vector Mirror(Line line, Vector vector)
         {
             float angle = line.InnerLineSegment.Vector.AngleToXAxis;
-            Matrix m = new Matrix((float)Math.Cos(2 * angle), (float)Math.Sin(2 * angle), (float)Math.Sin(2 * angle), (float)-Math.Cos(2 * angle));
+            Matrix m = new Matrix((float)System.Math.Cos(2 * angle), (float)System.Math.Sin(2 * angle), (float)System.Math.Sin(2 * angle), (float)-System.Math.Cos(2 * angle));
             Vector v = new Vector(vector.X1, vector.X2);
             v.Multiply(m);
             return v;
@@ -237,9 +243,9 @@ namespace SoftwareProjekt
             X2 = X1 * newMatrix.X21 + X2 * newMatrix.X22;
         }
 
-		public override string ToString()
-		{
-			return string.Format("[Vector X1={0}, X2={1}]", this.X1, this.X2);
-		}
+        public override string ToString()
+        {
+            return string.Format("[Vector X1={0}, X2={1}]", this.X1, this.X2);
+        }
     }
 }

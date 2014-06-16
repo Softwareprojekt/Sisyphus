@@ -20,47 +20,41 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Drawing;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Classes.Math
 {
-    public class XmlWorkbook
+    public class Line : IComparable
     {
-        private List<Dictionary<string, string>> _parsedFileData;
-        private int _filename;
-
-        public string Filename
+        public Line(LineSegment lineSegment)
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            InnerLineSegment = lineSegment;
         }
 
-        public System.Collections.Generic.List<System.Collections.Generic.Dictionary<string, string>> ParsedData
+        public Line(Vector firstVector, Vector secondVector)
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            InnerLineSegment = new LineSegment(new PointF(firstVector.X1, firstVector.X2), secondVector);
         }
 
-        public bool Load()
+        public LineSegment InnerLineSegment { get; set; }
+
+        public int CompareTo(object obj)
         {
-            throw new System.NotImplementedException();
+            if (!(obj is Line))
+            {
+                return -1;
+            }
+
+            return InnerLineSegment.CompareTo((obj as Line).InnerLineSegment);
         }
 
-        public bool Save()
+        public override bool Equals(object obj)
         {
-            throw new System.NotImplementedException();
+            return this.CompareTo(obj) == 0;
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

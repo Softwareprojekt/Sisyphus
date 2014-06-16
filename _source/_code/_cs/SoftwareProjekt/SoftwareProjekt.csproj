@@ -35,6 +35,24 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,25 +66,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\DrawingPoint.cs" />
+    <Compile Include="Classes\Math\DrawingPoint.cs" />
     <Compile Include="Enums\EAlignType.cs" />
+    <Compile Include="Enums\EClickedButton.cs" />
     <Compile Include="Enums\EConnectionType.cs" />
-    <Compile Include="Enums\EWorkingState.cs" />
+    <Compile Include="Enums\EMachiningCondition.cs" />
     <Compile Include="Enums\ETopic.cs" />
-    <Compile Include="Classes\XmlExercise.cs" />
-    <Compile Include="Classes\XmlMindMap.cs" />
-    <Compile Include="Classes\XmlTopic.cs" />
+    <Compile Include="Classes\Xml\XmlExercise.cs" />
+    <Compile Include="Classes\Xml\XmlMindMap.cs" />
+    <Compile Include="Classes\Xml\XmlTopic.cs" />
+    <Compile Include="Exercises\TestExercise.cs" />
     <Compile Include="Forms\AbstractView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Classes\Axis.cs" />
-    <Compile Include="Classes\AbstractExercise.cs" />
+    <Compile Include="Classes\Math\Axis.cs" />
+    <Compile Include="Exercises\AbstractExercise.cs" />
     <Compile Include="Classes\AbstractTopic.cs" />
-    <Compile Include="Enums\Exercises.cs" />
+    <Compile Include="Enums\EExercises.cs" />
     <Compile Include="Classes\Controller.cs" />
     <Compile Include="Delegates\ExerciseHandler.cs" />
     <Compile Include="Delegates\ExerciseClickEvent.cs" />
-    <Compile Include="Classes\ExerciseEventArgs.cs" />
+    <Compile Include="Classes\EventArguments\ExerciseEventArgs.cs" />
     <Compile Include="Forms\FrmFraktalChaos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,14 +99,24 @@
     <Compile Include="Forms\TestObject.Designer.cs">
       <DependentUpon>TestObject.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\IExerciseObserver.cs" />
     <Compile Include="Classes\ScreenshotCreator.cs" />
-    <Compile Include="Interfaces\IMathObject.cs" />
+    <Compile Include="Forms\TestView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TestView.Designer.cs">
+      <DependentUpon>TestView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\LinearTransformationTopic.cs" />
-    <Compile Include="UserControls\MindMapButtonControl.cs">
+    <Compile Include="UserControls\FormulaDrawer\CtlFormularDraw.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\MindMapTopicControl.cs">
+    <Compile Include="UserControls\FormulaDrawer\CtlFormularDraw.Designer.cs">
+      <DependentUpon>CtlFormularDraw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MindMap\MindMapButtonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MindMap\MindMapTopicControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\CoordinateSystem.cs">
@@ -98,13 +128,13 @@
     <Compile Include="UserControls\CtlMatrixInput.Designer.cs">
       <DependentUpon>CtlMatrixInput.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\CtlVektorInput.cs">
+    <Compile Include="UserControls\CtlVectorInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\CtlVektorInput.Designer.cs">
-      <DependentUpon>CtlVektorInput.cs</DependentUpon>
+    <Compile Include="UserControls\CtlVectorInput.Designer.cs">
+      <DependentUpon>CtlVectorInput.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\FormulaDrawer.cs" />
+    <Compile Include="Classes\Math\FormulaDrawer.cs" />
     <Compile Include="Forms\FrmDrehLinAbbUrsp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,7 +189,7 @@
     <Compile Include="Forms\FrmZuordvorLinAbb.Designer.cs">
       <DependentUpon>FrmZuordvorLinAbb.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Line.cs" />
+    <Compile Include="Classes\Math\Line.cs" />
     <Compile Include="Interfaces\IAxis.cs" />
     <Compile Include="Interfaces\IController.cs" />
     <Compile Include="Interfaces\IExercise.cs" />
@@ -169,22 +199,22 @@
     <Compile Include="Forms\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Classes\LineSegment.cs" />
-    <Compile Include="Classes\Matrix.cs" />
-    <Compile Include="UserControls\MindMap.cs">
+    <Compile Include="Classes\Math\LineSegment.cs" />
+    <Compile Include="Classes\Math\Matrix.cs" />
+    <Compile Include="UserControls\MindMap\MindMap.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Classes\Vector.cs" />
-    <Compile Include="Classes\ViewEventArgs.cs" />
-    <Compile Include="Enums\ViewEvents.cs" />
+    <Compile Include="Classes\Math\Vector.cs" />
+    <Compile Include="Classes\EventArguments\ViewEventArgs.cs" />
+    <Compile Include="Enums\EViewEvents.cs" />
     <Compile Include="Delegates\ViewHandler.cs" />
     <Compile Include="Classes\WorkBook.cs" />
-    <Compile Include="UserControls\WorkBookControl.cs">
+    <Compile Include="UserControls\MindMap\WorkBookControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Classes\XmlWorkbook.cs" />
+    <Compile Include="Classes\Xml\XmlWorkbook.cs" />
     <Compile Include="Classes\TopicConnect.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -217,8 +247,11 @@
     <EmbeddedResource Include="Forms\TestObject.resx">
       <DependentUpon>TestObject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Classes\Axis.resx">
+    <EmbeddedResource Include="Classes\Math\Axis.resx">
       <DependentUpon>Axis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestView.resx">
+      <DependentUpon>TestView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CoordinateSystem.resx">
       <DependentUpon>CoordinateSystem.cs</DependentUpon>
@@ -226,8 +259,8 @@
     <EmbeddedResource Include="UserControls\CtlMatrixInput.resx">
       <DependentUpon>CtlMatrixInput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\CtlVektorInput.resx">
-      <DependentUpon>CtlVektorInput.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\CtlVectorInput.resx">
+      <DependentUpon>CtlVectorInput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmLinAbbSumBelVek.resx">
       <DependentUpon>FrmLinAbbSumBelVek.cs</DependentUpon>
@@ -244,13 +277,16 @@
     <EmbeddedResource Include="Forms\FrmZuordvorLinAbb.resx">
       <DependentUpon>FrmZuordvorLinAbb.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MindMapButtonControl.resx">
+    <EmbeddedResource Include="UserControls\FormulaDrawer\CtlFormularDraw.resx">
+      <DependentUpon>CtlFormularDraw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MindMap\MindMapButtonControl.resx">
       <DependentUpon>MindMapButtonControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MindMapTopicControl.resx">
+    <EmbeddedResource Include="UserControls\MindMap\MindMapTopicControl.resx">
       <DependentUpon>MindMapTopicControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\WorkBookControl.resx">
+    <EmbeddedResource Include="UserControls\MindMap\WorkBookControl.resx">
       <DependentUpon>WorkBookControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -259,7 +295,17 @@
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="MIMEDIRLib">
+      <Guid>{0006F080-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

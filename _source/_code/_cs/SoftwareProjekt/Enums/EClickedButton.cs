@@ -19,34 +19,10 @@
  */
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Enums
 {
-    public class Axis : IAxis
+    public enum EClickedButton
     {
-        private bool _isXAxis;
-        private bool _isYAxis;
-        /// <summary>
-        /// ctor
-        /// </summary>
-        /// <param name="isXAxis">XAxis: true; YAxis: false</param>
-        public Axis(bool isXAxis)
-        {
-            _isXAxis = isXAxis;
-            _isYAxis = !isXAxis;            
-        }
-
-        public string Legend { get; set; }
-        public float StartValue { get; set; }
-        public float EndValue { get; set; }
-        public float Scale { get; set; }
-
-
+        StartCalculation,
     }
 }

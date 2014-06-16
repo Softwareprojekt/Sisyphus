@@ -19,22 +19,20 @@
  */
 #endregion
 
-using System;
+using SoftwareProjekt.Classes.Xml;
+using SoftwareProjekt.UserControls.MindMap;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Classes
 {
-    public class WorkBook 
+    public class WorkBook
     {
         private List<WorkBookView> _controlsList;
         private XmlWorkbook ConfigFile;
         private int _username;
         private ScreenshotCreator _screenshotBuilder;
-    
+
         public string Username
         {
             get

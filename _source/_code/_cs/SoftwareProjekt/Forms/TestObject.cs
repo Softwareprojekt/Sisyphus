@@ -19,6 +19,7 @@
  */
 #endregion
 
+using SoftwareProjekt.Classes.Math;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -24,40 +24,41 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using SoftwareProjekt.Classes.Math;
 
 namespace SoftwareProjekt.UserControls
 {
-    public partial class CtlMatrixInput : UserControl
+    public partial class CtlVectorInput : UserControl
     {
-        Matrix _matrix = null;
-        public CtlMatrixInput()
+        Vector _vector = null;
+        public CtlVectorInput()
         {
             InitializeComponent();
 
-            this.Matrix = new Matrix();
+            this.Vector = new Vector();
         }
 
         /// <summary>
-        /// Property for Matrix field. 
+        /// Property for Vector field. 
         /// Setting this invokes a Refresh.
         /// </summary>
-        public Matrix Matrix
+        public Vector Vector
         {
             get
             {
-                return _matrix;
+                return _vector;
             }
             set
             {
-                _matrix = value;
+                _vector = value;
 
                 if (this.InvokeRequired)
                 {
 #if DEBUG
-                    Console.WriteLine("Invoking Matrix Refresh");
+                    Console.WriteLine("Invoking Vector Refresh");
 #endif
                     this.BeginInvoke(new Action(() => Refresh()));
                 }
@@ -71,7 +72,7 @@ namespace SoftwareProjekt.UserControls
         {
             float f;
             this.Parse(txtEle11.Text, out f);
-            this.Matrix.X11 = f;
+            this.Vector.X1 = f;
         }
 
         /// <summary>
@@ -88,59 +89,17 @@ namespace SoftwareProjekt.UserControls
         /// <summary>
         /// 
         /// </summary>
-        private void txtEle12_TextChanged(object sender, EventArgs e)
-        {
-            float f;
-            this.Parse(txtEle12.Text, out f);
-            this.Matrix.X12 = f;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        private void txtEle12_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == ',')
-            {
-                e.Handled = true;
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         private void txtEle21_TextChanged(object sender, EventArgs e)
         {
             float f;
             this.Parse(txtEle21.Text, out f);
-            this.Matrix.X21 = f;
+            this.Vector.X2 = f;
         }
 
         /// <summary>
         /// 
         /// </summary>
         private void txtEle21_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == ',')
-            {
-                e.Handled = true;
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        private void txtEle22_TextChanged(object sender, EventArgs e)
-        {
-            float f;
-            this.Parse(txtEle22.Text, out f);
-            this.Matrix.X22 = f;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        private void txtEle22_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == ',')
             {
@@ -162,14 +121,14 @@ namespace SoftwareProjekt.UserControls
             {
                 f = retval;
 #if DEBUG
-                Console.WriteLine("SUCCESS @ Matrix.Parse => " + f);
+                Console.WriteLine("SUCCESS @ Vector.Parse => " + f);
 #endif
                 return true;
             }
 
             f = float.NaN;
 #if DEBUG
-            Console.WriteLine("ERROR @ Matrix.Parse => " + f);
+            Console.WriteLine("ERROR @ Vector.Parse => " + f);
 #endif
             return false;
         }
@@ -179,10 +138,8 @@ namespace SoftwareProjekt.UserControls
         /// </summary>
         public override void Refresh()
         {
-            txtEle11.Text = _matrix.X11.ToString();
-            txtEle12.Text = _matrix.X12.ToString();
-            txtEle21.Text = _matrix.X21.ToString();
-            txtEle22.Text = _matrix.X22.ToString();
+            txtEle11.Text = _vector.X1.ToString();
+            txtEle21.Text = _vector.X2.ToString();
 
             base.Refresh();
         }

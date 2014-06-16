@@ -19,12 +19,9 @@
  */
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using SoftwareProjekt.Interfaces;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Delegates
 {
     public delegate void ExerciseHandler<ExerciseEventArgs>(IExercise sender, ExerciseEventArgs e);
 }

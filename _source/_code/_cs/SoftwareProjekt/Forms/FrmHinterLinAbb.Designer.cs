@@ -1,4 +1,4 @@
-﻿namespace SoftwareProjekt
+﻿namespace SoftwareProjekt.Forms
 {
     partial class FrmHinterLinAbb
     {
@@ -36,6 +36,7 @@
             this.txtDeterminante1 = new System.Windows.Forms.TextBox();
             this.butDeterminante1 = new System.Windows.Forms.Button();
             this.butGx = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.txtDeterminante2 = new System.Windows.Forms.TextBox();
             this.butDeterminante2 = new System.Windows.Forms.Button();
             this.grpDataInput2 = new System.Windows.Forms.GroupBox();
@@ -49,6 +50,23 @@
             this.cosInput = new SoftwareProjekt.CoordinateSystem();
             this.cosOutput1 = new SoftwareProjekt.CoordinateSystem();
             this.cosOutput2 = new SoftwareProjekt.CoordinateSystem();
+=======
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtVectorGFx = new System.Windows.Forms.TextBox();
+            this.lblVectorGFx = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.cosInput = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.cosOutput1 = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.cosOutput2 = new SoftwareProjekt.UserControls.CoordinateSystem();
+>>>>>>> 846a6a4aeea1b30f10d7f3efe8220e9a59087f38
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.lblHeader = new System.Windows.Forms.Label();
@@ -406,6 +424,7 @@
         private System.Windows.Forms.TextBox txtDeterminante1;
         private System.Windows.Forms.Button butDeterminante1;
         private System.Windows.Forms.Button butGx;
+<<<<<<< HEAD
         private System.Windows.Forms.TextBox txtDeterminante2;
         private System.Windows.Forms.Button butDeterminante2;
         private System.Windows.Forms.GroupBox grpDataInput2;
@@ -419,6 +438,23 @@
         private CoordinateSystem cosInput;
         private CoordinateSystem cosOutput1;
         private CoordinateSystem cosOutput2;
+=======
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtVectorGFx;
+        private System.Windows.Forms.Label lblVectorGFx;
+        private System.Windows.Forms.Button button2;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosInput;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosOutput1;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosOutput2;
+>>>>>>> 846a6a4aeea1b30f10d7f3efe8220e9a59087f38
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
         private CtlMatrixInput ctlMatrixInput3;

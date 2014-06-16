@@ -19,12 +19,12 @@
  */
 #endregion
 
+using SoftwareProjekt.Classes.EventArguments;
+using SoftwareProjekt.Delegates;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Interfaces
 {
     public interface IView
     {
@@ -41,5 +41,14 @@ namespace SoftwareProjekt
             get;
             set;
         }
+
+        /// <summary>
+        /// Returns all data needed for calculation in the model.
+        /// </summary>
+        Dictionary<string, Object> GetInputData();
+
+        void ExerciseChanged(IExercise sender, ExerciseEventArgs e);
+
+        void Dispose();
     }
 }

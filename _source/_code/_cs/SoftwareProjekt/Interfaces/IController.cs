@@ -19,34 +19,22 @@
  */
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Interfaces
 {
     public interface IController
     {
 
         /// <summary>
-        /// Adds a ViewChanged to the List.
+        /// Adds a new Exercise and View to the List. Also sets the Controller and subscribes to ViewChanged event handler.
         /// </summary>
-        void AddView(IView view);
+        /// <param name="exercise">Newly created Exercise.</param>
+        /// <param name="view">Newly created View.</param>
+        void AddExercise(IExercise exercise, IView view);
 
         /// <summary>
-        /// Adds an Exercise to the List.
-        /// </summary>
-        void AddExercise(IExercise exercise);
-
-        /// <summary>
-        /// Remove an Exercise from the List.
+        /// Remove Exercise and corresponding View from the List.
+        /// <param name="exercise">Exercise to remove from List.</param>
         /// </summary>
         void RemoveExercise(IExercise exercise);
-
-        /// <summary>
-        /// Remove a ViewChanged from the List.
-        /// </summary>
-        void RemoveView(IView view);
     }
 }

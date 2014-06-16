@@ -19,64 +19,72 @@
  */
 #endregion
 
+using SoftwareProjekt.Classes.EventArguments;
+using SoftwareProjekt.Enums;
+using SoftwareProjekt.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Classes
 {
     public class Controller : IController
     {
         /// <summary>
-        /// List with open Views.
+        /// List with open Exercises and corresponding Views.
         /// </summary>
-        private List<IView> _viewList;
-        /// <summary>
-        /// List with open Exercises.
-        /// </summary>
-        private List<IExercise> _exerciseList;
+        private Dictionary<IExercise, IView> _exerciseList;
 
         public Controller()
         {
-            _viewList = new List<IView>();
-            _exerciseList = new List<IExercise>();
+            _exerciseList = new Dictionary<IExercise, IView>(10);
         }
 
-        /// <summary>
-        /// Adds a new View to the List. Also sets the Controller and subscribes to ViewChanged event handler.
-        /// </summary>
-        /// <param name="view">Newly created View.</param>
-        public void AddView(IView view)
+        void HandleViewChanged(IView sender, ViewEventArgs e)
         {
-            _viewList.Add(view);
-            view.Controller = this;
+            switch (e.ViewEvent)
+            {
+                case EViewEvents.Coordinate:
+                    Console.WriteLine(sender + " " + e.Coordinates.ToString());
+                    break;
+                case EViewEvents.ButtonClick:
+                    Console.WriteLine(sender + " " + e.ClickedButton.ToString());
+
+                    // get exercise corresponding to view.
+                    IExercise exercise = _exerciseList.Single(x => x.Value == sender).Key;
+                    switch (e.ClickedButton)
+                    {
+                        case EClickedButton.StartCalculation:
+                            exercise.StartWork();
+                            break;
+                        default:
+                            throw new ArgumentException("Not a valid ClickedButton.", "e");
+                    }
+                    break;
+                default:
+                    throw new ArgumentException("Not a valid ViewEvent.", "e");
+            }
+        }
+
+        public void AddExercise(IExercise exercise, IView view)
+        {
+            // connect to eventhandler and attach to exercise.
             view.ViewChanged += HandleViewChanged;
-        }
+            view.Controller = this;
+            exercise.AttachView(view);
 
-        public void RemoveView(IView view)
-        {
-            _viewList.Remove(view);
-        }
-
-		void HandleViewChanged(IView sender, ViewEventArgs e)
-		{
-			switch (e.ViewEvent) {
-				case ViewEvents.Coordinate:
-					Console.WriteLine(sender + " " + e.Coordinates.ToString());
-					break;
-				default:
-					throw new ArgumentException("Not a valid ViewEvent.", "e");
-			}
-		}
-		
-        public void AddExercise(IExercise exercise)
-        {
-            _exerciseList.Add(exercise);
+            // add exercise and view to list.
+            _exerciseList.Add(exercise, view);
         }
 
         public void RemoveExercise(IExercise exercise)
         {
+            // disconnect and dispose view before releasing reference.
+            IView v = _exerciseList[exercise];
+            v.ViewChanged -= HandleViewChanged;
+            v.Dispose();
+
+            // remove exercise and view from list.
             _exerciseList.Remove(exercise);
         }
     }

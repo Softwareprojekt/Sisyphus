@@ -22,40 +22,43 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Classes.EventArguments
 {
-    public class ViewEventArgs : EventArgs
+    public class ExerciseEventArgs : EventArgs
     {
-    	/// <summary>
-    	/// Holds the event that happened on the View.
-    	/// </summary>
-        public ViewEvents ViewEvent
+        public Dictionary<string, Object> CalcValues
         {
-        	get;
-        	private set;
+            get;
+            private set;
         }
-        
         /// <summary>
-        /// Holds the x, y coordinates in case of ViewEvent is Coordinate.
+        /// Empty ctor.
         /// </summary>
-        public Vector Coordinates
+        public ExerciseEventArgs()
         {
-        	get;
-        	private set;
+
         }
-        
+
         /// <summary>
-        /// Creates a new ViewEventArgs object holding coordinates in a Vector object.
+        /// Ctor to return processed values to view.
         /// </summary>
-        /// <param name="x">X coordinate.</param>
-        /// <param name="y">Y coordinate.</param>
-        public ViewEventArgs(float x, float y)
+        /// <param name="dict">Dictionary with processed values.</param>
+        public ExerciseEventArgs(Dictionary<string, Object> dict)
         {
-        	this.ViewEvent = ViewEvents.Coordinate;
-        	this.Coordinates = new Vector(x, y);
+            this.CalcValues = dict;
+        }
+
+        public override string ToString()
+        {
+            int i = 0;
+            string ret = string.Format("[ExerciseEventArgs Count={0}, ", this.CalcValues.Count);
+            for (; i < this.CalcValues.Keys.Count - 1; i++)
+            {
+                ret += "Key" + i + "='" + this.CalcValues.Keys.ToArray()[i] + "', ";
+            }
+            ret += "Key" + i + "='" + this.CalcValues.Keys.ToArray()[i] + "']";
+            return ret;
         }
     }
-
 }

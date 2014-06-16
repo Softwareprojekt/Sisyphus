@@ -19,16 +19,10 @@
  */
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using SoftwareProjekt.UserControls.MindMap;
 using System.Windows.Forms;
-using System.IO;
-using System.Data;
-using System.Drawing;
 
-namespace SoftwareProjekt
+namespace SoftwareProjekt.Forms
 {
     // AbstractView
     public class FrmMain : Form
@@ -43,7 +37,7 @@ namespace SoftwareProjekt
         private TextBox txtUser;
         private TabPage tabProtectArea;
 
-        public MindMap MindMap
+        public CtlMindMap MindMap
         {
             get
             {
@@ -170,66 +164,66 @@ namespace SoftwareProjekt
             this.ResumeLayout(false);
 
         }
-/*
-        private void öffnenToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "bmp files (*.bmp)|*.bmp|jpg files (*.jpg)|*.jpg";
+        /*
+                private void öffnenToolStripMenuItem_Click(object sender, EventArgs e)
+                {
+                    OpenFileDialog openFileDialog1 = new OpenFileDialog();
+                    openFileDialog1.Filter = "bmp files (*.bmp)|*.bmp|jpg files (*.jpg)|*.jpg";
 
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                string filename = openFileDialog1.FileName;
-
-
-                FileStream imageStream = new FileStream(filename, FileMode.Open, FileAccess.Read);
+                    if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        string filename = openFileDialog1.FileName;
 
 
-            }
-        }
-
-        private void speichernToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog safeFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*|JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
-            saveFileDialog1.FilterIndex = 2;
+                        FileStream imageStream = new FileStream(filename, FileMode.Open, FileAccess.Read);
 
 
-            if (safeFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                int width = Convert.ToInt32(Width);
-                int height = Convert.ToInt32(Height);
-                Bitmap bmp = new Bitmap(width, height);
-                DrawToBitmap(bmp, new Rectangle(0, 0, width, height));
-                bmp.Save(safeFileDialog1.FileName);
+                    }
+                }
+
+                private void speichernToolStripMenuItem_Click(object sender, EventArgs e)
+                {
+                    SaveFileDialog safeFileDialog1 = new SaveFileDialog();
+                    saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*|JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
+                    saveFileDialog1.FilterIndex = 2;
 
 
-                //Zielbild speichern!
-                //string filename = safeFileDialog1.FileName;
-                //if ((pictureBox2.Image != null))
-                //{
-                //    pictureBox2.Image.Save(filename, System.Drawing.Imaging.ImageFormat.Jpeg);
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Fehler", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                //}
-            }
-        }
+                    if (safeFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        int width = Convert.ToInt32(Width);
+                        int height = Convert.ToInt32(Height);
+                        Bitmap bmp = new Bitmap(width, height);
+                        DrawToBitmap(bmp, new Rectangle(0, 0, width, height));
+                        bmp.Save(safeFileDialog1.FileName);
 
-        private void druckenToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            PrintDialog printDialog1 = new PrintDialog();
-            printDialog1.Document = printDocument1;
-            if (printDialog1.ShowDialog() == DialogResult.OK)
-            {
-                printDocument1.Print();
-            }
-        }
+
+                        //Zielbild speichern!
+                        //string filename = safeFileDialog1.FileName;
+                        //if ((pictureBox2.Image != null))
+                        //{
+                        //    pictureBox2.Image.Save(filename, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show("Fehler", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        //}
+                    }
+                }
+
+                private void druckenToolStripMenuItem_Click(object sender, EventArgs e)
+                {
+                    PrintDialog printDialog1 = new PrintDialog();
+                    printDialog1.Document = printDocument1;
+                    if (printDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        printDocument1.Print();
+                    }
+                }
         
-		public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
-		{
-			throw new NotImplementedException();
-		}
-        */
+                public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
+                {
+                    throw new NotImplementedException();
+                }
+                */
     }
 }
