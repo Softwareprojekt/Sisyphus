@@ -75,6 +75,11 @@
     <Compile Include="Classes\Xml\XmlExercise.cs" />
     <Compile Include="Classes\Xml\XmlMindMap.cs" />
     <Compile Include="Classes\Xml\XmlTopic.cs" />
+    <Compile Include="Exercises\DrehLinAbbUrsp.cs" />
+    <Compile Include="Exercises\HinterLinAbb.cs" />
+    <Compile Include="Exercises\LinAbbSumBelVek.cs" />
+    <Compile Include="Exercises\LinAbbVielBelVek.cs" />
+    <Compile Include="Exercises\SpiegLinAbbUrsp.cs" />
     <Compile Include="Exercises\TestExercise.cs" />
     <Compile Include="Forms\AbstractView.cs">
       <SubType>Form</SubType>
