@@ -211,7 +211,7 @@
     <Compile Include="Enums\EViewEvents.cs" />
     <Compile Include="Delegates\ViewHandler.cs" />
     <Compile Include="Classes\WorkBook.cs" />
-    <Compile Include="UserControls\MindMap\WorkBookControl.cs">
+    <Compile Include="UserControls\Workbook\WorkBookControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Classes\Xml\XmlWorkbook.cs" />
@@ -286,7 +286,7 @@
     <EmbeddedResource Include="UserControls\MindMap\MindMapTopicControl.resx">
       <DependentUpon>MindMapTopicControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MindMap\WorkBookControl.resx">
+    <EmbeddedResource Include="UserControls\Workbook\WorkBookControl.resx">
       <DependentUpon>WorkBookControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
