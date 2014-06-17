@@ -3,7 +3,7 @@
   <Comment CommentText="Pro Eintrag wird folgendes gespeichert:&#xD;&#xA;&#xD;&#xA;- Datum / Uhrzeit&#xD;&#xA;- Notizen&#xD;&#xA;- Bildname / -pfad&#xD;&#xA;- Excercise ID">
     <Position X="3.219" Y="2.979" Height="1.583" Width="1.7" />
   </Comment>
-  <Class Name="SoftwareProjekt.WorkBook">
+  <Class Name="SoftwareProjekt.Classes.WorkBook">
     <Position X="9.25" Y="3.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAgIAAQAAAAAEAAQAAAAAAAAAAAAAAAAoCAAAAAAA=</HashCode>
@@ -11,34 +11,33 @@
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_controlsList" />
-      <Field Name="ConfigFile" />
       <Field Name="_screenshotBuilder" />
     </ShowAsAssociation>
-  </Class>
-  <Class Name="SoftwareProjekt.XmlWorkbook">
-    <Position X="5.25" Y="3.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAgIAAAAAARAQAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
-      <FileName>Classes\XmlWorkbook.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="SoftwareProjekt.WorkBookView">
-    <Position X="15.5" Y="3.75" Width="2" />
-    <TypeIdentifier>
-      <HashCode>QAAAAAAQAAAAAAAAAAGAAAEKgEAAAAAAGAAAAAAAAAA=</HashCode>
-      <FileName>UserControls\WorkBookControl.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Class Name="System.Collections.Generic.List&lt;T&gt;" Collapsed="true">
     <Position X="14" Y="3.75" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="SoftwareProjekt.ScreenshotCreator">
+  <Class Name="SoftwareProjekt.Classes.ScreenshotCreator">
     <Position X="9.25" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAQAAAAAAAEAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\ScreenshotCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoftwareProjekt.Classes.Xml.XmlWorkbook">
+    <Position X="5.5" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAARAQAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Classes\Xml\XmlWorkbook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoftwareProjekt.UserControls.Workbook.WorkBookView">
+    <Position X="15.5" Y="3.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAQAAAAAAAAAACAAAEKgEAAABABEAAAAAAAAAA=</HashCode>
+      <FileName>UserControls\Workbook\WorkBookControl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

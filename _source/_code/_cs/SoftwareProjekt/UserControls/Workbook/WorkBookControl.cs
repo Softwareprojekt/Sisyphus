@@ -26,7 +26,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace SoftwareProjekt.UserControls.MindMap
+namespace SoftwareProjekt.UserControls.Workbook
 {
     public class WorkBookView : UserControl
     {
