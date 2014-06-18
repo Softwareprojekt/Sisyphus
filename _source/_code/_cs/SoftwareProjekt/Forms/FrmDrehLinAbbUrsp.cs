@@ -23,7 +23,7 @@ using System.Collections.Generic;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmDrehLinAbbUrsp : Form 
+    public partial class FrmDrehLinAbbUrsp : AbstractView
     {
 
         private string _sequation;
@@ -49,10 +49,10 @@ namespace SoftwareProjekt.Forms
         {
             Dictionary<string, Object> retVal = new Dictionary<string, object>();
 
-            retVal.Add("EV1", _vector.Einheitsvector1);
+            /*retVal.Add("EV1", _vector.Einheitsvector1);
             retVal.Add("EV2", _vector.Einheitsvector2);
             retVal.Add("VectorX", _vector.VectorX);
-            retVal.Add("Angle", _vector.Angle);
+            retVal.Add("Angle", _vector.Angle);*/
 
             return retVal;
         }
@@ -60,6 +60,11 @@ namespace SoftwareProjekt.Forms
         private void butDeterminante_Click(object sender, System.EventArgs e)
         {
             this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+        }
+
+        public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
 
     }
