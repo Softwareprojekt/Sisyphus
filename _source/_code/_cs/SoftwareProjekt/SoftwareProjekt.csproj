@@ -112,6 +112,7 @@
       <DependentUpon>TestView.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\LinearTransformationTopic.cs" />
+    <Compile Include="Interop\InteropMimeTex.cs" />
     <Compile Include="UserControls\FormulaDrawer\CtlFormularDraw.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -223,7 +224,9 @@
     <Compile Include="Classes\TopicConnect.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ClassDiagrams\CoordinateSystemUserControl.cd" />
     <None Include="ClassDiagrams\Math.cd" />
     <None Include="ClassDiagrams\MindMap.cd" />
@@ -299,17 +302,6 @@
     <Content Include="Resources\config.xml">
       <SubType>Designer</SubType>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="MIMEDIRLib">
-      <Guid>{0006F080-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
