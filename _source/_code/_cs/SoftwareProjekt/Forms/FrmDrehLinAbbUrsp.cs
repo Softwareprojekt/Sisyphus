@@ -28,9 +28,9 @@ namespace SoftwareProjekt.Forms
             InitializeComponent();
             _sequation = "f(x^(->) = ";
             _sfilepath = "";
-            ctlFormular.Equation = _sequation;
-            ctlFormular.Filepath = _sfilepath;
-            ctlFormular.WriteEquationToPicBox(ctlFormular.Equation);
+            //ctlFormular.Equation = _sequation;
+            //ctlFormular.Filepath = _sfilepath;
+            //ctlFormular.WriteEquationToPicBox(ctlFormular.Equation);
         }
        
 

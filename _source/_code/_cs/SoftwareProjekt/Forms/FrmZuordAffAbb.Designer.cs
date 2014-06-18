@@ -429,12 +429,6 @@
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
         private System.Windows.Forms.Label label1;
-        private CtlVektorInput ctlVektorInputC;
-        private CtlVektorInput ctlVektorInputB;
-        private CtlVektorInput ctlVektorInputA;
-        private CtlVektorInput ctlVektorInput3;
-        private CtlVektorInput ctlVektorInput2;
-        private CtlVektorInput ctlVektorInput1;
         private System.Windows.Forms.Label lblFx;
     }
 }

@@ -259,10 +259,6 @@
         private System.Windows.Forms.Label lblOutput;
         private System.Windows.Forms.TextBox txtDeterminante;
         private System.Windows.Forms.Button butDeterminante;
-<<<<<<< HEAD
-        private CoordinateSystem cosInput;
-        private CoordinateSystem cosOutput;
-=======
         private System.Windows.Forms.GroupBox grpAusgabe;
         private System.Windows.Forms.TextBox txtVectorAMultX;
         private System.Windows.Forms.TextBox txtVectorFX;
@@ -270,12 +266,8 @@
         private System.Windows.Forms.Label lblVectorFX;
         private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem1;
         private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem2;
->>>>>>> 846a6a4aeea1b30f10d7f3efe8220e9a59087f38
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
         private System.Windows.Forms.Label label1;
-        private CtlMatrixInput ctlMatrixInput1;
-        private CtlVektorInput ctlVektorInput1;
-        private CtlVektorInput ctlVektorInput2;
     }
 }

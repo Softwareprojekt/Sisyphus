@@ -412,13 +412,9 @@
         private SoftwareProjekt.UserControls.CoordinateSystem cosOutput;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
-<<<<<<< HEAD
-        private CtlVektorInput ctlVektorInput1;
         private System.Windows.Forms.Button butDeterminante;
         private System.Windows.Forms.TextBox txtDeterminante;
         private System.Windows.Forms.Label lblHeader;
-=======
-        private UserControls.FormulaDrawer.CtlFormularDraw ctlFormular;
->>>>>>> 846a6a4aeea1b30f10d7f3efe8220e9a59087f38
+
     }
 }

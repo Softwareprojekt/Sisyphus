@@ -424,7 +424,6 @@
         private System.Windows.Forms.TextBox txtDeterminante1;
         private System.Windows.Forms.Button butDeterminante1;
         private System.Windows.Forms.Button butGx;
-<<<<<<< HEAD
         private System.Windows.Forms.TextBox txtDeterminante2;
         private System.Windows.Forms.Button butDeterminante2;
         private System.Windows.Forms.GroupBox grpDataInput2;
@@ -435,33 +434,11 @@
         private System.Windows.Forms.TextBox txtVectorGx;
         private System.Windows.Forms.Label lblVectorGx;
         private System.Windows.Forms.Button butGfx;
-        private CoordinateSystem cosInput;
-        private CoordinateSystem cosOutput1;
-        private CoordinateSystem cosOutput2;
-=======
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtVectorGFx;
-        private System.Windows.Forms.Label lblVectorGFx;
-        private System.Windows.Forms.Button button2;
         private SoftwareProjekt.UserControls.CoordinateSystem cosInput;
         private SoftwareProjekt.UserControls.CoordinateSystem cosOutput1;
         private SoftwareProjekt.UserControls.CoordinateSystem cosOutput2;
->>>>>>> 846a6a4aeea1b30f10d7f3efe8220e9a59087f38
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
-        private CtlMatrixInput ctlMatrixInput3;
-        private CtlVektorInput ctlVektorInput2;
-        private CtlVektorInput ctlVektorInput1;
-        private CtlMatrixInput ctlMatrixInput1;
-        private CtlMatrixInput ctlMatrixInput2;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.TextBox txtVectorGx2;
     }
