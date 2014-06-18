@@ -18,8 +18,6 @@ using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Classes.Math;
 using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
-using System;
-using System.Collections.Generic;
 
 namespace SoftwareProjekt.Forms
 {
