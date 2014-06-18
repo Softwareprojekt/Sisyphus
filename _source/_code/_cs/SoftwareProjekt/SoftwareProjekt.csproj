@@ -112,31 +112,31 @@
       <DependentUpon>TestView.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\LinearTransformationTopic.cs" />
-    <Compile Include="UserControls\FormulaDrawer\CtlFormularDraw.cs">
+    <Compile Include="Forms\UserControls\FormulaDrawer\CtlFormularDraw.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\FormulaDrawer\CtlFormularDraw.Designer.cs">
+    <Compile Include="Forms\UserControls\FormulaDrawer\CtlFormularDraw.Designer.cs">
       <DependentUpon>CtlFormularDraw.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\MindMap\MindMapButtonControl.cs">
+    <Compile Include="Forms\UserControls\MindMap\MindMapButtonControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\MindMap\MindMapTopicControl.cs">
+    <Compile Include="Forms\UserControls\MindMap\MindMapTopicControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\CoordinateSystem.cs">
+    <Compile Include="Forms\UserControls\CoordinateSystem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\CtlMatrixInput.cs">
+    <Compile Include="Forms\UserControls\CtlMatrixInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\CtlMatrixInput.Designer.cs">
+    <Compile Include="Forms\UserControls\CtlMatrixInput.Designer.cs">
       <DependentUpon>CtlMatrixInput.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\CtlVectorInput.cs">
+    <Compile Include="Forms\UserControls\CtlVectorInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\CtlVectorInput.Designer.cs">
+    <Compile Include="Forms\UserControls\CtlVectorInput.Designer.cs">
       <DependentUpon>CtlVectorInput.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Math\FormulaDrawer.cs" />
@@ -206,7 +206,7 @@
     </Compile>
     <Compile Include="Classes\Math\LineSegment.cs" />
     <Compile Include="Classes\Math\Matrix.cs" />
-    <Compile Include="UserControls\MindMap\MindMap.cs">
+    <Compile Include="Forms\UserControls\MindMap\MindMap.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Program.cs" />
@@ -216,7 +216,7 @@
     <Compile Include="Enums\EViewEvents.cs" />
     <Compile Include="Delegates\ViewHandler.cs" />
     <Compile Include="Classes\WorkBook.cs" />
-    <Compile Include="UserControls\Workbook\WorkBookControl.cs">
+    <Compile Include="Forms\UserControls\Workbook\WorkBookControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Classes\Xml\XmlWorkbook.cs" />
@@ -258,13 +258,13 @@
     <EmbeddedResource Include="Forms\TestView.resx">
       <DependentUpon>TestView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\CoordinateSystem.resx">
+    <EmbeddedResource Include="Forms\UserControls\CoordinateSystem.resx">
       <DependentUpon>CoordinateSystem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\CtlMatrixInput.resx">
+    <EmbeddedResource Include="Forms\UserControls\CtlMatrixInput.resx">
       <DependentUpon>CtlMatrixInput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\CtlVectorInput.resx">
+    <EmbeddedResource Include="Forms\UserControls\CtlVectorInput.resx">
       <DependentUpon>CtlVectorInput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmLinAbbSumBelVek.resx">
@@ -282,16 +282,16 @@
     <EmbeddedResource Include="Forms\FrmZuordvorLinAbb.resx">
       <DependentUpon>FrmZuordvorLinAbb.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\FormulaDrawer\CtlFormularDraw.resx">
+    <EmbeddedResource Include="Forms\UserControls\FormulaDrawer\CtlFormularDraw.resx">
       <DependentUpon>CtlFormularDraw.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MindMap\MindMapButtonControl.resx">
+    <EmbeddedResource Include="Forms\UserControls\MindMap\MindMapButtonControl.resx">
       <DependentUpon>MindMapButtonControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MindMap\MindMapTopicControl.resx">
+    <EmbeddedResource Include="Forms\UserControls\MindMap\MindMapTopicControl.resx">
       <DependentUpon>MindMapTopicControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Workbook\WorkBookControl.resx">
+    <EmbeddedResource Include="Forms\UserControls\Workbook\WorkBookControl.resx">
       <DependentUpon>WorkBookControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

@@ -52,14 +52,9 @@
             this.cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
-<<<<<<< HEAD
-            this.ctlVektorInput1 = new SoftwareProjekt.CtlVektorInput();
             this.butDeterminante = new System.Windows.Forms.Button();
             this.txtDeterminante = new System.Windows.Forms.TextBox();
             this.lblHeader = new System.Windows.Forms.Label();
-=======
-            this.ctlFormular = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
->>>>>>> 846a6a4aeea1b30f10d7f3efe8220e9a59087f38
             this.grpDataInput.SuspendLayout();
             this.grpDataOutput.SuspendLayout();
             this.SuspendLayout();
@@ -84,7 +79,6 @@
             // 
             // grpDataInput
             // 
-            this.grpDataInput.Controls.Add(this.ctlVektorInput1);
             this.grpDataInput.Controls.Add(this.txtAngle);
             this.grpDataInput.Controls.Add(this.lblAngle);
             this.grpDataInput.Controls.Add(this.txtVectorX);
@@ -93,15 +87,6 @@
             this.grpDataInput.Controls.Add(this.lblEV2);
             this.grpDataInput.Controls.Add(this.txtEV1);
             this.grpDataInput.Controls.Add(this.lblEV1);
-<<<<<<< HEAD
-            this.grpDataInput.Location = new System.Drawing.Point(114, 74);
-            this.grpDataInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-=======
-            this.grpDataInput.Controls.Add(this.txtPointX);
-            this.grpDataInput.Controls.Add(this.lblPointX);
-            this.grpDataInput.Location = new System.Drawing.Point(63, 44);
-            this.grpDataInput.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> 846a6a4aeea1b30f10d7f3efe8220e9a59087f38
             this.grpDataInput.Name = "grpDataInput";
             this.grpDataInput.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInput.Size = new System.Drawing.Size(332, 156);
@@ -259,12 +244,8 @@
             this.grpDataOutput.Controls.Add(this.lblVectorM1);
             this.grpDataOutput.Controls.Add(this.lblVectorFunctionX);
             this.grpDataOutput.Controls.Add(this.txtVectorM1);
-<<<<<<< HEAD
             this.grpDataOutput.Location = new System.Drawing.Point(757, 64);
             this.grpDataOutput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
-            this.grpDataOutput.Location = new System.Drawing.Point(618, 44);
->>>>>>> 846a6a4aeea1b30f10d7f3efe8220e9a59087f38
             this.grpDataOutput.Name = "grpDataOutput";
             this.grpDataOutput.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpDataOutput.Size = new System.Drawing.Size(324, 166);
@@ -306,16 +287,7 @@
             this.rtxtNotes.Size = new System.Drawing.Size(579, 166);
             this.rtxtNotes.TabIndex = 45;
             this.rtxtNotes.Text = "";
-            // 
-<<<<<<< HEAD
-            // ctlVektorInput1
-            // 
-            this.ctlVektorInput1.Location = new System.Drawing.Point(7, 36);
-            this.ctlVektorInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVektorInput1.Name = "ctlVektorInput1";
-            this.ctlVektorInput1.Size = new System.Drawing.Size(154, 92);
-            this.ctlVektorInput1.TabIndex = 47;
-            this.ctlVektorInput1.Vector = null;
+
             // 
             // butDeterminante
             // 
@@ -344,28 +316,13 @@
             this.lblHeader.Size = new System.Drawing.Size(520, 29);
             this.lblHeader.TabIndex = 47;
             this.lblHeader.Text = "Thema: Drehungen um den Urspr. sind linear";
-=======
-            // ctlFormular
-            // 
-            this.ctlFormular.Equation = null;
-            this.ctlFormular.Filepath = null;
-            this.ctlFormular.Location = new System.Drawing.Point(253, 68);
-            this.ctlFormular.Name = "ctlFormular";
-            this.ctlFormular.Size = new System.Drawing.Size(329, 92);
-            this.ctlFormular.TabIndex = 46;
->>>>>>> 846a6a4aeea1b30f10d7f3efe8220e9a59087f38
             // 
             // FrmDrehLinAbbUrsp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1251, 881);
             this.Controls.Add(this.lblHeader);
-=======
-            this.ClientSize = new System.Drawing.Size(938, 716);
-            this.Controls.Add(this.ctlFormular);
->>>>>>> 846a6a4aeea1b30f10d7f3efe8220e9a59087f38
             this.Controls.Add(this.rtxtNotes);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.cosOutput);

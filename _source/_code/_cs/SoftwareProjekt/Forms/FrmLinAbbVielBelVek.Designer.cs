@@ -36,12 +36,6 @@
             this.txtFactorA = new System.Windows.Forms.TextBox();
             this.lblFactorA = new System.Windows.Forms.Label();
             this.butFunctionAMultX = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-            this.lblOutput = new System.Windows.Forms.Label();
-            this.cosInput = new SoftwareProjekt.CoordinateSystem();
-            this.cosOutput = new SoftwareProjekt.CoordinateSystem();
-=======
-            this.label7 = new System.Windows.Forms.Label();
             this.grpAusgabe = new System.Windows.Forms.GroupBox();
             this.txtVectorAMultX = new System.Windows.Forms.TextBox();
             this.txtVectorFX = new System.Windows.Forms.TextBox();
@@ -49,13 +43,9 @@
             this.lblVectorFX = new System.Windows.Forms.Label();
             this.coordinateSystem1 = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.coordinateSystem2 = new SoftwareProjekt.UserControls.CoordinateSystem();
->>>>>>> 846a6a4aeea1b30f10d7f3efe8220e9a59087f38
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ctlVektorInput1 = new SoftwareProjekt.CtlVektorInput();
-            this.ctlMatrixInput1 = new SoftwareProjekt.CtlMatrixInput();
-            this.ctlVektorInput2 = new SoftwareProjekt.CtlVektorInput();
             this.grpDataInput.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,9 +60,6 @@
             // 
             // grpDataInput
             // 
-            this.grpDataInput.Controls.Add(this.ctlVektorInput2);
-            this.grpDataInput.Controls.Add(this.ctlMatrixInput1);
-            this.grpDataInput.Controls.Add(this.ctlVektorInput1);
             this.grpDataInput.Controls.Add(this.txtDeterminante);
             this.grpDataInput.Controls.Add(this.butDeterminante);
             this.grpDataInput.Controls.Add(this.lblAMultX);
@@ -152,22 +139,6 @@
             this.lblOutput.TabIndex = 33;
             this.lblOutput.Text = "Ausgabekoordinatensystem:";
             // 
-            // cosInput
-            // 
-            this.cosInput.Location = new System.Drawing.Point(36, 407);
-            this.cosInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cosInput.Name = "cosInput";
-            this.cosInput.Size = new System.Drawing.Size(480, 428);
-            this.cosInput.TabIndex = 35;
-            // 
-            // cosOutput
-            // 
-            this.cosOutput.Location = new System.Drawing.Point(818, 407);
-            this.cosOutput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cosOutput.Name = "cosOutput";
-            this.cosOutput.Size = new System.Drawing.Size(480, 428);
-            this.cosOutput.TabIndex = 36;
-            // 
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
@@ -197,33 +168,6 @@
             this.label1.TabIndex = 39;
             this.label1.Text = "Thema: Lineare Abbildung mit vielfachen beliebigen Vektoren studieren";
             // 
-            // ctlVektorInput1
-            // 
-            this.ctlVektorInput1.Location = new System.Drawing.Point(7, 23);
-            this.ctlVektorInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVektorInput1.Name = "ctlVektorInput1";
-            this.ctlVektorInput1.Size = new System.Drawing.Size(153, 104);
-            this.ctlVektorInput1.TabIndex = 40;
-            this.ctlVektorInput1.Vector = null;
-            // 
-            // ctlMatrixInput1
-            // 
-            this.ctlMatrixInput1.Location = new System.Drawing.Point(285, 23);
-            this.ctlMatrixInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlMatrixInput1.Matrix = null;
-            this.ctlMatrixInput1.Name = "ctlMatrixInput1";
-            this.ctlMatrixInput1.Size = new System.Drawing.Size(159, 96);
-            this.ctlMatrixInput1.TabIndex = 40;
-            // 
-            // ctlVektorInput2
-            // 
-            this.ctlVektorInput2.Location = new System.Drawing.Point(92, 186);
-            this.ctlVektorInput2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVektorInput2.Name = "ctlVektorInput2";
-            this.ctlVektorInput2.Size = new System.Drawing.Size(161, 96);
-            this.ctlVektorInput2.TabIndex = 40;
-            this.ctlVektorInput2.Vector = null;
-            // 
             // FrmLinAbbVielBelVek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -232,8 +176,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.rtxtNotes);
-            this.Controls.Add(this.cosOutput);
-            this.Controls.Add(this.cosInput);
             this.Controls.Add(this.butFunctionAMultX);
             this.Controls.Add(this.lblOutput);
             this.Controls.Add(this.lblInput);

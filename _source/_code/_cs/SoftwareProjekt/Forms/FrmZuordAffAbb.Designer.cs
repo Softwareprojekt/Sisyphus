@@ -53,12 +53,6 @@
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ctlVektorInputA = new SoftwareProjekt.CtlVektorInput();
-            this.ctlVektorInputB = new SoftwareProjekt.CtlVektorInput();
-            this.ctlVektorInputC = new SoftwareProjekt.CtlVektorInput();
-            this.ctlVektorInput1 = new SoftwareProjekt.CtlVektorInput();
-            this.ctlVektorInput2 = new SoftwareProjekt.CtlVektorInput();
-            this.ctlVektorInput3 = new SoftwareProjekt.CtlVektorInput();
             this.lblFx = new System.Windows.Forms.Label();
             this.grpDataInput1.SuspendLayout();
             this.grpDataInput2.SuspendLayout();
@@ -84,9 +78,6 @@
             // 
             // grpDataInput1
             // 
-            this.grpDataInput1.Controls.Add(this.ctlVektorInputC);
-            this.grpDataInput1.Controls.Add(this.ctlVektorInputB);
-            this.grpDataInput1.Controls.Add(this.ctlVektorInputA);
             this.grpDataInput1.Controls.Add(this.lblPointC1);
             this.grpDataInput1.Controls.Add(this.lblPointA1);
             this.grpDataInput1.Controls.Add(this.lblPointB1);
@@ -162,9 +153,6 @@
             // 
             // grpDataInput2
             // 
-            this.grpDataInput2.Controls.Add(this.ctlVektorInput3);
-            this.grpDataInput2.Controls.Add(this.ctlVektorInput2);
-            this.grpDataInput2.Controls.Add(this.ctlVektorInput1);
             this.grpDataInput2.Controls.Add(this.lblPointC2);
             this.grpDataInput2.Controls.Add(this.lblPointA2);
             this.grpDataInput2.Controls.Add(this.lblPointB2);
@@ -301,60 +289,6 @@
             this.label1.Size = new System.Drawing.Size(671, 29);
             this.label1.TabIndex = 40;
             this.label1.Text = "Thema: Zuordnungsvorschrift affine Abbildungen studieren";
-            // 
-            // ctlVektorInputA
-            // 
-            this.ctlVektorInputA.Location = new System.Drawing.Point(77, 21);
-            this.ctlVektorInputA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVektorInputA.Name = "ctlVektorInputA";
-            this.ctlVektorInputA.Size = new System.Drawing.Size(154, 106);
-            this.ctlVektorInputA.TabIndex = 41;
-            this.ctlVektorInputA.Vector = null;
-            // 
-            // ctlVektorInputB
-            // 
-            this.ctlVektorInputB.Location = new System.Drawing.Point(295, 21);
-            this.ctlVektorInputB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVektorInputB.Name = "ctlVektorInputB";
-            this.ctlVektorInputB.Size = new System.Drawing.Size(154, 106);
-            this.ctlVektorInputB.TabIndex = 42;
-            this.ctlVektorInputB.Vector = null;
-            // 
-            // ctlVektorInputC
-            // 
-            this.ctlVektorInputC.Location = new System.Drawing.Point(522, 21);
-            this.ctlVektorInputC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVektorInputC.Name = "ctlVektorInputC";
-            this.ctlVektorInputC.Size = new System.Drawing.Size(154, 106);
-            this.ctlVektorInputC.TabIndex = 43;
-            this.ctlVektorInputC.Vector = null;
-            // 
-            // ctlVektorInput1
-            // 
-            this.ctlVektorInput1.Location = new System.Drawing.Point(76, 21);
-            this.ctlVektorInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVektorInput1.Name = "ctlVektorInput1";
-            this.ctlVektorInput1.Size = new System.Drawing.Size(154, 106);
-            this.ctlVektorInput1.TabIndex = 44;
-            this.ctlVektorInput1.Vector = null;
-            // 
-            // ctlVektorInput2
-            // 
-            this.ctlVektorInput2.Location = new System.Drawing.Point(307, 21);
-            this.ctlVektorInput2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVektorInput2.Name = "ctlVektorInput2";
-            this.ctlVektorInput2.Size = new System.Drawing.Size(154, 106);
-            this.ctlVektorInput2.TabIndex = 45;
-            this.ctlVektorInput2.Vector = null;
-            // 
-            // ctlVektorInput3
-            // 
-            this.ctlVektorInput3.Location = new System.Drawing.Point(537, 21);
-            this.ctlVektorInput3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVektorInput3.Name = "ctlVektorInput3";
-            this.ctlVektorInput3.Size = new System.Drawing.Size(154, 106);
-            this.ctlVektorInput3.TabIndex = 46;
-            this.ctlVektorInput3.Vector = null;
             // 
             // lblFx
             // 
