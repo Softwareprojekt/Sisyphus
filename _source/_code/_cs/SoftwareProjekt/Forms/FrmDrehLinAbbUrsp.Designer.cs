@@ -48,12 +48,12 @@
             this.lblVectorM2 = new System.Windows.Forms.Label();
             this.txtVectorM2 = new System.Windows.Forms.TextBox();
             this.grpDataOutput = new System.Windows.Forms.GroupBox();
+            this.txtDeterminante = new System.Windows.Forms.TextBox();
+            this.butDeterminante = new System.Windows.Forms.Button();
             this.cosInput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
-            this.butDeterminante = new System.Windows.Forms.Button();
-            this.txtDeterminante = new System.Windows.Forms.TextBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.grpDataInput.SuspendLayout();
             this.grpDataOutput.SuspendLayout();
@@ -87,6 +87,7 @@
             this.grpDataInput.Controls.Add(this.lblEV2);
             this.grpDataInput.Controls.Add(this.txtEV1);
             this.grpDataInput.Controls.Add(this.lblEV1);
+            this.grpDataInput.Location = new System.Drawing.Point(0, 0);
             this.grpDataInput.Name = "grpDataInput";
             this.grpDataInput.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInput.Size = new System.Drawing.Size(332, 156);
@@ -172,6 +173,7 @@
             this.butFunctionTransfX.TabIndex = 32;
             this.butFunctionTransfX.Text = "f(x)";
             this.butFunctionTransfX.UseVisualStyleBackColor = true;
+            this.butFunctionTransfX.Click += new System.EventHandler(this.butFunctionTransfX_Click);
             // 
             // txtFunctionTransfX
             // 
@@ -245,18 +247,37 @@
             this.grpDataOutput.Controls.Add(this.lblVectorFunctionX);
             this.grpDataOutput.Controls.Add(this.txtVectorM1);
             this.grpDataOutput.Location = new System.Drawing.Point(757, 64);
-            this.grpDataOutput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpDataOutput.Margin = new System.Windows.Forms.Padding(4);
             this.grpDataOutput.Name = "grpDataOutput";
-            this.grpDataOutput.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpDataOutput.Padding = new System.Windows.Forms.Padding(4);
             this.grpDataOutput.Size = new System.Drawing.Size(324, 166);
             this.grpDataOutput.TabIndex = 41;
             this.grpDataOutput.TabStop = false;
             this.grpDataOutput.Text = "Ausgabe";
             // 
+            // txtDeterminante
+            // 
+            this.txtDeterminante.Location = new System.Drawing.Point(189, 70);
+            this.txtDeterminante.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDeterminante.Name = "txtDeterminante";
+            this.txtDeterminante.Size = new System.Drawing.Size(114, 22);
+            this.txtDeterminante.TabIndex = 41;
+            // 
+            // butDeterminante
+            // 
+            this.butDeterminante.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butDeterminante.Location = new System.Drawing.Point(189, 27);
+            this.butDeterminante.Name = "butDeterminante";
+            this.butDeterminante.Size = new System.Drawing.Size(114, 29);
+            this.butDeterminante.TabIndex = 46;
+            this.butDeterminante.Text = "Determinante";
+            this.butDeterminante.UseVisualStyleBackColor = true;
+            this.butDeterminante.Click += new System.EventHandler(this.butDeterminante_Click);
+            // 
             // cosInput
             // 
             this.cosInput.Location = new System.Drawing.Point(16, 253);
-            this.cosInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cosInput.Margin = new System.Windows.Forms.Padding(4);
             this.cosInput.Name = "cosInput";
             this.cosInput.Size = new System.Drawing.Size(504, 347);
             this.cosInput.TabIndex = 42;
@@ -264,7 +285,7 @@
             // cosOutput
             // 
             this.cosOutput.Location = new System.Drawing.Point(699, 253);
-            this.cosOutput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cosOutput.Margin = new System.Windows.Forms.Padding(4);
             this.cosOutput.Name = "cosOutput";
             this.cosOutput.Size = new System.Drawing.Size(504, 347);
             this.cosOutput.TabIndex = 43;
@@ -282,30 +303,11 @@
             // rtxtNotes
             // 
             this.rtxtNotes.Location = new System.Drawing.Point(305, 699);
-            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtNotes.Name = "rtxtNotes";
             this.rtxtNotes.Size = new System.Drawing.Size(579, 166);
             this.rtxtNotes.TabIndex = 45;
             this.rtxtNotes.Text = "";
-
-            // 
-            // butDeterminante
-            // 
-            this.butDeterminante.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butDeterminante.Location = new System.Drawing.Point(189, 27);
-            this.butDeterminante.Name = "butDeterminante";
-            this.butDeterminante.Size = new System.Drawing.Size(114, 29);
-            this.butDeterminante.TabIndex = 46;
-            this.butDeterminante.Text = "Determinante";
-            this.butDeterminante.UseVisualStyleBackColor = true;
-            // 
-            // txtDeterminante
-            // 
-            this.txtDeterminante.Location = new System.Drawing.Point(189, 70);
-            this.txtDeterminante.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDeterminante.Name = "txtDeterminante";
-            this.txtDeterminante.Size = new System.Drawing.Size(114, 22);
-            this.txtDeterminante.TabIndex = 41;
             // 
             // lblHeader
             // 
