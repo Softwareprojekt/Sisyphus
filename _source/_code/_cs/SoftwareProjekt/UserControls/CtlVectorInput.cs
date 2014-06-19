@@ -80,7 +80,7 @@ namespace SoftwareProjekt.UserControls
         /// </summary>
         private void txtEle11_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == ',')
+            if ((e.KeyChar<'0'||e.KeyChar>'9')&&e.KeyChar!='\b')
             {
                 e.Handled = true;
             }
@@ -101,7 +101,7 @@ namespace SoftwareProjekt.UserControls
         /// </summary>
         private void txtEle21_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == ',')
+            if ((e.KeyChar<'0'||e.KeyChar>'9')&&e.KeyChar!='\b')
             {
                 e.Handled = true;
             }
