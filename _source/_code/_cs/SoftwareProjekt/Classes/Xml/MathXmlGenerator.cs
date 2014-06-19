@@ -46,6 +46,33 @@ namespace SoftwareProjekt.Classes.Xml
 
         public void AddSign(EMathSign sign, int tabs = 0)
         {
+            for (int i = 0; i < tabs; i++)
+            {
+                _xmlDoc += "\t";
+            }
+
+            switch (sign)
+            {
+                case EMathSign.Plus:
+                    _xmlDoc += "<mo>+</mo>";
+                    break;
+                case EMathSign.Minus:
+                    _xmlDoc += "<mo>-</mo>";
+                    break;
+                case EMathSign.Division:
+                    _xmlDoc += "<mo>&divide;</mo>";
+                    break;
+                case EMathSign.Multiply:
+                    _xmlDoc += "<mo>&sdot;</mo>";
+                    break;
+                case EMathSign.Assignment:
+                    _xmlDoc += "<mo>=</mo>";
+                    break;
+                default:
+                    break;
+            }
+
+            _xmlDoc += "\n";
         }
 
         public void AddVector(Vector vec, System.Drawing.Color col)

@@ -52,5 +52,15 @@ namespace SoftwareProjekt.Forms
         {
 
         }
+
+        public override void ExerciseChanged(Interfaces.IExercise sender, Classes.EventArguments.ExerciseEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override System.Collections.Generic.Dictionary<string, object> GetInputData()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
