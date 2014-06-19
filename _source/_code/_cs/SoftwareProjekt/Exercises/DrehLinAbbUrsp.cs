@@ -21,11 +21,8 @@
 using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Classes.Math;
 using SoftwareProjekt.Interfaces;
-
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SoftwareProjekt.Exercises
 {
@@ -39,16 +36,20 @@ namespace SoftwareProjekt.Exercises
             dict = view.GetInputData();
 
             // check dict
-            if (!dict.ContainsKey("Winkel1") || !dict.ContainsKey("Vector1"))
+            if (!dict.ContainsKey("Angle") || !dict.ContainsKey("VectorX"))
             {
                 return;
             }
 
             // calculate...
-            Vector v = (Vector)dict["Vector1"];
-            double w = (double)dict["Winkel1"];
+            Vector ev1 = (Vector)dict["EV1"];
+            Vector ev2 = (Vector)dict["EV2"];
+            Vector x = (Vector)dict["VectorX"];
+            double angle = (double)dict["Angle"];
 
-            v.Rotate(w);
+            x.Rotate(angle);
+            ev1.Rotate(angle);
+            ev2.Rotate(angle);
 
             // call base dowork and pass the calculated data.
             base.Finalize(new ExerciseEventArgs(dict));

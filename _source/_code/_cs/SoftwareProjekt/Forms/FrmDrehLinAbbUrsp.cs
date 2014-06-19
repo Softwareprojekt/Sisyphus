@@ -1,11 +1,23 @@
-﻿/**
+﻿#region LicenseHeader
+/*
+ * Copyright (C) 2014 Technische Hochschule Amberg
  * 
- * 
- * 
- * 
- * 
- * 
- */ 
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+#endregion
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,6 +47,11 @@ namespace SoftwareProjekt.Forms
             //ctlFormular.Equation = _sequation;
             //ctlFormular.Filepath = _sfilepath;
             //ctlFormular.WriteEquationToPicBox(ctlFormular.Equation);
+            this.ctlVectorEV1.txtEle11.Text = "1";
+            this.ctlVectorEV1.txtEle21.Text = "0";
+
+            this.ctlVectorEV2.txtEle11.Text = "0";
+            this.ctlVectorEV2.txtEle21.Text = "1";
         }
 
 
@@ -47,10 +64,10 @@ namespace SoftwareProjekt.Forms
         {
             Dictionary<string, Object> retVal = new Dictionary<string, object>();
 
-            /*retVal.Add("EV1", _vector.Einheitsvector1);
-            retVal.Add("EV2", _vector.Einheitsvector2);
-            retVal.Add("VectorX", _vector.VectorX);
-            retVal.Add("Angle", _vector.Angle);*/
+            retVal.Add("EV1", ctlVectorEV1.Vector);
+            retVal.Add("EV2", ctlVectorEV2.Vector);
+            retVal.Add("VectorX", ctlVectorInputX.Vector);
+            retVal.Add("Angle", Convert.ToDouble(txtAngle.Text));
 
             return retVal;
         }
@@ -62,20 +79,13 @@ namespace SoftwareProjekt.Forms
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine(sender.ToString() + " " + e.ToString());
+            ctlVectorOutputEV1.Vector = (Vector)e.CalcValues["EV1"];
+            ctlVectorOutputEV2.Vector = (Vector)e.CalcValues["EV2"];
+            ctlVectorOutputX.Vector = (Vector)e.CalcValues["VectorX"];
         }
 
         private void txtAngle_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtVectorX_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtVectorX_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
