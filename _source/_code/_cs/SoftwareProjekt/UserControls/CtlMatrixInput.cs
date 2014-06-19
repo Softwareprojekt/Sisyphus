@@ -202,5 +202,30 @@ namespace SoftwareProjekt.UserControls
 
             base.Refresh();
         }
+
+        private void grpMatrixEingabe_Resize(object sender, EventArgs e)
+        {
+            int newWidth = (int)(grpMatrixEingabe.Size.Width / 3);
+            int EleX1_newX = (int)(grpMatrixEingabe.Size.Width / 9);
+            int EleX2_newX = (int)(grpMatrixEingabe.Size.Width / 9)*5;
+
+            int Ele1X_newY = (int)((grpMatrixEingabe.Size.Height - 24) / 3);
+            int Ele2X_newY = (Ele1X_newY * 2) + 12;
+
+            txtEle11.Size = new System.Drawing.Size(newWidth, 12);
+            txtEle11.Location = new Point(EleX1_newX, Ele1X_newY);
+
+            txtEle12.Size = new System.Drawing.Size(newWidth, 12);
+            txtEle12.Location = new Point(EleX2_newX, Ele1X_newY);
+
+            txtEle21.Size = new System.Drawing.Size(newWidth, 12);
+            txtEle21.Location = new Point(EleX1_newX, Ele2X_newY);
+
+            txtEle22.Size = new System.Drawing.Size(newWidth, 12);
+            txtEle22.Location = new Point(EleX2_newX, Ele2X_newY);
+
+            grpMatrixEingabe.Refresh();
+
+        }
     }
 }

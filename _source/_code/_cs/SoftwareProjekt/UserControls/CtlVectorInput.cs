@@ -153,5 +153,23 @@ namespace SoftwareProjekt.UserControls
 
             base.Refresh();
         }
+
+        private void grpVektorInput_Resize(object sender, EventArgs e)
+        {
+            int newWidth = (int)(grpVektorInput.Size.Width / 2);
+            int newX = (int)(grpVektorInput.Size.Width / 4);
+
+            int Ele11_newY =  (int)((grpVektorInput.Size.Height-24)/3);
+            int Ele21_newY = (Ele11_newY * 2) + 12;
+
+            txtEle11.Size = new System.Drawing.Size(newWidth,12);
+            txtEle11.Location = new Point(newX, Ele11_newY);
+
+            txtEle21.Size = new System.Drawing.Size(newWidth, 12);
+            txtEle21.Location = new Point(newX, Ele21_newY);
+
+            grpVektorInput.Refresh();
+
+        }
     }
 }
