@@ -111,6 +111,8 @@
             this.txtAngle.Name = "txtAngle";
             this.txtAngle.Size = new System.Drawing.Size(64, 20);
             this.txtAngle.TabIndex = 15;
+            this.txtAngle.TextChanged += new System.EventHandler(this.txtAngle_TextChanged);
+            this.txtAngle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAngle_KeyPress);
             // 
             // lblAngle
             // 
@@ -130,6 +132,8 @@
             this.txtVectorX.Name = "txtVectorX";
             this.txtVectorX.Size = new System.Drawing.Size(64, 20);
             this.txtVectorX.TabIndex = 13;
+            this.txtVectorX.TextChanged += new System.EventHandler(this.txtVectorX_TextChanged);
+            this.txtVectorX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVectorX_KeyPress);
             // 
             // lblVectorX
             // 
@@ -193,9 +197,10 @@
             // 
             // txtFunctionTransfX
             // 
-            this.txtFunctionTransfX.Location = new System.Drawing.Point(59, 20);
+            this.txtFunctionTransfX.Location = new System.Drawing.Point(59, 24);
             this.txtFunctionTransfX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFunctionTransfX.Name = "txtFunctionTransfX";
+            this.txtFunctionTransfX.ReadOnly = true;
             this.txtFunctionTransfX.Size = new System.Drawing.Size(64, 20);
             this.txtFunctionTransfX.TabIndex = 34;
             // 

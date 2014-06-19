@@ -21,7 +21,7 @@ using SoftwareProjekt.Interfaces;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmDrehLinAbbUrsp : Form //AbstractView
+    public partial class FrmDrehLinAbbUrsp : AbstractView
     {
 
         private string _sequation;
@@ -63,6 +63,26 @@ namespace SoftwareProjekt.Forms
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
             throw new System.NotImplementedException();
+        }
+
+        private void txtAngle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtVectorX_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtVectorX_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtAngle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
 
     }
