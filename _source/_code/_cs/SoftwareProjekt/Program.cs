@@ -39,12 +39,12 @@ namespace SoftwareProjekt
             IController cont = new Controller();
 
             //TestExercise exercise = new TestExercise();
-            //TestView view = new TestView();
+            TestView view = new TestView();
 
-            DrehLinAbbUrsp exercise = new DrehLinAbbUrsp();
-            FrmDrehLinAbbUrsp view = new FrmDrehLinAbbUrsp();
+            //DrehLinAbbUrsp exercise = new DrehLinAbbUrsp();
+            //FrmDrehLinAbbUrsp view = new FrmDrehLinAbbUrsp();
 
-            cont.AddExercise(exercise, view);
+            //cont.AddExercise(exercise, view);
 
             Application.Run(view);
 

@@ -18,9 +18,9 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
 {
     public partial class CtlFormularDraw : UserControl
     {
-        private string _sequation;
-        private string _sfilepath;
-        private string _sfilename;
+        private string _equation;
+        private string _filepath;
+        private string _filename;
 
         private MathML.Rendering.MathMLControl _drawer;
 
@@ -28,7 +28,7 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
         public CtlFormularDraw()
         {
             InitializeComponent();
-            this.Filename = Path.GetRandomFileName() + ".jpg";
+            this.Filename = Path.GetRandomFileName() + ".tiff";
             this.Equation = "";
             this.Filepath = GetGifFilePath();
             this._drawer = new MathML.Rendering.MathMLControl();
@@ -36,33 +36,36 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
             this._drawer.ForeColor = System.Drawing.Color.Black;
             this._drawer.HorizontalShift = 0F;
             this._drawer.InputLocation = null;
+            this._drawer.MathFontSizeInPoints = 14;
         }
 
         public string Equation
         {
-            get { return _sequation; }
-            set { _sequation = value; }
+            get { return _equation; }
+            set { _equation = value; }
         }
         public string Filepath
         {
-            get { return _sfilepath; }
-            set { _sfilepath = value; }
+            get { return _filepath; }
+            set { _filepath = value; }
         }
         public string Filename
         {
-            get { return _sfilename; }
-            set { _sfilename = value; }
+            get { return _filename; }
+            set { _filename = value; }
         }
 
         public void WriteEquationToPicBox(string equation)
         {
             try
             {
+                this.Equation = equation;
+
                 MathMLDocument mathmlDoc = new MathMLDocument();
                 mathmlDoc.LoadXml(equation);
 
                 _drawer.MathElement = (MathMLMathElement)mathmlDoc.DocumentElement;
-                _drawer.Save(this.Filepath + this.Filename, ImageFormat.Jpeg);
+                _drawer.Save(this.Filepath + this.Filename, ImageFormat.Tiff);
 
                 picFormular.Image = Image.FromFile(this.Filepath + this.Filename);
             }

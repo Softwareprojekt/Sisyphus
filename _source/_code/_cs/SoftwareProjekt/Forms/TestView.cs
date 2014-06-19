@@ -26,6 +26,7 @@ using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 
 namespace SoftwareProjekt.Forms
@@ -40,9 +41,16 @@ namespace SoftwareProjekt.Forms
 
             MathXmlGenerator xml = new MathXmlGenerator();
 
+            Matrix m1 = new Matrix(1.0f, 2.0f, 3.0f, 4.0f);
 
+            Vector v1 = new Vector(1.4f, 10.2f);
 
-            xml.AddNode("<mover> <msub> <mi>x</mi> <mn>0</mn> </msub> <mo>&rarr;</mo> </mover>");
+            //xml.AddNode("<mover> <msub> <mi>x</mi> <mn>0</mn> </msub> <mo>&rarr;</mo> </mover>");
+            xml.AddVector(v1, Color.Red);
+
+            xml.AddNode("<mo> = </mo>");
+            xml.AddMatrix(m1, Color.Blue, Color.DarkGreen);
+
             xml.Finish();
 
             ctlFormDrawTest.WriteEquationToPicBox(xml.XmlDoc);
