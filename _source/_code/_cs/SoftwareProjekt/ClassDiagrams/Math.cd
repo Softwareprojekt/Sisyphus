@@ -16,15 +16,8 @@
   </Class>
   <Class Name="SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw">
     <Position X="1" Y="0.5" Width="2.25" />
-    <NestedTypes>
-      <Class Name="SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw.NativeMethods" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>UserControls\FormulaDrawer\CtlFormularDraw.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Class>
-    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AABAAAAALCAAQAAACACAAAACEAAAAAAAAAQAAAAAAIA=</HashCode>
+      <HashCode>AAJAAAAALCAAQAAACACAAAACEAAAAAAAAAQAAAAAAIA=</HashCode>
       <FileName>UserControls\FormulaDrawer\CtlFormularDraw.cs</FileName>
     </TypeIdentifier>
   </Class>

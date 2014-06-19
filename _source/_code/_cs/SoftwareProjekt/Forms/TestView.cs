@@ -21,6 +21,7 @@
 
 using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Classes.Math;
+using SoftwareProjekt.Classes.Xml;
 using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
 using System;
@@ -36,6 +37,15 @@ namespace SoftwareProjekt.Forms
             InitializeComponent();
            // ctlFormDrawTest.Equation = "f(x^(->)= sqrt(x))";
             //ctlFormDrawTest.WriteEquationToPicBox(ctlFormDrawTest.Equation);
+
+            MathXmlGenerator xml = new MathXmlGenerator();
+
+
+
+            xml.AddNode("<mover> <msub> <mi>x</mi> <mn>0</mn> </msub> <mo>&rarr;</mo> </mover>");
+            xml.Finish();
+
+            ctlFormDrawTest.WriteEquationToPicBox(xml.XmlDoc);
         }
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)

@@ -54,6 +54,12 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MathML">
+      <HintPath>Libraries\MathML\MathML.dll</HintPath>
+    </Reference>
+    <Reference Include="MathML.Rendering">
+      <HintPath>Libraries\MathML\MathML.Rendering.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Deployment" />
@@ -67,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Math\DrawingPoint.cs" />
+    <Compile Include="Classes\Xml\MathXmlGenerator.cs" />
     <Compile Include="Enums\EAlignType.cs" />
     <Compile Include="Enums\EClickedButton.cs" />
     <Compile Include="Enums\EConnectionType.cs" />
