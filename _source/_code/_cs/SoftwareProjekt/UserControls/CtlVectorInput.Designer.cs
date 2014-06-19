@@ -36,14 +36,18 @@
             // 
             // grpVektorInput
             // 
+            this.grpVektorInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpVektorInput.Controls.Add(this.txtEle21);
             this.grpVektorInput.Controls.Add(this.txtEle11);
             this.grpVektorInput.Location = new System.Drawing.Point(4, 4);
             this.grpVektorInput.Name = "grpVektorInput";
-            this.grpVektorInput.Size = new System.Drawing.Size(105, 72);
+            this.grpVektorInput.Size = new System.Drawing.Size(95, 69);
             this.grpVektorInput.TabIndex = 0;
             this.grpVektorInput.TabStop = false;
             this.grpVektorInput.Text = "Vektor Eingabe";
+            this.grpVektorInput.Resize += new System.EventHandler(this.grpVektorInput_Resize);
             // 
             // txtEle21
             // 
@@ -70,8 +74,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grpVektorInput);
+            this.MinimumSize = new System.Drawing.Size(102, 76);
             this.Name = "CtlVectorInput";
-            this.Size = new System.Drawing.Size(121, 83);
+            this.Size = new System.Drawing.Size(102, 76);
             this.grpVektorInput.ResumeLayout(false);
             this.grpVektorInput.PerformLayout();
             this.ResumeLayout(false);

@@ -38,16 +38,20 @@
             // 
             // grpMatrixEingabe
             // 
+            this.grpMatrixEingabe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpMatrixEingabe.Controls.Add(this.txtEle22);
             this.grpMatrixEingabe.Controls.Add(this.txtEle21);
             this.grpMatrixEingabe.Controls.Add(this.txtEle12);
             this.grpMatrixEingabe.Controls.Add(this.txtEle11);
             this.grpMatrixEingabe.Location = new System.Drawing.Point(3, 3);
             this.grpMatrixEingabe.Name = "grpMatrixEingabe";
-            this.grpMatrixEingabe.Size = new System.Drawing.Size(112, 75);
+            this.grpMatrixEingabe.Size = new System.Drawing.Size(119, 83);
             this.grpMatrixEingabe.TabIndex = 0;
             this.grpMatrixEingabe.TabStop = false;
             this.grpMatrixEingabe.Text = "Matrix Eingabe";
+            this.grpMatrixEingabe.Resize += new System.EventHandler(this.grpMatrixEingabe_Resize);
             // 
             // txtEle22
             // 
@@ -94,6 +98,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grpMatrixEingabe);
+            this.MinimumSize = new System.Drawing.Size(98, 76);
             this.Name = "CtlMatrixInput";
             this.Size = new System.Drawing.Size(125, 89);
             this.grpMatrixEingabe.ResumeLayout(false);

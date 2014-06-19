@@ -62,8 +62,9 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1043, 255);
+            this.label7.Location = new System.Drawing.Point(997, 255);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(140, 13);
@@ -98,6 +99,7 @@
             // 
             // txtAngle
             // 
+            this.txtAngle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtAngle.Location = new System.Drawing.Point(85, 127);
             this.txtAngle.Margin = new System.Windows.Forms.Padding(2);
             this.txtAngle.MaxLength = 3;
@@ -109,6 +111,7 @@
             // 
             // lblAngle
             // 
+            this.lblAngle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblAngle.AutoSize = true;
             this.lblAngle.Location = new System.Drawing.Point(4, 130);
             this.lblAngle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -119,8 +122,9 @@
             // 
             // butFunctionTransfX
             // 
+            this.butFunctionTransfX.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.butFunctionTransfX.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFunctionTransfX.Location = new System.Drawing.Point(606, 144);
+            this.butFunctionTransfX.Location = new System.Drawing.Point(618, 144);
             this.butFunctionTransfX.Margin = new System.Windows.Forms.Padding(2);
             this.butFunctionTransfX.Name = "butFunctionTransfX";
             this.butFunctionTransfX.Size = new System.Drawing.Size(139, 41);
@@ -131,12 +135,13 @@
             // 
             // grpDataOutput
             // 
+            this.grpDataOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.grpDataOutput.Controls.Add(this.ctlVectorOutputEV2);
             this.grpDataOutput.Controls.Add(this.ctlVectorOutputEV1);
             this.grpDataOutput.Controls.Add(this.ctlVectorOutputX);
             this.grpDataOutput.Controls.Add(this.txtDeterminante);
             this.grpDataOutput.Controls.Add(this.butDeterminante);
-            this.grpDataOutput.Location = new System.Drawing.Point(871, 63);
+            this.grpDataOutput.Location = new System.Drawing.Point(895, 63);
             this.grpDataOutput.Name = "grpDataOutput";
             this.grpDataOutput.Size = new System.Drawing.Size(408, 176);
             this.grpDataOutput.TabIndex = 41;
@@ -145,6 +150,7 @@
             // 
             // txtDeterminante
             // 
+            this.txtDeterminante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtDeterminante.Location = new System.Drawing.Point(144, 133);
             this.txtDeterminante.Margin = new System.Windows.Forms.Padding(2);
             this.txtDeterminante.MaxLength = 5;
@@ -155,6 +161,7 @@
             // 
             // butDeterminante
             // 
+            this.butDeterminante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.butDeterminante.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDeterminante.Location = new System.Drawing.Point(54, 130);
             this.butDeterminante.Margin = new System.Windows.Forms.Padding(2);
@@ -167,22 +174,27 @@
             // 
             // cosInput
             // 
+            this.cosInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.cosInput.Location = new System.Drawing.Point(32, 285);
             this.cosInput.Name = "cosInput";
-            this.cosInput.Size = new System.Drawing.Size(378, 282);
+            this.cosInput.Size = new System.Drawing.Size(378, 232);
             this.cosInput.TabIndex = 42;
             // 
             // cosOutput
             // 
-            this.cosOutput.Location = new System.Drawing.Point(901, 285);
+            this.cosOutput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cosOutput.Location = new System.Drawing.Point(925, 285);
             this.cosOutput.Name = "cosOutput";
-            this.cosOutput.Size = new System.Drawing.Size(378, 282);
+            this.cosOutput.Size = new System.Drawing.Size(378, 232);
             this.cosOutput.TabIndex = 43;
             // 
             // lblNotes
             // 
+            this.lblNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(438, 723);
+            this.lblNotes.Location = new System.Drawing.Point(438, 673);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(46, 13);
             this.lblNotes.TabIndex = 44;
@@ -190,17 +202,20 @@
             // 
             // rtxtNotes
             // 
-            this.rtxtNotes.Location = new System.Drawing.Point(439, 739);
+            this.rtxtNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtxtNotes.Location = new System.Drawing.Point(439, 689);
             this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(435, 136);
+            this.rtxtNotes.Size = new System.Drawing.Size(459, 136);
             this.rtxtNotes.TabIndex = 45;
             this.rtxtNotes.Text = "";
             // 
             // lblHeader
             // 
+            this.lblHeader.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(512, 9);
+            this.lblHeader.Location = new System.Drawing.Point(524, 9);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(430, 25);
@@ -209,9 +224,10 @@
             // 
             // picMathEquatCenter
             // 
-            this.picMathEquatCenter.Location = new System.Drawing.Point(441, 312);
+            this.picMathEquatCenter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.picMathEquatCenter.Location = new System.Drawing.Point(453, 312);
             this.picMathEquatCenter.Name = "picMathEquatCenter";
-            this.picMathEquatCenter.Size = new System.Drawing.Size(433, 216);
+            this.picMathEquatCenter.Size = new System.Drawing.Size(433, 166);
             this.picMathEquatCenter.TabIndex = 48;
             this.picMathEquatCenter.TabStop = false;
             // 
@@ -295,7 +311,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1338, 899);
+            this.ClientSize = new System.Drawing.Size(1362, 849);
             this.Controls.Add(this.butFunctionTransfX);
             this.Controls.Add(this.picMathEquatCenter);
             this.Controls.Add(this.lblHeader);
@@ -308,6 +324,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.grpDataInput);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(1310, 833);
             this.Name = "FrmDrehLinAbbUrsp";
             this.Text = "Drehung linearer Abbildungen am Ursprung";
             this.grpDataInput.ResumeLayout(false);

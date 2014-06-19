@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SoftwareProjekt.Classes.Math.Matrix matrix1 = new SoftwareProjekt.Classes.Math.Matrix();
-            SoftwareProjekt.Classes.Math.Matrix matrix2 = new SoftwareProjekt.Classes.Math.Matrix();
-            SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector2 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Matrix matrix3 = new SoftwareProjekt.Classes.Math.Matrix();
+            SoftwareProjekt.Classes.Math.Matrix matrix4 = new SoftwareProjekt.Classes.Math.Matrix();
             this.butFx = new System.Windows.Forms.Button();
             this.lblOutput1 = new System.Windows.Forms.Label();
             this.lblInput = new System.Windows.Forms.Label();
             this.grpDataInput1 = new System.Windows.Forms.GroupBox();
+            this.ctlVecInX = new SoftwareProjekt.UserControls.CtlVectorInput();
+            this.lblPointX = new System.Windows.Forms.Label();
             this.dutDeterminante = new System.Windows.Forms.Button();
             this.ctlMatrixInput1 = new SoftwareProjekt.UserControls.CtlMatrixInput();
             this.txtDeterminante1 = new System.Windows.Forms.TextBox();
@@ -58,8 +60,6 @@
             this.butGFx = new System.Windows.Forms.Button();
             this.txtGFx = new System.Windows.Forms.TextBox();
             this.txtResultOfTransf = new System.Windows.Forms.Label();
-            this.ctlVecInX = new SoftwareProjekt.UserControls.CtlVectorInput();
-            this.lblPointX = new System.Windows.Forms.Label();
             this.grpDataInput1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMathEquLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMathEquRight)).BeginInit();
@@ -113,6 +113,26 @@
             this.grpDataInput1.TabStop = false;
             this.grpDataInput1.Text = "Dateneingabe1";
             // 
+            // ctlVecInX
+            // 
+            this.ctlVecInX.Location = new System.Drawing.Point(8, 43);
+            this.ctlVecInX.Margin = new System.Windows.Forms.Padding(5);
+            this.ctlVecInX.Name = "ctlVecInX";
+            this.ctlVecInX.Size = new System.Drawing.Size(161, 102);
+            this.ctlVecInX.TabIndex = 59;
+            vector2.X1 = float.NaN;
+            vector2.X2 = float.NaN;
+            this.ctlVecInX.Vector = vector2;
+            // 
+            // lblPointX
+            // 
+            this.lblPointX.AutoSize = true;
+            this.lblPointX.Location = new System.Drawing.Point(22, 21);
+            this.lblPointX.Name = "lblPointX";
+            this.lblPointX.Size = new System.Drawing.Size(59, 17);
+            this.lblPointX.TabIndex = 58;
+            this.lblPointX.Text = "Vektor x";
+            // 
             // dutDeterminante
             // 
             this.dutDeterminante.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -128,11 +148,11 @@
             // 
             this.ctlMatrixInput1.Location = new System.Drawing.Point(208, 21);
             this.ctlMatrixInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            matrix1.X11 = float.NaN;
-            matrix1.X12 = float.NaN;
-            matrix1.X21 = float.NaN;
-            matrix1.X22 = float.NaN;
-            this.ctlMatrixInput1.Matrix = matrix1;
+            matrix3.X11 = float.NaN;
+            matrix3.X12 = float.NaN;
+            matrix3.X21 = float.NaN;
+            matrix3.X22 = float.NaN;
+            this.ctlMatrixInput1.Matrix = matrix3;
             this.ctlMatrixInput1.Name = "ctlMatrixInput1";
             this.ctlMatrixInput1.Size = new System.Drawing.Size(150, 103);
             this.ctlMatrixInput1.TabIndex = 57;
@@ -141,10 +161,11 @@
             // 
             this.txtDeterminante1.Location = new System.Drawing.Point(208, 182);
             this.txtDeterminante1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDeterminante1.MaxLength = 5;
             this.txtDeterminante1.Name = "txtDeterminante1";
+            this.txtDeterminante1.ReadOnly = true;
             this.txtDeterminante1.Size = new System.Drawing.Size(150, 22);
             this.txtDeterminante1.TabIndex = 36;
-            this.txtDeterminante1.TextChanged += new System.EventHandler(this.txtDeterminante1_TextChanged);
             // 
             // butDeterminante1
             // 
@@ -283,11 +304,11 @@
             // 
             this.ctlMatrixInput2.Location = new System.Drawing.Point(21, 31);
             this.ctlMatrixInput2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            matrix2.X11 = float.NaN;
-            matrix2.X12 = float.NaN;
-            matrix2.X21 = float.NaN;
-            matrix2.X22 = float.NaN;
-            this.ctlMatrixInput2.Matrix = matrix2;
+            matrix4.X11 = float.NaN;
+            matrix4.X12 = float.NaN;
+            matrix4.X21 = float.NaN;
+            matrix4.X22 = float.NaN;
+            this.ctlMatrixInput2.Matrix = matrix4;
             this.ctlMatrixInput2.Name = "ctlMatrixInput2";
             this.ctlMatrixInput2.Size = new System.Drawing.Size(150, 103);
             this.ctlMatrixInput2.TabIndex = 57;
@@ -296,10 +317,11 @@
             // 
             this.txtDeterminante2.Location = new System.Drawing.Point(199, 82);
             this.txtDeterminante2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDeterminante2.MaxLength = 5;
             this.txtDeterminante2.Name = "txtDeterminante2";
+            this.txtDeterminante2.ReadOnly = true;
             this.txtDeterminante2.Size = new System.Drawing.Size(150, 22);
             this.txtDeterminante2.TabIndex = 36;
-            this.txtDeterminante2.TextChanged += new System.EventHandler(this.txtDeterminante2_TextChanged);
             // 
             // butGx
             // 
@@ -342,31 +364,11 @@
             this.txtResultOfTransf.TabIndex = 60;
             this.txtResultOfTransf.Text = "Ergebnis der Transformation:";
             // 
-            // ctlVecInX
-            // 
-            this.ctlVecInX.Location = new System.Drawing.Point(8, 43);
-            this.ctlVecInX.Margin = new System.Windows.Forms.Padding(5);
-            this.ctlVecInX.Name = "ctlVecInX";
-            this.ctlVecInX.Size = new System.Drawing.Size(161, 102);
-            this.ctlVecInX.TabIndex = 59;
-            vector1.X1 = float.NaN;
-            vector1.X2 = float.NaN;
-            this.ctlVecInX.Vector = vector1;
-            // 
-            // lblPointX
-            // 
-            this.lblPointX.AutoSize = true;
-            this.lblPointX.Location = new System.Drawing.Point(22, 21);
-            this.lblPointX.Name = "lblPointX";
-            this.lblPointX.Size = new System.Drawing.Size(59, 17);
-            this.lblPointX.TabIndex = 58;
-            this.lblPointX.Text = "Vektor x";
-            // 
             // FrmHinterLinAbb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1057);
+            this.ClientSize = new System.Drawing.Size(1914, 1045);
             this.Controls.Add(this.txtResultOfTransf);
             this.Controls.Add(this.txtGFx);
             this.Controls.Add(this.butGFx);

@@ -63,11 +63,20 @@ namespace SoftwareProjekt.Forms
         public override Dictionary<string, Object> GetInputData()
         {
             Dictionary<string, Object> retVal = new Dictionary<string, object>();
+            double Angle;
 
             retVal.Add("EV1", ctlVectorEV1.Vector);
             retVal.Add("EV2", ctlVectorEV2.Vector);
             retVal.Add("VectorX", ctlVectorInputX.Vector);
-            retVal.Add("Angle", Convert.ToDouble(txtAngle.Text));
+
+            if (double.TryParse(txtAngle.Text, out Angle))
+            {
+                retVal.Add("Angle", Angle);
+            }
+            else
+            {
+                retVal.Add("Angle", null);
+            }
 
             return retVal;
         }
@@ -92,7 +101,14 @@ namespace SoftwareProjekt.Forms
 
         private void txtAngle_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyChar == ',' && (txtAngle.Text.Contains(",") || txtAngle.Text == ""))
+            {
+                e.Handled = true;
+            }
         }
 
     }

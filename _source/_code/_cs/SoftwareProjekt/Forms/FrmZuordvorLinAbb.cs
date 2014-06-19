@@ -21,7 +21,7 @@ using SoftwareProjekt.Interfaces;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmZuordvorLinAbb : AbstractView //Form
+    public partial class FrmZuordvorLinAbb :  AbstractView 
     {
         public FrmZuordvorLinAbb()
         {

@@ -20,7 +20,7 @@ using SoftwareProjekt.Interfaces;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmSpiegLinAbbUrsp : AbstractView //Form
+    public partial class FrmSpiegLinAbbUrsp : AbstractView 
     {
         public FrmSpiegLinAbbUrsp()
         {
@@ -64,7 +64,9 @@ namespace SoftwareProjekt.Forms
 
         }
 
+        private void txtAngle_KeyPress(object sender, KeyPressEventArgs e)
+        {
 
-
+        }
     }
 }

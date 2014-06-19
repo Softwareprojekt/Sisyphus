@@ -85,10 +85,11 @@
             // 
             this.txtDeterminante1.Location = new System.Drawing.Point(176, 250);
             this.txtDeterminante1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDeterminante1.MaxLength = 5;
             this.txtDeterminante1.Name = "txtDeterminante1";
+            this.txtDeterminante1.ReadOnly = true;
             this.txtDeterminante1.Size = new System.Drawing.Size(150, 22);
             this.txtDeterminante1.TabIndex = 58;
-            this.txtDeterminante1.TextChanged += new System.EventHandler(this.txtDeterminante1_TextChanged);
             // 
             // ctlMaInScaleMat
             // 
@@ -233,7 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1659, 1057);
+            this.ClientSize = new System.Drawing.Size(1659, 1045);
             this.Controls.Add(this.picMathEqua);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.lblNotes);

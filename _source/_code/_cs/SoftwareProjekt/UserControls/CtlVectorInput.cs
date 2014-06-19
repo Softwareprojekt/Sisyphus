@@ -80,10 +80,16 @@ namespace SoftwareProjekt.UserControls
         /// </summary>
         private void txtEle11_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == ',')
+
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != ',')
             {
                 e.Handled = true;
             }
+            else if (e.KeyChar == ',' && (txtEle11.Text.Contains(",") || txtEle11.Text == ""))
+            {
+                e.Handled = true;
+            }
+            
         }
 
         /// <summary>
@@ -101,7 +107,11 @@ namespace SoftwareProjekt.UserControls
         /// </summary>
         private void txtEle21_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == ',')
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyChar == ',' && (txtEle21.Text.Contains(",") || txtEle21.Text == ""))
             {
                 e.Handled = true;
             }
@@ -142,6 +152,24 @@ namespace SoftwareProjekt.UserControls
             txtEle21.Text = _vector.X2.ToString();
 
             base.Refresh();
+        }
+
+        private void grpVektorInput_Resize(object sender, EventArgs e)
+        {
+            int newWidth = (int)(grpVektorInput.Size.Width / 2);
+            int newX = (int)(grpVektorInput.Size.Width / 4);
+
+            int Ele11_newY =  (int)((grpVektorInput.Size.Height-24)/3);
+            int Ele21_newY = (Ele11_newY * 2) + 12;
+
+            txtEle11.Size = new System.Drawing.Size(newWidth,12);
+            txtEle11.Location = new Point(newX, Ele11_newY);
+
+            txtEle21.Size = new System.Drawing.Size(newWidth, 12);
+            txtEle21.Location = new Point(newX, Ele21_newY);
+
+            grpVektorInput.Refresh();
+
         }
     }
 }

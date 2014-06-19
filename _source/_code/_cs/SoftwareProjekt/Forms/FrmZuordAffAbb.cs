@@ -13,7 +13,7 @@ using SoftwareProjekt.Interfaces;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmZuordAffAbb : AbstractView //Form
+    public partial class FrmZuordAffAbb : AbstractView 
     {
         public FrmZuordAffAbb()
         {

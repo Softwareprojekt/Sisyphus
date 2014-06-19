@@ -60,13 +60,14 @@
             this.cosOuput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.butFx = new System.Windows.Forms.Button();
             this.txtFx = new System.Windows.Forms.TextBox();
+            this.ctlMathEqua = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.grpDataInput.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblOutput
             // 
             this.lblOutput.AutoSize = true;
-            this.lblOutput.Location = new System.Drawing.Point(863, 254);
+            this.lblOutput.Location = new System.Drawing.Point(1160, 344);
             this.lblOutput.Name = "lblOutput";
             this.lblOutput.Size = new System.Drawing.Size(187, 17);
             this.lblOutput.TabIndex = 45;
@@ -94,7 +95,7 @@
             // lblInput
             // 
             this.lblInput.AutoSize = true;
-            this.lblInput.Location = new System.Drawing.Point(171, 254);
+            this.lblInput.Location = new System.Drawing.Point(165, 344);
             this.lblInput.Name = "lblInput";
             this.lblInput.Size = new System.Drawing.Size(183, 17);
             this.lblInput.TabIndex = 43;
@@ -110,7 +111,7 @@
             this.grpDataInput.Controls.Add(this.lblAngle);
             this.grpDataInput.Controls.Add(this.lblEV2);
             this.grpDataInput.Controls.Add(this.lblEV1);
-            this.grpDataInput.Location = new System.Drawing.Point(88, 40);
+            this.grpDataInput.Location = new System.Drawing.Point(245, 98);
             this.grpDataInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInput.Name = "grpDataInput";
             this.grpDataInput.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -165,10 +166,12 @@
             // 
             this.txtAngle.Location = new System.Drawing.Point(80, 166);
             this.txtAngle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAngle.MaxLength = 5;
             this.txtAngle.Name = "txtAngle";
             this.txtAngle.Size = new System.Drawing.Size(84, 22);
             this.txtAngle.TabIndex = 15;
             this.txtAngle.TextChanged += new System.EventHandler(this.txtAngle_TextChanged);
+            this.txtAngle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAngle_KeyPress);
             // 
             // lblAngle
             // 
@@ -250,7 +253,7 @@
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(272, 670);
+            this.lblNotes.Location = new System.Drawing.Point(406, 769);
             this.lblNotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(60, 17);
@@ -259,10 +262,10 @@
             // 
             // rtxtNotes
             // 
-            this.rtxtNotes.Location = new System.Drawing.Point(272, 693);
+            this.rtxtNotes.Location = new System.Drawing.Point(407, 790);
             this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(636, 152);
+            this.rtxtNotes.Size = new System.Drawing.Size(636, 95);
             this.rtxtNotes.TabIndex = 59;
             this.rtxtNotes.Text = "";
             this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
@@ -271,7 +274,7 @@
             // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(256, 9);
+            this.lblHeader.Location = new System.Drawing.Point(440, 9);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(589, 29);
             this.lblHeader.TabIndex = 61;
@@ -298,14 +301,14 @@
             // 
             // cosInput
             // 
-            this.cosInput.Location = new System.Drawing.Point(39, 274);
+            this.cosInput.Location = new System.Drawing.Point(12, 364);
             this.cosInput.Name = "cosInput";
             this.cosInput.Size = new System.Drawing.Size(454, 368);
             this.cosInput.TabIndex = 62;
             // 
             // cosOuput
             // 
-            this.cosOuput.Location = new System.Drawing.Point(722, 274);
+            this.cosOuput.Location = new System.Drawing.Point(1005, 364);
             this.cosOuput.Name = "cosOuput";
             this.cosOuput.Size = new System.Drawing.Size(454, 368);
             this.cosOuput.TabIndex = 63;
@@ -313,7 +316,7 @@
             // butFx
             // 
             this.butFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFx.Location = new System.Drawing.Point(695, 114);
+            this.butFx.Location = new System.Drawing.Point(852, 172);
             this.butFx.Name = "butFx";
             this.butFx.Size = new System.Drawing.Size(76, 52);
             this.butFx.TabIndex = 64;
@@ -323,18 +326,30 @@
             // 
             // txtFx
             // 
-            this.txtFx.Location = new System.Drawing.Point(624, 171);
+            this.txtFx.Location = new System.Drawing.Point(781, 229);
             this.txtFx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFx.Name = "txtFx";
             this.txtFx.Size = new System.Drawing.Size(221, 22);
             this.txtFx.TabIndex = 68;
             this.txtFx.TextChanged += new System.EventHandler(this.txtFx_TextChanged);
             // 
+            // ctlMathEqua
+            // 
+            this.ctlMathEqua.Equation = "";
+            this.ctlMathEqua.Filename = "expr.gif";
+            this.ctlMathEqua.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";
+            this.ctlMathEqua.Location = new System.Drawing.Point(517, 493);
+            this.ctlMathEqua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlMathEqua.Name = "ctlMathEqua";
+            this.ctlMathEqua.Size = new System.Drawing.Size(439, 113);
+            this.ctlMathEqua.TabIndex = 69;
+            // 
             // FrmSpiegLinAbbUrsp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1219, 855);
+            this.ClientSize = new System.Drawing.Size(1471, 898);
+            this.Controls.Add(this.ctlMathEqua);
             this.Controls.Add(this.txtFx);
             this.Controls.Add(this.butFx);
             this.Controls.Add(this.cosOuput);
@@ -386,5 +401,6 @@
         private UserControls.CoordinateSystem cosOuput;
         private System.Windows.Forms.Button butFx;
         private System.Windows.Forms.TextBox txtFx;
+        private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEqua;
     }
 }
