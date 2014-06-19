@@ -19,7 +19,7 @@ using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmLinAbbVielBelVek : AbstractView //Form
+    public partial class FrmLinAbbVielBelVek : AbstractView 
     {
         public FrmLinAbbVielBelVek()
         {
@@ -64,6 +64,11 @@ namespace SoftwareProjekt.Forms
         }
 
         private void rtxtNotes_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFactorA_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }

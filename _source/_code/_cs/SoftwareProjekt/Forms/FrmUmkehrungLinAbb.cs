@@ -13,7 +13,7 @@ using SoftwareProjekt.Interfaces;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmUmkehrungLinAbb : AbstractView //Form
+    public partial class FrmUmkehrungLinAbb : AbstractView 
     {
         public FrmUmkehrungLinAbb()
         {

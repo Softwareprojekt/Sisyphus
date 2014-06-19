@@ -33,7 +33,7 @@ using SoftwareProjekt.Interfaces;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmLinAbbSumBelVek :AbstractView  //Form
+    public partial class FrmLinAbbSumBelVek : AbstractView  
     {
         public FrmLinAbbSumBelVek()
         {
@@ -70,11 +70,6 @@ namespace SoftwareProjekt.Forms
         private void dutDeterminante_Click(object sender, EventArgs e)
         {
             this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
-        }
-
-        private void txtDeterminante1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

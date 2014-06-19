@@ -6,12 +6,13 @@ using System.Windows.Forms;
  * 1. Events
  * 2. Openfiledialpg for butSelectPic
  * 3. Add license header
+ * 4. Coordinate Systems needed?
  * 
  */
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmFraktalErzIFS : Form //AbstractView
+    public partial class FrmFraktalErzIFS : AbstractView
     {
         public FrmFraktalErzIFS()
         {

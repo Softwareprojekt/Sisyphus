@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SoftwareProjekt.Classes.Math.Vector vector17 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Matrix matrix9 = new SoftwareProjekt.Classes.Math.Matrix();
-            SoftwareProjekt.Classes.Math.Vector vector18 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Matrix matrix1 = new SoftwareProjekt.Classes.Math.Matrix();
+            SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector2 = new SoftwareProjekt.Classes.Math.Vector();
             this.lblHeader = new System.Windows.Forms.Label();
             this.cosLeft = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.cosRight = new SoftwareProjekt.UserControls.CoordinateSystem();
@@ -39,28 +39,30 @@
             this.lblInput = new System.Windows.Forms.Label();
             this.lblOutput = new System.Windows.Forms.Label();
             this.grpDataInput = new System.Windows.Forms.GroupBox();
+            this.txtDeterminante = new System.Windows.Forms.TextBox();
+            this.butDeterminante = new System.Windows.Forms.Button();
+            this.ctlMatrixInput1 = new SoftwareProjekt.UserControls.CtlMatrixInput();
             this.lblPunktX = new System.Windows.Forms.Label();
             this.ctlVectorInput1 = new SoftwareProjekt.UserControls.CtlVectorInput();
-            this.ctlMatrixInput1 = new SoftwareProjekt.UserControls.CtlMatrixInput();
             this.butFx = new System.Windows.Forms.Button();
-            this.butDeterminante = new System.Windows.Forms.Button();
-            this.txtDeterminante = new System.Windows.Forms.TextBox();
             this.butUmkehrFx = new System.Windows.Forms.Button();
             this.txtUmkerFx = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpDataInRight = new System.Windows.Forms.GroupBox();
             this.lblPunktY = new System.Windows.Forms.Label();
             this.ctlVectorInput2 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.button1 = new System.Windows.Forms.Button();
             this.txtUmkehrFy = new System.Windows.Forms.TextBox();
+            this.ctlMathEquaRi2Le = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
+            this.ctlMathEquaLe2Ri = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.grpDataInput.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.grpDataInRight.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblHeader
             // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(388, 11);
+            this.lblHeader.Location = new System.Drawing.Point(535, 9);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(517, 29);
@@ -69,16 +71,16 @@
             // 
             // cosLeft
             // 
-            this.cosLeft.Location = new System.Drawing.Point(100, 292);
-            this.cosLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cosLeft.Location = new System.Drawing.Point(13, 292);
+            this.cosLeft.Margin = new System.Windows.Forms.Padding(4);
             this.cosLeft.Name = "cosLeft";
             this.cosLeft.Size = new System.Drawing.Size(489, 389);
             this.cosLeft.TabIndex = 1;
             // 
             // cosRight
             // 
-            this.cosRight.Location = new System.Drawing.Point(792, 292);
-            this.cosRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cosRight.Location = new System.Drawing.Point(1028, 292);
+            this.cosRight.Margin = new System.Windows.Forms.Padding(4);
             this.cosRight.Name = "cosRight";
             this.cosRight.Size = new System.Drawing.Size(489, 389);
             this.cosRight.TabIndex = 2;
@@ -96,7 +98,7 @@
             // rtxtNotes
             // 
             this.rtxtNotes.Location = new System.Drawing.Point(431, 719);
-            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtNotes.Name = "rtxtNotes";
             this.rtxtNotes.Size = new System.Drawing.Size(636, 152);
             this.rtxtNotes.TabIndex = 5;
@@ -106,7 +108,7 @@
             // lblInput
             // 
             this.lblInput.AutoSize = true;
-            this.lblInput.Location = new System.Drawing.Point(265, 271);
+            this.lblInput.Location = new System.Drawing.Point(155, 271);
             this.lblInput.Name = "lblInput";
             this.lblInput.Size = new System.Drawing.Size(183, 17);
             this.lblInput.TabIndex = 7;
@@ -128,7 +130,7 @@
             this.grpDataInput.Controls.Add(this.ctlMatrixInput1);
             this.grpDataInput.Controls.Add(this.lblPunktX);
             this.grpDataInput.Controls.Add(this.ctlVectorInput1);
-            this.grpDataInput.Location = new System.Drawing.Point(12, 68);
+            this.grpDataInput.Location = new System.Drawing.Point(104, 80);
             this.grpDataInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInput.Name = "grpDataInput";
             this.grpDataInput.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -136,6 +138,41 @@
             this.grpDataInput.TabIndex = 42;
             this.grpDataInput.TabStop = false;
             this.grpDataInput.Text = "Dateneingabe";
+            // 
+            // txtDeterminante
+            // 
+            this.txtDeterminante.Location = new System.Drawing.Point(333, 116);
+            this.txtDeterminante.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDeterminante.MaxLength = 5;
+            this.txtDeterminante.Name = "txtDeterminante";
+            this.txtDeterminante.ReadOnly = true;
+            this.txtDeterminante.Size = new System.Drawing.Size(162, 22);
+            this.txtDeterminante.TabIndex = 66;
+            this.txtDeterminante.TextChanged += new System.EventHandler(this.txtDeterminante_TextChanged);
+            // 
+            // butDeterminante
+            // 
+            this.butDeterminante.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butDeterminante.Location = new System.Drawing.Point(356, 70);
+            this.butDeterminante.Name = "butDeterminante";
+            this.butDeterminante.Size = new System.Drawing.Size(114, 41);
+            this.butDeterminante.TabIndex = 44;
+            this.butDeterminante.Text = "Determinante";
+            this.butDeterminante.UseVisualStyleBackColor = true;
+            this.butDeterminante.Click += new System.EventHandler(this.butDeterminante_Click);
+            // 
+            // ctlMatrixInput1
+            // 
+            this.ctlMatrixInput1.Location = new System.Drawing.Point(172, 55);
+            this.ctlMatrixInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            matrix1.X11 = float.NaN;
+            matrix1.X12 = float.NaN;
+            matrix1.X21 = float.NaN;
+            matrix1.X22 = float.NaN;
+            this.ctlMatrixInput1.Matrix = matrix1;
+            this.ctlMatrixInput1.Name = "ctlMatrixInput1";
+            this.ctlMatrixInput1.Size = new System.Drawing.Size(154, 107);
+            this.ctlMatrixInput1.TabIndex = 43;
             // 
             // lblPunktX
             // 
@@ -153,27 +190,14 @@
             this.ctlVectorInput1.Name = "ctlVectorInput1";
             this.ctlVectorInput1.Size = new System.Drawing.Size(157, 105);
             this.ctlVectorInput1.TabIndex = 64;
-            vector17.X1 = float.NaN;
-            vector17.X2 = float.NaN;
-            this.ctlVectorInput1.Vector = vector17;
-            // 
-            // ctlMatrixInput1
-            // 
-            this.ctlMatrixInput1.Location = new System.Drawing.Point(172, 55);
-            this.ctlMatrixInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            matrix9.X11 = float.NaN;
-            matrix9.X12 = float.NaN;
-            matrix9.X21 = float.NaN;
-            matrix9.X22 = float.NaN;
-            this.ctlMatrixInput1.Matrix = matrix9;
-            this.ctlMatrixInput1.Name = "ctlMatrixInput1";
-            this.ctlMatrixInput1.Size = new System.Drawing.Size(154, 107);
-            this.ctlMatrixInput1.TabIndex = 43;
+            vector1.X1 = float.NaN;
+            vector1.X2 = float.NaN;
+            this.ctlVectorInput1.Vector = vector1;
             // 
             // butFx
             // 
             this.butFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFx.Location = new System.Drawing.Point(530, 79);
+            this.butFx.Location = new System.Drawing.Point(901, 93);
             this.butFx.Name = "butFx";
             this.butFx.Size = new System.Drawing.Size(96, 60);
             this.butFx.TabIndex = 43;
@@ -181,30 +205,10 @@
             this.butFx.UseVisualStyleBackColor = true;
             this.butFx.Click += new System.EventHandler(this.butFx_Click);
             // 
-            // butDeterminante
-            // 
-            this.butDeterminante.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butDeterminante.Location = new System.Drawing.Point(356, 70);
-            this.butDeterminante.Name = "butDeterminante";
-            this.butDeterminante.Size = new System.Drawing.Size(114, 41);
-            this.butDeterminante.TabIndex = 44;
-            this.butDeterminante.Text = "Determinante";
-            this.butDeterminante.UseVisualStyleBackColor = true;
-            this.butDeterminante.Click += new System.EventHandler(this.butDeterminante_Click);
-            // 
-            // txtDeterminante
-            // 
-            this.txtDeterminante.Location = new System.Drawing.Point(333, 116);
-            this.txtDeterminante.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDeterminante.Name = "txtDeterminante";
-            this.txtDeterminante.Size = new System.Drawing.Size(162, 22);
-            this.txtDeterminante.TabIndex = 66;
-            this.txtDeterminante.TextChanged += new System.EventHandler(this.txtDeterminante_TextChanged);
-            // 
             // butUmkehrFx
             // 
             this.butUmkehrFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butUmkehrFx.Location = new System.Drawing.Point(530, 145);
+            this.butUmkehrFx.Location = new System.Drawing.Point(901, 159);
             this.butUmkehrFx.Name = "butUmkehrFx";
             this.butUmkehrFx.Size = new System.Drawing.Size(96, 60);
             this.butUmkehrFx.TabIndex = 44;
@@ -214,25 +218,25 @@
             // 
             // txtUmkerFx
             // 
-            this.txtUmkerFx.Location = new System.Drawing.Point(530, 206);
+            this.txtUmkerFx.Location = new System.Drawing.Point(901, 220);
             this.txtUmkerFx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUmkerFx.Name = "txtUmkerFx";
             this.txtUmkerFx.Size = new System.Drawing.Size(162, 22);
             this.txtUmkerFx.TabIndex = 67;
             this.txtUmkerFx.TextChanged += new System.EventHandler(this.txtUmkerFx_TextChanged);
             // 
-            // groupBox1
+            // grpDataInRight
             // 
-            this.groupBox1.Controls.Add(this.lblPunktY);
-            this.groupBox1.Controls.Add(this.ctlVectorInput2);
-            this.groupBox1.Location = new System.Drawing.Point(743, 68);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(173, 174);
-            this.groupBox1.TabIndex = 67;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Dateneingabe";
+            this.grpDataInRight.Controls.Add(this.lblPunktY);
+            this.grpDataInRight.Controls.Add(this.ctlVectorInput2);
+            this.grpDataInRight.Location = new System.Drawing.Point(1132, 68);
+            this.grpDataInRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpDataInRight.Name = "grpDataInRight";
+            this.grpDataInRight.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpDataInRight.Size = new System.Drawing.Size(173, 174);
+            this.grpDataInRight.TabIndex = 67;
+            this.grpDataInRight.TabStop = false;
+            this.grpDataInRight.Text = "Dateneingabe";
             // 
             // lblPunktY
             // 
@@ -250,14 +254,14 @@
             this.ctlVectorInput2.Name = "ctlVectorInput2";
             this.ctlVectorInput2.Size = new System.Drawing.Size(157, 105);
             this.ctlVectorInput2.TabIndex = 64;
-            vector18.X1 = float.NaN;
-            vector18.X2 = float.NaN;
-            this.ctlVectorInput2.Vector = vector18;
+            vector2.X1 = float.NaN;
+            vector2.X2 = float.NaN;
+            this.ctlVectorInput2.Vector = vector2;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(922, 145);
+            this.button1.Location = new System.Drawing.Point(1311, 145);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 60);
             this.button1.TabIndex = 68;
@@ -267,21 +271,45 @@
             // 
             // txtUmkehrFy
             // 
-            this.txtUmkehrFy.Location = new System.Drawing.Point(922, 206);
+            this.txtUmkehrFy.Location = new System.Drawing.Point(1311, 206);
             this.txtUmkehrFy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUmkehrFy.Name = "txtUmkehrFy";
             this.txtUmkehrFy.Size = new System.Drawing.Size(162, 22);
             this.txtUmkehrFy.TabIndex = 69;
             this.txtUmkehrFy.TextChanged += new System.EventHandler(this.txtUmkehrFy_TextChanged);
             // 
+            // ctlMathEquaRi2Le
+            // 
+            this.ctlMathEquaRi2Le.Equation = "";
+            this.ctlMathEquaRi2Le.Filename = "expr.gif";
+            this.ctlMathEquaRi2Le.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";
+            this.ctlMathEquaRi2Le.Location = new System.Drawing.Point(540, 340);
+            this.ctlMathEquaRi2Le.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlMathEquaRi2Le.Name = "ctlMathEquaRi2Le";
+            this.ctlMathEquaRi2Le.Size = new System.Drawing.Size(439, 113);
+            this.ctlMathEquaRi2Le.TabIndex = 70;
+            // 
+            // ctlMathEquaLe2Ri
+            // 
+            this.ctlMathEquaLe2Ri.Equation = "";
+            this.ctlMathEquaLe2Ri.Filename = "expr.gif";
+            this.ctlMathEquaLe2Ri.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";
+            this.ctlMathEquaLe2Ri.Location = new System.Drawing.Point(540, 461);
+            this.ctlMathEquaLe2Ri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlMathEquaLe2Ri.Name = "ctlMathEquaLe2Ri";
+            this.ctlMathEquaLe2Ri.Size = new System.Drawing.Size(439, 113);
+            this.ctlMathEquaLe2Ri.TabIndex = 71;
+            // 
             // FrmUmkehrungLinAbb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1318, 886);
+            this.ClientSize = new System.Drawing.Size(1544, 886);
+            this.Controls.Add(this.ctlMathEquaLe2Ri);
+            this.Controls.Add(this.ctlMathEquaRi2Le);
             this.Controls.Add(this.txtUmkehrFy);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpDataInRight);
             this.Controls.Add(this.txtUmkerFx);
             this.Controls.Add(this.butUmkehrFx);
             this.Controls.Add(this.butFx);
@@ -298,8 +326,8 @@
             this.Text = "Umkehrung einer linearen Abbildung";
             this.grpDataInput.ResumeLayout(false);
             this.grpDataInput.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpDataInRight.ResumeLayout(false);
+            this.grpDataInRight.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,10 +351,12 @@
         private System.Windows.Forms.Button butFx;
         private System.Windows.Forms.Button butUmkehrFx;
         private System.Windows.Forms.TextBox txtUmkerFx;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpDataInRight;
         private System.Windows.Forms.Label lblPunktY;
         private UserControls.CtlVectorInput ctlVectorInput2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtUmkehrFy;
+        private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaRi2Le;
+        private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaLe2Ri;
     }
 }

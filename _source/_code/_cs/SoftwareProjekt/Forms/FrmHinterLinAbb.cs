@@ -20,7 +20,7 @@ using SoftwareProjekt.Interfaces;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmHinterLinAbb : AbstractView // ursprünglich Form
+    public partial class FrmHinterLinAbb : AbstractView 
     {
         public FrmHinterLinAbb()
         {
@@ -67,16 +67,6 @@ namespace SoftwareProjekt.Forms
         private void butGFx_Click(object sender, EventArgs e)
         {
             this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
-        }
-
-        private void txtDeterminante1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDeterminante2_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void txtGFx_TextChanged(object sender, EventArgs e)

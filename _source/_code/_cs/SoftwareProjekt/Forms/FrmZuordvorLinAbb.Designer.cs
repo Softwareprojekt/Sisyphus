@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SoftwareProjekt.Classes.Math.Vector vector7 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector8 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector9 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector2 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector3 = new SoftwareProjekt.Classes.Math.Vector();
             this.lblInputCos = new System.Windows.Forms.Label();
             this.lblOutputCos = new System.Windows.Forms.Label();
             this.grpDataInputRight = new System.Windows.Forms.GroupBox();
+            this.lblPointM2 = new System.Windows.Forms.Label();
+            this.lblPointM1 = new System.Windows.Forms.Label();
             this.ctlVectorInput2 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.ctlVectorInput1 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -47,16 +49,15 @@
             this.lblVectorX = new System.Windows.Forms.Label();
             this.txVectorX = new System.Windows.Forms.TextBox();
             this.grpDataInputLeft = new System.Windows.Forms.GroupBox();
+            this.lblPointX = new System.Windows.Forms.Label();
             this.ctlVecX1 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.cosInput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.lblPointX = new System.Windows.Forms.Label();
-            this.lblPointM1 = new System.Windows.Forms.Label();
-            this.lblPointM2 = new System.Windows.Forms.Label();
             this.butFunctionX = new System.Windows.Forms.Button();
+            this.ctlMathEqua = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.grpDataInputRight.SuspendLayout();
             this.grpDataInputLeft.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +74,7 @@
             // lblOutputCos
             // 
             this.lblOutputCos.AutoSize = true;
-            this.lblOutputCos.Location = new System.Drawing.Point(959, 430);
+            this.lblOutputCos.Location = new System.Drawing.Point(1301, 430);
             this.lblOutputCos.Name = "lblOutputCos";
             this.lblOutputCos.Size = new System.Drawing.Size(187, 17);
             this.lblOutputCos.TabIndex = 24;
@@ -89,36 +90,54 @@
             this.grpDataInputRight.Controls.Add(this.label1);
             this.grpDataInputRight.Controls.Add(this.textBox1);
             this.grpDataInputRight.Controls.Add(this.label2);
-            this.grpDataInputRight.Location = new System.Drawing.Point(598, 150);
+            this.grpDataInputRight.Location = new System.Drawing.Point(850, 137);
             this.grpDataInputRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInputRight.Name = "grpDataInputRight";
             this.grpDataInputRight.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpDataInputRight.Size = new System.Drawing.Size(331, 264);
+            this.grpDataInputRight.Size = new System.Drawing.Size(341, 264);
             this.grpDataInputRight.TabIndex = 25;
             this.grpDataInputRight.TabStop = false;
             this.grpDataInputRight.Text = "Dateneingabe";
             // 
+            // lblPointM2
+            // 
+            this.lblPointM2.AutoSize = true;
+            this.lblPointM2.Location = new System.Drawing.Point(211, 32);
+            this.lblPointM2.Name = "lblPointM2";
+            this.lblPointM2.Size = new System.Drawing.Size(67, 17);
+            this.lblPointM2.TabIndex = 33;
+            this.lblPointM2.Text = "Punkt m2";
+            // 
+            // lblPointM1
+            // 
+            this.lblPointM1.AutoSize = true;
+            this.lblPointM1.Location = new System.Drawing.Point(42, 32);
+            this.lblPointM1.Name = "lblPointM1";
+            this.lblPointM1.Size = new System.Drawing.Size(67, 17);
+            this.lblPointM1.TabIndex = 32;
+            this.lblPointM1.Text = "Punkt m1";
+            // 
             // ctlVectorInput2
             // 
             this.ctlVectorInput2.Location = new System.Drawing.Point(170, 54);
-            this.ctlVectorInput2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ctlVectorInput2.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorInput2.Name = "ctlVectorInput2";
             this.ctlVectorInput2.Size = new System.Drawing.Size(161, 102);
             this.ctlVectorInput2.TabIndex = 17;
-            vector7.X1 = float.NaN;
-            vector7.X2 = float.NaN;
-            this.ctlVectorInput2.Vector = vector7;
+            vector1.X1 = float.NaN;
+            vector1.X2 = float.NaN;
+            this.ctlVectorInput2.Vector = vector1;
             // 
             // ctlVectorInput1
             // 
             this.ctlVectorInput1.Location = new System.Drawing.Point(9, 54);
-            this.ctlVectorInput1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ctlVectorInput1.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorInput1.Name = "ctlVectorInput1";
             this.ctlVectorInput1.Size = new System.Drawing.Size(161, 102);
             this.ctlVectorInput1.TabIndex = 16;
-            vector8.X1 = float.NaN;
-            vector8.X2 = float.NaN;
-            this.ctlVectorInput1.Vector = vector8;
+            vector2.X1 = float.NaN;
+            vector2.X2 = float.NaN;
+            this.ctlVectorInput1.Vector = vector2;
             // 
             // textBox2
             // 
@@ -217,7 +236,7 @@
             this.grpDataInputLeft.Controls.Add(this.lblEV2);
             this.grpDataInputLeft.Controls.Add(this.txtEV1);
             this.grpDataInputLeft.Controls.Add(this.lblEV1);
-            this.grpDataInputLeft.Location = new System.Drawing.Point(268, 150);
+            this.grpDataInputLeft.Location = new System.Drawing.Point(507, 137);
             this.grpDataInputLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInputLeft.Name = "grpDataInputLeft";
             this.grpDataInputLeft.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -225,64 +244,6 @@
             this.grpDataInputLeft.TabIndex = 16;
             this.grpDataInputLeft.TabStop = false;
             this.grpDataInputLeft.Text = "Dateneingabe";
-            // 
-            // ctlVecX1
-            // 
-            this.ctlVecX1.Location = new System.Drawing.Point(39, 54);
-            this.ctlVecX1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.ctlVecX1.Name = "ctlVecX1";
-            this.ctlVecX1.Size = new System.Drawing.Size(161, 102);
-            this.ctlVecX1.TabIndex = 14;
-            vector9.X1 = float.NaN;
-            vector9.X2 = float.NaN;
-            this.ctlVecX1.Vector = vector9;
-            // 
-            // cosInput
-            // 
-            this.cosInput.Location = new System.Drawing.Point(16, 449);
-            this.cosInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cosInput.Name = "cosInput";
-            this.cosInput.Size = new System.Drawing.Size(571, 420);
-            this.cosInput.TabIndex = 26;
-            // 
-            // cosOutput
-            // 
-            this.cosOutput.Location = new System.Drawing.Point(749, 449);
-            this.cosOutput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cosOutput.Name = "cosOutput";
-            this.cosOutput.Size = new System.Drawing.Size(571, 420);
-            this.cosOutput.TabIndex = 27;
-            // 
-            // lblNotes
-            // 
-            this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(363, 898);
-            this.lblNotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(60, 17);
-            this.lblNotes.TabIndex = 29;
-            this.lblNotes.Text = "Notizen:";
-            // 
-            // rtxtNotes
-            // 
-            this.rtxtNotes.Location = new System.Drawing.Point(366, 919);
-            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(636, 136);
-            this.rtxtNotes.TabIndex = 28;
-            this.rtxtNotes.Text = "";
-            this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
-            // 
-            // lblHeader
-            // 
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(288, 11);
-            this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(692, 29);
-            this.lblHeader.TabIndex = 30;
-            this.lblHeader.Text = "Thema: Zuordnugsvorschrift einer linearen Abbildung verstehen";
             // 
             // lblPointX
             // 
@@ -293,28 +254,68 @@
             this.lblPointX.TabIndex = 31;
             this.lblPointX.Text = "Punkt x";
             // 
-            // lblPointM1
+            // ctlVecX1
             // 
-            this.lblPointM1.AutoSize = true;
-            this.lblPointM1.Location = new System.Drawing.Point(42, 32);
-            this.lblPointM1.Name = "lblPointM1";
-            this.lblPointM1.Size = new System.Drawing.Size(67, 17);
-            this.lblPointM1.TabIndex = 32;
-            this.lblPointM1.Text = "Punkt m1";
+            this.ctlVecX1.Location = new System.Drawing.Point(39, 54);
+            this.ctlVecX1.Margin = new System.Windows.Forms.Padding(5);
+            this.ctlVecX1.Name = "ctlVecX1";
+            this.ctlVecX1.Size = new System.Drawing.Size(161, 102);
+            this.ctlVecX1.TabIndex = 14;
+            vector3.X1 = float.NaN;
+            vector3.X2 = float.NaN;
+            this.ctlVecX1.Vector = vector3;
             // 
-            // lblPointM2
+            // cosInput
             // 
-            this.lblPointM2.AutoSize = true;
-            this.lblPointM2.Location = new System.Drawing.Point(211, 32);
-            this.lblPointM2.Name = "lblPointM2";
-            this.lblPointM2.Size = new System.Drawing.Size(67, 17);
-            this.lblPointM2.TabIndex = 33;
-            this.lblPointM2.Text = "Punkt m2";
+            this.cosInput.Location = new System.Drawing.Point(16, 449);
+            this.cosInput.Margin = new System.Windows.Forms.Padding(4);
+            this.cosInput.Name = "cosInput";
+            this.cosInput.Size = new System.Drawing.Size(571, 420);
+            this.cosInput.TabIndex = 26;
+            // 
+            // cosOutput
+            // 
+            this.cosOutput.Location = new System.Drawing.Point(1122, 451);
+            this.cosOutput.Margin = new System.Windows.Forms.Padding(4);
+            this.cosOutput.Name = "cosOutput";
+            this.cosOutput.Size = new System.Drawing.Size(571, 420);
+            this.cosOutput.TabIndex = 27;
+            // 
+            // lblNotes
+            // 
+            this.lblNotes.AutoSize = true;
+            this.lblNotes.Location = new System.Drawing.Point(508, 898);
+            this.lblNotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(60, 17);
+            this.lblNotes.TabIndex = 29;
+            this.lblNotes.Text = "Notizen:";
+            // 
+            // rtxtNotes
+            // 
+            this.rtxtNotes.Location = new System.Drawing.Point(507, 919);
+            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
+            this.rtxtNotes.Name = "rtxtNotes";
+            this.rtxtNotes.Size = new System.Drawing.Size(636, 136);
+            this.rtxtNotes.TabIndex = 28;
+            this.rtxtNotes.Text = "";
+            this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
+            // 
+            // lblHeader
+            // 
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Location = new System.Drawing.Point(531, 9);
+            this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(692, 29);
+            this.lblHeader.TabIndex = 30;
+            this.lblHeader.Text = "Thema: Zuordnugsvorschrift einer linearen Abbildung verstehen";
             // 
             // butFunctionX
             // 
             this.butFunctionX.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFunctionX.Location = new System.Drawing.Point(948, 240);
+            this.butFunctionX.Location = new System.Drawing.Point(1224, 240);
             this.butFunctionX.Name = "butFunctionX";
             this.butFunctionX.Size = new System.Drawing.Size(105, 66);
             this.butFunctionX.TabIndex = 31;
@@ -322,11 +323,23 @@
             this.butFunctionX.UseVisualStyleBackColor = true;
             this.butFunctionX.Click += new System.EventHandler(this.butFunctionX_Click);
             // 
+            // ctlMathEqua
+            // 
+            this.ctlMathEqua.Equation = "";
+            this.ctlMathEqua.Filename = "expr.gif";
+            this.ctlMathEqua.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";
+            this.ctlMathEqua.Location = new System.Drawing.Point(623, 590);
+            this.ctlMathEqua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlMathEqua.Name = "ctlMathEqua";
+            this.ctlMathEqua.Size = new System.Drawing.Size(439, 113);
+            this.ctlMathEqua.TabIndex = 32;
+            // 
             // FrmZuordvorLinAbb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1336, 1053);
+            this.ClientSize = new System.Drawing.Size(1706, 1041);
+            this.Controls.Add(this.ctlMathEqua);
             this.Controls.Add(this.butFunctionX);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.lblNotes);
@@ -337,10 +350,7 @@
             this.Controls.Add(this.lblOutputCos);
             this.Controls.Add(this.lblInputCos);
             this.Controls.Add(this.grpDataInputLeft);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmZuordvorLinAbb";
             this.Text = "Zuordnungsvorschrift Lineare Abbildung";
             this.grpDataInputRight.ResumeLayout(false);
@@ -380,5 +390,6 @@
         private System.Windows.Forms.Label lblPointM1;
         private System.Windows.Forms.Label lblPointX;
         private System.Windows.Forms.Button butFunctionX;
+        private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEqua;
     }
 }
