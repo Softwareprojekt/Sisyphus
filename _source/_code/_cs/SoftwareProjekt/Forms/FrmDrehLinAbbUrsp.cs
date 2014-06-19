@@ -21,7 +21,7 @@ using SoftwareProjekt.Interfaces;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmDrehLinAbbUrsp : AbstractView
+    public partial class FrmDrehLinAbbUrsp : Form //AbstractView
     {
 
         private string _sequation;
