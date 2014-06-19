@@ -28,16 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector2 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector3 = new SoftwareProjekt.Classes.Math.Vector();
             this.lblOutput = new System.Windows.Forms.Label();
             this.txtFunctionTransfX = new System.Windows.Forms.TextBox();
             this.butFunctionTransfX = new System.Windows.Forms.Button();
             this.lblInput = new System.Windows.Forms.Label();
             this.grpDataInput = new System.Windows.Forms.GroupBox();
+            this.ctlVectorInput3 = new SoftwareProjekt.UserControls.CtlVectorInput();
+            this.ctlVectorInput2 = new SoftwareProjekt.UserControls.CtlVectorInput();
+            this.lblPunktX = new System.Windows.Forms.Label();
+            this.ctlVectorInput1 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.txtAngle = new System.Windows.Forms.TextBox();
             this.lblAngle = new System.Windows.Forms.Label();
-            this.txtEV2 = new System.Windows.Forms.TextBox();
             this.lblEV2 = new System.Windows.Forms.Label();
-            this.txtEV1 = new System.Windows.Forms.TextBox();
             this.lblEV1 = new System.Windows.Forms.Label();
             this.txtPointX = new System.Windows.Forms.TextBox();
             this.lblPointX = new System.Windows.Forms.Label();
@@ -51,6 +56,10 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.txtDeterminante = new System.Windows.Forms.TextBox();
             this.butDeterminante = new System.Windows.Forms.Button();
+            this.cosInput = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.cosOuput = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.butFx = new System.Windows.Forms.Button();
+            this.txtFx = new System.Windows.Forms.TextBox();
             this.grpDataInput.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,71 +102,150 @@
             // 
             // grpDataInput
             // 
+            this.grpDataInput.Controls.Add(this.ctlVectorInput3);
+            this.grpDataInput.Controls.Add(this.ctlVectorInput2);
+            this.grpDataInput.Controls.Add(this.lblPunktX);
+            this.grpDataInput.Controls.Add(this.ctlVectorInput1);
             this.grpDataInput.Controls.Add(this.txtAngle);
             this.grpDataInput.Controls.Add(this.lblAngle);
-            this.grpDataInput.Controls.Add(this.txtEV2);
             this.grpDataInput.Controls.Add(this.lblEV2);
-            this.grpDataInput.Controls.Add(this.txtEV1);
             this.grpDataInput.Controls.Add(this.lblEV1);
-            this.grpDataInput.Location = new System.Drawing.Point(88, 79);
+            this.grpDataInput.Location = new System.Drawing.Point(88, 40);
             this.grpDataInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInput.Name = "grpDataInput";
             this.grpDataInput.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpDataInput.Size = new System.Drawing.Size(340, 136);
+            this.grpDataInput.Size = new System.Drawing.Size(503, 201);
             this.grpDataInput.TabIndex = 41;
             this.grpDataInput.TabStop = false;
             this.grpDataInput.Text = "Dateneingabe";
             // 
+            // ctlVectorInput3
+            // 
+            this.ctlVectorInput3.Location = new System.Drawing.Point(337, 55);
+            this.ctlVectorInput3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInput3.Name = "ctlVectorInput3";
+            this.ctlVectorInput3.Size = new System.Drawing.Size(157, 105);
+            this.ctlVectorInput3.TabIndex = 67;
+            vector1.X1 = float.NaN;
+            vector1.X2 = float.NaN;
+            this.ctlVectorInput3.Vector = vector1;
+            // 
+            // ctlVectorInput2
+            // 
+            this.ctlVectorInput2.Location = new System.Drawing.Point(172, 55);
+            this.ctlVectorInput2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInput2.Name = "ctlVectorInput2";
+            this.ctlVectorInput2.Size = new System.Drawing.Size(157, 105);
+            this.ctlVectorInput2.TabIndex = 66;
+            vector2.X1 = float.NaN;
+            vector2.X2 = float.NaN;
+            this.ctlVectorInput2.Vector = vector2;
+            // 
+            // lblPunktX
+            // 
+            this.lblPunktX.AutoSize = true;
+            this.lblPunktX.Location = new System.Drawing.Point(46, 34);
+            this.lblPunktX.Name = "lblPunktX";
+            this.lblPunktX.Size = new System.Drawing.Size(54, 17);
+            this.lblPunktX.TabIndex = 65;
+            this.lblPunktX.Text = "Punkt x";
+            // 
+            // ctlVectorInput1
+            // 
+            this.ctlVectorInput1.Location = new System.Drawing.Point(7, 55);
+            this.ctlVectorInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInput1.Name = "ctlVectorInput1";
+            this.ctlVectorInput1.Size = new System.Drawing.Size(157, 105);
+            this.ctlVectorInput1.TabIndex = 64;
+            vector3.X1 = float.NaN;
+            vector3.X2 = float.NaN;
+            this.ctlVectorInput1.Vector = vector3;
+            // 
             // txtAngle
             // 
-            this.txtAngle.Location = new System.Drawing.Point(237, 89);
+            this.txtAngle.Location = new System.Drawing.Point(80, 166);
             this.txtAngle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAngle.Name = "txtAngle";
             this.txtAngle.Size = new System.Drawing.Size(84, 22);
             this.txtAngle.TabIndex = 15;
+            this.txtAngle.TextChanged += new System.EventHandler(this.txtAngle_TextChanged);
             // 
             // lblAngle
             // 
             this.lblAngle.AutoSize = true;
-            this.lblAngle.Location = new System.Drawing.Point(173, 91);
+            this.lblAngle.Location = new System.Drawing.Point(16, 168);
             this.lblAngle.Name = "lblAngle";
             this.lblAngle.Size = new System.Drawing.Size(54, 17);
             this.lblAngle.TabIndex = 14;
             this.lblAngle.Text = "Winkel:";
             // 
-            // txtEV2
-            // 
-            this.txtEV2.Location = new System.Drawing.Point(237, 63);
-            this.txtEV2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtEV2.Name = "txtEV2";
-            this.txtEV2.Size = new System.Drawing.Size(84, 22);
-            this.txtEV2.TabIndex = 11;
-            // 
             // lblEV2
             // 
             this.lblEV2.AutoSize = true;
-            this.lblEV2.Location = new System.Drawing.Point(173, 67);
+            this.lblEV2.Location = new System.Drawing.Point(395, 34);
             this.lblEV2.Name = "lblEV2";
             this.lblEV2.Size = new System.Drawing.Size(34, 17);
             this.lblEV2.TabIndex = 10;
             this.lblEV2.Text = "EV2";
             // 
-            // txtEV1
-            // 
-            this.txtEV1.Location = new System.Drawing.Point(237, 35);
-            this.txtEV1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtEV1.Name = "txtEV1";
-            this.txtEV1.Size = new System.Drawing.Size(84, 22);
-            this.txtEV1.TabIndex = 9;
-            // 
             // lblEV1
             // 
             this.lblEV1.AutoSize = true;
-            this.lblEV1.Location = new System.Drawing.Point(173, 38);
+            this.lblEV1.Location = new System.Drawing.Point(228, 34);
             this.lblEV1.Name = "lblEV1";
             this.lblEV1.Size = new System.Drawing.Size(38, 17);
             this.lblEV1.TabIndex = 8;
-            this.lblEV1.Text = "EV1:";            
+            this.lblEV1.Text = "EV1:";
+            // 
+            // txtPointX
+            // 
+            this.txtPointX.Location = new System.Drawing.Point(0, 0);
+            this.txtPointX.Name = "txtPointX";
+            this.txtPointX.Size = new System.Drawing.Size(100, 22);
+            this.txtPointX.TabIndex = 0;
+            // 
+            // lblPointX
+            // 
+            this.lblPointX.Location = new System.Drawing.Point(0, 0);
+            this.lblPointX.Name = "lblPointX";
+            this.lblPointX.Size = new System.Drawing.Size(100, 23);
+            this.lblPointX.TabIndex = 0;
+            // 
+            // lvlVectorG
+            // 
+            this.lvlVectorG.Location = new System.Drawing.Point(0, 0);
+            this.lvlVectorG.Name = "lvlVectorG";
+            this.lvlVectorG.Size = new System.Drawing.Size(100, 23);
+            this.lvlVectorG.TabIndex = 0;
+            // 
+            // txtVectorG
+            // 
+            this.txtVectorG.Location = new System.Drawing.Point(0, 0);
+            this.txtVectorG.Name = "txtVectorG";
+            this.txtVectorG.Size = new System.Drawing.Size(100, 22);
+            this.txtVectorG.TabIndex = 0;
+            // 
+            // grpDatenausgabe
+            // 
+            this.grpDatenausgabe.Location = new System.Drawing.Point(0, 0);
+            this.grpDatenausgabe.Name = "grpDatenausgabe";
+            this.grpDatenausgabe.Size = new System.Drawing.Size(200, 100);
+            this.grpDatenausgabe.TabIndex = 0;
+            this.grpDatenausgabe.TabStop = false;
+            // 
+            // coordinateSystem1
+            // 
+            this.coordinateSystem1.Location = new System.Drawing.Point(0, 0);
+            this.coordinateSystem1.Name = "coordinateSystem1";
+            this.coordinateSystem1.Size = new System.Drawing.Size(150, 150);
+            this.coordinateSystem1.TabIndex = 0;
+            // 
+            // coordinateSystem2
+            // 
+            this.coordinateSystem2.Location = new System.Drawing.Point(0, 0);
+            this.coordinateSystem2.Name = "coordinateSystem2";
+            this.coordinateSystem2.Size = new System.Drawing.Size(150, 150);
+            this.coordinateSystem2.TabIndex = 0;
             // 
             // lblNotes
             // 
@@ -172,11 +260,12 @@
             // rtxtNotes
             // 
             this.rtxtNotes.Location = new System.Drawing.Point(272, 693);
-            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtNotes.Name = "rtxtNotes";
             this.rtxtNotes.Size = new System.Drawing.Size(636, 152);
             this.rtxtNotes.TabIndex = 59;
             this.rtxtNotes.Text = "";
+            this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
             // 
             // lblHeader
             // 
@@ -187,7 +276,7 @@
             this.lblHeader.Size = new System.Drawing.Size(589, 29);
             this.lblHeader.TabIndex = 61;
             this.lblHeader.Text = "Thema: Spiegelung lineare Abbildung am Ursprung";
-                        // 
+            // 
             // txtDeterminante
             // 
             this.txtDeterminante.Location = new System.Drawing.Point(197, 63);
@@ -207,15 +296,53 @@
             this.butDeterminante.Text = "Determinante";
             this.butDeterminante.UseVisualStyleBackColor = true;
             // 
+            // cosInput
+            // 
+            this.cosInput.Location = new System.Drawing.Point(39, 274);
+            this.cosInput.Name = "cosInput";
+            this.cosInput.Size = new System.Drawing.Size(454, 368);
+            this.cosInput.TabIndex = 62;
+            // 
+            // cosOuput
+            // 
+            this.cosOuput.Location = new System.Drawing.Point(722, 274);
+            this.cosOuput.Name = "cosOuput";
+            this.cosOuput.Size = new System.Drawing.Size(454, 368);
+            this.cosOuput.TabIndex = 63;
+            // 
+            // butFx
+            // 
+            this.butFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butFx.Location = new System.Drawing.Point(695, 114);
+            this.butFx.Name = "butFx";
+            this.butFx.Size = new System.Drawing.Size(76, 52);
+            this.butFx.TabIndex = 64;
+            this.butFx.Text = "f(x)";
+            this.butFx.UseVisualStyleBackColor = true;
+            this.butFx.Click += new System.EventHandler(this.butFx_Click);
+            // 
+            // txtFx
+            // 
+            this.txtFx.Location = new System.Drawing.Point(624, 171);
+            this.txtFx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFx.Name = "txtFx";
+            this.txtFx.Size = new System.Drawing.Size(221, 22);
+            this.txtFx.TabIndex = 68;
+            this.txtFx.TextChanged += new System.EventHandler(this.txtFx_TextChanged);
+            // 
             // FrmSpiegLinAbbUrsp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1219, 855);
+            this.Controls.Add(this.txtFx);
+            this.Controls.Add(this.butFx);
+            this.Controls.Add(this.cosOuput);
+            this.Controls.Add(this.cosInput);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.rtxtNotes);
-                  this.Controls.Add(this.lblOutput);
+            this.Controls.Add(this.lblOutput);
             this.Controls.Add(this.lblInput);
             this.Controls.Add(this.grpDataInput);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -225,6 +352,7 @@
             this.grpDataInput.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -236,9 +364,7 @@
         private System.Windows.Forms.GroupBox grpDataInput;
         private System.Windows.Forms.TextBox txtAngle;
         private System.Windows.Forms.Label lblAngle;
-        private System.Windows.Forms.TextBox txtEV2;
         private System.Windows.Forms.Label lblEV2;
-        private System.Windows.Forms.TextBox txtEV1;
         private System.Windows.Forms.Label lblEV1;
         private System.Windows.Forms.TextBox txtPointX;
         private System.Windows.Forms.Label lblPointX;
@@ -252,5 +378,13 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.TextBox txtDeterminante;
         private System.Windows.Forms.Button butDeterminante;
+        private UserControls.CtlVectorInput ctlVectorInput3;
+        private UserControls.CtlVectorInput ctlVectorInput2;
+        private System.Windows.Forms.Label lblPunktX;
+        private UserControls.CtlVectorInput ctlVectorInput1;
+        private UserControls.CoordinateSystem cosInput;
+        private UserControls.CoordinateSystem cosOuput;
+        private System.Windows.Forms.Button butFx;
+        private System.Windows.Forms.TextBox txtFx;
     }
 }
