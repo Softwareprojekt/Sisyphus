@@ -79,7 +79,11 @@ namespace SoftwareProjekt.UserControls
         /// </summary>
         private void txtEle11_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar<'0'||e.KeyChar>'9')&&e.KeyChar!='\b')
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyChar == ',' && (txtEle11.Text.Contains(",") || txtEle11.Text==""))
             {
                 e.Handled = true;
             }
@@ -100,7 +104,11 @@ namespace SoftwareProjekt.UserControls
         /// </summary>
         private void txtEle12_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b')
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyChar == ',' && (txtEle12.Text.Contains(",") || txtEle12.Text == ""))
             {
                 e.Handled = true;
             }
@@ -121,7 +129,11 @@ namespace SoftwareProjekt.UserControls
         /// </summary>
         private void txtEle21_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b')
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyChar == ',' && (txtEle21.Text.Contains(",") || txtEle21.Text == ""))
             {
                 e.Handled = true;
             }
@@ -142,7 +154,11 @@ namespace SoftwareProjekt.UserControls
         /// </summary>
         private void txtEle22_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b')
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyChar == ',' && (txtEle22.Text.Contains(",") || txtEle22.Text == ""))
             {
                 e.Handled = true;
             }
