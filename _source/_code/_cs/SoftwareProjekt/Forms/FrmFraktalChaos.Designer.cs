@@ -51,7 +51,7 @@
             this.grpInputParam.Controls.Add(this.lblProbability);
             this.grpInputParam.Location = new System.Drawing.Point(81, 83);
             this.grpInputParam.Name = "grpInputParam";
-            this.grpInputParam.Size = new System.Drawing.Size(200, 104);
+            this.grpInputParam.Size = new System.Drawing.Size(180, 93);
             this.grpInputParam.TabIndex = 0;
             this.grpInputParam.TabStop = false;
             this.grpInputParam.Text = "Eingabeparameter";
@@ -63,11 +63,13 @@
             this.txtNumIteration.Name = "txtNumIteration";
             this.txtNumIteration.Size = new System.Drawing.Size(53, 20);
             this.txtNumIteration.TabIndex = 3;
+            this.txtNumIteration.TextChanged += new System.EventHandler(this.txtNumIteration_TextChanged);
+            this.txtNumIteration.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumIteration_KeyPress);
             // 
             // lblNumIteration
             // 
             this.lblNumIteration.AutoSize = true;
-            this.lblNumIteration.Location = new System.Drawing.Point(7, 61);
+            this.lblNumIteration.Location = new System.Drawing.Point(12, 61);
             this.lblNumIteration.Name = "lblNumIteration";
             this.lblNumIteration.Size = new System.Drawing.Size(95, 13);
             this.lblNumIteration.TabIndex = 2;
@@ -80,6 +82,8 @@
             this.txtProbability.Name = "txtProbability";
             this.txtProbability.Size = new System.Drawing.Size(53, 20);
             this.txtProbability.TabIndex = 1;
+            this.txtProbability.TextChanged += new System.EventHandler(this.txtProbability_TextChanged);
+            this.txtProbability.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProbability_KeyPress);
             // 
             // lblProbability
             // 
@@ -113,6 +117,7 @@
             this.rtxtNotes.Size = new System.Drawing.Size(478, 124);
             this.rtxtNotes.TabIndex = 3;
             this.rtxtNotes.Text = "";
+            this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
             // 
             // lblNotes
             // 
@@ -134,9 +139,9 @@
             // 
             // grpIFS
             // 
-            this.grpIFS.Location = new System.Drawing.Point(81, 219);
+            this.grpIFS.Location = new System.Drawing.Point(81, 192);
             this.grpIFS.Name = "grpIFS";
-            this.grpIFS.Size = new System.Drawing.Size(200, 200);
+            this.grpIFS.Size = new System.Drawing.Size(180, 200);
             this.grpIFS.TabIndex = 6;
             this.grpIFS.TabStop = false;
             this.grpIFS.Text = "IFS";
@@ -164,9 +169,6 @@
             this.Controls.Add(this.cosFractal);
             this.Controls.Add(this.butSaveFractal);
             this.Controls.Add(this.grpInputParam);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FrmFraktalChaos";
             this.Text = "Fraktal rendern mit Chaosspiel ";
             this.grpInputParam.ResumeLayout(false);
