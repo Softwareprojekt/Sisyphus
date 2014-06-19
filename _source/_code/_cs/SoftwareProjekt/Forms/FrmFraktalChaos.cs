@@ -28,11 +28,19 @@ namespace SoftwareProjekt.Forms
 
         private void txtProbability_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
 
         }
 
         private void txtNumIteration_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
 
         }
 
