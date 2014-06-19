@@ -101,7 +101,14 @@ namespace SoftwareProjekt.Forms
 
         private void txtAngle_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyChar == ',' && (txtAngle.Text.Contains(",") || txtAngle.Text == ""))
+            {
+                e.Handled = true;
+            }
         }
 
     }
