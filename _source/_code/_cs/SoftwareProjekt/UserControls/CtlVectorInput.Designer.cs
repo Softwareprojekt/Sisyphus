@@ -80,8 +80,8 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grpVektorInput;
-        private System.Windows.Forms.TextBox txtEle21;
-        private System.Windows.Forms.TextBox txtEle11;
+        public System.Windows.Forms.GroupBox grpVektorInput;
+        public System.Windows.Forms.TextBox txtEle21;
+        public System.Windows.Forms.TextBox txtEle11;
     }
 }
