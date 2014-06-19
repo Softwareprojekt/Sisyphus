@@ -43,41 +43,49 @@
             this.picArrow = new System.Windows.Forms.PictureBox();
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
+            this.grpSteps = new System.Windows.Forms.GroupBox();
+            this.lblSteps = new System.Windows.Forms.Label();
+            this.txtSteps = new System.Windows.Forms.TextBox();
+            this.lblDiffPic = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picOriginal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFraktal)).BeginInit();
             this.grpPics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picArrow)).BeginInit();
+            this.grpSteps.SuspendLayout();
             this.SuspendLayout();
             // 
             // butSelectPic
             // 
-            this.butSelectPic.Location = new System.Drawing.Point(88, 447);
+            this.butSelectPic.Location = new System.Drawing.Point(75, 97);
             this.butSelectPic.Margin = new System.Windows.Forms.Padding(2);
             this.butSelectPic.Name = "butSelectPic";
             this.butSelectPic.Size = new System.Drawing.Size(84, 29);
             this.butSelectPic.TabIndex = 0;
             this.butSelectPic.Text = "Bild wählen";
             this.butSelectPic.UseVisualStyleBackColor = true;
+            this.butSelectPic.Click += new System.EventHandler(this.butSelectPic_Click);
             // 
             // butStepFor
             // 
-            this.butStepFor.Location = new System.Drawing.Point(478, 447);
+            this.butStepFor.Location = new System.Drawing.Point(25, 65);
             this.butStepFor.Margin = new System.Windows.Forms.Padding(2);
             this.butStepFor.Name = "butStepFor";
             this.butStepFor.Size = new System.Drawing.Size(69, 29);
             this.butStepFor.TabIndex = 1;
             this.butStepFor.Text = "Schritt vor";
             this.butStepFor.UseVisualStyleBackColor = true;
+            this.butStepFor.Click += new System.EventHandler(this.butStepFor_Click);
             // 
             // butStepBack
             // 
-            this.butStepBack.Location = new System.Drawing.Point(551, 447);
+            this.butStepBack.Location = new System.Drawing.Point(98, 65);
             this.butStepBack.Margin = new System.Windows.Forms.Padding(2);
             this.butStepBack.Name = "butStepBack";
             this.butStepBack.Size = new System.Drawing.Size(104, 29);
             this.butStepBack.TabIndex = 2;
             this.butStepBack.Text = "Schritt zurück";
             this.butStepBack.UseVisualStyleBackColor = true;
+            this.butStepBack.Click += new System.EventHandler(this.butStepBack_Click);
             // 
             // picOriginal
             // 
@@ -99,18 +107,20 @@
             // 
             // grpPics
             // 
+            this.grpPics.Controls.Add(this.lblDiffPic);
             this.grpPics.Controls.Add(this.radSquare);
             this.grpPics.Controls.Add(this.radTriangle);
             this.grpPics.Controls.Add(this.radCircle);
+            this.grpPics.Controls.Add(this.butSelectPic);
             this.grpPics.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpPics.Location = new System.Drawing.Point(88, 503);
+            this.grpPics.Location = new System.Drawing.Point(88, 440);
             this.grpPics.Margin = new System.Windows.Forms.Padding(2);
             this.grpPics.Name = "grpPics";
             this.grpPics.Padding = new System.Windows.Forms.Padding(2);
-            this.grpPics.Size = new System.Drawing.Size(127, 101);
+            this.grpPics.Size = new System.Drawing.Size(175, 142);
             this.grpPics.TabIndex = 5;
             this.grpPics.TabStop = false;
-            this.grpPics.Text = "Standard-Bilder";
+            this.grpPics.Text = "Bild wählen";
             // 
             // radSquare
             // 
@@ -205,12 +215,55 @@
             this.rtxtNotes.Size = new System.Drawing.Size(478, 124);
             this.rtxtNotes.TabIndex = 10;
             this.rtxtNotes.Text = "";
+            this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
+            // 
+            // grpSteps
+            // 
+            this.grpSteps.Controls.Add(this.txtSteps);
+            this.grpSteps.Controls.Add(this.lblSteps);
+            this.grpSteps.Controls.Add(this.butStepFor);
+            this.grpSteps.Controls.Add(this.butStepBack);
+            this.grpSteps.Location = new System.Drawing.Point(425, 440);
+            this.grpSteps.Name = "grpSteps";
+            this.grpSteps.Size = new System.Drawing.Size(218, 116);
+            this.grpSteps.TabIndex = 12;
+            this.grpSteps.TabStop = false;
+            this.grpSteps.Text = "Schritte";
+            // 
+            // lblSteps
+            // 
+            this.lblSteps.AutoSize = true;
+            this.lblSteps.Location = new System.Drawing.Point(6, 29);
+            this.lblSteps.Name = "lblSteps";
+            this.lblSteps.Size = new System.Drawing.Size(99, 13);
+            this.lblSteps.TabIndex = 0;
+            this.lblSteps.Text = "Anzahl der Schritte:";
+            // 
+            // txtSteps
+            // 
+            this.txtSteps.Location = new System.Drawing.Point(111, 24);
+            this.txtSteps.MaxLength = 4;
+            this.txtSteps.Name = "txtSteps";
+            this.txtSteps.Size = new System.Drawing.Size(78, 20);
+            this.txtSteps.TabIndex = 1;
+            this.txtSteps.TextChanged += new System.EventHandler(this.txtSteps_TextChanged);
+            this.txtSteps.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSteps_KeyPress);
+            // 
+            // lblDiffPic
+            // 
+            this.lblDiffPic.AutoSize = true;
+            this.lblDiffPic.Location = new System.Drawing.Point(2, 105);
+            this.lblDiffPic.Name = "lblDiffPic";
+            this.lblDiffPic.Size = new System.Drawing.Size(68, 13);
+            this.lblDiffPic.TabIndex = 3;
+            this.lblDiffPic.Text = "Eigenes Bild:";
             // 
             // FrmFraktalErzIFS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 777);
+            this.Controls.Add(this.grpSteps);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.rtxtNotes);
             this.Controls.Add(this.picArrow);
@@ -220,9 +273,6 @@
             this.Controls.Add(this.grpPics);
             this.Controls.Add(this.picFraktal);
             this.Controls.Add(this.picOriginal);
-            this.Controls.Add(this.butStepBack);
-            this.Controls.Add(this.butStepFor);
-            this.Controls.Add(this.butSelectPic);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmFraktalErzIFS";
             this.Text = "Fraktalerzeugung mit einem IFS";
@@ -231,6 +281,8 @@
             this.grpPics.ResumeLayout(false);
             this.grpPics.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picArrow)).EndInit();
+            this.grpSteps.ResumeLayout(false);
+            this.grpSteps.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,5 +305,9 @@
         private System.Windows.Forms.PictureBox picArrow;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
+        private System.Windows.Forms.Label lblDiffPic;
+        private System.Windows.Forms.GroupBox grpSteps;
+        private System.Windows.Forms.TextBox txtSteps;
+        private System.Windows.Forms.Label lblSteps;
     }
 }
