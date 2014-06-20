@@ -70,9 +70,16 @@ namespace SoftwareProjekt.Forms
 
         private void txtFactorA_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
         }
 
+		protected override bool CheckInputs()
+		{
+			throw new NotImplementedException();
+		}
 
 
     }

@@ -71,5 +71,10 @@ namespace SoftwareProjekt.Forms
         {
             this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
         }
+        
+		protected override bool CheckInputs()
+		{
+			throw new NotImplementedException();
+		}
     }
 }
