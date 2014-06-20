@@ -87,7 +87,7 @@ namespace SoftwareProjekt.Forms
             }
             else
             {
-                retVal.Add("Angle", null);
+                return null;
             }
 
             return retVal;
