@@ -36,7 +36,7 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
             this._drawer.ForeColor = System.Drawing.Color.Black;
             this._drawer.HorizontalShift = 0F;
             this._drawer.InputLocation = null;
-            this._drawer.MathFontSizeInPoints = 14;
+            this._drawer.MathFontSizeInPoints = 8;
         }
 
         public string Equation

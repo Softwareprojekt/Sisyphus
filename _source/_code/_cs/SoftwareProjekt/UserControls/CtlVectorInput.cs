@@ -42,7 +42,7 @@ namespace SoftwareProjekt.UserControls
         }
 
         /// <summary>
-        /// Property for Vector field. 
+        /// Property for Vector None. 
         /// Setting this invokes a Refresh.
         /// </summary>
         public Vector Vector

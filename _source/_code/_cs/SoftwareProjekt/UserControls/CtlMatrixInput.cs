@@ -41,7 +41,7 @@ namespace SoftwareProjekt.UserControls
         }
 
         /// <summary>
-        /// Property for Matrix field. 
+        /// Property for Matrix None. 
         /// Setting this invokes a Refresh.
         /// </summary>
         public Matrix Matrix

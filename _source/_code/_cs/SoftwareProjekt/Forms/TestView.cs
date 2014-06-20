@@ -44,12 +44,37 @@ namespace SoftwareProjekt.Forms
             Matrix m1 = new Matrix(1.0f, 2.0f, 3.0f, 4.0f);
 
             Vector v1 = new Vector(1.4f, 10.2f);
+            Vector v2 = new Vector(2.8f, 12.17f);
 
-            //xml.AddNode("<mover> <msub> <mi>x</mi> <mn>0</mn> </msub> <mo>&rarr;</mo> </mover>");
-            xml.AddVector(v1, Color.Red);
+            string expr1 = "cos (&phi;)";
+            
+            string expr2 = "cos(&phi; + " + MathXmlGenerator.PiHalfSign + ")";
+            string expr3 = "sin(&phi;)";
+            string expr4 = "sin(&phi; + " + MathXmlGenerator.PiHalfSign + ")";
 
-            xml.AddNode("<mo> = </mo>");
+            List<string> expressions = new List<string>();
+            expressions.Add(expr1);
+            expressions.Add(expr2);
+            expressions.Add(expr3);
+            expressions.Add(expr4);
+
+            List<Color> colors = new List<Color>();
+            colors.Add(Color.Red);
+            colors.Add(Color.Blue);
+            colors.Add(Color.Red);
+            colors.Add(Color.Blue);
+
+            /*xml.AddVector(v1, Color.Red);
+
+            xml.AddSign(EMathSign.Assignment);
             xml.AddMatrix(m1, Color.Blue, Color.DarkGreen);
+
+            xml.AddSign(EMathSign.Assignment);
+            xml.AddCombinedVectors(v1, v2, Color.DarkGreen, Color.DarkOrange, EMathSign.Minus);*/
+
+            xml.AddMathExpression(expressions, colors, EMathSign.Minus, EMathType.Vector);
+
+
 
             xml.Finish();
 

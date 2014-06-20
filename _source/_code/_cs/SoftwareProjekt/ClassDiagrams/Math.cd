@@ -23,16 +23,30 @@
   </Class>
   <Class Name="SoftwareProjekt.Classes.Xml.MathXmlGenerator">
     <Position X="3.25" Y="0.5" Width="2" />
+    <NestedTypes>
+      <Class Name="SoftwareProjekt.Classes.Xml.MathXmlGenerator.ParseContainer" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Classes\Xml\MathXmlGenerator.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAQAAAAAAAAAAAAAAAQAAAAgQAIBAg=</HashCode>
+      <HashCode>QAAAAAAAACAAEAAYAAAAAAAAAAAAAAAQAAQAhQAKBAg=</HashCode>
       <FileName>Classes\Xml\MathXmlGenerator.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="SoftwareProjekt.Enums.EMathSign">
-    <Position X="3.25" Y="4" Width="1.5" />
+    <Position X="3.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABAQABABAAAAAAACAAAAAAAAA=</HashCode>
       <FileName>Enums\EMathSign.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SoftwareProjekt.Enums.EMathType">
+    <Position X="3.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAEAAAAEAAAA=</HashCode>
+      <FileName>Enums\EMathType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />
