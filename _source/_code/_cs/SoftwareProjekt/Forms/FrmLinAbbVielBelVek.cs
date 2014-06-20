@@ -76,6 +76,10 @@ namespace SoftwareProjekt.Forms
             }
         }
 
+		protected override bool CheckInputs()
+		{
+			throw new NotImplementedException();
+		}
 
 
     }

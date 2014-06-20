@@ -90,7 +90,10 @@ namespace SoftwareProjekt.Forms
 
         private void _btnCalc_Click(object sender, EventArgs e)
         {
-            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+        	if (this.CheckInputs())
+        	{
+            	this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+        	}
         }
 
         public override Dictionary<string, Object> GetInputData()
@@ -102,5 +105,20 @@ namespace SoftwareProjekt.Forms
 
             return retVal;
         }
+        
+		protected override bool CheckInputs()
+		{
+			if (_matrix.Matrix.IsValid() && _vector.Vector.IsValid())
+			{
+#if DEBUG
+				Console.WriteLine("SUCCESS @ Inputs are valid.");
+#endif
+				return true;
+			}
+#if DEBUG
+			Console.WriteLine("ERROR @ Inputs are not valid.");
+#endif
+			return false;
+		}
     }
 }

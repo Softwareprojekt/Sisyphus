@@ -71,5 +71,10 @@ namespace SoftwareProjekt.Forms
                 e.Handled = true;
             }
         }
+        
+		protected override bool CheckInputs()
+		{
+			throw new NotImplementedException();
+		}
     }
 }
