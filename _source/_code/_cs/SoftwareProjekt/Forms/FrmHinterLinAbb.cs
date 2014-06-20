@@ -20,7 +20,7 @@ using SoftwareProjekt.Interfaces;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmHinterLinAbb : AbstractView 
+    public partial class FrmHinterLinAbb : AbstractView
     {
         public FrmHinterLinAbb()
         {

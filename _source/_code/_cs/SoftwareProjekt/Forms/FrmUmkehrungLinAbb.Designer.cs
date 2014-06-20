@@ -101,7 +101,7 @@
             this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtNotes.Name = "rtxtNotes";
             this.rtxtNotes.Size = new System.Drawing.Size(636, 152);
-            this.rtxtNotes.TabIndex = 5;
+            this.rtxtNotes.TabIndex = 8;
             this.rtxtNotes.Text = "";
             this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
             // 
@@ -156,7 +156,7 @@
             this.butDeterminante.Location = new System.Drawing.Point(356, 70);
             this.butDeterminante.Name = "butDeterminante";
             this.butDeterminante.Size = new System.Drawing.Size(114, 41);
-            this.butDeterminante.TabIndex = 44;
+            this.butDeterminante.TabIndex = 3;
             this.butDeterminante.Text = "Determinante";
             this.butDeterminante.UseVisualStyleBackColor = true;
             this.butDeterminante.Click += new System.EventHandler(this.butDeterminante_Click);
@@ -170,9 +170,10 @@
             matrix1.X21 = float.NaN;
             matrix1.X22 = float.NaN;
             this.ctlMatrixInput1.Matrix = matrix1;
+            this.ctlMatrixInput1.MinimumSize = new System.Drawing.Size(131, 94);
             this.ctlMatrixInput1.Name = "ctlMatrixInput1";
             this.ctlMatrixInput1.Size = new System.Drawing.Size(154, 107);
-            this.ctlMatrixInput1.TabIndex = 43;
+            this.ctlMatrixInput1.TabIndex = 2;
             // 
             // lblPunktX
             // 
@@ -187,9 +188,10 @@
             // 
             this.ctlVectorInput1.Location = new System.Drawing.Point(7, 55);
             this.ctlVectorInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInput1.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInput1.Name = "ctlVectorInput1";
             this.ctlVectorInput1.Size = new System.Drawing.Size(157, 105);
-            this.ctlVectorInput1.TabIndex = 64;
+            this.ctlVectorInput1.TabIndex = 1;
             vector1.X1 = float.NaN;
             vector1.X2 = float.NaN;
             this.ctlVectorInput1.Vector = vector1;
@@ -200,7 +202,7 @@
             this.butFx.Location = new System.Drawing.Point(901, 93);
             this.butFx.Name = "butFx";
             this.butFx.Size = new System.Drawing.Size(96, 60);
-            this.butFx.TabIndex = 43;
+            this.butFx.TabIndex = 4;
             this.butFx.Text = "f(x)";
             this.butFx.UseVisualStyleBackColor = true;
             this.butFx.Click += new System.EventHandler(this.butFx_Click);
@@ -211,7 +213,7 @@
             this.butUmkehrFx.Location = new System.Drawing.Point(901, 159);
             this.butUmkehrFx.Name = "butUmkehrFx";
             this.butUmkehrFx.Size = new System.Drawing.Size(96, 60);
-            this.butUmkehrFx.TabIndex = 44;
+            this.butUmkehrFx.TabIndex = 5;
             this.butUmkehrFx.Text = "f^-1(f(x)) ";
             this.butUmkehrFx.UseVisualStyleBackColor = true;
             this.butUmkehrFx.Click += new System.EventHandler(this.butUmkehrFx_Click);
@@ -251,9 +253,10 @@
             // 
             this.ctlVectorInput2.Location = new System.Drawing.Point(7, 55);
             this.ctlVectorInput2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInput2.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInput2.Name = "ctlVectorInput2";
             this.ctlVectorInput2.Size = new System.Drawing.Size(157, 105);
-            this.ctlVectorInput2.TabIndex = 64;
+            this.ctlVectorInput2.TabIndex = 6;
             vector2.X1 = float.NaN;
             vector2.X2 = float.NaN;
             this.ctlVectorInput2.Vector = vector2;
@@ -264,7 +267,7 @@
             this.button1.Location = new System.Drawing.Point(1311, 145);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 60);
-            this.button1.TabIndex = 68;
+            this.button1.TabIndex = 7;
             this.button1.Text = "f^-1(f(y)) ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -283,6 +286,7 @@
             this.ctlMathEquaRi2Le.Equation = "";
             this.ctlMathEquaRi2Le.Filename = "expr.gif";
             this.ctlMathEquaRi2Le.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";
+            this.ctlMathEquaRi2Le.FontSize = 8;
             this.ctlMathEquaRi2Le.Location = new System.Drawing.Point(540, 340);
             this.ctlMathEquaRi2Le.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ctlMathEquaRi2Le.Name = "ctlMathEquaRi2Le";
@@ -294,6 +298,7 @@
             this.ctlMathEquaLe2Ri.Equation = "";
             this.ctlMathEquaLe2Ri.Filename = "expr.gif";
             this.ctlMathEquaLe2Ri.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";
+            this.ctlMathEquaLe2Ri.FontSize = 8;
             this.ctlMathEquaLe2Ri.Location = new System.Drawing.Point(540, 461);
             this.ctlMathEquaLe2Ri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ctlMathEquaLe2Ri.Name = "ctlMathEquaLe2Ri";

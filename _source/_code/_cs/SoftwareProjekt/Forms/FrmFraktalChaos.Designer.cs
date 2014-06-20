@@ -49,9 +49,11 @@
             this.grpInputParam.Controls.Add(this.lblNumIteration);
             this.grpInputParam.Controls.Add(this.txtProbability);
             this.grpInputParam.Controls.Add(this.lblProbability);
-            this.grpInputParam.Location = new System.Drawing.Point(81, 83);
+            this.grpInputParam.Location = new System.Drawing.Point(108, 102);
+            this.grpInputParam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpInputParam.Name = "grpInputParam";
-            this.grpInputParam.Size = new System.Drawing.Size(180, 93);
+            this.grpInputParam.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpInputParam.Size = new System.Drawing.Size(240, 114);
             this.grpInputParam.TabIndex = 0;
             this.grpInputParam.TabStop = false;
             this.grpInputParam.Text = "Eingabeparameter";
@@ -59,11 +61,12 @@
             // txtNumIteration
             // 
             this.txtNumIteration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNumIteration.Location = new System.Drawing.Point(113, 58);
+            this.txtNumIteration.Location = new System.Drawing.Point(151, 71);
+            this.txtNumIteration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNumIteration.MaxLength = 5;
             this.txtNumIteration.Name = "txtNumIteration";
-            this.txtNumIteration.Size = new System.Drawing.Size(53, 20);
-            this.txtNumIteration.TabIndex = 3;
+            this.txtNumIteration.Size = new System.Drawing.Size(69, 22);
+            this.txtNumIteration.TabIndex = 2;
             this.txtNumIteration.TextChanged += new System.EventHandler(this.txtNumIteration_TextChanged);
             this.txtNumIteration.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumIteration_KeyPress);
             // 
@@ -71,19 +74,21 @@
             // 
             this.lblNumIteration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblNumIteration.AutoSize = true;
-            this.lblNumIteration.Location = new System.Drawing.Point(12, 61);
+            this.lblNumIteration.Location = new System.Drawing.Point(16, 75);
+            this.lblNumIteration.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumIteration.Name = "lblNumIteration";
-            this.lblNumIteration.Size = new System.Drawing.Size(95, 13);
+            this.lblNumIteration.Size = new System.Drawing.Size(126, 17);
             this.lblNumIteration.TabIndex = 2;
             this.lblNumIteration.Text = "Anzahl Iterationen:";
             // 
             // txtProbability
             // 
             this.txtProbability.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtProbability.Location = new System.Drawing.Point(113, 32);
+            this.txtProbability.Location = new System.Drawing.Point(151, 39);
+            this.txtProbability.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtProbability.MaxLength = 5;
             this.txtProbability.Name = "txtProbability";
-            this.txtProbability.Size = new System.Drawing.Size(53, 20);
+            this.txtProbability.Size = new System.Drawing.Size(69, 22);
             this.txtProbability.TabIndex = 1;
             this.txtProbability.TextChanged += new System.EventHandler(this.txtProbability_TextChanged);
             this.txtProbability.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProbability_KeyPress);
@@ -91,19 +96,21 @@
             // lblProbability
             // 
             this.lblProbability.AutoSize = true;
-            this.lblProbability.Location = new System.Drawing.Point(7, 35);
+            this.lblProbability.Location = new System.Drawing.Point(9, 43);
+            this.lblProbability.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProbability.Name = "lblProbability";
-            this.lblProbability.Size = new System.Drawing.Size(100, 13);
+            this.lblProbability.Size = new System.Drawing.Size(130, 17);
             this.lblProbability.TabIndex = 0;
             this.lblProbability.Text = "Wahrscheinlichkeit:";
             // 
             // butSaveFractal
             // 
             this.butSaveFractal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.butSaveFractal.Location = new System.Drawing.Point(445, 398);
+            this.butSaveFractal.Location = new System.Drawing.Point(593, 490);
+            this.butSaveFractal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butSaveFractal.Name = "butSaveFractal";
-            this.butSaveFractal.Size = new System.Drawing.Size(104, 23);
-            this.butSaveFractal.TabIndex = 1;
+            this.butSaveFractal.Size = new System.Drawing.Size(139, 28);
+            this.butSaveFractal.TabIndex = 5;
             this.butSaveFractal.Text = "&Fraktal speichern";
             this.butSaveFractal.UseVisualStyleBackColor = true;
             // 
@@ -112,19 +119,21 @@
             this.cosFractal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cosFractal.Location = new System.Drawing.Point(346, 83);
+            this.cosFractal.Location = new System.Drawing.Point(461, 102);
+            this.cosFractal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cosFractal.Name = "cosFractal";
-            this.cosFractal.Size = new System.Drawing.Size(445, 296);
+            this.cosFractal.Size = new System.Drawing.Size(593, 364);
             this.cosFractal.TabIndex = 2;
             // 
             // rtxtNotes
             // 
             this.rtxtNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtxtNotes.Location = new System.Drawing.Point(105, 504);
+            this.rtxtNotes.Location = new System.Drawing.Point(140, 620);
+            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(448, 124);
-            this.rtxtNotes.TabIndex = 3;
+            this.rtxtNotes.Size = new System.Drawing.Size(596, 152);
+            this.rtxtNotes.TabIndex = 6;
             this.rtxtNotes.Text = "";
             this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
             // 
@@ -132,28 +141,32 @@
             // 
             this.lblNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(105, 485);
+            this.lblNotes.Location = new System.Drawing.Point(140, 597);
+            this.lblNotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(46, 13);
+            this.lblNotes.Size = new System.Drawing.Size(60, 17);
             this.lblNotes.TabIndex = 4;
             this.lblNotes.Text = "Notizen:";
             // 
             // butStart
             // 
             this.butStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.butStart.Location = new System.Drawing.Point(362, 398);
+            this.butStart.Location = new System.Drawing.Point(483, 490);
+            this.butStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butStart.Name = "butStart";
-            this.butStart.Size = new System.Drawing.Size(75, 23);
-            this.butStart.TabIndex = 5;
+            this.butStart.Size = new System.Drawing.Size(100, 28);
+            this.butStart.TabIndex = 4;
             this.butStart.Text = "&Start";
             this.butStart.UseVisualStyleBackColor = true;
             // 
             // grpIFS
             // 
-            this.grpIFS.Location = new System.Drawing.Point(81, 192);
+            this.grpIFS.Location = new System.Drawing.Point(108, 236);
+            this.grpIFS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpIFS.Name = "grpIFS";
-            this.grpIFS.Size = new System.Drawing.Size(180, 200);
-            this.grpIFS.TabIndex = 6;
+            this.grpIFS.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpIFS.Size = new System.Drawing.Size(240, 246);
+            this.grpIFS.TabIndex = 3;
             this.grpIFS.TabStop = false;
             this.grpIFS.Text = "IFS";
             // 
@@ -163,17 +176,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(210, 9);
+            this.lblHeader.Location = new System.Drawing.Point(280, 11);
+            this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(334, 24);
+            this.lblHeader.Size = new System.Drawing.Size(429, 29);
             this.lblHeader.TabIndex = 7;
             this.lblHeader.Text = "Thema: Fraktal rendern mit Chaosspiel";
             // 
             // FrmFraktalChaos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 676);
+            this.ClientSize = new System.Drawing.Size(1112, 832);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.grpIFS);
             this.Controls.Add(this.butStart);
@@ -182,7 +196,8 @@
             this.Controls.Add(this.cosFractal);
             this.Controls.Add(this.butSaveFractal);
             this.Controls.Add(this.grpInputParam);
-            this.MinimumSize = new System.Drawing.Size(802, 715);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1063, 870);
             this.Name = "FrmFraktalChaos";
             this.Text = "Fraktal rendern mit Chaosspiel ";
             this.grpInputParam.ResumeLayout(false);

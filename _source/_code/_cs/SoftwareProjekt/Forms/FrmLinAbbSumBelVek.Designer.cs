@@ -76,7 +76,7 @@
             this.dutDeterminante.Location = new System.Drawing.Point(176, 199);
             this.dutDeterminante.Name = "dutDeterminante";
             this.dutDeterminante.Size = new System.Drawing.Size(150, 46);
-            this.dutDeterminante.TabIndex = 59;
+            this.dutDeterminante.TabIndex = 4;
             this.dutDeterminante.Text = "Determinante";
             this.dutDeterminante.UseVisualStyleBackColor = true;
             this.dutDeterminante.Click += new System.EventHandler(this.dutDeterminante_Click);
@@ -100,17 +100,19 @@
             matrix1.X21 = float.NaN;
             matrix1.X22 = float.NaN;
             this.ctlMaInScaleMat.Matrix = matrix1;
+            this.ctlMaInScaleMat.MinimumSize = new System.Drawing.Size(131, 94);
             this.ctlMaInScaleMat.Name = "ctlMaInScaleMat";
             this.ctlMaInScaleMat.Size = new System.Drawing.Size(167, 110);
-            this.ctlMaInScaleMat.TabIndex = 31;
+            this.ctlMaInScaleMat.TabIndex = 3;
             // 
             // ctlVecInY
             // 
             this.ctlVecInY.Location = new System.Drawing.Point(176, 52);
             this.ctlVecInY.Margin = new System.Windows.Forms.Padding(5);
+            this.ctlVecInY.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVecInY.Name = "ctlVecInY";
             this.ctlVecInY.Size = new System.Drawing.Size(161, 102);
-            this.ctlVecInY.TabIndex = 30;
+            this.ctlVecInY.TabIndex = 2;
             vector1.X1 = float.NaN;
             vector1.X2 = float.NaN;
             this.ctlVecInY.Vector = vector1;
@@ -119,9 +121,10 @@
             // 
             this.ctlVecInX.Location = new System.Drawing.Point(7, 49);
             this.ctlVecInX.Margin = new System.Windows.Forms.Padding(5);
+            this.ctlVecInX.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVecInX.Name = "ctlVecInX";
             this.ctlVecInX.Size = new System.Drawing.Size(161, 102);
-            this.ctlVecInX.TabIndex = 29;
+            this.ctlVecInX.TabIndex = 1;
             vector2.X1 = float.NaN;
             vector2.X2 = float.NaN;
             this.ctlVecInX.Vector = vector2;
@@ -169,7 +172,7 @@
             this.butFuncionXPlusY.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butFuncionXPlusY.Name = "butFuncionXPlusY";
             this.butFuncionXPlusY.Size = new System.Drawing.Size(115, 82);
-            this.butFuncionXPlusY.TabIndex = 27;
+            this.butFuncionXPlusY.TabIndex = 5;
             this.butFuncionXPlusY.Text = "f(X+Y)";
             this.butFuncionXPlusY.UseVisualStyleBackColor = true;
             this.butFuncionXPlusY.Click += new System.EventHandler(this.butFuncionXPlusY_Click);
@@ -206,7 +209,7 @@
             this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtNotes.Name = "rtxtNotes";
             this.rtxtNotes.Size = new System.Drawing.Size(636, 152);
-            this.rtxtNotes.TabIndex = 30;
+            this.rtxtNotes.TabIndex = 6;
             this.rtxtNotes.Text = "";
             this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
             // 

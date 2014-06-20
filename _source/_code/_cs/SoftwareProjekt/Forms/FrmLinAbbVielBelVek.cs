@@ -19,7 +19,7 @@ using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmLinAbbVielBelVek : AbstractView 
+    public partial class FrmLinAbbVielBelVek : AbstractView
     {
         public FrmLinAbbVielBelVek()
         {

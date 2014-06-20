@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SoftwareProjekt.Classes.Math.Vector vector2 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Matrix matrix3 = new SoftwareProjekt.Classes.Math.Matrix();
-            SoftwareProjekt.Classes.Math.Matrix matrix4 = new SoftwareProjekt.Classes.Math.Matrix();
+            SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Matrix matrix1 = new SoftwareProjekt.Classes.Math.Matrix();
+            SoftwareProjekt.Classes.Math.Matrix matrix2 = new SoftwareProjekt.Classes.Math.Matrix();
             this.butFx = new System.Windows.Forms.Button();
             this.lblOutput1 = new System.Windows.Forms.Label();
             this.lblInput = new System.Windows.Forms.Label();
@@ -74,7 +74,7 @@
             this.butFx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butFx.Name = "butFx";
             this.butFx.Size = new System.Drawing.Size(107, 59);
-            this.butFx.TabIndex = 38;
+            this.butFx.TabIndex = 4;
             this.butFx.Text = "f(x)";
             this.butFx.UseVisualStyleBackColor = true;
             this.butFx.Click += new System.EventHandler(this.butFx_Click);
@@ -117,12 +117,13 @@
             // 
             this.ctlVecInX.Location = new System.Drawing.Point(8, 43);
             this.ctlVecInX.Margin = new System.Windows.Forms.Padding(5);
+            this.ctlVecInX.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVecInX.Name = "ctlVecInX";
             this.ctlVecInX.Size = new System.Drawing.Size(161, 102);
-            this.ctlVecInX.TabIndex = 59;
-            vector2.X1 = float.NaN;
-            vector2.X2 = float.NaN;
-            this.ctlVecInX.Vector = vector2;
+            this.ctlVecInX.TabIndex = 1;
+            vector1.X1 = float.NaN;
+            vector1.X2 = float.NaN;
+            this.ctlVecInX.Vector = vector1;
             // 
             // lblPointX
             // 
@@ -139,7 +140,7 @@
             this.dutDeterminante.Location = new System.Drawing.Point(208, 131);
             this.dutDeterminante.Name = "dutDeterminante";
             this.dutDeterminante.Size = new System.Drawing.Size(150, 46);
-            this.dutDeterminante.TabIndex = 57;
+            this.dutDeterminante.TabIndex = 3;
             this.dutDeterminante.Text = "Determinante";
             this.dutDeterminante.UseVisualStyleBackColor = true;
             this.dutDeterminante.Click += new System.EventHandler(this.dutDeterminante_Click);
@@ -148,14 +149,15 @@
             // 
             this.ctlMatrixInput1.Location = new System.Drawing.Point(208, 21);
             this.ctlMatrixInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            matrix3.X11 = float.NaN;
-            matrix3.X12 = float.NaN;
-            matrix3.X21 = float.NaN;
-            matrix3.X22 = float.NaN;
-            this.ctlMatrixInput1.Matrix = matrix3;
+            matrix1.X11 = float.NaN;
+            matrix1.X12 = float.NaN;
+            matrix1.X21 = float.NaN;
+            matrix1.X22 = float.NaN;
+            this.ctlMatrixInput1.Matrix = matrix1;
+            this.ctlMatrixInput1.MinimumSize = new System.Drawing.Size(131, 94);
             this.ctlMatrixInput1.Name = "ctlMatrixInput1";
             this.ctlMatrixInput1.Size = new System.Drawing.Size(150, 103);
-            this.ctlMatrixInput1.TabIndex = 57;
+            this.ctlMatrixInput1.TabIndex = 2;
             // 
             // txtDeterminante1
             // 
@@ -295,7 +297,7 @@
             this.butDeterminante2.Location = new System.Drawing.Point(199, 31);
             this.butDeterminante2.Name = "butDeterminante2";
             this.butDeterminante2.Size = new System.Drawing.Size(150, 46);
-            this.butDeterminante2.TabIndex = 57;
+            this.butDeterminante2.TabIndex = 6;
             this.butDeterminante2.Text = "Determinante";
             this.butDeterminante2.UseVisualStyleBackColor = true;
             this.butDeterminante2.Click += new System.EventHandler(this.butDeterminante2_Click);
@@ -304,14 +306,15 @@
             // 
             this.ctlMatrixInput2.Location = new System.Drawing.Point(21, 31);
             this.ctlMatrixInput2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            matrix4.X11 = float.NaN;
-            matrix4.X12 = float.NaN;
-            matrix4.X21 = float.NaN;
-            matrix4.X22 = float.NaN;
-            this.ctlMatrixInput2.Matrix = matrix4;
+            matrix2.X11 = float.NaN;
+            matrix2.X12 = float.NaN;
+            matrix2.X21 = float.NaN;
+            matrix2.X22 = float.NaN;
+            this.ctlMatrixInput2.Matrix = matrix2;
+            this.ctlMatrixInput2.MinimumSize = new System.Drawing.Size(131, 94);
             this.ctlMatrixInput2.Name = "ctlMatrixInput2";
             this.ctlMatrixInput2.Size = new System.Drawing.Size(150, 103);
-            this.ctlMatrixInput2.TabIndex = 57;
+            this.ctlMatrixInput2.TabIndex = 5;
             // 
             // txtDeterminante2
             // 
@@ -330,7 +333,7 @@
             this.butGx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butGx.Name = "butGx";
             this.butGx.Size = new System.Drawing.Size(107, 59);
-            this.butGx.TabIndex = 59;
+            this.butGx.TabIndex = 7;
             this.butGx.Text = "g(x)";
             this.butGx.UseVisualStyleBackColor = true;
             this.butGx.Click += new System.EventHandler(this.butGx_Click);
@@ -341,7 +344,7 @@
             this.butGFx.Location = new System.Drawing.Point(737, 289);
             this.butGFx.Name = "butGFx";
             this.butGFx.Size = new System.Drawing.Size(150, 46);
-            this.butGFx.TabIndex = 58;
+            this.butGFx.TabIndex = 8;
             this.butGFx.Text = "g(f(x))";
             this.butGFx.UseVisualStyleBackColor = true;
             this.butGFx.Click += new System.EventHandler(this.butGFx_Click);

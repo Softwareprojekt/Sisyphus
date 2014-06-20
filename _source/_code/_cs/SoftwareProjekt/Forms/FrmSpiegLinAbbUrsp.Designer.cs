@@ -124,9 +124,10 @@
             // 
             this.ctlVectorInput3.Location = new System.Drawing.Point(337, 55);
             this.ctlVectorInput3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInput3.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInput3.Name = "ctlVectorInput3";
             this.ctlVectorInput3.Size = new System.Drawing.Size(157, 105);
-            this.ctlVectorInput3.TabIndex = 67;
+            this.ctlVectorInput3.TabIndex = 3;
             vector1.X1 = float.NaN;
             vector1.X2 = float.NaN;
             this.ctlVectorInput3.Vector = vector1;
@@ -135,9 +136,10 @@
             // 
             this.ctlVectorInput2.Location = new System.Drawing.Point(172, 55);
             this.ctlVectorInput2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInput2.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInput2.Name = "ctlVectorInput2";
             this.ctlVectorInput2.Size = new System.Drawing.Size(157, 105);
-            this.ctlVectorInput2.TabIndex = 66;
+            this.ctlVectorInput2.TabIndex = 2;
             vector2.X1 = float.NaN;
             vector2.X2 = float.NaN;
             this.ctlVectorInput2.Vector = vector2;
@@ -155,9 +157,10 @@
             // 
             this.ctlVectorInput1.Location = new System.Drawing.Point(7, 55);
             this.ctlVectorInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInput1.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInput1.Name = "ctlVectorInput1";
             this.ctlVectorInput1.Size = new System.Drawing.Size(157, 105);
-            this.ctlVectorInput1.TabIndex = 64;
+            this.ctlVectorInput1.TabIndex = 1;
             vector3.X1 = float.NaN;
             vector3.X2 = float.NaN;
             this.ctlVectorInput1.Vector = vector3;
@@ -169,7 +172,7 @@
             this.txtAngle.MaxLength = 5;
             this.txtAngle.Name = "txtAngle";
             this.txtAngle.Size = new System.Drawing.Size(84, 22);
-            this.txtAngle.TabIndex = 15;
+            this.txtAngle.TabIndex = 4;
             this.txtAngle.TextChanged += new System.EventHandler(this.txtAngle_TextChanged);
             this.txtAngle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAngle_KeyPress);
             // 
@@ -266,7 +269,7 @@
             this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtNotes.Name = "rtxtNotes";
             this.rtxtNotes.Size = new System.Drawing.Size(636, 95);
-            this.rtxtNotes.TabIndex = 59;
+            this.rtxtNotes.TabIndex = 6;
             this.rtxtNotes.Text = "";
             this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
             // 
@@ -319,7 +322,7 @@
             this.butFx.Location = new System.Drawing.Point(852, 172);
             this.butFx.Name = "butFx";
             this.butFx.Size = new System.Drawing.Size(76, 52);
-            this.butFx.TabIndex = 64;
+            this.butFx.TabIndex = 5;
             this.butFx.Text = "f(x)";
             this.butFx.UseVisualStyleBackColor = true;
             this.butFx.Click += new System.EventHandler(this.butFx_Click);
@@ -338,6 +341,7 @@
             this.ctlMathEqua.Equation = "";
             this.ctlMathEqua.Filename = "expr.gif";
             this.ctlMathEqua.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";
+            this.ctlMathEqua.FontSize = 8;
             this.ctlMathEqua.Location = new System.Drawing.Point(517, 493);
             this.ctlMathEqua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ctlMathEqua.Name = "ctlMathEqua";

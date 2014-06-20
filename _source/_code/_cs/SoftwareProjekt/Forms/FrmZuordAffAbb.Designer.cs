@@ -109,9 +109,10 @@
             // 
             this.ctlVectorInput3.Location = new System.Drawing.Point(329, 48);
             this.ctlVectorInput3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInput3.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInput3.Name = "ctlVectorInput3";
             this.ctlVectorInput3.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInput3.TabIndex = 45;
+            this.ctlVectorInput3.TabIndex = 3;
             vector1.X1 = float.NaN;
             vector1.X2 = float.NaN;
             this.ctlVectorInput3.Vector = vector1;
@@ -120,9 +121,10 @@
             // 
             this.ctlVectorInput2.Location = new System.Drawing.Point(168, 48);
             this.ctlVectorInput2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInput2.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInput2.Name = "ctlVectorInput2";
             this.ctlVectorInput2.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInput2.TabIndex = 44;
+            this.ctlVectorInput2.TabIndex = 2;
             vector2.X1 = float.NaN;
             vector2.X2 = float.NaN;
             this.ctlVectorInput2.Vector = vector2;
@@ -131,9 +133,10 @@
             // 
             this.ctlVectorInput1.Location = new System.Drawing.Point(7, 48);
             this.ctlVectorInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInput1.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInput1.Name = "ctlVectorInput1";
             this.ctlVectorInput1.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInput1.TabIndex = 43;
+            this.ctlVectorInput1.TabIndex = 1;
             vector3.X1 = float.NaN;
             vector3.X2 = float.NaN;
             this.ctlVectorInput1.Vector = vector3;
@@ -204,9 +207,10 @@
             // 
             this.ctlVectorInput6.Location = new System.Drawing.Point(329, 48);
             this.ctlVectorInput6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInput6.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInput6.Name = "ctlVectorInput6";
             this.ctlVectorInput6.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInput6.TabIndex = 48;
+            this.ctlVectorInput6.TabIndex = 8;
             vector4.X1 = float.NaN;
             vector4.X2 = float.NaN;
             this.ctlVectorInput6.Vector = vector4;
@@ -215,9 +219,10 @@
             // 
             this.ctlVectorInput5.Location = new System.Drawing.Point(168, 48);
             this.ctlVectorInput5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInput5.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInput5.Name = "ctlVectorInput5";
             this.ctlVectorInput5.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInput5.TabIndex = 47;
+            this.ctlVectorInput5.TabIndex = 7;
             vector5.X1 = float.NaN;
             vector5.X2 = float.NaN;
             this.ctlVectorInput5.Vector = vector5;
@@ -226,9 +231,10 @@
             // 
             this.ctlVectorInput4.Location = new System.Drawing.Point(7, 48);
             this.ctlVectorInput4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInput4.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInput4.Name = "ctlVectorInput4";
             this.ctlVectorInput4.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInput4.TabIndex = 46;
+            this.ctlVectorInput4.TabIndex = 6;
             vector6.X1 = float.NaN;
             vector6.X2 = float.NaN;
             this.ctlVectorInput4.Vector = vector6;
@@ -276,7 +282,7 @@
             this.butFx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butFx.Name = "butFx";
             this.butFx.Size = new System.Drawing.Size(129, 49);
-            this.butFx.TabIndex = 24;
+            this.butFx.TabIndex = 10;
             this.butFx.Text = "f(x)";
             this.butFx.UseVisualStyleBackColor = true;
             this.butFx.Click += new System.EventHandler(this.butFx_Click);
@@ -330,7 +336,7 @@
             this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtNotes.Name = "rtxtNotes";
             this.rtxtNotes.Size = new System.Drawing.Size(636, 152);
-            this.rtxtNotes.TabIndex = 28;
+            this.rtxtNotes.TabIndex = 11;
             this.rtxtNotes.Text = "";
             this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
             // 
@@ -359,7 +365,7 @@
             this.butFunction1X.Location = new System.Drawing.Point(530, 76);
             this.butFunction1X.Name = "butFunction1X";
             this.butFunction1X.Size = new System.Drawing.Size(93, 53);
-            this.butFunction1X.TabIndex = 43;
+            this.butFunction1X.TabIndex = 4;
             this.butFunction1X.Text = "f1(x)";
             this.butFunction1X.UseVisualStyleBackColor = true;
             this.butFunction1X.Click += new System.EventHandler(this.butFunction1X_Click);
@@ -370,7 +376,7 @@
             this.butInverseFunction1X.Location = new System.Drawing.Point(530, 135);
             this.butInverseFunction1X.Name = "butInverseFunction1X";
             this.butInverseFunction1X.Size = new System.Drawing.Size(93, 53);
-            this.butInverseFunction1X.TabIndex = 44;
+            this.butInverseFunction1X.TabIndex = 5;
             this.butInverseFunction1X.Text = "f^-1(x)";
             this.butInverseFunction1X.UseVisualStyleBackColor = true;
             this.butInverseFunction1X.Click += new System.EventHandler(this.butInverseFunction1X_Click);
@@ -381,7 +387,7 @@
             this.butFunction2X.Location = new System.Drawing.Point(1426, 121);
             this.butFunction2X.Name = "butFunction2X";
             this.butFunction2X.Size = new System.Drawing.Size(93, 53);
-            this.butFunction2X.TabIndex = 45;
+            this.butFunction2X.TabIndex = 9;
             this.butFunction2X.Text = "f2(x)";
             this.butFunction2X.UseVisualStyleBackColor = true;
             this.butFunction2X.Click += new System.EventHandler(this.butFunction2X_Click);

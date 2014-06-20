@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SoftwareProjekt.Classes.Math.Matrix matrix2 = new SoftwareProjekt.Classes.Math.Matrix();
-            SoftwareProjekt.Classes.Math.Vector vector2 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Matrix matrix1 = new SoftwareProjekt.Classes.Math.Matrix();
+            SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
             this.lblIn = new System.Windows.Forms.Label();
             this.grpDataInput = new System.Windows.Forms.GroupBox();
             this.ctlMatrixInput1 = new SoftwareProjekt.UserControls.CtlMatrixInput();
@@ -85,25 +85,27 @@
             // 
             this.ctlMatrixInput1.Location = new System.Drawing.Point(9, 153);
             this.ctlMatrixInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            matrix2.X11 = float.NaN;
-            matrix2.X12 = float.NaN;
-            matrix2.X21 = float.NaN;
-            matrix2.X22 = float.NaN;
-            this.ctlMatrixInput1.Matrix = matrix2;
+            matrix1.X11 = float.NaN;
+            matrix1.X12 = float.NaN;
+            matrix1.X21 = float.NaN;
+            matrix1.X22 = float.NaN;
+            this.ctlMatrixInput1.Matrix = matrix1;
+            this.ctlMatrixInput1.MinimumSize = new System.Drawing.Size(131, 94);
             this.ctlMatrixInput1.Name = "ctlMatrixInput1";
-            this.ctlMatrixInput1.Size = new System.Drawing.Size(164, 93);
-            this.ctlMatrixInput1.TabIndex = 40;
+            this.ctlMatrixInput1.Size = new System.Drawing.Size(164, 94);
+            this.ctlMatrixInput1.TabIndex = 3;
             // 
             // ctlVectorInput1
             // 
             this.ctlVectorInput1.Location = new System.Drawing.Point(9, 19);
             this.ctlVectorInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInput1.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInput1.Name = "ctlVectorInput1";
             this.ctlVectorInput1.Size = new System.Drawing.Size(158, 98);
-            this.ctlVectorInput1.TabIndex = 40;
-            vector2.X1 = float.NaN;
-            vector2.X2 = float.NaN;
-            this.ctlVectorInput1.Vector = vector2;
+            this.ctlVectorInput1.TabIndex = 1;
+            vector1.X1 = float.NaN;
+            vector1.X2 = float.NaN;
+            this.ctlVectorInput1.Vector = vector1;
             // 
             // txtDeterminante
             // 
@@ -123,7 +125,7 @@
             this.butDeterminante.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butDeterminante.Name = "butDeterminante";
             this.butDeterminante.Size = new System.Drawing.Size(131, 34);
-            this.butDeterminante.TabIndex = 35;
+            this.butDeterminante.TabIndex = 4;
             this.butDeterminante.Text = "Determinante";
             this.butDeterminante.UseVisualStyleBackColor = true;
             this.butDeterminante.Click += new System.EventHandler(this.butDeterminante_Click);
@@ -134,7 +136,7 @@
             this.txtFactorA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFactorA.Name = "txtFactorA";
             this.txtFactorA.Size = new System.Drawing.Size(76, 22);
-            this.txtFactorA.TabIndex = 9;
+            this.txtFactorA.TabIndex = 2;
             this.txtFactorA.TextChanged += new System.EventHandler(this.txtFactorA_TextChanged);
             this.txtFactorA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFactorA_KeyPress);
             // 
@@ -154,7 +156,7 @@
             this.butFunctionAMultX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butFunctionAMultX.Name = "butFunctionAMultX";
             this.butFunctionAMultX.Size = new System.Drawing.Size(131, 55);
-            this.butFunctionAMultX.TabIndex = 32;
+            this.butFunctionAMultX.TabIndex = 5;
             this.butFunctionAMultX.Text = "f(a*x)";
             this.butFunctionAMultX.UseVisualStyleBackColor = true;
             this.butFunctionAMultX.Click += new System.EventHandler(this.butFunctionAMultX_Click);
@@ -225,7 +227,7 @@
             this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtNotes.Name = "rtxtNotes";
             this.rtxtNotes.Size = new System.Drawing.Size(636, 152);
-            this.rtxtNotes.TabIndex = 37;
+            this.rtxtNotes.TabIndex = 6;
             this.rtxtNotes.Text = "";
             this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
             // 

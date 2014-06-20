@@ -121,9 +121,10 @@
             // 
             this.ctlVectorInput2.Location = new System.Drawing.Point(170, 54);
             this.ctlVectorInput2.Margin = new System.Windows.Forms.Padding(5);
+            this.ctlVectorInput2.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInput2.Name = "ctlVectorInput2";
             this.ctlVectorInput2.Size = new System.Drawing.Size(161, 102);
-            this.ctlVectorInput2.TabIndex = 17;
+            this.ctlVectorInput2.TabIndex = 6;
             vector1.X1 = float.NaN;
             vector1.X2 = float.NaN;
             this.ctlVectorInput2.Vector = vector1;
@@ -132,25 +133,26 @@
             // 
             this.ctlVectorInput1.Location = new System.Drawing.Point(9, 54);
             this.ctlVectorInput1.Margin = new System.Windows.Forms.Padding(5);
+            this.ctlVectorInput1.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInput1.Name = "ctlVectorInput1";
             this.ctlVectorInput1.Size = new System.Drawing.Size(161, 102);
-            this.ctlVectorInput1.TabIndex = 16;
+            this.ctlVectorInput1.TabIndex = 5;
             vector2.X1 = float.NaN;
             vector2.X2 = float.NaN;
             this.ctlVectorInput1.Vector = vector2;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(67, 203);
+            this.textBox2.Location = new System.Drawing.Point(67, 204);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(84, 22);
-            this.textBox2.TabIndex = 15;
+            this.textBox2.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 206);
+            this.label1.Location = new System.Drawing.Point(8, 207);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 17);
             this.label1.TabIndex = 14;
@@ -158,11 +160,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 173);
+            this.textBox1.Location = new System.Drawing.Point(67, 178);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(84, 22);
-            this.textBox1.TabIndex = 13;
+            this.textBox1.TabIndex = 7;
             // 
             // label2
             // 
@@ -189,7 +191,7 @@
             this.txtEV1.Name = "txtEV1";
             this.txtEV1.ReadOnly = true;
             this.txtEV1.Size = new System.Drawing.Size(84, 22);
-            this.txtEV1.TabIndex = 9;
+            this.txtEV1.TabIndex = 3;
             // 
             // lblEV2
             // 
@@ -207,7 +209,7 @@
             this.txtEV2.Name = "txtEV2";
             this.txtEV2.ReadOnly = true;
             this.txtEV2.Size = new System.Drawing.Size(84, 22);
-            this.txtEV2.TabIndex = 11;
+            this.txtEV2.TabIndex = 4;
             // 
             // lblVectorX
             // 
@@ -224,7 +226,7 @@
             this.txVectorX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txVectorX.Name = "txVectorX";
             this.txVectorX.Size = new System.Drawing.Size(84, 22);
-            this.txVectorX.TabIndex = 13;
+            this.txVectorX.TabIndex = 2;
             // 
             // grpDataInputLeft
             // 
@@ -258,9 +260,10 @@
             // 
             this.ctlVecX1.Location = new System.Drawing.Point(39, 54);
             this.ctlVecX1.Margin = new System.Windows.Forms.Padding(5);
+            this.ctlVecX1.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVecX1.Name = "ctlVecX1";
             this.ctlVecX1.Size = new System.Drawing.Size(161, 102);
-            this.ctlVecX1.TabIndex = 14;
+            this.ctlVecX1.TabIndex = 1;
             vector3.X1 = float.NaN;
             vector3.X2 = float.NaN;
             this.ctlVecX1.Vector = vector3;
@@ -297,7 +300,7 @@
             this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtNotes.Name = "rtxtNotes";
             this.rtxtNotes.Size = new System.Drawing.Size(636, 136);
-            this.rtxtNotes.TabIndex = 28;
+            this.rtxtNotes.TabIndex = 10;
             this.rtxtNotes.Text = "";
             this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
             // 
@@ -318,7 +321,7 @@
             this.butFunctionX.Location = new System.Drawing.Point(1224, 240);
             this.butFunctionX.Name = "butFunctionX";
             this.butFunctionX.Size = new System.Drawing.Size(105, 66);
-            this.butFunctionX.TabIndex = 31;
+            this.butFunctionX.TabIndex = 9;
             this.butFunctionX.Text = "f(x)";
             this.butFunctionX.UseVisualStyleBackColor = true;
             this.butFunctionX.Click += new System.EventHandler(this.butFunctionX_Click);
@@ -326,6 +329,9 @@
             // ctlMathEqua
             // 
             this.ctlMathEqua.Equation = "";
+            this.ctlMathEqua.Filename = "hqztxpdc.cg1.tiff";
+            this.ctlMathEqua.Filepath = "C:\\Users\\Markus\\AppData\\Local\\Temp\\";
+            this.ctlMathEqua.FontSize = 8;
             this.ctlMathEqua.Location = new System.Drawing.Point(623, 590);
             this.ctlMathEqua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ctlMathEqua.Name = "ctlMathEqua";

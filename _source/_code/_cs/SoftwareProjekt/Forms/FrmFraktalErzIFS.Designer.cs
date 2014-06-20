@@ -59,7 +59,7 @@
             this.butSelectPic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butSelectPic.Name = "butSelectPic";
             this.butSelectPic.Size = new System.Drawing.Size(112, 36);
-            this.butSelectPic.TabIndex = 0;
+            this.butSelectPic.TabIndex = 3;
             this.butSelectPic.Text = "Bild wählen";
             this.butSelectPic.UseVisualStyleBackColor = true;
             this.butSelectPic.Click += new System.EventHandler(this.butSelectPic_Click);
@@ -70,7 +70,7 @@
             this.butStepFor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butStepFor.Name = "butStepFor";
             this.butStepFor.Size = new System.Drawing.Size(92, 36);
-            this.butStepFor.TabIndex = 1;
+            this.butStepFor.TabIndex = 5;
             this.butStepFor.Text = "Schritt vor";
             this.butStepFor.UseVisualStyleBackColor = true;
             this.butStepFor.Click += new System.EventHandler(this.butStepFor_Click);
@@ -81,7 +81,7 @@
             this.butStepBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butStepBack.Name = "butStepBack";
             this.butStepBack.Size = new System.Drawing.Size(139, 36);
-            this.butStepBack.TabIndex = 2;
+            this.butStepBack.TabIndex = 6;
             this.butStepBack.Text = "Schritt zurück";
             this.butStepBack.UseVisualStyleBackColor = true;
             this.butStepBack.Click += new System.EventHandler(this.butStepBack_Click);
@@ -210,10 +210,10 @@
             // rtxtNotes
             // 
             this.rtxtNotes.Location = new System.Drawing.Point(391, 793);
-            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtNotes.Name = "rtxtNotes";
             this.rtxtNotes.Size = new System.Drawing.Size(636, 152);
-            this.rtxtNotes.TabIndex = 10;
+            this.rtxtNotes.TabIndex = 7;
             this.rtxtNotes.Text = "";
             this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
             // 
@@ -224,9 +224,9 @@
             this.grpSteps.Controls.Add(this.butStepFor);
             this.grpSteps.Controls.Add(this.butStepBack);
             this.grpSteps.Location = new System.Drawing.Point(567, 542);
-            this.grpSteps.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpSteps.Margin = new System.Windows.Forms.Padding(4);
             this.grpSteps.Name = "grpSteps";
-            this.grpSteps.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpSteps.Padding = new System.Windows.Forms.Padding(4);
             this.grpSteps.Size = new System.Drawing.Size(291, 143);
             this.grpSteps.TabIndex = 12;
             this.grpSteps.TabStop = false;
@@ -235,11 +235,11 @@
             // txtSteps
             // 
             this.txtSteps.Location = new System.Drawing.Point(148, 30);
-            this.txtSteps.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSteps.Margin = new System.Windows.Forms.Padding(4);
             this.txtSteps.MaxLength = 4;
             this.txtSteps.Name = "txtSteps";
             this.txtSteps.Size = new System.Drawing.Size(103, 22);
-            this.txtSteps.TabIndex = 1;
+            this.txtSteps.TabIndex = 4;
             this.txtSteps.TextChanged += new System.EventHandler(this.txtSteps_TextChanged);
             this.txtSteps.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSteps_KeyPress);
             // 
@@ -258,6 +258,7 @@
             this.ctlMathEqua.Equation = "";
             this.ctlMathEqua.Filename = "expr.gif";
             this.ctlMathEqua.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";
+            this.ctlMathEqua.FontSize = 8;
             this.ctlMathEqua.Location = new System.Drawing.Point(508, 204);
             this.ctlMathEqua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ctlMathEqua.Name = "ctlMathEqua";
