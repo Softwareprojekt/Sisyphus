@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\EventArguments\ParseEventArgs.cs" />
     <Compile Include="Classes\Math\DrawingPoint.cs" />
     <Compile Include="Classes\Xml\MathXmlGenerator.cs" />
     <Compile Include="Enums\EMathType.cs" />
@@ -125,6 +126,9 @@
     </Compile>
     <Compile Include="Classes\LinearTransformationTopic.cs" />
     <Compile Include="Interop\InteropMimeTex.cs" />
+    <Compile Include="UserControls\FloatInput.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControls\FormulaDrawer\CtlFormularDraw.cs">
       <SubType>UserControl</SubType>
     </Compile>
