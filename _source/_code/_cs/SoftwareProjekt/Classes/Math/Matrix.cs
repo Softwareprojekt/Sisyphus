@@ -25,6 +25,11 @@ namespace SoftwareProjekt.Classes.Math
 {
     public class Matrix
     {
+    	private float _x11;
+    	private float _x12;
+    	private float _x21;
+    	private float _x22;
+    	
         /// <summary>
         /// Empty ctor.
         /// </summary>
@@ -58,13 +63,41 @@ namespace SoftwareProjekt.Classes.Math
             }
         }
 
-        public float X11 { get; set; }
-
-        public float X12 { get; set; }
-
-        public float X21 { get; set; }
-
-        public float X22 { get; set; }
+        public float X11
+        {
+        	get { return _x11; }
+        	set
+        	{
+				_x11 = (float)System.Math.Round(value, 5);
+        	}
+        }
+        
+        public float X12
+        {
+        	get { return _x12; }
+        	set
+        	{
+				_x12 = (float)System.Math.Round(value, 5);
+        	}
+        }
+        
+        public float X21
+        {
+        	get { return _x21; }
+        	set
+        	{
+				_x21 = (float)System.Math.Round(value, 5);
+        	}
+        }
+        
+        public float X22
+        {
+        	get { return _x22; }
+        	set
+        	{
+				_x22 = (float)System.Math.Round(value, 5);
+        	}
+        }
 
         public override string ToString()
         {

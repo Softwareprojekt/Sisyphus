@@ -26,6 +26,10 @@ namespace SoftwareProjekt.Classes.Math
 {
     public class LineSegment : IComparable
     {
+    	public LineSegment(PointF startPoint, Vector directionalVector, Pen color) : this(startPoint, directionalVector)
+    	{
+    		this.Color = color;
+    	}
         public LineSegment(PointF startPoint, Vector directionalVector)
         {
             this.StartPoint = new PointF(startPoint.X, startPoint.Y);

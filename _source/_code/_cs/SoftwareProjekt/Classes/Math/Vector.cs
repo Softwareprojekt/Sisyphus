@@ -26,6 +26,9 @@ namespace SoftwareProjekt.Classes.Math
 {
     public class Vector
     {
+    	private float _x1;
+    	private float _x2;
+    	
         /// <summary>
         /// Empty ctor.
         /// </summary>
@@ -44,9 +47,23 @@ namespace SoftwareProjekt.Classes.Math
             this.X2 = x2;
         }
 
-        public float X1 { get; set; }
+        public float X1 
+        {
+        	get { return _x1; }
+        	set 
+        	{
+				_x1 = (float)System.Math.Round(value, 5);
+        	}
+        }
 
-        public float X2 { get; set; }
+        public float X2 
+        {
+        	get { return _x2; }
+        	set 
+        	{
+				_x2 = (float)System.Math.Round(value, 5);
+        	}
+        }
 
         /// <summary>
         /// Gets the Length of this Vector

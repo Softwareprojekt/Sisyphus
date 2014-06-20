@@ -39,6 +39,14 @@ namespace SoftwareProjekt.Forms
 
         private string _sequation;
         private string _sfilepath;
+        
+        private LineSegment _vectorInputX;
+        private LineSegment _vectorInputEV1;
+        private LineSegment _vectorInputEV2;
+        
+        private LineSegment _vectorOutputX;
+        private LineSegment _vectorOutputEV1;
+        private LineSegment _vectorOutputEV2;
 
         public FrmDrehLinAbbUrsp()
         {
@@ -64,6 +72,14 @@ namespace SoftwareProjekt.Forms
 
             this.ctlVectorEV2.txtEle11.Text = "0";
             this.ctlVectorEV2.txtEle21.Text = "1";
+            
+            _vectorInputEV1 = new LineSegment(new PointF(0,0), ctlVectorEV1.Vector, Pens.Blue);
+            _vectorInputEV2 = new LineSegment(new PointF(0,0), ctlVectorEV2.Vector, Pens.Red);
+            _vectorInputX = new LineSegment(new PointF(0,0), ctlVectorInputX.Vector);
+            
+            cosInput.AddLineSegment(_vectorInputEV1);
+            cosInput.AddLineSegment(_vectorInputEV2);
+            cosInput.AddLineSegment(_vectorInputX);
         }
 
 
@@ -89,15 +105,27 @@ namespace SoftwareProjekt.Forms
 
         private void butDeterminante_Click(object sender, System.EventArgs e)
         {
-            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+            //this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
         }
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
+        	cosOutput.ClearLineSegments();
+        	
             Console.WriteLine(sender.ToString() + " " + e.ToString());
             ctlVectorOutputEV1.Vector = (Vector)e.CalcValues["EV1"];
             ctlVectorOutputEV2.Vector = (Vector)e.CalcValues["EV2"];
             ctlVectorOutputX.Vector = (Vector)e.CalcValues["VectorX"];
+            
+            _vectorOutputEV1 = new LineSegment(new PointF(0f, 0f), ctlVectorOutputEV1.Vector, Pens.Blue);
+            _vectorOutputEV2 = new LineSegment(new PointF(0f, 0f), ctlVectorOutputEV2.Vector, Pens.Red);
+            _vectorOutputX = new LineSegment(new PointF(0f, 0f), ctlVectorOutputX.Vector, Pens.Black);
+            
+            cosOutput.AddLineSegment(_vectorOutputEV1);
+            cosOutput.AddLineSegment(_vectorOutputEV2);
+            cosOutput.AddLineSegment(_vectorOutputX);
+            
+            cosOutput.Refresh();
         }
 
 		protected override bool CheckInputs()
@@ -113,6 +141,12 @@ namespace SoftwareProjekt.Forms
 			Console.WriteLine("ERROR @ Inputs are not valid.");
 #endif
 			return false;
+		}
+		
+		public void OnTextChanged(object sender, EventArgs e)
+		{
+			_vectorInputX.Vector = ctlVectorInputX.Vector;
+			cosInput.Refresh();
 		}
     }
 }

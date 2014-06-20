@@ -96,6 +96,11 @@ namespace SoftwareProjekt.UserControls
             _lineSegmentList.Remove(lineSegment);
         }
 
+        public void ClearLineSegments()
+        {
+        	_lineSegmentList.Clear();
+        }
+        
         /// <summary>
         /// iterates the List and draws the figures
         /// </summary>
@@ -109,15 +114,15 @@ namespace SoftwareProjekt.UserControls
 
         private void DrawSingleVector(LineSegment ls, Graphics g)
         {
-            Point internalStartPoint = CalculateInternalCoordinates(ls.StartPoint.X, ls.StartPoint.Y);
-            Point internalEndPoint = CalculateInternalCoordinates(ls.EndPoint.X, ls.EndPoint.Y);
+            PointF internalStartPoint = CalculateInternalCoordinates(ls.StartPoint.X, ls.StartPoint.Y);
+            PointF internalEndPoint = CalculateInternalCoordinates(ls.EndPoint.X, ls.EndPoint.Y);
 
-            if (internalEndPoint.X == -1.0f || internalEndPoint.Y == -1.0f)
+            if (float.IsNaN(internalEndPoint.X) || float.IsNaN(internalEndPoint.Y))
             {
                 return;
             }
 
-            if (internalStartPoint.X == -1.0f || internalStartPoint.Y == -1.0f)
+            if (float.IsNaN(internalStartPoint.X) || float.IsNaN(internalStartPoint.Y))
             {
                 return;
             }
@@ -202,12 +207,12 @@ namespace SoftwareProjekt.UserControls
             PointF internalStartPoint = CalculateInternalCoordinates(l.InnerLineSegment.StartPoint.X, l.InnerLineSegment.StartPoint.Y);
             PointF internalEndPoint = CalculateInternalCoordinates(l.InnerLineSegment.EndPoint.X, l.InnerLineSegment.EndPoint.Y);
 
-            if (internalEndPoint.X == -1.0f || internalEndPoint.Y == -1.0f)
+            if (float.IsNaN(internalEndPoint.X) || float.IsNaN(internalEndPoint.Y))
             {
                 return;
             }
 
-            if (internalStartPoint.X == -1.0f || internalStartPoint.Y == -1.0f)
+            if (float.IsNaN(internalStartPoint.X) || float.IsNaN(internalStartPoint.Y))
             {
                 return;
             }
@@ -320,16 +325,16 @@ namespace SoftwareProjekt.UserControls
 
         private void DrawSinglePoint(PointF p, Graphics g)
         {
-            Point internalPoint = CalculateInternalCoordinates(p.X, p.Y);
+            PointF internalPoint = CalculateInternalCoordinates(p.X, p.Y);
 
 
-            if (internalPoint.X == -1 || internalPoint.Y == -1)
+            if (float.IsNaN(internalPoint.X) || float.IsNaN(internalPoint.Y))
             {
                 return;
             }
 
-            g.DrawLine(Pens.Black, new Point(internalPoint.X - 3, internalPoint.Y - 3), new Point(internalPoint.X + 3, internalPoint.Y + 3));
-            g.DrawLine(Pens.Black, new Point(internalPoint.X - 3, internalPoint.Y + 3), new Point(internalPoint.X + 3, internalPoint.Y - 3));
+            g.DrawLine(Pens.Black, new PointF(internalPoint.X - 3, internalPoint.Y - 3), new PointF(internalPoint.X + 3, internalPoint.Y + 3));
+            g.DrawLine(Pens.Black, new PointF(internalPoint.X - 3, internalPoint.Y + 3), new PointF(internalPoint.X + 3, internalPoint.Y - 3));
         }
 
         private void DrawXAxis(Graphics g)
@@ -450,12 +455,12 @@ namespace SoftwareProjekt.UserControls
             /* Check if click event was inside valid range */
             if (xValue < internalAllowedMinRangeX || xValue > internalAllowedMaxRangeX)
             {
-                return new PointF(-1, -1);
+                return new PointF(float.NaN, float.NaN);
             }
 
             if (yValue < internalAllowedMinRangeY || yValue > internalAllowedMaxRangeY)
             {
-                return new PointF(-1, -1);
+                return new PointF(float.NaN, float.NaN);
             }
 
             /* Calculate y - coordinate */
@@ -496,19 +501,24 @@ namespace SoftwareProjekt.UserControls
             return new PointF(localXValue, localYValue);
         }
 
-        private Point CalculateInternalCoordinates(float xValue, float yValue)
+        private PointF CalculateInternalCoordinates(float xValue, float yValue)
         {
             int localXValue = 0;
             int localYValue = 0;
 
+            if (float.IsNaN(xValue) || float.IsNaN(yValue))
+            {
+            	return new PointF(float.NaN, float.NaN);
+            }
+            
             if (xValue > _xAxis.EndValue || xValue < _xAxis.StartValue)
             {
-                return new Point(-1, -1);
+                return new PointF(float.NaN, float.NaN);
             }
 
             if (yValue > _yAxis.EndValue || yValue < _yAxis.StartValue)
             {
-                return new Point(-1, -1);
+                return new PointF(float.NaN, float.NaN);
             }
 
             // calculate X
@@ -533,7 +543,7 @@ namespace SoftwareProjekt.UserControls
             localYValue = localOffsetPixelY - (int)(numericOffsetY * rangePerValueY);
 
 
-            return new Point(localXValue, localYValue);
+            return new PointF(localXValue, localYValue);
         }
 
         public void AddLine(Line line)
@@ -544,6 +554,11 @@ namespace SoftwareProjekt.UserControls
         public void RemoveLine(Line line)
         {
             _lineList.Remove(line);
+        }
+        
+        public void ClearLines()
+        {
+        	_lineList.Clear();
         }
 
         public void AddPoint(PointF p)
@@ -556,5 +571,9 @@ namespace SoftwareProjekt.UserControls
             _pointsList.Remove(p);
         }
 
+        public void ClearPoints()
+        {
+        	_pointsList.Clear();
+        }
     }
 }

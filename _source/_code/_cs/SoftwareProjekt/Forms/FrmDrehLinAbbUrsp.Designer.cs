@@ -130,6 +130,8 @@
             vector3.X1 = float.NaN;
             vector3.X2 = float.NaN;
             this.ctlVectorInputX.Vector = vector3;
+            this.ctlVectorInputX.txtEle11.TextChanged += new System.EventHandler(OnTextChanged);
+            this.ctlVectorInputX.txtEle21.TextChanged += new System.EventHandler(OnTextChanged);
             // 
             // txtAngle
             // 
