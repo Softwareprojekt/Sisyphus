@@ -30,29 +30,35 @@ namespace SoftwareProjekt.Exercises
     {
         protected override void DoWork(IView view)
         {
-            Dictionary<string, Object> dict = null;
+            Dictionary<string, Object> inputData = null;
 
             // get data needed for calculations.
-            dict = view.GetInputData();
+            inputData = view.GetInputData();
 
             // check dict
-            if (!dict.ContainsKey("EV1") || !dict.ContainsKey("EV2") || !dict.ContainsKey("Angle") || !dict.ContainsKey("VectorX"))
+            if (!inputData.ContainsKey("EV1") || !inputData.ContainsKey("EV2") || !inputData.ContainsKey("Angle") || !inputData.ContainsKey("VectorX"))
             {
                 return;
             }
 
             // calculate...
-            Vector ev1 = (Vector)dict["EV1"];
-            Vector ev2 = (Vector)dict["EV2"];
-            Vector x = (Vector)dict["VectorX"];
-            float angle = (float)dict["Angle"];
-
-            x.Rotate(angle);
-            ev1.Rotate(angle);
-            ev2.Rotate(angle);
-
+            Vector inputEV1 = (Vector)inputData["EV1"];
+            Vector inputEV2 = (Vector)inputData["EV2"];
+            Vector inputX = (Vector)inputData["VectorX"];
+            float angle = (float)inputData["Angle"];
+            
+            Dictionary<string, Object> outputData = new Dictionary<string, object>();
+            
+            Vector outputX = Vector.Rotate(inputX, angle);
+            Vector outputEV1 = Vector.Rotate(inputEV1, angle);
+            Vector outputEV2 = Vector.Rotate(inputEV2, angle);
+            
+            outputData.Add("VectorX", outputX);
+            outputData.Add("EV1", outputEV1);
+            outputData.Add("EV2", outputEV2);
+            
             // call base dowork and pass the calculated data.
-            base.Finalize(new ExerciseEventArgs(dict));
+            base.Finalize(new ExerciseEventArgs(outputData));
         }
     }
 }
