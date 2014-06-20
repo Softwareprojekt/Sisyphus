@@ -179,5 +179,10 @@ namespace SoftwareProjekt.Classes.Math
         {
             return new Matrix(firstMatrix.X11 + secondMatrix.X11, firstMatrix.X12 + secondMatrix.X12, firstMatrix.X21 + secondMatrix.X21, firstMatrix.X22 + secondMatrix.X22);
         }
+        
+        public bool IsValid()
+        {
+        	return !float.IsNaN(this.X11) && !float.IsNaN(this.X12) && !float.IsNaN(this.X21) && !float.IsNaN(this.X22);
+        }
     }
 }

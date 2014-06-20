@@ -32,7 +32,7 @@ namespace SoftwareProjekt.UserControls
 {
     public partial class CtlMatrixInput : UserControl
     {
-        Matrix _matrix = null;
+        private Matrix _matrix = null;
         public CtlMatrixInput()
         {
             InitializeComponent();
@@ -70,7 +70,14 @@ namespace SoftwareProjekt.UserControls
         private void txtEle11_TextChanged(object sender, EventArgs e)
         {
             float f;
-            this.Parse(txtEle11.Text, out f);
+            if (!this.Parse((sender as TextBox).Text.Replace(',', '.'), out f))
+            {
+            	(sender as TextBox).BackColor = Color.Red;
+            }
+            else
+            {
+            	(sender as TextBox).BackColor = Color.White;
+            }
             this.Matrix.X11 = f;
         }
 
@@ -78,16 +85,7 @@ namespace SoftwareProjekt.UserControls
         /// 
         /// </summary>
         private void txtEle11_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != ',')
-            {
-                e.Handled = true;
-            }
-            else if (e.KeyChar == ',' && (txtEle11.Text.Contains(",") || txtEle11.Text==""))
-            {
-                e.Handled = true;
-            }
-        }
+        { }
 
         /// <summary>
         /// 
@@ -95,7 +93,14 @@ namespace SoftwareProjekt.UserControls
         private void txtEle12_TextChanged(object sender, EventArgs e)
         {
             float f;
-            this.Parse(txtEle12.Text, out f);
+            if (!this.Parse((sender as TextBox).Text.Replace(',', '.'), out f))
+            {
+            	(sender as TextBox).BackColor = Color.Red;
+            }
+            else
+            {
+            	(sender as TextBox).BackColor = Color.White;
+            }
             this.Matrix.X12 = f;
         }
 
@@ -103,16 +108,7 @@ namespace SoftwareProjekt.UserControls
         /// 
         /// </summary>
         private void txtEle12_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != ',')
-            {
-                e.Handled = true;
-            }
-            else if (e.KeyChar == ',' && (txtEle12.Text.Contains(",") || txtEle12.Text == ""))
-            {
-                e.Handled = true;
-            }
-        }
+        { }
 
         /// <summary>
         /// 
@@ -120,7 +116,14 @@ namespace SoftwareProjekt.UserControls
         private void txtEle21_TextChanged(object sender, EventArgs e)
         {
             float f;
-            this.Parse(txtEle21.Text, out f);
+            if (!this.Parse((sender as TextBox).Text.Replace(',', '.'), out f))
+            {
+            	(sender as TextBox).BackColor = Color.Red;
+            }
+            else
+            {
+            	(sender as TextBox).BackColor = Color.White;
+            }
             this.Matrix.X21 = f;
         }
 
@@ -128,16 +131,7 @@ namespace SoftwareProjekt.UserControls
         /// 
         /// </summary>
         private void txtEle21_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != ',')
-            {
-                e.Handled = true;
-            }
-            else if (e.KeyChar == ',' && (txtEle21.Text.Contains(",") || txtEle21.Text == ""))
-            {
-                e.Handled = true;
-            }
-        }
+        { }
 
         /// <summary>
         /// 
@@ -145,7 +139,14 @@ namespace SoftwareProjekt.UserControls
         private void txtEle22_TextChanged(object sender, EventArgs e)
         {
             float f;
-            this.Parse(txtEle22.Text, out f);
+            if (!this.Parse((sender as TextBox).Text.Replace(',', '.'), out f))
+            {
+            	(sender as TextBox).BackColor = Color.Red;
+            }
+            else
+            {
+            	(sender as TextBox).BackColor = Color.White;
+            }
             this.Matrix.X22 = f;
         }
 
@@ -153,16 +154,7 @@ namespace SoftwareProjekt.UserControls
         /// 
         /// </summary>
         private void txtEle22_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != ',')
-            {
-                e.Handled = true;
-            }
-            else if (e.KeyChar == ',' && (txtEle22.Text.Contains(",") || txtEle22.Text == ""))
-            {
-                e.Handled = true;
-            }
-        }
+        { }
 
         /// <summary>
         /// Parses float value entered in TextBox.

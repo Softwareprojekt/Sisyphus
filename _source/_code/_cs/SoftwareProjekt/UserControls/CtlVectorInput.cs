@@ -33,7 +33,7 @@ namespace SoftwareProjekt.UserControls
 {
     public partial class CtlVectorInput : UserControl
     {
-        Vector _vector = null;
+        private Vector _vector = null;
         public CtlVectorInput()
         {
             InitializeComponent();
@@ -71,7 +71,14 @@ namespace SoftwareProjekt.UserControls
         private void txtEle11_TextChanged(object sender, EventArgs e)
         {
             float f;
-            this.Parse(txtEle11.Text, out f);
+            if (!this.Parse((sender as TextBox).Text.Replace(',', '.'), out f))
+            {
+            	(sender as TextBox).BackColor = Color.Red;
+            }
+            else
+            {
+            	(sender as TextBox).BackColor = Color.White;
+            }
             this.Vector.X1 = f;
         }
 
@@ -79,26 +86,22 @@ namespace SoftwareProjekt.UserControls
         /// 
         /// </summary>
         private void txtEle11_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != ',')
-            {
-                e.Handled = true;
-            }
-            else if (e.KeyChar == ',' && (txtEle11.Text.Contains(",") || txtEle11.Text == ""))
-            {
-                e.Handled = true;
-            }
-            
-        }
+        { }
 
         /// <summary>
         /// 
         /// </summary>
         private void txtEle21_TextChanged(object sender, EventArgs e)
         {
-            float f;
-            this.Parse(txtEle21.Text, out f);
+            float f;            
+            if (!this.Parse((sender as TextBox).Text.Replace(',', '.'), out f))
+            {
+            	(sender as TextBox).BackColor = Color.Red;
+            }
+            else
+            {
+            	(sender as TextBox).BackColor = Color.White;
+            }
             this.Vector.X2 = f;
         }
 
@@ -106,16 +109,7 @@ namespace SoftwareProjekt.UserControls
         /// 
         /// </summary>
         private void txtEle21_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != ',')
-            {
-                e.Handled = true;
-            }
-            else if (e.KeyChar == ',' && (txtEle21.Text.Contains(",") || txtEle21.Text == ""))
-            {
-                e.Handled = true;
-            }
-        }
+        { }
 
         /// <summary>
         /// Parses float value entered in TextBox.

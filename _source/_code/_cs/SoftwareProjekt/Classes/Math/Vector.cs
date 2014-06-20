@@ -247,5 +247,10 @@ namespace SoftwareProjekt.Classes.Math
         {
             return string.Format("[Vector X1={0}, X2={1}]", this.X1, this.X2);
         }
+        
+        public bool IsValid()
+        {
+        	return !float.IsNaN(this.X1) && !float.IsNaN(this.X2);
+        }
     }
 }
