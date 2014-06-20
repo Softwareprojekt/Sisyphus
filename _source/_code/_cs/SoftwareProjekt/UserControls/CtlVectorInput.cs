@@ -70,15 +70,7 @@ namespace SoftwareProjekt.UserControls
         /// </summary>
         private void txtEle11_TextChanged(object sender, EventArgs e)
         {
-            float f;
-            if (!this.Parse((sender as TextBox).Text.Replace(',', '.'), out f))
-            {
-            	(sender as TextBox).BackColor = Color.Red;
-            }
-            else
-            {
-            	(sender as TextBox).BackColor = Color.White;
-            }
+            float f = (sender as SoftwareProjekt.UserControls.FloatInput).FloatValue;
             this.Vector.X1 = f;
         }
 
@@ -93,15 +85,7 @@ namespace SoftwareProjekt.UserControls
         /// </summary>
         private void txtEle21_TextChanged(object sender, EventArgs e)
         {
-            float f;            
-            if (!this.Parse((sender as TextBox).Text.Replace(',', '.'), out f))
-            {
-            	(sender as TextBox).BackColor = Color.Red;
-            }
-            else
-            {
-            	(sender as TextBox).BackColor = Color.White;
-            }
+            float f = (sender as SoftwareProjekt.UserControls.FloatInput).FloatValue;
             this.Vector.X2 = f;
         }
 
@@ -111,31 +95,7 @@ namespace SoftwareProjekt.UserControls
         private void txtEle21_KeyPress(object sender, KeyPressEventArgs e)
         { }
 
-        /// <summary>
-        /// Parses float value entered in TextBox.
-        /// </summary>
-        /// <param name="s">String in TextBox.</param>
-        /// <param name="f">Out parameter: Parsed float value.</param>
-        /// <returns>True and float value if Parse successfull; Otherwise: false and NaN.</returns>
-        private bool Parse(string s, out float f)
-        {
-            float retval = 0f;
-
-            if (float.TryParse(s, out retval))
-            {
-                f = retval;
-#if DEBUG
-                Console.WriteLine("SUCCESS @ Vector.Parse => " + f);
-#endif
-                return true;
-            }
-
-            f = float.NaN;
-#if DEBUG
-            Console.WriteLine("ERROR @ Vector.Parse => " + f);
-#endif
-            return false;
-        }
+   
 
         /// <summary>
         /// Refreshes TextBoxes with current Vector values.

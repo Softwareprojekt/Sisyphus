@@ -72,7 +72,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\EventArguments\ParseEventArgs.cs" />
     <Compile Include="Classes\Math\DrawingPoint.cs" />
     <Compile Include="Classes\Xml\MathXmlGenerator.cs" />
     <Compile Include="Enums\EMathType.cs" />

@@ -8,7 +8,13 @@ namespace SoftwareProjekt.UserControls
 {
     class FloatInput : TextBox
     {
-        
+        public FloatInput()
+        {
+            FloatValue = float.NaN;
+        }
+
+        public float FloatValue { get; private set; }
+
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
             base.OnKeyPress(e);
@@ -24,8 +30,9 @@ namespace SoftwareProjekt.UserControls
             else
             {
                 this.BackColor = System.Drawing.Color.White;
-            }            
-            base.OnTextChanged(new Classes.EventArguments.ParseEventArgs(f));
+            }
+            this.FloatValue = f;
+            base.OnTextChanged(e);
         }
 
         private bool Parse(string s, out float f)

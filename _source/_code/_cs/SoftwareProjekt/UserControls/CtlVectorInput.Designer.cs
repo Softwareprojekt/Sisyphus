@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.grpVektorInput = new System.Windows.Forms.GroupBox();
-            this.txtEle21 = new System.Windows.Forms.TextBox();
-            this.txtEle11 = new System.Windows.Forms.TextBox();
+            this.txtEle21 = new SoftwareProjekt.UserControls.FloatInput();
+            this.txtEle11 = new SoftwareProjekt.UserControls.FloatInput();
             this.grpVektorInput.SuspendLayout();
             this.SuspendLayout();
             // 
