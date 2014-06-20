@@ -69,26 +69,20 @@ namespace SoftwareProjekt.Forms
 
         private void butFunctionTransfX_Click(object sender, EventArgs e)
         {
-            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+        	if (this.CheckInputs())
+        	{
+            	this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+        	}
         }
 
         public override Dictionary<string, Object> GetInputData()
-        {
+         {
             Dictionary<string, Object> retVal = new Dictionary<string, object>();
-            double Angle;
 
             retVal.Add("EV1", ctlVectorEV1.Vector);
             retVal.Add("EV2", ctlVectorEV2.Vector);
             retVal.Add("VectorX", ctlVectorInputX.Vector);
-
-            if (double.TryParse(txtAngle.Text, out Angle))
-            {
-                retVal.Add("Angle", Angle);
-            }
-            else
-            {
-                return null;
-            }
+            retVal.Add("Angle", txtAngle.FloatValue);
 
             return retVal;
         }
@@ -106,26 +100,19 @@ namespace SoftwareProjekt.Forms
             ctlVectorOutputX.Vector = (Vector)e.CalcValues["VectorX"];
         }
 
-        private void txtAngle_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAngle_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != ',')
-            {
-                e.Handled = true;
-            }
-            else if (e.KeyChar == ',' && (txtAngle.Text.Contains(",") || txtAngle.Text == ""))
-            {
-                e.Handled = true;
-            }
-        }
-
 		protected override bool CheckInputs()
 		{
-			throw new NotImplementedException();
+			if (ctlVectorEV1.Vector.IsValid() && ctlVectorEV1.Vector.IsValid() && ctlVectorInputX.Vector.IsValid() && txtAngle.IsValid())
+			{
+#if DEBUG
+				Console.WriteLine("SUCCESS @ Inputs are valid.");
+#endif
+				return true;
+			}
+#if DEBUG
+			Console.WriteLine("ERROR @ Inputs are not valid.");
+#endif
+			return false;
 		}
     }
 }

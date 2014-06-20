@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace SoftwareProjekt.UserControls
 {
-    class FloatInput : TextBox
+    public class FloatInput : TextBox
     {
         public FloatInput()
         {
@@ -54,5 +54,10 @@ namespace SoftwareProjekt.UserControls
 #endif
             return false;
         }
+
+		public bool IsValid()
+		{
+			return !float.IsNaN(this.FloatValue);
+		}
     }
 }

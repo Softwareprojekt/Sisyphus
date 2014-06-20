@@ -37,7 +37,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.grpDataInput = new System.Windows.Forms.GroupBox();
-            this.txtAngle = new System.Windows.Forms.TextBox();
+            this.txtAngle = new SoftwareProjekt.UserControls.FloatInput();
             this.lblAngle = new System.Windows.Forms.Label();
             this.butFunctionTransfX = new System.Windows.Forms.Button();
             this.grpDataOutput = new System.Windows.Forms.GroupBox();
@@ -106,8 +106,6 @@
             this.txtAngle.Name = "txtAngle";
             this.txtAngle.Size = new System.Drawing.Size(64, 20);
             this.txtAngle.TabIndex = 15;
-            this.txtAngle.TextChanged += new System.EventHandler(this.txtAngle_TextChanged);
-            this.txtAngle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAngle_KeyPress);
             // 
             // lblAngle
             // 
@@ -342,7 +340,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox grpDataInput;
-        private System.Windows.Forms.TextBox txtAngle;
+        private SoftwareProjekt.UserControls.FloatInput txtAngle;
         private System.Windows.Forms.Label lblAngle;
         private System.Windows.Forms.Button butFunctionTransfX;
         private System.Windows.Forms.GroupBox grpDataOutput;

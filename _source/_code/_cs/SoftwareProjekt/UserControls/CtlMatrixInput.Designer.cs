@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.grpMatrixEingabe = new System.Windows.Forms.GroupBox();
-            this.txtEle22 = new System.Windows.Forms.TextBox();
-            this.txtEle21 = new System.Windows.Forms.TextBox();
-            this.txtEle12 = new System.Windows.Forms.TextBox();
-            this.txtEle11 = new System.Windows.Forms.TextBox();
+            this.txtEle22 = new SoftwareProjekt.UserControls.FloatInput();
+            this.txtEle21 = new SoftwareProjekt.UserControls.FloatInput();
+            this.txtEle12 = new SoftwareProjekt.UserControls.FloatInput();
+            this.txtEle11 = new SoftwareProjekt.UserControls.FloatInput();
             this.grpMatrixEingabe.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,9 +110,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grpMatrixEingabe;
-        private System.Windows.Forms.TextBox txtEle22;
-        private System.Windows.Forms.TextBox txtEle21;
-        private System.Windows.Forms.TextBox txtEle12;
-        private System.Windows.Forms.TextBox txtEle11;
+        private SoftwareProjekt.UserControls.FloatInput txtEle22;
+        private SoftwareProjekt.UserControls.FloatInput txtEle21;
+        private SoftwareProjekt.UserControls.FloatInput txtEle12;
+        private SoftwareProjekt.UserControls.FloatInput txtEle11;
     }
 }

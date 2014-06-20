@@ -36,7 +36,7 @@ namespace SoftwareProjekt.Exercises
             dict = view.GetInputData();
 
             // check dict
-            if (!dict.ContainsKey("Angle") || !dict.ContainsKey("VectorX"))
+            if (!dict.ContainsKey("EV1") || !dict.ContainsKey("EV2") || !dict.ContainsKey("Angle") || !dict.ContainsKey("VectorX"))
             {
                 return;
             }
@@ -45,7 +45,7 @@ namespace SoftwareProjekt.Exercises
             Vector ev1 = (Vector)dict["EV1"];
             Vector ev2 = (Vector)dict["EV2"];
             Vector x = (Vector)dict["VectorX"];
-            double angle = (double)dict["Angle"];
+            float angle = (float)dict["Angle"];
 
             x.Rotate(angle);
             ev1.Rotate(angle);
