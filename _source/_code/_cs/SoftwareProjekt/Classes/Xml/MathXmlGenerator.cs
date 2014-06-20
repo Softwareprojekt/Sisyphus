@@ -188,6 +188,8 @@ namespace SoftwareProjekt.Classes.Xml
                             data[i] = data[i].Replace("+", "</mi>\n<mo>+</mo>\n<mi color='" + GetRGBString(colors[i]) + "'>");
                             data[i] = data[i].Replace("-", "</mi>\n<mo>-</mo>\n<mi color='" + GetRGBString(colors[i]) + "'>");
                             data[i] = data[i].Replace("-", "</mi>\n<mo>&sdot;</mo>\n<mi color='" + GetRGBString(colors[i]) + "'>");
+                            data[i] = data[i].Replace("(", "</mi>\n<mo color='" + GetRGBString(colors[i]) + "' >(</mo>\n<mi color='" + GetRGBString(colors[i]) + "'>");
+                            data[i] = data[i].Replace(")", "</mi>\n<mo color='" + GetRGBString(colors[i]) + "' >)</mo>\n<mi color='" + GetRGBString(colors[i]) + "'>");
 
                             index = data[i].IndexOf(PiHalfSign);
 
@@ -217,7 +219,7 @@ namespace SoftwareProjekt.Classes.Xml
                         {
                             tmpString += "\t\t\t<mi color='" + GetRGBString(colors[0]) + "'>" + tmpParseContainer[0].Main;
                             tmpString += MathMLMinSpace;
-                            tmpString += "\t\t\t<mo color='" + GetRGBString(colors[0]) + "'>" + tmpParseContainer[0].Rest + "</mo>\n";
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[0]) + "'>" + tmpParseContainer[0].Rest + "</mi>\n";
                         }
 
                         tmpString += PrintSign(sign, 3);
@@ -243,7 +245,7 @@ namespace SoftwareProjekt.Classes.Xml
                         {
                             tmpString += "\t\t\t<mi color='" + GetRGBString(colors[1]) + "'>" + tmpParseContainer[1].Main;
                             tmpString += MathMLMinSpace;
-                            tmpString += "\t\t\t<mo color='" + GetRGBString(colors[1]) + "'>" + tmpParseContainer[1].Rest + "</mo>\n";
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[1]) + "'>" + tmpParseContainer[1].Rest + "</mi>\n";
                         }
 
 
@@ -261,7 +263,7 @@ namespace SoftwareProjekt.Classes.Xml
                         {
                             tmpString += "\t\t\t<mi color='" + GetRGBString(colors[2]) + "'>" + tmpParseContainer[2].Main;
                             tmpString += MathMLMinSpace;
-                            tmpString += "\t\t\t<mo color='" + GetRGBString(colors[2]) + "'>" + tmpParseContainer[2].Rest + "</mo>\n";
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[2]) + "'>" + tmpParseContainer[2].Rest + "</mi>\n";
                         }
 
                         tmpString += PrintSign(sign, 3);
@@ -274,7 +276,7 @@ namespace SoftwareProjekt.Classes.Xml
                         {
                             tmpString += "\t\t\t<mi color='" + GetRGBString(colors[3]) + "'>" + tmpParseContainer[3].Main;
                             tmpString += MathMLMinSpace;
-                            tmpString += "\t\t\t<mo color='" + GetRGBString(colors[3]) + "'>" + tmpParseContainer[3].Rest + "</mo>\n";
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[3]) + "'>" + tmpParseContainer[3].Rest + "</mi>\n";
                         }
 
                         tmpString += "\t\t</mtd>\n";
