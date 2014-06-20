@@ -46,11 +46,15 @@ namespace SoftwareProjekt.Forms
             Vector v1 = new Vector(1.4f, 10.2f);
             Vector v2 = new Vector(2.8f, 12.17f);
 
-            string expr1 = "cos (&phi;)";
-            
+            string expr1 = "cos (&phi;)";            
             string expr2 = "cos(&phi; + " + MathXmlGenerator.PiHalfSign + ")";
             string expr3 = "sin(&phi;)";
             string expr4 = "sin(&phi; + " + MathXmlGenerator.PiHalfSign + ")";
+
+            string expr5 = "cos (&phi;)";
+            string expr6 = "cos(&phi; + " + MathXmlGenerator.PiHalfSign + ")";
+            string expr7 = "sin(&phi;)";
+            string expr8 = "sin(&phi; + " + MathXmlGenerator.PiHalfSign + ")";
 
             List<string> expressions = new List<string>();
             expressions.Add(expr1);
@@ -58,11 +62,30 @@ namespace SoftwareProjekt.Forms
             expressions.Add(expr3);
             expressions.Add(expr4);
 
+            List<string> expressions1 = new List<string>();
+            expressions1.Add(expr2);
+            expressions1.Add(expr4);
+
+
+            List<string> expressions2 = new List<string>();
+            expressions2.Add(expr1);
+            expressions2.Add(expr2);
+            expressions2.Add(expr3);
+            expressions2.Add(expr4);
+            expressions2.Add(expr5);
+            expressions2.Add(expr6);
+            expressions2.Add(expr7);
+            expressions2.Add(expr8);
+
             List<Color> colors = new List<Color>();
             colors.Add(Color.Red);
             colors.Add(Color.Blue);
+            colors.Add(Color.Green);
+            colors.Add(Color.Orange);
             colors.Add(Color.Red);
             colors.Add(Color.Blue);
+            colors.Add(Color.Green);
+            colors.Add(Color.Orange);
 
             /*xml.AddVector(v1, Color.Red);
 
@@ -72,9 +95,11 @@ namespace SoftwareProjekt.Forms
             xml.AddSign(EMathSign.Assignment);
             xml.AddCombinedVectors(v1, v2, Color.DarkGreen, Color.DarkOrange, EMathSign.Minus);*/
 
-            xml.AddMathExpression(expressions, colors, EMathSign.Minus, EMathType.Vector);
+            // xml.AddMathExpression(expressions, colors, EMathSign.Minus, EMathType.Vector);
 
+            // xml.AddMathExpression(expressions1, colors, EMathSign.Minus, EMathType.None);
 
+            xml.AddMathExpression(expressions2, colors, EMathSign.Minus, EMathType.Matrix);
 
             xml.Finish();
 

@@ -30,6 +30,7 @@ using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Classes.Math;
 using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
+using SoftwareProjekt.Classes.Xml;
 
 namespace SoftwareProjekt.Forms
 {
@@ -47,6 +48,17 @@ namespace SoftwareProjekt.Forms
             //ctlFormular.Equation = _sequation;
             //ctlFormular.Filepath = _sfilepath;
             //ctlFormular.WriteEquationToPicBox(ctlFormular.Equation);
+            MathXmlGenerator xmlGen = new MathXmlGenerator();
+            xmlGen.AddNode("<mi>f</mi>");
+            xmlGen.AddNode("<mo>(</mo>");
+            xmlGen.AddNode("<mover>");
+            xmlGen.AddNode("\t<mi>x</mi>");
+            xmlGen.AddNode("\t<mo>&rarr;</mo>");
+            xmlGen.AddNode("</mover>");
+            xmlGen.AddNode("<mo>)</mo>");
+            xmlGen.AddSign(EMathSign.Assignment);
+            
+
             this.ctlVectorEV1.txtEle11.Text = "1";
             this.ctlVectorEV1.txtEle21.Text = "0";
 

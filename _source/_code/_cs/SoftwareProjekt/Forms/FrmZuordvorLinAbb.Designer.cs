@@ -326,8 +326,6 @@
             // ctlMathEqua
             // 
             this.ctlMathEqua.Equation = "";
-            this.ctlMathEqua.Filename = "expr.gif";
-            this.ctlMathEqua.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";
             this.ctlMathEqua.Location = new System.Drawing.Point(623, 590);
             this.ctlMathEqua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ctlMathEqua.Name = "ctlMathEqua";

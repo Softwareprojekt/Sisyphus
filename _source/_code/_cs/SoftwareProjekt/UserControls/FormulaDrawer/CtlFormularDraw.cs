@@ -10,10 +10,6 @@ using System.IO;
 using MathML;
 using System.Drawing.Imaging;
 
-
-/// MimeTex.dll ist eine 32bit dll, vor dem übersetzen von "any cpu" auf x86 umstellen!
-
-
 namespace SoftwareProjekt.UserControls.FormulaDrawer
 {
     public partial class CtlFormularDraw : UserControl
@@ -28,10 +24,12 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
         public CtlFormularDraw()
         {
             InitializeComponent();
+
             this.Filename = Path.GetRandomFileName() + ".tiff";
             this.Equation = "";
             this.Filepath = GetGifFilePath();
             this._drawer = new MathML.Rendering.MathMLControl();
+            this._drawer.Size = new Size(1000, 1000);
             this._drawer.BackColor = this.BackColor;
             this._drawer.ForeColor = System.Drawing.Color.Black;
             this._drawer.HorizontalShift = 0F;
@@ -55,6 +53,17 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
             set { _filename = value; }
         }
 
+        public int FontSize
+        {
+            get
+            {
+                return this._drawer.MathFontSizeInPoints;
+            }
+            set
+            {
+                this._drawer.MathFontSizeInPoints = value;
+            }
+        }
         public void WriteEquationToPicBox(string equation)
         {
             try

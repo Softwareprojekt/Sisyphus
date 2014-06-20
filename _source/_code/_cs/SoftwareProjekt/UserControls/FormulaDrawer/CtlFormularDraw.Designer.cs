@@ -46,7 +46,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.picFormular);
             this.Name = "CtlFormularDraw";
-            this.Size = new System.Drawing.Size(329, 92);
+            this.Size = new System.Drawing.Size(this.Height, this.Width);
             ((System.ComponentModel.ISupportInitialize)(this.picFormular)).EndInit();
             this.ResumeLayout(false);
 

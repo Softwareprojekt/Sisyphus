@@ -166,12 +166,188 @@ namespace SoftwareProjekt.Classes.Xml
 
             try
             {
+
+                for (int i = 0; i < data.Count; i++)
+                {
+                    int index = -1;
+                    ParseContainer pc = new ParseContainer();
+
+                    data[i] = data[i].Replace("+", "</mi>\n<mo color='" + GetRGBString(colors[i]) + "'>+</mo>\n<mi color='" + GetRGBString(colors[i]) + "'>");
+                    data[i] = data[i].Replace("-", "</mi>\n<mo color='" + GetRGBString(colors[i]) + "'>-</mo>\n<mi color='" + GetRGBString(colors[i]) + "'>");
+                    data[i] = data[i].Replace("-", "</mi>\n<mo color='" + GetRGBString(colors[i]) + "'>&sdot;</mo>\n<mi color='" + GetRGBString(colors[i]) + "'>");
+                    data[i] = data[i].Replace("(", "</mi>\n<mo color='" + GetRGBString(colors[i]) + "'>(</mo>\n<mi color='" + GetRGBString(colors[i]) + "'>");
+                    data[i] = data[i].Replace(")", "</mi>\n<mo color='" + GetRGBString(colors[i]) + "' >)</mo>\n<mi color='" + GetRGBString(colors[i]) + "'>");
+
+                    index = data[i].IndexOf(PiHalfSign);
+
+                    if (index != -1)
+                    {
+                        index = index + PiHalfSign.Length;
+
+                        pc.Rest = data[i].Substring(index);
+                        pc.Main = data[i].Substring(0, index);
+                        pc.Main += "</mi>\n";
+                        pc.Main = pc.Main.Replace(PiHalfSign, piHalf);
+                    }
+                    else
+                    {
+                        pc.Main = data[i];
+                    }
+
+                    tmpParseContainer.Add(pc);
+
+                }
+
                 switch (mathtype)
                 {
                     case EMathType.None:
-                        tmpString += "\t<mi color='" + GetRGBString(colors[0]) + "'>" + data[0] + "</mi>\n";
-                        tmpString += PrintSign(sign, 1);
-                        tmpString += "\t<mi color='" + GetRGBString(colors[1]) + "'>" + data[1] + "</mi>\n";
+                        if (tmpParseContainer[0].Rest == null)
+                        {
+                            tmpString += "\t<mi color='" + GetRGBString(colors[0]) + "'>" + tmpParseContainer[0].Main + "</mi>\n";
+                        }
+                        else
+                        {
+                            tmpString += "\t<mi color='" + GetRGBString(colors[0]) + "'>" + tmpParseContainer[0].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t<mi color='" + GetRGBString(colors[0]) + "'>" + tmpParseContainer[0].Rest + "</mi>\n";
+                        }
+
+                        tmpString += PrintSign(sign, 3);
+
+                        if (tmpParseContainer[1].Rest == null)
+                        {
+                            tmpString += "\t<mi color='" + GetRGBString(colors[1]) + "'>" + tmpParseContainer[1].Main + "</mi>\n";
+                        }
+                        else
+                        {
+                            tmpString += "\t<mi color='" + GetRGBString(colors[1]) + "'>" + tmpParseContainer[1].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t<mi color='" + GetRGBString(colors[1]) + "'>" + tmpParseContainer[1].Rest + "</mi>\n";
+                        }
+
+                        break;
+
+                    case EMathType.ComplexVector:
+
+                        tmpString += "<mfenced open='(' close=')' separators=''>\n";
+                        tmpString += "<mtable>\n";
+                        tmpString += "\t<mtr>\n";
+                        tmpString += "\t\t<mtd>\n";
+
+                        if (tmpParseContainer[0].Rest == null)
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[0]) + "'>" + tmpParseContainer[0].Main + "</mi>\n";
+                        }
+                        else
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[0]) + "'>" + tmpParseContainer[0].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[0]) + "'>" + tmpParseContainer[0].Rest + "</mi>\n";
+                        }
+
+                        tmpString += PrintSign(EMathSign.Multiply, 3);
+
+                        if (tmpParseContainer[1].Rest == null)
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[1]) + "'>" + tmpParseContainer[1].Main + "</mi>\n";
+                        }
+                        else
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[1]) + "'>" + tmpParseContainer[1].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[1]) + "'>" + tmpParseContainer[1].Rest + "</mi>\n";
+                        }
+
+                        tmpString += PrintSign(sign, 3);
+
+                        if (tmpParseContainer[2].Rest == null)
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[2]) + "'>" + tmpParseContainer[2].Main + "</mi>\n";
+                        }
+                        else
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[2]) + "'>" + tmpParseContainer[2].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[2]) + "'>" + tmpParseContainer[2].Rest + "</mi>\n";
+                        }
+
+                        tmpString += PrintSign(EMathSign.Multiply , 3);
+
+                        if (tmpParseContainer[3].Rest == null)
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[3]) + "'>" + tmpParseContainer[3].Main + "</mi>\n";
+                        }
+                        else
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[3]) + "'>" + tmpParseContainer[3].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[3]) + "'>" + tmpParseContainer[3].Rest + "</mi>\n";
+                        }
+
+
+
+                        tmpString += "\t\t</mtd>\n";
+                        tmpString += "\t</mtr>\n";
+
+                        tmpString += "\t<mtr>\n";
+                        tmpString += "\t\t<mtd>\n";
+
+                        if (tmpParseContainer[4].Rest == null)
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[4]) + "'>" + tmpParseContainer[4].Main + "</mi>\n";
+                        }
+                        else
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[4]) + "'>" + tmpParseContainer[4].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[4]) + "'>" + tmpParseContainer[4].Rest + "</mi>\n";
+                        }
+
+                        tmpString += PrintSign(EMathSign.Multiply, 3);
+
+                        if (tmpParseContainer[5].Rest == null)
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[5]) + "'>" + tmpParseContainer[5].Main + "</mi>\n";
+                        }
+                        else
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[5]) + "'>" + tmpParseContainer[5].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[5]) + "'>" + tmpParseContainer[5].Rest + "</mi>\n";
+                        }
+
+                        tmpString += PrintSign(sign, 3);
+
+                        if (tmpParseContainer[6].Rest == null)
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[6]) + "'>" + tmpParseContainer[6].Main + "</mi>\n";
+                        }
+                        else
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[6]) + "'>" + tmpParseContainer[6].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[6]) + "'>" + tmpParseContainer[6].Rest + "</mi>\n";
+                        }
+
+                        tmpString += PrintSign(EMathSign.Multiply , 3);
+
+                        if (tmpParseContainer[7].Rest == null)
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[7]) + "'>" + tmpParseContainer[7].Main + "</mi>\n";
+                        }
+                        else
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[7]) + "'>" + tmpParseContainer[7].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[7]) + "'>" + tmpParseContainer[7].Rest + "</mi>\n";
+                        }
+
+                        tmpString += "\t\t</mtd>\n";
+                        tmpString += "\t</mtr>\n";
+
+                        tmpString += "</mtable>\n";
+                        tmpString += "</mfenced>\n";
+
                         break;
 
                     case EMathType.Vector:
@@ -180,36 +356,7 @@ namespace SoftwareProjekt.Classes.Xml
                         tmpString += "\t<mtr>\n";
                         tmpString += "\t\t<mtd>\n";
 
-                        for (int i = 0; i < data.Count; i++ )
-                        {
-                            int index = -1;
-                            ParseContainer pc = new ParseContainer();
-
-                            data[i] = data[i].Replace("+", "</mi>\n<mo>+</mo>\n<mi color='" + GetRGBString(colors[i]) + "'>");
-                            data[i] = data[i].Replace("-", "</mi>\n<mo>-</mo>\n<mi color='" + GetRGBString(colors[i]) + "'>");
-                            data[i] = data[i].Replace("-", "</mi>\n<mo>&sdot;</mo>\n<mi color='" + GetRGBString(colors[i]) + "'>");
-                            data[i] = data[i].Replace("(", "</mi>\n<mo color='" + GetRGBString(colors[i]) + "' >(</mo>\n<mi color='" + GetRGBString(colors[i]) + "'>");
-                            data[i] = data[i].Replace(")", "</mi>\n<mo color='" + GetRGBString(colors[i]) + "' >)</mo>\n<mi color='" + GetRGBString(colors[i]) + "'>");
-
-                            index = data[i].IndexOf(PiHalfSign);
-
-                            if (index != -1)
-                            {
-                                index = index + PiHalfSign.Length;
-
-                                pc.Rest = data[i].Substring(index);
-                                pc.Main = data[i].Substring(0, index);
-                                pc.Main += "</mi>\n";
-                                pc.Main = pc.Main.Replace(PiHalfSign, piHalf);
-                            }
-                            else
-                            {
-                                pc.Main = data[i];
-                            }
-
-                            tmpParseContainer.Add(pc);
-
-                        }
+                        
 
                         if (tmpParseContainer[0].Rest == null)
                         {
@@ -223,19 +370,6 @@ namespace SoftwareProjekt.Classes.Xml
                         }
 
                         tmpString += PrintSign(sign, 3);
-
-                        
-                        
-                        /*if (index != -1)
-                        {
-                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[1]) + "'>" + data[1];
-                            tmpString += MathMLMinSpace;
-                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[1]) + "'>" + rest + "</mi>\n";
-                        }
-                        else
-                        {
-                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[1]) + "'>" + data[1] + "</mi>\n";
-                        }*/
 
                         if (tmpParseContainer[1].Rest == null)
                         {
@@ -282,26 +416,98 @@ namespace SoftwareProjekt.Classes.Xml
                         tmpString += "\t\t</mtd>\n";
                         tmpString += "\t</mtr>\n";
 
-                         tmpString += "</mtable>\n";
+                        tmpString += "</mtable>\n";
                         tmpString += "</mfenced>\n";
 
                         break;
 
                     case EMathType.Matrix:
+
+
                         tmpString += "<mfenced open='[' close=']' separators=''>\n";
 
                         tmpString += "<mtable>\n";
                         tmpString += "\t<mtr>\n";
                         tmpString += "\t\t<mtd>\n";
-                        tmpString += "\t\t\t<mi color='" + GetRGBString(colors[0]) + "'>" + data[0] + "</mi>\n";
+                        if (tmpParseContainer[0].Rest == null)
+                        {
+                            if (tmpParseContainer[0].Main.Contains("<msub>"))
+                            {
+                                tmpString += "\t\t\t" + tmpParseContainer[0].Main + "\n";
+                            }
+                            else
+                            {
+                                tmpString += "\t\t\t<mi color='" + GetRGBString(colors[0]) + "'>" + tmpParseContainer[0].Main + "</mi>\n";
+                            }
+                        }
+                        else
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[0]) + "'>" + tmpParseContainer[0].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[0]) + "'>" + tmpParseContainer[0].Rest + "</mi>\n";
+                        }
+
                         tmpString += PrintSign(sign, 3);
-                        tmpString += "\t\t\t<mi color='" + GetRGBString(colors[1]) + "'>" + data[1] + "</mi>\n";
+
+                        if (tmpParseContainer[1].Rest == null)
+                        {
+                            if (tmpParseContainer[1].Main.Contains("<msub>"))
+                            {
+                                tmpString += "\t\t\t" + tmpParseContainer[1].Main + "\n";
+                            }
+                            else
+                            {
+                                tmpString += "\t\t\t<mi color='" + GetRGBString(colors[1]) + "'>" + tmpParseContainer[1].Main + "</mi>\n";
+                            }
+                        }
+                        else
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[1]) + "'>" + tmpParseContainer[1].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[1]) + "'>" + tmpParseContainer[1].Rest + "</mi>\n";
+                        }
+
                         tmpString += "\t\t</mtd>\n";
 
                         tmpString += "\t\t<mtd>\n";
-                        tmpString += "\t\t\t<mi color='" + GetRGBString(colors[2]) + "'>" + data[2] + "</mi>\n";
+                        if (tmpParseContainer[2].Rest == null)
+                        {
+                            if (tmpParseContainer[2].Main.Contains("<msub>"))
+                            {
+                                tmpString += "\t\t\t" + tmpParseContainer[2].Main + "\n";
+                            }
+                            else
+                            {
+                                tmpString += "\t\t\t<mi color='" + GetRGBString(colors[2]) + "'>" + tmpParseContainer[2].Main + "</mi>\n";
+                            }
+                        }
+                        else
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[2]) + "'>" + tmpParseContainer[2].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[2]) + "'>" + tmpParseContainer[2].Rest + "</mi>\n";
+                        }
+
                         tmpString += PrintSign(sign, 3);
-                        tmpString += "\t\t\t<mi color='" + GetRGBString(colors[3]) + "'>" + data[3] + "</mi>\n";
+
+                        if (tmpParseContainer[3].Rest == null)
+                        {
+                            if (tmpParseContainer[3].Main.Contains("<msub>"))
+                            {
+                                tmpString += "\t\t\t" + tmpParseContainer[3].Main + "\n";
+                            }
+                            else
+                            {
+                                tmpString += "\t\t\t<mi color='" + GetRGBString(colors[3]) + "'>" + tmpParseContainer[3].Main + "</mi>\n";
+                            }
+                        }
+                        else
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[3]) + "'>" + tmpParseContainer[3].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[3]) + "'>" + tmpParseContainer[3].Rest + "</mi>\n";
+                        }
+
                         tmpString += "\t\t</mtd>\n";
 
                         tmpString += "\t</mtr>\n";
@@ -309,15 +515,85 @@ namespace SoftwareProjekt.Classes.Xml
                         tmpString += "\t<mtr>\n";
 
                         tmpString += "\t\t<mtd>\n";
-                        tmpString += "\t\t\t<mi color='" + GetRGBString(colors[4]) + "'>" + data[4] + "</mi>\n";
+                        if (tmpParseContainer[4].Rest == null)
+                        {
+                            if (tmpParseContainer[4].Main.Contains("<msub>"))
+                            {
+                                tmpString += "\t\t\t" + tmpParseContainer[4].Main + "\n";
+                            }
+                            else
+                            {
+                                tmpString += "\t\t\t<mi color='" + GetRGBString(colors[4]) + "'>" + tmpParseContainer[4].Main + "</mi>\n";
+                            }
+                        }
+                        else
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[4]) + "'>" + tmpParseContainer[4].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[4]) + "'>" + tmpParseContainer[4].Rest + "</mi>\n";
+                        }
+
                         tmpString += PrintSign(sign, 3);
-                        tmpString += "\t\t\t<mi color='" + GetRGBString(colors[5]) + "'>" + data[5] + "</mi>\n";
+
+                        if (tmpParseContainer[5].Rest == null)
+                        {
+                            if (tmpParseContainer[5].Main.Contains("<msub>"))
+                            {
+                                tmpString += "\t\t\t" + tmpParseContainer[5].Main + "\n";
+                            }
+                            else
+                            {
+                                tmpString += "\t\t\t<mi color='" + GetRGBString(colors[5]) + "'>" + tmpParseContainer[5].Main + "</mi>\n";
+                            }
+                        }
+                        else
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[5]) + "'>" + tmpParseContainer[5].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[5]) + "'>" + tmpParseContainer[5].Rest + "</mi>\n";
+                        }
+
                         tmpString += "\t\t</mtd>\n";
 
                         tmpString += "\t\t<mtd>\n";
-                        tmpString += "\t\t\t<mi color='" + GetRGBString(colors[6]) + "'>" + data[6] + "</mi>\n";
+                        if (tmpParseContainer[6].Rest == null)
+                        {
+                            if (tmpParseContainer[6].Main.Contains("<msub>"))
+                            {
+                                tmpString += "\t\t\t" + tmpParseContainer[6].Main + "\n";
+                            }
+                            else
+                            {
+                                tmpString += "\t\t\t<mi color='" + GetRGBString(colors[6]) + "'>" + tmpParseContainer[6].Main + "</mi>\n";
+                            }
+                        }
+                        else
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[6]) + "'>" + tmpParseContainer[6].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[6]) + "'>" + tmpParseContainer[6].Rest + "</mi>\n";
+                        }
+
                         tmpString += PrintSign(sign, 3);
-                        tmpString += "\t\t\t<mi color='" + GetRGBString(colors[7]) + "'>" + data[7] + "</mi>\n";
+
+                        if (tmpParseContainer[7].Rest == null)
+                        {
+                            if (tmpParseContainer[7].Main.Contains("<msub>"))
+                            {
+                                tmpString += "\t\t\t" + tmpParseContainer[7].Main + "\n";
+                            }
+                            else
+                            {
+                                tmpString += "\t\t\t<mi color='" + GetRGBString(colors[7]) + "'>" + tmpParseContainer[7].Main + "</mi>\n";
+                            }
+                        }
+                        else
+                        {
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[7]) + "'>" + tmpParseContainer[7].Main;
+                            tmpString += MathMLMinSpace;
+                            tmpString += "\t\t\t<mi color='" + GetRGBString(colors[7]) + "'>" + tmpParseContainer[7].Rest + "</mi>\n";
+                        }
+
                         tmpString += "\t\t</mtd>\n";
 
                         tmpString += "\t</mtr>\n";

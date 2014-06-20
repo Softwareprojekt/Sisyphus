@@ -10,5 +10,6 @@ namespace SoftwareProjekt.Enums
         None,
         Matrix,
         Vector,
+        ComplexVector
     }
 }
