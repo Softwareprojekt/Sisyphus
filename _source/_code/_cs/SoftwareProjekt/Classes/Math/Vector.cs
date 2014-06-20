@@ -21,6 +21,7 @@
 
 using System;
 
+
 namespace SoftwareProjekt.Classes.Math
 {
     public class Vector
@@ -59,13 +60,13 @@ namespace SoftwareProjekt.Classes.Math
         }
 
         /// <summary>
-        /// Gets the Angle between this Vector and the X-Axis
+        /// Gets the Angle between this Vector and the X-Axis (radians)
         /// </summary>
         public float AngleToXAxis
         {
             get
-            {
-                return (float)System.Math.Atan(this.X2 / this.X1);
+            {                
+                return (float)System.Math.Atan2(this.X2, this.X1);
             }
         }
         /// <summary>
@@ -89,7 +90,8 @@ namespace SoftwareProjekt.Classes.Math
         /// </summary>
         public void Rotate(double degree)
         {
-            Matrix m = new Matrix((float)System.Math.Cos(degree), (float)-System.Math.Sin(degree), (float)System.Math.Sin(degree), (float)System.Math.Cos(degree));
+            double rad = ConvertDegreeToRadians(degree);
+            Matrix m = new Matrix((float)System.Math.Cos(rad), (float)-System.Math.Sin(rad), (float)System.Math.Sin(rad), (float)System.Math.Cos(rad));
             this.Rotate(m);
         }
 
@@ -98,7 +100,8 @@ namespace SoftwareProjekt.Classes.Math
         /// </summary>
         static public Vector Rotate(Vector vector, double degree)
         {
-            Matrix m = new Matrix((float)System.Math.Cos(degree), (float)-System.Math.Sin(degree), (float)System.Math.Sin(degree), (float)System.Math.Cos(degree));
+            double rad = ConvertDegreeToRadians(degree);
+            Matrix m = new Matrix((float)System.Math.Cos(rad), (float)-System.Math.Sin(rad), (float)System.Math.Sin(rad), (float)System.Math.Cos(rad));
             return Vector.Rotate(m, vector);
         }
 
@@ -251,6 +254,11 @@ namespace SoftwareProjekt.Classes.Math
         public bool IsValid()
         {
         	return !float.IsNaN(this.X1) && !float.IsNaN(this.X2);
+        }
+
+        private static double ConvertDegreeToRadians(double degrees)
+        {
+            return System.Math.PI * degrees / 180.0;
         }
     }
 }
