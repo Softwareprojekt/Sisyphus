@@ -125,6 +125,11 @@
     </Compile>
     <Compile Include="Classes\LinearTransformationTopic.cs" />
     <Compile Include="Interop\InteropMimeTex.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\FloatInput.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -276,6 +281,10 @@
     <EmbeddedResource Include="Forms\TestView.resx">
       <DependentUpon>TestView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CoordinateSystem.resx">
       <DependentUpon>CoordinateSystem.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,6 +323,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\arrowToRight.png" />
     <Content Include="Resources\config.xml">
       <SubType>Designer</SubType>
     </Content>

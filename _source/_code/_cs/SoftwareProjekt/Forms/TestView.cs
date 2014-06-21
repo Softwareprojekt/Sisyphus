@@ -27,18 +27,17 @@ using SoftwareProjekt.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Windows.Forms;
 
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class TestView :AbstractView
+    public partial class TestView : AbstractView
     {
         public TestView()
         {
             InitializeComponent();
-           // ctlFormDrawTest.Equation = "f(x^(->)= sqrt(x))";
-            //ctlFormDrawTest.WriteEquationToPicBox(ctlFormDrawTest.Equation);
-
+       
             MathXmlGenerator xml = new MathXmlGenerator();
 
             Matrix m1 = new Matrix(1.0f, 2.0f, 3.0f, 4.0f);

@@ -40,7 +40,6 @@
             this.ctlVectorEV2 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.ctlVectorEV1 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.ctlVectorInputX = new SoftwareProjekt.UserControls.CtlVectorInput();
-            this.txtAngle = new SoftwareProjekt.UserControls.FloatInput();
             this.lblAngle = new System.Windows.Forms.Label();
             this.butFunctionTransfX = new System.Windows.Forms.Button();
             this.grpDataOutput = new System.Windows.Forms.GroupBox();
@@ -55,9 +54,11 @@
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.picMathEquatCenter = new System.Windows.Forms.PictureBox();
+            this.picBoxArrow = new System.Windows.Forms.PictureBox();
             this.grpDataInput.SuspendLayout();
             this.grpDataOutput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMathEquatCenter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxArrow)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -84,7 +85,6 @@
             this.grpDataInput.Controls.Add(this.ctlVectorEV2);
             this.grpDataInput.Controls.Add(this.ctlVectorEV1);
             this.grpDataInput.Controls.Add(this.ctlVectorInputX);
-            this.grpDataInput.Controls.Add(this.txtAngle);
             this.grpDataInput.Controls.Add(this.lblAngle);
             this.grpDataInput.Location = new System.Drawing.Point(43, 78);
             this.grpDataInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -98,7 +98,7 @@
             // ctlVectorEV2
             // 
             this.ctlVectorEV2.Location = new System.Drawing.Point(415, 30);
-            this.ctlVectorEV2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ctlVectorEV2.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorEV2.MinimumSize = new System.Drawing.Size(181, 116);
             this.ctlVectorEV2.Name = "ctlVectorEV2";
             this.ctlVectorEV2.Size = new System.Drawing.Size(181, 116);
@@ -110,7 +110,7 @@
             // ctlVectorEV1
             // 
             this.ctlVectorEV1.Location = new System.Drawing.Point(245, 30);
-            this.ctlVectorEV1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ctlVectorEV1.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorEV1.MinimumSize = new System.Drawing.Size(181, 116);
             this.ctlVectorEV1.Name = "ctlVectorEV1";
             this.ctlVectorEV1.Size = new System.Drawing.Size(181, 116);
@@ -122,7 +122,7 @@
             // ctlVectorInputX
             // 
             this.ctlVectorInputX.Location = new System.Drawing.Point(9, 30);
-            this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(181, 116);
             this.ctlVectorInputX.Name = "ctlVectorInputX";
             this.ctlVectorInputX.Size = new System.Drawing.Size(181, 116);
@@ -130,18 +130,6 @@
             vector3.X1 = float.NaN;
             vector3.X2 = float.NaN;
             this.ctlVectorInputX.Vector = vector3;
-            this.ctlVectorInputX.txtEle11.TextChanged += new System.EventHandler(OnTextChanged);
-            this.ctlVectorInputX.txtEle21.TextChanged += new System.EventHandler(OnTextChanged);
-            // 
-            // txtAngle
-            // 
-            this.txtAngle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtAngle.Location = new System.Drawing.Point(113, 156);
-            this.txtAngle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAngle.MaxLength = 3;
-            this.txtAngle.Name = "txtAngle";
-            this.txtAngle.Size = new System.Drawing.Size(84, 22);
-            this.txtAngle.TabIndex = 2;
             // 
             // lblAngle
             // 
@@ -175,9 +163,9 @@
             this.grpDataOutput.Controls.Add(this.txtDeterminante);
             this.grpDataOutput.Controls.Add(this.butDeterminante);
             this.grpDataOutput.Location = new System.Drawing.Point(1193, 78);
-            this.grpDataOutput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpDataOutput.Margin = new System.Windows.Forms.Padding(4);
             this.grpDataOutput.Name = "grpDataOutput";
-            this.grpDataOutput.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpDataOutput.Padding = new System.Windows.Forms.Padding(4);
             this.grpDataOutput.Size = new System.Drawing.Size(544, 217);
             this.grpDataOutput.TabIndex = 41;
             this.grpDataOutput.TabStop = false;
@@ -186,7 +174,7 @@
             // ctlVectorOutputEV2
             // 
             this.ctlVectorOutputEV2.Location = new System.Drawing.Point(379, 30);
-            this.ctlVectorOutputEV2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ctlVectorOutputEV2.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorOutputEV2.MinimumSize = new System.Drawing.Size(181, 116);
             this.ctlVectorOutputEV2.Name = "ctlVectorOutputEV2";
             this.ctlVectorOutputEV2.Size = new System.Drawing.Size(181, 116);
@@ -198,7 +186,7 @@
             // ctlVectorOutputEV1
             // 
             this.ctlVectorOutputEV1.Location = new System.Drawing.Point(209, 30);
-            this.ctlVectorOutputEV1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ctlVectorOutputEV1.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorOutputEV1.MinimumSize = new System.Drawing.Size(181, 116);
             this.ctlVectorOutputEV1.Name = "ctlVectorOutputEV1";
             this.ctlVectorOutputEV1.Size = new System.Drawing.Size(181, 116);
@@ -210,7 +198,7 @@
             // ctlVectorOutputX
             // 
             this.ctlVectorOutputX.Location = new System.Drawing.Point(25, 30);
-            this.ctlVectorOutputX.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ctlVectorOutputX.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorOutputX.MinimumSize = new System.Drawing.Size(181, 116);
             this.ctlVectorOutputX.Name = "ctlVectorOutputX";
             this.ctlVectorOutputX.Size = new System.Drawing.Size(181, 116);
@@ -248,7 +236,7 @@
             this.cosInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.cosInput.Location = new System.Drawing.Point(43, 351);
-            this.cosInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cosInput.Margin = new System.Windows.Forms.Padding(4);
             this.cosInput.Name = "cosInput";
             this.cosInput.Size = new System.Drawing.Size(504, 286);
             this.cosInput.TabIndex = 42;
@@ -258,7 +246,7 @@
             this.cosOutput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cosOutput.Location = new System.Drawing.Point(1233, 351);
-            this.cosOutput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cosOutput.Margin = new System.Windows.Forms.Padding(4);
             this.cosOutput.Name = "cosOutput";
             this.cosOutput.Size = new System.Drawing.Size(504, 286);
             this.cosOutput.TabIndex = 43;
@@ -279,7 +267,7 @@
             this.rtxtNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtNotes.Location = new System.Drawing.Point(585, 848);
-            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtNotes.Name = "rtxtNotes";
             this.rtxtNotes.Size = new System.Drawing.Size(611, 166);
             this.rtxtNotes.TabIndex = 7;
@@ -300,17 +288,28 @@
             // 
             this.picMathEquatCenter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.picMathEquatCenter.Location = new System.Drawing.Point(604, 384);
-            this.picMathEquatCenter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picMathEquatCenter.Margin = new System.Windows.Forms.Padding(4);
             this.picMathEquatCenter.Name = "picMathEquatCenter";
             this.picMathEquatCenter.Size = new System.Drawing.Size(577, 204);
             this.picMathEquatCenter.TabIndex = 48;
             this.picMathEquatCenter.TabStop = false;
+            // 
+            // picBoxArrow
+            // 
+            this.picBoxArrow.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxArrow.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
+            this.picBoxArrow.Location = new System.Drawing.Point(609, 314);
+            this.picBoxArrow.Name = "picBoxArrow";
+            this.picBoxArrow.Size = new System.Drawing.Size(572, 346);
+            this.picBoxArrow.TabIndex = 49;
+            this.picBoxArrow.TabStop = false;
             // 
             // FrmDrehLinAbbUrsp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1816, 1045);
+            this.Controls.Add(this.picBoxArrow);
             this.Controls.Add(this.butFunctionTransfX);
             this.Controls.Add(this.picMathEquatCenter);
             this.Controls.Add(this.lblHeader);
@@ -331,6 +330,7 @@
             this.grpDataOutput.ResumeLayout(false);
             this.grpDataOutput.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMathEquatCenter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxArrow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,6 +359,7 @@
         private UserControls.CtlVectorInput ctlVectorOutputEV2;
         private UserControls.CtlVectorInput ctlVectorOutputEV1;
         private UserControls.CtlVectorInput ctlVectorOutputX;
+        private System.Windows.Forms.PictureBox picBoxArrow;
 
     }
 }
