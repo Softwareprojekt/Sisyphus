@@ -35,11 +35,7 @@ using SoftwareProjekt.Classes.Xml;
 namespace SoftwareProjekt.Forms
 {
     public partial class FrmDrehLinAbbUrsp : AbstractView
-    {
-
-        private string _sequation;
-        private string _sfilepath;
-        
+    {               
         private LineSegment _vectorInputX;
         private LineSegment _vectorInputEV1;
         private LineSegment _vectorInputEV2;
@@ -50,12 +46,8 @@ namespace SoftwareProjekt.Forms
 
         public FrmDrehLinAbbUrsp()
         {
-            InitializeComponent();
-            _sequation = "f(x^(->) = ";
-            _sfilepath = "";
-            //ctlFormular.Equation = _sequation;
-            //ctlFormular.Filepath = _sfilepath;
-            //ctlFormular.WriteEquationToPicBox(ctlFormular.Equation);
+            InitializeComponent();        
+
             MathXmlGenerator xmlGen = new MathXmlGenerator();
             xmlGen.AddNode("<mi>f</mi>");
             xmlGen.AddNode("<mo>(</mo>");
@@ -64,8 +56,7 @@ namespace SoftwareProjekt.Forms
             xmlGen.AddNode("\t<mo>&rarr;</mo>");
             xmlGen.AddNode("</mover>");
             xmlGen.AddNode("<mo>)</mo>");
-            xmlGen.AddSign(EMathSign.Assignment);
-            
+            xmlGen.AddSign(EMathSign.Assignment);            
 
             this.ctlVectorEV1.txtEle11.Text = "1";
             this.ctlVectorEV1.txtEle21.Text = "0";

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector2 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector3 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector4 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector5 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector6 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector7 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector8 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector9 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector10 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector11 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector12 = new SoftwareProjekt.Classes.Math.Vector();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.grpDataInput = new System.Windows.Forms.GroupBox();
@@ -65,7 +65,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1329, 314);
+            this.label7.Location = new System.Drawing.Point(1410, 314);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(187, 17);
             this.label7.TabIndex = 30;
@@ -90,52 +90,52 @@
             this.grpDataInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInput.Name = "grpDataInput";
             this.grpDataInput.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpDataInput.Size = new System.Drawing.Size(587, 217);
+            this.grpDataInput.Size = new System.Drawing.Size(578, 190);
             this.grpDataInput.TabIndex = 26;
             this.grpDataInput.TabStop = false;
             this.grpDataInput.Text = "Dateneingabe";
             // 
             // ctlVectorEV2
             // 
-            this.ctlVectorEV2.Location = new System.Drawing.Point(415, 30);
+            this.ctlVectorEV2.Location = new System.Drawing.Point(390, 33);
             this.ctlVectorEV2.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorEV2.MinimumSize = new System.Drawing.Size(181, 116);
             this.ctlVectorEV2.Name = "ctlVectorEV2";
             this.ctlVectorEV2.Size = new System.Drawing.Size(181, 116);
             this.ctlVectorEV2.TabIndex = 4;
-            vector1.X1 = float.NaN;
-            vector1.X2 = float.NaN;
-            this.ctlVectorEV2.Vector = vector1;
+            vector7.X1 = float.NaN;
+            vector7.X2 = float.NaN;
+            this.ctlVectorEV2.Vector = vector7;
             // 
             // ctlVectorEV1
             // 
-            this.ctlVectorEV1.Location = new System.Drawing.Point(245, 30);
+            this.ctlVectorEV1.Location = new System.Drawing.Point(199, 33);
             this.ctlVectorEV1.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorEV1.MinimumSize = new System.Drawing.Size(181, 116);
             this.ctlVectorEV1.Name = "ctlVectorEV1";
             this.ctlVectorEV1.Size = new System.Drawing.Size(181, 116);
             this.ctlVectorEV1.TabIndex = 3;
-            vector2.X1 = float.NaN;
-            vector2.X2 = float.NaN;
-            this.ctlVectorEV1.Vector = vector2;
+            vector8.X1 = float.NaN;
+            vector8.X2 = float.NaN;
+            this.ctlVectorEV1.Vector = vector8;
             // 
             // ctlVectorInputX
             // 
-            this.ctlVectorInputX.Location = new System.Drawing.Point(9, 30);
+            this.ctlVectorInputX.Location = new System.Drawing.Point(8, 24);
             this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(181, 116);
             this.ctlVectorInputX.Name = "ctlVectorInputX";
             this.ctlVectorInputX.Size = new System.Drawing.Size(181, 116);
             this.ctlVectorInputX.TabIndex = 1;
-            vector3.X1 = float.NaN;
-            vector3.X2 = float.NaN;
-            this.ctlVectorInputX.Vector = vector3;
+            vector9.X1 = float.NaN;
+            vector9.X2 = float.NaN;
+            this.ctlVectorInputX.Vector = vector9;
             // 
             // lblAngle
             // 
             this.lblAngle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblAngle.AutoSize = true;
-            this.lblAngle.Location = new System.Drawing.Point(5, 160);
+            this.lblAngle.Location = new System.Drawing.Point(6, 160);
             this.lblAngle.Name = "lblAngle";
             this.lblAngle.Size = new System.Drawing.Size(105, 17);
             this.lblAngle.TabIndex = 14;
@@ -145,7 +145,7 @@
             // 
             this.butFunctionTransfX.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.butFunctionTransfX.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFunctionTransfX.Location = new System.Drawing.Point(824, 177);
+            this.butFunctionTransfX.Location = new System.Drawing.Point(784, 150);
             this.butFunctionTransfX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butFunctionTransfX.Name = "butFunctionTransfX";
             this.butFunctionTransfX.Size = new System.Drawing.Size(185, 50);
@@ -166,51 +166,51 @@
             this.grpDataOutput.Margin = new System.Windows.Forms.Padding(4);
             this.grpDataOutput.Name = "grpDataOutput";
             this.grpDataOutput.Padding = new System.Windows.Forms.Padding(4);
-            this.grpDataOutput.Size = new System.Drawing.Size(544, 217);
+            this.grpDataOutput.Size = new System.Drawing.Size(589, 209);
             this.grpDataOutput.TabIndex = 41;
             this.grpDataOutput.TabStop = false;
             this.grpDataOutput.Text = "Ausgabe";
             // 
             // ctlVectorOutputEV2
             // 
-            this.ctlVectorOutputEV2.Location = new System.Drawing.Point(379, 30);
+            this.ctlVectorOutputEV2.Location = new System.Drawing.Point(391, 24);
             this.ctlVectorOutputEV2.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorOutputEV2.MinimumSize = new System.Drawing.Size(181, 116);
             this.ctlVectorOutputEV2.Name = "ctlVectorOutputEV2";
             this.ctlVectorOutputEV2.Size = new System.Drawing.Size(181, 116);
             this.ctlVectorOutputEV2.TabIndex = 49;
-            vector4.X1 = float.NaN;
-            vector4.X2 = float.NaN;
-            this.ctlVectorOutputEV2.Vector = vector4;
+            vector10.X1 = float.NaN;
+            vector10.X2 = float.NaN;
+            this.ctlVectorOutputEV2.Vector = vector10;
             // 
             // ctlVectorOutputEV1
             // 
-            this.ctlVectorOutputEV1.Location = new System.Drawing.Point(209, 30);
+            this.ctlVectorOutputEV1.Location = new System.Drawing.Point(200, 24);
             this.ctlVectorOutputEV1.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorOutputEV1.MinimumSize = new System.Drawing.Size(181, 116);
             this.ctlVectorOutputEV1.Name = "ctlVectorOutputEV1";
             this.ctlVectorOutputEV1.Size = new System.Drawing.Size(181, 116);
             this.ctlVectorOutputEV1.TabIndex = 48;
-            vector5.X1 = float.NaN;
-            vector5.X2 = float.NaN;
-            this.ctlVectorOutputEV1.Vector = vector5;
+            vector11.X1 = float.NaN;
+            vector11.X2 = float.NaN;
+            this.ctlVectorOutputEV1.Vector = vector11;
             // 
             // ctlVectorOutputX
             // 
-            this.ctlVectorOutputX.Location = new System.Drawing.Point(25, 30);
+            this.ctlVectorOutputX.Location = new System.Drawing.Point(9, 24);
             this.ctlVectorOutputX.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorOutputX.MinimumSize = new System.Drawing.Size(181, 116);
             this.ctlVectorOutputX.Name = "ctlVectorOutputX";
             this.ctlVectorOutputX.Size = new System.Drawing.Size(181, 116);
             this.ctlVectorOutputX.TabIndex = 47;
-            vector6.X1 = float.NaN;
-            vector6.X2 = float.NaN;
-            this.ctlVectorOutputX.Vector = vector6;
+            vector12.X1 = float.NaN;
+            vector12.X2 = float.NaN;
+            this.ctlVectorOutputX.Vector = vector12;
             // 
             // txtDeterminante
             // 
             this.txtDeterminante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtDeterminante.Location = new System.Drawing.Point(192, 164);
+            this.txtDeterminante.Location = new System.Drawing.Point(130, 152);
             this.txtDeterminante.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDeterminante.MaxLength = 5;
             this.txtDeterminante.Name = "txtDeterminante";
@@ -222,7 +222,7 @@
             // 
             this.butDeterminante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.butDeterminante.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butDeterminante.Location = new System.Drawing.Point(72, 160);
+            this.butDeterminante.Location = new System.Drawing.Point(9, 148);
             this.butDeterminante.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butDeterminante.Name = "butDeterminante";
             this.butDeterminante.Size = new System.Drawing.Size(115, 30);
@@ -278,7 +278,7 @@
             this.lblHeader.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(699, 11);
+            this.lblHeader.Location = new System.Drawing.Point(617, 9);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(555, 29);
             this.lblHeader.TabIndex = 47;
@@ -287,10 +287,11 @@
             // picMathEquatCenter
             // 
             this.picMathEquatCenter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.picMathEquatCenter.Location = new System.Drawing.Point(604, 384);
+            this.picMathEquatCenter.BackColor = System.Drawing.Color.Transparent;
+            this.picMathEquatCenter.Location = new System.Drawing.Point(632, 406);
             this.picMathEquatCenter.Margin = new System.Windows.Forms.Padding(4);
             this.picMathEquatCenter.Name = "picMathEquatCenter";
-            this.picMathEquatCenter.Size = new System.Drawing.Size(577, 204);
+            this.picMathEquatCenter.Size = new System.Drawing.Size(375, 142);
             this.picMathEquatCenter.TabIndex = 48;
             this.picMathEquatCenter.TabStop = false;
             // 
@@ -309,7 +310,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1816, 1045);
-            this.Controls.Add(this.picBoxArrow);
             this.Controls.Add(this.butFunctionTransfX);
             this.Controls.Add(this.picMathEquatCenter);
             this.Controls.Add(this.lblHeader);
@@ -321,6 +321,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.grpDataInput);
+            this.Controls.Add(this.picBoxArrow);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(1741, 1015);
             this.Name = "FrmDrehLinAbbUrsp";
