@@ -118,7 +118,6 @@
     <Compile Include="Forms\TestObject.Designer.cs">
       <DependentUpon>TestObject.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\ScreenshotCreator.cs" />
     <Compile Include="Forms\TestView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,7 +241,6 @@
     <Compile Include="UserControls\Workbook\WorkBookControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Classes\Xml\XmlWorkbook.cs" />
     <Compile Include="Classes\TopicConnect.cs" />
   </ItemGroup>
   <ItemGroup>
