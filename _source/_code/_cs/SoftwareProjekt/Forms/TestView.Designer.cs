@@ -34,40 +34,37 @@
             this._matrix = new SoftwareProjekt.UserControls.CtlMatrixInput();
             this._vector = new SoftwareProjekt.UserControls.CtlVectorInput();
             this._btnCalc = new System.Windows.Forms.Button();
-            this.ctlFormDrawTest = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
-            this.picArrow = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picArrow)).BeginInit();
+            this.ctlFormularTest = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.SuspendLayout();
             // 
             // _coordSys
             // 
-            this._coordSys.Location = new System.Drawing.Point(16, 15);
-            this._coordSys.Margin = new System.Windows.Forms.Padding(4);
+            this._coordSys.Location = new System.Drawing.Point(12, 12);
             this._coordSys.Name = "_coordSys";
-            this._coordSys.Size = new System.Drawing.Size(379, 334);
+            this._coordSys.Size = new System.Drawing.Size(284, 271);
             this._coordSys.TabIndex = 0;
             // 
             // _matrix
             // 
-            this._matrix.Location = new System.Drawing.Point(415, 15);
-            this._matrix.Margin = new System.Windows.Forms.Padding(5);
+            this._matrix.Location = new System.Drawing.Point(311, 12);
+            this._matrix.Margin = new System.Windows.Forms.Padding(4);
             matrix1.X11 = float.NaN;
             matrix1.X12 = float.NaN;
             matrix1.X21 = float.NaN;
             matrix1.X22 = float.NaN;
             this._matrix.Matrix = matrix1;
-            this._matrix.MinimumSize = new System.Drawing.Size(175, 116);
+            this._matrix.MinimumSize = new System.Drawing.Size(131, 94);
             this._matrix.Name = "_matrix";
-            this._matrix.Size = new System.Drawing.Size(175, 116);
+            this._matrix.Size = new System.Drawing.Size(131, 94);
             this._matrix.TabIndex = 1;
             // 
             // _vector
             // 
-            this._vector.Location = new System.Drawing.Point(415, 128);
-            this._vector.Margin = new System.Windows.Forms.Padding(5);
-            this._vector.MinimumSize = new System.Drawing.Size(181, 116);
+            this._vector.Location = new System.Drawing.Point(311, 104);
+            this._vector.Margin = new System.Windows.Forms.Padding(4);
+            this._vector.MinimumSize = new System.Drawing.Size(136, 94);
             this._vector.Name = "_vector";
-            this._vector.Size = new System.Drawing.Size(181, 116);
+            this._vector.Size = new System.Drawing.Size(136, 94);
             this._vector.TabIndex = 2;
             vector1.X1 = float.NaN;
             vector1.X2 = float.NaN;
@@ -75,53 +72,38 @@
             // 
             // _btnCalc
             // 
-            this._btnCalc.Location = new System.Drawing.Point(437, 263);
-            this._btnCalc.Margin = new System.Windows.Forms.Padding(4);
+            this._btnCalc.Location = new System.Drawing.Point(328, 214);
             this._btnCalc.Name = "_btnCalc";
-            this._btnCalc.Size = new System.Drawing.Size(139, 73);
+            this._btnCalc.Size = new System.Drawing.Size(104, 59);
             this._btnCalc.TabIndex = 3;
             this._btnCalc.Text = "Calculate";
             this._btnCalc.UseVisualStyleBackColor = true;
             this._btnCalc.Click += new System.EventHandler(this._btnCalc_Click);
             // 
-            // ctlFormDrawTest
+            // ctlFormularTest
             // 
-            this.ctlFormDrawTest.BackColor = System.Drawing.Color.Transparent;
-            this.ctlFormDrawTest.Equation = null;
-            this.ctlFormDrawTest.Filename = "dhzkmmxz.pxd.tiff";
-            this.ctlFormDrawTest.Filepath = null;
-            this.ctlFormDrawTest.FontSize = 8;
-            this.ctlFormDrawTest.Location = new System.Drawing.Point(684, 144);
-            this.ctlFormDrawTest.Margin = new System.Windows.Forms.Padding(5);
-            this.ctlFormDrawTest.Name = "ctlFormDrawTest";
-            this.ctlFormDrawTest.Size = new System.Drawing.Size(326, 87);
-            this.ctlFormDrawTest.TabIndex = 4;
-            // 
-            // picArrow
-            // 
-            this.picArrow.BackColor = System.Drawing.Color.Transparent;
-            this.picArrow.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
-            this.picArrow.Location = new System.Drawing.Point(648, 15);
-            this.picArrow.Name = "picArrow";
-            this.picArrow.Size = new System.Drawing.Size(720, 386);
-            this.picArrow.TabIndex = 5;
-            this.picArrow.TabStop = false;
+            this.ctlFormularTest.Arrowdirection = 90;
+            this.ctlFormularTest.Equation = "";
+            this.ctlFormularTest.Filename = "ze0ptxt3.heb.tiff";
+            this.ctlFormularTest.Filepath = "C:\\Users\\michael.eimer\\AppData\\Local\\Temp\\";
+            this.ctlFormularTest.FontSize = 8;
+            this.ctlFormularTest.Location = new System.Drawing.Point(455, 12);
+            this.ctlFormularTest.Name = "ctlFormularTest";
+            this.ctlFormularTest.Size = new System.Drawing.Size(579, 430);
+            this.ctlFormularTest.TabIndex = 4;
             // 
             // TestView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1394, 436);
-            this.Controls.Add(this.ctlFormDrawTest);
+            this.ClientSize = new System.Drawing.Size(1046, 519);
+            this.Controls.Add(this.ctlFormularTest);
             this.Controls.Add(this._btnCalc);
             this.Controls.Add(this._vector);
             this.Controls.Add(this._matrix);
             this.Controls.Add(this._coordSys);
-            this.Controls.Add(this.picArrow);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TestView";
             this.Text = "TestView";
-            ((System.ComponentModel.ISupportInitialize)(this.picArrow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -132,7 +114,6 @@
         private SoftwareProjekt.UserControls.CtlMatrixInput _matrix;
         private SoftwareProjekt.UserControls.CtlVectorInput _vector;
         private System.Windows.Forms.Button _btnCalc;
-        private UserControls.FormulaDrawer.CtlFormularDraw ctlFormDrawTest;
-        private System.Windows.Forms.PictureBox picArrow;
+        private UserControls.FormulaDrawer.CtlFormularDraw ctlFormularTest;
     }
 }

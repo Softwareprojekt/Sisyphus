@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using MathML;
 using System.Drawing.Imaging;
+using SoftwareProjekt.Properties;
 
 namespace SoftwareProjekt.UserControls.FormulaDrawer
 {
@@ -17,6 +18,7 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
         private string _equation;
         private string _filepath;
         private string _filename;
+        private int _arrowdirection;
 
         private MathML.Rendering.MathMLControl _drawer;
 
@@ -24,6 +26,12 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
         public CtlFormularDraw()
         {
             InitializeComponent();
+            //this.Arrowdirection = 90;
+            object arrow90 = Resources.ResourceManager.GetObject("arrowToRight");
+            object arrow180 = Resources.ResourceManager.GetObject("arrowToLeft");
+
+            if (this.Arrowdirection == 90) picArrow.Image = (Image)arrow90;
+            else picArrow.Image = (Image)arrow180;
 
             this.Filename = Path.GetRandomFileName() + ".tiff";
             this.Equation = "";
@@ -64,6 +72,14 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
                 this._drawer.MathFontSizeInPoints = value;
             }
         }
+
+        public int Arrowdirection 
+        {
+            get { return _arrowdirection;  }
+            set { _arrowdirection = value;  } 
+        }
+
+
         public void WriteEquationToPicBox(string equation)
         {
             try

@@ -102,7 +102,7 @@ namespace SoftwareProjekt.Forms
 
             xml.Finish();
 
-            ctlFormDrawTest.WriteEquationToPicBox(xml.XmlDoc);
+            ctlFormularTest.WriteEquationToPicBox(xml.XmlDoc);
         }
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)

@@ -324,6 +324,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrowToRight.png" />
+    <None Include="Resources\arrowToLeft.png" />
     <Content Include="Resources\config.xml">
       <SubType>Designer</SubType>
     </Content>

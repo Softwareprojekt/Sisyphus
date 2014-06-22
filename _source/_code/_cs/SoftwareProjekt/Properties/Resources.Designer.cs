@@ -63,6 +63,16 @@ namespace SoftwareProjekt.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrowToLeft {
+            get {
+                object obj = ResourceManager.GetObject("arrowToLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrowToRight {
             get {
                 object obj = ResourceManager.GetObject("arrowToRight", resourceCulture);
