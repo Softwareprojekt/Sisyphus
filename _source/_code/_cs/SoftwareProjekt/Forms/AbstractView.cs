@@ -55,7 +55,14 @@ namespace SoftwareProjekt.Forms
         public abstract void ExerciseChanged(IExercise sender, ExerciseEventArgs e);
 
         public abstract Dictionary<string, Object> GetInputData();
-        
+
         protected abstract bool CheckInputs();
+
+        public abstract bool LoadState(Dictionary<string, object> state);
+
+        public Dictionary<string, object> SaveState()
+        {
+            return this.GetInputData();
+        }
     }
 }

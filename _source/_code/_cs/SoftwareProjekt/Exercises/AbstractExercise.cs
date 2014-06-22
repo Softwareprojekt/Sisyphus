@@ -21,6 +21,7 @@
 
 using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Delegates;
+using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
 using System;
 using System.IO;
@@ -39,7 +40,7 @@ namespace SoftwareProjekt.Exercises
         protected CancellationToken _abortToken;
         private IView _view;
 
-        public int Id
+        public EExercises Id
         {
             get;
             set;

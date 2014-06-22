@@ -24,5 +24,6 @@ namespace SoftwareProjekt.Enums
     public enum EClickedButton
     {
         StartCalculation,
+        StartExercise,
     }
 }

@@ -49,6 +49,20 @@ namespace SoftwareProjekt.Interfaces
 
         void ExerciseChanged(IExercise sender, ExerciseEventArgs e);
 
+        event System.ComponentModel.CancelEventHandler Closing;
+
         void Dispose();
+        
+        /// <summary>
+        /// Load state of exercise from file.
+        /// </summary>
+        /// <returns>True if state exists in Workbook and state was loaded; Otherwise, false.</returns>
+        bool LoadState(Dictionary<string, object> state);
+
+        /// <summary>
+        /// Save state of exercise to file.
+        /// Calls GetInputData() internally.
+        /// </summary>
+        Dictionary<string, Object> SaveState();
     }
 }

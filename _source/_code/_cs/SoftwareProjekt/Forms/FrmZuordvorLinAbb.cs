@@ -161,5 +161,10 @@ namespace SoftwareProjekt.Forms
 		{
 			throw new NotImplementedException();
 		}
+
+        public override bool LoadState(Dictionary<string, object> state)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

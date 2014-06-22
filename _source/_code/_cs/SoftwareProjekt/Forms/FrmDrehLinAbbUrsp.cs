@@ -89,7 +89,7 @@ namespace SoftwareProjekt.Forms
             retVal.Add("EV1", ctlVectorEV1.Vector);
             retVal.Add("EV2", ctlVectorEV2.Vector);
             retVal.Add("VectorX", ctlVectorInputX.Vector);
-            retVal.Add("Angle", txtAngle.FloatValue);
+            //retVal.Add("Angle", txtAngle.FloatValue);
 
             return retVal;
         }
@@ -139,5 +139,21 @@ namespace SoftwareProjekt.Forms
 			_vectorInputX.Vector = ctlVectorInputX.Vector;
 			cosInput.Refresh();
 		}
+
+        public override bool LoadState(Dictionary<string, object> state)
+        {
+            // state does not exist in workbook.
+            if (state == null)
+            {
+                return false;
+            }
+            else if (!state.ContainsKey("VectorX"))
+            {
+                return false;
+            }
+
+            ctlVectorInputX.Vector = (Vector)state["VectorX"];
+            return true;
+        }
     }
 }

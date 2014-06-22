@@ -8,17 +8,10 @@
     </TypeIdentifier>
     <Lollipop Position="0.179" />
   </Class>
-  <Class Name="SoftwareProjekt.Forms.FrmMain">
-    <Position X="9.75" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AkAAABgAIAAAAAAAAAAAAAACAAAAAAQAAmAAAAIAAAA=</HashCode>
-      <FileName>Forms\FrmMain.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="SoftwareProjekt.Forms.AbstractView">
     <Position X="7.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQCAAAAAAAAAAAAAAAAAAgAIAIAAAAAAAAA=</HashCode>
+      <HashCode>AgAAAAAAAQCAAAAAAAAIAAAAAAAAAgAIAIAAAAABAAA=</HashCode>
       <FileName>Forms\AbstractView.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -45,10 +38,17 @@
       <FileName>Classes\EventArguments\ViewEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="SoftwareProjekt.Forms.FrmMain">
+    <Position X="9.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkAAABgAIAAAAAAAAAAAAAACAAAAAAQAAmAAAAIAAAA=</HashCode>
+      <FileName>Forms\FrmMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="SoftwareProjekt.Interfaces.IExercise">
     <Position X="0.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgACAAAAAAAAAAAAAAAIAAQAAAAEAgAAAAAAAAAIAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAEAgAAAAAAAAAIAAA=</HashCode>
       <FileName>Interfaces\IExercise.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -62,7 +62,7 @@
   <Interface Name="SoftwareProjekt.Interfaces.IView">
     <Position X="4.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAASCAAAAAAAAAAAAAAAAAAgAIAAAAAAAAAAA=</HashCode>
+      <HashCode>AgAAAAAAASCAAAAAAAAIAAAAAAAAAgAIAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IView.cs</FileName>
     </TypeIdentifier>
   </Interface>

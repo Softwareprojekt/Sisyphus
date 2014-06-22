@@ -35,6 +35,6 @@ namespace SoftwareProjekt.Interfaces
         /// Remove Exercise and corresponding View from the List.
         /// <param name="exercise">Exercise to remove from List.</param>
         /// </summary>
-        void RemoveExercise(IExercise exercise);
+        void RemoveExercise(IView view);
     }
 }

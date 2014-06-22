@@ -146,9 +146,9 @@ namespace SoftwareProjekt.Classes.Xml
                         XmlExercise exercise = new XmlExercise();
 
                         string exerciseIDRaw = exercises.GetAttribute("id", "");
-                        int exerciseID = -1;
+                        EExercises exerciseID;
 
-                        if (!int.TryParse(exerciseIDRaw, out exerciseID))
+                        if (!Enum.TryParse(exerciseIDRaw, out exerciseID))
                         {
                             return false;
                         }

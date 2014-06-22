@@ -37,6 +37,11 @@ namespace SoftwareProjekt.Forms
         private TextBox txtUser;
         private TabPage tabProtectArea;
 
+        public FrmMain()
+        {
+            InitializeComponent();
+        }
+
         public CtlMindMap MindMap
         {
             get

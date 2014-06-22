@@ -22,6 +22,8 @@
 using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
+using SoftwareProjekt.Exercises;
+using SoftwareProjekt.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,9 +37,13 @@ namespace SoftwareProjekt.Classes
         /// </summary>
         private Dictionary<IExercise, IView> _exerciseList;
 
-        public Controller()
+        private System.Windows.Forms.Form _mainForm;
+
+        public Controller(System.Windows.Forms.Form mainForm)
         {
+            //TODO: Change IExercise to Value and IView to Key in Dictionary.
             _exerciseList = new Dictionary<IExercise, IView>(10);
+            _mainForm = mainForm;
         }
 
         void HandleViewChanged(IView sender, ViewEventArgs e)
@@ -51,11 +57,42 @@ namespace SoftwareProjekt.Classes
                     Console.WriteLine(sender + " " + e.ClickedButton.ToString());
 
                     // get exercise corresponding to view.
-                    IExercise exercise = _exerciseList.Single(x => x.Value == sender).Key;
                     switch (e.ClickedButton)
                     {
                         case EClickedButton.StartCalculation:
-                            exercise.StartWork();
+                            _exerciseList.Single(x => x.Value == sender).Key.StartWork();
+                            break;
+                        case EClickedButton.StartExercise:
+                            IExercise exercise = null;
+                            IView view = null;
+                            
+                            //TODO: 
+                            switch (e.ExerciseId)
+                            {
+                                case EExercises.ZuordnungsvorschriftLinAbb:
+                                    break;
+                                case EExercises.LinAbbAusSumBelVek:
+                                    break;
+                                case EExercises.LinAbbMitVielfachemBelVek:
+                                    break;
+                                case EExercises.HintereinanderausfLinAbb:
+                                    break;
+                                case EExercises.UmkehrungLinAbb:
+                                    break;
+                                case EExercises.DrehungLinAbbUmUrsprung:
+                                    exercise = new DrehLinAbbUrsp();
+                                    view = new FrmDrehLinAbbUrsp();
+                                    break;
+                                case EExercises.SpiegelungLinAbbanUrspungsgeraden:
+                                    break;
+                                case EExercises.ZuordungsvorschriftEinerAffAbb:
+                                    break;
+                                case EExercises.FraktalerzeugungMitIFS:
+                                    break;
+                                default:
+                                    break;
+                            }
+                            this.AddExercise(exercise, view);
                             break;
                         default:
                             throw new ArgumentException("Not a valid ClickedButton.", "e");
@@ -70,19 +107,31 @@ namespace SoftwareProjekt.Classes
         {
             // connect to eventhandler and attach to exercise.
             view.ViewChanged += HandleViewChanged;
+            view.Closing += view_Closing;
             view.Controller = this;
             exercise.AttachView(view);
+
+            // check workbook for existing entries for this exercise.
+            view.LoadState(Workbook.Instance.GetEntryState(exercise.Id));
 
             // add exercise and view to list.
             _exerciseList.Add(exercise, view);
         }
 
-        public void RemoveExercise(IExercise exercise)
+        void view_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            this.RemoveExercise((IView)sender);
+        }
+
+        public void RemoveExercise(IView view)
+        {
+            IExercise exercise = _exerciseList.Single(x => x.Value == view).Key;
+            // save state of exercise in workbook.
+            Workbook.Instance.SetEntryState(exercise.Id, view.SaveState());
+
             // disconnect and dispose view before releasing reference.
-            IView v = _exerciseList[exercise];
-            v.ViewChanged -= HandleViewChanged;
-            v.Dispose();
+            view.ViewChanged -= HandleViewChanged;
+            view.Dispose();
 
             // remove exercise and view from list.
             _exerciseList.Remove(exercise);

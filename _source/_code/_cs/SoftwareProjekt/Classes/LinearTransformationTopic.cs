@@ -36,7 +36,7 @@ namespace SoftwareProjekt.Classes
             return ETopic.LinearTransformation;
         }
 
-        public override bool ContainsExercise(int exerciseID)
+        public override bool ContainsExercise(EExercises exerciseID)
         {
             foreach (IExercise exercise in this.ExerciseList)
             {

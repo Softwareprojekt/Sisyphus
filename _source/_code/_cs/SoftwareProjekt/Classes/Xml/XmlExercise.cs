@@ -19,35 +19,21 @@
  */
 #endregion
 
+using SoftwareProjekt.Enums;
 namespace SoftwareProjekt.Classes.Xml
 {
     public class XmlExercise
     {
-        private int _exerciseID;
-        private string _exerciseName;
-
-        public int ExerciseID
+        public EExercises ExerciseID
         {
-            get
-            {
-                return _exerciseID;
-            }
-            set
-            {
-                _exerciseID = value;
-            }
+            get;
+            set;
         }
 
         public string ExerciseName
         {
-            get
-            {
-                return _exerciseName;
-            }
-            set
-            {
-                _exerciseName = value;
-            }
+            get;
+            set;
         }
     }
 }

@@ -144,5 +144,10 @@ namespace SoftwareProjekt.Forms
 #endif
 			return false;
 		}
+
+        public override bool LoadState(Dictionary<string, Object> state)
+        {
+            return false;
+        }
     }
 }

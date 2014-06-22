@@ -45,13 +45,11 @@ namespace SoftwareProjekt.Forms
             // 
             // mindMapButtonControl1
             // 
-            this.mindMapButtonControl1 = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl("Hallo", 1, EAlignType.AlignRight);
+            this.mindMapButtonControl1 = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl("Hallo", EExercises.DrehungLinAbbUmUrsprung, EAlignType.AlignRight);
             this.mindMapButtonControl1.BottomAlign = false;
             this.mindMapButtonControl1.ButtonText = "Hallo, hier ist Julian";
-            this.mindMapButtonControl1.ExerciseID = 2;
             this.mindMapButtonControl1.LeftAlign = false;
             this.mindMapButtonControl1.Location = new System.Drawing.Point(41, 477);
-            this.mindMapButtonControl1.MachiningCondition = SoftwareProjekt.Enums.EMachiningCondition.NotDone;
             this.mindMapButtonControl1.Name = "mindMapButtonControl1";
             this.mindMapButtonControl1.RightAlign = true;
             this.mindMapButtonControl1.Size = new System.Drawing.Size(150, 30);

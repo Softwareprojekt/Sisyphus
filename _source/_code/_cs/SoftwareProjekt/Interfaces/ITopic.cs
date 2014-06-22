@@ -36,6 +36,6 @@ namespace SoftwareProjekt.Interfaces
 
         ETopic TopicType();
 
-        bool ContainsExercise(int exerciseID);
+        bool ContainsExercise(EExercises exerciseID);
     }
 }

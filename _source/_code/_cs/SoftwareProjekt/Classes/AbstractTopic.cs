@@ -52,7 +52,7 @@ namespace SoftwareProjekt.Classes
             return ETopic.InvalidTopic;
         }
 
-        virtual public bool ContainsExercise(int exerciseID)
+        virtual public bool ContainsExercise(EExercises exerciseID)
         {
             return false;
         }

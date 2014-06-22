@@ -34,18 +34,16 @@ namespace SoftwareProjekt.UserControls.MindMap
     {
         private EAlignType _alignment;
         private string _buttonText;
-        private EMachiningCondition _machiningCondition;
-        private int _exerciseID;
 
         public event ExerciseClickEvent ButtonClicked;
 
-        public MindMapButtonControl(string text, int excerciseID, EAlignType alignment)
+        public MindMapButtonControl(string text, EExercises excerciseID, EAlignType alignment)
         {
             _alignment = alignment;
             _buttonText = text;
-            _exerciseID = excerciseID;
+            this.ExerciseID = excerciseID;
 
-            _machiningCondition = EMachiningCondition.NotDone;
+            this.MachiningCondition = EMachiningCondition.NotDone;
 
             InitializeComponent();
         }
@@ -119,28 +117,16 @@ namespace SoftwareProjekt.UserControls.MindMap
             }
         }
 
-        public int ExerciseID
+        public EExercises ExerciseID
         {
-            get
-            {
-                return _exerciseID;
-            }
-            set
-            {
-                _exerciseID = value;
-            }
+            get;
+            private set;
         }
 
         public EMachiningCondition MachiningCondition
         {
-            get
-            {
-                return _machiningCondition;
-            }
-            set
-            {
-                _machiningCondition = value;
-            }
+            get;
+            private set;
         }
 
         private void InitializeComponent()
@@ -162,7 +148,7 @@ namespace SoftwareProjekt.UserControls.MindMap
 
             if (ButtonClicked != null)
             {
-                this.ButtonClicked(_exerciseID);
+                this.ButtonClicked(this.ExerciseID);
             }
         }
 
@@ -175,7 +161,7 @@ namespace SoftwareProjekt.UserControls.MindMap
 
             int innerXValue = 0;
 
-            switch (_machiningCondition)
+            switch (this.MachiningCondition)
             {
                 case EMachiningCondition.Aborted:
                     linePen = Pens.Blue;

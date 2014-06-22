@@ -60,6 +60,12 @@ namespace SoftwareProjekt.Classes.EventArguments
             private set;
         }
 
+        public EExercises ExerciseId
+        {
+            get;
+            private set;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -67,6 +73,12 @@ namespace SoftwareProjekt.Classes.EventArguments
         {
             this.ViewEvent = EViewEvents.ButtonClick;
             this.ClickedButton = e;
+        }
+
+        public ViewEventArgs(EClickedButton e, EExercises id)
+            : this(e)
+        {
+            this.ExerciseId = id;
         }
 
         /// <summary>

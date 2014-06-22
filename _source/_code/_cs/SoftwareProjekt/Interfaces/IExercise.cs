@@ -21,6 +21,7 @@
 
 using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Delegates;
+using SoftwareProjekt.Enums;
 using System.IO;
 
 namespace SoftwareProjekt.Interfaces
@@ -32,7 +33,7 @@ namespace SoftwareProjekt.Interfaces
         /// </summary>
         event ExerciseHandler<ExerciseEventArgs> ExerciseChanged;
 
-        int Id
+        EExercises Id
         {
             get;
             set;
@@ -42,16 +43,6 @@ namespace SoftwareProjekt.Interfaces
         /// Kill worker thread immediately.
         /// </summary>
         void AbortWork();
-
-        /// <summary>
-        /// Load state of exercise from file.
-        /// </summary>
-        bool LoadState(FileStream file);
-
-        /// <summary>
-        /// Save state of exercise to file.
-        /// </summary>
-        bool SaveState(FileStream file, string data);
 
         /// <summary>
         /// Start worker thread and calculate.

@@ -21,5 +21,5 @@
 
 namespace SoftwareProjekt.Delegates
 {
-    public delegate void ExerciseClickEvent(int exerciseID);
+    public delegate void ExerciseClickEvent(SoftwareProjekt.Enums.EExercises exerciseID);
 }
