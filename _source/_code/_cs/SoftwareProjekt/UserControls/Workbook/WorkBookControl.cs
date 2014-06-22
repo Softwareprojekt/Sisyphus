@@ -28,47 +28,50 @@ using System.Windows.Forms;
 
 namespace SoftwareProjekt.UserControls.Workbook
 {
-    public class WorkBookView : UserControl
-    {
-        private int _exerciseID;
-        private string _imagePath;
-        private string _notices;
-        private Image _savedImage;
-        private string _dateTime;
+    public class WorkbookEntry : UserControl
+    {     
 
          /// <summary>
         /// ctor
         /// </summary>
-        public WorkBookView()
+        public WorkbookEntry()
         {
             InitializeComponent();
-
-            throw new System.NotImplementedException();
+            CreationDate = DateTime.Now;
+            Started = false;
         }
 
-        public int CreationDate
+        public DateTime CreationDate
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
-        public int Notizen
+        public Enums.EExercises ExerciseID
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
-        public int ExerciseID
+        /// <summary>
+        /// Values and notes
+        /// </summary>
+        public Dictionary<string, Object> State
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// flag if exercise was started
+        /// </summary>
+        public bool Started
+        {
+            get;
+            set;
+        }
+
+        public DateTime RevisionDate
         {
             get
             {
@@ -93,12 +96,13 @@ namespace SoftwareProjekt.UserControls.Workbook
 
         void WorkBookControl_Paint(object sender, PaintEventArgs e)
         {
-            throw new NotImplementedException();
-        }
+            Graphics g = e.Graphics;
+            Font drawFont = new Font("Arial", 16);
+            SolidBrush drawBrush = new SolidBrush(Color.Black);
 
-        public void ForceRefresh()
-        {
-            throw new System.NotImplementedException();
+            g.DrawRectangle(Pens.Black, 0,0,this.Width-1, this.Height-1); //draw a frame
+            g.DrawString(this.ExerciseID.ToString(), drawFont, drawBrush, new Rectangle(10, 10, this.Width / 2, this.Height - 1)); //draw Exercisename (first half of control)
+            g.DrawString(this.CreationDate.ToString(), drawFont, drawBrush, new Rectangle(this.Width / 2 + 1, 10, this.Width -1, this.Height - 1));    //draw Date (second half of control)
         }
 
     }

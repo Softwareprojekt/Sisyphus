@@ -24,40 +24,228 @@ using SoftwareProjekt.UserControls.MindMap;
 using SoftwareProjekt.UserControls.Workbook;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System;
+using System.IO;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace SoftwareProjekt.Classes
 {
-    public class WorkBook
-    {
-        private List<WorkBookView> _controlsList;
-        private XmlWorkbook ConfigFile;
-        private int _username;
-        private ScreenshotCreator _screenshotBuilder;
+    public class Workbook
+    {        
+        private static Workbook _instance = null;
+        private string _username;
+        private readonly string _folderName = null;
+        private List<WorkbookEntry> _workbookEntriyList;
+        private Workbook()
+        {
+            _folderName = Path.Combine(Directory.GetCurrentDirectory(), "Workbooks");
+
+            _workbookEntriyList = new List<WorkbookEntry>(Enum.GetNames(typeof(Enums.EExercises)).Length);
+            for (int i = 1; i < _workbookEntriyList.Capacity; i++)
+            {
+                WorkbookEntry entry = new WorkbookEntry();
+                entry.ExerciseID = (Enums.EExercises)i;
+                _workbookEntriyList.Add(entry);
+            }
+        }
 
         public string Username
         {
             get
             {
-                throw new System.NotImplementedException();
+                return _username;
             }
             set
             {
+                _username = value;
+                this.Load();
             }
         }
 
-        public List<WorkBookView> GetWorkBookControl(int id)
+        public static Workbook Instance
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new Workbook();
+                }
+                return _instance;
+            }
         }
 
-        public void Load(string filename)
+        /// <summary>
+        /// loads all entries from xml-file
+        /// </summary>
+        private bool Load()
         {
-            throw new System.NotImplementedException();
+            
+            // parse XML-File
+            string file = Path.Combine(_folderName, _username + ".xml");
+            if(!File.Exists(file))
+            {
+                return false;
+            }
+            XmlReader reader = XmlReader.Create(file);
+
+            reader.ReadToFollowing("Username");
+            if (_username != reader.ReadElementString("Username"))
+            {
+                return false;
+            }
+            foreach (WorkbookEntry entry in _workbookEntriyList)
+            {
+                reader.ReadToFollowing("CreationDate");
+                entry.CreationDate = DateTime.Parse(reader.ReadElementString("CreationDate"));
+                reader.ReadToFollowing("ExerciseID");
+                entry.ExerciseID = (Enums.EExercises) Enum.Parse(typeof(Enums.EExercises), reader.ReadElementString("ExerciseID"));
+
+                //@TODO:
+                //reader.IsStartElement()
+                while (true)
+                {
+                    string key;
+                    object value;
+                    entry.State = new Dictionary<string, object>();
+                    float x11 = float.Parse("");
+                    float x12 = float.Parse("");
+                    float x21 = float.Parse("");
+                    float x22 = float.Parse("");
+
+                    entry.State.Add("Matrix1", new Math.Matrix(x11, x21, x21, x22));
+                }
+                
+            }
+            // save data in the WorkbookEntry-list
+
+            return true;
         }
 
-        public void Save(int id, UserControl control, string notices)
+        /// <summary>
+        /// saves all entries to xml-file
+        /// </summary>
+        private void Save()
         {
-            throw new System.NotImplementedException();
+            string file = Path.Combine(_folderName, _username + ".xml");
+            string dir = Path.GetDirectoryName(file);
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+            XmlWriter writer = XmlWriter.Create(file);
+
+            writer.WriteStartDocument();
+            writer.WriteStartElement("Workbook");
+            writer.WriteElementString("Username", _username);
+
+            writer.WriteStartElement("WorkbookEntries");
+            foreach (WorkbookEntry entry in _workbookEntriyList)
+            {
+                writer.WriteStartElement("WorkbookEntry");
+
+                writer.WriteElementString("CreationDate", entry.CreationDate.ToString());
+                writer.WriteElementString("ExerciseID", entry.ExerciseID.ToString());
+
+                //data
+                if (entry.State == null) //started?
+                {
+                    writer.WriteEndElement(); 
+                    continue;
+                }
+                Dictionary<string,object>.Enumerator enumerator = entry.State.GetEnumerator();                
+                while (enumerator.MoveNext())
+                {
+                    writer.WriteStartElement("DictionaryEntry");
+                    string key = enumerator.Current.Key;
+                    object value = enumerator.Current.Value;
+
+                    writer.WriteElementString("Key", key);
+ 
+                    if(value.GetType() == typeof(SoftwareProjekt.Classes.Math.Vector))
+                    {
+                        writer.WriteStartElement("Vector");
+                        writer.WriteElementString("X1", (value as SoftwareProjekt.Classes.Math.Vector).X1.ToString());
+                        writer.WriteElementString("X2", (value as SoftwareProjekt.Classes.Math.Vector).X2.ToString());
+                        writer.WriteEndElement(); // Vector
+                    }
+                    else if (value.GetType() == typeof(SoftwareProjekt.Classes.Math.Matrix))
+                    {
+                        writer.WriteStartElement("Matrix");
+                        writer.WriteElementString("X11", (value as SoftwareProjekt.Classes.Math.Matrix).X11.ToString());
+                        writer.WriteElementString("X12", (value as SoftwareProjekt.Classes.Math.Matrix).X12.ToString());
+                        writer.WriteElementString("X21", (value as SoftwareProjekt.Classes.Math.Matrix).X21.ToString());
+                        writer.WriteElementString("X22", (value as SoftwareProjekt.Classes.Math.Matrix).X22.ToString());
+                        writer.WriteEndElement(); // Matrix
+                    }
+                    else if (value.GetType() == typeof(float)) //notes
+                    {
+                        writer.WriteStartElement("Value");
+                        writer.WriteElementString("value", value as string);
+                        writer.WriteEndElement(); // Notes
+                    }
+                    else if (value.GetType() == typeof(string)) //notes
+                    {
+                        writer.WriteStartElement("Notes");
+                        writer.WriteElementString("Notes", value as string);
+                        writer.WriteEndElement(); // Notes
+                    }
+                    else
+                    {
+
+                    }
+                    writer.WriteEndElement(); // DictionaryEntry
+                }
+
+                writer.WriteEndElement();
+            }
+            writer.WriteEndElement(); // WorkbookEntries
+            writer.WriteEndElement(); // Workbook
+            writer.WriteEndDocument();
+
+            writer.Close();
+        }
+
+        /// <summary>
+        /// list of usernames/workbooks
+        /// </summary>
+        public List<string> GetAvailableWorkbooks()
+        {
+            List<string> usernames = new List<string>();
+            // check each xml-file in workbook-folder for name
+            foreach (string file in Directory.EnumerateFiles(_folderName, "*.xml"))
+            {
+                XmlReader reader = XmlReader.Create(file);
+                usernames.Add(reader.ReadElementString("Username"));
+                reader.Close();
+            }
+            return usernames;
+        }
+
+        public System.Collections.Generic.Dictionary<string, object> GetEntryState(Enums.EExercises id)
+        {
+            foreach (WorkbookEntry entry in _workbookEntriyList)
+            {
+                if (entry.ExerciseID == id)
+                {
+                    return entry.State;
+                }
+            }
+            //no entry with this Exercise
+            return null;
+        }
+
+        public void SetEntryState(Enums.EExercises id, System.Collections.Generic.Dictionary<string, object> state)
+        {
+            foreach (WorkbookEntry entry in _workbookEntriyList)
+            {
+                if (entry.ExerciseID == id)
+                {
+                    entry.State = state;
+                    return;
+                }
+            }
+            this.Save();
         }
 
     }
