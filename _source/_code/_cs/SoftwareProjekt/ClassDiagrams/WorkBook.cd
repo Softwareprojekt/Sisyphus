@@ -4,14 +4,14 @@
     <Position X="3.219" Y="2.979" Height="1.583" Width="1.7" />
   </Comment>
   <Class Name="SoftwareProjekt.Classes.Workbook">
-    <Position X="9.25" Y="2.5" Width="2.25" />
+    <Position X="9.25" Y="2" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAEgIRAAAAAAAAIAQAAAAAAAAAAAAAAQAoAAAEAAAA=</HashCode>
       <FileName>Classes\WorkBook.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoftwareProjekt.UserControls.Workbook.WorkbookEntry">
-    <Position X="13.25" Y="2.5" Width="2.25" />
+    <Position X="12.5" Y="2" Width="2.25" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAAAAAACAAAACAAIAABAgAAAABAAAAAA=</HashCode>
       <FileName>UserControls\Workbook\WorkBookControl.cs</FileName>
