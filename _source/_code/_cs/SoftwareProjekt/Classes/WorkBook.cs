@@ -28,6 +28,7 @@ using System;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
+using SoftwareProjekt.Classes.Math;
 
 namespace SoftwareProjekt.Classes
 {
@@ -59,7 +60,15 @@ namespace SoftwareProjekt.Classes
             set
             {
                 _username = value;
-                this.Load();
+                try
+                {
+                    this.Load();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Could not load the Workbook.\nFile might be corrupted.", "Workbook", MessageBoxButtons.OK);
+                }
+               
             }
         }
 
@@ -101,23 +110,86 @@ namespace SoftwareProjekt.Classes
                 reader.ReadToFollowing("ExerciseID");
                 entry.ExerciseID = (Enums.EExercises) Enum.Parse(typeof(Enums.EExercises), reader.ReadElementString("ExerciseID"));
 
-                //@TODO:
-                //reader.IsStartElement()
-                while (true)
+                reader.ReadToFollowing("NumberOfDictionaryEntries");
+                int noe;
+                if(!int.TryParse(reader.ReadElementString("NumberOfDictionaryEntries"), out noe))
                 {
-                    string key;
-                    object value;
+                    continue;
+                }
+                if (noe != 0)
+                {
                     entry.State = new Dictionary<string, object>();
-                    float x11 = float.Parse("");
-                    float x12 = float.Parse("");
-                    float x21 = float.Parse("");
-                    float x22 = float.Parse("");
+                }
+                for (int i = 0; i < noe; i++)
+                {
+                    reader.ReadToFollowing("Key");
+                    string key = reader.ReadElementString("Key");
+                    string elementType = "";
+                    while (reader.Read())
+                    {
+                        switch (reader.NodeType)
+                        {
+                            case XmlNodeType.Element:
+                                elementType = reader.Name;                                
+                                break;
+                            default:
+                                break;
+                        }
+                        if (reader.NodeType == XmlNodeType.Element)
+                        {
+                            break; //while
+                        }
+                    }
+                    if (elementType == "Vector")
+                    {                        
+                        reader.ReadToFollowing("X1");
+                        float x1 = float.Parse(reader.ReadElementString("X1"));
 
-                    entry.State.Add("Matrix1", new Math.Matrix(x11, x21, x21, x22));
+                        reader.ReadToFollowing("X2");
+                        float x2 = float.Parse(reader.ReadElementString("X2"));
+                        Vector vec = new Vector(x1, x2);
+                        entry.State.Add(key, vec);
+                    }
+                    else if (elementType == "Matrix")
+                    {
+                        reader.ReadToFollowing("X11");
+                        float x11 = float.Parse(reader.ReadElementString("X11"));
+
+                        reader.ReadToFollowing("X12");
+                        float x12 = float.Parse(reader.ReadElementString("X12"));
+
+                        reader.ReadToFollowing("X21");
+                        float x21 = float.Parse(reader.ReadElementString("X21"));
+
+                        reader.ReadToFollowing("X22");
+                        float x22 = float.Parse(reader.ReadElementString("X22"));
+
+                        Matrix m = new Matrix(x11, x12, x21, x22);
+                        entry.State.Add(key, m);
+                    }
+                    else if (elementType == "Value")
+                    {
+                        reader.ReadToFollowing("Value");
+                        float val = float.Parse(reader.ReadElementString("Value"));
+
+                        entry.State.Add(key, val);
+                    }
+                    else if (elementType == "Notes")
+                    {
+                        reader.ReadToFollowing("Notes");
+                        string note = reader.ReadElementString("Notes");
+                        
+                        entry.State.Add(key, note);
+                    }
+                    else
+                    {
+
+                    }
                 }
                 
             }
-            // save data in the WorkbookEntry-list
+
+            reader.Close();
 
             return true;
         }
@@ -146,14 +218,16 @@ namespace SoftwareProjekt.Classes
 
                 writer.WriteElementString("CreationDate", entry.CreationDate.ToString());
                 writer.WriteElementString("ExerciseID", entry.ExerciseID.ToString());
-
+                
                 //data
                 if (entry.State == null) //started?
                 {
+                    writer.WriteElementString("NumberOfDictionaryEntries", "0");
                     writer.WriteEndElement(); 
                     continue;
                 }
-                Dictionary<string,object>.Enumerator enumerator = entry.State.GetEnumerator();                
+                writer.WriteElementString("NumberOfDictionaryEntries", entry.State.Count.ToString());
+                Dictionary<string,object>.Enumerator enumerator = entry.State.GetEnumerator();                   
                 while (enumerator.MoveNext())
                 {
                     writer.WriteStartElement("DictionaryEntry");
@@ -162,26 +236,26 @@ namespace SoftwareProjekt.Classes
 
                     writer.WriteElementString("Key", key);
  
-                    if(value.GetType() == typeof(SoftwareProjekt.Classes.Math.Vector))
+                    if(value.GetType() == typeof(Vector))
                     {
                         writer.WriteStartElement("Vector");
-                        writer.WriteElementString("X1", (value as SoftwareProjekt.Classes.Math.Vector).X1.ToString());
-                        writer.WriteElementString("X2", (value as SoftwareProjekt.Classes.Math.Vector).X2.ToString());
+                        writer.WriteElementString("X1", (value as Vector).X1.ToString());
+                        writer.WriteElementString("X2", (value as Vector).X2.ToString());
                         writer.WriteEndElement(); // Vector
                     }
-                    else if (value.GetType() == typeof(SoftwareProjekt.Classes.Math.Matrix))
+                    else if (value.GetType() == typeof(Matrix))
                     {
                         writer.WriteStartElement("Matrix");
-                        writer.WriteElementString("X11", (value as SoftwareProjekt.Classes.Math.Matrix).X11.ToString());
-                        writer.WriteElementString("X12", (value as SoftwareProjekt.Classes.Math.Matrix).X12.ToString());
-                        writer.WriteElementString("X21", (value as SoftwareProjekt.Classes.Math.Matrix).X21.ToString());
-                        writer.WriteElementString("X22", (value as SoftwareProjekt.Classes.Math.Matrix).X22.ToString());
+                        writer.WriteElementString("X11", (value as Matrix).X11.ToString());
+                        writer.WriteElementString("X12", (value as Matrix).X12.ToString());
+                        writer.WriteElementString("X21", (value as Matrix).X21.ToString());
+                        writer.WriteElementString("X22", (value as Matrix).X22.ToString());
                         writer.WriteEndElement(); // Matrix
                     }
                     else if (value.GetType() == typeof(float)) //notes
                     {
                         writer.WriteStartElement("Value");
-                        writer.WriteElementString("value", value as string);
+                        writer.WriteElementString("Value", value as string);
                         writer.WriteEndElement(); // Notes
                     }
                     else if (value.GetType() == typeof(string)) //notes
@@ -216,6 +290,7 @@ namespace SoftwareProjekt.Classes
             foreach (string file in Directory.EnumerateFiles(_folderName, "*.xml"))
             {
                 XmlReader reader = XmlReader.Create(file);
+                reader.ReadToFollowing("Username");
                 usernames.Add(reader.ReadElementString("Username"));
                 reader.Close();
             }
@@ -242,10 +317,18 @@ namespace SoftwareProjekt.Classes
                 if (entry.ExerciseID == id)
                 {
                     entry.State = state;
-                    return;
+                    break;
                 }
             }
-            this.Save();
+            try
+            {
+                this.Save();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Could not save the Workbook", "Workbook", MessageBoxButtons.OK);
+            }
+            
         }
 
     }
