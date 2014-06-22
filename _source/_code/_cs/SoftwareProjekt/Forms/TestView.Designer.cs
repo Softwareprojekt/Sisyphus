@@ -85,7 +85,7 @@
             this.ctlFormularTest.Arrowdirection = 90;
             this.ctlFormularTest.Equation = "";
             this.ctlFormularTest.Filename = "ze0ptxt3.heb.tiff";
-            this.ctlFormularTest.Filepath = "C:\\Users\\michael.eimer\\AppData\\Local\\Temp\\";
+            //this.ctlFormularTest.Filepath = "C:\\Users\\michael.eimer\\AppData\\Local\\Temp\\";
             this.ctlFormularTest.FontSize = 8;
             this.ctlFormularTest.Location = new System.Drawing.Point(455, 12);
             this.ctlFormularTest.Name = "ctlFormularTest";

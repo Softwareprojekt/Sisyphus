@@ -36,10 +36,11 @@ namespace SoftwareProjekt
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            IController cont = new Controller();
+            TestView view = new TestView();
+
+            IController cont = new Controller(view);
 
             //TestExercise exercise = new TestExercise();
-            TestView view = new TestView();
 
             //DrehLinAbbUrsp exercise = new DrehLinAbbUrsp();
             //FrmDrehLinAbbUrsp view = new FrmDrehLinAbbUrsp();
