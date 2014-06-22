@@ -37,17 +37,18 @@ namespace SoftwareProjekt.Classes
         private static Workbook _instance = null;
         private string _username;
         private readonly string _folderName = null;
-        private List<WorkbookEntry> _workbookEntriyList;
+        private List<WorkbookEntry> _workbookEntryList;
         private Workbook()
         {
             _folderName = Path.Combine(Directory.GetCurrentDirectory(), "Workbooks");
 
-            _workbookEntriyList = new List<WorkbookEntry>(Enum.GetNames(typeof(Enums.EExercises)).Length);
-            for (int i = 1; i < _workbookEntriyList.Capacity; i++)
+            _workbookEntryList = new List<WorkbookEntry>(Enum.GetNames(typeof(Enums.EExercises)).Length);
+            for (int i = 1; i < _workbookEntryList.Capacity; i++)
             {
                 WorkbookEntry entry = new WorkbookEntry();
-                entry.ExerciseID = (Enums.EExercises)i;
-                _workbookEntriyList.Add(entry);
+                entry.ExerciseID =  (Enums.EExercises)i;
+
+                _workbookEntryList.Add(entry);
             }
         }
 
@@ -103,7 +104,7 @@ namespace SoftwareProjekt.Classes
             {
                 return false;
             }
-            foreach (WorkbookEntry entry in _workbookEntriyList)
+            foreach (WorkbookEntry entry in _workbookEntryList)
             {
                 reader.ReadToFollowing("CreationDate");
                 entry.CreationDate = DateTime.Parse(reader.ReadElementString("CreationDate"));
@@ -212,7 +213,7 @@ namespace SoftwareProjekt.Classes
             writer.WriteElementString("Username", _username);
 
             writer.WriteStartElement("WorkbookEntries");
-            foreach (WorkbookEntry entry in _workbookEntriyList)
+            foreach (WorkbookEntry entry in _workbookEntryList)
             {
                 writer.WriteStartElement("WorkbookEntry");
 
@@ -299,7 +300,7 @@ namespace SoftwareProjekt.Classes
 
         public System.Collections.Generic.Dictionary<string, object> GetEntryState(Enums.EExercises id)
         {
-            foreach (WorkbookEntry entry in _workbookEntriyList)
+            foreach (WorkbookEntry entry in _workbookEntryList)
             {
                 if (entry.ExerciseID == id)
                 {
@@ -312,11 +313,11 @@ namespace SoftwareProjekt.Classes
 
         public void SetEntryState(Enums.EExercises id, System.Collections.Generic.Dictionary<string, object> state)
         {
-            foreach (WorkbookEntry entry in _workbookEntriyList)
+            foreach (WorkbookEntry entry in _workbookEntryList)
             {
                 if (entry.ExerciseID == id)
                 {
-                    entry.State = state;
+                    entry.State = state;                    
                     break;
                 }
             }
@@ -329,6 +330,11 @@ namespace SoftwareProjekt.Classes
                 MessageBox.Show("Could not save the Workbook", "Workbook", MessageBoxButtons.OK);
             }
             
+        }
+
+        public void AddEntries(System.Windows.Forms.Control.ControlCollection collection)
+        {
+            collection.AddRange(_workbookEntryList.ToArray());
         }
 
     }
