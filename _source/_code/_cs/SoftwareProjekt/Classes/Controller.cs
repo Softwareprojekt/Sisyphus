@@ -35,14 +35,13 @@ namespace SoftwareProjekt.Classes
         /// <summary>
         /// List with open Exercises and corresponding Views.
         /// </summary>
-        private Dictionary<IExercise, IView> _exerciseList;
+        private Dictionary<IView, IExercise> _exerciseList;
 
         private System.Windows.Forms.Form _mainForm;
 
         public Controller(System.Windows.Forms.Form mainForm)
         {
-            //TODO: Change IExercise to Value and IView to Key in Dictionary.
-            _exerciseList = new Dictionary<IExercise, IView>(10);
+            _exerciseList = new Dictionary<IView, IExercise>(10);
             _mainForm = mainForm;
         }
 
@@ -60,12 +59,12 @@ namespace SoftwareProjekt.Classes
                     switch (e.ClickedButton)
                     {
                         case EClickedButton.StartCalculation:
-                            _exerciseList.Single(x => x.Value == sender).Key.StartWork();
+                            _exerciseList[sender].StartWork();
                             break;
                         case EClickedButton.StartExercise:
                             IExercise exercise = null;
                             IView view = null;
-                            
+
                             //TODO: 
                             switch (e.ExerciseId)
                             {
@@ -115,7 +114,7 @@ namespace SoftwareProjekt.Classes
             view.LoadState(Workbook.Instance.GetEntryState(exercise.Id));
 
             // add exercise and view to list.
-            _exerciseList.Add(exercise, view);
+            _exerciseList.Add(view, exercise);
         }
 
         void view_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -125,7 +124,7 @@ namespace SoftwareProjekt.Classes
 
         public void RemoveExercise(IView view)
         {
-            IExercise exercise = _exerciseList.Single(x => x.Value == view).Key;
+            IExercise exercise = _exerciseList[view];
             // save state of exercise in workbook.
             Workbook.Instance.SetEntryState(exercise.Id, view.SaveState());
 
@@ -134,7 +133,7 @@ namespace SoftwareProjekt.Classes
             view.Dispose();
 
             // remove exercise and view from list.
-            _exerciseList.Remove(exercise);
+            _exerciseList.Remove(view);
         }
     }
 }
