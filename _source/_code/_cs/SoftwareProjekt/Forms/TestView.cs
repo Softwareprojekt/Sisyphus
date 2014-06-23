@@ -39,6 +39,10 @@ namespace SoftwareProjekt.Forms
             InitializeComponent();
        
             MathXmlGenerator xml = new MathXmlGenerator();
+            LineSegment ls = new LineSegment(new PointF(0.0f, 3f), new Vector(0, -2.5f));
+            ls.Color = Pens.Blue;
+
+            _coordSys.AddLineSegment(ls);
 
             Matrix m1 = new Matrix(1.0f, 2.0f, 3.0f, 4.0f);
 

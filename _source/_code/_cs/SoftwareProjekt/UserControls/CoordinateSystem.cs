@@ -108,7 +108,60 @@ namespace SoftwareProjekt.UserControls
         {
             foreach (LineSegment ls in _lineSegmentList)
             {
-                DrawSingleVector(ls, g);
+                if (ls.StartPoint.X == ls.EndPoint.X && ls.StartPoint.Y == ls.EndPoint.Y)
+                {
+                    DrawSinglePoint(new PointF(ls.StartPoint.X, ls.StartPoint.Y), g);
+                }
+                else
+                {
+                    DrawSingleVector(ls, g);
+                }
+            }
+        }
+
+        private void DrawZeroVector(LineSegment ls, Graphics g)
+        {
+            PointF internalStartPoint = CalculateInternalCoordinates(ls.StartPoint.X, ls.EndPoint.Y);
+
+            if (float.IsNaN(internalStartPoint.X) || float.IsNaN(internalStartPoint.Y))
+            {
+                return;
+            }
+
+            float internalEndpointX = internalStartPoint.X + 2;
+            float internalEndpointY = internalStartPoint.Y - 2;
+
+            g.DrawLine(ls.Color, new PointF(internalStartPoint.X, internalStartPoint.Y), 
+                new PointF(internalEndpointX, internalEndpointY));
+
+            g.DrawLine(ls.Color, new PointF(internalEndpointX, internalEndpointY), 
+                new PointF(internalEndpointX - 10, internalEndpointY));
+
+            g.DrawLine(ls.Color, new PointF(internalEndpointX, internalEndpointY),
+                new PointF(internalEndpointX, internalEndpointY + 10));
+
+            if (!String.IsNullOrEmpty(ls.Label))
+            {
+                float steigung = (float)Math.Abs(ls.EndPoint.Y - ls.StartPoint.Y) / (float)Math.Abs(ls.StartPoint.X - ls.EndPoint.X);
+
+                if ((ls.EndPoint.Y - ls.StartPoint.Y) < 0 && (ls.StartPoint.X - ls.EndPoint.X) < 0)
+                {
+                    steigung *= -1;
+                }
+
+                float printPointX = internalStartPoint.X + (internalEndpointX - internalStartPoint.X) / 2;
+                float printPointYPart1 = (printPointX - internalStartPoint.X);
+                float printPointYPart2 = steigung * printPointYPart1;
+                float printPointY = internalStartPoint.Y - printPointYPart2 + 10;
+
+                if (float.IsInfinity(steigung))
+                {
+                    printPointY = internalStartPoint.Y - ((internalStartPoint.Y - internalEndpointY) / 2);
+                }
+
+                PointF printPoint = new PointF(printPointX, printPointY);
+                g.DrawString(ls.Label, new Font("Arial", 9.0f), new SolidBrush(ls.Color.Color), printPoint);
+
             }
         }
 
@@ -339,19 +392,19 @@ namespace SoftwareProjekt.UserControls
 
         private void DrawXAxis(Graphics g)
         {
-            int yCoordinate = this.Height - this.Height / 10;
-            int xCoordinateEndPoint = this.Width - this.Width / 10;
-            int xCoordinateStartPoint = this.Width / 10;
-            Point endPoint = new Point(xCoordinateEndPoint, yCoordinate);
-            Point startPoint = new Point(xCoordinateStartPoint, yCoordinate);
+            float yCoordinate = this.Height - this.Height / 10;
+            float xCoordinateEndPoint = this.Width - this.Width / 10;
+            float xCoordinateStartPoint = this.Width / 10;
+            PointF endPoint = new PointF(xCoordinateEndPoint, yCoordinate);
+            PointF startPoint = new PointF(xCoordinateStartPoint, yCoordinate);
 
             // draw the arrows
             g.DrawLine(Pens.Black, startPoint, endPoint);
-            g.DrawLine(Pens.Black, endPoint, new Point(xCoordinateEndPoint - 10, yCoordinate + 5));
-            g.DrawLine(Pens.Black, endPoint, new Point(xCoordinateEndPoint - 10, yCoordinate - 5));
+            g.DrawLine(Pens.Black, endPoint, new PointF(xCoordinateEndPoint - 10, yCoordinate + 5));
+            g.DrawLine(Pens.Black, endPoint, new PointF(xCoordinateEndPoint - 10, yCoordinate - 5));
 
             // calculate all the scaling stuff
-            int arrowLength = Math.Abs(endPoint.X - startPoint.X - 20);
+            float arrowLength = Math.Abs(endPoint.X - startPoint.X - 20);
             float rangeLength = Math.Abs(_xAxis.StartValue - _xAxis.EndValue);
 
             if (_xAxis.Scale == 0.0f)
@@ -366,15 +419,15 @@ namespace SoftwareProjekt.UserControls
                 return;
             }
 
-            int offsetLeft = xCoordinateStartPoint;
-            int singleOffset = arrowLength / numberOfValues;
+            float offsetLeft = xCoordinateStartPoint;
+            float singleOffset = arrowLength / numberOfValues;
 
             for (int i = 0; i <= numberOfValues; i++)
             {
-                int localXCoordinate = offsetLeft + i * singleOffset;
+                float localXCoordinate = offsetLeft + i * singleOffset;
                 float localCoordinateValue = i * rangeLength / numberOfValues + _xAxis.StartValue;
-                g.DrawLine(Pens.Black, new Point(localXCoordinate, yCoordinate - 5),
-                    new Point(localXCoordinate, yCoordinate + 5));
+                g.DrawLine(Pens.Black, new PointF(localXCoordinate, yCoordinate - 5),
+                    new PointF(localXCoordinate, yCoordinate + 5));
 
                 g.DrawString(localCoordinateValue.ToString(), new Font("Arial", 9.0f), new SolidBrush(Color.Black),
                     new PointF(localXCoordinate - 5, (float)this.Height - 15));
@@ -387,19 +440,19 @@ namespace SoftwareProjekt.UserControls
 
         private void DrawYAxis(Graphics g)
         {
-            int xCoordinate = this.Width / 10;
-            int yCoordinateEndPoint = this.Height - this.Height / 10;
-            int yCoordinateStartPoint = this.Height / 10;
-            Point endPoint = new Point(xCoordinate, yCoordinateEndPoint);
-            Point startPoint = new Point(xCoordinate, this.Height / 10);
+            float xCoordinate = this.Width / 10;
+            float yCoordinateEndPoint = this.Height - this.Height / 10;
+            float yCoordinateStartPoint = this.Height / 10;
+            PointF endPoint = new PointF(xCoordinate, yCoordinateEndPoint);
+            PointF startPoint = new PointF(xCoordinate, this.Height / 10);
 
             // just draw the arrows
             g.DrawLine(Pens.Black, startPoint, endPoint);
-            g.DrawLine(Pens.Black, startPoint, new Point(xCoordinate - 5, yCoordinateStartPoint + 10));
-            g.DrawLine(Pens.Black, startPoint, new Point(xCoordinate + 5, yCoordinateStartPoint + 10));
+            g.DrawLine(Pens.Black, startPoint, new PointF(xCoordinate - 5, yCoordinateStartPoint + 10));
+            g.DrawLine(Pens.Black, startPoint, new PointF(xCoordinate + 5, yCoordinateStartPoint + 10));
 
             // scale calculating
-            int arrowLength = Math.Abs(endPoint.Y - startPoint.Y - 20);
+            float arrowLength = Math.Abs(endPoint.Y - startPoint.Y - 20);
             float rangeLength = Math.Abs(_yAxis.StartValue - _yAxis.EndValue);
 
             if (_yAxis.Scale == 0.0f)
@@ -413,16 +466,16 @@ namespace SoftwareProjekt.UserControls
             {
                 return;
             }
-            int offsetAbove = yCoordinateStartPoint + 20;
-            int singleOffset = arrowLength / numberOfValues;
+            float offsetAbove = yCoordinateStartPoint + 20;
+            float singleOffset = arrowLength / numberOfValues;
 
             // build all the lines and add the strings
             for (int i = 0; i < numberOfValues; i++)
             {
-                int localYCoordinate = offsetAbove + i * singleOffset;
+                float localYCoordinate = offsetAbove + i * singleOffset;
                 float localCoordinateValue = i * rangeLength / numberOfValues;
-                g.DrawLine(Pens.Black, new Point(xCoordinate - 5, localYCoordinate),
-                    new Point(xCoordinate + 5, localYCoordinate));
+                g.DrawLine(Pens.Black, new PointF(xCoordinate - 5, localYCoordinate),
+                    new PointF(xCoordinate + 5, localYCoordinate));
 
                 string coordinate = (rangeLength + _yAxis.StartValue - localCoordinateValue).ToString();
 
@@ -431,8 +484,8 @@ namespace SoftwareProjekt.UserControls
 
             }
 
-            g.DrawLine(Pens.Black, new Point(xCoordinate - 5, endPoint.Y),
-                    new Point(xCoordinate + 5, endPoint.Y));
+            g.DrawLine(Pens.Black, new PointF(xCoordinate - 5, endPoint.Y),
+                    new PointF(xCoordinate + 5, endPoint.Y));
 
             g.DrawString((_yAxis.StartValue).ToString(), new Font("Arial", 9.0f), new SolidBrush(Color.Black),
                 new PointF(0.0f, (float)endPoint.Y - 8));
@@ -446,11 +499,11 @@ namespace SoftwareProjekt.UserControls
             float localXValue = xValue;
             float localYValue = yValue;
 
-            int internalAllowedMinRangeX = this.Width / 10;
-            int internalAllowedMinRangeY = this.Height / 10 + 15;
+            float internalAllowedMinRangeX = this.Width / 10;
+            float internalAllowedMinRangeY = this.Height / 10 + 15;
 
-            int internalAllowedMaxRangeX = this.Width - this.Width / 10 - 15;
-            int internalAllowedMaxRangeY = this.Height - this.Height / 10;
+            float internalAllowedMaxRangeX = this.Width - this.Width / 10 - 15;
+            float internalAllowedMaxRangeY = this.Height - this.Height / 10;
 
             /* Check if click event was inside valid range */
             if (xValue < internalAllowedMinRangeX || xValue > internalAllowedMaxRangeX)
@@ -465,9 +518,9 @@ namespace SoftwareProjekt.UserControls
 
             /* Calculate y - coordinate */
 
-            int arrowLengthY = Math.Abs(this.Height - this.Height / 10 - this.Height / 10 - 20);
+            float arrowLengthY = Math.Abs(this.Height - this.Height / 10 - this.Height / 10 - 20);
             float yRange = _yAxis.EndValue - _yAxis.StartValue;
-            int offsetBottomY = this.Height / 10 + 20;
+            float offsetBottomY = this.Height / 10 + 20;
 
             localYValue = yValue - offsetBottomY;
             float lengthPerUnitY = arrowLengthY / yRange;
@@ -478,9 +531,9 @@ namespace SoftwareProjekt.UserControls
 
             /* calculate x - coordinate */
 
-            int arrowLengthX = Math.Abs(this.Width - this.Width / 10 - this.Width / 10 - 20);
+            float arrowLengthX = Math.Abs(this.Width - this.Width / 10 - this.Width / 10 - 20);
             float xRange = _xAxis.EndValue - _xAxis.StartValue;
-            int offSetLeftX = this.Width / 10;
+            float offSetLeftX = this.Width / 10;
 
             localXValue = xValue - offSetLeftX;
             float lengthPerUnitX = arrowLengthX / xRange;
@@ -503,8 +556,8 @@ namespace SoftwareProjekt.UserControls
 
         private PointF CalculateInternalCoordinates(float xValue, float yValue)
         {
-            int localXValue = 0;
-            int localYValue = 0;
+            float localXValue = 0;
+            float localYValue = 0;
 
             if (float.IsNaN(xValue) || float.IsNaN(yValue))
             {
@@ -525,9 +578,9 @@ namespace SoftwareProjekt.UserControls
 
             float numericOffsetX = xValue - _xAxis.StartValue;
             float rangeX = _xAxis.EndValue - _xAxis.StartValue;
-            int localOffsetPixelX = this.Width / 10;
+            float localOffsetPixelX = this.Width / 10;
 
-            int numericArrowLengthX = this.Width - 2 * (this.Width / 10) - 20;
+            float numericArrowLengthX = this.Width - 2 * (this.Width / 10) - 20;
             float rangePerValueX = numericArrowLengthX / rangeX;
 
             localXValue = (int)(numericOffsetX * rangePerValueX) + localOffsetPixelX;
@@ -535,9 +588,9 @@ namespace SoftwareProjekt.UserControls
             // calculate Y
             float numericOffsetY = yValue - _yAxis.StartValue;
             float rangeY = _yAxis.EndValue - _yAxis.StartValue;
-            int localOffsetPixelY = this.Height - this.Height / 10;
+            float localOffsetPixelY = this.Height - this.Height / 10;
 
-            int numericArrowLengthY = this.Height - 2 * (this.Height / 10) - 20;
+            float numericArrowLengthY = this.Height - 2 * (this.Height / 10) - 20;
             float rangePerValueY = numericArrowLengthY / rangeY;
 
             localYValue = localOffsetPixelY - (int)(numericOffsetY * rangePerValueY);
