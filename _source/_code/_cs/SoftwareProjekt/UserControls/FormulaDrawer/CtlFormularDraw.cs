@@ -10,6 +10,7 @@ using System.IO;
 using MathML;
 using System.Drawing.Imaging;
 using SoftwareProjekt.Properties;
+using SoftwareProjekt.Enums;
 
 namespace SoftwareProjekt.UserControls.FormulaDrawer
 {
@@ -18,7 +19,7 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
         private string _equation;
         private string _filepath;
         private string _filename;
-        private int _arrowdirection;
+        private EArrowDirection _arrowdirection;
 
         private MathML.Rendering.MathMLControl _drawer;
 
@@ -30,8 +31,8 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
             object arrow90 = Resources.ResourceManager.GetObject("arrowToRight");
             object arrow180 = Resources.ResourceManager.GetObject("arrowToLeft");
 
-            if (this.Arrowdirection == 90) picArrow.Image = (Image)arrow90;
-            else picArrow.Image = (Image)arrow180;
+            if (this.Arrowdirection == EArrowDirection.right) picArrow.Image = (Image)arrow90;
+            else if (this.Arrowdirection == EArrowDirection.left) picArrow.Image = (Image)arrow180;
 
             this.Filename = Path.GetRandomFileName() + ".tiff";
             this.Equation = "";
@@ -73,7 +74,7 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
             }
         }
 
-        public int Arrowdirection 
+        public EArrowDirection Arrowdirection 
         {
             get { return _arrowdirection;  }
             set { _arrowdirection = value;  } 
