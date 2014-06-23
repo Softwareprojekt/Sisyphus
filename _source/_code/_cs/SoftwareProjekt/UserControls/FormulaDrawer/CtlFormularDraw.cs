@@ -96,7 +96,10 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                // GDI+ general error means, the path given path in method _drawer.Save is invalid, not writeable and so on
+                // there is no inner exception!
+
+                Console.WriteLine("ERROR @ WriteEquationToPicBox " + ex.Message);
             }
 
         }

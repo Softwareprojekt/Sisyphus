@@ -655,8 +655,9 @@ namespace SoftwareProjekt.Classes.Xml
         public void Finish()
         {
             _xmlDoc += "</math>";
-
-            Console.WriteLine(_xmlDoc);
+#if DEBUG
+            Console.WriteLine("SUCCESS @ MathXml::Finish document: \n" + _xmlDoc);
+#endif
         }
 
         public void AddSign(EMathSign eMathSign)

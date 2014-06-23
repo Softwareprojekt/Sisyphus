@@ -327,14 +327,17 @@ namespace SoftwareProjekt.UserControls
 
             if (p.X == -1 || p.Y == -1)
             {
-                Console.WriteLine("Outside valid range!\n");
+#if DEBUG
+                Console.WriteLine("INFO @ CoordinateSystem_MouseClick: Outside valid range!\n");
+#endif
                 return;
             }
             float roundX = (float)Math.Round(p.X, 1, MidpointRounding.AwayFromZero);
             float roundY = (float)Math.Round(p.Y, 1, MidpointRounding.AwayFromZero);
 
-
-            Console.WriteLine("X: " + roundX.ToString() + "\nY: " + roundY.ToString() + "\n");
+#if DEBUG            
+            Console.WriteLine("SUCCESS @ CoordinateSystem_MouseClick: X: " + roundX.ToString() + "\nY: " + roundY.ToString() + "\n");
+#endif
 
             if (this.CoordinateClick != null)
             {
