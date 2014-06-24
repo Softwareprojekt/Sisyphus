@@ -166,7 +166,9 @@
       <DependentUpon>CtlVectorInput.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Math\FormulaDrawer.cs" />
-    <Compile Include="Forms\FrmDrehLinAbbUrsp.cs" />
+    <Compile Include="Forms\FrmDrehLinAbbUrsp.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FrmDrehLinAbbUrsp.Designer.cs">
       <DependentUpon>FrmDrehLinAbbUrsp.cs</DependentUpon>
     </Compile>
