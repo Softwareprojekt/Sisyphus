@@ -103,6 +103,9 @@
             this.ctlVectorEV2.Name = "ctlVectorEV2";
             this.ctlVectorEV2.Size = new System.Drawing.Size(181, 116);
             this.ctlVectorEV2.TabIndex = 4;
+            this.ctlVectorEV2.grpVektorInput.Text = "Einheitsvektor e2";
+            this.ctlVectorEV2.txtEle11.ReadOnly = true;
+            this.ctlVectorEV2.txtEle21.ReadOnly = true;
             vector7.X1 = float.NaN;
             vector7.X2 = float.NaN;
             this.ctlVectorEV2.Vector = vector7;
@@ -115,6 +118,9 @@
             this.ctlVectorEV1.Name = "ctlVectorEV1";
             this.ctlVectorEV1.Size = new System.Drawing.Size(181, 116);
             this.ctlVectorEV1.TabIndex = 3;
+            this.ctlVectorEV1.grpVektorInput.Text = "Einheitsvektor e1";
+            this.ctlVectorEV1.txtEle11.ReadOnly = true;
+            this.ctlVectorEV1.txtEle21.ReadOnly = true;
             vector8.X1 = float.NaN;
             vector8.X2 = float.NaN;
             this.ctlVectorEV1.Vector = vector8;
@@ -127,6 +133,7 @@
             this.ctlVectorInputX.Name = "ctlVectorInputX";
             this.ctlVectorInputX.Size = new System.Drawing.Size(181, 116);
             this.ctlVectorInputX.TabIndex = 1;
+            this.ctlVectorInputX.grpVektorInput.Text = "Vektor x";
             vector9.X1 = float.NaN;
             vector9.X2 = float.NaN;
             this.ctlVectorInputX.Vector = vector9;
@@ -179,6 +186,9 @@
             this.ctlVectorOutputEV2.Name = "ctlVectorOutputEV2";
             this.ctlVectorOutputEV2.Size = new System.Drawing.Size(181, 116);
             this.ctlVectorOutputEV2.TabIndex = 49;
+            this.ctlVectorOutputEV2.grpVektorInput.Text = "Vektor e2'";
+            this.ctlVectorOutputEV2.txtEle11.ReadOnly = true;
+            this.ctlVectorOutputEV2.txtEle21.ReadOnly = true;
             vector10.X1 = float.NaN;
             vector10.X2 = float.NaN;
             this.ctlVectorOutputEV2.Vector = vector10;
@@ -191,6 +201,9 @@
             this.ctlVectorOutputEV1.Name = "ctlVectorOutputEV1";
             this.ctlVectorOutputEV1.Size = new System.Drawing.Size(181, 116);
             this.ctlVectorOutputEV1.TabIndex = 48;
+            this.ctlVectorOutputEV1.grpVektorInput.Text = "Vektor e1'";
+            this.ctlVectorOutputEV1.txtEle11.ReadOnly = true;
+            this.ctlVectorOutputEV1.txtEle21.ReadOnly = true;
             vector11.X1 = float.NaN;
             vector11.X2 = float.NaN;
             this.ctlVectorOutputEV1.Vector = vector11;
@@ -203,6 +216,9 @@
             this.ctlVectorOutputX.Name = "ctlVectorOutputX";
             this.ctlVectorOutputX.Size = new System.Drawing.Size(181, 116);
             this.ctlVectorOutputX.TabIndex = 47;
+            this.ctlVectorOutputX.grpVektorInput.Text = "Vektor x'";
+            this.ctlVectorOutputX.txtEle11.ReadOnly = true;
+            this.ctlVectorOutputX.txtEle21.ReadOnly = true;
             vector12.X1 = float.NaN;
             vector12.X2 = float.NaN;
             this.ctlVectorOutputX.Vector = vector12;
