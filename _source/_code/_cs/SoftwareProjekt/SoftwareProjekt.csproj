@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Classes\Math\DrawingPoint.cs" />
     <Compile Include="Classes\Xml\MathXmlGenerator.cs" />
+    <Compile Include="Enums\EArrowDirection.cs" />
     <Compile Include="Enums\EMathType.cs" />
     <Compile Include="Enums\EMathSign.cs" />
     <Compile Include="Enums\EAlignType.cs" />

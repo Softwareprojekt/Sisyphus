@@ -1,4 +1,6 @@
-﻿namespace SoftwareProjekt.Forms
+﻿using SoftwareProjekt.Enums;
+
+namespace SoftwareProjekt.Forms
 {
     partial class TestView
     {
@@ -82,7 +84,7 @@
             // 
             // ctlFormularTest
             // 
-            this.ctlFormularTest.Arrowdirection = 90;
+            this.ctlFormularTest.Arrowdirection = EArrowDirection.right;
             this.ctlFormularTest.Equation = "";
             this.ctlFormularTest.Filename = "ze0ptxt3.heb.tiff";
             //this.ctlFormularTest.Filepath = "C:\\Users\\michael.eimer\\AppData\\Local\\Temp\\";
