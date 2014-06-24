@@ -16,12 +16,14 @@ Most documents of Sisyphus such as [exercise drafts](https://github.com/Software
 Class diagrams for the project were created using Visual Studio 2012. Those can be found either in the system analysis document or can be opened in Visual Studio below ClassDiagrams.
 
 In Sisyphus the Model View Controller pattern is used. The program code is located at 
+https://github.com/Softwareprojekt/Sisyphus/tree/dev/_source/_code/_cs/SoftwareProjekt.
 
 
 ### Run
-The easiest way to built and run the Sisyphus executable for windows, is to use Visual Studio 2012 or higher. The whole project uses one Visual Studio project file (Root.sln), which can be found below ./_wsp/_vs/Root.sln
+You can use Visual Studio 2012 or higher to built and run the Sisyphus executable for Windows.
+The whole project uses one Visual Studio project file (Root.sln), which can be found below ./_wsp/_vs/Root.sln
 
-Currently the application is not supported to run with Mono. 
+Currently the application is not Mono compatible. 
 
 ## License
 [GPL2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
