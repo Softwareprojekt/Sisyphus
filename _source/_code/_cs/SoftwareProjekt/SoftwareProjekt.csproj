@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Math\DrawingPoint.cs" />
+    <Compile Include="Classes\Math\Triangle.cs" />
     <Compile Include="Classes\Xml\MathXmlGenerator.cs" />
     <Compile Include="Enums\EInputForms.cs" />
     <Compile Include="Enums\EArrowDirection.cs" />
@@ -127,6 +128,7 @@
       <DependentUpon>TestView.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\LinearTransformationTopic.cs" />
+    <Compile Include="Interfaces\IShape.cs" />
     <Compile Include="Interop\InteropMimeTex.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
