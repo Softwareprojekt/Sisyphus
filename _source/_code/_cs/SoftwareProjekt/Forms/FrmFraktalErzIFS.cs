@@ -57,13 +57,17 @@ namespace SoftwareProjekt.Forms
 
                 _cosInput.ClearLineSegments();
 
-                LineSegment ls1 = new LineSegment(new PointF(0, 0), new Vector(2, 0), Pens.Red);
-                LineSegment ls2 = new LineSegment(new PointF(2, 0), new Vector(-2, 2), Pens.Red);
-                LineSegment ls3 = new LineSegment(new PointF(0, 2), new Vector(0, -2), Pens.Red);
+                //LineSegment ls1 = new LineSegment(new PointF(0, 0), new Vector(2, 0), Pens.Red);
+                //LineSegment ls2 = new LineSegment(new PointF(2, 0), new Vector(-2, 2), Pens.Red);
+                //LineSegment ls3 = new LineSegment(new PointF(0, 2), new Vector(0, -2), Pens.Red);
 
-                _cosInput.AddLineSegment(ls1);
-                _cosInput.AddLineSegment(ls2);
-                _cosInput.AddLineSegment(ls3);
+                Triangle tri = new Triangle(new PointF(1, 1), new PointF(3, 1), new PointF(2, 2));
+                tri.Translate(new Vector(1, 0)); //move one right
+                tri.Scale(1.5f); //make 50% bigger
+
+                _cosInput.AddLineSegment(tri.AB);
+                _cosInput.AddLineSegment(tri.BC);
+                _cosInput.AddLineSegment(tri.CA);
 
                 _cosInput.Refresh();
 

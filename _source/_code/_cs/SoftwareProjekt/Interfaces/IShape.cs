@@ -32,7 +32,7 @@ namespace SoftwareProjekt.Interfaces
     {
         void Translate(Vector vector);
 
-        void Scale(float vector);
+        void Scale(float scalar);
 
         Pen Color{ get; set;}
     }

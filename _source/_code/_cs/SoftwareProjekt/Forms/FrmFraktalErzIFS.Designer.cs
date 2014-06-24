@@ -30,6 +30,7 @@
         {
             SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
             SoftwareProjekt.Classes.Math.Vector vector2 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector3 = new SoftwareProjekt.Classes.Math.Vector();
             this._butSelectPic = new System.Windows.Forms.Button();
             this._butCalculation = new System.Windows.Forms.Button();
             this.grpPics = new System.Windows.Forms.GroupBox();
@@ -53,6 +54,7 @@
             this._vectorMove_w3 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this._coeff_w3 = new SoftwareProjekt.UserControls.FloatInput();
             this._coeff_w1 = new SoftwareProjekt.UserControls.FloatInput();
+            this._vectorMove_w1 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.grpPics.SuspendLayout();
             this.grpSteps.SuspendLayout();
             this.SuspendLayout();
@@ -293,11 +295,23 @@
             this._coeff_w1.Size = new System.Drawing.Size(82, 20);
             this._coeff_w1.TabIndex = 0;
             // 
+            // _vectorMove_w1
+            // 
+            this._vectorMove_w1.Location = new System.Drawing.Point(584, 84);
+            this._vectorMove_w1.MinimumSize = new System.Drawing.Size(102, 76);
+            this._vectorMove_w1.Name = "_vectorMove_w1";
+            this._vectorMove_w1.Size = new System.Drawing.Size(102, 76);
+            this._vectorMove_w1.TabIndex = 18;
+            vector3.X1 = float.NaN;
+            vector3.X2 = float.NaN;
+            this._vectorMove_w1.Vector = vector3;
+            // 
             // FrmFraktalErzIFS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 777);
+            this.Controls.Add(this._vectorMove_w1);
             this.Controls.Add(this._coeff_w1);
             this.Controls.Add(this._coeff_w3);
             this.Controls.Add(this._vectorMove_w3);
@@ -350,5 +364,6 @@
         private UserControls.CtlVectorInput _vectorMove_w3;
         private UserControls.FloatInput _coeff_w3;
         private UserControls.FloatInput _coeff_w1;
+        private UserControls.CtlVectorInput _vectorMove_w1;
     }
 }

@@ -182,6 +182,32 @@ namespace SoftwareProjekt.Classes.Math
         }
 
         /// <summary>
+        /// Scales this Vector
+        /// </summary>
+        public void Scale(float scalar)
+        {
+            Matrix scaleMatrix = new Matrix(scalar, 0f, 0f, scalar);
+            if (scaleMatrix.X12 == 0f && scaleMatrix.X21 == 0f)
+            {
+                this.Multiply(scaleMatrix);
+            }
+            else
+            {
+                throw new ArgumentException("The Matrix values are not vaild for this operation");
+            }
+        }
+
+        /// <summary>
+        /// Scales this Vector
+        /// </summary>
+        public Vector Scale(Vector vector, float scalar)
+        {
+            Vector v = new Vector(vector.X1, vector.X2);
+            v.Multiply(scalar);  
+            return v;
+        }
+
+        /// <summary>
         /// Mirrors this Vector at a line through origin
         /// </summary>
         public void Mirror(Line line)

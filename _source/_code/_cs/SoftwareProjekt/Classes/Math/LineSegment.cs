@@ -48,7 +48,7 @@ namespace SoftwareProjekt.Classes.Math
             this.Color = Pens.Black;
         }
 
-        public PointF StartPoint { get; private set; }
+        public PointF StartPoint { get; set; }
 
         public Vector Vector { get; set; }
 
