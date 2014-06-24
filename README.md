@@ -16,7 +16,7 @@ Most documents of Sisyphus such as [exercise drafts](https://github.com/Software
 Class diagrams for the project were created using Visual Studio 2012. Those can be found either in the system analysis document or can be opened in Visual Studio below ClassDiagrams.
 
 In Sisyphus the Model View Controller pattern is used. The program code is located at 
-https://github.com/Softwareprojekt/Sisyphus/tree/dev/_source/_code/_cs/SoftwareProjekt.
+[_source/_code/_cs/SoftwareProjekt](https://github.com/Softwareprojekt/Sisyphus/tree/dev/_source/_code/_cs/SoftwareProjekt).
 
 
 ### Run
