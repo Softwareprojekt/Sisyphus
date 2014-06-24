@@ -5,9 +5,9 @@ Sisyphus is a Software Project of computer engineering students from the OTH Amb
 
 Sisyphus lets students create exercise books with different kind of exercises. Exercises give the students the possibility to enter different kind of parameters, to calculate resulting vectors, affine transformations, fractals or other results. Each type of exercise gives different instructions to the learning student to follow. 
 
-Sisyphus is written in C sharp and uses Windows Forms as graphical interface. Our familiarity with this technology and restricted time, made us choose it. Furthermore we were advised to develop something from the ground up.
+Sisyphus is written in C sharp and uses Windows Forms as graphical interface. Our familiarity with this technology and restricted time, made it the best choice for us. Furthermore we were advised to develop something from the ground up.
 
-A good part of the project consists of documentation. In fact a primary aim of the project was for the developing students to become more familiar with software development processes.
+A good part of the project consists of documentation. A primary aim of the project was for us to become more familiar with software development processes.
 
 ## Technical Documentation
 Most documents of Sisyphus such as [exercise drafts](https://github.com/Softwareprojekt/Sisyphus/tree/dev/_source/_analysis/GUI), [requirement specification](https://github.com/Softwareprojekt/Sisyphus/blob/dev/_source/_analysis/Anforderungen(XYZ)_Sisyphus.docx), [coding conventions](https://github.com/Softwareprojekt/Sisyphus/blob/dev/_organisation/_process/CodingGuideline.docx), system analysis, [test cases](https://github.com/Softwareprojekt/Sisyphus/tree/dev/_source/_analysis/Test%20Cases) are only available in German. 
@@ -20,10 +20,9 @@ In Sisyphus the Model View Controller pattern is used. The program code is locat
 
 
 ### Run
-You can use Visual Studio 2012 or higher to built and run the Sisyphus executable for Windows.
-The whole project uses one Visual Studio project file (Root.sln), which can be found below ./_wsp/_vs/Root.sln
+Sisyphus can be built and run with Visual Studio 2012 or higher. The whole project uses one Visual Studio project file (Root.sln), which can be found below ./_wsp/_vs/Root.sln
 
-Currently the application is not Mono compatible. 
+Currently the application is not compatible with Mono. 
 
 ## License
 [GPL2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
