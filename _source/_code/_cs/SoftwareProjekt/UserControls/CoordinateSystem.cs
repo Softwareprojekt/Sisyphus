@@ -325,7 +325,7 @@ namespace SoftwareProjekt.UserControls
         {
             PointF p = CalculateExternalCoordinates(e.X, e.Y);
 
-            if (p.X == -1 || p.Y == -1)
+            if (float.IsNaN(p.X) || float.IsNaN(p.Y))
             {
 #if DEBUG
                 Console.WriteLine("INFO @ CoordinateSystem_MouseClick: Outside valid range!\n");
@@ -336,7 +336,7 @@ namespace SoftwareProjekt.UserControls
             float roundY = (float)Math.Round(p.Y, 1, MidpointRounding.AwayFromZero);
 
 #if DEBUG            
-            Console.WriteLine("SUCCESS @ CoordinateSystem_MouseClick: X: " + roundX.ToString() + "\nY: " + roundY.ToString() + "\n");
+            Console.WriteLine("SUCCESS @ CoordinateSystem_MouseClick: X: " + roundX.ToString() + "\tY: " + roundY.ToString() + "\n");
 #endif
 
             if (this.CoordinateClick != null)
