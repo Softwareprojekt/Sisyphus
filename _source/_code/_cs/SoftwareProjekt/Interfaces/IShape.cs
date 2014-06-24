@@ -22,6 +22,7 @@
 using SoftwareProjekt.Classes.Math;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -32,5 +33,7 @@ namespace SoftwareProjekt.Interfaces
         void Translate(Vector vector);
 
         void Scale(float vector);
+
+        Pen Color{ get; set;}
     }
 }
