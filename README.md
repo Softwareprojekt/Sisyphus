@@ -5,7 +5,7 @@ Sisyphus is a Software Project of computer engineering students from the OTH Amb
 
 Sisyphus lets students create exercise books with different kind of exercises. Exercises give the students the possibility to enter different kind of parameters, to calculate resulting vectors, affine transformations, fractals or other results. Each type of exercise gives different instructions to the learning student to follow. 
 
-Sisyphus is written in C sharp and uses Windows Forms as graphical interface. Our familiarity with this technology and restricted time, made it the best choice for us. Furthermore we were advised to develop something from the ground up.
+Sisyphus is written in C# and uses Windows Forms. Our familiarity with this technology and restricted time, made it the best choice for us. Furthermore we were advised to develop something from the ground up.
 
 A good part of the project consists of documentation. A primary aim of the project was for us to become more familiar with software development processes.
 
@@ -20,9 +20,10 @@ In Sisyphus the Model View Controller pattern is used. The program code is locat
 
 
 ### Run
-Sisyphus can be built and run with Visual Studio 2012 or higher. The whole project uses one Visual Studio project file (Root.sln), which can be found below ./_wsp/_vs/Root.sln
+Sisyphus can be built and run with Visual Studio 2012 or higher. The whole project uses one Visual Studio project file, which can be found below ./_wsp/_vs/Root.sln
 
-Currently the application is not compatible with Mono. 
+Sisyphus is also compatible with Mono under Windows. But the Mono-compiled executable does not work correctly under Mac and Linux due to a DllNotFound exception (Gdi32.dll issue). 
+These issues could be solved, but don't have a high priority for us.
 
 ## License
 [GPL2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
