@@ -21,43 +21,49 @@
 using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Classes.Math;
 using SoftwareProjekt.Interfaces;
-
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SoftwareProjekt.Exercises
 {
     class HinterLinAbb : AbstractExercise
     {
+        public HinterLinAbb()
+        {
+            this.Id = Enums.EExercises.HintereinanderausfLinAbb;
+        }
+
         protected override void DoWork(IView view)
         {
-            Dictionary<string, Object> dict = null;
+            Dictionary<string, Object> inputData = null;
 
             // get data needed for calculations.
-            dict = view.GetInputData();
+            inputData = view.GetInputData();
 
-            // check dict
-            if (!dict.ContainsKey("Matrix1") || !dict.ContainsKey("Matrix2") || !dict.ContainsKey("Vector1"))
+            // check inputData
+            if (!inputData.ContainsKey("MatrixM1") || !inputData.ContainsKey("MatrixM2") || !inputData.ContainsKey("VectorX"))
             {
                 return;
             }
 
-            // inputs...
-            Matrix m = (Matrix)dict["Matrix1"];
-            Matrix m2 = (Matrix)dict["Matrix2"];
-
-            Vector v = (Vector)dict["Vector1"];
-
             // calculate...
+            Matrix inputM1 = (Matrix)inputData["MatrixM1"];
+            Matrix inputM2 = (Matrix)inputData["MatrixM2"];
+
+            Vector inputX = (Vector)inputData["VectorX"];
+
+            Dictionary<string, Object> outputData = new Dictionary<string, object>();
+
             // This Vector must be shown in the second Coordinate System
-            v.Multiply(m);
+            Vector outputX1 = Vector.Multiply(inputX, inputM1);
             // This Vecotr must be shown in the third Coordinate System
-            v.Multiply(m2);
+            Vector outputX2 = Vector.Multiply(outputX1, inputM2);
+
+            outputData.Add("VectorX1", outputX1);
+            outputData.Add("VectorX2", outputX2);
 
             // call base dowork and pass the calculated data.
-            base.Finalize(new ExerciseEventArgs(dict));
+            base.Finalize(new ExerciseEventArgs(outputData));
         }
     }
 }
