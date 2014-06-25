@@ -7,13 +7,24 @@ using System.Text;
 
 namespace SoftwareProjekt.Classes.Math
 {
-    class Triangle : IShape
+    public class Triangle : IShape
     {
-        private Pen _color;
         private List<LineSegment> _segmentList;
         public LineSegment AB { get; private set; }
         public LineSegment BC { get; private set; }
         public LineSegment CA { get; private set; }
+
+        public List<PointF> PointList
+        {
+            get
+            {
+                List<PointF> list = new List<PointF>();
+                list.Add(this.AB.StartPoint);
+                list.Add(this.BC.StartPoint);
+                list.Add(this.CA.StartPoint);
+                return list;
+            }
+        }
         public Triangle(PointF a, PointF b, PointF c)
         {
             Vector ab = new Vector(b.X - a.X, b.Y - a.Y);
@@ -24,14 +35,18 @@ namespace SoftwareProjekt.Classes.Math
 
             Vector ac = new Vector(a.X - c.X, a.Y - c.Y);
             this.CA = new LineSegment(c, ac);
-            
+
             _segmentList = new List<LineSegment>();
-            _segmentList.Add(AB);
-            _segmentList.Add(BC);
-            _segmentList.Add(CA);
+            _segmentList.Add(this.AB);
+            _segmentList.Add(this.BC);
+            _segmentList.Add(this.CA);
             this.Color = new Pen(System.Drawing.Color.Black);
         }
-
+        public Triangle(PointF a, PointF b, PointF c, Pen color)
+            : this(a, b, c)
+        {
+            this.Color = color;
+        }
         public Triangle()
         {
             this.AB = new LineSegment();
@@ -44,16 +59,16 @@ namespace SoftwareProjekt.Classes.Math
             this.Color = new Pen(System.Drawing.Color.Black);
         }
 
-        static public IShape Translate(IShape shape, Vector vector)
+        static public Triangle Translate(Triangle shape, Vector vector)
         {
-            Triangle tri = new Triangle();
+            Triangle tri = new Triangle(shape.PointList[0], shape.PointList[1], shape.PointList[2], shape.Color);
             tri.Translate(vector);
             return tri;
         }
 
-        static public IShape Scale(IShape shape, float vector)
+        static public Triangle Scale(Triangle shape, float vector)
         {
-            Triangle tri = new Triangle();
+            Triangle tri = new Triangle(shape.PointList[0],shape.PointList[1],shape.PointList[2],shape.Color);
             tri.Scale(vector);
             return tri;
         }
@@ -80,20 +95,6 @@ namespace SoftwareProjekt.Classes.Math
             this.CA.StartPoint = this.BC.EndPoint;
         }
 
-        public Pen Color
-        {
-            get
-            {
-                return _color;
-            }
-            set
-            {
-                _color = value;
-                foreach (LineSegment segment in _segmentList)
-                {
-                    segment.Color = value;
-                }
-            }
-        }
+        public Pen Color { get; set; }
     }
 }

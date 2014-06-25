@@ -25,6 +25,7 @@ using SoftwareProjekt.Enums;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 
@@ -48,28 +49,36 @@ namespace SoftwareProjekt.Forms
             _radTriangle.Checked = true;
         }
 
+      
+
         private void rad_CheckedChanged(object sender, EventArgs e)
         {
+            this._cosInput.BackgroundImage = null;
+            this._cosOutput.BackgroundImage = null;
             if (_radTriangle.Checked)
             {
                 // paint triangle to input cod.
                 Console.WriteLine("paint triangle.");
 
-                _cosInput.ClearLineSegments();
+                _cosInput.Clear();
+                _cosOutput.Clear();
+              
+                Triangle tri = new Triangle(new PointF(0, 0), new PointF(2, 0), new PointF(0, 2));
 
-                //LineSegment ls1 = new LineSegment(new PointF(0, 0), new Vector(2, 0), Pens.Red);
-                //LineSegment ls2 = new LineSegment(new PointF(2, 0), new Vector(-2, 2), Pens.Red);
-                //LineSegment ls3 = new LineSegment(new PointF(0, 2), new Vector(0, -2), Pens.Red);
+                Triangle tri1 = Triangle.Scale(tri, .5f);
+                tri1.Translate(new Vector(1, 0));
+                Triangle tri2 = Triangle.Scale(tri, .5f);
+                tri2.Translate(new Vector(0, 1));
+                Triangle tri3 = Triangle.Scale(tri, .5f);
+                tri3.Translate(new Vector(0, 0));
 
-                Triangle tri = new Triangle(new PointF(1, 1), new PointF(3, 1), new PointF(2, 2));
-                tri.Translate(new Vector(1, 0)); //move one right
-                tri.Scale(1.5f); //make 50% bigger
 
-                _cosInput.AddLineSegment(tri.AB);
-                _cosInput.AddLineSegment(tri.BC);
-                _cosInput.AddLineSegment(tri.CA);
+                _cosInput.AddTriangle(tri);
 
-                _cosInput.Refresh();
+                _cosOutput.AddTriangle(tri1);
+                _cosOutput.AddTriangle(tri2);
+                _cosOutput.AddTriangle(tri3);
+
 
                 if (_loadedPic != null)
                 {
@@ -81,19 +90,10 @@ namespace SoftwareProjekt.Forms
             {
                 Console.WriteLine("paint square.");
 
-                _cosInput.ClearLineSegments();
+                _cosInput.Clear();
+                RectangleC r = new RectangleC(new PointF(0, 0), new PointF(2, 0), new PointF(2, 2), new PointF(0, 2), new Pen(Color.Red));
+                _cosInput.AddRectangle(r);
 
-                LineSegment ls1 = new LineSegment(new PointF(0, 0), new Vector(2, 0), Pens.Red);
-                LineSegment ls2 = new LineSegment(new PointF(2, 0), new Vector(0, 2), Pens.Red);
-                LineSegment ls3 = new LineSegment(new PointF(2, 2), new Vector(-2, 0), Pens.Red);
-                LineSegment ls4 = new LineSegment(new PointF(0, 2), new Vector(0, -2), Pens.Red);
-
-                _cosInput.AddLineSegment(ls1);
-                _cosInput.AddLineSegment(ls2);
-                _cosInput.AddLineSegment(ls3);
-                _cosInput.AddLineSegment(ls4);
-
-                _cosInput.Refresh();
 
                 if (_loadedPic != null)
                 {
@@ -105,11 +105,9 @@ namespace SoftwareProjekt.Forms
             {
                 Console.WriteLine("paint circle.");
 
-                _cosInput.ClearLineSegments();
-
-                //TODO: add circle?!
-
-                _cosInput.Refresh();
+                _cosInput.Clear();
+                Circle c = new Circle(new PointF(2, 2), 2, new Pen(Color.Green));
+                _cosInput.AddCircle(c);
 
                 if (_loadedPic != null)
                 {
@@ -139,10 +137,42 @@ namespace SoftwareProjekt.Forms
             _radCircle.Checked = false;
 
             //show picture selection dialog.
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = "c:\\";
+            ofd.Filter = "JPG|*.jpg;*.jpeg|BMP|*.bmp|GIF|*.gif|PNG|*.png|TIFF|*.tif;*.tiff|"
+                                                        + "All Graphics Types|*.bmp;*.jpg;*.jpeg;*.png;*.tif;*.tiff";
+            ofd.FilterIndex = 1;
+            ofd.RestoreDirectory = true;
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Bitmap img = new Bitmap(ofd.FileName);
+                    Graphics g = Graphics.FromImage((Image)img);
+                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+                    g.DrawImage(img, 0, 0, _cosInput.Width, _cosInput.Height);
+                    g.Dispose();
+
+                    img.MakeTransparent();
+
+
+                    _loadedPic = (Image)img;
+                    _cosInput.BackgroundImage = _loadedPic;
+                    _cosOutput.BackgroundImage = _loadedPic;
+                    _cosInput.Clear();
+                    _cosOutput.Clear();
+                }
+                catch
+                {
+                    MessageBox.Show("Could not load image.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }     
+
+            }
         }
 
         private void butCalc_Click(object sender, EventArgs e)
-        {
+        {           
             if (this.CheckInputs())
             {
                 this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));

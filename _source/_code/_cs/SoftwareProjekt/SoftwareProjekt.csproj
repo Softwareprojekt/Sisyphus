@@ -72,7 +72,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Math\Circle.cs" />
     <Compile Include="Classes\Math\DrawingPoint.cs" />
+    <Compile Include="Classes\Math\RectangleC.cs" />
     <Compile Include="Classes\Math\Triangle.cs" />
     <Compile Include="Classes\Xml\MathXmlGenerator.cs" />
     <Compile Include="Enums\EInputForms.cs" />

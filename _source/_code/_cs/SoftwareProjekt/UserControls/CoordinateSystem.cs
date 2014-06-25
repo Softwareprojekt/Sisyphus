@@ -36,6 +36,9 @@ namespace SoftwareProjekt.UserControls
         /// </summary>
         private List<LineSegment> _lineSegmentList;
         private List<Line> _lineList;
+        private List<Triangle> _triangleList;
+        private List<RectangleC> _rectangleList;
+        private List<Circle> _circleList;
 
         private IAxis _xAxis;
         private IAxis _yAxis;
@@ -52,6 +55,9 @@ namespace SoftwareProjekt.UserControls
             _lineList = new List<Line>();
             _lineSegmentList = new List<LineSegment>();
             _pointsList = new List<PointF>();
+            _rectangleList = new List<RectangleC>();
+            _circleList = new List<Circle>();
+            _triangleList = new List<Triangle>();
 
 
             InitializeComponent();
@@ -83,9 +89,85 @@ namespace SoftwareProjekt.UserControls
 
         /// <summary>
         /// </summary>
+        
+        private void invokeRefresh()
+        {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new Action(() => this.invokeRefresh()));
+            }
+            this.Refresh();    
+        }
+
         public void AddLineSegment(LineSegment lineSegment)
         {
             _lineSegmentList.Add(lineSegment);
+            this.invokeRefresh();
+        }
+
+        public void AddTriangle(Triangle triangle)
+        {
+            _triangleList.Add(triangle);
+            this.invokeRefresh();
+        }
+
+        public void AddRectangle(RectangleC rectangle)
+        {
+            _rectangleList.Add(rectangle);
+            this.invokeRefresh();
+        }
+        public void AddCircle(Circle circle)
+        {
+            _circleList.Add(circle);
+            this.invokeRefresh();
+        }
+
+        public void RemoveTriangle(Triangle triangle)
+        {
+            _triangleList.Remove(triangle);
+            this.invokeRefresh();
+        }
+
+        public void RemoveRectangle(RectangleC rectangle)
+        {
+            _rectangleList.Remove(rectangle);
+            this.invokeRefresh();
+        }
+        public void RemoveCircle(Circle circle)
+        {
+            _circleList.Remove(circle);
+            this.invokeRefresh();
+        }
+
+        public void ClearTriangles()
+        {
+            _triangleList.Clear();
+            this.invokeRefresh();
+        }
+
+        public void ClearRectangles()
+        {
+            _rectangleList.Clear();
+            this.invokeRefresh();
+        }
+        public void ClearCircles()
+        {
+            _circleList.Clear();
+            this.invokeRefresh();
+        }
+
+        /// <summary>
+        /// Removes all drawings in the CoordinateSystem
+        /// </summary>
+        public void Clear()
+        {
+            _pointsList.Clear();
+            _lineList.Clear();
+            _lineSegmentList.Clear();
+            _triangleList.Clear();
+            _rectangleList.Clear();
+            _circleList.Clear();
+            this.invokeRefresh();
         }
 
         /// <summary>
@@ -205,8 +287,9 @@ namespace SoftwareProjekt.UserControls
 
             g.Transform = mRot;
 
-            Pen localPen = new Pen(ls.Color.Color, 0.4f);
+            Pen localPen = new Pen(ls.Color.Color, 0.4f);            
             float lengthOfLine = (float)Math.Sqrt((float)Math.Pow(Math.Abs(internalEndPoint.X - internalStartPoint.X), 2.0f) + Math.Pow(Math.Abs(internalEndPoint.Y - internalStartPoint.Y), 2.0f));
+
             localPen.DashPattern = new float[] { 10.0f, lengthOfLine - 10.0f };
             localPen.DashStyle = DashStyle.Custom;
 
@@ -355,10 +438,55 @@ namespace SoftwareProjekt.UserControls
         /// </summary>
         void CoordinateSystem_Paint(object sender, PaintEventArgs e)
         {
+            //e.Graphics.Clear(Color.White);
             DrawAxes(e.Graphics);
             DrawVector(e.Graphics);
             DrawLine(e.Graphics);
             DrawPoints(e.Graphics);
+            DrawRectangle(e.Graphics);
+            DrawTriangle(e.Graphics);
+            DrawCircle(e.Graphics);
+
+        }
+
+        private void DrawCircle(Graphics graphics)
+        {
+            foreach (Circle c in _circleList)
+            {
+                PointF pf = CalculateInternalCoordinates(c.Rectangle.X, c.Rectangle.Y);
+                Point p = new Point((int)pf.X, (int)pf.Y);
+                pf = CalculateInternalCoordinates(c.Rectangle.Size.Width, c.Rectangle.Size.Height);
+                Point  pref = new Point((int)pf.X, -(int)pf.Y);
+
+                Rectangle r = new Rectangle(p.X, p.Y, pref.X - p.X, -(pref.X - p.X)); 
+                graphics.FillEllipse(c.Color.Brush, r);
+            }
+        }
+
+        private void DrawTriangle(Graphics graphics)
+        {
+            foreach (Triangle t in _triangleList)
+            {
+                List<PointF> l = new List<PointF>();
+                foreach (PointF item in t.PointList)
+                {
+                    l.Add(CalculateInternalCoordinates(item.X, item.Y));
+                }
+                graphics.FillPolygon(t.Color.Brush, l.ToArray());
+            }
+        }
+
+        private void DrawRectangle(Graphics graphics)
+        {
+            foreach (RectangleC r in _rectangleList)
+            {
+                List<PointF> l = new List<PointF>();
+                foreach (PointF item in r.PointList)
+                {
+                    l.Add(CalculateInternalCoordinates(item.X, item.Y));
+                }
+                graphics.FillPolygon(r.Color.Brush, l.ToArray());
+            }
         }
 
         /// <summary>
