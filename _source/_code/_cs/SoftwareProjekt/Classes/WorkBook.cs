@@ -201,7 +201,6 @@ namespace SoftwareProjekt.Classes
                     {
                         Bitmap pic = new Bitmap(filename);
                         item.Screenshot = (Image)pic;
-                        pic.Dispose();
                     }
                 }
                 catch (Exception)
@@ -339,6 +338,25 @@ namespace SoftwareProjekt.Classes
             {
                 return;
             }
+
+            WorkbookEntry entry1 = null;
+            foreach (WorkbookEntry entry in _workbookEntryList)
+            {
+                if (entry.ExerciseID == id)
+                {
+                    entry1 = entry;
+                    entry.State = state;
+                    break;
+                }
+            }
+            try
+            {
+                 this.Save();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Could not save the Workbook", "Workbook", MessageBoxButtons.OK);
+            }
             string dir = Path.Combine(_folderName, _username);
             if (!Directory.Exists(dir))
             {
@@ -351,35 +369,20 @@ namespace SoftwareProjekt.Classes
             aview.DrawToBitmap(pic, r);
             try
             {
+                if (entry1 != null)
+                {
+                    entry1.Screenshot.Dispose();
+                }
                 if (File.Exists(filename))
                 {
                     File.Delete(filename);
                 }
                 pic.Save(filename);
-                pic.Dispose();
+                entry1.Screenshot = (Image)pic;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Could not save the form.\n" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            foreach (WorkbookEntry entry in _workbookEntryList)
-            {
-                if (entry.ExerciseID == id)
-                {
-                    entry.State = state;
-                    entry.Screenshot = (Image)pic;
-                    break;
-                }
-            }
-           
-            try
-            {
-                 this.Save();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Could not save the Workbook", "Workbook", MessageBoxButtons.OK);
             }
 
         }
