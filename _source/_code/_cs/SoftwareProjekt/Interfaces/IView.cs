@@ -23,6 +23,7 @@ using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Delegates;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace SoftwareProjekt.Interfaces
 {
@@ -64,5 +65,11 @@ namespace SoftwareProjekt.Interfaces
         /// Calls GetInputData() internally.
         /// </summary>
         Dictionary<string, Object> SaveState();
+        /// <summary>
+        /// Supports rendering to the specified bitmap.
+        /// </summary>
+        /// <param name="bitmap"></param>
+        /// <param name="targetBounds"></param>
+        void DrawToBitmap(Bitmap bitmap, Rectangle targetBounds);
     }
 }

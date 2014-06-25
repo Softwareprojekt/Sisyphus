@@ -95,6 +95,7 @@ namespace SoftwareProjekt.UserControls
             if (this.InvokeRequired)
             {
                 this.BeginInvoke(new Action(() => this.invokeRefresh()));
+                return;
             }
             this.Refresh();    
         }

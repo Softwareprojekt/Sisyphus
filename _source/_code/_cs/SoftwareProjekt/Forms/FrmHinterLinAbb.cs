@@ -79,9 +79,6 @@ namespace SoftwareProjekt.Forms
 
             cosOutput1.AddLineSegment(_vectorOutputX1);
             cosOutput2.AddLineSegment(_vectorOutputX2);
-
-            cosOutput1.Refresh();
-            cosOutput2.Refresh();
         }
 
         private void butFx_Click(object sender, EventArgs e)

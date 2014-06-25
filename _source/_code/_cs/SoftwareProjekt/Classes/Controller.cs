@@ -126,7 +126,7 @@ namespace SoftwareProjekt.Classes
         {
             IExercise exercise = _exerciseList[view];
             // save state of exercise in workbook.
-            Workbook.Instance.SetEntryState(exercise.Id, view.SaveState());
+            Workbook.Instance.SetEntryState(exercise.Id, view.SaveState(), view);
 
             // disconnect and dispose view before releasing reference.
             view.ViewChanged -= HandleViewChanged;

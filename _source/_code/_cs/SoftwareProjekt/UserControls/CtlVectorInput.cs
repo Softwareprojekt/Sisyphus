@@ -61,7 +61,9 @@ namespace SoftwareProjekt.UserControls
                     Console.WriteLine("Invoking Vector Refresh");
 #endif
                     this.BeginInvoke(new Action(() => Refresh()));
+                    return;
                 }
+                this.Refresh();
             }
         }
 

@@ -26,12 +26,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using SoftwareProjekt.Classes.Math;
+using System.Drawing.Drawing2D;
 
 namespace SoftwareProjekt.UserControls.Workbook
 {
     public class WorkbookEntry : UserControl
     {
         private Dictionary<string, Object> _state;
+        private PictureBox _picBox;
         /// <summary>
         /// ctor
         /// </summary>
@@ -41,8 +43,23 @@ namespace SoftwareProjekt.UserControls.Workbook
             CreationDate = DateTime.Now;
             Started = false;
             _state = new Dictionary<string, object>();
+            this.Click += WorkbookEntry_Click;
+            this.MouseEnter += WorkbookEntry_MouseEnter;
+            this.MouseLeave += WorkbookEntry_MouseLeave;        
         }
 
+        
+
+        void WorkbookEntry_MouseLeave(object sender, EventArgs e)
+        {
+            this.ParentForm.Cursor = Cursors.Default;
+        }
+
+        void WorkbookEntry_MouseEnter(object sender, EventArgs e)
+        {
+            this.ParentForm.Cursor = Cursors.Hand;
+            
+        }
         public DateTime CreationDate
         {
             get;
@@ -81,6 +98,15 @@ namespace SoftwareProjekt.UserControls.Workbook
             set;
         }
 
+        public PictureBox PictureBox
+        {
+            set
+            {
+                _picBox = value;
+            }
+        }
+        public Image Screenshot { get; set; }
+
         private void InitializeComponent()
         {
             this.SuspendLayout();
@@ -94,41 +120,104 @@ namespace SoftwareProjekt.UserControls.Workbook
 
         void WorkBookControl_Paint(object sender, PaintEventArgs e)
         {
-            string firstHalf = this.ExerciseID.ToString();
-            string secondHalf = this.CreationDate.ToString();
-            if (this.State != null)
+            string firstHalf = "";
+            switch (this.ExerciseID)
             {
-                Dictionary<string, object>.Enumerator enumerator = this.State.GetEnumerator();
-                while (enumerator.MoveNext())
-                {
-                    if (enumerator.Current.Value.GetType() == (typeof(string)))
-                    {
-                        firstHalf += "\n" + "Notizen:\n" + (string)enumerator.Current.Value;
-                    }
-                    if (enumerator.Current.Value.GetType() == (typeof(Matrix)))
-                    {
-                        Matrix m = (Matrix)enumerator.Current.Value;
-                        secondHalf += "\n" + "Matrix: (" + m.X11 + ", " + m.X12 + ", " + m.X21 + ", " + m.X22 + ")\n";
-                    }
-                    if (enumerator.Current.Value.GetType() == (typeof(Vector)))
-                    {
-                        Vector v = (Vector)enumerator.Current.Value;
-                        secondHalf += "\n" + "Vector: (" + v.X1 + ", " + v.X2 + ")\n";
-                    }
-
-                    if (enumerator.Current.Value.GetType() == (typeof(float)))
-                    {
-                        secondHalf += "\n" + "Value:\n" + (float)enumerator.Current.Value;
-                    }
-                }
+                case SoftwareProjekt.Enums.EExercises.ZuordnungsvorschriftLinAbb:
+                    firstHalf = "Zuordungsvorschrift Linare Abbildung";
+                    break;
+                case SoftwareProjekt.Enums.EExercises.LinAbbAusSumBelVek:
+                    firstHalf = "Lineare Abbildung aus Summe belibiger Vektoren";
+                    break;
+                case SoftwareProjekt.Enums.EExercises.LinAbbMitVielfachemBelVek:
+                    firstHalf = "Lineare Abbildung mit vielfachem belibiger Vektoren";
+                    break;
+                case SoftwareProjekt.Enums.EExercises.HintereinanderausfLinAbb:
+                    firstHalf = "Hintereinaderausführung Linarer Abbildungen";
+                    break;
+                case SoftwareProjekt.Enums.EExercises.UmkehrungLinAbb:
+                    firstHalf = "Umkerung Lineare Abbildung";
+                    break;
+                case SoftwareProjekt.Enums.EExercises.DrehungLinAbbUmUrsprung:
+                    firstHalf = "Drehung einer linearen Abbildung um den Urspung";
+                    break;
+                case SoftwareProjekt.Enums.EExercises.SpiegelungLinAbbanUrspungsgeraden:
+                    firstHalf = "Spiegelung einer linearen Abbildung an einer Ursprungsgeraden";
+                    break;
+                case SoftwareProjekt.Enums.EExercises.ZuordungsvorschriftEinerAffAbb:
+                    firstHalf = "Zuordnungsvorschrift einer affinen Abbildungen";
+                    break;
+                case SoftwareProjekt.Enums.EExercises.FraktalerzeugungMitIFS:
+                    firstHalf = "Fraktalerzeugung mit IFS";
+                    break;
+                default:
+                    break;
             }
+            firstHalf += "\n\nZuletzt geändert:\n" + this.CreationDate.ToString();
+            //string secondHalf = this.CreationDate.ToString();
+            
+            //if (this.State != null)
+            //{
+            //    Dictionary<string, object>.Enumerator enumerator = this.State.GetEnumerator();
+            //    while (enumerator.MoveNext())
+            //    {
+            //        if (enumerator.Current.Value.GetType() == (typeof(string)))
+            //        {
+            //            firstHalf += "\n" + "Notizen:\n" + (string)enumerator.Current.Value;
+            //        }
+            //        if (enumerator.Current.Value.GetType() == (typeof(SoftwareProjekt.Classes.Math.Matrix)))
+            //        {
+            //            SoftwareProjekt.Classes.Math.Matrix m = (SoftwareProjekt.Classes.Math.Matrix)enumerator.Current.Value;
+            //            secondHalf += "\n" + "Matrix: (" + m.X11 + ", " + m.X12 + ", " + m.X21 + ", " + m.X22 + ")\n";
+            //        }
+            //        if (enumerator.Current.Value.GetType() == (typeof(Vector)))
+            //        {
+            //            Vector v = (Vector)enumerator.Current.Value;
+            //            secondHalf += "\n" + "Vector: (" + v.X1 + ", " + v.X2 + ")\n";
+            //        }
+
+            //        if (enumerator.Current.Value.GetType() == (typeof(float)))
+            //        {
+            //            secondHalf += "\n" + "Value:\n" + (float)enumerator.Current.Value;
+            //        }
+            //    }
+            //}
             Graphics g = e.Graphics;
             Font drawFont = new Font("Arial", 12);
-            SolidBrush drawBrush = new SolidBrush(Color.Black);
+            SolidBrush drawBrush;
+            if (Started)
+            {
+                drawBrush = new SolidBrush(Color.Blue);
+            }
+            else
+            {
+                drawBrush = new SolidBrush(Color.Black);
+            }
             this.Width = this.Parent.Width - 100;
             g.DrawRectangle(Pens.Black, 0, 0, this.Width - 1, this.Height - 1); //draw a frame
-            g.DrawString(firstHalf, drawFont, drawBrush, new Rectangle(10, 10, this.Width / 2, this.Height - 1)); //draw Exercisename (first half of control)
-            g.DrawString(secondHalf, drawFont, drawBrush, new Rectangle(this.Width / 2 + 1, 10, this.Width - 1, this.Height - 1));    //draw Date (second half of control)
+            g.DrawString(firstHalf, drawFont, drawBrush, new Rectangle(10, 10, this.Width - 10, this.Height - 1)); //draw Exercisename (first half of control)
+            //g.DrawString(secondHalf, drawFont, drawBrush, new Rectangle(this.Width / 2 + 1, 10, this.Width - 1, this.Height - 1));    //draw Date (second half of control)
+
+        }
+        void WorkbookEntry_Click(object sender, EventArgs e)
+        {
+            if (this.Screenshot == null)
+            {
+                return;
+            }
+
+            var ratioX = (double)_picBox.Width / this.Screenshot.Width;
+            var ratioY = (double)_picBox.Height / this.Screenshot.Height;
+            var ratio = Math.Min(ratioX, ratioY);
+
+            var newWidth = (int)(this.Screenshot.Width * ratio);
+            var newHeight = (int)(this.Screenshot.Height * ratio);
+
+            var newImage = new Bitmap(newWidth, newHeight);
+            Graphics.FromImage(newImage).DrawImage(this.Screenshot, 0, 0, newWidth, newHeight);
+
+            _picBox.Image = newImage;
+            _picBox.Refresh();
         }
 
     }

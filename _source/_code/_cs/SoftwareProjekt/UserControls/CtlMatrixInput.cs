@@ -60,7 +60,9 @@ namespace SoftwareProjekt.UserControls
                     Console.WriteLine("Invoking Matrix Refresh");
 #endif
                     this.BeginInvoke(new Action(() => Refresh()));
+                    return;
                 }
+                this.Refresh();
             }
         }
 

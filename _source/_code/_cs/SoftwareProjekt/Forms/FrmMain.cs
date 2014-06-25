@@ -20,6 +20,7 @@
 #endregion
 
 using SoftwareProjekt.UserControls.MindMap;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SoftwareProjekt.Forms
@@ -36,12 +37,13 @@ namespace SoftwareProjekt.Forms
         private TextBox textPassword;
         private TextBox txtUser;
         private FlowLayoutPanel flpWorkbook;
+        private PictureBox picWorkbook;
         private TabPage tabProtectArea;
 
         public FrmMain()
         {
             InitializeComponent();
-            SoftwareProjekt.Classes.Workbook.Instance.AddEntries(flpWorkbook.Controls);
+            SoftwareProjekt.Classes.Workbook.Instance.AddEntries(flpWorkbook.Controls, picWorkbook);  
         }
 
         public CtlMindMap MindMap
@@ -60,15 +62,17 @@ namespace SoftwareProjekt.Forms
             this.tabMainMenu = new System.Windows.Forms.TabControl();
             this.tabMenu = new System.Windows.Forms.TabPage();
             this.tabNotebook = new System.Windows.Forms.TabPage();
+            this.picWorkbook = new System.Windows.Forms.PictureBox();
+            this.flpWorkbook = new System.Windows.Forms.FlowLayoutPanel();
             this.tabProtectArea = new System.Windows.Forms.TabPage();
             this.grpLogin = new System.Windows.Forms.GroupBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.textPassword = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
-            this.flpWorkbook = new System.Windows.Forms.FlowLayoutPanel();
             this.tabMainMenu.SuspendLayout();
             this.tabNotebook.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picWorkbook)).BeginInit();
             this.tabProtectArea.SuspendLayout();
             this.grpLogin.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +100,7 @@ namespace SoftwareProjekt.Forms
             // 
             // tabNotebook
             // 
+            this.tabNotebook.Controls.Add(this.picWorkbook);
             this.tabNotebook.Controls.Add(this.flpWorkbook);
             this.tabNotebook.Location = new System.Drawing.Point(4, 22);
             this.tabNotebook.Name = "tabNotebook";
@@ -104,6 +109,28 @@ namespace SoftwareProjekt.Forms
             this.tabNotebook.TabIndex = 1;
             this.tabNotebook.Text = "Arbeitsheft";
             this.tabNotebook.UseVisualStyleBackColor = true;
+            // 
+            // picWorkbook
+            // 
+            this.picWorkbook.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.picWorkbook.Location = new System.Drawing.Point(7, 7);
+            this.picWorkbook.Name = "picWorkbook";
+            this.picWorkbook.Size = new System.Drawing.Size(897, 623);
+            this.picWorkbook.TabIndex = 1;
+            this.picWorkbook.TabStop = false;
+            // 
+            // flpWorkbook
+            // 
+            this.flpWorkbook.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpWorkbook.AutoScroll = true;
+            this.flpWorkbook.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpWorkbook.Location = new System.Drawing.Point(910, 3);
+            this.flpWorkbook.Name = "flpWorkbook";
+            this.flpWorkbook.Size = new System.Drawing.Size(310, 630);
+            this.flpWorkbook.TabIndex = 0;
+            this.flpWorkbook.WrapContents = false;
             // 
             // tabProtectArea
             // 
@@ -129,19 +156,14 @@ namespace SoftwareProjekt.Forms
             this.grpLogin.TabStop = false;
             this.grpLogin.Text = "Login";
             // 
-            // txtUser
+            // lblPassword
             // 
-            this.txtUser.Location = new System.Drawing.Point(90, 37);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(100, 20);
-            this.txtUser.TabIndex = 0;
-            // 
-            // textPassword
-            // 
-            this.textPassword.Location = new System.Drawing.Point(90, 63);
-            this.textPassword.Name = "textPassword";
-            this.textPassword.Size = new System.Drawing.Size(100, 20);
-            this.textPassword.TabIndex = 1;
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(6, 66);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(53, 13);
+            this.lblPassword.TabIndex = 3;
+            this.lblPassword.Text = "Passwort:";
             // 
             // lblUser
             // 
@@ -152,25 +174,19 @@ namespace SoftwareProjekt.Forms
             this.lblUser.TabIndex = 2;
             this.lblUser.Text = "Benutzername:";
             // 
-            // lblPassword
+            // textPassword
             // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(6, 66);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(53, 13);
-            this.lblPassword.TabIndex = 3;
-            this.lblPassword.Text = "Passwort:";
+            this.textPassword.Location = new System.Drawing.Point(90, 63);
+            this.textPassword.Name = "textPassword";
+            this.textPassword.Size = new System.Drawing.Size(100, 20);
+            this.textPassword.TabIndex = 1;
             // 
-            // flowLayoutPanel1
+            // txtUser
             // 
-            this.flpWorkbook.AutoScroll = true;
-            this.flpWorkbook.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpWorkbook.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpWorkbook.Location = new System.Drawing.Point(3, 3);
-            this.flpWorkbook.Name = "flowLayoutPanel1";
-            this.flpWorkbook.Size = new System.Drawing.Size(1217, 630);
-            this.flpWorkbook.TabIndex = 0;
-            this.flpWorkbook.WrapContents = false;
+            this.txtUser.Location = new System.Drawing.Point(90, 37);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(100, 20);
+            this.txtUser.TabIndex = 0;
             // 
             // FrmMain
             // 
@@ -181,12 +197,15 @@ namespace SoftwareProjekt.Forms
             this.Text = "Hauptfenster";
             this.tabMainMenu.ResumeLayout(false);
             this.tabNotebook.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picWorkbook)).EndInit();
             this.tabProtectArea.ResumeLayout(false);
             this.grpLogin.ResumeLayout(false);
             this.grpLogin.PerformLayout();
             this.ResumeLayout(false);
 
         }
+
+      
         /*
                 private void öffnenToolStripMenuItem_Click(object sender, EventArgs e)
                 {

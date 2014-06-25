@@ -19,21 +19,19 @@
  */
 #endregion
 
-using SoftwareProjekt.Classes.Xml;
-using SoftwareProjekt.UserControls.MindMap;
 using SoftwareProjekt.UserControls.Workbook;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System;
 using System.IO;
 using System.Xml;
-using System.Xml.Serialization;
 using SoftwareProjekt.Classes.Math;
+using System.Drawing;
 
 namespace SoftwareProjekt.Classes
 {
     public class Workbook
-    {        
+    {
         private static Workbook _instance = null;
         private string _username;
         private readonly string _folderName = null;
@@ -43,10 +41,10 @@ namespace SoftwareProjekt.Classes
             _folderName = Path.Combine(Directory.GetCurrentDirectory(), "Workbooks");
 
             _workbookEntryList = new List<WorkbookEntry>(Enum.GetNames(typeof(Enums.EExercises)).Length);
-            for (int i = 1; i < _workbookEntryList.Capacity; i++)
+            for (int i = 1; i < _workbookEntryList.Capacity + 1; i++)
             {
                 WorkbookEntry entry = new WorkbookEntry();
-                entry.ExerciseID =  (Enums.EExercises)i;
+                entry.ExerciseID = (Enums.EExercises)i;
 
                 _workbookEntryList.Add(entry);
             }
@@ -60,7 +58,7 @@ namespace SoftwareProjekt.Classes
             }
             set
             {
-                _username = value;
+                _username = value;               
                 try
                 {
                     this.Load();
@@ -69,7 +67,7 @@ namespace SoftwareProjekt.Classes
                 {
                     MessageBox.Show("Could not load the Workbook.\nFile might be corrupted.", "Workbook", MessageBoxButtons.OK);
                 }
-               
+
             }
         }
 
@@ -90,15 +88,14 @@ namespace SoftwareProjekt.Classes
         /// </summary>
         private bool Load()
         {
-            
+
             // parse XML-File
             string file = Path.Combine(_folderName, _username + ".xml");
-            if(!File.Exists(file))
+            if (!File.Exists(file))
             {
                 return false;
             }
             XmlReader reader = XmlReader.Create(file);
-
             reader.ReadToFollowing("Username");
             if (_username != reader.ReadElementString("Username"))
             {
@@ -109,11 +106,12 @@ namespace SoftwareProjekt.Classes
                 reader.ReadToFollowing("CreationDate");
                 entry.CreationDate = DateTime.Parse(reader.ReadElementString("CreationDate"));
                 reader.ReadToFollowing("ExerciseID");
-                entry.ExerciseID = (Enums.EExercises) Enum.Parse(typeof(Enums.EExercises), reader.ReadElementString("ExerciseID"));
+                entry.ExerciseID = (Enums.EExercises)Enum.Parse(typeof(Enums.EExercises), reader.ReadElementString("ExerciseID"));
 
                 reader.ReadToFollowing("NumberOfDictionaryEntries");
                 int noe;
-                if(!int.TryParse(reader.ReadElementString("NumberOfDictionaryEntries"), out noe))
+
+                if (!int.TryParse(reader.ReadElementString("NumberOfDictionaryEntries"), out noe))
                 {
                     continue;
                 }
@@ -131,7 +129,7 @@ namespace SoftwareProjekt.Classes
                         switch (reader.NodeType)
                         {
                             case XmlNodeType.Element:
-                                elementType = reader.Name;                                
+                                elementType = reader.Name;
                                 break;
                             default:
                                 break;
@@ -142,7 +140,7 @@ namespace SoftwareProjekt.Classes
                         }
                     }
                     if (elementType == "Vector")
-                    {                        
+                    {
                         reader.ReadToFollowing("X1");
                         float x1 = float.Parse(reader.ReadElementString("X1"));
 
@@ -179,7 +177,7 @@ namespace SoftwareProjekt.Classes
                     {
                         reader.ReadToFollowing("Notes");
                         string note = reader.ReadElementString("Notes");
-                        
+
                         entry.State.Add(key, note);
                     }
                     else
@@ -187,10 +185,32 @@ namespace SoftwareProjekt.Classes
 
                     }
                 }
-                
+
             }
 
             reader.Close();
+
+            //load all available images
+            foreach (WorkbookEntry item in _workbookEntryList)
+            {
+                try
+                {
+                    string dir = Path.Combine(_folderName, _username);
+                    string filename = Path.Combine(dir, item.ExerciseID.ToString() + ".bmp");
+                    if (File.Exists(filename))
+                    {
+                        Bitmap pic = new Bitmap(filename);
+                        item.Screenshot = (Image)pic;
+                        pic.Dispose();
+                    }
+                }
+                catch (Exception)
+                {
+                    //could not load picture, 
+                }
+
+            }
+
 
             return true;
         }
@@ -206,7 +226,9 @@ namespace SoftwareProjekt.Classes
             {
                 Directory.CreateDirectory(dir);
             }
-            XmlWriter writer = XmlWriter.Create(file);
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            XmlWriter writer = XmlWriter.Create(file, settings);
 
             writer.WriteStartDocument();
             writer.WriteStartElement("Workbook");
@@ -219,16 +241,16 @@ namespace SoftwareProjekt.Classes
 
                 writer.WriteElementString("CreationDate", entry.CreationDate.ToString());
                 writer.WriteElementString("ExerciseID", entry.ExerciseID.ToString());
-                
+
                 //data
                 if (entry.State == null) //started?
                 {
                     writer.WriteElementString("NumberOfDictionaryEntries", "0");
-                    writer.WriteEndElement(); 
+                    writer.WriteEndElement();
                     continue;
                 }
                 writer.WriteElementString("NumberOfDictionaryEntries", entry.State.Count.ToString());
-                Dictionary<string,object>.Enumerator enumerator = entry.State.GetEnumerator();                   
+                Dictionary<string, object>.Enumerator enumerator = entry.State.GetEnumerator();
                 while (enumerator.MoveNext())
                 {
                     writer.WriteStartElement("DictionaryEntry");
@@ -236,8 +258,8 @@ namespace SoftwareProjekt.Classes
                     object value = enumerator.Current.Value;
 
                     writer.WriteElementString("Key", key);
- 
-                    if(value.GetType() == typeof(Vector))
+
+                    if (value.GetType() == typeof(Vector))
                     {
                         writer.WriteStartElement("Vector");
                         writer.WriteElementString("X1", (value as Vector).X1.ToString());
@@ -311,29 +333,63 @@ namespace SoftwareProjekt.Classes
             return null;
         }
 
-        public void SetEntryState(Enums.EExercises id, System.Collections.Generic.Dictionary<string, object> state)
+        public void SetEntryState(Enums.EExercises id, System.Collections.Generic.Dictionary<string, object> state, SoftwareProjekt.Interfaces.IView view)
         {
+            if (string.IsNullOrEmpty(Username))
+            {
+                return;
+            }
+            string dir = Path.Combine(_folderName, _username);
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+            string filename = Path.Combine(dir, id.ToString() + ".bmp");
+            SoftwareProjekt.Forms.AbstractView aview = (SoftwareProjekt.Forms.AbstractView)view;
+            Bitmap pic = new Bitmap(aview.Width, aview.Height);
+            Rectangle r = new Rectangle(0, 0, aview.Width, aview.Height);
+            aview.DrawToBitmap(pic, r);
+            try
+            {
+                if (File.Exists(filename))
+                {
+                    File.Delete(filename);
+                }
+                pic.Save(filename);
+                pic.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Could not save the form.\n" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             foreach (WorkbookEntry entry in _workbookEntryList)
             {
                 if (entry.ExerciseID == id)
                 {
-                    entry.State = state;                    
+                    entry.State = state;
+                    entry.Screenshot = (Image)pic;
                     break;
                 }
             }
+           
             try
             {
-                this.Save();
+                 this.Save();
             }
             catch (Exception)
             {
                 MessageBox.Show("Could not save the Workbook", "Workbook", MessageBoxButtons.OK);
             }
-            
+
         }
 
-        public void AddEntries(System.Windows.Forms.Control.ControlCollection collection)
+        public void AddEntries(System.Windows.Forms.Control.ControlCollection collection, PictureBox picbox)
         {
+            foreach (WorkbookEntry item in _workbookEntryList)
+            {
+                item.PictureBox = picbox;
+            }
             collection.AddRange(_workbookEntryList.ToArray());
         }
 
