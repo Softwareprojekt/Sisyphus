@@ -36,9 +36,15 @@ namespace SoftwareProjekt
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            InitSisyphus initObject = new InitSisyphus();
+            bool retVal = initObject.Init();
+             /* checking retVal is currently disabled, because not everybody has a config.xml for mindmap*/
+
+
             TestView view = new TestView();
 
             IController cont = new Controller(view);
+
 
             //TestExercise exercise = new TestExercise();
 

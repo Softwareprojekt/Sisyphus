@@ -130,6 +130,7 @@
       <DependentUpon>TestView.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\LinearTransformationTopic.cs" />
+    <Compile Include="InitSisyphus.cs" />
     <Compile Include="Interfaces\IShape.cs" />
     <Compile Include="Interop\InteropMimeTex.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -329,8 +330,26 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Fonts\cm-roman.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Fonts\cm-stretchy.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Fonts\math-roman.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\arrowToRight.png" />
     <None Include="Resources\arrowToLeft.png" />
+    <Content Include="font-configuration-1-math-roman.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="font-configuration-2-cm-stretchy.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="font-configuration-3-times-new-roman.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\config.xml">
       <SubType>Designer</SubType>
     </Content>
