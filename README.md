@@ -22,8 +22,11 @@ In Sisyphus the Model View Controller pattern is used. The program code is locat
 ### Run
 Sisyphus can be built and run with Visual Studio 2012 or higher. The whole project uses one Visual Studio project file, which can be found below ./_wsp/_vs/Root.sln
 
-Sisyphus is also compatible with Mono under Windows. But the Mono-compiled executable does not work correctly under Mac and Linux due to a DllNotFound exception (Gdi32.dll issue). 
+Sisyphus is also compatible with Mono under Windows. Under Linux and Mac it can be compiled, but the executable does not work correctly, mostly due to a DllNotFound exception (Gdi32.dll issue).
 These issues could be solved, but don't have a high priority for us.
+
+### Current State
+Under heavy development and not very usable.
 
 ## License
 [GPL2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
