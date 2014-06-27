@@ -28,7 +28,7 @@ using System.Windows.Forms;
 
 namespace SoftwareProjekt.Forms
 {
-    public abstract class AbstractView : Form, IView
+    public class AbstractView : Form, IView
     {
         public event ViewHandler<ViewEventArgs> ViewChanged;
 
@@ -52,13 +52,25 @@ namespace SoftwareProjekt.Forms
             set;
         }
 
-        public abstract void ExerciseChanged(IExercise sender, ExerciseEventArgs e);
+        public virtual void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
+        {
+        }
 
-        public abstract Dictionary<string, Object> GetInputData();
+        public virtual Dictionary<string, Object> GetInputData()
+        {
+            Dictionary<string, Object> emptyDictionary = new Dictionary<string, Object>();
+            return emptyDictionary;
+        }
 
-        protected abstract bool CheckInputs();
+        protected virtual bool CheckInputs()
+        {
+            return false;
+        }
 
-        public abstract bool LoadState(Dictionary<string, object> state);
+        public virtual bool LoadState(Dictionary<string, object> state)
+        {
+            return false;
+        }
 
         public Dictionary<string, object> SaveState()
         {
