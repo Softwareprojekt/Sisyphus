@@ -115,8 +115,6 @@ namespace SoftwareProjekt.Forms
             cosOutput.AddLineSegment(_vectorOutputEV1);
             cosOutput.AddLineSegment(_vectorOutputEV2);
             cosOutput.AddLineSegment(_vectorOutputX);
-            
-            cosOutput.Refresh();
         }
 
 		protected override bool CheckInputs()

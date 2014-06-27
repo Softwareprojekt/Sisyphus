@@ -28,7 +28,7 @@ using System.Text;
 
 namespace SoftwareProjekt.Interfaces
 {
-    interface IShape
+    public interface IShape
     {
         void Multiply(Matrix matrix);
 

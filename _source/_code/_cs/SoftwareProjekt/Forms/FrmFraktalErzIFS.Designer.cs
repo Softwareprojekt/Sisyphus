@@ -31,6 +31,9 @@
             SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
             SoftwareProjekt.Classes.Math.Vector vector2 = new SoftwareProjekt.Classes.Math.Vector();
             SoftwareProjekt.Classes.Math.Vector vector3 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Matrix matrix1 = new SoftwareProjekt.Classes.Math.Matrix();
+            SoftwareProjekt.Classes.Math.Matrix matrix2 = new SoftwareProjekt.Classes.Math.Matrix();
+            SoftwareProjekt.Classes.Math.Matrix matrix3 = new SoftwareProjekt.Classes.Math.Matrix();
             this._butSelectPic = new System.Windows.Forms.Button();
             this._butCalculation = new System.Windows.Forms.Button();
             this.grpPics = new System.Windows.Forms.GroupBox();
@@ -44,19 +47,23 @@
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.grpSteps = new System.Windows.Forms.GroupBox();
-            this._txtSteps = new SoftwareProjekt.UserControls.FloatInput();
-            this.lblSteps = new System.Windows.Forms.Label();
+            this.labIteration = new System.Windows.Forms.Label();
+            this._nupIteration = new System.Windows.Forms.NumericUpDown();
+            this._rbStep3 = new System.Windows.Forms.RadioButton();
+            this._rbStep2 = new System.Windows.Forms.RadioButton();
+            this._rbStep1 = new System.Windows.Forms.RadioButton();
             this.ctlMathEqua = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
-            this._vectorMove_w2 = new SoftwareProjekt.UserControls.CtlVectorInput();
+            this._vector_w2 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this._cosInput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this._cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
-            this._coeff_w2 = new SoftwareProjekt.UserControls.FloatInput();
-            this._vectorMove_w3 = new SoftwareProjekt.UserControls.CtlVectorInput();
-            this._coeff_w3 = new SoftwareProjekt.UserControls.FloatInput();
-            this._coeff_w1 = new SoftwareProjekt.UserControls.FloatInput();
-            this._vectorMove_w1 = new SoftwareProjekt.UserControls.CtlVectorInput();
+            this._vector_w3 = new SoftwareProjekt.UserControls.CtlVectorInput();
+            this._vector_w1 = new SoftwareProjekt.UserControls.CtlVectorInput();
+            this._matrix_w1 = new SoftwareProjekt.UserControls.CtlMatrixInput();
+            this._matrix_w2 = new SoftwareProjekt.UserControls.CtlMatrixInput();
+            this._matrix_w3 = new SoftwareProjekt.UserControls.CtlMatrixInput();
             this.grpPics.SuspendLayout();
             this.grpSteps.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._nupIteration)).BeginInit();
             this.SuspendLayout();
             // 
             // _butSelectPic
@@ -72,12 +79,12 @@
             // 
             // _butCalculation
             // 
-            this._butCalculation.Location = new System.Drawing.Point(9, 38);
+            this._butCalculation.Location = new System.Drawing.Point(9, 60);
             this._butCalculation.Margin = new System.Windows.Forms.Padding(2);
             this._butCalculation.Name = "_butCalculation";
-            this._butCalculation.Size = new System.Drawing.Size(151, 38);
+            this._butCalculation.Size = new System.Drawing.Size(105, 38);
             this._butCalculation.TabIndex = 1;
-            this._butCalculation.Text = "Berechnung";
+            this._butCalculation.Text = "Fraktal erzeugen";
             this._butCalculation.UseVisualStyleBackColor = true;
             this._butCalculation.Click += new System.EventHandler(this.butCalc_Click);
             // 
@@ -196,32 +203,83 @@
             // 
             // grpSteps
             // 
-            this.grpSteps.Controls.Add(this._txtSteps);
-            this.grpSteps.Controls.Add(this.lblSteps);
+            this.grpSteps.Controls.Add(this.labIteration);
+            this.grpSteps.Controls.Add(this._nupIteration);
+            this.grpSteps.Controls.Add(this._rbStep3);
+            this.grpSteps.Controls.Add(this._rbStep2);
+            this.grpSteps.Controls.Add(this._rbStep1);
             this.grpSteps.Controls.Add(this._butCalculation);
-            this.grpSteps.Location = new System.Drawing.Point(450, 440);
+            this.grpSteps.Location = new System.Drawing.Point(496, 429);
             this.grpSteps.Name = "grpSteps";
-            this.grpSteps.Size = new System.Drawing.Size(171, 90);
+            this.grpSteps.Size = new System.Drawing.Size(128, 106);
             this.grpSteps.TabIndex = 12;
             this.grpSteps.TabStop = false;
-            this.grpSteps.Text = "Schritte";
+            this.grpSteps.Text = "Berechnungsschritte";
             // 
-            // _txtSteps
+            // labIteration
             // 
-            this._txtSteps.BackColor = System.Drawing.Color.Red;
-            this._txtSteps.Location = new System.Drawing.Point(111, 13);
-            this._txtSteps.Name = "_txtSteps";
-            this._txtSteps.Size = new System.Drawing.Size(49, 20);
-            this._txtSteps.TabIndex = 0;
+            this.labIteration.AutoSize = true;
+            this.labIteration.Location = new System.Drawing.Point(6, 37);
+            this.labIteration.Name = "labIteration";
+            this.labIteration.Size = new System.Drawing.Size(57, 13);
+            this.labIteration.TabIndex = 6;
+            this.labIteration.Text = "Iterationen";
             // 
-            // lblSteps
+            // _nupIteration
             // 
-            this.lblSteps.AutoSize = true;
-            this.lblSteps.Location = new System.Drawing.Point(6, 16);
-            this.lblSteps.Name = "lblSteps";
-            this.lblSteps.Size = new System.Drawing.Size(99, 13);
-            this.lblSteps.TabIndex = 0;
-            this.lblSteps.Text = "Anzahl der Schritte:";
+            this._nupIteration.Location = new System.Drawing.Point(69, 35);
+            this._nupIteration.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this._nupIteration.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this._nupIteration.Name = "_nupIteration";
+            this._nupIteration.Size = new System.Drawing.Size(45, 20);
+            this._nupIteration.TabIndex = 5;
+            this._nupIteration.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // _rbStep3
+            // 
+            this._rbStep3.AutoSize = true;
+            this._rbStep3.Checked = true;
+            this._rbStep3.Location = new System.Drawing.Point(83, 16);
+            this._rbStep3.Name = "_rbStep3";
+            this._rbStep3.Size = new System.Drawing.Size(31, 17);
+            this._rbStep3.TabIndex = 4;
+            this._rbStep3.TabStop = true;
+            this._rbStep3.Text = "3";
+            this._rbStep3.UseVisualStyleBackColor = true;
+            // 
+            // _rbStep2
+            // 
+            this._rbStep2.AutoSize = true;
+            this._rbStep2.Location = new System.Drawing.Point(46, 16);
+            this._rbStep2.Name = "_rbStep2";
+            this._rbStep2.Size = new System.Drawing.Size(31, 17);
+            this._rbStep2.TabIndex = 3;
+            this._rbStep2.TabStop = true;
+            this._rbStep2.Text = "2";
+            this._rbStep2.UseVisualStyleBackColor = true;
+            // 
+            // _rbStep1
+            // 
+            this._rbStep1.AutoSize = true;
+            this._rbStep1.Location = new System.Drawing.Point(9, 16);
+            this._rbStep1.Name = "_rbStep1";
+            this._rbStep1.Size = new System.Drawing.Size(31, 17);
+            this._rbStep1.TabIndex = 2;
+            this._rbStep1.TabStop = true;
+            this._rbStep1.Text = "1";
+            this._rbStep1.UseVisualStyleBackColor = true;
             // 
             // ctlMathEqua
             // 
@@ -235,16 +293,16 @@
             this.ctlMathEqua.Size = new System.Drawing.Size(361, 158);
             this.ctlMathEqua.TabIndex = 13;
             // 
-            // _vectorMove_w2
+            // _vector_w2
             // 
-            this._vectorMove_w2.Location = new System.Drawing.Point(584, 166);
-            this._vectorMove_w2.MinimumSize = new System.Drawing.Size(102, 76);
-            this._vectorMove_w2.Name = "_vectorMove_w2";
-            this._vectorMove_w2.Size = new System.Drawing.Size(102, 76);
-            this._vectorMove_w2.TabIndex = 2;
+            this._vector_w2.Location = new System.Drawing.Point(561, 166);
+            this._vector_w2.MinimumSize = new System.Drawing.Size(102, 76);
+            this._vector_w2.Name = "_vector_w2";
+            this._vector_w2.Size = new System.Drawing.Size(125, 89);
+            this._vector_w2.TabIndex = 2;
             vector1.X1 = float.NaN;
             vector1.X2 = float.NaN;
-            this._vectorMove_w2.Vector = vector1;
+            this._vector_w2.Vector = vector1;
             // 
             // _cosInput
             // 
@@ -260,65 +318,80 @@
             this._cosOutput.Size = new System.Drawing.Size(287, 288);
             this._cosOutput.TabIndex = 17;
             // 
-            // _coeff_w2
+            // _vector_w3
             // 
-            this._coeff_w2.BackColor = System.Drawing.Color.Red;
-            this._coeff_w2.Location = new System.Drawing.Point(496, 194);
-            this._coeff_w2.Name = "_coeff_w2";
-            this._coeff_w2.Size = new System.Drawing.Size(82, 20);
-            this._coeff_w2.TabIndex = 1;
-            // 
-            // _vectorMove_w3
-            // 
-            this._vectorMove_w3.Location = new System.Drawing.Point(584, 248);
-            this._vectorMove_w3.MinimumSize = new System.Drawing.Size(102, 76);
-            this._vectorMove_w3.Name = "_vectorMove_w3";
-            this._vectorMove_w3.Size = new System.Drawing.Size(102, 76);
-            this._vectorMove_w3.TabIndex = 4;
+            this._vector_w3.Location = new System.Drawing.Point(561, 261);
+            this._vector_w3.MinimumSize = new System.Drawing.Size(102, 76);
+            this._vector_w3.Name = "_vector_w3";
+            this._vector_w3.Size = new System.Drawing.Size(125, 89);
+            this._vector_w3.TabIndex = 4;
             vector2.X1 = float.NaN;
             vector2.X2 = float.NaN;
-            this._vectorMove_w3.Vector = vector2;
+            this._vector_w3.Vector = vector2;
             // 
-            // _coeff_w3
+            // _vector_w1
             // 
-            this._coeff_w3.BackColor = System.Drawing.Color.Red;
-            this._coeff_w3.Location = new System.Drawing.Point(496, 279);
-            this._coeff_w3.Name = "_coeff_w3";
-            this._coeff_w3.Size = new System.Drawing.Size(82, 20);
-            this._coeff_w3.TabIndex = 3;
-            // 
-            // _coeff_w1
-            // 
-            this._coeff_w1.BackColor = System.Drawing.Color.Red;
-            this._coeff_w1.Location = new System.Drawing.Point(496, 100);
-            this._coeff_w1.Name = "_coeff_w1";
-            this._coeff_w1.Size = new System.Drawing.Size(82, 20);
-            this._coeff_w1.TabIndex = 0;
-            // 
-            // _vectorMove_w1
-            // 
-            this._vectorMove_w1.Location = new System.Drawing.Point(584, 84);
-            this._vectorMove_w1.MinimumSize = new System.Drawing.Size(102, 76);
-            this._vectorMove_w1.Name = "_vectorMove_w1";
-            this._vectorMove_w1.Size = new System.Drawing.Size(102, 76);
-            this._vectorMove_w1.TabIndex = 18;
+            this._vector_w1.Location = new System.Drawing.Point(561, 71);
+            this._vector_w1.MinimumSize = new System.Drawing.Size(102, 76);
+            this._vector_w1.Name = "_vector_w1";
+            this._vector_w1.Size = new System.Drawing.Size(125, 89);
+            this._vector_w1.TabIndex = 18;
             vector3.X1 = float.NaN;
             vector3.X2 = float.NaN;
-            this._vectorMove_w1.Vector = vector3;
+            this._vector_w1.Vector = vector3;
+            // 
+            // _matrix_w1
+            // 
+            this._matrix_w1.Location = new System.Drawing.Point(430, 71);
+            matrix1.X11 = float.NaN;
+            matrix1.X12 = float.NaN;
+            matrix1.X21 = float.NaN;
+            matrix1.X22 = float.NaN;
+            this._matrix_w1.Matrix = matrix1;
+            this._matrix_w1.MinimumSize = new System.Drawing.Size(98, 76);
+            this._matrix_w1.Name = "_matrix_w1";
+            this._matrix_w1.Size = new System.Drawing.Size(125, 89);
+            this._matrix_w1.TabIndex = 19;
+            // 
+            // _matrix_w2
+            // 
+            this._matrix_w2.Location = new System.Drawing.Point(430, 166);
+            matrix2.X11 = float.NaN;
+            matrix2.X12 = float.NaN;
+            matrix2.X21 = float.NaN;
+            matrix2.X22 = float.NaN;
+            this._matrix_w2.Matrix = matrix2;
+            this._matrix_w2.MinimumSize = new System.Drawing.Size(98, 76);
+            this._matrix_w2.Name = "_matrix_w2";
+            this._matrix_w2.Size = new System.Drawing.Size(125, 89);
+            this._matrix_w2.TabIndex = 19;
+            // 
+            // _matrix_w3
+            // 
+            this._matrix_w3.Location = new System.Drawing.Point(430, 261);
+            matrix3.X11 = float.NaN;
+            matrix3.X12 = float.NaN;
+            matrix3.X21 = float.NaN;
+            matrix3.X22 = float.NaN;
+            this._matrix_w3.Matrix = matrix3;
+            this._matrix_w3.MinimumSize = new System.Drawing.Size(98, 76);
+            this._matrix_w3.Name = "_matrix_w3";
+            this._matrix_w3.Size = new System.Drawing.Size(125, 89);
+            this._matrix_w3.TabIndex = 19;
             // 
             // FrmFraktalErzIFS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 777);
-            this.Controls.Add(this._vectorMove_w1);
-            this.Controls.Add(this._coeff_w1);
-            this.Controls.Add(this._coeff_w3);
-            this.Controls.Add(this._vectorMove_w3);
-            this.Controls.Add(this._coeff_w2);
+            this.Controls.Add(this._matrix_w3);
+            this.Controls.Add(this._matrix_w2);
+            this.Controls.Add(this._matrix_w1);
+            this.Controls.Add(this._vector_w1);
+            this.Controls.Add(this._vector_w3);
             this.Controls.Add(this._cosOutput);
             this.Controls.Add(this._cosInput);
-            this.Controls.Add(this._vectorMove_w2);
+            this.Controls.Add(this._vector_w2);
             this.Controls.Add(this.ctlMathEqua);
             this.Controls.Add(this.grpSteps);
             this.Controls.Add(this.lblNotes);
@@ -334,6 +407,7 @@
             this.grpPics.PerformLayout();
             this.grpSteps.ResumeLayout(false);
             this.grpSteps.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._nupIteration)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,17 +427,20 @@
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
         private System.Windows.Forms.GroupBox grpSteps;
-        private System.Windows.Forms.Label lblSteps;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEqua;
-        private UserControls.CtlVectorInput _vectorMove_w2;
+        private UserControls.CtlVectorInput _vector_w2;
         private UserControls.CoordinateSystem _cosInput;
         private UserControls.CoordinateSystem _cosOutput;
         private System.Windows.Forms.Label lblPic;
-        private UserControls.FloatInput _txtSteps;
-        private UserControls.FloatInput _coeff_w2;
-        private UserControls.CtlVectorInput _vectorMove_w3;
-        private UserControls.FloatInput _coeff_w3;
-        private UserControls.FloatInput _coeff_w1;
-        private UserControls.CtlVectorInput _vectorMove_w1;
+        private UserControls.CtlVectorInput _vector_w3;
+        private UserControls.CtlVectorInput _vector_w1;
+        private UserControls.CtlMatrixInput _matrix_w1;
+        private UserControls.CtlMatrixInput _matrix_w2;
+        private UserControls.CtlMatrixInput _matrix_w3;
+        private System.Windows.Forms.Label labIteration;
+        private System.Windows.Forms.NumericUpDown _nupIteration;
+        private System.Windows.Forms.RadioButton _rbStep3;
+        private System.Windows.Forms.RadioButton _rbStep2;
+        private System.Windows.Forms.RadioButton _rbStep1;
     }
 }

@@ -22,6 +22,7 @@
 using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Classes.Math;
 using SoftwareProjekt.Enums;
+using SoftwareProjekt.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -38,44 +39,35 @@ namespace SoftwareProjekt.Forms
 {
     public partial class FrmFraktalErzIFS : AbstractView
     {
+        private EIFSForms _inputForm;
         private Image _loadedPic = null;
-        private List<Object> _inputForms = null;
+        private List<IShape> _inputForms = null;
 
         public FrmFraktalErzIFS()
         {
             InitializeComponent();
 
-            _inputForms = new List<Object>();
+            _inputForms = new List<IShape>();
             _radTriangle.Checked = true;
         }
-
-      
 
         private void rad_CheckedChanged(object sender, EventArgs e)
         {
             this._cosInput.BackgroundImage = null;
             this._cosOutput.BackgroundImage = null;
+
             if (_radTriangle.Checked)
             {
                 // paint triangle to input cod.
-                Console.WriteLine("paint triangle.");
+                _inputForm = EIFSForms.Triangle;
 
+                _inputForms.Clear();
                 _cosInput.Clear();
                 _cosOutput.Clear();
-              
-                Triangle tri = new Triangle(new PointF(0, 0), new PointF(1, 0), new PointF(1, 1));
 
-                SoftwareProjekt.Classes.Math.Matrix m = new Classes.Math.Matrix(1, 2, 3, -1);
+                _inputForms.Add(new Triangle(new PointF(0, 0), new PointF(4, 0), new PointF(0, 4)));
 
-                Triangle tri1 = Triangle.Multiply(tri, m);
-
-
-                _cosInput.AddTriangle(tri);
-
-                _cosOutput.AddTriangle(tri1);
-               // _cosOutput.AddTriangle(tri2);
-               // _cosOutput.AddTriangle(tri3);
-
+                _cosInput.AddTriangle(_inputForms.ToArray());
 
                 if (_loadedPic != null)
                 {
@@ -85,19 +77,15 @@ namespace SoftwareProjekt.Forms
             }
             else if (_radSquare.Checked)
             {
-                Console.WriteLine("paint square.");
+                _inputForm = EIFSForms.Rectangle;
 
+                _inputForms.Clear();
                 _cosInput.Clear();
                 _cosOutput.Clear();
 
-                RectangleC r = new RectangleC(new PointF(0, 0), new PointF(2, 0), new PointF(2, 2), new PointF(0, 2), new Pen(Color.Red));
-                SoftwareProjekt.Classes.Math.Matrix m = new Classes.Math.Matrix(.5f, 0, 0, .5f);
-                Vector v = new Vector(1, 1);
-                RectangleC r1 = RectangleC.Multiply(r, m);
-                r1.Add(v);
+                _inputForms.Add(new RectangleC(new PointF(0, 0), new PointF(4, 0), new PointF(4, 4), new PointF(0, 4), new Pen(Color.Red)));
 
-                _cosInput.AddRectangle(r);
-                _cosOutput.AddRectangle(r1);
+                _cosInput.AddRectangle(_inputForms.ToArray());
 
                 if (_loadedPic != null)
                 {
@@ -107,19 +95,15 @@ namespace SoftwareProjekt.Forms
             }
             else if (_radCircle.Checked)
             {
-                Console.WriteLine("paint circle.");
+                _inputForm = EIFSForms.Circle;
 
+                _inputForms.Clear();
                 _cosInput.Clear();
                 _cosOutput.Clear();
 
-                Circle c = new Circle(new PointF(2, 2), 2, new Pen(Color.Green));
-                SoftwareProjekt.Classes.Math.Matrix m = new Classes.Math.Matrix(.5f, 0, 0, .5f);
-                Vector v = new Vector(1, 0);
-                Circle c1 = Circle.Multiply(c, m);
-                c1.Add(v);
+                _inputForms.Add(new Circle(new PointF(2, 2), 2, new Pen(Color.Green)));
 
-                _cosInput.AddCircle(c);
-                _cosOutput.AddCircle(c1);
+                _cosInput.AddCircle(_inputForms.ToArray());
 
                 if (_loadedPic != null)
                 {
@@ -147,6 +131,7 @@ namespace SoftwareProjekt.Forms
             _radTriangle.Checked = false;
             _radSquare.Checked = false;
             _radCircle.Checked = false;
+            _inputForm = EIFSForms.Picture;
 
             //show picture selection dialog.
             OpenFileDialog ofd = new OpenFileDialog();
@@ -167,9 +152,8 @@ namespace SoftwareProjekt.Forms
                     g.Dispose();
 
                     img.MakeTransparent();
-
-
                     _loadedPic = (Image)img;
+
                     _cosInput.BackgroundImage = _loadedPic;
                     _cosOutput.BackgroundImage = _loadedPic;
                     _cosInput.Clear();
@@ -178,13 +162,13 @@ namespace SoftwareProjekt.Forms
                 catch
                 {
                     MessageBox.Show("Could not load image.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }     
+                }
 
             }
         }
 
         private void butCalc_Click(object sender, EventArgs e)
-        {           
+        {
             if (this.CheckInputs())
             {
                 this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
@@ -193,38 +177,71 @@ namespace SoftwareProjekt.Forms
 
         public override void ExerciseChanged(Interfaces.IExercise sender, ExerciseEventArgs e)
         {
-            _cosOutput.ClearLineSegments();
+            _inputForms.Clear();
+            _cosOutput.Clear();
 
             Console.WriteLine(sender.ToString() + " " + e.ToString());
+
+            switch ((EIFSForms)e.CalcValues["Form"])
+            {
+                case EIFSForms.Triangle:
+                    _inputForms.AddRange((List<IShape>)e.CalcValues["OutputForms"]);
+                    _cosOutput.AddTriangle(_inputForms.ToArray());
+                    break;
+                case EIFSForms.Rectangle:
+                    _inputForms.AddRange((List<IShape>)e.CalcValues["OutputForms"]);
+                    _cosOutput.AddRectangle(_inputForms.ToArray());
+                    break;
+                case EIFSForms.Circle:
+                    _inputForms.AddRange((List<IShape>)e.CalcValues["OutputForms"]);
+                    _cosOutput.AddCircle(_inputForms.ToArray());
+                    break;
+                case EIFSForms.Picture:
+                    break;
+                default:
+                    break;
+            }
         }
 
         public override Dictionary<string, object> GetInputData()
         {
             Dictionary<string, Object> retVal = new Dictionary<string, object>();
 
-            retVal.Add("Form", _radTriangle.Checked ? EInputForms.Triangle : _radSquare.Checked ? EInputForms.Square : _radCircle.Checked ? EInputForms.Circle : EInputForms.Picture);
+            retVal.Add("Form", _inputForm);
+
             if (_loadedPic != null)
             {
-                retVal.Add("Picture", _loadedPic);
+                retVal.Add("InputForms", _loadedPic);
+            }
+            else
+            {
+                retVal.Add("InputForms", _inputForms);
             }
 
-            retVal.Add("InputForms", _inputForms);
+            retVal.Add("Steps",
+                _rbStep1.Checked ? 1 :
+                _rbStep2.Checked ? 2 :
+                _rbStep3.Checked ? 3 : 3);
+            retVal.Add("Iterations", _nupIteration.Value);
 
-            retVal.Add("Coefficient_w1", _coeff_w1.FloatValue);
-            retVal.Add("Coefficient_w2", _coeff_w2.FloatValue);
-            retVal.Add("Coefficient_w3", _coeff_w3.FloatValue);
+            retVal.Add("Matrix_w1", _matrix_w1.Matrix);
+            retVal.Add("Matrix_w2", _matrix_w2.Matrix);
+            retVal.Add("Matrix_w3", _matrix_w3.Matrix);
 
-            retVal.Add("MoveVector_w2", _vectorMove_w2.Vector);
-            retVal.Add("MoveVector_w3", _vectorMove_w3.Vector);
+            retVal.Add("Vector_w1", _vector_w1.Vector);
+            retVal.Add("Vector_w2", _vector_w2.Vector);
+            retVal.Add("Vector_w3", _vector_w3.Vector);
 
-            retVal.Add("Notes", rtxtNotes.Text);
+            //retVal.Add("Notes", rtxtNotes.Text);
 
             return retVal;
         }
 
         protected override bool CheckInputs()
         {
-            if ((_radCircle.Checked || _radSquare.Checked || _radTriangle.Checked || _loadedPic != null) && _coeff_w2.IsValid() && _vectorMove_w2.Vector.IsValid())
+            if ((_radCircle.Checked || _radSquare.Checked || _radTriangle.Checked || _loadedPic != null)
+                && _matrix_w1.Matrix.IsValid() && _matrix_w2.Matrix.IsValid() && _matrix_w3.Matrix.IsValid()
+                && _vector_w1.Vector.IsValid() && _vector_w2.Vector.IsValid() && _vector_w3.Vector.IsValid())
             {
 #if DEBUG
                 Console.WriteLine("SUCCESS @ Inputs are valid.");

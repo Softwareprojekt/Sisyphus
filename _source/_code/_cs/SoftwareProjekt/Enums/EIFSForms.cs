@@ -21,10 +21,10 @@
 
 namespace SoftwareProjekt.Enums
 {
-    public enum EInputForms
+    public enum EIFSForms
     {
         Triangle,
-        Square,
+        Rectangle,
         Circle,
         Picture
     }

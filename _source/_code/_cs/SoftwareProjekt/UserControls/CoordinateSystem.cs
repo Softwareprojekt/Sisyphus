@@ -112,15 +112,39 @@ namespace SoftwareProjekt.UserControls
             this.invokeRefresh();
         }
 
+        public void AddTriangle(IShape[] triangleArr)
+        {
+            foreach (Triangle tri in triangleArr)
+            {
+                this.AddTriangle(tri);
+            }
+        }
+
         public void AddRectangle(RectangleC rectangle)
         {
             _rectangleList.Add(rectangle);
             this.invokeRefresh();
         }
+
+        public void AddRectangle(IShape[] rectangleArr)
+        {
+            foreach (RectangleC rectangle in rectangleArr)
+            {
+                this.AddRectangle(rectangle);
+            }
+        }
+
         public void AddCircle(Circle circle)
         {
             _circleList.Add(circle);
             this.invokeRefresh();
+        }
+        public void AddCircle(IShape[] circleArr)
+        {
+            foreach (Circle circle in circleArr)
+            {
+                this.AddCircle(circle);
+            }
         }
 
         public void RemoveTriangle(Triangle triangle)
