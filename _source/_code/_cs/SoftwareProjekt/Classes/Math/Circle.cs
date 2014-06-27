@@ -9,6 +9,7 @@ namespace SoftwareProjekt.Classes.Math
 {
     public class Circle : IShape
     {
+        private Vector _center;
         public float Radius { get; set; }
         public float Diameter
         {
@@ -30,12 +31,14 @@ namespace SoftwareProjekt.Classes.Math
         public Circle()
         {
             this.Center = new PointF(float.NaN,float.NaN);
+            _center = new Vector();
             this.Radius = float.NaN;
             this.Color = new Pen(System.Drawing.Color.Black);
         }
         public Circle(PointF center, float radius)
         {
             this.Center = center;
+            _center = new Vector(center.X, center.Y);
             this.Radius = radius;
             this.Color = new Pen(System.Drawing.Color.Black);
         }
@@ -43,14 +46,33 @@ namespace SoftwareProjekt.Classes.Math
         {
             this.Color = color;
         }
-        public void Translate(Vector vector)
+        public static Circle Multiply(Circle circle, Matrix matrix)
         {
-            throw new NotImplementedException();
+            Circle c = new Circle(circle.Center, circle.Radius, circle.Color);
+            c.Multiply(matrix);
+            return c;
         }
 
-        public void Scale(float scalar)
+        public void Multiply(Matrix matrix)
         {
-            throw new NotImplementedException();
+            _center.Multiply(matrix);
+            Vector v = new Vector(Center.X + Radius, Center.Y);
+            v.Multiply(matrix);
+            Radius = System.Math.Abs(v.X2 - v.X1);
+            this.Center = new PointF(_center.X1, _center.X2);
+        }
+
+        static public Circle Add(Circle circle, Vector vector)
+        {
+            Circle c = new Circle(circle.Center, circle.Radius, circle.Color);
+            c.Add(vector);
+            return c;
+        }
+
+        public void Add(Vector vector)
+        {
+            _center.Add(vector);
+            this.Center = new PointF(_center.X1, _center.X2);
         }
 
         public System.Drawing.Pen Color{ get;set;}

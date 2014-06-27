@@ -30,9 +30,9 @@ namespace SoftwareProjekt.Interfaces
 {
     interface IShape
     {
-        void Translate(Vector vector);
+        void Multiply(Matrix matrix);
 
-        void Scale(float scalar);
+        void Add(Vector vector);
 
         Pen Color{ get; set;}
     }

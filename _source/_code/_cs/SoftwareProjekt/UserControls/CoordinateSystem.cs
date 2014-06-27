@@ -454,12 +454,17 @@ namespace SoftwareProjekt.UserControls
         {
             foreach (Circle c in _circleList)
             {
-                PointF pf = CalculateInternalCoordinates(c.Rectangle.X, c.Rectangle.Y);
-                Point p = new Point((int)pf.X, (int)pf.Y);
-                pf = CalculateInternalCoordinates(c.Rectangle.Size.Width, c.Rectangle.Size.Height);
-                Point  pref = new Point((int)pf.X, -(int)pf.Y);
+                PointF f = CalculateInternalCoordinates(c.Rectangle.X, c.Rectangle.Y);
+                Point p = new Point((int)f.X, (int)f.Y);
+                //calc distance between two points in pixel (for x and y)
+                PointF pf = CalculateInternalCoordinates(0, 0);
+                PointF pf1 = CalculateInternalCoordinates(1f, 1f);
+                int x = (int)pf1.X - (int)pf.X;
+                int y = (int)pf1.Y - (int)pf.Y;
+                float xWidth = x * c.Rectangle.Width;
+                float yHeight = y * c.Rectangle.Height;
 
-                Rectangle r = new Rectangle(p.X, p.Y, pref.X - p.X, -(pref.X - p.X)); 
+                Rectangle r = new Rectangle(p.X, p.Y, (int)xWidth, (int)yHeight); 
                 graphics.FillEllipse(c.Color.Brush, r);
             }
         }

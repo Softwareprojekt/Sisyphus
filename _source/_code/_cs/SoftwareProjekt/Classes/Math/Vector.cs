@@ -20,6 +20,7 @@
 #endregion
 
 using System;
+using System.Drawing;
 
 
 namespace SoftwareProjekt.Classes.Math
@@ -45,6 +46,12 @@ namespace SoftwareProjekt.Classes.Math
         {
             this.X1 = x1;
             this.X2 = x2;
+        }
+
+        public Vector(PointF point)
+        {
+            this.X1 = point.X;
+            this.X2 = point.Y;
         }
 
         public float X1 
@@ -285,8 +292,9 @@ namespace SoftwareProjekt.Classes.Math
         /// </summary>
         public void Multiply(Matrix newMatrix)
         {
+            float tmp = _x1;
             X1 = X1 * newMatrix.X11 + X2 * newMatrix.X12;
-            X2 = X1 * newMatrix.X21 + X2 * newMatrix.X22;
+            X2 = tmp * newMatrix.X21 + X2 * newMatrix.X22;
         }
 
         public override string ToString()

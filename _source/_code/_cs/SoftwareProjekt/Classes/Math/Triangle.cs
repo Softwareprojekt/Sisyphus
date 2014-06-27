@@ -9,37 +9,31 @@ namespace SoftwareProjekt.Classes.Math
 {
     public class Triangle : IShape
     {
-        private List<LineSegment> _segmentList;
-        public LineSegment AB { get; private set; }
-        public LineSegment BC { get; private set; }
-        public LineSegment CA { get; private set; }
-
+        private List<Vector> _vectorList;
+        private Vector _a;
+        private Vector _b;
+        private Vector _c;
         public List<PointF> PointList
         {
             get
             {
                 List<PointF> list = new List<PointF>();
-                list.Add(this.AB.StartPoint);
-                list.Add(this.BC.StartPoint);
-                list.Add(this.CA.StartPoint);
+                foreach (Vector item in _vectorList)
+	            {
+		            list.Add(new PointF(item.X1, item.X2));
+	            }
                 return list;
             }
         }
         public Triangle(PointF a, PointF b, PointF c)
         {
-            Vector ab = new Vector(b.X - a.X, b.Y - a.Y);
-            this.AB = new LineSegment(a, ab);
-
-            Vector bc = new Vector(c.X - b.X, c.Y - b.Y);
-            this.BC = new LineSegment(b, bc);
-
-            Vector ac = new Vector(a.X - c.X, a.Y - c.Y);
-            this.CA = new LineSegment(c, ac);
-
-            _segmentList = new List<LineSegment>();
-            _segmentList.Add(this.AB);
-            _segmentList.Add(this.BC);
-            _segmentList.Add(this.CA);
+            _a = new Vector(a);
+            _b = new Vector(b);
+            _c = new Vector(c);
+            _vectorList = new List<Vector>();
+            _vectorList.Add(_a);
+            _vectorList.Add(_b);
+            _vectorList.Add(_c);
             this.Color = new Pen(System.Drawing.Color.Black);
         }
         public Triangle(PointF a, PointF b, PointF c, Pen color)
@@ -49,50 +43,37 @@ namespace SoftwareProjekt.Classes.Math
         }
         public Triangle()
         {
-            this.AB = new LineSegment();
-            this.BC = new LineSegment();
-            this.CA = new LineSegment();
-            _segmentList = new List<LineSegment>();
-            _segmentList.Add(AB);
-            _segmentList.Add(BC);
-            _segmentList.Add(CA);
+            _vectorList = new List<Vector>();
             this.Color = new Pen(System.Drawing.Color.Black);
         }
 
-        static public Triangle Translate(Triangle shape, Vector vector)
+        static public Triangle Multiply(Triangle shape, Matrix matrix)
         {
             Triangle tri = new Triangle(shape.PointList[0], shape.PointList[1], shape.PointList[2], shape.Color);
-            tri.Translate(vector);
+            tri.Multiply(matrix);
+            return tri;
+        }
+        public void Multiply(Matrix matrix)
+        {
+            foreach (Vector vector in _vectorList)
+            {
+                vector.Multiply(matrix);
+            }
+        }
+        static public Triangle Add(Triangle shape, Vector vector)
+        {
+            Triangle tri = new Triangle(shape.PointList[0], shape.PointList[1], shape.PointList[2], shape.Color);
+            tri.Add(vector);
             return tri;
         }
 
-        static public Triangle Scale(Triangle shape, float vector)
-        {
-            Triangle tri = new Triangle(shape.PointList[0],shape.PointList[1],shape.PointList[2],shape.Color);
-            tri.Scale(vector);
-            return tri;
-        }
 
-        public void Translate(Vector vector)
+        public void Add(Vector vector)
         {
-            foreach (LineSegment segment in _segmentList)
+            foreach (Vector v in _vectorList)
             {
-                segment.StartPoint = new PointF(vector.X1 + segment.StartPoint.X, vector.X2 + segment.StartPoint.Y);
+                v.Add(vector);
             }
-        }
-
-        /// <summary>
-        /// Scales the triganle with the first point as center
-        /// </summary>
-        /// <param name="vector"></param>
-        public void Scale(float scalar)
-        {
-            foreach (LineSegment segment in _segmentList)
-            {
-                segment.Vector.Scale(scalar);
-            }
-            this.BC.StartPoint = this.AB.EndPoint;
-            this.CA.StartPoint = this.BC.EndPoint;
         }
 
         public Pen Color { get; set; }

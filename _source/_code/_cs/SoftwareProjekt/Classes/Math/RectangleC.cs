@@ -9,17 +9,17 @@ namespace SoftwareProjekt.Classes.Math
 {
     public class RectangleC : IShape
     {
-        private List<LineSegment> _segmentList;
-        public LineSegment AB { get; private set; }
-        public LineSegment BC { get; private set; }
-        public LineSegment CD { get; private set; }
-        public LineSegment DA { get; private set; }
+        private List<Vector> _vectorList;
+        private Vector _a;
+        private Vector _b;
+        private Vector _c;
+        private Vector _d;
 
         public RectangleF Rectangle
         {
             get
             {
-                return new RectangleF(this.AB.StartPoint.X, this.AB.StartPoint.Y, AB.Vector.Length, BC.Vector.Length);
+                return new RectangleF(PointList[0].X, PointList[0].Y, _vectorList[0].Length, _vectorList[2].Length);
             }
         }
         public List<PointF> PointList
@@ -27,45 +27,36 @@ namespace SoftwareProjekt.Classes.Math
             get
             {
                 List<PointF> list = new List<PointF>();
-                list.Add(this.AB.StartPoint);
-                list.Add(this.BC.StartPoint);
-                list.Add(this.CD.StartPoint);
-                list.Add(this.DA.StartPoint);
+                foreach (Vector item in _vectorList)
+                {
+                    list.Add(new PointF(item.X1, item.X2));
+                }                
                 return list;
             }
         }
         public RectangleC()
         {
-            this.AB = new LineSegment();
-            this.BC = new LineSegment();
-            this.CD = new LineSegment();
-            this.DA = new LineSegment();
-            _segmentList = new List<LineSegment>();
-            _segmentList.Add(AB);
-            _segmentList.Add(BC);
-            _segmentList.Add(CD);
-            _segmentList.Add(DA);
+            _a = new Vector();
+            _b = new Vector();
+            _c = new Vector();
+            _vectorList = new List<Vector>();
+            _vectorList.Add(_a);
+            _vectorList.Add(_b);
+            _vectorList.Add(_c);
+            _vectorList.Add(_d);
             this.Color = new Pen(System.Drawing.Color.Black);
         }
         public RectangleC(PointF a, PointF b, PointF c, PointF d)
         {
-            Vector ab = new Vector(b.X - a.X, b.Y - a.Y);
-            this.AB = new LineSegment(a, ab);
-
-            Vector bc = new Vector(c.X - b.X, c.Y - b.Y);
-            this.BC = new LineSegment(b, bc);
-
-            Vector cd = new Vector(d.X - c.X, d.Y - c.Y);
-            this.CD = new LineSegment(c, cd);
-
-            Vector da = new Vector(a.X - d.X, a.Y - d.Y);
-            this.DA = new LineSegment(d, da);
-
-            _segmentList = new List<LineSegment>();
-            _segmentList.Add(this.AB);
-            _segmentList.Add(this.BC);
-            _segmentList.Add(this.CD);
-            _segmentList.Add(this.DA);
+            _a = new Vector(a);
+            _b = new Vector(b);
+            _c = new Vector(c);
+            _d = new Vector(d);
+            _vectorList = new List<Vector>();
+            _vectorList.Add(_a);
+            _vectorList.Add(_b);
+            _vectorList.Add(_c);
+            _vectorList.Add(_d);
             this.Color = new Pen(System.Drawing.Color.Black);
         }
 
@@ -75,14 +66,34 @@ namespace SoftwareProjekt.Classes.Math
             this.Color = color;
         }
 
-        public void Translate(Vector vector)
+        public static RectangleC Multiply(RectangleC rectangle, Matrix matrix)
         {
-            throw new NotImplementedException();
+            RectangleC r = new RectangleC(rectangle.PointList[0], rectangle.PointList[1], rectangle.PointList[2], rectangle.PointList[3], rectangle.Color);
+            r.Multiply(matrix);
+            return r;
         }
 
-        public void Scale(float scalar)
+        public void Multiply(Matrix matrix)
         {
-            throw new NotImplementedException();
+            foreach (Vector v in _vectorList)
+            {
+                v.Multiply(matrix);
+            }
+        }
+
+        static public RectangleC Add(RectangleC rectangle, Vector vector)
+        {
+            RectangleC r = new RectangleC(rectangle.PointList[0], rectangle.PointList[1], rectangle.PointList[2], rectangle.PointList[3], rectangle.Color);
+            r.Add(vector);
+            return r;
+        }
+
+        public void Add(Vector vector)
+        {
+            foreach (Vector v in _vectorList)
+            {
+                v.Add(vector);
+            }
         }
 
         public Pen Color { get; set; }

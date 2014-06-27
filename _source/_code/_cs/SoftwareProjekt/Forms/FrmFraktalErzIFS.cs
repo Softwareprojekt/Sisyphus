@@ -63,21 +63,18 @@ namespace SoftwareProjekt.Forms
                 _cosInput.Clear();
                 _cosOutput.Clear();
               
-                Triangle tri = new Triangle(new PointF(0, 0), new PointF(2, 0), new PointF(0, 2));
+                Triangle tri = new Triangle(new PointF(0, 0), new PointF(1, 0), new PointF(1, 1));
 
-                Triangle tri1 = Triangle.Scale(tri, .5f);
-                tri1.Translate(new Vector(1, 0));
-                Triangle tri2 = Triangle.Scale(tri, .5f);
-                tri2.Translate(new Vector(0, 1));
-                Triangle tri3 = Triangle.Scale(tri, .5f);
-                tri3.Translate(new Vector(0, 0));
+                SoftwareProjekt.Classes.Math.Matrix m = new Classes.Math.Matrix(1, 2, 3, -1);
+
+                Triangle tri1 = Triangle.Multiply(tri, m);
 
 
                 _cosInput.AddTriangle(tri);
 
                 _cosOutput.AddTriangle(tri1);
-                _cosOutput.AddTriangle(tri2);
-                _cosOutput.AddTriangle(tri3);
+               // _cosOutput.AddTriangle(tri2);
+               // _cosOutput.AddTriangle(tri3);
 
 
                 if (_loadedPic != null)
@@ -91,9 +88,16 @@ namespace SoftwareProjekt.Forms
                 Console.WriteLine("paint square.");
 
                 _cosInput.Clear();
-                RectangleC r = new RectangleC(new PointF(0, 0), new PointF(2, 0), new PointF(2, 2), new PointF(0, 2), new Pen(Color.Red));
-                _cosInput.AddRectangle(r);
+                _cosOutput.Clear();
 
+                RectangleC r = new RectangleC(new PointF(0, 0), new PointF(2, 0), new PointF(2, 2), new PointF(0, 2), new Pen(Color.Red));
+                SoftwareProjekt.Classes.Math.Matrix m = new Classes.Math.Matrix(.5f, 0, 0, .5f);
+                Vector v = new Vector(1, 1);
+                RectangleC r1 = RectangleC.Multiply(r, m);
+                r1.Add(v);
+
+                _cosInput.AddRectangle(r);
+                _cosOutput.AddRectangle(r1);
 
                 if (_loadedPic != null)
                 {
@@ -106,8 +110,16 @@ namespace SoftwareProjekt.Forms
                 Console.WriteLine("paint circle.");
 
                 _cosInput.Clear();
+                _cosOutput.Clear();
+
                 Circle c = new Circle(new PointF(2, 2), 2, new Pen(Color.Green));
+                SoftwareProjekt.Classes.Math.Matrix m = new Classes.Math.Matrix(.5f, 0, 0, .5f);
+                Vector v = new Vector(1, 0);
+                Circle c1 = Circle.Multiply(c, m);
+                c1.Add(v);
+
                 _cosInput.AddCircle(c);
+                _cosOutput.AddCircle(c1);
 
                 if (_loadedPic != null)
                 {

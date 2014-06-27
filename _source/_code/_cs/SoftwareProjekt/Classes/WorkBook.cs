@@ -349,6 +349,10 @@ namespace SoftwareProjekt.Classes
                     break;
                 }
             }
+            if (entry1 == null)
+            {
+                return;
+            }
             try
             {
                  this.Save();
