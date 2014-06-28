@@ -21,6 +21,8 @@ namespace SoftwareProjekt.Forms
 {
     public partial class FrmLinAbbVielBelVek : AbstractView
     {
+        private LineSegment _vectorInputX;
+
         public FrmLinAbbVielBelVek()
         {
             InitializeComponent();
@@ -30,10 +32,9 @@ namespace SoftwareProjekt.Forms
         {
             Dictionary<string, Object> retVal = new Dictionary<string, object>();
 
-            /*retVal.Add("EV1", _vector.Einheitsvector1);
-            retVal.Add("EV2", _vector.Einheitsvector2);
-            retVal.Add("VectorX", _vector.VectorX);
-            retVal.Add("Angle", _vector.Angle);*/
+            retVal.Add("MatrixM1", ctlMatrixInput.Matrix);
+            retVal.Add("VectorX", ctlVectorInputX.Vector);
+            
 
             return retVal;
         }
@@ -50,23 +51,12 @@ namespace SoftwareProjekt.Forms
 
         private void butFunctionAMultX_Click(object sender, EventArgs e)
         {
-            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+            if (this.CheckInputs())
+            {
+                this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+            }
         }
 
-        private void txtFactorA_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDeterminante_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rtxtNotes_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtFactorA_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -78,14 +68,35 @@ namespace SoftwareProjekt.Forms
 
 		protected override bool CheckInputs()
 		{
-			throw new NotImplementedException();
+            if (ctlMatrixInput.Matrix.IsValid() && ctlVectorInputX.Vector.IsValid())
+            {
+#if DEBUG
+                Console.WriteLine("SUCCESS @ Inputs are valid.");
+#endif
+                return true;
+            }
+#if DEBUG
+            Console.WriteLine("ERROR @ Inputs are not valid.");
+#endif
+            return false;
 		}
 
 
 
         public override bool LoadState(Dictionary<string, object> state)
         {
-            throw new NotImplementedException();
+            // state does not exist in workbook.
+            if (state == null)
+            {
+                return false;
+            }
+            else if (!state.ContainsKey("VectorX"))
+            {
+                return false;
+            }
+
+            ctlVectorInputX.Vector = (Vector)state["VectorX"];
+            return true;
         }
     }
 }

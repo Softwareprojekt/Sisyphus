@@ -27,9 +27,29 @@ namespace SoftwareProjekt.Forms
         string _functionBlock;
         string _xVector;
 
+        private LineSegment _vectorInputX;
+        private LineSegment _vectorInputM1;
+        private LineSegment _vectorInputM2;
+        private LineSegment _vectorInputEV1;
+        private LineSegment _vectorInputEV2;
+
         public FrmZuordvorLinAbb()
         {
             InitializeComponent();
+
+            this.ctlVectorInputEV1.txtEle11.Text = "1";
+            this.ctlVectorInputEV1.txtEle21.Text = "0";
+
+            this.ctlVectorInputEV2.txtEle11.Text = "0";
+            this.ctlVectorInputEV2.txtEle21.Text = "1";
+
+            _vectorInputEV1 = new LineSegment(new PointF(0, 0), ctlVectorInputEV1.Vector, Pens.Blue);
+            _vectorInputEV2 = new LineSegment(new PointF(0, 0), ctlVectorInputEV2.Vector, Pens.Red);
+            _vectorInputX = new LineSegment(new PointF(0, 0), ctlVectorInputX.Vector);
+
+            cosInput.AddLineSegment(_vectorInputEV1);
+            cosInput.AddLineSegment(_vectorInputEV2);
+
 
             _functionBlock = "<mn>f</mn>\n";
             _functionBlock += "<mo>&ApplyFunction;</mo>\n";
@@ -134,37 +154,66 @@ namespace SoftwareProjekt.Forms
         {
             Dictionary<string, Object> retVal = new Dictionary<string, object>();
 
-            /*retVal.Add("EV1", _vector.Einheitsvector1);
-            retVal.Add("EV2", _vector.Einheitsvector2);
-            retVal.Add("VectorX", _vector.VectorX);
-            retVal.Add("Angle", _vector.Angle);*/
-
+            retVal.Add("VectorX", ctlVectorInputX.Vector);
+            retVal.Add("VectorM1", ctlVectorInputM1.Vector);
+            retVal.Add("VectorM2", ctlVectorInputM2.Vector);
+            retVal.Add("EV1", ctlVectorInputEV1.Vector);
+            retVal.Add("EV2", ctlVectorInputEV2.Vector);
             return retVal;
         }
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
-            throw new System.NotImplementedException();
+            cosOutput.ClearLineSegments();
         }
 
         private void butFunctionX_Click(object sender, EventArgs e)
         {
-            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
-        }
-
-        private void rtxtNotes_TextChanged(object sender, EventArgs e)
-        {
-
+            if (this.CheckInputs())
+            {
+                this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+            }
         }
 
 		protected override bool CheckInputs()
 		{
-			throw new NotImplementedException();
+            if (ctlVectorInputX.Vector.IsValid() && ctlVectorInputM1.Vector.IsValid() && ctlVectorInputM2.Vector.IsValid() && ctlVectorInputEV1.Vector.IsValid() && ctlVectorInputEV2.Vector.IsValid())
+            {
+#if DEBUG
+                Console.WriteLine("SUCCESS @ Inputs are valid.");
+#endif
+                return true;
+            }
+#if DEBUG
+            Console.WriteLine("ERROR @ Inputs are not valid.");
+#endif
+            return false;
 		}
 
         public override bool LoadState(Dictionary<string, object> state)
         {
-            throw new NotImplementedException();
+            // state does not exist in workbook.
+            if (state == null)
+            {
+                return false;
+            }
+            else if (!state.ContainsKey("VectorX"))
+            {
+                return false;
+            }
+            else if (!state.ContainsKey("VectorM1"))
+            {
+                return false;
+            }
+            else if (!state.ContainsKey("VectorM2"))
+            {
+                return false;
+            }
+
+            ctlVectorInputX.Vector = (Vector)state["VectorX"];
+            ctlVectorInputM1.Vector = (Vector)state["VectorM1"];
+            ctlVectorInputM2.Vector = (Vector)state["VectorM2"];
+            return true;
         }
     }
 }

@@ -37,27 +37,27 @@
             this.lblOutput = new System.Windows.Forms.Label();
             this.lblInputLeft = new System.Windows.Forms.Label();
             this.grpDataInput1 = new System.Windows.Forms.GroupBox();
-            this.ctlVectorInput3 = new SoftwareProjekt.UserControls.CtlVectorInput();
-            this.ctlVectorInput2 = new SoftwareProjekt.UserControls.CtlVectorInput();
-            this.ctlVectorInput1 = new SoftwareProjekt.UserControls.CtlVectorInput();
+            this.ctlVectorInputC = new SoftwareProjekt.UserControls.CtlVectorInput();
+            this.ctlVectorInputB = new SoftwareProjekt.UserControls.CtlVectorInput();
+            this.ctlVectorInputA = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.lblPointC1 = new System.Windows.Forms.Label();
             this.lblPointA1 = new System.Windows.Forms.Label();
             this.lblPointB1 = new System.Windows.Forms.Label();
             this.txtFunction1X = new System.Windows.Forms.TextBox();
             this.txtInverseFunction1X = new System.Windows.Forms.TextBox();
             this.grpDataInput2 = new System.Windows.Forms.GroupBox();
-            this.ctlVectorInput6 = new SoftwareProjekt.UserControls.CtlVectorInput();
-            this.ctlVectorInput5 = new SoftwareProjekt.UserControls.CtlVectorInput();
-            this.ctlVectorInput4 = new SoftwareProjekt.UserControls.CtlVectorInput();
+            this.ctlVectorInputC2 = new SoftwareProjekt.UserControls.CtlVectorInput();
+            this.ctlVectorInputB2 = new SoftwareProjekt.UserControls.CtlVectorInput();
+            this.ctlVectorInputA2 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.lblPointC2 = new System.Windows.Forms.Label();
             this.lblPointA2 = new System.Windows.Forms.Label();
             this.lblPointB2 = new System.Windows.Forms.Label();
             this.lblInputRight = new System.Windows.Forms.Label();
             this.butFx = new System.Windows.Forms.Button();
             this.txtFx = new System.Windows.Forms.TextBox();
-            this.cosInputLeft = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.cosInputABC = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
-            this.cosInputRight = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.cosInputA2B2C2 = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -90,9 +90,9 @@
             // 
             // grpDataInput1
             // 
-            this.grpDataInput1.Controls.Add(this.ctlVectorInput3);
-            this.grpDataInput1.Controls.Add(this.ctlVectorInput2);
-            this.grpDataInput1.Controls.Add(this.ctlVectorInput1);
+            this.grpDataInput1.Controls.Add(this.ctlVectorInputC);
+            this.grpDataInput1.Controls.Add(this.ctlVectorInputB);
+            this.grpDataInput1.Controls.Add(this.ctlVectorInputA);
             this.grpDataInput1.Controls.Add(this.lblPointC1);
             this.grpDataInput1.Controls.Add(this.lblPointA1);
             this.grpDataInput1.Controls.Add(this.lblPointB1);
@@ -105,41 +105,41 @@
             this.grpDataInput1.TabStop = false;
             this.grpDataInput1.Text = "Dateneingabe";
             // 
-            // ctlVectorInput3
+            // ctlVectorInputC
             // 
-            this.ctlVectorInput3.Location = new System.Drawing.Point(329, 48);
-            this.ctlVectorInput3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVectorInput3.MinimumSize = new System.Drawing.Size(136, 94);
-            this.ctlVectorInput3.Name = "ctlVectorInput3";
-            this.ctlVectorInput3.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInput3.TabIndex = 3;
+            this.ctlVectorInputC.Location = new System.Drawing.Point(329, 48);
+            this.ctlVectorInputC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInputC.MinimumSize = new System.Drawing.Size(136, 94);
+            this.ctlVectorInputC.Name = "ctlVectorInputC";
+            this.ctlVectorInputC.Size = new System.Drawing.Size(153, 102);
+            this.ctlVectorInputC.TabIndex = 3;
             vector1.X1 = float.NaN;
             vector1.X2 = float.NaN;
-            this.ctlVectorInput3.Vector = vector1;
+            this.ctlVectorInputC.Vector = vector1;
             // 
-            // ctlVectorInput2
+            // ctlVectorInputB
             // 
-            this.ctlVectorInput2.Location = new System.Drawing.Point(168, 48);
-            this.ctlVectorInput2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVectorInput2.MinimumSize = new System.Drawing.Size(136, 94);
-            this.ctlVectorInput2.Name = "ctlVectorInput2";
-            this.ctlVectorInput2.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInput2.TabIndex = 2;
+            this.ctlVectorInputB.Location = new System.Drawing.Point(168, 48);
+            this.ctlVectorInputB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInputB.MinimumSize = new System.Drawing.Size(136, 94);
+            this.ctlVectorInputB.Name = "ctlVectorInputB";
+            this.ctlVectorInputB.Size = new System.Drawing.Size(153, 102);
+            this.ctlVectorInputB.TabIndex = 2;
             vector2.X1 = float.NaN;
             vector2.X2 = float.NaN;
-            this.ctlVectorInput2.Vector = vector2;
+            this.ctlVectorInputB.Vector = vector2;
             // 
-            // ctlVectorInput1
+            // ctlVectorInputA
             // 
-            this.ctlVectorInput1.Location = new System.Drawing.Point(7, 48);
-            this.ctlVectorInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVectorInput1.MinimumSize = new System.Drawing.Size(136, 94);
-            this.ctlVectorInput1.Name = "ctlVectorInput1";
-            this.ctlVectorInput1.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInput1.TabIndex = 1;
+            this.ctlVectorInputA.Location = new System.Drawing.Point(7, 48);
+            this.ctlVectorInputA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInputA.MinimumSize = new System.Drawing.Size(136, 94);
+            this.ctlVectorInputA.Name = "ctlVectorInputA";
+            this.ctlVectorInputA.Size = new System.Drawing.Size(153, 102);
+            this.ctlVectorInputA.TabIndex = 1;
             vector3.X1 = float.NaN;
             vector3.X2 = float.NaN;
-            this.ctlVectorInput1.Vector = vector3;
+            this.ctlVectorInputA.Vector = vector3;
             // 
             // lblPointC1
             // 
@@ -175,7 +175,6 @@
             this.txtFunction1X.Name = "txtFunction1X";
             this.txtFunction1X.Size = new System.Drawing.Size(254, 22);
             this.txtFunction1X.TabIndex = 9;
-            this.txtFunction1X.TextChanged += new System.EventHandler(this.txtFunction1X_TextChanged);
             // 
             // txtInverseFunction1X
             // 
@@ -184,13 +183,12 @@
             this.txtInverseFunction1X.Name = "txtInverseFunction1X";
             this.txtInverseFunction1X.Size = new System.Drawing.Size(254, 22);
             this.txtInverseFunction1X.TabIndex = 8;
-            this.txtInverseFunction1X.TextChanged += new System.EventHandler(this.txtInverseFunction1X_TextChanged);
             // 
             // grpDataInput2
             // 
-            this.grpDataInput2.Controls.Add(this.ctlVectorInput6);
-            this.grpDataInput2.Controls.Add(this.ctlVectorInput5);
-            this.grpDataInput2.Controls.Add(this.ctlVectorInput4);
+            this.grpDataInput2.Controls.Add(this.ctlVectorInputC2);
+            this.grpDataInput2.Controls.Add(this.ctlVectorInputB2);
+            this.grpDataInput2.Controls.Add(this.ctlVectorInputA2);
             this.grpDataInput2.Controls.Add(this.lblPointC2);
             this.grpDataInput2.Controls.Add(this.lblPointA2);
             this.grpDataInput2.Controls.Add(this.lblPointB2);
@@ -203,41 +201,41 @@
             this.grpDataInput2.TabStop = false;
             this.grpDataInput2.Text = "Dateneingabe";
             // 
-            // ctlVectorInput6
+            // ctlVectorInputC2
             // 
-            this.ctlVectorInput6.Location = new System.Drawing.Point(329, 48);
-            this.ctlVectorInput6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVectorInput6.MinimumSize = new System.Drawing.Size(136, 94);
-            this.ctlVectorInput6.Name = "ctlVectorInput6";
-            this.ctlVectorInput6.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInput6.TabIndex = 8;
+            this.ctlVectorInputC2.Location = new System.Drawing.Point(329, 48);
+            this.ctlVectorInputC2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInputC2.MinimumSize = new System.Drawing.Size(136, 94);
+            this.ctlVectorInputC2.Name = "ctlVectorInputC2";
+            this.ctlVectorInputC2.Size = new System.Drawing.Size(153, 102);
+            this.ctlVectorInputC2.TabIndex = 8;
             vector4.X1 = float.NaN;
             vector4.X2 = float.NaN;
-            this.ctlVectorInput6.Vector = vector4;
+            this.ctlVectorInputC2.Vector = vector4;
             // 
-            // ctlVectorInput5
+            // ctlVectorInputB2
             // 
-            this.ctlVectorInput5.Location = new System.Drawing.Point(168, 48);
-            this.ctlVectorInput5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVectorInput5.MinimumSize = new System.Drawing.Size(136, 94);
-            this.ctlVectorInput5.Name = "ctlVectorInput5";
-            this.ctlVectorInput5.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInput5.TabIndex = 7;
+            this.ctlVectorInputB2.Location = new System.Drawing.Point(168, 48);
+            this.ctlVectorInputB2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInputB2.MinimumSize = new System.Drawing.Size(136, 94);
+            this.ctlVectorInputB2.Name = "ctlVectorInputB2";
+            this.ctlVectorInputB2.Size = new System.Drawing.Size(153, 102);
+            this.ctlVectorInputB2.TabIndex = 7;
             vector5.X1 = float.NaN;
             vector5.X2 = float.NaN;
-            this.ctlVectorInput5.Vector = vector5;
+            this.ctlVectorInputB2.Vector = vector5;
             // 
-            // ctlVectorInput4
+            // ctlVectorInputA2
             // 
-            this.ctlVectorInput4.Location = new System.Drawing.Point(7, 48);
-            this.ctlVectorInput4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVectorInput4.MinimumSize = new System.Drawing.Size(136, 94);
-            this.ctlVectorInput4.Name = "ctlVectorInput4";
-            this.ctlVectorInput4.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInput4.TabIndex = 6;
+            this.ctlVectorInputA2.Location = new System.Drawing.Point(7, 48);
+            this.ctlVectorInputA2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInputA2.MinimumSize = new System.Drawing.Size(136, 94);
+            this.ctlVectorInputA2.Name = "ctlVectorInputA2";
+            this.ctlVectorInputA2.Size = new System.Drawing.Size(153, 102);
+            this.ctlVectorInputA2.TabIndex = 6;
             vector6.X1 = float.NaN;
             vector6.X2 = float.NaN;
-            this.ctlVectorInput4.Vector = vector6;
+            this.ctlVectorInputA2.Vector = vector6;
             // 
             // lblPointC2
             // 
@@ -294,15 +292,14 @@
             this.txtFx.Name = "txtFx";
             this.txtFx.Size = new System.Drawing.Size(176, 22);
             this.txtFx.TabIndex = 12;
-            this.txtFx.TextChanged += new System.EventHandler(this.txtFx_TextChanged);
             // 
-            // cosInputLeft
+            // cosInputABC
             // 
-            this.cosInputLeft.Location = new System.Drawing.Point(16, 236);
-            this.cosInputLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.cosInputLeft.Name = "cosInputLeft";
-            this.cosInputLeft.Size = new System.Drawing.Size(508, 393);
-            this.cosInputLeft.TabIndex = 25;
+            this.cosInputABC.Location = new System.Drawing.Point(16, 236);
+            this.cosInputABC.Margin = new System.Windows.Forms.Padding(4);
+            this.cosInputABC.Name = "cosInputABC";
+            this.cosInputABC.Size = new System.Drawing.Size(508, 393);
+            this.cosInputABC.TabIndex = 25;
             // 
             // cosOutput
             // 
@@ -312,13 +309,13 @@
             this.cosOutput.Size = new System.Drawing.Size(508, 393);
             this.cosOutput.TabIndex = 26;
             // 
-            // cosInputRight
+            // cosInputA2B2C2
             // 
-            this.cosInputRight.Location = new System.Drawing.Point(1271, 236);
-            this.cosInputRight.Margin = new System.Windows.Forms.Padding(4);
-            this.cosInputRight.Name = "cosInputRight";
-            this.cosInputRight.Size = new System.Drawing.Size(508, 393);
-            this.cosInputRight.TabIndex = 27;
+            this.cosInputA2B2C2.Location = new System.Drawing.Point(1271, 236);
+            this.cosInputA2B2C2.Margin = new System.Windows.Forms.Padding(4);
+            this.cosInputA2B2C2.Name = "cosInputA2B2C2";
+            this.cosInputA2B2C2.Size = new System.Drawing.Size(508, 393);
+            this.cosInputA2B2C2.TabIndex = 27;
             // 
             // lblNotes
             // 
@@ -338,7 +335,6 @@
             this.rtxtNotes.Size = new System.Drawing.Size(636, 152);
             this.rtxtNotes.TabIndex = 11;
             this.rtxtNotes.Text = "";
-            this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
             // 
             // label1
             // 
@@ -399,7 +395,6 @@
             this.txtFunction2X.Name = "txtFunction2X";
             this.txtFunction2X.Size = new System.Drawing.Size(254, 22);
             this.txtFunction2X.TabIndex = 46;
-            this.txtFunction2X.TextChanged += new System.EventHandler(this.txtFunction2X_TextChanged);
             // 
             // FrmZuordAffAbb
             // 
@@ -416,9 +411,9 @@
             this.Controls.Add(this.txtFunction1X);
             this.Controls.Add(this.txtInverseFunction1X);
             this.Controls.Add(this.rtxtNotes);
-            this.Controls.Add(this.cosInputRight);
+            this.Controls.Add(this.cosInputA2B2C2);
             this.Controls.Add(this.cosOutput);
-            this.Controls.Add(this.cosInputLeft);
+            this.Controls.Add(this.cosInputABC);
             this.Controls.Add(this.txtFx);
             this.Controls.Add(this.butFx);
             this.Controls.Add(this.lblInputRight);
@@ -455,19 +450,19 @@
         private System.Windows.Forms.Label lblInputRight;
         private System.Windows.Forms.Button butFx;
         private System.Windows.Forms.TextBox txtFx;
-        private SoftwareProjekt.UserControls.CoordinateSystem cosInputLeft;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosInputABC;
         private SoftwareProjekt.UserControls.CoordinateSystem cosOutput;
-        private SoftwareProjekt.UserControls.CoordinateSystem cosInputRight;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosInputA2B2C2;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblFx;
-        private UserControls.CtlVectorInput ctlVectorInput3;
-        private UserControls.CtlVectorInput ctlVectorInput2;
-        private UserControls.CtlVectorInput ctlVectorInput1;
-        private UserControls.CtlVectorInput ctlVectorInput6;
-        private UserControls.CtlVectorInput ctlVectorInput5;
-        private UserControls.CtlVectorInput ctlVectorInput4;
+        private UserControls.CtlVectorInput ctlVectorInputC;
+        private UserControls.CtlVectorInput ctlVectorInputB;
+        private UserControls.CtlVectorInput ctlVectorInputA;
+        private UserControls.CtlVectorInput ctlVectorInputC2;
+        private UserControls.CtlVectorInput ctlVectorInputB2;
+        private UserControls.CtlVectorInput ctlVectorInputA2;
         private System.Windows.Forms.Button butFunction1X;
         private System.Windows.Forms.Button butInverseFunction1X;
         private System.Windows.Forms.Button butFunction2X;

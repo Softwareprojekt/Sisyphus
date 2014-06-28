@@ -32,8 +32,8 @@
             SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
             this.lblIn = new System.Windows.Forms.Label();
             this.grpDataInput = new System.Windows.Forms.GroupBox();
-            this.ctlMatrixInput1 = new SoftwareProjekt.UserControls.CtlMatrixInput();
-            this.ctlVectorInput1 = new SoftwareProjekt.UserControls.CtlVectorInput();
+            this.ctlMatrixInput = new SoftwareProjekt.UserControls.CtlMatrixInput();
+            this.ctlVectorInputX = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.txtDeterminante = new System.Windows.Forms.TextBox();
             this.butDeterminante = new System.Windows.Forms.Button();
             this.txtFactorA = new System.Windows.Forms.TextBox();
@@ -66,8 +66,8 @@
             // 
             // grpDataInput
             // 
-            this.grpDataInput.Controls.Add(this.ctlMatrixInput1);
-            this.grpDataInput.Controls.Add(this.ctlVectorInput1);
+            this.grpDataInput.Controls.Add(this.ctlMatrixInput);
+            this.grpDataInput.Controls.Add(this.ctlVectorInputX);
             this.grpDataInput.Controls.Add(this.txtDeterminante);
             this.grpDataInput.Controls.Add(this.butDeterminante);
             this.grpDataInput.Controls.Add(this.txtFactorA);
@@ -81,31 +81,31 @@
             this.grpDataInput.TabStop = false;
             this.grpDataInput.Text = "Dateneingabe";
             // 
-            // ctlMatrixInput1
+            // ctlMatrixInput
             // 
-            this.ctlMatrixInput1.Location = new System.Drawing.Point(9, 153);
-            this.ctlMatrixInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlMatrixInput.Location = new System.Drawing.Point(9, 153);
+            this.ctlMatrixInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             matrix1.X11 = float.NaN;
             matrix1.X12 = float.NaN;
             matrix1.X21 = float.NaN;
             matrix1.X22 = float.NaN;
-            this.ctlMatrixInput1.Matrix = matrix1;
-            this.ctlMatrixInput1.MinimumSize = new System.Drawing.Size(131, 94);
-            this.ctlMatrixInput1.Name = "ctlMatrixInput1";
-            this.ctlMatrixInput1.Size = new System.Drawing.Size(164, 94);
-            this.ctlMatrixInput1.TabIndex = 3;
+            this.ctlMatrixInput.Matrix = matrix1;
+            this.ctlMatrixInput.MinimumSize = new System.Drawing.Size(131, 94);
+            this.ctlMatrixInput.Name = "ctlMatrixInput";
+            this.ctlMatrixInput.Size = new System.Drawing.Size(164, 94);
+            this.ctlMatrixInput.TabIndex = 3;
             // 
-            // ctlVectorInput1
+            // ctlVectorInputX
             // 
-            this.ctlVectorInput1.Location = new System.Drawing.Point(9, 19);
-            this.ctlVectorInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVectorInput1.MinimumSize = new System.Drawing.Size(136, 94);
-            this.ctlVectorInput1.Name = "ctlVectorInput1";
-            this.ctlVectorInput1.Size = new System.Drawing.Size(158, 98);
-            this.ctlVectorInput1.TabIndex = 1;
+            this.ctlVectorInputX.Location = new System.Drawing.Point(9, 19);
+            this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(136, 94);
+            this.ctlVectorInputX.Name = "ctlVectorInputX";
+            this.ctlVectorInputX.Size = new System.Drawing.Size(158, 98);
+            this.ctlVectorInputX.TabIndex = 1;
             vector1.X1 = float.NaN;
             vector1.X2 = float.NaN;
-            this.ctlVectorInput1.Vector = vector1;
+            this.ctlVectorInputX.Vector = vector1;
             // 
             // txtDeterminante
             // 
@@ -116,7 +116,6 @@
             this.txtDeterminante.ReadOnly = true;
             this.txtDeterminante.Size = new System.Drawing.Size(131, 22);
             this.txtDeterminante.TabIndex = 36;
-            this.txtDeterminante.TextChanged += new System.EventHandler(this.txtDeterminante_TextChanged);
             // 
             // butDeterminante
             // 
@@ -137,7 +136,6 @@
             this.txtFactorA.Name = "txtFactorA";
             this.txtFactorA.Size = new System.Drawing.Size(76, 22);
             this.txtFactorA.TabIndex = 2;
-            this.txtFactorA.TextChanged += new System.EventHandler(this.txtFactorA_TextChanged);
             this.txtFactorA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFactorA_KeyPress);
             // 
             // lblFactorA
@@ -229,7 +227,6 @@
             this.rtxtNotes.Size = new System.Drawing.Size(636, 152);
             this.rtxtNotes.TabIndex = 6;
             this.rtxtNotes.Text = "";
-            this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
             // 
             // label1
             // 
@@ -308,8 +305,8 @@
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
         private System.Windows.Forms.Label label1;
-        private UserControls.CtlMatrixInput ctlMatrixInput1;
-        private UserControls.CtlVectorInput ctlVectorInput1;
+        private UserControls.CtlMatrixInput ctlMatrixInput;
+        private UserControls.CtlVectorInput ctlVectorInputX;
         private System.Windows.Forms.Label lblOut;
         private UserControls.CoordinateSystem cosInput;
         private UserControls.CoordinateSystem cosOutput;

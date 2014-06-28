@@ -13,8 +13,17 @@ using SoftwareProjekt.Interfaces;
 
 namespace SoftwareProjekt.Forms
 {
+       
     public partial class FrmZuordAffAbb : AbstractView 
     {
+        private LineSegment _vectorInputA;
+        private LineSegment _vectorInputB;
+        private LineSegment _vectorInputC;
+
+        private LineSegment _vectorInputA2;
+        private LineSegment _vectorInputB2;
+        private LineSegment _vectorInputC2;
+
         public FrmZuordAffAbb()
         {
             InitializeComponent();
@@ -24,17 +33,20 @@ namespace SoftwareProjekt.Forms
         {
             Dictionary<string, Object> retVal = new Dictionary<string, object>();
 
-            /*retVal.Add("EV1", _vector.Einheitsvector1);
-            retVal.Add("EV2", _vector.Einheitsvector2);
-            retVal.Add("VectorX", _vector.VectorX);
-            retVal.Add("Angle", _vector.Angle);*/
+            retVal.Add("VectorA", ctlVectorInputA.Vector);
+            retVal.Add("VectorB", ctlVectorInputB.Vector);
+            retVal.Add("VectorC", ctlVectorInputC.Vector);
+            retVal.Add("VectorA2", ctlVectorInputA2.Vector);
+            retVal.Add("VectorB2", ctlVectorInputB2.Vector);
+            retVal.Add("VectorC2", ctlVectorInputC2.Vector);
+
 
             return retVal;
         }
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
-            throw new System.NotImplementedException();
+            cosOutput.ClearLineSegments();
         }
 
         private void butFunction1X_Click(object sender, EventArgs e)
@@ -54,42 +66,67 @@ namespace SoftwareProjekt.Forms
 
         private void butFx_Click(object sender, EventArgs e)
         {
-            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
-        }
-
-        private void txtFunction1X_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtInverseFunction1X_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtFunction2X_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtFx_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rtxtNotes_TextChanged(object sender, EventArgs e)
-        {
-
+            if (this.CheckInputs())
+            {
+                this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+            }
         }
 
 		protected override bool CheckInputs()
 		{
-			throw new NotImplementedException();
+			if (ctlVectorInputA.Vector.IsValid() && ctlVectorInputB.Vector.IsValid() && ctlVectorInputC.Vector.IsValid() && ctlVectorInputA2.Vector.IsValid() && ctlVectorInputB2.Vector.IsValid() && ctlVectorInputC2.Vector.IsValid())
+			{
+#if DEBUG
+				Console.WriteLine("SUCCESS @ Inputs are valid.");
+#endif
+				return true;
+			}
+#if DEBUG
+			Console.WriteLine("ERROR @ Inputs are not valid.");
+#endif
+			return false;
 		}
+		
 
         public override bool LoadState(Dictionary<string, object> state)
         {
-            throw new NotImplementedException();
+            // state does not exist in workbook.
+            if (state == null)
+            {
+                return false;
+            }
+            else if (!state.ContainsKey("VectorA"))
+            {
+                return false;
+            }
+            else if (!state.ContainsKey("VectorB"))
+            {
+                return false;
+            }
+            else if (!state.ContainsKey("VectorC"))
+            {
+                return false;
+            }
+            else if (!state.ContainsKey("VectorA2"))
+            {
+                return false;
+            }
+            else if (!state.ContainsKey("VectorB2"))
+            {
+                return false;
+            }
+            else if (!state.ContainsKey("VectorC2"))
+            {
+                return false;
+            }
+
+            ctlVectorInputA.Vector = (Vector)state["VectorA"];
+            ctlVectorInputB.Vector = (Vector)state["VectorB"];
+            ctlVectorInputC.Vector = (Vector)state["VectorC"];
+            ctlVectorInputA2.Vector = (Vector)state["VectorA2"];
+            ctlVectorInputB2.Vector = (Vector)state["VectorB2"];
+            ctlVectorInputC2.Vector = (Vector)state["VectorC2"];
+            return true;
         }
     }
 }

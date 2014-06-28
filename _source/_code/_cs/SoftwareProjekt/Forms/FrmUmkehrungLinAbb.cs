@@ -15,6 +15,9 @@ namespace SoftwareProjekt.Forms
 {
     public partial class FrmUmkehrungLinAbb : AbstractView 
     {
+        private LineSegment _vectorInputX;
+        private LineSegment _vectorInputY;
+
         public FrmUmkehrungLinAbb()
         {
             InitializeComponent();
@@ -24,17 +27,16 @@ namespace SoftwareProjekt.Forms
         {
             Dictionary<string, Object> retVal = new Dictionary<string, object>();
 
-            /*retVal.Add("EV1", _vector.Einheitsvector1);
-            retVal.Add("EV2", _vector.Einheitsvector2);
-            retVal.Add("VectorX", _vector.VectorX);
-            retVal.Add("Angle", _vector.Angle);*/
+            retVal.Add("VectorX", ctlVectorInputX.Vector);
+            retVal.Add("VectorY", ctlVectorInputY.Vector);
+            retVal.Add("Matrix", ctlMatrixInput.Matrix);
 
             return retVal;
         }
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
-            throw new System.NotImplementedException();
+            cosOutput.ClearLineSegments();
         }
 
         private void butDeterminante_Click(object sender, EventArgs e)
@@ -44,7 +46,10 @@ namespace SoftwareProjekt.Forms
 
         private void butFx_Click(object sender, EventArgs e)
         {
-            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+            if (this.CheckInputs())
+            {
+                this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+            }
         }
 
         private void butUmkehrFx_Click(object sender, EventArgs e)
@@ -52,39 +57,51 @@ namespace SoftwareProjekt.Forms
             this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void butFunctionEnd_Click(object sender, EventArgs e)
         {
             this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
         }
 
-        private void txtDeterminante_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUmkerFx_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUmkehrFy_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rtxtNotes_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 		protected override bool CheckInputs()
 		{
-			throw new NotImplementedException();
+            if (ctlVectorInputX.Vector.IsValid() && ctlVectorInputY.Vector.IsValid() && ctlMatrixInput.Matrix.IsValid())
+            {
+#if DEBUG
+                Console.WriteLine("SUCCESS @ Inputs are valid.");
+#endif
+                return true;
+            }
+#if DEBUG
+            Console.WriteLine("ERROR @ Inputs are not valid.");
+#endif
+            return false;
 		}
+
+        public void OnTextChanged(object sender, EventArgs e)
+        {
+            _vectorInputX.Vector = ctlVectorInputX.Vector;
+            cosInput.Refresh();
+        }
 
         public override bool LoadState(Dictionary<string, object> state)
         {
-            throw new NotImplementedException();
+            // state does not exist in workbook.
+            if (state == null)
+            {
+                return false;
+            }
+            else if (!state.ContainsKey("VectorX"))
+            {
+                return false;
+            }
+            else if (!state.ContainsKey("Vectory"))
+            {
+                return false;
+            }
+
+            ctlVectorInputX.Vector = (Vector)state["VectorX"];
+            ctlVectorInputY.Vector = (Vector)state["VectorY"];
+            return true;
         }
     }
 }

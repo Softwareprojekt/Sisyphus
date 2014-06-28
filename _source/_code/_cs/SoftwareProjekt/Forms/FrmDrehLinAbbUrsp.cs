@@ -119,7 +119,7 @@ namespace SoftwareProjekt.Forms
 
 		protected override bool CheckInputs()
 		{
-			if (ctlVectorEV1.Vector.IsValid() && ctlVectorEV1.Vector.IsValid() && ctlVectorInputX.Vector.IsValid() && txtAngle.IsValid())
+			if (ctlVectorEV1.Vector.IsValid() && ctlVectorEV2.Vector.IsValid() && ctlVectorInputX.Vector.IsValid() && txtAngle.IsValid())
 			{
 #if DEBUG
 				Console.WriteLine("SUCCESS @ Inputs are valid.");

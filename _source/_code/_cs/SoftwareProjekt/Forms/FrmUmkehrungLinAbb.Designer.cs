@@ -32,8 +32,8 @@
             SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
             SoftwareProjekt.Classes.Math.Vector vector2 = new SoftwareProjekt.Classes.Math.Vector();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.cosLeft = new SoftwareProjekt.UserControls.CoordinateSystem();
-            this.cosRight = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.cosInput = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this.cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.lblInput = new System.Windows.Forms.Label();
@@ -41,16 +41,16 @@
             this.grpDataInput = new System.Windows.Forms.GroupBox();
             this.txtDeterminante = new System.Windows.Forms.TextBox();
             this.butDeterminante = new System.Windows.Forms.Button();
-            this.ctlMatrixInput1 = new SoftwareProjekt.UserControls.CtlMatrixInput();
+            this.ctlMatrixInput = new SoftwareProjekt.UserControls.CtlMatrixInput();
             this.lblPunktX = new System.Windows.Forms.Label();
-            this.ctlVectorInput1 = new SoftwareProjekt.UserControls.CtlVectorInput();
+            this.ctlVectorInputX = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.butFx = new System.Windows.Forms.Button();
             this.butUmkehrFx = new System.Windows.Forms.Button();
             this.txtUmkerFx = new System.Windows.Forms.TextBox();
             this.grpDataInRight = new System.Windows.Forms.GroupBox();
             this.lblPunktY = new System.Windows.Forms.Label();
-            this.ctlVectorInput2 = new SoftwareProjekt.UserControls.CtlVectorInput();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ctlVectorInputY = new SoftwareProjekt.UserControls.CtlVectorInput();
+            this.butFunctionEnd = new System.Windows.Forms.Button();
             this.txtUmkehrFy = new System.Windows.Forms.TextBox();
             this.ctlMathEquaRi2Le = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.ctlMathEquaLe2Ri = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
@@ -69,21 +69,21 @@
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Thema: Umkehrung einer linearen Abbildung";
             // 
-            // cosLeft
+            // cosInput
             // 
-            this.cosLeft.Location = new System.Drawing.Point(13, 292);
-            this.cosLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.cosLeft.Name = "cosLeft";
-            this.cosLeft.Size = new System.Drawing.Size(489, 389);
-            this.cosLeft.TabIndex = 1;
+            this.cosInput.Location = new System.Drawing.Point(13, 292);
+            this.cosInput.Margin = new System.Windows.Forms.Padding(4);
+            this.cosInput.Name = "cosInput";
+            this.cosInput.Size = new System.Drawing.Size(489, 389);
+            this.cosInput.TabIndex = 1;
             // 
-            // cosRight
+            // cosOutput
             // 
-            this.cosRight.Location = new System.Drawing.Point(1028, 292);
-            this.cosRight.Margin = new System.Windows.Forms.Padding(4);
-            this.cosRight.Name = "cosRight";
-            this.cosRight.Size = new System.Drawing.Size(489, 389);
-            this.cosRight.TabIndex = 2;
+            this.cosOutput.Location = new System.Drawing.Point(1028, 292);
+            this.cosOutput.Margin = new System.Windows.Forms.Padding(4);
+            this.cosOutput.Name = "cosOutput";
+            this.cosOutput.Size = new System.Drawing.Size(489, 389);
+            this.cosOutput.TabIndex = 2;
             // 
             // lblNotes
             // 
@@ -103,7 +103,6 @@
             this.rtxtNotes.Size = new System.Drawing.Size(636, 152);
             this.rtxtNotes.TabIndex = 8;
             this.rtxtNotes.Text = "";
-            this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
             // 
             // lblInput
             // 
@@ -127,9 +126,9 @@
             // 
             this.grpDataInput.Controls.Add(this.txtDeterminante);
             this.grpDataInput.Controls.Add(this.butDeterminante);
-            this.grpDataInput.Controls.Add(this.ctlMatrixInput1);
+            this.grpDataInput.Controls.Add(this.ctlMatrixInput);
             this.grpDataInput.Controls.Add(this.lblPunktX);
-            this.grpDataInput.Controls.Add(this.ctlVectorInput1);
+            this.grpDataInput.Controls.Add(this.ctlVectorInputX);
             this.grpDataInput.Location = new System.Drawing.Point(104, 80);
             this.grpDataInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInput.Name = "grpDataInput";
@@ -148,7 +147,6 @@
             this.txtDeterminante.ReadOnly = true;
             this.txtDeterminante.Size = new System.Drawing.Size(162, 22);
             this.txtDeterminante.TabIndex = 66;
-            this.txtDeterminante.TextChanged += new System.EventHandler(this.txtDeterminante_TextChanged);
             // 
             // butDeterminante
             // 
@@ -161,19 +159,19 @@
             this.butDeterminante.UseVisualStyleBackColor = true;
             this.butDeterminante.Click += new System.EventHandler(this.butDeterminante_Click);
             // 
-            // ctlMatrixInput1
+            // ctlMatrixInput
             // 
-            this.ctlMatrixInput1.Location = new System.Drawing.Point(172, 55);
-            this.ctlMatrixInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlMatrixInput.Location = new System.Drawing.Point(172, 55);
+            this.ctlMatrixInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             matrix1.X11 = float.NaN;
             matrix1.X12 = float.NaN;
             matrix1.X21 = float.NaN;
             matrix1.X22 = float.NaN;
-            this.ctlMatrixInput1.Matrix = matrix1;
-            this.ctlMatrixInput1.MinimumSize = new System.Drawing.Size(131, 94);
-            this.ctlMatrixInput1.Name = "ctlMatrixInput1";
-            this.ctlMatrixInput1.Size = new System.Drawing.Size(154, 107);
-            this.ctlMatrixInput1.TabIndex = 2;
+            this.ctlMatrixInput.Matrix = matrix1;
+            this.ctlMatrixInput.MinimumSize = new System.Drawing.Size(131, 94);
+            this.ctlMatrixInput.Name = "ctlMatrixInput";
+            this.ctlMatrixInput.Size = new System.Drawing.Size(154, 107);
+            this.ctlMatrixInput.TabIndex = 2;
             // 
             // lblPunktX
             // 
@@ -184,17 +182,17 @@
             this.lblPunktX.TabIndex = 65;
             this.lblPunktX.Text = "Punkt x";
             // 
-            // ctlVectorInput1
+            // ctlVectorInputX
             // 
-            this.ctlVectorInput1.Location = new System.Drawing.Point(7, 55);
-            this.ctlVectorInput1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVectorInput1.MinimumSize = new System.Drawing.Size(136, 94);
-            this.ctlVectorInput1.Name = "ctlVectorInput1";
-            this.ctlVectorInput1.Size = new System.Drawing.Size(157, 105);
-            this.ctlVectorInput1.TabIndex = 1;
+            this.ctlVectorInputX.Location = new System.Drawing.Point(7, 55);
+            this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(136, 94);
+            this.ctlVectorInputX.Name = "ctlVectorInputX";
+            this.ctlVectorInputX.Size = new System.Drawing.Size(157, 105);
+            this.ctlVectorInputX.TabIndex = 1;
             vector1.X1 = float.NaN;
             vector1.X2 = float.NaN;
-            this.ctlVectorInput1.Vector = vector1;
+            this.ctlVectorInputX.Vector = vector1;
             // 
             // butFx
             // 
@@ -225,12 +223,11 @@
             this.txtUmkerFx.Name = "txtUmkerFx";
             this.txtUmkerFx.Size = new System.Drawing.Size(162, 22);
             this.txtUmkerFx.TabIndex = 67;
-            this.txtUmkerFx.TextChanged += new System.EventHandler(this.txtUmkerFx_TextChanged);
             // 
             // grpDataInRight
             // 
             this.grpDataInRight.Controls.Add(this.lblPunktY);
-            this.grpDataInRight.Controls.Add(this.ctlVectorInput2);
+            this.grpDataInRight.Controls.Add(this.ctlVectorInputY);
             this.grpDataInRight.Location = new System.Drawing.Point(1132, 68);
             this.grpDataInRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInRight.Name = "grpDataInRight";
@@ -249,28 +246,27 @@
             this.lblPunktY.TabIndex = 65;
             this.lblPunktY.Text = "Punkt y";
             // 
-            // ctlVectorInput2
+            // ctlVectorInputY
             // 
-            this.ctlVectorInput2.Location = new System.Drawing.Point(7, 55);
-            this.ctlVectorInput2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlVectorInput2.MinimumSize = new System.Drawing.Size(136, 94);
-            this.ctlVectorInput2.Name = "ctlVectorInput2";
-            this.ctlVectorInput2.Size = new System.Drawing.Size(157, 105);
-            this.ctlVectorInput2.TabIndex = 6;
+            this.ctlVectorInputY.Location = new System.Drawing.Point(7, 55);
+            this.ctlVectorInputY.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInputY.MinimumSize = new System.Drawing.Size(136, 94);
+            this.ctlVectorInputY.Name = "ctlVectorInputY";
+            this.ctlVectorInputY.Size = new System.Drawing.Size(157, 105);
+            this.ctlVectorInputY.TabIndex = 6;
             vector2.X1 = float.NaN;
             vector2.X2 = float.NaN;
-            this.ctlVectorInput2.Vector = vector2;
+            this.ctlVectorInputY.Vector = vector2;
             // 
-            // button1
+            // butFunctionEnd
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1311, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 60);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "f^-1(f(y)) ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.butFunctionEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butFunctionEnd.Location = new System.Drawing.Point(1311, 145);
+            this.butFunctionEnd.Name = "butFunctionEnd";
+            this.butFunctionEnd.Size = new System.Drawing.Size(96, 60);
+            this.butFunctionEnd.TabIndex = 7;
+            this.butFunctionEnd.Text = "f^-1(f(y)) ";
+            this.butFunctionEnd.UseVisualStyleBackColor = true;
             // 
             // txtUmkehrFy
             // 
@@ -279,10 +275,10 @@
             this.txtUmkehrFy.Name = "txtUmkehrFy";
             this.txtUmkehrFy.Size = new System.Drawing.Size(162, 22);
             this.txtUmkehrFy.TabIndex = 69;
-            this.txtUmkehrFy.TextChanged += new System.EventHandler(this.txtUmkehrFy_TextChanged);
             // 
             // ctlMathEquaRi2Le
             // 
+            this.ctlMathEquaRi2Le.Arrowdirection = SoftwareProjekt.Enums.EArrowDirection.up;
             this.ctlMathEquaRi2Le.Equation = "";
             this.ctlMathEquaRi2Le.Filename = "expr.gif";
             this.ctlMathEquaRi2Le.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";
@@ -295,6 +291,7 @@
             // 
             // ctlMathEquaLe2Ri
             // 
+            this.ctlMathEquaLe2Ri.Arrowdirection = SoftwareProjekt.Enums.EArrowDirection.up;
             this.ctlMathEquaLe2Ri.Equation = "";
             this.ctlMathEquaLe2Ri.Filename = "expr.gif";
             this.ctlMathEquaLe2Ri.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";
@@ -313,7 +310,7 @@
             this.Controls.Add(this.ctlMathEquaLe2Ri);
             this.Controls.Add(this.ctlMathEquaRi2Le);
             this.Controls.Add(this.txtUmkehrFy);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.butFunctionEnd);
             this.Controls.Add(this.grpDataInRight);
             this.Controls.Add(this.txtUmkerFx);
             this.Controls.Add(this.butUmkehrFx);
@@ -323,8 +320,8 @@
             this.Controls.Add(this.lblInput);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.rtxtNotes);
-            this.Controls.Add(this.cosRight);
-            this.Controls.Add(this.cosLeft);
+            this.Controls.Add(this.cosOutput);
+            this.Controls.Add(this.cosInput);
             this.Controls.Add(this.lblHeader);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmUmkehrungLinAbb";
@@ -341,8 +338,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblHeader;
-        private SoftwareProjekt.UserControls.CoordinateSystem cosLeft;
-        private SoftwareProjekt.UserControls.CoordinateSystem cosRight;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosInput;
+        private SoftwareProjekt.UserControls.CoordinateSystem cosOutput;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.RichTextBox rtxtNotes;
         private System.Windows.Forms.Label lblInput;
@@ -350,16 +347,16 @@
         private System.Windows.Forms.GroupBox grpDataInput;
         private System.Windows.Forms.TextBox txtDeterminante;
         private System.Windows.Forms.Button butDeterminante;
-        private UserControls.CtlMatrixInput ctlMatrixInput1;
+        private UserControls.CtlMatrixInput ctlMatrixInput;
         private System.Windows.Forms.Label lblPunktX;
-        private UserControls.CtlVectorInput ctlVectorInput1;
+        private UserControls.CtlVectorInput ctlVectorInputX;
         private System.Windows.Forms.Button butFx;
         private System.Windows.Forms.Button butUmkehrFx;
         private System.Windows.Forms.TextBox txtUmkerFx;
         private System.Windows.Forms.GroupBox grpDataInRight;
         private System.Windows.Forms.Label lblPunktY;
-        private UserControls.CtlVectorInput ctlVectorInput2;
-        private System.Windows.Forms.Button button1;
+        private UserControls.CtlVectorInput ctlVectorInputY;
+        private System.Windows.Forms.Button butFunctionEnd;
         private System.Windows.Forms.TextBox txtUmkehrFy;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaRi2Le;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaLe2Ri;

@@ -35,6 +35,10 @@ namespace SoftwareProjekt.Forms
 {
     public partial class FrmLinAbbSumBelVek : AbstractView  
     {
+        private LineSegment _vectorInputX;
+        private LineSegment _vectorInputY;
+      
+
         public FrmLinAbbSumBelVek()
         {
             InitializeComponent();
@@ -44,17 +48,19 @@ namespace SoftwareProjekt.Forms
         {
             Dictionary<string, Object> retVal = new Dictionary<string, object>();
 
-            /*retVal.Add("EV1", _vector.Einheitsvector1);
-            retVal.Add("EV2", _vector.Einheitsvector2);
-            retVal.Add("VectorX", _vector.VectorX);
-            retVal.Add("Angle", _vector.Angle);*/
+            retVal.Add("MatrixM1", ctlMaInScaleMat.Matrix);
+            retVal.Add("VectorX", ctlVecInX.Vector);
+            retVal.Add("VectorY", ctlVecInY.Vector);
 
             return retVal;
         }
 
         private void butFuncionXPlusY_Click(object sender, EventArgs e)
         {
-            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+            if (this.CheckInputs())
+            {
+                this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+            }
         }
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
@@ -62,24 +68,52 @@ namespace SoftwareProjekt.Forms
             throw new System.NotImplementedException();
         }
 
-        private void rtxtNotes_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void dutDeterminante_Click(object sender, EventArgs e)
         {
             this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
         }
-        
-		protected override bool CheckInputs()
-		{
-			throw new NotImplementedException();
-		}
+
+        protected override bool CheckInputs()
+        {
+            if (ctlMaInScaleMat.Matrix.IsValid() && ctlVecInX.Vector.IsValid() && ctlVecInY.Vector.IsValid())
+            {
+#if DEBUG
+                Console.WriteLine("SUCCESS @ Inputs are valid.");
+#endif
+                return true;
+            }
+#if DEBUG
+            Console.WriteLine("ERROR @ Inputs are not valid.");
+#endif
+            return false;
+        }
+
+        public void OnTextChanged(object sender, EventArgs e)
+        {
+            _vectorInputX.Vector = ctlVecInX.Vector;
+            Refresh();
+        }
 
         public override bool LoadState(Dictionary<string, object> state)
         {
-            throw new NotImplementedException();
+            // state does not exist in workbook.
+            if (state == null)
+            {
+                return false;
+            }
+            else if (!state.ContainsKey("VectorX"))
+            {
+                return false;
+            }
+            else if (!state.ContainsKey("VectorY"))
+            {
+                return false;
+            }
+
+            ctlVecInX.Vector = (Vector)state["VectorX"];
+            ctlVecInY.Vector = (Vector)state["VectorY"];
+            return true;
         }
     }
 }
