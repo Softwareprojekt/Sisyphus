@@ -27,6 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 
 
@@ -42,19 +43,63 @@ namespace SoftwareProjekt.Forms
         private EIFSForms _inputForm;
         private Image _loadedPic = null;
         private List<IShape> _inputForms = null;
+        private List<PointF> _pointList;
+        private bool _pictureSelected = false;
 
         public FrmFraktalErzIFS()
         {
+            _pointList = new List<PointF>();
+
             InitializeComponent();
 
             _inputForms = new List<IShape>();
             _radTriangle.Checked = true;
+            _cosInput.CoordinateClick += _cosInput_CoordinateClick;        
+        }
+
+        void _cosInput_CoordinateClick(float x, float y, MouseEventArgs e)
+        {
+            if (_pictureSelected)
+            {
+                if (e.Button == System.Windows.Forms.MouseButtons.Left)
+                {
+                    _pointList.Add(new PointF(x, y));
+                    _inputForms.Clear();
+                    _cosInput.Clear();
+                    _cosOutput.Clear();
+
+                    _inputForms.Add(new Polygon(_pointList,Pens.Coral));
+
+                    _cosInput.AddPolygon(_inputForms.ToArray());
+                }
+                if (e.Button == System.Windows.Forms.MouseButtons.Right)
+                {
+                    ContextMenu cm = new ContextMenu();
+                    MenuItem delPoints = new MenuItem("&Punkte löschen", new System.EventHandler(this.deletePoints_Click));
+                    cm.MenuItems.Add(delPoints);
+                    this.ContextMenu = cm;
+                }
+            }
+        }
+
+        private void deletePoints_Click(object sender, EventArgs e)
+        {
+            _inputForms.Clear();
+            _cosInput.Clear();
+            _cosOutput.Clear();
+            _pointList.Clear();
         }
 
         private void rad_CheckedChanged(object sender, EventArgs e)
         {
-            this._cosInput.BackgroundImage = null;
-            this._cosOutput.BackgroundImage = null;
+            //draw points when picture is selected
+            _pictureSelected = !_radTriangle.Checked && !_radSquare.Checked && !_radCircle.Checked;
+            if (!_pictureSelected)
+            {
+                this._cosInput.BackgroundImage = null;
+                this._cosOutput.BackgroundImage = null;
+                this._pointList.Clear();
+            }
 
             if (_radTriangle.Checked)
             {
@@ -113,11 +158,17 @@ namespace SoftwareProjekt.Forms
             }
             else
             {
+                _inputForm = EIFSForms.Picture;
+
                 if (_loadedPic == null)
                 {
 #if DEBUG
                     Console.WriteLine("ERROR @ CheckedChanged: No RadioButton checked.");
 #endif
+                }
+                else
+                {
+                    
                 }
             }
         }
@@ -127,10 +178,6 @@ namespace SoftwareProjekt.Forms
 
         private void butSelectPic_Click(object sender, EventArgs e)
         {
-            //deactivate radiobuttons.
-            _radTriangle.Checked = false;
-            _radSquare.Checked = false;
-            _radCircle.Checked = false;
             _inputForm = EIFSForms.Picture;
 
             //show picture selection dialog.
@@ -145,14 +192,47 @@ namespace SoftwareProjekt.Forms
                 try
                 {
                     Bitmap img = new Bitmap(ofd.FileName);
+
+
+                    // Initialize the color matrix. 
+                    // Note the value 0.2 in row 4, column 4. 
+                    float[][] matrixItems ={ 
+                       new float[] {1, 0, 0, 0, 0},
+                       new float[] {0, 1, 0, 0, 0},
+                       new float[] {0, 0, 1, 0, 0},
+                       new float[] {0, 0, 0, 0.3f, 0}, 
+                       new float[] {0, 0, 0, 0, 1}};
+                    ColorMatrix colorMatrix = new ColorMatrix(matrixItems);
+
+                    // Create an ImageAttributes object and set its color matrix.
+                    ImageAttributes imageAtt = new ImageAttributes();
+                    imageAtt.SetColorMatrix(
+                       colorMatrix,
+                       ColorMatrixFlag.Default,
+                       ColorAdjustType.Bitmap);
+
                     Graphics g = Graphics.FromImage((Image)img);
                     g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-
                     g.DrawImage(img, 0, 0, _cosInput.Width, _cosInput.Height);
+
+                    Bitmap img1 = new Bitmap(_cosInput.Width, _cosInput.Height);
+                    Graphics g1 = Graphics.FromImage((Image)img1);
+                    // Now draw the semitransparent bitmap image. 
+
+                    g1.DrawImage(
+                       img,
+                       new Rectangle(0, 0, _cosInput.Width, _cosInput.Height),  // destination rectangle
+                       0.0f,                          // source rectangle x 
+                       0.0f,                          // source rectangle y
+                       _cosInput.Width,                        // source rectangle width
+                       _cosInput.Height,                       // source rectangle height
+                       GraphicsUnit.Pixel,
+                       imageAtt);
+                    
                     g.Dispose();
 
-                    img.MakeTransparent();
-                    _loadedPic = (Image)img;
+                    //img.MakeTransparent();
+                    _loadedPic = (Image)img1;
 
                     _cosInput.BackgroundImage = _loadedPic;
                     _cosOutput.BackgroundImage = _loadedPic;
@@ -163,6 +243,13 @@ namespace SoftwareProjekt.Forms
                 {
                     MessageBox.Show("Could not load image.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                //deactivate radiobuttons.
+                _radTriangle.Checked = false;
+                _radSquare.Checked = false;
+                _radCircle.Checked = false;
+            }
+            else
+            {
 
             }
         }
@@ -197,6 +284,8 @@ namespace SoftwareProjekt.Forms
                     _cosOutput.AddCircle(_inputForms.ToArray());
                     break;
                 case EIFSForms.Picture:
+                    _inputForms.AddRange((List<IShape>)e.CalcValues["OutputForms"]);
+                    _cosOutput.AddPolygon(_inputForms.ToArray());
                     break;
                 default:
                     break;
@@ -209,14 +298,8 @@ namespace SoftwareProjekt.Forms
 
             retVal.Add("Form", _inputForm);
 
-            if (_loadedPic != null)
-            {
-                retVal.Add("InputForms", _loadedPic);
-            }
-            else
-            {
-                retVal.Add("InputForms", _inputForms);
-            }
+            
+            retVal.Add("InputForms", _inputForms);
 
             retVal.Add("Steps",
                 _rbStep1.Checked ? 1 :

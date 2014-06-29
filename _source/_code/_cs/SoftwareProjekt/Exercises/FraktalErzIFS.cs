@@ -69,7 +69,7 @@ namespace SoftwareProjekt.Exercises
                     inputForms = (List<IShape>)inputData["InputForms"];
                     break;
                 case EIFSForms.Picture:
-                    picture = (Image)inputData["InputForms"];
+                    inputForms = (List<IShape>)inputData["InputForms"];
                     break;
                 default:
                     Console.WriteLine("ERROR @ Enum switch");
@@ -114,7 +114,12 @@ namespace SoftwareProjekt.Exercises
                     }
                     break;
                 case EIFSForms.Picture:
-                    //???
+                    foreach (Polygon polygon in inputForms)
+                    {
+                        outputForms.Add(Polygon.AffineAbbildung(polygon, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                        outputForms.Add(Polygon.AffineAbbildung(polygon, (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
+                        outputForms.Add(Polygon.AffineAbbildung(polygon, (Matrix)inputData["Matrix_w3"], (Vector)inputData["Vector_w3"]));
+                    }
                     break;
                 default:
                     Console.WriteLine("ERROR @ Enum switch");

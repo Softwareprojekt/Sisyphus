@@ -82,7 +82,7 @@ namespace SoftwareProjekt.Forms
             this.coordinateSystem1.CoordinateClick += CoordinateClickHandler;
         }
 
-		void CoordinateClickHandler(float x, float y)
+		void CoordinateClickHandler(float x, float y, MouseEventArgs e)
 		{
 			//this.OnViewChanged(new ViewEventArgs(x, y));
 		}

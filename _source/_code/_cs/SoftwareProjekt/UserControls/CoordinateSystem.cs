@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace SoftwareProjekt.UserControls
 {
-    public delegate void CoordinateSystemClickHandler(float x, float y);
+    public delegate void CoordinateSystemClickHandler(float x, float y, MouseEventArgs e);
     public class CoordinateSystem : UserControl
     {
         /// <summary>
@@ -39,12 +39,13 @@ namespace SoftwareProjekt.UserControls
         private List<Triangle> _triangleList;
         private List<RectangleC> _rectangleList;
         private List<Circle> _circleList;
+        private List<Polygon> _polygonList;
 
         private IAxis _xAxis;
         private IAxis _yAxis;
 
 
-        public CoordinateSystemClickHandler CoordinateClick;
+        public event CoordinateSystemClickHandler CoordinateClick;
         private List<PointF> _pointsList;
 
         /// <summary>
@@ -58,10 +59,11 @@ namespace SoftwareProjekt.UserControls
             _rectangleList = new List<RectangleC>();
             _circleList = new List<Circle>();
             _triangleList = new List<Triangle>();
-
+            _polygonList = new List<Polygon>();
 
             InitializeComponent();
         }
+
 
         public IAxis XAxis
         {
@@ -87,6 +89,7 @@ namespace SoftwareProjekt.UserControls
             }
         }
 
+                
         /// <summary>
         /// </summary>
         
@@ -146,6 +149,18 @@ namespace SoftwareProjekt.UserControls
                 this.AddCircle(circle);
             }
         }
+        public void AddPolygon(Polygon poygon)
+        {
+            _polygonList.Add(poygon);
+            this.invokeRefresh();
+        }
+        public void AddPolygon(IShape[] polygonArr)
+        {
+            foreach (Polygon poygon in polygonArr)
+            {
+                this.AddPolygon(poygon);
+            }
+        }
 
         public void RemoveTriangle(Triangle triangle)
         {
@@ -192,6 +207,7 @@ namespace SoftwareProjekt.UserControls
             _triangleList.Clear();
             _rectangleList.Clear();
             _circleList.Clear();
+            _polygonList.Clear();
             this.invokeRefresh();
         }
 
@@ -440,8 +456,8 @@ namespace SoftwareProjekt.UserControls
 #endif
                 return;
             }
-            float roundX = (float)Math.Round(p.X, 1, MidpointRounding.AwayFromZero);
-            float roundY = (float)Math.Round(p.Y, 1, MidpointRounding.AwayFromZero);
+            float roundX = (float)Math.Round(p.X, 2, MidpointRounding.AwayFromZero);
+            float roundY = (float)Math.Round(p.Y, 2, MidpointRounding.AwayFromZero);
 
 #if DEBUG            
             Console.WriteLine("SUCCESS @ CoordinateSystem_MouseClick: X: " + roundX.ToString() + "\tY: " + roundY.ToString() + "\n");
@@ -449,9 +465,10 @@ namespace SoftwareProjekt.UserControls
 
             if (this.CoordinateClick != null)
             {
-                this.CoordinateClick(roundX, roundY);
+                this.CoordinateClick(roundX, roundY, e);
             }
         }
+
 
         void CoordinateSystem_Resize(object sender, EventArgs e)
         {
@@ -467,11 +484,40 @@ namespace SoftwareProjekt.UserControls
             DrawAxes(e.Graphics);
             DrawVector(e.Graphics);
             DrawLine(e.Graphics);
-            DrawPoints(e.Graphics);
             DrawRectangle(e.Graphics);
             DrawTriangle(e.Graphics);
             DrawCircle(e.Graphics);
+            DrawPolygons(e.Graphics);
+            DrawPoints(e.Graphics);
+        }
 
+        private void DrawPolygons(Graphics graphics)
+        {
+            foreach (Polygon p in _polygonList)
+            {
+                if (p.PointList.Count < 2)
+                {
+                    _pointsList.AddRange(p.PointList);
+                    //draws a point
+                }
+                if (p.PointList.Count == 2)
+                {
+                    _pointsList.AddRange(p.PointList);
+                    //draws two points and a line
+                    PointF p1 = CalculateInternalCoordinates(p.PointList[0].X, p.PointList[0].Y);
+                    PointF p2 = CalculateInternalCoordinates(p.PointList[1].X, p.PointList[1].Y);
+                    graphics.DrawLine(p.Color, p1, p2);
+                }
+                if (p.PointList.Count > 2)
+                {
+                    List<PointF> list = new List<PointF>();
+                    foreach (PointF point in p.PointList)
+                    {
+                        list.Add(CalculateInternalCoordinates(point.X, point.Y));
+                    }
+                    graphics.DrawPolygon(p.Color, list.ToArray());
+                }
+            }
         }
 
         private void DrawCircle(Graphics graphics)
@@ -763,31 +809,37 @@ namespace SoftwareProjekt.UserControls
         public void AddLine(Line line)
         {
             _lineList.Add(line);
+            this.invokeRefresh();
         }
 
         public void RemoveLine(Line line)
         {
             _lineList.Remove(line);
+            this.invokeRefresh();
         }
         
         public void ClearLines()
         {
-        	_lineList.Clear();
+            _lineList.Clear();
+            this.invokeRefresh();
         }
 
         public void AddPoint(PointF p)
         {
             _pointsList.Add(p);
+            this.invokeRefresh();
         }
 
         public void RemovePoint(PointF p)
         {
             _pointsList.Remove(p);
+            this.invokeRefresh();
         }
 
         public void ClearPoints()
         {
         	_pointsList.Clear();
+            this.invokeRefresh();
         }
     }
 }

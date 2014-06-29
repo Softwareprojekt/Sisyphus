@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Classes\Math\Circle.cs" />
     <Compile Include="Classes\Math\DrawingPoint.cs" />
+    <Compile Include="Classes\Math\Polygon.cs" />
     <Compile Include="Classes\Math\RectangleC.cs" />
     <Compile Include="Classes\Math\Triangle.cs" />
     <Compile Include="Classes\Xml\MathXmlGenerator.cs" />
