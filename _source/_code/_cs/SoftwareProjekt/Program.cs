@@ -41,7 +41,7 @@ namespace SoftwareProjekt
              /* checking retVal is currently disabled, because not everybody has a config.xml for mindmap*/
 
 
-            TestView view = new TestView();
+            FrmMain view = new FrmMain();
 
             IController cont = new Controller(view);
 
