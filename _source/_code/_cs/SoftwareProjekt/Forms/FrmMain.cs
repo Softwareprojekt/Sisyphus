@@ -20,6 +20,7 @@
 #endregion
 
 using SoftwareProjekt.UserControls.MindMap;
+using SoftwareProjekt.Classes;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ using System.Collections.Generic;
 namespace SoftwareProjekt.Forms
 {
     // AbstractView
-    public class FrmMain : Form
+    public class FrmMain : AbstractView
     {
         private TabControl tabMainMenu;
         private TabPage tabMenu;
@@ -51,17 +52,24 @@ namespace SoftwareProjekt.Forms
         private ToolStripButton tsbutNewExerciseType;
         private TabPage tabProtectArea;
         private ToolStripButton tsbutAccept;
+        private GroupBox gbxColor;
+        private Button butColorInstructions;
+        private Button butColorResult;
+        private Button butColorInput;
+        private GroupBox gbxExerciseSpecification;
+        private ColorDialog colorDialog1;
+        private Button butTestExercise;
 
         private Dictionary<TabPage, ToolStripButton[]> _controlDictionary =
     new Dictionary<TabPage, ToolStripButton[]>();
-
+ 
         public FrmMain()
         {
             InitializeComponent();
-            InitializeDictionary();
+            _controlDictionary = InitializeDictionary();
             SoftwareProjekt.Classes.Workbook.Instance.AddEntries(flpWorkbook.Controls, picWorkbook);  
         }
-
+ 
         public CtlMindMap MindMap
         {
             get
@@ -78,11 +86,17 @@ namespace SoftwareProjekt.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.tabMainMenu = new System.Windows.Forms.TabControl();
             this.tabMenu = new System.Windows.Forms.TabPage();
+            this.butTestExercise = new System.Windows.Forms.Button();
             this.lblExercisebookTitle = new System.Windows.Forms.Label();
             this.tabNotebook = new System.Windows.Forms.TabPage();
             this.picWorkbook = new System.Windows.Forms.PictureBox();
             this.flpWorkbook = new System.Windows.Forms.FlowLayoutPanel();
             this.tabProtectArea = new System.Windows.Forms.TabPage();
+            this.gbxColor = new System.Windows.Forms.GroupBox();
+            this.butColorInstructions = new System.Windows.Forms.Button();
+            this.butColorResult = new System.Windows.Forms.Button();
+            this.butColorInput = new System.Windows.Forms.Button();
+            this.gbxExerciseSpecification = new System.Windows.Forms.GroupBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbutNewExercisebook = new System.Windows.Forms.ToolStripButton();
             this.tsbutLoadExercisebook = new System.Windows.Forms.ToolStripButton();
@@ -98,10 +112,13 @@ namespace SoftwareProjekt.Forms
             this.tscbxInput = new System.Windows.Forms.ToolStripComboBox();
             this.tsbutNewExerciseType = new System.Windows.Forms.ToolStripButton();
             this.tsbutAccept = new System.Windows.Forms.ToolStripButton();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tabMainMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabNotebook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picWorkbook)).BeginInit();
+            this.tabProtectArea.SuspendLayout();
+            this.gbxColor.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,6 +136,7 @@ namespace SoftwareProjekt.Forms
             // 
             // tabMenu
             // 
+            this.tabMenu.Controls.Add(this.butTestExercise);
             this.tabMenu.Controls.Add(this.lblExercisebookTitle);
             this.tabMenu.Location = new System.Drawing.Point(4, 22);
             this.tabMenu.Name = "tabMenu";
@@ -127,6 +145,16 @@ namespace SoftwareProjekt.Forms
             this.tabMenu.TabIndex = 0;
             this.tabMenu.Text = "Start";
             this.tabMenu.UseVisualStyleBackColor = true;
+            // 
+            // butTestExercise
+            // 
+            this.butTestExercise.Location = new System.Drawing.Point(842, 101);
+            this.butTestExercise.Name = "butTestExercise";
+            this.butTestExercise.Size = new System.Drawing.Size(224, 23);
+            this.butTestExercise.TabIndex = 1;
+            this.butTestExercise.Text = "Teste DrehLinAbbUrsp";
+            this.butTestExercise.UseVisualStyleBackColor = true;
+            this.butTestExercise.Click += new System.EventHandler(this.butTestExercise_Click);
             // 
             // lblExercisebookTitle
             // 
@@ -176,6 +204,8 @@ namespace SoftwareProjekt.Forms
             // 
             // tabProtectArea
             // 
+            this.tabProtectArea.Controls.Add(this.gbxColor);
+            this.tabProtectArea.Controls.Add(this.gbxExerciseSpecification);
             this.tabProtectArea.Location = new System.Drawing.Point(4, 22);
             this.tabProtectArea.Name = "tabProtectArea";
             this.tabProtectArea.Padding = new System.Windows.Forms.Padding(3);
@@ -183,6 +213,57 @@ namespace SoftwareProjekt.Forms
             this.tabProtectArea.TabIndex = 2;
             this.tabProtectArea.Text = "Administration";
             this.tabProtectArea.UseVisualStyleBackColor = true;
+            // 
+            // gbxColor
+            // 
+            this.gbxColor.Controls.Add(this.butColorInstructions);
+            this.gbxColor.Controls.Add(this.butColorResult);
+            this.gbxColor.Controls.Add(this.butColorInput);
+            this.gbxColor.Location = new System.Drawing.Point(718, 23);
+            this.gbxColor.Name = "gbxColor";
+            this.gbxColor.Size = new System.Drawing.Size(316, 533);
+            this.gbxColor.TabIndex = 1;
+            this.gbxColor.TabStop = false;
+            this.gbxColor.Text = "Farbänderung:";
+            // 
+            // butColorInstructions
+            // 
+            this.butColorInstructions.Location = new System.Drawing.Point(175, 104);
+            this.butColorInstructions.Name = "butColorInstructions";
+            this.butColorInstructions.Size = new System.Drawing.Size(115, 23);
+            this.butColorInstructions.TabIndex = 2;
+            this.butColorInstructions.Text = "Anweisungen";
+            this.butColorInstructions.UseVisualStyleBackColor = true;
+            this.butColorInstructions.Click += new System.EventHandler(this.butColorInstructions_Click);
+            // 
+            // butColorResult
+            // 
+            this.butColorResult.Location = new System.Drawing.Point(175, 75);
+            this.butColorResult.Name = "butColorResult";
+            this.butColorResult.Size = new System.Drawing.Size(115, 23);
+            this.butColorResult.TabIndex = 1;
+            this.butColorResult.Text = "Ergebnisfelder";
+            this.butColorResult.UseVisualStyleBackColor = true;
+            this.butColorResult.Click += new System.EventHandler(this.butColorResult_Click);
+            // 
+            // butColorInput
+            // 
+            this.butColorInput.Location = new System.Drawing.Point(175, 46);
+            this.butColorInput.Name = "butColorInput";
+            this.butColorInput.Size = new System.Drawing.Size(115, 23);
+            this.butColorInput.TabIndex = 0;
+            this.butColorInput.Text = "Eingabefelder";
+            this.butColorInput.UseVisualStyleBackColor = true;
+            this.butColorInput.Click += new System.EventHandler(this.butColorInput_Click);
+            // 
+            // gbxExerciseSpecification
+            // 
+            this.gbxExerciseSpecification.Location = new System.Drawing.Point(20, 23);
+            this.gbxExerciseSpecification.Name = "gbxExerciseSpecification";
+            this.gbxExerciseSpecification.Size = new System.Drawing.Size(692, 533);
+            this.gbxExerciseSpecification.TabIndex = 0;
+            this.gbxExerciseSpecification.TabStop = false;
+            this.gbxExerciseSpecification.Text = "Themaspezifizierung:";
             // 
             // toolStrip1
             // 
@@ -323,7 +404,7 @@ namespace SoftwareProjekt.Forms
             this.tsbutAccept.Image = ((System.Drawing.Image)(resources.GetObject("tsbutAccept.Image")));
             this.tsbutAccept.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutAccept.Name = "tsbutAccept";
-            this.tsbutAccept.Size = new System.Drawing.Size(27, 19);
+            this.tsbutAccept.Size = new System.Drawing.Size(27, 22);
             this.tsbutAccept.Text = "OK";
             this.tsbutAccept.Visible = false;
             this.tsbutAccept.Click += new System.EventHandler(this.tsbutAccept_Click);
@@ -341,6 +422,8 @@ namespace SoftwareProjekt.Forms
             this.tabMenu.PerformLayout();
             this.tabNotebook.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picWorkbook)).EndInit();
+            this.tabProtectArea.ResumeLayout(false);
+            this.gbxColor.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -348,20 +431,26 @@ namespace SoftwareProjekt.Forms
 
         }
 
-        private void InitializeDictionary()
+        private Dictionary<TabPage, ToolStripButton[]> InitializeDictionary()
         {
-            _controlDictionary.Clear();
-            // Buttons from Start
+            Dictionary<TabPage, ToolStripButton[]> aDictionary =
+                new Dictionary<TabPage, ToolStripButton[]>();
+
+            // if (isclassDictionary) aDictionary = _controlDictionary;
+            // Buttons in Starttab
             ToolStripButton[] startButtons = { this.tsbutNewExercise, 
                 this.tsbutNewExercisebook, this.tsbutLoadExercisebook,
                 this.tsbutCloseExercisebook, this.tsbutAccept};
+            // Buttons in Notebooktab
             ToolStripButton[] notebookButtons = {this.tsbutDeleteExercise, 
                 this.tsbutDeleteExercise, this.tsbutLoadExercise,
                 this.tsbutExport};
+            // Buttons of Administrationtab
             ToolStripButton[] adminButtons = {this.tsbutNewExerciseType};
-            _controlDictionary.Add(tabMenu, startButtons);
-            _controlDictionary.Add(tabNotebook, notebookButtons);
-            _controlDictionary.Add(tabProtectArea, adminButtons);
+            aDictionary.Add(tabMenu, startButtons);
+            aDictionary.Add(tabNotebook, notebookButtons);
+            aDictionary.Add(tabProtectArea, adminButtons);
+            return aDictionary;
         }
 
         private void showTabButtonsHideOthers(TabPage selectedTab)
@@ -371,7 +460,7 @@ namespace SoftwareProjekt.Forms
             ToolStripButton[] showButtons = { };
             ToolStripButton[] hideButtons = { };
 
-            tempDictionary = _controlDictionary;
+            tempDictionary = InitializeDictionary();
             _controlDictionary.TryGetValue(selectedTab, out showButtons); // create Liste with buttons to show
             tempDictionary.Remove(selectedTab);
 
@@ -386,9 +475,7 @@ namespace SoftwareProjekt.Forms
                 {
                     but.Visible = false;
                 }
-            }
-            InitializeDictionary(); // even if not visible - the class Dictionary was changed unintentionally
-            
+            }            
         }
 
 
@@ -448,66 +535,61 @@ namespace SoftwareProjekt.Forms
                 // TODO: create ExerciseBook
             }
             tsbutAccept.Visible = false;
+            tsbutCloseExercisebook.Enabled = true;
 
+            // tsbutNewExercise.Enabled = true; // Note: this should only be enabled if a topic was selected
+                                                // selecting a topic should only be possible if a exercisebook is open
+
+        }
+
+        private void butColorInput_Click(object sender, System.EventArgs e)
+        {
+            // Show the color dialog.
+	        DialogResult result = colorDialog1.ShowDialog();
+	        // See if user pressed ok.
+	        if (result == DialogResult.OK)
+	        {
+                tslblInstructions.Text = "Hinweis: Übungen neu öffnen, damit Änderungen wirksam werden!";
+
+
+                this.inputColor = colorDialog1.Color; // FIXME: cannot be used in other forms!!
+	        }
+
+            // iterate through all child forms
+
+        }
+
+        private void butColorResult_Click(object sender, System.EventArgs e)
+        {
+            DialogResult result = colorDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                tslblInstructions.Text = "Hinweis: Übungen neu öffnen, damit Änderungen wirksam werden!";
+                this.resultColor = colorDialog1.Color;
+            }
+        }
+
+        private void butColorInstructions_Click(object sender, System.EventArgs e)
+        {
+           DialogResult result = colorDialog1.ShowDialog();
+           if (result == DialogResult.OK)
+           {
+               tslblInstructions.Text = "Hinweis: Übungen neu öffnen, damit Änderungen wirksam werden!";
+               instructionColor = colorDialog1.Color;
+               tslblInstructions.ForeColor = colorDialog1.Color;
+           }
+        }
+
+        private void butTestExercise_Click(object sender, System.EventArgs e)
+        {
+            FrmDrehLinAbbUrsp view = new FrmDrehLinAbbUrsp();
+            view.inputColor = this.inputColor;
+            view.resultColor = this.resultColor;
+            view.Show();
         }
 
       
         /*
-                private void öffnenToolStripMenuItem_Click(object sender, EventArgs e)
-                {
-                    OpenFileDialog openFileDialog1 = new OpenFileDialog();
-                    openFileDialog1.Filter = "bmp files (*.bmp)|*.bmp|jpg files (*.jpg)|*.jpg";
-
-                    if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                    {
-                        string filename = openFileDialog1.FileName;
-
-
-                        FileStream imageStream = new FileStream(filename, FileMode.Open, FileAccess.Read);
-
-
-                    }
-                }
-
-                private void speichernToolStripMenuItem_Click(object sender, EventArgs e)
-                {
-                    SaveFileDialog safeFileDialog1 = new SaveFileDialog();
-                    saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*|JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
-                    saveFileDialog1.FilterIndex = 2;
-
-
-                    if (safeFileDialog1.ShowDialog() == DialogResult.OK)
-                    {
-                        int width = Convert.ToInt32(Width);
-                        int height = Convert.ToInt32(Height);
-                        Bitmap bmp = new Bitmap(width, height);
-                        DrawToBitmap(bmp, new Rectangle(0, 0, width, height));
-                        bmp.Save(safeFileDialog1.FileName);
-
-
-                        //Zielbild speichern!
-                        //string filename = safeFileDialog1.FileName;
-                        //if ((pictureBox2.Image != null))
-                        //{
-                        //    pictureBox2.Image.Save(filename, System.Drawing.Imaging.ImageFormat.Jpeg);
-                        //}
-                        //else
-                        //{
-                        //    MessageBox.Show("Fehler", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                        //}
-                    }
-                }
-
-                private void druckenToolStripMenuItem_Click(object sender, EventArgs e)
-                {
-                    PrintDialog printDialog1 = new PrintDialog();
-                    printDialog1.Document = printDocument1;
-                    if (printDialog1.ShowDialog() == DialogResult.OK)
-                    {
-                        printDocument1.Print();
-                    }
-                }
-        
                 public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
                 {
                     throw new NotImplementedException();

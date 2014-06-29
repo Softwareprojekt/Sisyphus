@@ -21,6 +21,7 @@
 
 using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Delegates;
+using SoftwareProjekt.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -29,6 +30,25 @@ namespace SoftwareProjekt.Interfaces
 {
     public interface IView
     {
+        Color inputColor
+        {
+            get;
+            set;
+        }
+
+        Color resultColor
+        {
+            get;
+            set;
+        }
+
+        Color instructionColor
+        {
+            get;
+            set;
+        }
+        void ChangeFontColors(CtlVectorInput[] vectors, CtlMatrixInput[] matrices, Color col);
+
         /// <summary>
         /// Redirect events fired on the View to the Controller.
         /// </summary>

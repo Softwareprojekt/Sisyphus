@@ -31,6 +31,8 @@ using SoftwareProjekt.Classes.Math;
 using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
 using SoftwareProjekt.Classes.Xml;
+//using SoftwareProjekt.Forms.AbstractView;
+using SoftwareProjekt.UserControls;
 
 namespace SoftwareProjekt.Forms
 {
@@ -73,7 +75,6 @@ namespace SoftwareProjekt.Forms
             cosInput.AddLineSegment(_vectorInputX);
         }
 
-
         private void butFunctionTransfX_Click(object sender, EventArgs e)
         {
         	if (this.CheckInputs())
@@ -95,7 +96,7 @@ namespace SoftwareProjekt.Forms
         }
 
         private void butDeterminante_Click(object sender, System.EventArgs e)
-        {
+        {            
             //this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
         }
 
@@ -152,6 +153,16 @@ namespace SoftwareProjekt.Forms
 
             ctlVectorInputX.Vector = (Vector)state["VectorX"];
             return true;
+        }
+
+        private void FrmDrehLinAbbUrsp_Shown(object sender, EventArgs e)
+        {
+            CtlVectorInput[] vectors = { this.ctlVectorInputX, this.ctlVectorEV1, this.ctlVectorEV2 };
+            CtlMatrixInput[] matrices = { };
+            CtlVectorInput[] vectors2 = { this.ctlVectorOutputX, this.ctlVectorOutputEV1, this.ctlVectorOutputEV2 };
+            //CoordinateSystem[] cordsList = { this.cosInput };
+            this.ChangeFontColors(vectors, matrices, this.inputColor);
+            this.ChangeFontColors(vectors2, matrices, this.resultColor);
         }
     }
 }

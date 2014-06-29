@@ -22,14 +22,62 @@
 using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Delegates;
 using SoftwareProjekt.Interfaces;
+using SoftwareProjekt.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Drawing;
+
 
 namespace SoftwareProjekt.Forms
 {
     public class AbstractView : Form, IView
     {
+        public Color inputColor
+        {
+            get { return _inputColor; }
+            set
+            {
+                _inputColor = value;
+            }
+        }
+        private Color _inputColor;
+
+        public Color resultColor
+        {
+            get { return _resultColor; }
+            set
+            {
+                _resultColor = value;
+            }
+        }
+        private Color _resultColor;
+
+        public Color instructionColor
+        {
+            get { return _instructionColor; }
+            set
+            {
+                _instructionColor = value;
+            }
+        }
+        private Color _instructionColor;
+
+        public void ChangeFontColors(CtlVectorInput[] vectors, CtlMatrixInput[] matrices, Color col)
+        {
+            foreach ( CtlVectorInput v in vectors)
+            {
+                v.txtEle11.ForeColor = col;
+                v.txtEle21.ForeColor = col;
+            }
+            foreach ( CtlMatrixInput m in matrices)
+            {
+                // FIXME
+                m.ForeColor = col;
+            }
+            // probably too much work needed to change colors of CoordinateSystem
+        }
+
         public event ViewHandler<ViewEventArgs> ViewChanged;
 
         /// <summary>
