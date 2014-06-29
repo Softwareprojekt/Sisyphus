@@ -40,13 +40,14 @@ namespace SoftwareProjekt.UserControls
         private List<RectangleC> _rectangleList;
         private List<Circle> _circleList;
         private List<Polygon> _polygonList;
+        private List<PointF> _pointsList;
 
         private IAxis _xAxis;
         private IAxis _yAxis;
 
+        private ToolTip _tooltip;
 
         public event CoordinateSystemClickHandler CoordinateClick;
-        private List<PointF> _pointsList;
 
         /// <summary>
         /// ctor
@@ -60,6 +61,7 @@ namespace SoftwareProjekt.UserControls
             _circleList = new List<Circle>();
             _triangleList = new List<Triangle>();
             _polygonList = new List<Polygon>();
+            _tooltip = new ToolTip();
 
             InitializeComponent();
         }
@@ -433,6 +435,8 @@ namespace SoftwareProjekt.UserControls
             this.Paint += CoordinateSystem_Paint;
             this.Resize += CoordinateSystem_Resize;
             this.MouseClick += CoordinateSystem_MouseClick;
+            this.MouseLeave += CoordinateSystem_MouseLeave;
+            this.MouseMove += CoordinateSystem_MouseMove;
 
 
             // 
@@ -440,9 +444,23 @@ namespace SoftwareProjekt.UserControls
             // 
             this.Name = "CoordinateSystem";
             this.ResumeLayout(false);
+        }
 
+        void CoordinateSystem_MouseMove(object sender, MouseEventArgs e)
+        {
+            Point pt = this.PointToClient(Cursor.Position);
+            PointF p = CalculateExternalCoordinates(pt.X, pt.Y);
+            if (float.IsNaN(p.X) || float.IsNaN(p.Y))
+            {
+                this._tooltip.Hide(this);
+                return;
+            }
+            this._tooltip.Show("X: " + p.X + " | Y: " + p.Y, this, e.X, e.Y + 20);
+        }
 
-
+        void CoordinateSystem_MouseLeave(object sender, EventArgs e)
+        {
+            this._tooltip.Hide(this);
         }
 
         void CoordinateSystem_MouseClick(object sender, MouseEventArgs e)
