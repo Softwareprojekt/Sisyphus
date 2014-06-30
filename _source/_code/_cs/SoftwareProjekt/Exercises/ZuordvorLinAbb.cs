@@ -28,6 +28,11 @@ namespace SoftwareProjekt.Exercises
 {
     class ZuordvorLinAbb : AbstractExercise
     {
+        public ZuordvorLinAbb()
+        {
+            this.Id = Enums.EExercises.ZuordnungsvorschriftLinAbb;
+        }
+
         protected override void DoWork(IView view)
         {
             Dictionary<string, Object> inputData = null;
@@ -36,22 +41,22 @@ namespace SoftwareProjekt.Exercises
             inputData = view.GetInputData();
 
             // check dict
-            if (!inputData.ContainsKey("M1") || !inputData.ContainsKey("M2") || !inputData.ContainsKey("VectorX"))
+            if (!inputData.ContainsKey("VectorM1") || !inputData.ContainsKey("VectorM2") || !inputData.ContainsKey("VectorX"))
             {
                 return;
             }
 
             // calculate...
-            Vector inputM1 = (Vector)inputData["M1"];
-            Vector inputM2 = (Vector)inputData["M2"];
+            Vector inputM1 = (Vector)inputData["VectorM1"];
+            Vector inputM2 = (Vector)inputData["VectorM2"];
             Vector inputX = (Vector)inputData["VectorX"];
 
             Dictionary<string, Object> outputData = new Dictionary<string, object>();
 
-            inputM1.Multiply(inputX.X1);
-            inputM2.Multiply(inputX.X2);
+            Vector M1multX1 = Vector.Multiply(inputM1, inputX.X1);
+            Vector M2multX2 = Vector.Multiply(inputM2, inputX.X2);
 
-            Vector outputX = Vector.Add(inputM1, inputM2);
+            Vector outputX = Vector.Add(M1multX1, M2multX2);
 
             outputData.Add("VectorX", outputX);
 

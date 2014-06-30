@@ -24,41 +24,47 @@ using SoftwareProjekt.Interfaces;
 using System;
 using System.Collections.Generic;
 
-//using System.Linq;
-//using System.Text;
-
 namespace SoftwareProjekt.Exercises
 {
     class LinAbbVielBelVek : AbstractExercise
     {
+        public LinAbbVielBelVek()
+        {
+            this.Id = Enums.EExercises.LinAbbMitVielfachemBelVek;
+        }
+
         protected override void DoWork(IView view)
         {
-            Dictionary<string, Object> dict = null;
+            Dictionary<string, Object> inputData = null;
 
             // get data needed for calculations.
-            dict = view.GetInputData();
+            inputData = view.GetInputData();
 
             // check dict
-            if (!dict.ContainsKey("Matrix1") || !dict.ContainsKey("Vector1") || !dict.ContainsKey("Scalar1"))
+            if (!inputData.ContainsKey("MatrixM1") || !inputData.ContainsKey("VectorX") || !inputData.ContainsKey("Scalar1"))
             {
                 return;
             }
 
-            // input...
-            Matrix m = (Matrix)dict["Matrix1"];
-            Vector v = (Vector)dict["Vector1"];
-            Vector v1 = (Vector)dict["Vector1"];
-            float scalar = (float)dict["Scalar1"];
-
             // calculate...
-            v.Multiply(scalar);
-            v.Multiply(m);
-            // Vector1 also must be shown in the output Coordiante System without the scalar
-            v1.Multiply(m);
+            Matrix inputM1 = (Matrix)inputData["MatrixM1"];
+            Vector inputX = (Vector)inputData["VectorX"];
+            float scalar = (float)inputData["Scalar1"];
 
+            Dictionary<string, Object> outputData = new Dictionary<string, object>();
+
+            // Vector XmultipliedA must be shown in the first Coordiante System
+            Vector XmultiScalar = Vector.Multiply(inputX, scalar);
+
+            Vector outputX = Vector.Multiply(inputX, inputM1);
+            Vector outputX2 = Vector.Multiply(XmultiScalar, inputM1);
+
+            outputData.Add("VectorX", outputX);
+            outputData.Add("VectorX2", outputX2);
+            outputData.Add("VectorMulti", XmultiScalar);
 
             // call base dowork and pass the calculated data.
-            base.Finalize(new ExerciseEventArgs(dict));
+            base.Finalize(new ExerciseEventArgs(outputData));
         }
     }
 }

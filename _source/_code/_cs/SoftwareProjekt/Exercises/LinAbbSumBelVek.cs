@@ -31,39 +31,47 @@ namespace SoftwareProjekt.Exercises
 {
     class LinAbbSumBelVek : AbstractExercise
     {
+        public LinAbbSumBelVek()
+        {
+            this.Id = Enums.EExercises.LinAbbAusSumBelVek;
+        }
+
         protected override void DoWork(IView view)
         {
-            Dictionary<string, Object> dict = null;
+            Dictionary<string, Object> inputData = null;
 
             // get data needed for calculations.
-            dict = view.GetInputData();
+            inputData = view.GetInputData();
 
             // check dict
-            if (!dict.ContainsKey("Matrix1") || !dict.ContainsKey("Vector1") || !dict.ContainsKey("Vector2"))
+            if (!inputData.ContainsKey("MatrixM1") || !inputData.ContainsKey("VectorX") || !inputData.ContainsKey("VectorY"))
             {
                 return;
             }
 
-            // input...
-            Matrix m = (Matrix)dict["Matrix1"];
-            Vector v = (Vector)dict["Vector1"];
-            Vector v1 = (Vector)dict["Vector1"];
-            Vector v2 = (Vector)dict["Vector2"];
-
-
             // calculate...
-            // This Vector must be shown in the first Coordinate System as the result of v1 + v2
-            v.Add(v2);
+            Matrix inputM1 = (Matrix)inputData["MatrixM1"];
+            Vector inputX = (Vector)inputData["VectorX"];
+            Vector inputY = (Vector)inputData["VectorY"];
+
+            Dictionary<string, Object> outputData = new Dictionary<string, object>();
+
+            // This Vector must be shown in the first Coordinate System as the result of x + y
+            Vector XplusY = Vector.Add(inputX, inputY);
 
             // This Vector must be shown in the second Coorinate System
-            v.Multiply(m);
+            Vector outputX = Vector.Multiply(inputX, inputM1);
             // This Vector must be shown in the second Coorinate System
-            v1.Multiply(m);
+            Vector outputY = Vector.Multiply(inputY, inputM1);
             // This Vector must be shown in the second Coorinate System
-            v2.Multiply(m);
+            Vector outputXplusY = Vector.Multiply(XplusY, inputM1);
+
+            outputData.Add("OutputX", outputX);
+            outputData.Add("OutputY", outputY);
+            outputData.Add("OutputXplusY", outputXplusY);
 
             // call base dowork and pass the calculated data.
-            base.Finalize(new ExerciseEventArgs(dict));
+            base.Finalize(new ExerciseEventArgs(outputData));
         }
     }
 }

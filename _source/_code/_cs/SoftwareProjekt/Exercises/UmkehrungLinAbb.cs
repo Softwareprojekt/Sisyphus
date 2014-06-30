@@ -28,36 +28,48 @@ namespace SoftwareProjekt.Exercises
 {
     class UmkehrungLinAbb : AbstractExercise
     {
+        public UmkehrungLinAbb()
+        {
+            this.Id = Enums.EExercises.UmkehrungLinAbb;
+        }
+
         protected override void DoWork(IView view)
         {
-            Dictionary<string, Object> dict = null;
+            Dictionary<string, Object> inputData = null;
 
             // get data needed for calculations.
-            dict = view.GetInputData();
+            inputData = view.GetInputData();
 
             // check dict
-            if (!dict.ContainsKey("Matrix1") || !dict.ContainsKey("VectorX") || !dict.ContainsKey("VectorY"))
+            if (!inputData.ContainsKey("Matrix") || !inputData.ContainsKey("VectorX") || !inputData.ContainsKey("VectorY"))
             {
                 return;
             }
 
             // calculate...
             // This is the (input) Vector x shown in the first Coordinate System
-            Vector x = (Vector)dict["VectorX"];
+            Vector inputX = (Vector)inputData["VectorX"];
             // This is the (input) Vector y shown in the second Coordinate System
-            Vector y = (Vector)dict["VectorY"];
+            Vector inputY = (Vector)inputData["VectorY"];
             // This is the input Matrix
-            Matrix m = (Matrix)dict["Matrix1"];
+            Matrix inputM = (Matrix)inputData["Matrix"];
+
+
+            Dictionary<string, Object> outputData = new Dictionary<string, object>();
 
             //  This is the (calculated) Vector x shown in the second Coordinate System
-            x.Multiply(m);
+            Vector outputX = Vector.Multiply(inputX, inputM);
             // This is the inverted (input) Matrix
-            m.Invert();
+            Matrix invM = Matrix.Invert(inputM);
             // This is the (calculated) Vector y shown in the first Coordinate System
-            y.Multiply(m);
+            Vector outputY = Vector.Multiply(inputY, invM);
+
+            outputData.Add("VectorX", outputX);
+            outputData.Add("EV1", outputY);
+            outputData.Add("EV2", invM);
 
             // call base dowork and pass the calculated data.
-            base.Finalize(new ExerciseEventArgs(dict));
+            base.Finalize(new ExerciseEventArgs(outputData));
         }
     }
 }

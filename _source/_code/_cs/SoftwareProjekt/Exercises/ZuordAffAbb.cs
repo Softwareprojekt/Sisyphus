@@ -36,26 +36,39 @@ namespace SoftwareProjekt.Exercises
             inputData = view.GetInputData();
 
             // check dict
-            if (!inputData.ContainsKey("UrspVectorA") || !inputData.ContainsKey("UrspVectorB") || !inputData.ContainsKey("UrspVectorC")
-                || !inputData.ContainsKey("UrspVectorA2") || !inputData.ContainsKey("UrspVectorB2") || !inputData.ContainsKey("UrspVectorC2"))
+            if (!inputData.ContainsKey("VectorA") || !inputData.ContainsKey("VectorB") || !inputData.ContainsKey("VectorC")
+                || !inputData.ContainsKey("VectorA2") || !inputData.ContainsKey("VectorB2") || !inputData.ContainsKey("VectorC2"))
             {
                 return;
             }
 
             // calculate...
-            Vector inputA = (Vector)inputData["EV1"];
-            Vector inputB = (Vector)inputData["EV1"];
-            Vector inputC = (Vector)inputData["EV1"];
+            Vector inputA = (Vector)inputData["VectorA"];
+            Vector inputB = (Vector)inputData["VectorB"];
+            Vector inputC = (Vector)inputData["VectorC"];
+            Vector inputA2 = (Vector)inputData["VectorA2"];
+            Vector inputB2 = (Vector)inputData["VectorB2"];
+            Vector inputC2 = (Vector)inputData["VectorC2"];
 
-            inputA.Multiply(-1f);
-            Vector AB = Vector.Add(inputB, inputA);
-            Vector AC = Vector.Add(inputC, inputA);
+
+            Vector minusA = Vector.Multiply(inputA, -1f);
+            Vector minusA2 = Vector.Multiply(inputA2, -1f);
+
+            Vector AB = Vector.Add(inputB, minusA);
+            Vector AC = Vector.Add(inputC, minusA);
+
+            Vector A2B2 = Vector.Add(inputB2, minusA2);
+            Vector A2C2 = Vector.Add(inputC2, minusA2);
 
             Dictionary<string, Object> outputData = new Dictionary<string, object>();
 
             Matrix outputM = new Matrix(AB.X1, AB.X2, AC.X1, AC.X2);
             Matrix outputMinv = Matrix.Invert(outputM);
 
+            outputData.Add("VectorAB", AB);
+            outputData.Add("VectorAC", AC);
+            outputData.Add("VectorA2B2", A2B2);
+            outputData.Add("VectorA2C2", A2C2);
             outputData.Add("M", outputM);
             outputData.Add("Minv", outputMinv);
 

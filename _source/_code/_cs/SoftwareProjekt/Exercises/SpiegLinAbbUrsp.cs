@@ -28,27 +28,42 @@ namespace SoftwareProjekt.Exercises
 {
     class SpiegLinAbbUrsp : AbstractExercise
     {
+        public SpiegLinAbbUrsp()
+        {
+            this.Id = Enums.EExercises.SpiegelungLinAbbanUrspungsgeraden;
+        }
+
         protected override void DoWork(IView view)
         {
-            Dictionary<string, Object> dict = null;
+            Dictionary<string, Object> inputData = null;
 
             // get data needed for calculations.
-            dict = view.GetInputData();
+            inputData = view.GetInputData();
 
             // check dict
-            if (!dict.ContainsKey("Winkel1") || !dict.ContainsKey("Vector1"))
+            if (!inputData.ContainsKey("Winkel1") || !inputData.ContainsKey("VectorX") || !inputData.ContainsKey("EV1") || !inputData.ContainsKey("EV2"))
             {
                 return;
             }
 
             // calculate...
-            Vector v = (Vector)dict["Vector1"];
-            double w = (double)dict["Winkel1"];
+            Vector inputX = (Vector)inputData["VectorX"];
+            Vector inputEV1 = (Vector)inputData["EV1"];
+            Vector inputEV2 = (Vector)inputData["EV2"];
+            float angle = (float)inputData["Winkel1"];
 
-            v.Rotate(w);
+            Dictionary<string, Object> outputData = new Dictionary<string, object>();
+
+            Vector outputX = Vector.Rotate(inputX, angle);
+            Vector outputEV1 = Vector.Rotate(inputEV1, angle);
+            Vector outputEV2 = Vector.Rotate(inputEV2, angle);
+
+            outputData.Add("VectorX", outputX);
+            outputData.Add("EV1", outputEV1);
+            outputData.Add("EV2", outputEV2);
 
             // call base dowork and pass the calculated data.
-            base.Finalize(new ExerciseEventArgs(dict));
+            base.Finalize(new ExerciseEventArgs(outputData));
         }
     }
 }
