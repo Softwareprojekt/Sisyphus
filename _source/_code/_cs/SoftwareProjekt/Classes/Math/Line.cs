@@ -31,6 +31,12 @@ namespace SoftwareProjekt.Classes.Math
             InnerLineSegment = lineSegment;
         }
 
+        public Line(float angle)
+        {
+            double t = System.Math.Tan(angle * System.Math.PI  / 180.0 ); 
+            Vector v = new Vector(1f, (float) t);
+            this.InnerLineSegment = new LineSegment(new PointF(0.0), v);
+        }
         public Line(Vector firstVector, Vector secondVector)
         {
             InnerLineSegment = new LineSegment(new PointF(firstVector.X1, firstVector.X2), secondVector);
