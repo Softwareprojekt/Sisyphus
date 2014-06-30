@@ -11,6 +11,15 @@ namespace SoftwareProjekt.UserControls
         public FloatInput()
         {
             FloatValue = float.NaN;
+            this.MouseClick += FloatInput_MouseClick;
+        }
+
+        void FloatInput_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left && float.IsNaN(this.FloatValue))
+            {
+                this.SelectAll();
+            }
         }
 
         public float FloatValue { get; private set; }
@@ -22,15 +31,30 @@ namespace SoftwareProjekt.UserControls
 
         protected override void OnTextChanged(EventArgs e)
         {
-            float f;
-            if (!this.Parse(this.Text.Replace(',', '.'), out f))
+            float f = float.NaN;
+            if (System.Globalization.RegionInfo.CurrentRegion.Name == "DE")
             {
-                this.BackColor = System.Drawing.Color.Red;
+                if (!this.Parse(this.Text.Replace('.', ','), out f))
+                {
+                    this.BackColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    this.BackColor = System.Drawing.Color.White;
+                }
             }
-            else
+            else if (System.Globalization.RegionInfo.CurrentRegion.Name == "US" || System.Globalization.RegionInfo.CurrentRegion.Name == "GB")
             {
-                this.BackColor = System.Drawing.Color.White;
+                 if (!this.Parse(this.Text.Replace(',', '.'), out f))
+                {
+                    this.BackColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    this.BackColor = System.Drawing.Color.White;
+                }
             }
+           
             this.FloatValue = f;
             base.OnTextChanged(e);
         }
