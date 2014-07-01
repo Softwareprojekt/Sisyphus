@@ -66,7 +66,9 @@ namespace SoftwareProjekt.Forms
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
+            cosInput.ClearLineSegments();
             cosOutput.ClearLineSegments();
+            cosInput.AddLineSegment(_vectorInputX);
 
             Console.WriteLine(sender.ToString() + " " + e.ToString());
 
@@ -74,7 +76,7 @@ namespace SoftwareProjekt.Forms
             _vectorOutputX = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["VectorX"], Pens.Blue);
             _vectorOutputXScaled = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["VectorXScaledOutput"], Pens.Black);
 
-            cosOutput.AddLineSegment(_vectorInputXScaled);
+            cosInput.AddLineSegment(_vectorInputXScaled);
             cosOutput.AddLineSegment(_vectorOutputX);
             cosOutput.AddLineSegment(_vectorOutputXScaled);
         }
