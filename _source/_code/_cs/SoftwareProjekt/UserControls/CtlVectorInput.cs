@@ -31,9 +31,13 @@ using SoftwareProjekt.Classes.Math;
 
 namespace SoftwareProjekt.UserControls
 {
+    public delegate void TextChangedHandler(Object sender, EventArgs e);
+
     public partial class CtlVectorInput : UserControl
     {
         private Vector _vector = null;
+        public event TextChangedHandler TextChanged;
+
         public CtlVectorInput()
         {
             InitializeComponent();
@@ -74,6 +78,11 @@ namespace SoftwareProjekt.UserControls
         {
             float f = (sender as SoftwareProjekt.UserControls.FloatInput).FloatValue;
             this.Vector.X1 = f;
+
+            if (this.TextChanged != null)
+            {
+                this.TextChanged(sender, e);
+            }
         }
 
         /// <summary>
@@ -89,6 +98,11 @@ namespace SoftwareProjekt.UserControls
         {
             float f = (sender as SoftwareProjekt.UserControls.FloatInput).FloatValue;
             this.Vector.X2 = f;
+
+            if (this.TextChanged != null)
+            {
+                this.TextChanged(sender, e);
+            }
         }
 
         /// <summary>
@@ -97,7 +111,7 @@ namespace SoftwareProjekt.UserControls
         private void txtEle21_KeyPress(object sender, KeyPressEventArgs e)
         { }
 
-   
+
 
         /// <summary>
         /// Refreshes TextBoxes with current Vector values.
@@ -115,10 +129,10 @@ namespace SoftwareProjekt.UserControls
             int newWidth = (int)(grpVektorInput.Size.Width / 2);
             int newX = (int)(grpVektorInput.Size.Width / 4);
 
-            int Ele11_newY =  (int)((grpVektorInput.Size.Height-24)/3);
+            int Ele11_newY = (int)((grpVektorInput.Size.Height - 24) / 3);
             int Ele21_newY = (Ele11_newY * 2) + 12;
 
-            txtEle11.Size = new System.Drawing.Size(newWidth,12);
+            txtEle11.Size = new System.Drawing.Size(newWidth, 12);
             txtEle11.Location = new Point(newX, Ele11_newY);
 
             txtEle21.Size = new System.Drawing.Size(newWidth, 12);
