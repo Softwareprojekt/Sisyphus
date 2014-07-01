@@ -89,22 +89,22 @@ namespace SoftwareProjekt.Exercises
             switch ((EIFSForms)inputData["Form"])
             {
                 case EIFSForms.Triangle:
-                    for (int i = 0; i < inputForms.Count; i++)
+                    foreach (Triangle tri in inputForms)
                     {
                         if (steps == 1)
                         {
-                            outputForms.Add(Triangle.AffineAbbildung((Triangle)inputForms[i], (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                            outputForms.Add(Triangle.AffineAbbildung(tri, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
                         }
                         else if (steps == 2)
                         {
-                            outputForms.Add(Triangle.AffineAbbildung((Triangle)inputForms[i], (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
-                            outputForms.Add(Triangle.AffineAbbildung((Triangle)inputForms[i], (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
+                            outputForms.Add(Triangle.AffineAbbildung(tri, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                            outputForms.Add(Triangle.AffineAbbildung(tri, (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
                         }
                         else //steps == 3
                         {
-                            outputForms.Add(Triangle.AffineAbbildung((Triangle)inputForms[i], (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
-                            outputForms.Add(Triangle.AffineAbbildung((Triangle)inputForms[i], (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
-                            outputForms.Add(Triangle.AffineAbbildung((Triangle)inputForms[i], (Matrix)inputData["Matrix_w3"], (Vector)inputData["Vector_w3"]));
+                            outputForms.Add(Triangle.AffineAbbildung(tri, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                            outputForms.Add(Triangle.AffineAbbildung(tri, (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
+                            outputForms.Add(Triangle.AffineAbbildung(tri, (Matrix)inputData["Matrix_w3"], (Vector)inputData["Vector_w3"]));
                         }
 
                     }
@@ -112,25 +112,61 @@ namespace SoftwareProjekt.Exercises
                 case EIFSForms.Rectangle:
                     foreach (RectangleC rect in inputForms)
                     {
-                        outputForms.Add(RectangleC.AffineAbbildung(rect, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
-                        outputForms.Add(RectangleC.AffineAbbildung(rect, (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
-                        outputForms.Add(RectangleC.AffineAbbildung(rect, (Matrix)inputData["Matrix_w3"], (Vector)inputData["Vector_w3"]));
+                        if (steps == 1)
+                        {
+                            outputForms.Add(RectangleC.AffineAbbildung(rect, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                        }
+                        else if (steps == 2)
+                        {
+                            outputForms.Add(RectangleC.AffineAbbildung(rect, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                            outputForms.Add(RectangleC.AffineAbbildung(rect, (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
+                        }
+                        else
+                        {
+                            outputForms.Add(RectangleC.AffineAbbildung(rect, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                            outputForms.Add(RectangleC.AffineAbbildung(rect, (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
+                            outputForms.Add(RectangleC.AffineAbbildung(rect, (Matrix)inputData["Matrix_w3"], (Vector)inputData["Vector_w3"]));
+                        }
                     }
                     break;
                 case EIFSForms.Circle:
                     foreach (Circle circle in inputForms)
                     {
-                        outputForms.Add(Circle.AffineAbbildung(circle, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
-                        outputForms.Add(Circle.AffineAbbildung(circle, (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
-                        outputForms.Add(Circle.AffineAbbildung(circle, (Matrix)inputData["Matrix_w3"], (Vector)inputData["Vector_w3"]));
+                        if (steps == 1)
+                        {
+                            outputForms.Add(Circle.AffineAbbildung(circle, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                        }
+                        else if (steps == 2)
+                        {
+                            outputForms.Add(Circle.AffineAbbildung(circle, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                            outputForms.Add(Circle.AffineAbbildung(circle, (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
+                        }
+                        else
+                        {
+                            outputForms.Add(Circle.AffineAbbildung(circle, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                            outputForms.Add(Circle.AffineAbbildung(circle, (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
+                            outputForms.Add(Circle.AffineAbbildung(circle, (Matrix)inputData["Matrix_w3"], (Vector)inputData["Vector_w3"]));
+                        }
                     }
                     break;
                 case EIFSForms.Picture:
                     foreach (Polygon polygon in inputForms)
                     {
-                        outputForms.Add(Polygon.AffineAbbildung(polygon, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
-                        outputForms.Add(Polygon.AffineAbbildung(polygon, (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
-                        outputForms.Add(Polygon.AffineAbbildung(polygon, (Matrix)inputData["Matrix_w3"], (Vector)inputData["Vector_w3"]));
+                        if (steps == 1)
+                        {
+                            outputForms.Add(Polygon.AffineAbbildung(polygon, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                        }
+                        else if (steps == 2)
+                        {
+                            outputForms.Add(Polygon.AffineAbbildung(polygon, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                            outputForms.Add(Polygon.AffineAbbildung(polygon, (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
+                        }
+                        else
+                        {
+                            outputForms.Add(Polygon.AffineAbbildung(polygon, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                            outputForms.Add(Polygon.AffineAbbildung(polygon, (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
+                            outputForms.Add(Polygon.AffineAbbildung(polygon, (Matrix)inputData["Matrix_w3"], (Vector)inputData["Vector_w3"]));
+                        }
                     }
                     break;
                 default:

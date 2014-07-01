@@ -565,6 +565,7 @@ namespace SoftwareProjekt.UserControls
 
                 RectangleF r = new RectangleF(f.X, f.Y, xWidth, yHeight); 
                 graphics.FillEllipse(c.Color.Brush, r);
+                graphics.DrawEllipse(Pens.Black, r);
             }
         }
 
@@ -578,6 +579,7 @@ namespace SoftwareProjekt.UserControls
                     l.Add(CalculateInternalCoordinates(item.X, item.Y));
                 }
                 graphics.FillPolygon(t.Color.Brush, l.ToArray());
+                graphics.DrawPolygon(Pens.Black, l.ToArray());
             }
         }
 
@@ -591,6 +593,7 @@ namespace SoftwareProjekt.UserControls
                     l.Add(CalculateInternalCoordinates(item.X, item.Y));
                 }
                 graphics.FillPolygon(r.Color.Brush, l.ToArray());
+                graphics.DrawPolygon(Pens.Black, l.ToArray());
             }
         }
 
