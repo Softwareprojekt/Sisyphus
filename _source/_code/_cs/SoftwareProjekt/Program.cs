@@ -40,28 +40,9 @@ namespace SoftwareProjekt
             bool retVal = initObject.Init();
              /* checking retVal is currently disabled, because not everybody has a config.xml for mindmap*/
 
-
             FrmMain view = new FrmMain();
 
             IController cont = new Controller(view);
-
-
-            //TestExercise exercise = new TestExercise();
-
-            //DrehLinAbbUrsp exercise = new DrehLinAbbUrsp();
-            //FrmDrehLinAbbUrsp view = new FrmDrehLinAbbUrsp();
-
-            //cont.AddExercise(exercise, view);
-
-            Application.Run(view);
-
-            //FrmMain mainView = new FrmMain();
-
-            //TestObject to = new TestObject();
-
-            //cont.AddView(to);
-
-            //Application.Run(to);
         }
     }
 }

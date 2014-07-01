@@ -58,6 +58,7 @@ namespace SoftwareProjekt.Forms
             this.picMathEquatCenter = new System.Windows.Forms.PictureBox();
             this.picBoxArrow = new System.Windows.Forms.PictureBox();
             this.cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
+            this._ctlAngle = new SoftwareProjekt.UserControls.FloatInput();
             this.grpDataInput.SuspendLayout();
             this.grpDataOutput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMathEquatCenter)).BeginInit();
@@ -85,6 +86,7 @@ namespace SoftwareProjekt.Forms
             // 
             // grpDataInput
             // 
+            this.grpDataInput.Controls.Add(this._ctlAngle);
             this.grpDataInput.Controls.Add(this.ctlVectorEV2);
             this.grpDataInput.Controls.Add(this.ctlVectorEV1);
             this.grpDataInput.Controls.Add(this.ctlVectorInputX);
@@ -97,6 +99,16 @@ namespace SoftwareProjekt.Forms
             this.grpDataInput.TabIndex = 26;
             this.grpDataInput.TabStop = false;
             this.grpDataInput.Text = "Dateneingabe";
+            // 
+            // _ctlAngle
+            // 
+            this._ctlAngle.BackColor = System.Drawing.Color.White;
+            this._ctlAngle.Location = new System.Drawing.Point(88, 127);
+            this._ctlAngle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._ctlAngle.Name = "_ctlAngle";
+            this._ctlAngle.Size = new System.Drawing.Size(54, 20);
+            this._ctlAngle.TabIndex = 15;
+            this._ctlAngle.Text = "NaN";
             // 
             // ctlVectorEV2
             // 
@@ -347,7 +359,6 @@ namespace SoftwareProjekt.Forms
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox grpDataInput;
-        private SoftwareProjekt.UserControls.FloatInput txtAngle;
         private System.Windows.Forms.Label lblAngle;
         private System.Windows.Forms.Button butFunctionTransfX;
         private System.Windows.Forms.GroupBox grpDataOutput;
@@ -366,6 +377,7 @@ namespace SoftwareProjekt.Forms
         private UserControls.CtlVectorInput ctlVectorOutputX;
         private System.Windows.Forms.PictureBox picBoxArrow;
         private UserControls.CoordinateSystem cosOutput;
+        private UserControls.FloatInput _ctlAngle;
 
     }
 }

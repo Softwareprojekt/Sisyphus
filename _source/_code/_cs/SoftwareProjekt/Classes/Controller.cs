@@ -27,6 +27,7 @@ using SoftwareProjekt.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace SoftwareProjekt.Classes
 {
@@ -37,12 +38,16 @@ namespace SoftwareProjekt.Classes
         /// </summary>
         private Dictionary<IView, IExercise> _exerciseList;
 
-        private System.Windows.Forms.Form _mainForm;
+        private AbstractView _mainForm;
 
-        public Controller(System.Windows.Forms.Form mainForm)
+        public Controller(AbstractView mainForm)
         {
             _exerciseList = new Dictionary<IView, IExercise>(10);
             _mainForm = mainForm;
+            _mainForm.Controller = this;
+            _mainForm.ViewChanged += this.HandleViewChanged;
+
+            Application.Run(mainForm);
         }
 
         void HandleViewChanged(IView sender, ViewEventArgs e)
@@ -115,6 +120,8 @@ namespace SoftwareProjekt.Classes
 
             // add exercise and view to list.
             _exerciseList.Add(view, exercise);
+
+            view.Show();
         }
 
         void view_Closing(object sender, System.ComponentModel.CancelEventArgs e)

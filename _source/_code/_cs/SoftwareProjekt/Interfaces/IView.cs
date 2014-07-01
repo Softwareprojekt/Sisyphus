@@ -72,6 +72,8 @@ namespace SoftwareProjekt.Interfaces
 
         event System.ComponentModel.CancelEventHandler Closing;
 
+        void Show();
+
         void Dispose();
         
         /// <summary>

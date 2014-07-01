@@ -25,6 +25,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.IO;
+using SoftwareProjekt.Exercises;
 
 namespace SoftwareProjekt.Forms
 {
@@ -618,10 +619,7 @@ namespace SoftwareProjekt.Forms
 
         private void butTestExercise_Click(object sender, System.EventArgs e)
         {
-            FrmDrehLinAbbUrsp view = new FrmDrehLinAbbUrsp();
-            view.inputColor = this.inputColor;
-            view.resultColor = this.resultColor;
-            view.Show();
+            this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(Enums.EClickedButton.StartExercise, Enums.EExercises.DrehungLinAbbUmUrsprung));
         }
 
         private void tsbutCloseExercisebook_Click(object sender, System.EventArgs e)
@@ -644,13 +642,5 @@ namespace SoftwareProjekt.Forms
             }
 
         }
-
-      
-        /*
-                public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
-                {
-                    throw new NotImplementedException();
-                }
-                */
     }
 }

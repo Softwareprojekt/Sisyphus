@@ -70,6 +70,7 @@ namespace SoftwareProjekt.Forms
             _vectorInputEV2 = new LineSegment(new PointF(0,0), ctlVectorEV2.Vector, Pens.Red);
             _vectorInputX = new LineSegment(new PointF(0,0), ctlVectorInputX.Vector);
             
+            this.ctlVectorInputX.TextChanged += this.OnTextChanged;
             cosInput.AddLineSegment(_vectorInputEV1);
             cosInput.AddLineSegment(_vectorInputEV2);
             cosInput.AddLineSegment(_vectorInputX);
@@ -90,7 +91,7 @@ namespace SoftwareProjekt.Forms
             retVal.Add("EV1", ctlVectorEV1.Vector);
             retVal.Add("EV2", ctlVectorEV2.Vector);
             retVal.Add("VectorX", ctlVectorInputX.Vector);
-            //retVal.Add("Angle", txtAngle.FloatValue);
+            retVal.Add("Angle", _ctlAngle.FloatValue);
 
             return retVal;
         }
@@ -118,10 +119,10 @@ namespace SoftwareProjekt.Forms
             cosOutput.AddLineSegment(_vectorOutputX);
         }
 
-		protected override bool CheckInputs()
-		{
-			if (ctlVectorEV1.Vector.IsValid() && ctlVectorEV2.Vector.IsValid() && ctlVectorInputX.Vector.IsValid() && txtAngle.IsValid())
-			{
+        protected override bool CheckInputs()
+        {
+            if (ctlVectorEV1.Vector.IsValid() && ctlVectorEV2.Vector.IsValid() && ctlVectorInputX.Vector.IsValid() && _ctlAngle.IsValid())
+            {
 #if DEBUG
 				Console.WriteLine("SUCCESS @ Inputs are valid.");
 #endif
