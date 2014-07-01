@@ -93,12 +93,17 @@ namespace SoftwareProjekt.UserControls
             }
         }
 
+        public bool DoNotRefresh { get; set; }
                 
         /// <summary>
         /// </summary>
         
-        private void invokeRefresh()
+        public void invokeRefresh()
         {
+            if (DoNotRefresh)
+            {
+                return;
+            }
             if (this.InvokeRequired)
             {
                 this.BeginInvoke(new Action(() => this.invokeRefresh()));

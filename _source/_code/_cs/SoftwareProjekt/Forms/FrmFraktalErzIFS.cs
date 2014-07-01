@@ -264,6 +264,8 @@ namespace SoftwareProjekt.Forms
 
         public override void ExerciseChanged(Interfaces.IExercise sender, ExerciseEventArgs e)
         {
+
+            _cosOutput.DoNotRefresh = true;
             _inputForms.Clear();
             _cosOutput.Clear();
 
@@ -290,6 +292,9 @@ namespace SoftwareProjekt.Forms
                 default:
                     break;
             }
+
+            _cosOutput.DoNotRefresh = false;
+            _cosOutput.invokeRefresh();
         }
 
         public override Dictionary<string, object> GetInputData()
