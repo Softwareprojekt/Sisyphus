@@ -65,8 +65,8 @@ namespace SoftwareProjekt.Exercises
             Vector outputY = Vector.Multiply(inputY, invM);
 
             outputData.Add("VectorX", outputX);
-            outputData.Add("EV1", outputY);
-            outputData.Add("EV2", invM);
+            outputData.Add("VectorY", outputY);
+            outputData.Add("invMatrix", invM);
 
             // call base dowork and pass the calculated data.
             base.Finalize(new ExerciseEventArgs(outputData));

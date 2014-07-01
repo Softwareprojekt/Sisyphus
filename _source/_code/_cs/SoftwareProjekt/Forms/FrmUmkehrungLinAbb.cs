@@ -13,14 +13,23 @@ using SoftwareProjekt.Interfaces;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmUmkehrungLinAbb : AbstractView 
+    public partial class FrmUmkehrungLinAbb : AbstractView
     {
         private LineSegment _vectorInputX;
         private LineSegment _vectorInputY;
 
+        private LineSegment _vectorOutputX;
+        private LineSegment _vectorOutputY;
+
         public FrmUmkehrungLinAbb()
         {
             InitializeComponent();
+
+            _vectorInputX = new LineSegment(new PointF(0, 0), ctlVectorInputX.Vector, Pens.Black);
+            _vectorInputY = new LineSegment(new PointF(0, 0), ctlVectorInputY.Vector, Pens.Black);
+
+            cosInput.AddLineSegment(_vectorInputX);
+            cosOutput.AddLineSegment(_vectorInputY);
         }
 
         public override Dictionary<string, Object> GetInputData()
@@ -36,7 +45,15 @@ namespace SoftwareProjekt.Forms
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
-            cosOutput.ClearLineSegments();
+            //cosOutput.ClearLineSegments();
+
+            Console.WriteLine(sender.ToString() + " " + e.ToString());
+
+            _vectorOutputX = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["VectorX"], Pens.Blue);
+            _vectorOutputY = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["VectorY"], Pens.Green);
+
+            cosInput.AddLineSegment(_vectorOutputY);
+            cosOutput.AddLineSegment(_vectorOutputX);
         }
 
         private void butDeterminante_Click(object sender, EventArgs e)
@@ -62,8 +79,8 @@ namespace SoftwareProjekt.Forms
             this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
         }
 
-		protected override bool CheckInputs()
-		{
+        protected override bool CheckInputs()
+        {
             if (ctlVectorInputX.Vector.IsValid() && ctlVectorInputY.Vector.IsValid() && ctlMatrixInput.Matrix.IsValid())
             {
 #if DEBUG
@@ -75,7 +92,7 @@ namespace SoftwareProjekt.Forms
             Console.WriteLine("ERROR @ Inputs are not valid.");
 #endif
             return false;
-		}
+        }
 
         public void OnTextChanged(object sender, EventArgs e)
         {
@@ -94,7 +111,7 @@ namespace SoftwareProjekt.Forms
             {
                 return false;
             }
-            else if (!state.ContainsKey("Vectory"))
+            else if (!state.ContainsKey("VectorY"))
             {
                 return false;
             }
