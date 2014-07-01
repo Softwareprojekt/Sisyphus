@@ -33,8 +33,8 @@ namespace SoftwareProjekt.UserControls
         protected override void OnTextChanged(EventArgs e)
         {
             float f = float.NaN;
-            
-            if (!this.Parse(this.Text.Replace('.', ','), out f))
+
+            if (!this.Parse(this.Text.Replace(',', '.'), out f))
             {
                 this.BackColor = System.Drawing.Color.Red;
             }
@@ -42,8 +42,8 @@ namespace SoftwareProjekt.UserControls
             {
                 this.BackColor = System.Drawing.Color.White;
             }
-           
-           
+
+
             this.FloatValue = f;
             base.OnTextChanged(e);
         }
@@ -52,7 +52,7 @@ namespace SoftwareProjekt.UserControls
         {
             float retval = 0f;
 
-            if (float.TryParse(s, NumberStyles.Float ,CultureInfo.InvariantCulture,out retval))
+            if (float.TryParse(s, NumberStyles.Float, CultureInfo.InvariantCulture, out retval))
             {
                 f = retval;
 #if DEBUG
@@ -68,9 +68,9 @@ namespace SoftwareProjekt.UserControls
             return false;
         }
 
-		public bool IsValid()
-		{
-			return !float.IsNaN(this.FloatValue);
-		}
+        public bool IsValid()
+        {
+            return !float.IsNaN(this.FloatValue);
+        }
     }
 }
