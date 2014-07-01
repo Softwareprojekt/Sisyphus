@@ -35,7 +35,7 @@ namespace SoftwareProjekt.Classes.Math
         {
             double t = System.Math.Tan(angle * System.Math.PI  / 180.0 ); 
             Vector v = new Vector(1f, (float) t);
-            this.InnerLineSegment = new LineSegment(new PointF(0.0), v);
+            this.InnerLineSegment = new LineSegment(new PointF(0.0f, 0.0f), v);
         }
         public Line(Vector firstVector, Vector secondVector)
         {
