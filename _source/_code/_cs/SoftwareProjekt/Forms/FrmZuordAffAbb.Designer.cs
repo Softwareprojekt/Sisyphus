@@ -170,18 +170,18 @@
             // 
             // txtFunction1X
             // 
-            this.txtFunction1X.Location = new System.Drawing.Point(629, 90);
+            this.txtFunction1X.Location = new System.Drawing.Point(666, 90);
             this.txtFunction1X.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFunction1X.Name = "txtFunction1X";
-            this.txtFunction1X.Size = new System.Drawing.Size(254, 22);
+            this.txtFunction1X.Size = new System.Drawing.Size(217, 22);
             this.txtFunction1X.TabIndex = 9;
             // 
             // txtInverseFunction1X
             // 
-            this.txtInverseFunction1X.Location = new System.Drawing.Point(629, 151);
+            this.txtInverseFunction1X.Location = new System.Drawing.Point(666, 151);
             this.txtInverseFunction1X.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtInverseFunction1X.Name = "txtInverseFunction1X";
-            this.txtInverseFunction1X.Size = new System.Drawing.Size(254, 22);
+            this.txtInverseFunction1X.Size = new System.Drawing.Size(217, 22);
             this.txtInverseFunction1X.TabIndex = 8;
             // 
             // grpDataInput2
@@ -276,18 +276,18 @@
             // butFx
             // 
             this.butFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFx.Location = new System.Drawing.Point(795, 719);
+            this.butFx.Location = new System.Drawing.Point(753, 719);
             this.butFx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butFx.Name = "butFx";
-            this.butFx.Size = new System.Drawing.Size(129, 49);
+            this.butFx.Size = new System.Drawing.Size(161, 49);
             this.butFx.TabIndex = 10;
-            this.butFx.Text = "f(x)";
+            this.butFx.Text = "&Berechne f(x)";
             this.butFx.UseVisualStyleBackColor = true;
             this.butFx.Click += new System.EventHandler(this.butFx_Click);
             // 
             // txtFx
             // 
-            this.txtFx.Location = new System.Drawing.Point(930, 735);
+            this.txtFx.Location = new System.Drawing.Point(920, 735);
             this.txtFx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFx.Name = "txtFx";
             this.txtFx.Size = new System.Drawing.Size(176, 22);
@@ -349,7 +349,7 @@
             // lblFx
             // 
             this.lblFx.AutoSize = true;
-            this.lblFx.Location = new System.Drawing.Point(804, 770);
+            this.lblFx.Location = new System.Drawing.Point(773, 770);
             this.lblFx.Name = "lblFx";
             this.lblFx.Size = new System.Drawing.Size(110, 17);
             this.lblFx.TabIndex = 42;
@@ -360,9 +360,9 @@
             this.butFunction1X.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butFunction1X.Location = new System.Drawing.Point(530, 76);
             this.butFunction1X.Name = "butFunction1X";
-            this.butFunction1X.Size = new System.Drawing.Size(93, 53);
+            this.butFunction1X.Size = new System.Drawing.Size(108, 53);
             this.butFunction1X.TabIndex = 4;
-            this.butFunction1X.Text = "f1(x)";
+            this.butFunction1X.Text = "&Berechne f1(x)";
             this.butFunction1X.UseVisualStyleBackColor = true;
             this.butFunction1X.Click += new System.EventHandler(this.butFunction1X_Click);
             // 
@@ -371,9 +371,9 @@
             this.butInverseFunction1X.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butInverseFunction1X.Location = new System.Drawing.Point(530, 135);
             this.butInverseFunction1X.Name = "butInverseFunction1X";
-            this.butInverseFunction1X.Size = new System.Drawing.Size(93, 53);
+            this.butInverseFunction1X.Size = new System.Drawing.Size(108, 53);
             this.butInverseFunction1X.TabIndex = 5;
-            this.butInverseFunction1X.Text = "f^-1(x)";
+            this.butInverseFunction1X.Text = "&Berechne f^-1(x)";
             this.butInverseFunction1X.UseVisualStyleBackColor = true;
             this.butInverseFunction1X.Click += new System.EventHandler(this.butInverseFunction1X_Click);
             // 
@@ -382,18 +382,18 @@
             this.butFunction2X.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butFunction2X.Location = new System.Drawing.Point(1426, 121);
             this.butFunction2X.Name = "butFunction2X";
-            this.butFunction2X.Size = new System.Drawing.Size(93, 53);
+            this.butFunction2X.Size = new System.Drawing.Size(114, 53);
             this.butFunction2X.TabIndex = 9;
-            this.butFunction2X.Text = "f2(x)";
+            this.butFunction2X.Text = "&Berechne f2(x)";
             this.butFunction2X.UseVisualStyleBackColor = true;
             this.butFunction2X.Click += new System.EventHandler(this.butFunction2X_Click);
             // 
             // txtFunction2X
             // 
-            this.txtFunction2X.Location = new System.Drawing.Point(1525, 135);
+            this.txtFunction2X.Location = new System.Drawing.Point(1546, 135);
             this.txtFunction2X.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFunction2X.Name = "txtFunction2X";
-            this.txtFunction2X.Size = new System.Drawing.Size(254, 22);
+            this.txtFunction2X.Size = new System.Drawing.Size(233, 22);
             this.txtFunction2X.TabIndex = 46;
             // 
             // FrmZuordAffAbb

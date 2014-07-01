@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SoftwareProjekt.Classes.Math.Matrix matrix1 = new SoftwareProjekt.Classes.Math.Matrix();
-            SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector2 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Matrix matrix8 = new SoftwareProjekt.Classes.Math.Matrix();
+            SoftwareProjekt.Classes.Math.Vector vector15 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector16 = new SoftwareProjekt.Classes.Math.Vector();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dutDeterminante = new System.Windows.Forms.Button();
             this.txtDeterminante1 = new System.Windows.Forms.TextBox();
@@ -48,8 +48,10 @@
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.picMathEqua = new System.Windows.Forms.PictureBox();
+            this.picBoxArrow = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMathEqua)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxArrow)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -61,7 +63,7 @@
             this.groupBox1.Controls.Add(this.ctlVecInX);
             this.groupBox1.Controls.Add(this.lblPointY);
             this.groupBox1.Controls.Add(this.lblPointX);
-            this.groupBox1.Location = new System.Drawing.Point(37, 106);
+            this.groupBox1.Location = new System.Drawing.Point(617, 71);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -95,11 +97,11 @@
             // 
             this.ctlMaInScaleMat.Location = new System.Drawing.Point(9, 185);
             this.ctlMaInScaleMat.Margin = new System.Windows.Forms.Padding(5);
-            matrix1.X11 = float.NaN;
-            matrix1.X12 = float.NaN;
-            matrix1.X21 = float.NaN;
-            matrix1.X22 = float.NaN;
-            this.ctlMaInScaleMat.Matrix = matrix1;
+            matrix8.X11 = float.NaN;
+            matrix8.X12 = float.NaN;
+            matrix8.X21 = float.NaN;
+            matrix8.X22 = float.NaN;
+            this.ctlMaInScaleMat.Matrix = matrix8;
             this.ctlMaInScaleMat.MinimumSize = new System.Drawing.Size(131, 94);
             this.ctlMaInScaleMat.Name = "ctlMaInScaleMat";
             this.ctlMaInScaleMat.Size = new System.Drawing.Size(167, 110);
@@ -113,9 +115,9 @@
             this.ctlVecInY.Name = "ctlVecInY";
             this.ctlVecInY.Size = new System.Drawing.Size(161, 102);
             this.ctlVecInY.TabIndex = 2;
-            vector1.X1 = float.NaN;
-            vector1.X2 = float.NaN;
-            this.ctlVecInY.Vector = vector1;
+            vector15.X1 = float.NaN;
+            vector15.X2 = float.NaN;
+            this.ctlVecInY.Vector = vector15;
             // 
             // ctlVecInX
             // 
@@ -125,9 +127,9 @@
             this.ctlVecInX.Name = "ctlVecInX";
             this.ctlVecInX.Size = new System.Drawing.Size(161, 102);
             this.ctlVecInX.TabIndex = 1;
-            vector2.X1 = float.NaN;
-            vector2.X2 = float.NaN;
-            this.ctlVecInX.Vector = vector2;
+            vector16.X1 = float.NaN;
+            vector16.X2 = float.NaN;
+            this.ctlVecInX.Vector = vector16;
             // 
             // lblPointY
             // 
@@ -150,7 +152,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(179, 511);
+            this.label6.Location = new System.Drawing.Point(186, 453);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(183, 17);
             this.label6.TabIndex = 24;
@@ -159,7 +161,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1151, 511);
+            this.label7.Location = new System.Drawing.Point(1372, 453);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(187, 17);
             this.label7.TabIndex = 26;
@@ -168,18 +170,18 @@
             // butFuncionXPlusY
             // 
             this.butFuncionXPlusY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFuncionXPlusY.Location = new System.Drawing.Point(422, 182);
+            this.butFuncionXPlusY.Location = new System.Drawing.Point(753, 388);
             this.butFuncionXPlusY.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butFuncionXPlusY.Name = "butFuncionXPlusY";
             this.butFuncionXPlusY.Size = new System.Drawing.Size(115, 82);
             this.butFuncionXPlusY.TabIndex = 5;
-            this.butFuncionXPlusY.Text = "f(X+Y)";
+            this.butFuncionXPlusY.Text = "&Berechne f(X+Y)";
             this.butFuncionXPlusY.UseVisualStyleBackColor = true;
             this.butFuncionXPlusY.Click += new System.EventHandler(this.butFuncionXPlusY_Click);
             // 
             // coordinateSystem1
             // 
-            this.coordinateSystem1.Location = new System.Drawing.Point(37, 530);
+            this.coordinateSystem1.Location = new System.Drawing.Point(37, 484);
             this.coordinateSystem1.Margin = new System.Windows.Forms.Padding(4);
             this.coordinateSystem1.Name = "coordinateSystem1";
             this.coordinateSystem1.Size = new System.Drawing.Size(513, 373);
@@ -187,7 +189,7 @@
             // 
             // coordinateSystem2
             // 
-            this.coordinateSystem2.Location = new System.Drawing.Point(979, 530);
+            this.coordinateSystem2.Location = new System.Drawing.Point(1177, 484);
             this.coordinateSystem2.Margin = new System.Windows.Forms.Padding(4);
             this.coordinateSystem2.Name = "coordinateSystem2";
             this.coordinateSystem2.Size = new System.Drawing.Size(529, 373);
@@ -196,7 +198,7 @@
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(549, 954);
+            this.lblNotes.Location = new System.Drawing.Point(558, 859);
             this.lblNotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(60, 17);
@@ -205,7 +207,7 @@
             // 
             // rtxtNotes
             // 
-            this.rtxtNotes.Location = new System.Drawing.Point(549, 977);
+            this.rtxtNotes.Location = new System.Drawing.Point(557, 880);
             this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtNotes.Name = "rtxtNotes";
             this.rtxtNotes.Size = new System.Drawing.Size(636, 152);
@@ -225,18 +227,32 @@
             // 
             // picMathEqua
             // 
-            this.picMathEqua.Location = new System.Drawing.Point(559, 620);
+            this.picMathEqua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.picMathEqua.BackColor = System.Drawing.Color.Transparent;
+            this.picMathEqua.Location = new System.Drawing.Point(578, 603);
             this.picMathEqua.Margin = new System.Windows.Forms.Padding(4);
             this.picMathEqua.Name = "picMathEqua";
-            this.picMathEqua.Size = new System.Drawing.Size(395, 187);
+            this.picMathEqua.Size = new System.Drawing.Size(332, 144);
             this.picMathEqua.TabIndex = 33;
             this.picMathEqua.TabStop = false;
+            // 
+            // picBoxArrow
+            // 
+            this.picBoxArrow.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxArrow.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
+            this.picBoxArrow.Location = new System.Drawing.Point(557, 474);
+            this.picBoxArrow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picBoxArrow.Name = "picBoxArrow";
+            this.picBoxArrow.Size = new System.Drawing.Size(603, 346);
+            this.picBoxArrow.TabIndex = 51;
+            this.picBoxArrow.TabStop = false;
             // 
             // FrmLinAbbSumBelVek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1659, 1045);
+            this.ClientSize = new System.Drawing.Size(1829, 1045);
+            this.Controls.Add(this.picBoxArrow);
             this.Controls.Add(this.picMathEqua);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.lblNotes);
@@ -253,6 +269,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMathEqua)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxArrow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +294,6 @@
         private UserControls.CtlVectorInput ctlVecInY;
         private System.Windows.Forms.Button dutDeterminante;
         private System.Windows.Forms.TextBox txtDeterminante1;
+        private System.Windows.Forms.PictureBox picBoxArrow;
     }
 }

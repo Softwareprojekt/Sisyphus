@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SoftwareProjekt.Classes.Math.Matrix matrix1 = new SoftwareProjekt.Classes.Math.Matrix();
-            SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector2 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Matrix matrix2 = new SoftwareProjekt.Classes.Math.Matrix();
+            SoftwareProjekt.Classes.Math.Vector vector3 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector4 = new SoftwareProjekt.Classes.Math.Vector();
             this.lblHeader = new System.Windows.Forms.Label();
             this.cosInput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
@@ -52,10 +52,12 @@
             this.ctlVectorInputY = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.butFunctionEnd = new System.Windows.Forms.Button();
             this.txtUmkehrFy = new System.Windows.Forms.TextBox();
-            this.ctlMathEquaRi2Le = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
-            this.ctlMathEquaLe2Ri = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
+            this.picMathEquatCenter = new System.Windows.Forms.PictureBox();
+            this.picBoxArrow = new System.Windows.Forms.PictureBox();
             this.grpDataInput.SuspendLayout();
             this.grpDataInRight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMathEquatCenter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxArrow)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -116,7 +118,7 @@
             // lblOutput
             // 
             this.lblOutput.AutoSize = true;
-            this.lblOutput.Location = new System.Drawing.Point(958, 271);
+            this.lblOutput.Location = new System.Drawing.Point(1162, 271);
             this.lblOutput.Name = "lblOutput";
             this.lblOutput.Size = new System.Drawing.Size(187, 17);
             this.lblOutput.TabIndex = 8;
@@ -163,11 +165,11 @@
             // 
             this.ctlMatrixInput.Location = new System.Drawing.Point(172, 55);
             this.ctlMatrixInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            matrix1.X11 = float.NaN;
-            matrix1.X12 = float.NaN;
-            matrix1.X21 = float.NaN;
-            matrix1.X22 = float.NaN;
-            this.ctlMatrixInput.Matrix = matrix1;
+            matrix2.X11 = float.NaN;
+            matrix2.X12 = float.NaN;
+            matrix2.X21 = float.NaN;
+            matrix2.X22 = float.NaN;
+            this.ctlMatrixInput.Matrix = matrix2;
             this.ctlMatrixInput.MinimumSize = new System.Drawing.Size(131, 94);
             this.ctlMatrixInput.Name = "ctlMatrixInput";
             this.ctlMatrixInput.Size = new System.Drawing.Size(154, 107);
@@ -190,38 +192,38 @@
             this.ctlVectorInputX.Name = "ctlVectorInputX";
             this.ctlVectorInputX.Size = new System.Drawing.Size(157, 105);
             this.ctlVectorInputX.TabIndex = 1;
-            vector1.X1 = float.NaN;
-            vector1.X2 = float.NaN;
-            this.ctlVectorInputX.Vector = vector1;
+            vector3.X1 = float.NaN;
+            vector3.X2 = float.NaN;
+            this.ctlVectorInputX.Vector = vector3;
             // 
             // butFx
             // 
             this.butFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFx.Location = new System.Drawing.Point(901, 93);
+            this.butFx.Location = new System.Drawing.Point(774, 114);
             this.butFx.Name = "butFx";
-            this.butFx.Size = new System.Drawing.Size(96, 60);
+            this.butFx.Size = new System.Drawing.Size(106, 60);
             this.butFx.TabIndex = 4;
-            this.butFx.Text = "f(x)";
+            this.butFx.Text = "&Berechne f(x)";
             this.butFx.UseVisualStyleBackColor = true;
             this.butFx.Click += new System.EventHandler(this.butFx_Click);
             // 
             // butUmkehrFx
             // 
             this.butUmkehrFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butUmkehrFx.Location = new System.Drawing.Point(901, 159);
+            this.butUmkehrFx.Location = new System.Drawing.Point(774, 180);
             this.butUmkehrFx.Name = "butUmkehrFx";
-            this.butUmkehrFx.Size = new System.Drawing.Size(96, 60);
+            this.butUmkehrFx.Size = new System.Drawing.Size(106, 60);
             this.butUmkehrFx.TabIndex = 5;
-            this.butUmkehrFx.Text = "f^-1(f(x)) ";
+            this.butUmkehrFx.Text = "&Berechne f^-1(f(x)) ";
             this.butUmkehrFx.UseVisualStyleBackColor = true;
             this.butUmkehrFx.Click += new System.EventHandler(this.butUmkehrFx_Click);
             // 
             // txtUmkerFx
             // 
-            this.txtUmkerFx.Location = new System.Drawing.Point(901, 220);
+            this.txtUmkerFx.Location = new System.Drawing.Point(732, 241);
             this.txtUmkerFx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUmkerFx.Name = "txtUmkerFx";
-            this.txtUmkerFx.Size = new System.Drawing.Size(162, 22);
+            this.txtUmkerFx.Size = new System.Drawing.Size(204, 22);
             this.txtUmkerFx.TabIndex = 67;
             // 
             // grpDataInRight
@@ -254,18 +256,18 @@
             this.ctlVectorInputY.Name = "ctlVectorInputY";
             this.ctlVectorInputY.Size = new System.Drawing.Size(157, 105);
             this.ctlVectorInputY.TabIndex = 6;
-            vector2.X1 = float.NaN;
-            vector2.X2 = float.NaN;
-            this.ctlVectorInputY.Vector = vector2;
+            vector4.X1 = float.NaN;
+            vector4.X2 = float.NaN;
+            this.ctlVectorInputY.Vector = vector4;
             // 
             // butFunctionEnd
             // 
             this.butFunctionEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butFunctionEnd.Location = new System.Drawing.Point(1311, 145);
             this.butFunctionEnd.Name = "butFunctionEnd";
-            this.butFunctionEnd.Size = new System.Drawing.Size(96, 60);
+            this.butFunctionEnd.Size = new System.Drawing.Size(105, 60);
             this.butFunctionEnd.TabIndex = 7;
-            this.butFunctionEnd.Text = "f^-1(f(y)) ";
+            this.butFunctionEnd.Text = "&Berechne f^-1(f(y)) ";
             this.butFunctionEnd.UseVisualStyleBackColor = true;
             // 
             // txtUmkehrFy
@@ -276,39 +278,35 @@
             this.txtUmkehrFy.Size = new System.Drawing.Size(162, 22);
             this.txtUmkehrFy.TabIndex = 69;
             // 
-            // ctlMathEquaRi2Le
+            // picMathEquatCenter
             // 
-            this.ctlMathEquaRi2Le.Arrowdirection = SoftwareProjekt.Enums.EArrowDirection.up;
-            this.ctlMathEquaRi2Le.Equation = "";
-            this.ctlMathEquaRi2Le.Filename = "expr.gif";
-            this.ctlMathEquaRi2Le.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";
-            this.ctlMathEquaRi2Le.FontSize = 8;
-            this.ctlMathEquaRi2Le.Location = new System.Drawing.Point(540, 340);
-            this.ctlMathEquaRi2Le.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlMathEquaRi2Le.Name = "ctlMathEquaRi2Le";
-            this.ctlMathEquaRi2Le.Size = new System.Drawing.Size(439, 113);
-            this.ctlMathEquaRi2Le.TabIndex = 70;
+            this.picMathEquatCenter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.picMathEquatCenter.BackColor = System.Drawing.Color.Transparent;
+            this.picMathEquatCenter.Location = new System.Drawing.Point(465, 373);
+            this.picMathEquatCenter.Margin = new System.Windows.Forms.Padding(4);
+            this.picMathEquatCenter.Name = "picMathEquatCenter";
+            this.picMathEquatCenter.Size = new System.Drawing.Size(375, 142);
+            this.picMathEquatCenter.TabIndex = 73;
+            this.picMathEquatCenter.TabStop = false;
             // 
-            // ctlMathEquaLe2Ri
+            // picBoxArrow
             // 
-            this.ctlMathEquaLe2Ri.Arrowdirection = SoftwareProjekt.Enums.EArrowDirection.up;
-            this.ctlMathEquaLe2Ri.Equation = "";
-            this.ctlMathEquaLe2Ri.Filename = "expr.gif";
-            this.ctlMathEquaLe2Ri.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";
-            this.ctlMathEquaLe2Ri.FontSize = 8;
-            this.ctlMathEquaLe2Ri.Location = new System.Drawing.Point(540, 461);
-            this.ctlMathEquaLe2Ri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctlMathEquaLe2Ri.Name = "ctlMathEquaLe2Ri";
-            this.ctlMathEquaLe2Ri.Size = new System.Drawing.Size(439, 113);
-            this.ctlMathEquaLe2Ri.TabIndex = 71;
+            this.picBoxArrow.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxArrow.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
+            this.picBoxArrow.Location = new System.Drawing.Point(449, 282);
+            this.picBoxArrow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picBoxArrow.Name = "picBoxArrow";
+            this.picBoxArrow.Size = new System.Drawing.Size(572, 346);
+            this.picBoxArrow.TabIndex = 74;
+            this.picBoxArrow.TabStop = false;
             // 
             // FrmUmkehrungLinAbb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1544, 886);
-            this.Controls.Add(this.ctlMathEquaLe2Ri);
-            this.Controls.Add(this.ctlMathEquaRi2Le);
+            this.Controls.Add(this.picMathEquatCenter);
+            this.Controls.Add(this.picBoxArrow);
             this.Controls.Add(this.txtUmkehrFy);
             this.Controls.Add(this.butFunctionEnd);
             this.Controls.Add(this.grpDataInRight);
@@ -330,6 +328,8 @@
             this.grpDataInput.PerformLayout();
             this.grpDataInRight.ResumeLayout(false);
             this.grpDataInRight.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMathEquatCenter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxArrow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,7 +358,7 @@
         private UserControls.CtlVectorInput ctlVectorInputY;
         private System.Windows.Forms.Button butFunctionEnd;
         private System.Windows.Forms.TextBox txtUmkehrFy;
-        private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaRi2Le;
-        private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaLe2Ri;
+        private System.Windows.Forms.PictureBox picMathEquatCenter;
+        private System.Windows.Forms.PictureBox picBoxArrow;
     }
 }

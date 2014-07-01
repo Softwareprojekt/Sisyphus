@@ -61,7 +61,11 @@
             this.butFx = new System.Windows.Forms.Button();
             this.txtFx = new System.Windows.Forms.TextBox();
             this.ctlMathEqua = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
+            this.picMathEquatCenter = new System.Windows.Forms.PictureBox();
+            this.picBoxArrow = new System.Windows.Forms.PictureBox();
             this.grpDataInput.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMathEquatCenter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxArrow)).BeginInit();
             this.SuspendLayout();
             // 
             // lblOutput
@@ -111,7 +115,7 @@
             this.grpDataInput.Controls.Add(this.lblAngle);
             this.grpDataInput.Controls.Add(this.lblEV2);
             this.grpDataInput.Controls.Add(this.lblEV1);
-            this.grpDataInput.Location = new System.Drawing.Point(245, 98);
+            this.grpDataInput.Location = new System.Drawing.Point(12, 66);
             this.grpDataInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInput.Name = "grpDataInput";
             this.grpDataInput.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -317,17 +321,17 @@
             // butFx
             // 
             this.butFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFx.Location = new System.Drawing.Point(852, 172);
+            this.butFx.Location = new System.Drawing.Point(670, 239);
             this.butFx.Name = "butFx";
-            this.butFx.Size = new System.Drawing.Size(76, 52);
+            this.butFx.Size = new System.Drawing.Size(104, 52);
             this.butFx.TabIndex = 5;
-            this.butFx.Text = "f(x)";
+            this.butFx.Text = "&Berechne f(x)";
             this.butFx.UseVisualStyleBackColor = true;
             this.butFx.Click += new System.EventHandler(this.butFx_Click);
             // 
             // txtFx
             // 
-            this.txtFx.Location = new System.Drawing.Point(781, 229);
+            this.txtFx.Location = new System.Drawing.Point(612, 296);
             this.txtFx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFx.Name = "txtFx";
             this.txtFx.Size = new System.Drawing.Size(221, 22);
@@ -346,11 +350,35 @@
             this.ctlMathEqua.Size = new System.Drawing.Size(439, 113);
             this.ctlMathEqua.TabIndex = 69;
             // 
+            // picMathEquatCenter
+            // 
+            this.picMathEquatCenter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.picMathEquatCenter.BackColor = System.Drawing.Color.Transparent;
+            this.picMathEquatCenter.Location = new System.Drawing.Point(453, 425);
+            this.picMathEquatCenter.Margin = new System.Windows.Forms.Padding(4);
+            this.picMathEquatCenter.Name = "picMathEquatCenter";
+            this.picMathEquatCenter.Size = new System.Drawing.Size(375, 142);
+            this.picMathEquatCenter.TabIndex = 70;
+            this.picMathEquatCenter.TabStop = false;
+            // 
+            // picBoxArrow
+            // 
+            this.picBoxArrow.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxArrow.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
+            this.picBoxArrow.Location = new System.Drawing.Point(430, 333);
+            this.picBoxArrow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picBoxArrow.Name = "picBoxArrow";
+            this.picBoxArrow.Size = new System.Drawing.Size(572, 346);
+            this.picBoxArrow.TabIndex = 71;
+            this.picBoxArrow.TabStop = false;
+            // 
             // FrmSpiegLinAbbUrsp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1471, 898);
+            this.Controls.Add(this.picMathEquatCenter);
+            this.Controls.Add(this.picBoxArrow);
             this.Controls.Add(this.ctlMathEqua);
             this.Controls.Add(this.txtFx);
             this.Controls.Add(this.butFx);
@@ -367,6 +395,8 @@
             this.Text = "Spiegelung lineare Abbildung am Ursprung";
             this.grpDataInput.ResumeLayout(false);
             this.grpDataInput.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMathEquatCenter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxArrow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,5 +434,7 @@
         private System.Windows.Forms.Button butFx;
         private System.Windows.Forms.TextBox txtFx;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEqua;
+        private System.Windows.Forms.PictureBox picMathEquatCenter;
+        private System.Windows.Forms.PictureBox picBoxArrow;
     }
 }
