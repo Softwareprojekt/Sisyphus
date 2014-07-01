@@ -60,6 +60,13 @@ namespace SoftwareProjekt.Classes.Math
                 vector.Multiply(matrix);
             }
         }
+        public static Triangle AffineAbbildung(Triangle original, Matrix matrix, Vector vector)
+        {
+            Triangle t = new Triangle(original.PointList[0], original.PointList[1], original.PointList[2], original.Color);
+            t.Multiply(matrix);
+            t.Add(vector);
+            return t;
+        }
         static public Triangle Add(Triangle shape, Vector vector)
         {
             Triangle tri = new Triangle(shape.PointList[0], shape.PointList[1], shape.PointList[2], shape.Color);

@@ -549,7 +549,7 @@ namespace SoftwareProjekt.UserControls
             foreach (Circle c in _circleList)
             {
                 PointF f = CalculateInternalCoordinates(c.Rectangle.X, c.Rectangle.Y);
-                Point p = new Point((int)f.X, (int)f.Y);
+
                 //calc distance between two points in pixel (for x and y)
                 PointF pf = CalculateInternalCoordinates(0, 0);
                 PointF pf1 = CalculateInternalCoordinates(1f, 1f);
@@ -558,7 +558,7 @@ namespace SoftwareProjekt.UserControls
                 float xWidth = x * c.Rectangle.Width;
                 float yHeight = y * c.Rectangle.Height;
 
-                Rectangle r = new Rectangle(p.X, p.Y, (int)xWidth, (int)yHeight); 
+                RectangleF r = new RectangleF(f.X, f.Y, xWidth, yHeight); 
                 graphics.FillEllipse(c.Color.Brush, r);
             }
         }

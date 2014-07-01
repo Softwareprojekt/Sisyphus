@@ -66,6 +66,14 @@ namespace SoftwareProjekt.Classes.Math
             this.Color = color;
         }
 
+        public static RectangleC AffineAbbildung(RectangleC original, Matrix matrix, Vector vector)
+        {
+            RectangleC r = new RectangleC(original.PointList[0], original.PointList[1], original.PointList[2], original.PointList[3], original.Color);
+            r.Multiply(matrix);
+            r.Add(vector);
+            return r;
+        }
+
         public static RectangleC Multiply(RectangleC rectangle, Matrix matrix)
         {
             RectangleC r = new RectangleC(rectangle.PointList[0], rectangle.PointList[1], rectangle.PointList[2], rectangle.PointList[3], rectangle.Color);
