@@ -66,6 +66,7 @@ namespace SoftwareProjekt.Classes
                 catch (Exception)
                 {
                     MessageBox.Show("Could not load the Workbook.\nFile might be corrupted.", "Workbook", MessageBoxButtons.OK);
+                    _username = null;
                 }
 
             }

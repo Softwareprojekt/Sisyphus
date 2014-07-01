@@ -69,7 +69,6 @@ namespace SoftwareProjekt.Forms
             InitializeComponent();
             _controlDictionary = InitializeDictionary();
             SoftwareProjekt.Classes.Workbook.Instance.AddEntries(flpWorkbook.Controls, picWorkbook);
-
         }
  
         public CtlMindMap MindMap
@@ -135,6 +134,7 @@ namespace SoftwareProjekt.Forms
             this.tabMainMenu.Size = new System.Drawing.Size(1231, 662);
             this.tabMainMenu.TabIndex = 0;
             this.tabMainMenu.SelectedIndexChanged += new System.EventHandler(this.tabMainMenu_SelectedIndexChanged);
+            this.tabMainMenu.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabMainMenu_Selecting);
             // 
             // tabMenu
             // 
@@ -186,6 +186,7 @@ namespace SoftwareProjekt.Forms
             // 
             this.picWorkbook.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.picWorkbook.Enabled = false;
             this.picWorkbook.Location = new System.Drawing.Point(7, 7);
             this.picWorkbook.Name = "picWorkbook";
             this.picWorkbook.Size = new System.Drawing.Size(897, 623);
@@ -278,11 +279,11 @@ namespace SoftwareProjekt.Forms
             this.tsbutNewExercise,
             this.tsbutLoadExercise,
             this.tsbutDeleteExercise,
+            this.tsbutNewExerciseType,
             this.tssInstruction,
             this.tslblInstructions,
             this.tstbxInput,
             this.tscbxInput,
-            this.tsbutNewExerciseType,
             this.tsbutAccept});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -327,7 +328,7 @@ namespace SoftwareProjekt.Forms
             this.tsbutExport.Image = ((System.Drawing.Image)(resources.GetObject("tsbutExport.Image")));
             this.tsbutExport.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutExport.Name = "tsbutExport";
-            this.tsbutExport.Size = new System.Drawing.Size(131, 22);
+            this.tsbutExport.Size = new System.Drawing.Size(131, 24);
             this.tsbutExport.Text = "Arbeitsheft &exportieren";
             this.tsbutExport.Visible = false;
             // 
@@ -481,8 +482,6 @@ namespace SoftwareProjekt.Forms
             }            
         }
 
-
-
         private void tabMainMenu_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             // change visibility of buttons
@@ -522,46 +521,63 @@ namespace SoftwareProjekt.Forms
 
         private void tsbutLoadExercisebook_Click(object sender, System.EventArgs e)
         {
-            try 
-            {
-                List<string> usernames = Workbook.Instance.GetAvailableWorkbooks();
-                if (usernames.ToArray().Length > 0)
-                {
-                    tslblInstructions.Text = "Bitte Arbeitsbuch wählen: ";
-                    tscbxInput.Visible = true;
-                    tsbutAccept.Visible = true;
-                    tscbxInput.ComboBox.ValueMember = "Benutzernamen:";
-                    tscbxInput.ComboBox.Items.Clear();
-                    tscbxInput.ComboBox.Items.AddRange(usernames.ToArray());
-                }
-                else tslblInstructions.Text = "Keine Arbeitsbücher verfügbar!";
-            }
-            catch (DirectoryNotFoundException e2)
-            {
-                // TODO: create folder Workbook (path: bin/x86/Debug/Workbook)
-                throw e2; // --> to be removed after proper catch implementation 
-            }
+              List<string> usernames = Workbook.Instance.GetAvailableWorkbooks();
+              if (usernames.ToArray().Length > 1) // several choices of books
+              {
+                  tslblInstructions.Text = "Bitte Arbeitsbuch wählen: ";
+                  tscbxInput.Visible = true;
+                  tsbutAccept.Visible = true;
+                  tscbxInput.ComboBox.ValueMember = "Benutzernamen:";
+                  tscbxInput.ComboBox.Items.Clear();
+                  tscbxInput.ComboBox.Items.AddRange(usernames.ToArray());
+              }
+              else if (usernames.ToArray().Length > 0) // only one book exists
+              {
+                  string usernameString = usernames.ToArray()[0];
+                  Workbook.Instance.Username = usernameString;
+                  if (Workbook.Instance.Username != null) // otherwise parsing xml file failed
+                  {
+                      tslblInstructions.Text = "Arbeitsheft '" + usernameString + "' geladen.";
+                  }
+                  else tslblInstructions.Text = "Laden des Arbeitsheft fehlgeschlagen!";
+              }
+              else tslblInstructions.Text = "Kein Arbeitsbuch verfügbar!";
         }
 
         private void tsbutAccept_Click(object sender, System.EventArgs e)
         {
+            tsbutCloseExercisebook.Enabled = true;
+
             if (tscbxInput.Visible)
             {
                 tscbxInput.Visible = false;
-                // load ExerciseBook
                 Workbook.Instance.Username = tscbxInput.Text;
-                tslblInstructions.Text = "Beginne eine Übung über die Mindmap oder öffne eine existierende im Arbeitsheft.";
+                // load ExerciseBook
+                if (Workbook.Instance.Username != null) // otherwise parsing xml file failed
+                {
+                    // show label with name of book
+                    lblExercisebookTitle.Text = Workbook.Instance.Username;
+                    lblExercisebookTitle.Visible = true;
+                    // instructions
+                    tslblInstructions.Text = "Beginne eine Übung über die Mindmap oder öffne eine Existierende im Arbeitsheft.";
+                }
+                else
+                {
+                    tslblInstructions.Text = "Laden der Arbeitsbuch-Datei schlug fehl!";
+                    tsbutCloseExercisebook.Enabled = false;
+                }
             }
             else
             {
                 tstbxInput.Visible = false;
                 // create ExerciseBook
                 Workbook.Instance.Username = tstbxInput.Text;
+                lblExercisebookTitle.Text = Workbook.Instance.Username;
+                lblExercisebookTitle.Visible = true;
                 tslblInstructions.Text = "";
                 tslblInstructions.Text = "Beginne eine Übung über die Mindmap.";
             }
             tsbutAccept.Visible = false;
-            tsbutCloseExercisebook.Enabled = true;
             // tsbutNewExercise.Enabled = true; // Note: this should only be enabled if a topic was selected
                                                 // selecting a topic should only be possible if a exercisebook is open
 
@@ -614,6 +630,19 @@ namespace SoftwareProjekt.Forms
             tslblInstructions.Text = "Bitte ein Arbeitsbuch wählen!";
             tsbutCloseExercisebook.Enabled = false;
             tsbutNewExercise.Enabled = false;
+            lblExercisebookTitle.Visible = false;
+        }
+
+        private void tabMainMenu_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            // if the tabNotebook was selected even though there was
+            // no workbook selected, cancel selection
+            if ((Workbook.Instance.Username == null) & (e.TabPage == tabNotebook))
+            {
+                e.Cancel = true;
+                tslblInstructions.Text = "Vor Ansicht des Arbeitsheft ist ein Arbeitsbuch auszuwählen!";
+            }
+
         }
 
       
