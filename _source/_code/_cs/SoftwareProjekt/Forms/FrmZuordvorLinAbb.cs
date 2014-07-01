@@ -22,7 +22,7 @@ using SoftwareProjekt.Classes.Xml;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmZuordvorLinAbb :  AbstractView 
+    public partial class FrmZuordvorLinAbb : AbstractView
     {
         string _functionBlock;
         string _xVector;
@@ -32,6 +32,8 @@ namespace SoftwareProjekt.Forms
         private LineSegment _vectorInputM2;
         private LineSegment _vectorInputEV1;
         private LineSegment _vectorInputEV2;
+
+        private LineSegment _vectorOutputX;
 
         public FrmZuordvorLinAbb()
         {
@@ -43,12 +45,19 @@ namespace SoftwareProjekt.Forms
             this.ctlVectorInputEV2.txtEle11.Text = "0";
             this.ctlVectorInputEV2.txtEle21.Text = "1";
 
-            _vectorInputEV1 = new LineSegment(new PointF(0, 0), ctlVectorInputEV1.Vector, Pens.Blue);
-            _vectorInputEV2 = new LineSegment(new PointF(0, 0), ctlVectorInputEV2.Vector, Pens.Red);
-            _vectorInputX = new LineSegment(new PointF(0, 0), ctlVectorInputX.Vector);
+            _vectorInputEV1 = new LineSegment(new PointF(0, 0), ctlVectorInputEV1.Vector, Pens.Red);
+            _vectorInputEV2 = new LineSegment(new PointF(0, 0), ctlVectorInputEV2.Vector, Pens.Blue);
+            _vectorInputX = new LineSegment(new PointF(0, 0), ctlVectorInputX.Vector, Pens.Black);
 
+            _vectorInputM1 = new LineSegment(new PointF(0, 0), ctlVectorInputM1.Vector, Pens.Red);
+            _vectorInputM2 = new LineSegment(new PointF(0, 0), ctlVectorInputM2.Vector, Pens.Blue);
+
+            cosInput.AddLineSegment(_vectorInputX);
             cosInput.AddLineSegment(_vectorInputEV1);
             cosInput.AddLineSegment(_vectorInputEV2);
+
+            cosOutput.AddLineSegment(_vectorInputM1);
+            cosOutput.AddLineSegment(_vectorInputM2);
 
 
             _functionBlock = "<mn>f</mn>\n";
@@ -165,6 +174,12 @@ namespace SoftwareProjekt.Forms
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
             cosOutput.ClearLineSegments();
+            cosOutput.AddLineSegment(_vectorInputM1);
+            cosOutput.AddLineSegment(_vectorInputM2);
+
+            _vectorOutputX = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["VectorX"], Pens.Black);
+
+            cosOutput.AddLineSegment(_vectorOutputX);
         }
 
         private void butFunctionX_Click(object sender, EventArgs e)
@@ -175,8 +190,8 @@ namespace SoftwareProjekt.Forms
             }
         }
 
-		protected override bool CheckInputs()
-		{
+        protected override bool CheckInputs()
+        {
             if (ctlVectorInputX.Vector.IsValid() && ctlVectorInputM1.Vector.IsValid() && ctlVectorInputM2.Vector.IsValid() && ctlVectorInputEV1.Vector.IsValid() && ctlVectorInputEV2.Vector.IsValid())
             {
 #if DEBUG
@@ -188,7 +203,7 @@ namespace SoftwareProjekt.Forms
             Console.WriteLine("ERROR @ Inputs are not valid.");
 #endif
             return false;
-		}
+        }
 
         public override bool LoadState(Dictionary<string, object> state)
         {
