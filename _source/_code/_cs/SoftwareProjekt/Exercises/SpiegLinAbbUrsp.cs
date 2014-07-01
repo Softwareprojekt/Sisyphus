@@ -53,16 +53,19 @@ namespace SoftwareProjekt.Exercises
             float angle = (float)inputData["Winkel"];
 
             Line mirror = new Line(angle);
+            Matrix M = new Matrix((float)System.Math.Cos(2 * angle), (float)System.Math.Sin(2 * angle), (float)System.Math.Sin(2 * angle), (float)-System.Math.Cos(2 * angle));
 
             Dictionary<string, Object> outputData = new Dictionary<string, object>();
 
             Vector outputX = Vector.Mirror(mirror, inputX);
             Vector outputEV1 = Vector.Mirror(mirror, inputEV1);
             Vector outputEV2 = Vector.Mirror(mirror, inputEV2);
+            float detM = M.Determinant;
 
             outputData.Add("VectorX", outputX);
             outputData.Add("EV1", outputEV1);
             outputData.Add("EV2", outputEV2);
+            outputData.Add("MDet", detM);
 
             // call base dowork and pass the calculated data.
             base.Finalize(new ExerciseEventArgs(outputData));

@@ -56,6 +56,7 @@ namespace SoftwareProjekt.Exercises
 
             Dictionary<string, Object> outputData = new Dictionary<string, object>();
 
+            float detM1 = inputM1.Determinant;
             // This Vector must be shown in the first Coordinate System as the result of x + y
             Vector XplusY = Vector.Add(inputX, inputY);
 
@@ -69,6 +70,7 @@ namespace SoftwareProjekt.Exercises
             outputData.Add("OutputX", outputX);
             outputData.Add("OutputY", outputY);
             outputData.Add("OutputXplusY", outputXplusY);
+            outputData.Add("M1Det", detM1);
 
             // call base dowork and pass the calculated data.
             base.Finalize(new ExerciseEventArgs(outputData));

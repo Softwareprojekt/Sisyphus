@@ -53,6 +53,7 @@ namespace SoftwareProjekt.Exercises
 
             Dictionary<string, Object> outputData = new Dictionary<string, object>();
 
+            float detM1 = inputM1.Determinant;
             // Vector XmultipliedA must be shown in the first Coordiante System
             Vector XmultiScalar = Vector.Multiply(inputX, scalar);
 
@@ -62,6 +63,7 @@ namespace SoftwareProjekt.Exercises
             outputData.Add("VectorX", outputX);
             outputData.Add("VectorXScaledOutput", outputX2);
             outputData.Add("VectorXScaledInput", XmultiScalar);
+            outputData.Add("M1Det", detM1);
 
             // call base dowork and pass the calculated data.
             base.Finalize(new ExerciseEventArgs(outputData));

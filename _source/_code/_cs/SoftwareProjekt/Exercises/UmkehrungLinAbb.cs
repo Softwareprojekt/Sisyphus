@@ -63,10 +63,12 @@ namespace SoftwareProjekt.Exercises
             Matrix invM = Matrix.Invert(inputM);
             // This is the (calculated) Vector y shown in the first Coordinate System
             Vector outputY = Vector.Multiply(inputY, invM);
+            float detM = inputM.Determinant;
 
             outputData.Add("VectorX", outputX);
             outputData.Add("VectorY", outputY);
             outputData.Add("invMatrix", invM);
+            outputData.Add("MatrixDet", detM);
 
             // call base dowork and pass the calculated data.
             base.Finalize(new ExerciseEventArgs(outputData));

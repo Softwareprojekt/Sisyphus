@@ -52,15 +52,20 @@ namespace SoftwareProjekt.Exercises
             Vector inputX = (Vector)inputData["VectorX"];
             float angle = (float)inputData["Angle"];
 
+            float rad = (float)(System.Math.PI * angle / 180.0);
+            Matrix M = new Matrix((float)System.Math.Cos(rad), (float)-System.Math.Sin(rad), (float)System.Math.Sin(rad), (float)System.Math.Cos(rad));
+
             Dictionary<string, Object> outputData = new Dictionary<string, object>();
 
             Vector outputX = Vector.Rotate(inputX, angle);
             Vector outputEV1 = Vector.Rotate(inputEV1, angle);
             Vector outputEV2 = Vector.Rotate(inputEV2, angle);
+            float detM = M.Determinant;
 
             outputData.Add("VectorX", outputX);
             outputData.Add("EV1", outputEV1);
             outputData.Add("EV2", outputEV2);
+            outputData.Add("MDet", detM);
 
             // call base dowork and pass the calculated data.
             base.Finalize(new ExerciseEventArgs(outputData));

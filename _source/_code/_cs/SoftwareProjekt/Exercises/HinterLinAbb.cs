@@ -58,9 +58,13 @@ namespace SoftwareProjekt.Exercises
             Vector outputX1 = Vector.Multiply(inputX, inputM1);
             // This Vecotr must be shown in the third Coordinate System
             Vector outputX2 = Vector.Multiply(outputX1, inputM2);
+            float detM1 = inputM1.Determinant;
+            float detM2 = inputM2.Determinant;
 
             outputData.Add("VectorX1", outputX1);
             outputData.Add("VectorX2", outputX2);
+            outputData.Add("M1Det", detM1);
+            outputData.Add("M2Det", detM2);
 
             // call base dowork and pass the calculated data.
             base.Finalize(new ExerciseEventArgs(outputData));
