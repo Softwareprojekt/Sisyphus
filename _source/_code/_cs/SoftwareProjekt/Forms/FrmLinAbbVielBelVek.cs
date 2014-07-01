@@ -35,10 +35,17 @@ namespace SoftwareProjekt.Forms
     public partial class FrmLinAbbVielBelVek : AbstractView
     {
         private LineSegment _vectorInputX;
+        private LineSegment _vectorOutputX;
+        private LineSegment _vectorInputXScaled;
+        private LineSegment _vectorOutputXScaled;
 
         public FrmLinAbbVielBelVek()
         {
             InitializeComponent();
+
+            _vectorInputX = new LineSegment(new PointF(0, 0), ctlVectorInputX.Vector, Pens.Blue);
+
+            cosInput.AddLineSegment(_vectorInputX);
         }
 
         public override Dictionary<string, Object> GetInputData()
@@ -47,8 +54,8 @@ namespace SoftwareProjekt.Forms
 
             retVal.Add("MatrixM1", ctlMatrixInput.Matrix);
             retVal.Add("VectorX", ctlVectorInputX.Vector);
+            retVal.Add("Scalar", _ctlScalarInput.FloatValue);
             
-
             return retVal;
         }
 
@@ -59,7 +66,17 @@ namespace SoftwareProjekt.Forms
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
-            throw new System.NotImplementedException();
+            cosOutput.ClearLineSegments();
+
+            Console.WriteLine(sender.ToString() + " " + e.ToString());
+
+            _vectorInputXScaled = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["VectorXScaledInput"], Pens.Black);
+            _vectorOutputX = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["VectorX"], Pens.Blue);
+            _vectorOutputXScaled = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["VectorXScaledOutput"], Pens.Black);
+
+            cosOutput.AddLineSegment(_vectorInputXScaled);
+            cosOutput.AddLineSegment(_vectorOutputX);
+            cosOutput.AddLineSegment(_vectorOutputXScaled);
         }
 
         private void butFunctionAMultX_Click(object sender, EventArgs e)
@@ -70,18 +87,9 @@ namespace SoftwareProjekt.Forms
             }
         }
 
-
-        private void txtFactorA_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b')
-            {
-                e.Handled = true;
-            }
-        }
-
 		protected override bool CheckInputs()
 		{
-            if (ctlMatrixInput.Matrix.IsValid() && ctlVectorInputX.Vector.IsValid())
+            if (ctlMatrixInput.Matrix.IsValid() && ctlVectorInputX.Vector.IsValid() && _ctlScalarInput.IsValid())
             {
 #if DEBUG
                 Console.WriteLine("SUCCESS @ Inputs are valid.");
@@ -103,12 +111,13 @@ namespace SoftwareProjekt.Forms
             {
                 return false;
             }
-            else if (!state.ContainsKey("VectorX"))
+            else if (!state.ContainsKey("VectorX") || !state.ContainsKey("Scalar"))
             {
                 return false;
             }
 
             ctlVectorInputX.Vector = (Vector)state["VectorX"];
+            _ctlScalarInput.Text = state["Scalar"].ToString();
             return true;
         }
     }
