@@ -78,6 +78,7 @@
     <Compile Include="Classes\Math\RectangleC.cs" />
     <Compile Include="Classes\Math\Triangle.cs" />
     <Compile Include="Classes\Xml\MathXmlGenerator.cs" />
+    <Compile Include="Delegates\TextChangedHandler.cs" />
     <Compile Include="Enums\EIFSForms.cs" />
     <Compile Include="Enums\EArrowDirection.cs" />
     <Compile Include="Enums\EMathType.cs" />

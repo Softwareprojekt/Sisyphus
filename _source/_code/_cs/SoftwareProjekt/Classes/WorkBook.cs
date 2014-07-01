@@ -59,14 +59,15 @@ namespace SoftwareProjekt.Classes
             }
             set
             {
-                _username = value;               
+                _username = value;
                 try
                 {
                     this.Load();
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
                     MessageBox.Show("Could not load the Workbook.\nFile might be corrupted.", "Workbook", MessageBoxButtons.OK);
+                    Console.WriteLine("ERROR @ Workbook.Load: " + e.Message);
                     _username = null;
                 }
 
@@ -361,7 +362,7 @@ namespace SoftwareProjekt.Classes
             }
             try
             {
-                 this.Save();
+                this.Save();
             }
             catch (Exception)
             {
@@ -379,7 +380,7 @@ namespace SoftwareProjekt.Classes
             aview.DrawToBitmap(pic, r);
             try
             {
-                if (entry1 != null)
+                if (entry1 != null && entry1.Screenshot != null)
                 {
                     entry1.Screenshot.Dispose();
                 }

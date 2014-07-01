@@ -27,12 +27,15 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using SoftwareProjekt.Classes.Math;
+using SoftwareProjekt.Delegates;
 
 namespace SoftwareProjekt.UserControls
 {
     public partial class CtlMatrixInput : UserControl
     {
         private Matrix _matrix = null;
+        public new event TextChangedHandler TextChanged;
+
         public CtlMatrixInput()
         {
             InitializeComponent();
@@ -72,6 +75,11 @@ namespace SoftwareProjekt.UserControls
         private void txtEle11_TextChanged(object sender, EventArgs e)
         {
             this.Matrix.X11 = (sender as FloatInput).FloatValue;
+
+            if (this.TextChanged != null)
+            {
+                this.TextChanged(sender, e);
+            }
         }
 
         /// <summary>
@@ -86,6 +94,11 @@ namespace SoftwareProjekt.UserControls
         private void txtEle12_TextChanged(object sender, EventArgs e)
         {
             this.Matrix.X12 = (sender as FloatInput).FloatValue;
+
+            if (this.TextChanged != null)
+            {
+                this.TextChanged(sender, e);
+            }
         }
 
         /// <summary>
@@ -99,7 +112,12 @@ namespace SoftwareProjekt.UserControls
         /// </summary>
         private void txtEle21_TextChanged(object sender, EventArgs e)
         {
-        	this.Matrix.X21 = (sender as FloatInput).FloatValue;
+            this.Matrix.X21 = (sender as FloatInput).FloatValue;
+
+            if (this.TextChanged != null)
+            {
+                this.TextChanged(sender, e);
+            }
         }
 
         /// <summary>
@@ -113,7 +131,12 @@ namespace SoftwareProjekt.UserControls
         /// </summary>
         private void txtEle22_TextChanged(object sender, EventArgs e)
         {
-        	this.Matrix.X22 = (sender as FloatInput).FloatValue;
+            this.Matrix.X22 = (sender as FloatInput).FloatValue;
+
+            if (this.TextChanged != null)
+            {
+                this.TextChanged(sender, e);
+            }
         }
 
         /// <summary>
@@ -139,7 +162,7 @@ namespace SoftwareProjekt.UserControls
         {
             int newWidth = (int)(grpMatrixEingabe.Size.Width / 3);
             int EleX1_newX = (int)(grpMatrixEingabe.Size.Width / 9);
-            int EleX2_newX = (int)(grpMatrixEingabe.Size.Width / 9)*5;
+            int EleX2_newX = (int)(grpMatrixEingabe.Size.Width / 9) * 5;
 
             int Ele1X_newY = (int)((grpMatrixEingabe.Size.Height - 24) / 3);
             int Ele2X_newY = (Ele1X_newY * 2) + 12;

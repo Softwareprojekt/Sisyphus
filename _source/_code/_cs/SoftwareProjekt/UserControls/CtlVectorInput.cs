@@ -28,15 +28,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using SoftwareProjekt.Classes.Math;
+using SoftwareProjekt.Delegates;
 
 namespace SoftwareProjekt.UserControls
 {
-    public delegate void TextChangedHandler(Object sender, EventArgs e);
-
     public partial class CtlVectorInput : UserControl
     {
         private Vector _vector = null;
-        public event TextChangedHandler TextChanged;
+        public new event TextChangedHandler TextChanged;
 
         public CtlVectorInput()
         {

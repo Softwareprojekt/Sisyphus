@@ -29,7 +29,7 @@ using System.Windows.Forms;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmFraktalChaos : Form // AbstractView
+    public partial class FrmFraktalChaos : AbstractView
     {
         public FrmFraktalChaos()
         {

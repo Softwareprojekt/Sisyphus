@@ -74,24 +74,44 @@ namespace SoftwareProjekt.Classes
                             switch (e.ExerciseId)
                             {
                                 case EExercises.ZuordnungsvorschriftLinAbb:
+                                    exercise = new ZuordvorLinAbb();
+                                    view = new FrmZuordvorLinAbb();
                                     break;
                                 case EExercises.LinAbbAusSumBelVek:
+                                    exercise = new LinAbbSumBelVek();
+                                    view = new FrmLinAbbSumBelVek();
                                     break;
                                 case EExercises.LinAbbMitVielfachemBelVek:
+                                    exercise = new LinAbbVielBelVek();
+                                    view = new FrmLinAbbVielBelVek();
                                     break;
                                 case EExercises.HintereinanderausfLinAbb:
+                                    exercise = new HinterLinAbb();
+                                    view = new FrmHinterLinAbb();
                                     break;
                                 case EExercises.UmkehrungLinAbb:
+                                    exercise = new UmkehrungLinAbb();
+                                    view = new FrmUmkehrungLinAbb();
                                     break;
                                 case EExercises.DrehungLinAbbUmUrsprung:
                                     exercise = new DrehLinAbbUrsp();
                                     view = new FrmDrehLinAbbUrsp();
                                     break;
                                 case EExercises.SpiegelungLinAbbanUrspungsgeraden:
+                                    exercise = new SpiegLinAbbUrsp();
+                                    view = new FrmSpiegLinAbbUrsp();
                                     break;
                                 case EExercises.ZuordungsvorschriftEinerAffAbb:
+                                    exercise = new ZuordAffAbb();
+                                    view = new FrmZuordAffAbb();
                                     break;
                                 case EExercises.FraktalerzeugungMitIFS:
+                                    exercise = new FraktalErzIFS();
+                                    view = new FrmFraktalErzIFS();
+                                    break;
+                                case EExercises.FraktalerzeugungMitChaos:
+                                    exercise = new FraktalChaos();
+                                    view = new FrmFraktalChaos();
                                     break;
                                 default:
                                     break;

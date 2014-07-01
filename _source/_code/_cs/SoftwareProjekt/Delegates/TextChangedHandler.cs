@@ -19,19 +19,9 @@
  */
 #endregion
 
-namespace SoftwareProjekt.Enums
+using System;
+
+namespace SoftwareProjekt.Delegates
 {
-    public enum EExercises
-    {
-        ZuordnungsvorschriftLinAbb = 1,
-        LinAbbAusSumBelVek = 2,
-        LinAbbMitVielfachemBelVek = 3,
-        HintereinanderausfLinAbb = 4,
-        UmkehrungLinAbb = 5,
-        DrehungLinAbbUmUrsprung = 6,
-        SpiegelungLinAbbanUrspungsgeraden = 7,
-        ZuordungsvorschriftEinerAffAbb = 8,
-        FraktalerzeugungMitIFS = 9,
-        FraktalerzeugungMitChaos = 10,
-    }
+    public delegate void TextChangedHandler(Object sender, EventArgs e);
 }
