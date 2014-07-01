@@ -41,7 +41,7 @@ namespace SoftwareProjekt.Exercises
             inputData = view.GetInputData();
 
             // check dict
-            if (!inputData.ContainsKey("Winkel1") || !inputData.ContainsKey("VectorX") || !inputData.ContainsKey("EV1") || !inputData.ContainsKey("EV2"))
+            if (!inputData.ContainsKey("Winkel") || !inputData.ContainsKey("VectorX") || !inputData.ContainsKey("EV1") || !inputData.ContainsKey("EV2"))
             {
                 return;
             }
@@ -50,13 +50,15 @@ namespace SoftwareProjekt.Exercises
             Vector inputX = (Vector)inputData["VectorX"];
             Vector inputEV1 = (Vector)inputData["EV1"];
             Vector inputEV2 = (Vector)inputData["EV2"];
-            float angle = (float)inputData["Winkel1"];
+            float angle = (float)inputData["Winkel"];
+
+            Line mirror = new Line(angle);
 
             Dictionary<string, Object> outputData = new Dictionary<string, object>();
 
-            Vector outputX = Vector.Rotate(inputX, angle);
-            Vector outputEV1 = Vector.Rotate(inputEV1, angle);
-            Vector outputEV2 = Vector.Rotate(inputEV2, angle);
+            Vector outputX = Vector.Mirror(mirror, inputX);
+            Vector outputEV1 = Vector.Mirror(mirror, inputEV1);
+            Vector outputEV2 = Vector.Mirror(mirror, inputEV2);
 
             outputData.Add("VectorX", outputX);
             outputData.Add("EV1", outputEV1);

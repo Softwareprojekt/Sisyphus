@@ -41,7 +41,7 @@ namespace SoftwareProjekt.Exercises
             inputData = view.GetInputData();
 
             // check dict
-            if (!inputData.ContainsKey("MatrixM1") || !inputData.ContainsKey("VectorX") || !inputData.ContainsKey("Scalar1"))
+            if (!inputData.ContainsKey("MatrixM1") || !inputData.ContainsKey("VectorX") || !inputData.ContainsKey("Scalar"))
             {
                 return;
             }
@@ -49,7 +49,7 @@ namespace SoftwareProjekt.Exercises
             // calculate...
             Matrix inputM1 = (Matrix)inputData["MatrixM1"];
             Vector inputX = (Vector)inputData["VectorX"];
-            float scalar = (float)inputData["Scalar1"];
+            float scalar = (float)inputData["Scalar"];
 
             Dictionary<string, Object> outputData = new Dictionary<string, object>();
 
@@ -60,8 +60,8 @@ namespace SoftwareProjekt.Exercises
             Vector outputX2 = Vector.Multiply(XmultiScalar, inputM1);
 
             outputData.Add("VectorX", outputX);
-            outputData.Add("VectorX2", outputX2);
-            outputData.Add("VectorMulti", XmultiScalar);
+            outputData.Add("VectorXScaledOutput", outputX2);
+            outputData.Add("VectorXScaledInput", XmultiScalar);
 
             // call base dowork and pass the calculated data.
             base.Finalize(new ExerciseEventArgs(outputData));

@@ -227,7 +227,7 @@ namespace SoftwareProjekt.Classes.Math
         /// <summary>
         /// Mirrors a Vector at a line through origin and returns the new one
         /// </summary>
-        public Vector Mirror(Line line, Vector vector)
+        static public Vector Mirror(Line line, Vector vector)
         {
             float angle = line.InnerLineSegment.Vector.AngleToXAxis;
             Matrix m = new Matrix((float)System.Math.Cos(2 * angle), (float)System.Math.Sin(2 * angle), (float)System.Math.Sin(2 * angle), (float)-System.Math.Cos(2 * angle));
