@@ -309,6 +309,10 @@ namespace SoftwareProjekt.Classes
         {
             List<string> usernames = new List<string>();
             // check each xml-file in workbook-folder for name
+            if (!Directory.Exists(_folderName))
+            {
+                Directory.CreateDirectory(_folderName);
+            }
             foreach (string file in Directory.EnumerateFiles(_folderName, "*.xml"))
             {
                 XmlReader reader = XmlReader.Create(file);
