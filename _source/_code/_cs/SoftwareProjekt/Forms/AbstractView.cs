@@ -33,6 +33,8 @@ namespace SoftwareProjekt.Forms
 {
     public class AbstractView : Form, IView
     {
+
+        protected System.Windows.Forms.RichTextBox rtxtNotes;
         public Color inputColor
         {
             get { return _inputColor; }
@@ -65,12 +67,12 @@ namespace SoftwareProjekt.Forms
 
         public void ChangeFontColors(CtlVectorInput[] vectors, CtlMatrixInput[] matrices, Color col)
         {
-            foreach ( CtlVectorInput v in vectors)
+            foreach (CtlVectorInput v in vectors)
             {
                 v.txtEle11.ForeColor = col;
                 v.txtEle21.ForeColor = col;
             }
-            foreach ( CtlMatrixInput m in matrices)
+            foreach (CtlMatrixInput m in matrices)
             {
                 // FIXME
                 m.ForeColor = col;
@@ -122,7 +124,9 @@ namespace SoftwareProjekt.Forms
 
         public Dictionary<string, object> SaveState()
         {
-            return this.GetInputData();
+            Dictionary<string, object> dic = this.GetInputData();
+            dic.Add("Notes", rtxtNotes.Text);
+            return dic;
         }
     }
 }

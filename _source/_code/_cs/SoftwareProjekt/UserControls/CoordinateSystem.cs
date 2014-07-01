@@ -100,7 +100,7 @@ namespace SoftwareProjekt.UserControls
         
         public void invokeRefresh()
         {
-            if (DoNotRefresh)
+            if (this.DoNotRefresh)
             {
                 return;
             }
@@ -869,6 +869,16 @@ namespace SoftwareProjekt.UserControls
         {
         	_pointsList.Clear();
             this.invokeRefresh();
+        }
+
+        public List<IShape> getShapes()
+        {
+            List<IShape> list = new List<IShape>();
+            list.AddRange(_circleList);
+            list.AddRange(_polygonList);
+            list.AddRange(_rectangleList);
+            list.AddRange(_triangleList);
+            return list;
         }
     }
 }

@@ -49,7 +49,7 @@ namespace SoftwareProjekt.Exercises
 
             // check inputData
             if (!inputData.ContainsKey("Form") || !inputData.ContainsKey("InputForms")
-                || !inputData.ContainsKey("Steps") || !inputData.ContainsKey("Iterations")
+                || !inputData.ContainsKey("Steps")
                 || !inputData.ContainsKey("Matrix_w1") || !inputData.ContainsKey("Matrix_w2") || !inputData.ContainsKey("Matrix_w3")
                 || !inputData.ContainsKey("Vector_w1") || !inputData.ContainsKey("Vector_w2") || !inputData.ContainsKey("Vector_w3"))
             {
@@ -75,12 +75,11 @@ namespace SoftwareProjekt.Exercises
                     Console.WriteLine("ERROR @ Enum switch");
                     break;
             }
+            Dictionary<string, Object> outputData = new Dictionary<string, Object>();
+            List<IShape> outputForms = new List<IShape>();
 
             steps = (int)inputData["Steps"];
             //iterations = (int)inputData["Iterations"];
-
-            Dictionary<string, Object> outputData = new Dictionary<string, Object>();
-            List<IShape> outputForms = new List<IShape>();
 
             // calculate...
 
@@ -90,27 +89,40 @@ namespace SoftwareProjekt.Exercises
             switch ((EIFSForms)inputData["Form"])
             {
                 case EIFSForms.Triangle:
-                    foreach (Triangle triangle in inputForms)
+                    for (int i = 0; i < inputForms.Count; i++)
                     {
-                        outputForms.Add(Triangle.Add(Triangle.Multiply(triangle, (Matrix)inputData["Matrix_w1"]), (Vector)inputData["Vector_w1"]));
-                        outputForms.Add(Triangle.Add(Triangle.Multiply(triangle, (Matrix)inputData["Matrix_w2"]), (Vector)inputData["Vector_w2"]));
-                        outputForms.Add(Triangle.Add(Triangle.Multiply(triangle, (Matrix)inputData["Matrix_w3"]), (Vector)inputData["Vector_w3"]));
+                        if (steps == 1)
+                        {
+                            outputForms.Add(Triangle.AffineAbbildung((Triangle)inputForms[i], (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                        }
+                        else if (steps == 2)
+                        {
+                            outputForms.Add(Triangle.AffineAbbildung((Triangle)inputForms[i], (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                            outputForms.Add(Triangle.AffineAbbildung((Triangle)inputForms[i], (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
+                        }
+                        else //steps == 3
+                        {
+                            outputForms.Add(Triangle.AffineAbbildung((Triangle)inputForms[i], (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                            outputForms.Add(Triangle.AffineAbbildung((Triangle)inputForms[i], (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
+                            outputForms.Add(Triangle.AffineAbbildung((Triangle)inputForms[i], (Matrix)inputData["Matrix_w3"], (Vector)inputData["Vector_w3"]));
+                        }
+
                     }
                     break;
                 case EIFSForms.Rectangle:
                     foreach (RectangleC rect in inputForms)
                     {
-                        outputForms.Add(RectangleC.Add(RectangleC.Multiply(rect, (Matrix)inputData["Matrix_w1"]), (Vector)inputData["Vector_w1"]));
-                        outputForms.Add(RectangleC.Add(RectangleC.Multiply(rect, (Matrix)inputData["Matrix_w2"]), (Vector)inputData["Vector_w2"]));
-                        outputForms.Add(RectangleC.Add(RectangleC.Multiply(rect, (Matrix)inputData["Matrix_w3"]), (Vector)inputData["Vector_w3"]));
+                        outputForms.Add(RectangleC.AffineAbbildung(rect, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                        outputForms.Add(RectangleC.AffineAbbildung(rect, (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
+                        outputForms.Add(RectangleC.AffineAbbildung(rect, (Matrix)inputData["Matrix_w3"], (Vector)inputData["Vector_w3"]));
                     }
                     break;
                 case EIFSForms.Circle:
                     foreach (Circle circle in inputForms)
                     {
-                        outputForms.Add(Circle.Add(Circle.Multiply(circle, (Matrix)inputData["Matrix_w1"]), (Vector)inputData["Vector_w1"]));
-                        outputForms.Add(Circle.Add(Circle.Multiply(circle, (Matrix)inputData["Matrix_w2"]), (Vector)inputData["Vector_w2"]));
-                        outputForms.Add(Circle.Add(Circle.Multiply(circle, (Matrix)inputData["Matrix_w3"]), (Vector)inputData["Vector_w3"]));
+                        outputForms.Add(Circle.AffineAbbildung(circle, (Matrix)inputData["Matrix_w1"], (Vector)inputData["Vector_w1"]));
+                        outputForms.Add(Circle.AffineAbbildung(circle, (Matrix)inputData["Matrix_w2"], (Vector)inputData["Vector_w2"]));
+                        outputForms.Add(Circle.AffineAbbildung(circle, (Matrix)inputData["Matrix_w3"], (Vector)inputData["Vector_w3"]));
                     }
                     break;
                 case EIFSForms.Picture:
@@ -128,7 +140,6 @@ namespace SoftwareProjekt.Exercises
 
             outputData.Add("Form", inputData["Form"]);
             outputData.Add("OutputForms", outputForms);
-
             // call base dowork and pass the calculated data.
             base.Finalize(new ExerciseEventArgs(outputData));
         }

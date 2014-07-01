@@ -154,26 +154,26 @@ namespace SoftwareProjekt.Classes
                     if (elementType == "Vector")
                     {
                         reader.ReadToFollowing("X1");
-                        float x1 = float.Parse(reader.ReadElementString("X1"));
+                        float x1 = float.Parse(reader.ReadElementString("X1"), CultureInfo.InvariantCulture);
 
                         reader.ReadToFollowing("X2");
-                        float x2 = float.Parse(reader.ReadElementString("X2"));
+                        float x2 = float.Parse(reader.ReadElementString("X2"), CultureInfo.InvariantCulture);
                         Vector vec = new Vector(x1, x2);
                         entry.State.Add(key, vec);
                     }
                     else if (elementType == "Matrix")
                     {
                         reader.ReadToFollowing("X11");
-                        float x11 = float.Parse(reader.ReadElementString("X11"));
+                        float x11 = float.Parse(reader.ReadElementString("X11"), CultureInfo.InvariantCulture);
 
                         reader.ReadToFollowing("X12");
-                        float x12 = float.Parse(reader.ReadElementString("X12"));
+                        float x12 = float.Parse(reader.ReadElementString("X12"), CultureInfo.InvariantCulture);
 
                         reader.ReadToFollowing("X21");
-                        float x21 = float.Parse(reader.ReadElementString("X21"));
+                        float x21 = float.Parse(reader.ReadElementString("X21"), CultureInfo.InvariantCulture);
 
                         reader.ReadToFollowing("X22");
-                        float x22 = float.Parse(reader.ReadElementString("X22"));
+                        float x22 = float.Parse(reader.ReadElementString("X22"), CultureInfo.InvariantCulture);
 
                         Matrix m = new Matrix(x11, x12, x21, x22);
                         entry.State.Add(key, m);
@@ -181,7 +181,7 @@ namespace SoftwareProjekt.Classes
                     else if (elementType == "Value")
                     {
                         reader.ReadToFollowing("Value");
-                        float val = float.Parse(reader.ReadElementString("Value"));
+                        float val = float.Parse(reader.ReadElementString("Value"), CultureInfo.InvariantCulture);
 
                         entry.State.Add(key, val);
                     }

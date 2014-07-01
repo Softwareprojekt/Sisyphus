@@ -42,7 +42,6 @@ namespace SoftwareProjekt.Forms
     {
         private EIFSForms _inputForm;
         private Image _loadedPic = null;
-        private List<IShape> _inputForms = null;
         private List<PointF> _pointList;
         private bool _pictureSelected = false;
 
@@ -52,9 +51,8 @@ namespace SoftwareProjekt.Forms
 
             InitializeComponent();
 
-            _inputForms = new List<IShape>();
             _radTriangle.Checked = true;
-            _cosInput.CoordinateClick += _cosInput_CoordinateClick;        
+            _cosInput.CoordinateClick += _cosInput_CoordinateClick;
         }
 
         void _cosInput_CoordinateClick(float x, float y, MouseEventArgs e)
@@ -64,13 +62,11 @@ namespace SoftwareProjekt.Forms
                 if (e.Button == System.Windows.Forms.MouseButtons.Left)
                 {
                     _pointList.Add(new PointF(x, y));
-                    _inputForms.Clear();
                     _cosInput.Clear();
                     _cosOutput.Clear();
 
-                    _inputForms.Add(new Polygon(_pointList,Pens.Coral));
 
-                    _cosInput.AddPolygon(_inputForms.ToArray());
+                    _cosInput.AddPolygon(new Polygon(_pointList, Pens.Black));
                 }
                 if (e.Button == System.Windows.Forms.MouseButtons.Right)
                 {
@@ -84,7 +80,6 @@ namespace SoftwareProjekt.Forms
 
         private void deletePoints_Click(object sender, EventArgs e)
         {
-            _inputForms.Clear();
             _cosInput.Clear();
             _cosOutput.Clear();
             _pointList.Clear();
@@ -106,13 +101,10 @@ namespace SoftwareProjekt.Forms
                 // paint triangle to input cod.
                 _inputForm = EIFSForms.Triangle;
 
-                _inputForms.Clear();
                 _cosInput.Clear();
                 _cosOutput.Clear();
 
-                _inputForms.Add(new Triangle(new PointF(0, 0), new PointF(4, 0), new PointF(0, 4)));
-
-                _cosInput.AddTriangle(_inputForms.ToArray());
+                _cosInput.AddTriangle(new Triangle(new PointF(0, 0), new PointF(4, 0), new PointF(0, 4)));
 
                 if (_loadedPic != null)
                 {
@@ -123,14 +115,10 @@ namespace SoftwareProjekt.Forms
             else if (_radSquare.Checked)
             {
                 _inputForm = EIFSForms.Rectangle;
-
-                _inputForms.Clear();
                 _cosInput.Clear();
                 _cosOutput.Clear();
 
-                _inputForms.Add(new RectangleC(new PointF(0, 0), new PointF(4, 0), new PointF(4, 4), new PointF(0, 4), new Pen(Color.Red)));
-
-                _cosInput.AddRectangle(_inputForms.ToArray());
+                _cosInput.AddRectangle(new RectangleC(new PointF(0, 0), new PointF(4, 0), new PointF(4, 4), new PointF(0, 4), new Pen(Color.Red)));
 
                 if (_loadedPic != null)
                 {
@@ -142,13 +130,10 @@ namespace SoftwareProjekt.Forms
             {
                 _inputForm = EIFSForms.Circle;
 
-                _inputForms.Clear();
                 _cosInput.Clear();
                 _cosOutput.Clear();
 
-                _inputForms.Add(new Circle(new PointF(2, 2), 2, new Pen(Color.Green)));
-
-                _cosInput.AddCircle(_inputForms.ToArray());
+                _cosInput.AddCircle(new Circle(new PointF(2, 2), 2, new Pen(Color.Green)));
 
                 if (_loadedPic != null)
                 {
@@ -168,7 +153,7 @@ namespace SoftwareProjekt.Forms
                 }
                 else
                 {
-                    
+
                 }
             }
         }
@@ -228,7 +213,7 @@ namespace SoftwareProjekt.Forms
                        _cosInput.Height,                       // source rectangle height
                        GraphicsUnit.Pixel,
                        imageAtt);
-                    
+
                     g.Dispose();
 
                     //img.MakeTransparent();
@@ -260,13 +245,14 @@ namespace SoftwareProjekt.Forms
             {
                 this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
             }
+
+
         }
 
         public override void ExerciseChanged(Interfaces.IExercise sender, ExerciseEventArgs e)
         {
 
             _cosOutput.DoNotRefresh = true;
-            _inputForms.Clear();
             _cosOutput.Clear();
 
             Console.WriteLine(sender.ToString() + " " + e.ToString());
@@ -274,20 +260,16 @@ namespace SoftwareProjekt.Forms
             switch ((EIFSForms)e.CalcValues["Form"])
             {
                 case EIFSForms.Triangle:
-                    _inputForms.AddRange((List<IShape>)e.CalcValues["OutputForms"]);
-                    _cosOutput.AddTriangle(_inputForms.ToArray());
+                    _cosOutput.AddTriangle(((List<IShape>)e.CalcValues["OutputForms"]).ToArray());
                     break;
                 case EIFSForms.Rectangle:
-                    _inputForms.AddRange((List<IShape>)e.CalcValues["OutputForms"]);
-                    _cosOutput.AddRectangle(_inputForms.ToArray());
+                    _cosOutput.AddRectangle(((List<IShape>)e.CalcValues["OutputForms"]).ToArray());
                     break;
                 case EIFSForms.Circle:
-                    _inputForms.AddRange((List<IShape>)e.CalcValues["OutputForms"]);
-                    _cosOutput.AddCircle(_inputForms.ToArray());
+                    _cosOutput.AddCircle(((List<IShape>)e.CalcValues["OutputForms"]).ToArray());
                     break;
                 case EIFSForms.Picture:
-                    _inputForms.AddRange((List<IShape>)e.CalcValues["OutputForms"]);
-                    _cosOutput.AddPolygon(_inputForms.ToArray());
+                    _cosOutput.AddPolygon(((List<IShape>)e.CalcValues["OutputForms"]).ToArray());
                     break;
                 default:
                     break;
@@ -303,14 +285,13 @@ namespace SoftwareProjekt.Forms
 
             retVal.Add("Form", _inputForm);
 
-            
-            retVal.Add("InputForms", _inputForms);
+
+            retVal.Add("InputForms", _cosInput.getShapes());
 
             retVal.Add("Steps",
                 _rbStep1.Checked ? 1 :
                 _rbStep2.Checked ? 2 :
                 _rbStep3.Checked ? 3 : 3);
-            retVal.Add("Iterations", _nupIteration.Value);
 
             retVal.Add("Matrix_w1", _matrix_w1.Matrix);
             retVal.Add("Matrix_w2", _matrix_w2.Matrix);
@@ -351,8 +332,56 @@ namespace SoftwareProjekt.Forms
             {
                 return false;
             }
+            else if (!state.ContainsKey("Matrix_w1") || !state.ContainsKey("Matrix_w2") || !state.ContainsKey("Matrix_w3")
+                || !state.ContainsKey("Vector_w1") || !state.ContainsKey("Vector_w2") || !state.ContainsKey("Vector_w3")
+                || !state.ContainsKey("Notes"))
+            {
+                return false;
+            }
 
+            _matrix_w1.Matrix = (SoftwareProjekt.Classes.Math.Matrix)state["Matrix_w1"];
+            _matrix_w2.Matrix = (SoftwareProjekt.Classes.Math.Matrix)state["Matrix_w2"];
+            _matrix_w3.Matrix = (SoftwareProjekt.Classes.Math.Matrix)state["Matrix_w3"];
+
+            _vector_w1.Vector = (Vector)state["Vector_w1"];
+            _vector_w2.Vector = (Vector)state["Vector_w2"];
+            _vector_w3.Vector = (Vector)state["Vector_w3"];
+
+            rtxtNotes.Text = (string)state["Notes"];
             return true;
+        }
+
+        private void _btnSwap_Click(object sender, EventArgs e)
+        {
+            _cosInput.DoNotRefresh = true;
+
+            List<IShape> list = _cosOutput.getShapes();
+            _cosOutput.Clear();
+            _cosInput.Clear();
+
+            if (_radSquare.Checked)
+            {
+                _cosInput.AddRectangle(list.ToArray());
+            }
+            else if (_radCircle.Checked)
+            {
+                _cosInput.AddCircle(list.ToArray());
+            }
+            else if (_radTriangle.Checked)
+            {
+                _cosInput.AddTriangle(list.ToArray());
+            }
+            else
+            {
+                _cosInput.AddPolygon(list.ToArray());
+            }
+
+            _rbStep1.Enabled = true;
+            _rbStep2.Enabled = true;
+            _rbStep3.Enabled = true;
+
+            _cosInput.DoNotRefresh = false;
+            _cosInput.invokeRefresh();
         }
     }
 }

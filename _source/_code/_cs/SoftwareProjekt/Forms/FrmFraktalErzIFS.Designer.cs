@@ -47,8 +47,7 @@
             this.lblNotes = new System.Windows.Forms.Label();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.grpSteps = new System.Windows.Forms.GroupBox();
-            this.labIteration = new System.Windows.Forms.Label();
-            this._nupIteration = new System.Windows.Forms.NumericUpDown();
+            this._btnSwap = new System.Windows.Forms.Button();
             this._rbStep3 = new System.Windows.Forms.RadioButton();
             this._rbStep2 = new System.Windows.Forms.RadioButton();
             this._rbStep1 = new System.Windows.Forms.RadioButton();
@@ -63,7 +62,6 @@
             this._matrix_w3 = new SoftwareProjekt.UserControls.CtlMatrixInput();
             this.grpPics.SuspendLayout();
             this.grpSteps.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._nupIteration)).BeginInit();
             this.SuspendLayout();
             // 
             // _butSelectPic
@@ -79,7 +77,7 @@
             // 
             // _butCalculation
             // 
-            this._butCalculation.Location = new System.Drawing.Point(9, 60);
+            this._butCalculation.Location = new System.Drawing.Point(5, 38);
             this._butCalculation.Margin = new System.Windows.Forms.Padding(2);
             this._butCalculation.Name = "_butCalculation";
             this._butCalculation.Size = new System.Drawing.Size(105, 38);
@@ -203,49 +201,27 @@
             // 
             // grpSteps
             // 
-            this.grpSteps.Controls.Add(this.labIteration);
-            this.grpSteps.Controls.Add(this._nupIteration);
+            this.grpSteps.Controls.Add(this._btnSwap);
             this.grpSteps.Controls.Add(this._rbStep3);
             this.grpSteps.Controls.Add(this._rbStep2);
             this.grpSteps.Controls.Add(this._rbStep1);
             this.grpSteps.Controls.Add(this._butCalculation);
             this.grpSteps.Location = new System.Drawing.Point(496, 429);
             this.grpSteps.Name = "grpSteps";
-            this.grpSteps.Size = new System.Drawing.Size(128, 106);
+            this.grpSteps.Size = new System.Drawing.Size(128, 157);
             this.grpSteps.TabIndex = 12;
             this.grpSteps.TabStop = false;
             this.grpSteps.Text = "Berechnungsschritte";
             // 
-            // labIteration
+            // _btnSwap
             // 
-            this.labIteration.AutoSize = true;
-            this.labIteration.Location = new System.Drawing.Point(6, 37);
-            this.labIteration.Name = "labIteration";
-            this.labIteration.Size = new System.Drawing.Size(57, 13);
-            this.labIteration.TabIndex = 6;
-            this.labIteration.Text = "Iterationen";
-            // 
-            // _nupIteration
-            // 
-            this._nupIteration.Location = new System.Drawing.Point(69, 35);
-            this._nupIteration.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this._nupIteration.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this._nupIteration.Name = "_nupIteration";
-            this._nupIteration.Size = new System.Drawing.Size(45, 20);
-            this._nupIteration.TabIndex = 5;
-            this._nupIteration.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this._btnSwap.Location = new System.Drawing.Point(6, 84);
+            this._btnSwap.Name = "_btnSwap";
+            this._btnSwap.Size = new System.Drawing.Size(105, 38);
+            this._btnSwap.TabIndex = 7;
+            this._btnSwap.Text = "Swap";
+            this._btnSwap.UseVisualStyleBackColor = true;
+            this._btnSwap.Click += new System.EventHandler(this._btnSwap_Click);
             // 
             // _rbStep3
             // 
@@ -306,6 +282,7 @@
             // 
             // _cosInput
             // 
+            this._cosInput.DoNotRefresh = false;
             this._cosInput.Location = new System.Drawing.Point(88, 84);
             this._cosInput.Name = "_cosInput";
             this._cosInput.Size = new System.Drawing.Size(287, 288);
@@ -313,6 +290,7 @@
             // 
             // _cosOutput
             // 
+            this._cosOutput.DoNotRefresh = false;
             this._cosOutput.Location = new System.Drawing.Point(748, 84);
             this._cosOutput.Name = "_cosOutput";
             this._cosOutput.Size = new System.Drawing.Size(287, 288);
@@ -392,7 +370,6 @@
             this.Controls.Add(this._cosOutput);
             this.Controls.Add(this._cosInput);
             this.Controls.Add(this._vector_w2);
-            this.Controls.Add(this.ctlMathEqua);
             this.Controls.Add(this.grpSteps);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.rtxtNotes);
@@ -400,6 +377,7 @@
             this.Controls.Add(this.lblOrigPic);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.grpPics);
+            this.Controls.Add(this.ctlMathEqua);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmFraktalErzIFS";
             this.Text = "Fraktalerzeugung mit einem IFS";
@@ -407,7 +385,6 @@
             this.grpPics.PerformLayout();
             this.grpSteps.ResumeLayout(false);
             this.grpSteps.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._nupIteration)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,7 +402,6 @@
         private System.Windows.Forms.Label lblOrigPic;
         private System.Windows.Forms.Label lblFraktal;
         private System.Windows.Forms.Label lblNotes;
-        private System.Windows.Forms.RichTextBox rtxtNotes;
         private System.Windows.Forms.GroupBox grpSteps;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEqua;
         private UserControls.CtlVectorInput _vector_w2;
@@ -437,10 +413,9 @@
         private UserControls.CtlMatrixInput _matrix_w1;
         private UserControls.CtlMatrixInput _matrix_w2;
         private UserControls.CtlMatrixInput _matrix_w3;
-        private System.Windows.Forms.Label labIteration;
-        private System.Windows.Forms.NumericUpDown _nupIteration;
         private System.Windows.Forms.RadioButton _rbStep3;
         private System.Windows.Forms.RadioButton _rbStep2;
         private System.Windows.Forms.RadioButton _rbStep1;
+        private System.Windows.Forms.Button _btnSwap;
     }
 }

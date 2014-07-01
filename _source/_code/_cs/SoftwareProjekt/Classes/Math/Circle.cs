@@ -30,7 +30,7 @@ namespace SoftwareProjekt.Classes.Math
         }
         public Circle()
         {
-            this.Center = new PointF(float.NaN,float.NaN);
+            this.Center = new PointF(float.NaN, float.NaN);
             _center = new Vector();
             this.Radius = float.NaN;
             this.Color = new Pen(System.Drawing.Color.Black);
@@ -42,10 +42,20 @@ namespace SoftwareProjekt.Classes.Math
             this.Radius = radius;
             this.Color = new Pen(System.Drawing.Color.Black);
         }
-        public Circle(PointF center, float radius, Pen color) : this(center, radius)
+        public Circle(PointF center, float radius, Pen color)
+            : this(center, radius)
         {
             this.Color = color;
         }
+
+        public static Circle AffineAbbildung(Circle original, Matrix matrix, Vector vector)
+        {
+            Circle c = new Circle(original.Center, original.Radius, original.Color);
+            c.Multiply(matrix);
+            c.Add(vector);
+            return c;
+        }
+
         public static Circle Multiply(Circle circle, Matrix matrix)
         {
             Circle c = new Circle(circle.Center, circle.Radius, circle.Color);
@@ -75,6 +85,6 @@ namespace SoftwareProjekt.Classes.Math
             this.Center = new PointF(_center.X1, _center.X2);
         }
 
-        public System.Drawing.Pen Color{ get;set;}
+        public System.Drawing.Pen Color { get; set; }
     }
 }

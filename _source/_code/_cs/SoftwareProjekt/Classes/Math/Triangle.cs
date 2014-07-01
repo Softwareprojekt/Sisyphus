@@ -19,9 +19,9 @@ namespace SoftwareProjekt.Classes.Math
             {
                 List<PointF> list = new List<PointF>();
                 foreach (Vector item in _vectorList)
-	            {
-		            list.Add(new PointF(item.X1, item.X2));
-	            }
+                {
+                    list.Add(new PointF(item.X1, item.X2));
+                }
                 return list;
             }
         }
