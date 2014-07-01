@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -32,28 +33,16 @@ namespace SoftwareProjekt.UserControls
         protected override void OnTextChanged(EventArgs e)
         {
             float f = float.NaN;
-            if (System.Globalization.RegionInfo.CurrentRegion.Name == "DE")
+            
+            if (!this.Parse(this.Text.Replace('.', ','), out f))
             {
-                if (!this.Parse(this.Text.Replace('.', ','), out f))
-                {
-                    this.BackColor = System.Drawing.Color.Red;
-                }
-                else
-                {
-                    this.BackColor = System.Drawing.Color.White;
-                }
+                this.BackColor = System.Drawing.Color.Red;
             }
-            else if (System.Globalization.RegionInfo.CurrentRegion.Name == "US" || System.Globalization.RegionInfo.CurrentRegion.Name == "GB")
+            else
             {
-                 if (!this.Parse(this.Text.Replace(',', '.'), out f))
-                {
-                    this.BackColor = System.Drawing.Color.Red;
-                }
-                else
-                {
-                    this.BackColor = System.Drawing.Color.White;
-                }
+                this.BackColor = System.Drawing.Color.White;
             }
+           
            
             this.FloatValue = f;
             base.OnTextChanged(e);
@@ -63,7 +52,7 @@ namespace SoftwareProjekt.UserControls
         {
             float retval = 0f;
 
-            if (float.TryParse(s, out retval))
+            if (float.TryParse(s, NumberStyles.Float ,CultureInfo.InvariantCulture,out retval))
             {
                 f = retval;
 #if DEBUG

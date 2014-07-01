@@ -25,6 +25,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace SoftwareProjekt.UserControls
@@ -46,6 +47,7 @@ namespace SoftwareProjekt.UserControls
         private IAxis _yAxis;
 
         private ToolTip _tooltip;
+        private PointF _lastCursorPoint;
 
         public event CoordinateSystemClickHandler CoordinateClick;
 
@@ -62,7 +64,7 @@ namespace SoftwareProjekt.UserControls
             _triangleList = new List<Triangle>();
             _polygonList = new List<Polygon>();
             _tooltip = new ToolTip();
-
+            _lastCursorPoint = new PointF(0.0f, 0.0f);
             InitializeComponent();
         }
 
@@ -447,15 +449,19 @@ namespace SoftwareProjekt.UserControls
         }
 
         void CoordinateSystem_MouseMove(object sender, MouseEventArgs e)
-        {
+        {            
             Point pt = this.PointToClient(Cursor.Position);
             PointF p = CalculateExternalCoordinates(pt.X, pt.Y);
-            if (float.IsNaN(p.X) || float.IsNaN(p.Y))
+            if (p.X != _lastCursorPoint.X || p.Y != _lastCursorPoint.Y)
             {
-                this._tooltip.Hide(this);
-                return;
+                if (float.IsNaN(p.X) || float.IsNaN(p.Y))
+                {
+                    this._tooltip.Hide(this);
+                    return;
+                }
+                this._tooltip.Show("X: " + Math.Round(p.X, 2).ToString("0.00", CultureInfo.InvariantCulture) + " | Y: " + Math.Round(p.Y, 2).ToString("0.00", CultureInfo.InvariantCulture), this, e.X, e.Y + 20);
             }
-            this._tooltip.Show("X: " + p.X + " | Y: " + p.Y, this, e.X, e.Y + 20);
+            _lastCursorPoint = p;
         }
 
         void CoordinateSystem_MouseLeave(object sender, EventArgs e)

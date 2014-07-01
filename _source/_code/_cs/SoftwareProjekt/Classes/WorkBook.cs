@@ -27,6 +27,7 @@ using System.IO;
 using System.Xml;
 using SoftwareProjekt.Classes.Math;
 using System.Drawing;
+using System.Globalization;
 
 namespace SoftwareProjekt.Classes
 {
@@ -105,7 +106,7 @@ namespace SoftwareProjekt.Classes
             foreach (WorkbookEntry entry in _workbookEntryList)
             {
                 reader.ReadToFollowing("CreationDate");
-                entry.CreationDate = DateTime.Parse(reader.ReadElementString("CreationDate"));
+                entry.CreationDate = DateTime.Parse(reader.ReadElementString("CreationDate"), CultureInfo.InvariantCulture);
                 reader.ReadToFollowing("ExerciseID");
                 entry.ExerciseID = (Enums.EExercises)Enum.Parse(typeof(Enums.EExercises), reader.ReadElementString("ExerciseID"));
 
@@ -239,7 +240,7 @@ namespace SoftwareProjekt.Classes
             {
                 writer.WriteStartElement("WorkbookEntry");
 
-                writer.WriteElementString("CreationDate", entry.CreationDate.ToString());
+                writer.WriteElementString("CreationDate", entry.CreationDate.ToString(CultureInfo.InvariantCulture));
                 writer.WriteElementString("ExerciseID", entry.ExerciseID.ToString());
 
                 //data
