@@ -59,7 +59,16 @@ namespace SoftwareProjekt.Classes
             }
             set
             {
+                foreach (WorkbookEntry entry in _workbookEntryList)
+                {
+                    entry.Clear();
+                }
                 _username = value;
+
+                if (value == null)
+                {
+                    return;
+                }
                 try
                 {
                     this.Load();
@@ -68,7 +77,7 @@ namespace SoftwareProjekt.Classes
                 {
                     MessageBox.Show("Could not load the Workbook.\nFile might be corrupted.", "Workbook", MessageBoxButtons.OK);
                     Console.WriteLine("ERROR @ Workbook.Load: " + e.Message);
-                    _username = null;
+                    this.Username = null;
                 }
 
             }
@@ -264,23 +273,23 @@ namespace SoftwareProjekt.Classes
                     if (value.GetType() == typeof(Vector))
                     {
                         writer.WriteStartElement("Vector");
-                        writer.WriteElementString("X1", (value as Vector).X1.ToString());
-                        writer.WriteElementString("X2", (value as Vector).X2.ToString());
+                        writer.WriteElementString("X1", (value as Vector).X1.ToString(CultureInfo.InvariantCulture));
+                        writer.WriteElementString("X2", (value as Vector).X2.ToString(CultureInfo.InvariantCulture));
                         writer.WriteEndElement(); // Vector
                     }
                     else if (value.GetType() == typeof(Matrix))
                     {
                         writer.WriteStartElement("Matrix");
-                        writer.WriteElementString("X11", (value as Matrix).X11.ToString());
-                        writer.WriteElementString("X12", (value as Matrix).X12.ToString());
-                        writer.WriteElementString("X21", (value as Matrix).X21.ToString());
-                        writer.WriteElementString("X22", (value as Matrix).X22.ToString());
+                        writer.WriteElementString("X11", (value as Matrix).X11.ToString(CultureInfo.InvariantCulture));
+                        writer.WriteElementString("X12", (value as Matrix).X12.ToString(CultureInfo.InvariantCulture));
+                        writer.WriteElementString("X21", (value as Matrix).X21.ToString(CultureInfo.InvariantCulture));
+                        writer.WriteElementString("X22", (value as Matrix).X22.ToString(CultureInfo.InvariantCulture));
                         writer.WriteEndElement(); // Matrix
                     }
-                    else if (value.GetType() == typeof(float)) //notes
+                    else if (value.GetType() == typeof(Single)) //notes
                     {
                         writer.WriteStartElement("Value");
-                        writer.WriteElementString("Value", value as string);
+                        writer.WriteElementString("Value", ((Single)value).ToString(CultureInfo.InvariantCulture));
                         writer.WriteEndElement(); // Notes
                     }
                     else if (value.GetType() == typeof(string)) //notes
@@ -383,6 +392,7 @@ namespace SoftwareProjekt.Classes
                 if (entry1 != null && entry1.Screenshot != null)
                 {
                     entry1.Screenshot.Dispose();
+                    entry1.Screenshot = null;
                 }
                 if (File.Exists(filename))
                 {

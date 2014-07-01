@@ -45,10 +45,10 @@ namespace SoftwareProjekt.UserControls.Workbook
             _state = new Dictionary<string, object>();
             this.Click += WorkbookEntry_Click;
             this.MouseEnter += WorkbookEntry_MouseEnter;
-            this.MouseLeave += WorkbookEntry_MouseLeave;        
+            this.MouseLeave += WorkbookEntry_MouseLeave;
         }
 
-        
+
 
         void WorkbookEntry_MouseLeave(object sender, EventArgs e)
         {
@@ -58,7 +58,7 @@ namespace SoftwareProjekt.UserControls.Workbook
         void WorkbookEntry_MouseEnter(object sender, EventArgs e)
         {
             this.ParentForm.Cursor = Cursors.Hand;
-            
+
         }
         public DateTime CreationDate
         {
@@ -118,6 +118,13 @@ namespace SoftwareProjekt.UserControls.Workbook
             this.ResumeLayout(false);
         }
 
+        public void Clear()
+        {
+            CreationDate = DateTime.Now;
+            Started = false;
+            _state = new Dictionary<string, object>();
+        }
+
         void WorkBookControl_Paint(object sender, PaintEventArgs e)
         {
             string firstHalf = "";
@@ -150,12 +157,15 @@ namespace SoftwareProjekt.UserControls.Workbook
                 case SoftwareProjekt.Enums.EExercises.FraktalerzeugungMitIFS:
                     firstHalf = "Fraktalerzeugung mit IFS";
                     break;
+                case SoftwareProjekt.Enums.EExercises.FraktalerzeugungMitChaos:
+                    firstHalf = "Fraktalerzeugung mit Caos";
+                    break;
                 default:
                     break;
             }
             firstHalf += "\n\nZuletzt geändert:\n" + this.CreationDate.ToString();
             //string secondHalf = this.CreationDate.ToString();
-            
+
             //if (this.State != null)
             //{
             //    Dictionary<string, object>.Enumerator enumerator = this.State.GetEnumerator();
