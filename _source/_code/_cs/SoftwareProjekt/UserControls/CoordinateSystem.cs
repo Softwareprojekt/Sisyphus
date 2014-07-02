@@ -65,6 +65,7 @@ namespace SoftwareProjekt.UserControls
             _polygonList = new List<Polygon>();
             _tooltip = new ToolTip();
             _lastCursorPoint = new PointF(0.0f, 0.0f);
+            
             InitializeComponent();
         }
 
@@ -94,10 +95,10 @@ namespace SoftwareProjekt.UserControls
         }
 
         public bool DoNotRefresh { get; set; }
-                
+
         /// <summary>
         /// </summary>
-        
+
         public void invokeRefresh()
         {
             if (this.DoNotRefresh)
@@ -109,7 +110,7 @@ namespace SoftwareProjekt.UserControls
                 this.BeginInvoke(new Action(() => this.invokeRefresh()));
                 return;
             }
-            this.Refresh();    
+            this.Refresh();
         }
 
         public void AddLineSegment(LineSegment lineSegment)
@@ -230,9 +231,9 @@ namespace SoftwareProjekt.UserControls
 
         public void ClearLineSegments()
         {
-        	_lineSegmentList.Clear();
+            _lineSegmentList.Clear();
         }
-        
+
         /// <summary>
         /// iterates the List and draws the figures
         /// </summary>
@@ -263,10 +264,10 @@ namespace SoftwareProjekt.UserControls
             float internalEndpointX = internalStartPoint.X + 2;
             float internalEndpointY = internalStartPoint.Y - 2;
 
-            g.DrawLine(ls.Color, new PointF(internalStartPoint.X, internalStartPoint.Y), 
+            g.DrawLine(ls.Color, new PointF(internalStartPoint.X, internalStartPoint.Y),
                 new PointF(internalEndpointX, internalEndpointY));
 
-            g.DrawLine(ls.Color, new PointF(internalEndpointX, internalEndpointY), 
+            g.DrawLine(ls.Color, new PointF(internalEndpointX, internalEndpointY),
                 new PointF(internalEndpointX - 10, internalEndpointY));
 
             g.DrawLine(ls.Color, new PointF(internalEndpointX, internalEndpointY),
@@ -313,49 +314,31 @@ namespace SoftwareProjekt.UserControls
             }
 
             g.DrawLine(ls.Color, internalStartPoint, internalEndPoint);
-
-            // calculate 45° angle to line at endpoint
-            float deltaY = Math.Abs(ls.EndPoint.Y - ls.StartPoint.Y);
-            float deltaX = Math.Abs(ls.EndPoint.X - ls.StartPoint.X);
-            float tan = 0;
-
-            if (deltaX == 0)
-            {
-                tan = float.MaxValue;
-            }
-            else
-            {
-                tan = deltaY / deltaX;
-            }
-
-            float piAngle = (float)Math.Atan(tan);
-            float angle = 360 - (piAngle / (float)Math.PI) * 180;
-
-
+            
             System.Drawing.Drawing2D.Matrix mRot = new System.Drawing.Drawing2D.Matrix();
             mRot.RotateAt(45, new PointF(internalEndPoint.X, internalEndPoint.Y), MatrixOrder.Append);
 
             g.Transform = mRot;
 
             Pen localPen = new Pen(ls.Color.Color, 0.4f);            
-            float lengthOfLine = (float)Math.Sqrt((float)Math.Pow(Math.Abs(internalEndPoint.X - internalStartPoint.X), 2.0f) + Math.Pow(Math.Abs(internalEndPoint.Y - internalStartPoint.Y), 2.0f));
 
-            localPen.DashPattern = new float[] { 10.0f, lengthOfLine - 10.0f };
-            localPen.DashStyle = DashStyle.Custom;
+            //FIXME: Problem when Ctl-Width != Ctl-Height
+            Vector v = Vector.Normalize(ls.Vector);
+            v.X1 = v.X1 * XAxis.EndValue / 5  * .25f;
+            v.X2 = v.X2 * YAxis.EndValue / 5 * .25f;
+            v.Rotate(180);
+            LineSegment lineseg = new LineSegment(ls.EndPoint, v);
+            PointF pstart = CalculateInternalCoordinates(lineseg.StartPoint.X, lineseg.StartPoint.Y);
+            PointF pend = CalculateInternalCoordinates(lineseg.EndPoint.X, lineseg.EndPoint.Y);
 
-            g.DrawLine(localPen, internalEndPoint, internalStartPoint);
-
+            g.DrawLine(localPen, pstart, pend);
 
             mRot.RotateAt(-90, new PointF(internalEndPoint.X, internalEndPoint.Y), MatrixOrder.Append);
             g.Transform = mRot;
 
-            localPen.DashPattern = new float[] { 10.0f, lengthOfLine - 10.0f };
-            localPen.DashStyle = DashStyle.Custom;
-
-            g.DrawLine(localPen, internalEndPoint, internalStartPoint);
+            g.DrawLine(localPen, pstart, pend);
 
             mRot.RotateAt(45, new PointF(internalEndPoint.X, internalEndPoint.Y), MatrixOrder.Append);
-
             g.Transform = mRot;
 
             if (!String.IsNullOrEmpty(ls.Label))
@@ -379,10 +362,7 @@ namespace SoftwareProjekt.UserControls
 
                 PointF printPoint = new PointF(printPointX, printPointY);
                 g.DrawString(ls.Label, new Font("Arial", 9.0f), new SolidBrush(ls.Color.Color), printPoint);
-
             }
-
-
         }
 
         private void DrawSingleLine(Line l, Graphics g)
@@ -454,7 +434,7 @@ namespace SoftwareProjekt.UserControls
         }
 
         void CoordinateSystem_MouseMove(object sender, MouseEventArgs e)
-        {            
+        {
             Point pt = this.PointToClient(Cursor.Position);
             PointF p = CalculateExternalCoordinates(pt.X, pt.Y);
             if (p.X != _lastCursorPoint.X || p.Y != _lastCursorPoint.Y)
@@ -488,7 +468,7 @@ namespace SoftwareProjekt.UserControls
             float roundX = (float)Math.Round(p.X, 2, MidpointRounding.AwayFromZero);
             float roundY = (float)Math.Round(p.Y, 2, MidpointRounding.AwayFromZero);
 
-#if DEBUG            
+#if DEBUG
             Console.WriteLine("SUCCESS @ CoordinateSystem_MouseClick: X: " + roundX.ToString() + "\tY: " + roundY.ToString() + "\n");
 #endif
 
@@ -509,7 +489,7 @@ namespace SoftwareProjekt.UserControls
         /// </summary>
         void CoordinateSystem_Paint(object sender, PaintEventArgs e)
         {
-            //e.Graphics.Clear(Color.White);
+            setAxis();
             DrawAxes(e.Graphics);
             DrawVector(e.Graphics);
             DrawLine(e.Graphics);
@@ -518,6 +498,68 @@ namespace SoftwareProjekt.UserControls
             DrawCircle(e.Graphics);
             DrawPolygons(e.Graphics);
             DrawPoints(e.Graphics);
+        }
+
+        void setAxis()
+        {
+            float xMax = 5;
+            float yMax = 5;
+
+            foreach (LineSegment item in _lineSegmentList)
+            {
+                if (item.EndPoint.X > xMax) xMax = item.EndPoint.X;
+                if (item.EndPoint.Y > yMax) yMax = item.EndPoint.Y;
+            }
+            foreach (RectangleC item in _rectangleList)
+            {
+                foreach (PointF p in item.PointList)
+                {
+                    if (p.X > xMax) xMax = p.X;
+                    if (p.Y > yMax) yMax = p.Y;
+                }
+            }
+            foreach (Triangle item in _triangleList)
+            {
+                foreach (PointF p in item.PointList)
+                {
+                    if (p.X > xMax) xMax = p.X;
+                    if (p.Y > yMax) yMax = p.Y;
+                }
+            }
+            foreach (Circle item in _circleList)
+            {
+                if (item.Rectangle.X > xMax) xMax = item.Rectangle.X;
+                if (item.Rectangle.Y > yMax) yMax = item.Rectangle.Y;
+                if (item.Rectangle.X + item.Rectangle.Width > xMax) xMax = item.Rectangle.X + item.Rectangle.Width;
+                if (item.Rectangle.Y + item.Rectangle.Height > yMax) yMax = item.Rectangle.Y + item.Rectangle.Height;
+            }
+            foreach (Polygon item in _polygonList)
+            {
+                foreach (PointF p in item.PointList)
+                {
+                    if (p.X > xMax) xMax = p.X;
+                    if (p.Y > yMax) yMax = p.Y;
+                }
+            }
+            foreach (PointF item in _pointsList)
+            {
+                if (item.X > xMax) xMax = item.X;
+                if (item.Y > yMax) yMax = item.Y;
+            }
+
+            if (xMax > yMax)
+            {
+                yMax = (int) Math.Ceiling(xMax);
+            }
+            else
+            {
+                xMax = (int) Math.Ceiling(yMax);
+            }
+            this.XAxis.EndValue = xMax;
+            this.YAxis.EndValue = yMax;
+
+            this.XAxis.Scale = xMax / 10;
+            this.YAxis.Scale = yMax / 10;
         }
 
         private void DrawPolygons(Graphics graphics)
@@ -563,7 +605,7 @@ namespace SoftwareProjekt.UserControls
                 float xWidth = x * c.Rectangle.Width;
                 float yHeight = y * c.Rectangle.Height;
 
-                RectangleF r = new RectangleF(f.X, f.Y, xWidth, yHeight); 
+                RectangleF r = new RectangleF(f.X, f.Y, xWidth, yHeight);
                 graphics.FillEllipse(c.Color.Brush, r);
                 graphics.DrawEllipse(Pens.Black, r);
             }
@@ -664,7 +706,7 @@ namespace SoftwareProjekt.UserControls
             for (int i = 0; i <= numberOfValues; i++)
             {
                 float localXCoordinate = offsetLeft + i * singleOffset;
-                float localCoordinateValue = i * rangeLength / numberOfValues + _xAxis.StartValue;
+                double localCoordinateValue = Math.Round(i * rangeLength / numberOfValues + _xAxis.StartValue, 2);
                 g.DrawLine(Pens.Black, new PointF(localXCoordinate, yCoordinate - 5),
                     new PointF(localXCoordinate, yCoordinate + 5));
 
@@ -716,7 +758,7 @@ namespace SoftwareProjekt.UserControls
                 g.DrawLine(Pens.Black, new PointF(xCoordinate - 5, localYCoordinate),
                     new PointF(xCoordinate + 5, localYCoordinate));
 
-                string coordinate = (rangeLength + _yAxis.StartValue - localCoordinateValue).ToString();
+                string coordinate =  Math.Round((rangeLength + _yAxis.StartValue - localCoordinateValue), 2).ToString();
 
                 g.DrawString(coordinate, new Font("Arial", 9.0f), new SolidBrush(Color.Black),
                     new PointF(0.0f, (float)localYCoordinate - 8));
@@ -800,9 +842,9 @@ namespace SoftwareProjekt.UserControls
 
             if (float.IsNaN(xValue) || float.IsNaN(yValue))
             {
-            	return new PointF(float.NaN, float.NaN);
+                return new PointF(float.NaN, float.NaN);
             }
-            
+
             if (xValue > _xAxis.EndValue || xValue < _xAxis.StartValue)
             {
                 return new PointF(float.NaN, float.NaN);
@@ -849,7 +891,7 @@ namespace SoftwareProjekt.UserControls
             _lineList.Remove(line);
             this.invokeRefresh();
         }
-        
+
         public void ClearLines()
         {
             _lineList.Clear();
@@ -870,7 +912,7 @@ namespace SoftwareProjekt.UserControls
 
         public void ClearPoints()
         {
-        	_pointsList.Clear();
+            _pointsList.Clear();
             this.invokeRefresh();
         }
 

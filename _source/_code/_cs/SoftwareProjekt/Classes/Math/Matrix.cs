@@ -25,11 +25,11 @@ namespace SoftwareProjekt.Classes.Math
 {
     public class Matrix
     {
-    	private float _x11;
-    	private float _x12;
-    	private float _x21;
-    	private float _x22;
-    	
+        private float _x11;
+        private float _x12;
+        private float _x21;
+        private float _x22;
+
         /// <summary>
         /// Empty ctor.
         /// </summary>
@@ -65,38 +65,38 @@ namespace SoftwareProjekt.Classes.Math
 
         public float X11
         {
-        	get { return _x11; }
-        	set
-        	{
-				_x11 = (float)System.Math.Round(value, 5);
-        	}
+            get { return _x11; }
+            set
+            {
+                _x11 = (float)System.Math.Round(value, 5);
+            }
         }
-        
+
         public float X12
         {
-        	get { return _x12; }
-        	set
-        	{
-				_x12 = (float)System.Math.Round(value, 5);
-        	}
+            get { return _x12; }
+            set
+            {
+                _x12 = (float)System.Math.Round(value, 5);
+            }
         }
-        
+
         public float X21
         {
-        	get { return _x21; }
-        	set
-        	{
-				_x21 = (float)System.Math.Round(value, 5);
-        	}
+            get { return _x21; }
+            set
+            {
+                _x21 = (float)System.Math.Round(value, 5);
+            }
         }
-        
+
         public float X22
         {
-        	get { return _x22; }
-        	set
-        	{
-				_x22 = (float)System.Math.Round(value, 5);
-        	}
+            get { return _x22; }
+            set
+            {
+                _x22 = (float)System.Math.Round(value, 5);
+            }
         }
 
         public override string ToString()
@@ -212,10 +212,18 @@ namespace SoftwareProjekt.Classes.Math
         {
             return new Matrix(firstMatrix.X11 + secondMatrix.X11, firstMatrix.X12 + secondMatrix.X12, firstMatrix.X21 + secondMatrix.X21, firstMatrix.X22 + secondMatrix.X22);
         }
-        
+
         public bool IsValid()
         {
-        	return !float.IsNaN(this.X11) && !float.IsNaN(this.X12) && !float.IsNaN(this.X21) && !float.IsNaN(this.X22);
+            return !float.IsNaN(this.X11) && !float.IsNaN(this.X12) && !float.IsNaN(this.X21) && !float.IsNaN(this.X22);
+        }
+
+        public bool IsContractive()
+        {
+            double val1 = (System.Math.Pow(this.X11, 2) + System.Math.Pow(this.X21, 2));
+            double val2 = (System.Math.Pow(this.X12, 2) + System.Math.Pow(this.X22, 2));
+            bool retval = val1 < 1 && val2 < 1 && (val1 + val2 + System.Math.Pow(this.X11 * this.X12 + this.X21 * this.X22, 2)) < (1 + val1 + val2);
+            return retval;
         }
     }
 }

@@ -311,5 +311,19 @@ namespace SoftwareProjekt.Classes.Math
         {
             return System.Math.PI * degrees / 180.0;
         }
+
+        public void Normalize()
+        {
+            float tmpLength = this.Length;
+            this.X1 = this.X1 / tmpLength;
+            this.X2 = this.X2 / tmpLength;
+        }
+
+        public static Vector Normalize(Vector vector)
+        {
+            Vector V = new Vector(vector.X1, vector.X2);
+            V.Normalize();
+            return V;
+        }
     }
 }
