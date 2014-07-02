@@ -332,7 +332,6 @@
         private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem1;
         private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem2;
         private System.Windows.Forms.Label lblNotes;
-        private System.Windows.Forms.RichTextBox rtxtNotes;
         private System.Windows.Forms.Label label1;
         private UserControls.CtlMatrixInput ctlMatrixInput;
         private UserControls.CtlVectorInput ctlVectorInputX;

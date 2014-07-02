@@ -421,7 +421,6 @@
         private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem1;
         private SoftwareProjekt.UserControls.CoordinateSystem coordinateSystem2;
         private System.Windows.Forms.Label lblNotes;
-        private System.Windows.Forms.RichTextBox rtxtNotes;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.TextBox txtDeterminante;
         private System.Windows.Forms.Button butDeterminante;

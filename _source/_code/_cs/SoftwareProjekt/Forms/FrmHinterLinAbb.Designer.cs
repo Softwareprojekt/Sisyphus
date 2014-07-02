@@ -499,7 +499,6 @@
         private SoftwareProjekt.UserControls.CoordinateSystem cosOutput1;
         private SoftwareProjekt.UserControls.CoordinateSystem cosOutput2;
         private System.Windows.Forms.Label lblNotes;
-        private System.Windows.Forms.RichTextBox rtxtNotes;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.TextBox txtVectorGx2;
         private System.Windows.Forms.PictureBox picMathEquLeft;

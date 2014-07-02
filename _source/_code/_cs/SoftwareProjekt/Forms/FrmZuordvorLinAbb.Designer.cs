@@ -389,7 +389,6 @@
         private SoftwareProjekt.UserControls.CoordinateSystem cosInput;
         private SoftwareProjekt.UserControls.CoordinateSystem cosOutput;
         private System.Windows.Forms.Label lblNotes;
-        private System.Windows.Forms.RichTextBox rtxtNotes;
         private System.Windows.Forms.Label lblHeader;
         private UserControls.CtlVectorInput ctlVectorInputM2;
         private UserControls.CtlVectorInput ctlVectorInputM1;

@@ -153,7 +153,7 @@ namespace SoftwareProjekt.Classes
         {
             IExercise exercise = _exerciseList[view];
             // save state of exercise in workbook.
-            if (Workbook.Instance.Username != null && MessageBox.Show("Do you want to save this exercise to your workbook?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (Workbook.Instance.Username != null && MessageBox.Show("Möchten Sie diese Übung ihn Ihrem Arbeitsheft speichern?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Workbook.Instance.SetEntryState(exercise.Id, view.SaveState(), view);
             }

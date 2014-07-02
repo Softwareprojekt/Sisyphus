@@ -341,7 +341,6 @@
         private SoftwareProjekt.UserControls.CoordinateSystem cosInput;
         private SoftwareProjekt.UserControls.CoordinateSystem cosOutput;
         private System.Windows.Forms.Label lblNotes;
-        private System.Windows.Forms.RichTextBox rtxtNotes;
         private System.Windows.Forms.Label lblInput;
         private System.Windows.Forms.Label lblOutput;
         private System.Windows.Forms.GroupBox grpDataInput;
