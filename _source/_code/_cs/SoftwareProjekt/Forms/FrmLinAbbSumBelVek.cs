@@ -35,13 +35,32 @@ namespace SoftwareProjekt.Forms
 {
     public partial class FrmLinAbbSumBelVek : AbstractView  
     {
+        private Vector XplusY;
+
         private LineSegment _vectorInputX;
         private LineSegment _vectorInputY;
-      
+        private LineSegment _vectorInputXplusY;
 
+        private LineSegment _vectorOutputX;
+        private LineSegment _vectorOutputY;
+        private LineSegment _vectorOutputXplusY;
+      
         public FrmLinAbbSumBelVek()
         {
             InitializeComponent();
+
+            XplusY = Vector.Add(ctlVecInX.Vector, ctlVecInY.Vector);
+
+            this.ctlVecInX.TextChanged += this.OnTextChanged;
+            this.ctlVecInY.TextChanged += this.OnTextChanged;
+
+            _vectorInputX = new LineSegment(new PointF(0, 0), ctlVecInX.Vector, Pens.Black);
+            _vectorInputY = new LineSegment(new PointF(0, 0), ctlVecInY.Vector, Pens.Blue);
+            _vectorInputXplusY = new LineSegment(new PointF(0, 0), XplusY, Pens.Green);
+
+            coordinateSystem1.AddLineSegment(_vectorInputX);
+            coordinateSystem1.AddLineSegment(_vectorInputY);
+            coordinateSystem1.AddLineSegment(_vectorInputXplusY);
         }
 
         public override Dictionary<string, Object> GetInputData()
@@ -65,7 +84,18 @@ namespace SoftwareProjekt.Forms
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
-            throw new System.NotImplementedException();
+            coordinateSystem2.ClearLineSegments();
+
+            Console.WriteLine(sender.ToString() + " " + e.ToString());
+            //txtDeterminante1.Text = e.CalcValues["M1Det"].ToString();
+
+            _vectorOutputX = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["OutputX"], Pens.Black);
+            _vectorOutputY = new LineSegment(new PointF(_vectorOutputX.Vector.X1, _vectorOutputX.Vector.X2), (Vector)e.CalcValues["OutputY"], Pens.Blue);
+            _vectorOutputXplusY = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["OutputXplusY"], Pens.Green);
+
+            coordinateSystem2.AddLineSegment(_vectorOutputX);
+            coordinateSystem2.AddLineSegment(_vectorOutputY);
+            coordinateSystem2.AddLineSegment(_vectorOutputXplusY);
         }
 
 
@@ -92,6 +122,9 @@ namespace SoftwareProjekt.Forms
         public void OnTextChanged(object sender, EventArgs e)
         {
             _vectorInputX.Vector = ctlVecInX.Vector;
+            _vectorInputY.StartPoint = new PointF(ctlVecInX.Vector.X1, ctlVecInX.Vector.X2);
+            _vectorInputY.Vector = ctlVecInY.Vector;
+            _vectorInputXplusY.Vector = Vector.Add(ctlVecInX.Vector, ctlVecInY.Vector);
             Refresh();
         }
 
