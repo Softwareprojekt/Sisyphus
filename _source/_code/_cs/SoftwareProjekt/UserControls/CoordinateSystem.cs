@@ -65,7 +65,7 @@ namespace SoftwareProjekt.UserControls
             _polygonList = new List<Polygon>();
             _tooltip = new ToolTip();
             _lastCursorPoint = new PointF(0.0f, 0.0f);
-            
+
             InitializeComponent();
         }
 
@@ -314,17 +314,17 @@ namespace SoftwareProjekt.UserControls
             }
 
             g.DrawLine(ls.Color, internalStartPoint, internalEndPoint);
-            
+
             System.Drawing.Drawing2D.Matrix mRot = new System.Drawing.Drawing2D.Matrix();
             mRot.RotateAt(45, new PointF(internalEndPoint.X, internalEndPoint.Y), MatrixOrder.Append);
 
             g.Transform = mRot;
 
-            Pen localPen = new Pen(ls.Color.Color, 0.4f);            
+            Pen localPen = new Pen(ls.Color.Color, 0.4f);
 
             //FIXME: Problem when Ctl-Width != Ctl-Height
             Vector v = Vector.Normalize(ls.Vector);
-            v.X1 = v.X1 * XAxis.EndValue / 5  * .25f;
+            v.X1 = v.X1 * XAxis.EndValue / 5 * .25f;
             v.X2 = v.X2 * YAxis.EndValue / 5 * .25f;
             v.Rotate(180);
             LineSegment lineseg = new LineSegment(ls.EndPoint, v);
@@ -549,11 +549,14 @@ namespace SoftwareProjekt.UserControls
 
             if (xMax > yMax)
             {
-                yMax = (int) Math.Ceiling(xMax);
+                yMax = (int)Math.Ceiling(xMax);
+                xMax = (int)Math.Ceiling(xMax);
+
             }
             else
             {
-                xMax = (int) Math.Ceiling(yMax);
+                xMax = (int)Math.Ceiling(yMax);
+                yMax = (int)Math.Ceiling(yMax);
             }
             this.XAxis.EndValue = xMax;
             this.YAxis.EndValue = yMax;
@@ -758,7 +761,7 @@ namespace SoftwareProjekt.UserControls
                 g.DrawLine(Pens.Black, new PointF(xCoordinate - 5, localYCoordinate),
                     new PointF(xCoordinate + 5, localYCoordinate));
 
-                string coordinate =  Math.Round((rangeLength + _yAxis.StartValue - localCoordinateValue), 2).ToString();
+                string coordinate = Math.Round((rangeLength + _yAxis.StartValue - localCoordinateValue), 2).ToString();
 
                 g.DrawString(coordinate, new Font("Arial", 9.0f), new SolidBrush(Color.Black),
                     new PointF(0.0f, (float)localYCoordinate - 8));
