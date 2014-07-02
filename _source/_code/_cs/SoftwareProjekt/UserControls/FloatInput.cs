@@ -17,9 +17,9 @@ namespace SoftwareProjekt.UserControls
 
         void FloatInput_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left && float.IsNaN(this.FloatValue))
+            if (e.Button == System.Windows.Forms.MouseButtons.Left && this.Text == "NaN")
             {
-                this.SelectAll();
+                this.Text = "";
             }
         }
 
