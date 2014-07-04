@@ -34,7 +34,6 @@ namespace SoftwareProjekt.UserControls
     public partial class CtlMatrixInput : UserControl
     {
         private Matrix _matrix = null;
-        private string _sName = "Matrix Input";
         public new event TextChangedHandler TextChanged;
 
         public CtlMatrixInput()
@@ -70,16 +69,15 @@ namespace SoftwareProjekt.UserControls
             }
         }
 
-        public string Controlname 
+        public new string Text
         {
             get
-            { 
-                return _sName; 
+            {
+                return grpMatrixEingabe.Text;
             }
-            set 
-            { 
-                _sName = value;
-                grpMatrixEingabe.Text = _sName;
+            set
+            {
+                grpMatrixEingabe.Text = value;
             }
         }
 

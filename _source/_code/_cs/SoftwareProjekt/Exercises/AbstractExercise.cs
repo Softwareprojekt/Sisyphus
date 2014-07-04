@@ -35,8 +35,6 @@ namespace SoftwareProjekt.Exercises
         /// <summary>
         /// Name of exercise.
         /// </summary>
-        private string _name;
-        private EventHandler _doWorkEvent;
         protected CancellationToken _abortToken;
         private IView _view;
 

@@ -31,7 +31,6 @@ using SoftwareProjekt.Classes.Math;
 using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
 using SoftwareProjekt.Classes.Xml;
-//using SoftwareProjekt.Forms.AbstractView;
 using SoftwareProjekt.UserControls;
 
 namespace SoftwareProjekt.Forms

@@ -97,7 +97,7 @@
             // 
             // ctlVectorInputEV2
             // 
-            this.ctlVectorInputEV2.Controlname = "Einheitsvektor 2";
+            this.ctlVectorInputEV2.Text = "Einheitsvektor 2";
             this.ctlVectorInputEV2.Location = new System.Drawing.Point(337, 30);
             this.ctlVectorInputEV2.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputEV2.MinimumSize = new System.Drawing.Size(136, 94);
@@ -110,7 +110,7 @@
             // 
             // ctlVectorInputEV1
             // 
-            this.ctlVectorInputEV1.Controlname = "Einheitsvektor 1";
+            this.ctlVectorInputEV1.Text = "Einheitsvektor 1";
             this.ctlVectorInputEV1.Location = new System.Drawing.Point(172, 30);
             this.ctlVectorInputEV1.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputEV1.MinimumSize = new System.Drawing.Size(136, 94);
@@ -123,7 +123,7 @@
             // 
             // ctlVectorInputX
             // 
-            this.ctlVectorInputX.Controlname = "Vektor x";
+            this.ctlVectorInputX.Text = "Vektor x";
             this.ctlVectorInputX.Location = new System.Drawing.Point(7, 30);
             this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(136, 94);

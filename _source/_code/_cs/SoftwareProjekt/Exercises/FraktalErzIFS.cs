@@ -40,9 +40,7 @@ namespace SoftwareProjekt.Exercises
         {
             Dictionary<string, Object> inputData = null;
             List<IShape> inputForms = null;
-            Image picture = null;
             int steps = 0;
-            int iterations = 0;
 
             // get data needed for calculations.
             inputData = view.GetInputData();

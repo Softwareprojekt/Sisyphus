@@ -137,7 +137,7 @@
             // 
             // ctlMatrixInput
             // 
-            this.ctlMatrixInput.Controlname = "Matrix M";
+            this.ctlMatrixInput.Text = "Matrix M";
             this.ctlMatrixInput.Location = new System.Drawing.Point(181, 33);
             this.ctlMatrixInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             matrix1.X11 = float.NaN;
@@ -152,7 +152,7 @@
             // 
             // ctlVectorInputX
             // 
-            this.ctlVectorInputX.Controlname = "Vektor x";
+            this.ctlVectorInputX.Text = "Vektor x";
             this.ctlVectorInputX.Location = new System.Drawing.Point(7, 33);
             this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(136, 94);
@@ -204,7 +204,7 @@
             // 
             // ctlVectorInputY
             // 
-            this.ctlVectorInputY.Controlname = "Vektor y";
+            this.ctlVectorInputY.Text = "Vektor y";
             this.ctlVectorInputY.Location = new System.Drawing.Point(9, 31);
             this.ctlVectorInputY.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputY.MinimumSize = new System.Drawing.Size(136, 94);

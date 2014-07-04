@@ -115,7 +115,7 @@ namespace SoftwareProjekt.Forms
             // ctlVectorEV2
             // 
             this.ctlVectorEV2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ctlVectorEV2.Controlname = "Vektor 3";
+            this.ctlVectorEV2.Text = "Vektor 3";
             this.ctlVectorEV2.Location = new System.Drawing.Point(389, 33);
             this.ctlVectorEV2.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorEV2.MinimumSize = new System.Drawing.Size(181, 116);
@@ -128,7 +128,7 @@ namespace SoftwareProjekt.Forms
             // 
             // ctlVectorEV1
             // 
-            this.ctlVectorEV1.Controlname = "Vektor 2";
+            this.ctlVectorEV1.Text = "Vektor 2";
             this.ctlVectorEV1.Location = new System.Drawing.Point(199, 33);
             this.ctlVectorEV1.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorEV1.MinimumSize = new System.Drawing.Size(181, 116);
@@ -141,7 +141,7 @@ namespace SoftwareProjekt.Forms
             // 
             // ctlVectorInputX
             // 
-            this.ctlVectorInputX.Controlname = "Vektor 1";
+            this.ctlVectorInputX.Text = "Vektor 1";
             this.ctlVectorInputX.Location = new System.Drawing.Point(8, 33);
             this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(181, 116);
@@ -194,7 +194,7 @@ namespace SoftwareProjekt.Forms
             // 
             // ctlVectorOutputEV2
             // 
-            this.ctlVectorOutputEV2.Controlname = "Vektor 3";
+            this.ctlVectorOutputEV2.Text = "Vektor 3";
             this.ctlVectorOutputEV2.Location = new System.Drawing.Point(391, 25);
             this.ctlVectorOutputEV2.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorOutputEV2.MinimumSize = new System.Drawing.Size(181, 116);
@@ -207,7 +207,7 @@ namespace SoftwareProjekt.Forms
             // 
             // ctlVectorOutputEV1
             // 
-            this.ctlVectorOutputEV1.Controlname = "Vektor 2";
+            this.ctlVectorOutputEV1.Text = "Vektor 2";
             this.ctlVectorOutputEV1.Location = new System.Drawing.Point(200, 25);
             this.ctlVectorOutputEV1.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorOutputEV1.MinimumSize = new System.Drawing.Size(181, 116);
@@ -220,7 +220,7 @@ namespace SoftwareProjekt.Forms
             // 
             // ctlVectorOutputX
             // 
-            this.ctlVectorOutputX.Controlname = "Vektor 1";
+            this.ctlVectorOutputX.Text = "Vektor 1";
             this.ctlVectorOutputX.Location = new System.Drawing.Point(9, 25);
             this.ctlVectorOutputX.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorOutputX.MinimumSize = new System.Drawing.Size(181, 116);

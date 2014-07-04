@@ -35,7 +35,6 @@ namespace SoftwareProjekt.UserControls
     public partial class CtlVectorInput : UserControl
     {
         private Vector _vector = null;
-        private string _sName = "Vector Input";
         public new event TextChangedHandler TextChanged;
 
         public CtlVectorInput()
@@ -75,16 +74,15 @@ namespace SoftwareProjekt.UserControls
         /// <summary>
         /// Property for name of control
         /// </summary>
-        public string Controlname
+        public new string Text
         {
             get
             {
-                return _sName;
+                return grpVektorInput.Text;
             }
             set
             {
-                _sName = value;
-                grpVektorInput.Text = _sName;
+                grpVektorInput.Text = value;
             }
         }
         /// <summary>

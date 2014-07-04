@@ -73,7 +73,7 @@
             // 
             // ctlVectorInputM2
             // 
-            this.ctlVectorInputM2.Controlname = "Vektor m2";
+            this.ctlVectorInputM2.Text = "Vektor m2";
             this.ctlVectorInputM2.Location = new System.Drawing.Point(172, 22);
             this.ctlVectorInputM2.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorInputM2.MinimumSize = new System.Drawing.Size(136, 94);
@@ -86,7 +86,7 @@
             // 
             // ctlVectorInputM1
             // 
-            this.ctlVectorInputM1.Controlname = "Vektor m1";
+            this.ctlVectorInputM1.Text = "Vektor m1";
             this.ctlVectorInputM1.Location = new System.Drawing.Point(8, 22);
             this.ctlVectorInputM1.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorInputM1.MinimumSize = new System.Drawing.Size(136, 94);
@@ -113,7 +113,7 @@
             // 
             // ctlVectorInputEV2
             // 
-            this.ctlVectorInputEV2.Controlname = "Einheitsvektor 2";
+            this.ctlVectorInputEV2.Text = "Einheitsvektor 2";
             this.ctlVectorInputEV2.Location = new System.Drawing.Point(343, 34);
             this.ctlVectorInputEV2.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputEV2.MinimumSize = new System.Drawing.Size(136, 94);
@@ -126,7 +126,7 @@
             // 
             // ctlVectorInputEV1
             // 
-            this.ctlVectorInputEV1.Controlname = "Einheitsvektor 1";
+            this.ctlVectorInputEV1.Text = "Einheitsvektor 1";
             this.ctlVectorInputEV1.Location = new System.Drawing.Point(178, 34);
             this.ctlVectorInputEV1.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputEV1.MinimumSize = new System.Drawing.Size(136, 94);
@@ -139,7 +139,7 @@
             // 
             // ctlVectorInputX
             // 
-            this.ctlVectorInputX.Controlname = "Vektor x";
+            this.ctlVectorInputX.Text = "Vektor x";
             this.ctlVectorInputX.Location = new System.Drawing.Point(8, 34);
             this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(136, 94);
