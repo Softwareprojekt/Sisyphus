@@ -56,6 +56,10 @@
             this.picArrowToRightBottom = new System.Windows.Forms.PictureBox();
             this.picArrowToRightRight = new System.Windows.Forms.PictureBox();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
+            this.ctlMathEquaToLeft = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
+            this.ctlMathEquaToRightMiddle = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
+            this.ctlFormularDraw1 = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
+            this.ctlMathEquaToRightRight = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.grpDataInput1.SuspendLayout();
             this.grpDataInput2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picArrowToLeft)).BeginInit();
@@ -320,11 +324,69 @@
             this.rtxtNotes.TabIndex = 47;
             this.rtxtNotes.Text = "";
             // 
+            // ctlMathEquaToLeft
+            // 
+            this.ctlMathEquaToLeft.Equation = "";
+            this.ctlMathEquaToLeft.Filename = "vabtnsuw.jmi.tiff";
+            this.ctlMathEquaToLeft.Filepath = "";
+            this.ctlMathEquaToLeft.FontSize = 8;
+            this.ctlMathEquaToLeft.Location = new System.Drawing.Point(682, 324);
+            this.ctlMathEquaToLeft.Margin = new System.Windows.Forms.Padding(4);
+            this.ctlMathEquaToLeft.Name = "ctlMathEquaToLeft";
+            this.ctlMathEquaToLeft.Size = new System.Drawing.Size(163, 82);
+            this.ctlMathEquaToLeft.TabIndex = 48;
+            // 
+            // ctlMathEquaToRightMiddle
+            // 
+            this.ctlMathEquaToRightMiddle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctlMathEquaToRightMiddle.BackColor = System.Drawing.Color.Transparent;
+            this.ctlMathEquaToRightMiddle.Equation = "";
+            this.ctlMathEquaToRightMiddle.Filename = "2de2yuws.mxz.tiff";
+            this.ctlMathEquaToRightMiddle.Filepath = "";
+            this.ctlMathEquaToRightMiddle.FontSize = 8;
+            this.ctlMathEquaToRightMiddle.Location = new System.Drawing.Point(554, 601);
+            this.ctlMathEquaToRightMiddle.Margin = new System.Windows.Forms.Padding(4);
+            this.ctlMathEquaToRightMiddle.Name = "ctlMathEquaToRightMiddle";
+            this.ctlMathEquaToRightMiddle.Size = new System.Drawing.Size(144, 65);
+            this.ctlMathEquaToRightMiddle.TabIndex = 49;
+            // 
+            // ctlFormularDraw1
+            // 
+            this.ctlFormularDraw1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ctlFormularDraw1.BackColor = System.Drawing.Color.Transparent;
+            this.ctlFormularDraw1.Equation = "";
+            this.ctlFormularDraw1.Filename = "2de2yuws.mxz.tiff";
+            this.ctlFormularDraw1.Filepath = "";
+            this.ctlFormularDraw1.FontSize = 8;
+            this.ctlFormularDraw1.Location = new System.Drawing.Point(554, 841);
+            this.ctlFormularDraw1.Margin = new System.Windows.Forms.Padding(4);
+            this.ctlFormularDraw1.Name = "ctlFormularDraw1";
+            this.ctlFormularDraw1.Size = new System.Drawing.Size(144, 65);
+            this.ctlFormularDraw1.TabIndex = 50;
+            // 
+            // ctlMathEquaToRightRight
+            // 
+            this.ctlMathEquaToRightRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctlMathEquaToRightRight.BackColor = System.Drawing.Color.Transparent;
+            this.ctlMathEquaToRightRight.Equation = "";
+            this.ctlMathEquaToRightRight.Filename = "2de2yuws.mxz.tiff";
+            this.ctlMathEquaToRightRight.Filepath = "";
+            this.ctlMathEquaToRightRight.FontSize = 8;
+            this.ctlMathEquaToRightRight.Location = new System.Drawing.Point(1422, 601);
+            this.ctlMathEquaToRightRight.Margin = new System.Windows.Forms.Padding(4);
+            this.ctlMathEquaToRightRight.Name = "ctlMathEquaToRightRight";
+            this.ctlMathEquaToRightRight.Size = new System.Drawing.Size(144, 65);
+            this.ctlMathEquaToRightRight.TabIndex = 51;
+            // 
             // FrmZuordAffAbb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2314, 1312);
+            this.Controls.Add(this.ctlMathEquaToRightRight);
+            this.Controls.Add(this.ctlFormularDraw1);
+            this.Controls.Add(this.ctlMathEquaToRightMiddle);
+            this.Controls.Add(this.ctlMathEquaToLeft);
             this.Controls.Add(this.rtxtNotes);
             this.Controls.Add(this.picArrowToRightRight);
             this.Controls.Add(this.picArrowToRightBottom);
@@ -379,5 +441,9 @@
         private System.Windows.Forms.PictureBox picArrowToRightBottom;
         private System.Windows.Forms.PictureBox picArrowToRightRight;
         private System.Windows.Forms.RichTextBox rtxtNotes;
+        private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToLeft;
+        private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToRightMiddle;
+        private UserControls.FormulaDrawer.CtlFormularDraw ctlFormularDraw1;
+        private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToRightRight;
     }
 }

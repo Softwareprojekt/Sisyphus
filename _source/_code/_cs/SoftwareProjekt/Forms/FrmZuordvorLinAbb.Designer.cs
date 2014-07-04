@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SoftwareProjekt.Classes.Math.Vector vector11 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector12 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector13 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector14 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector15 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector2 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector3 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector4 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector5 = new SoftwareProjekt.Classes.Math.Vector();
             this.grpDataInputRight = new System.Windows.Forms.GroupBox();
             this.ctlVectorInputM2 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.ctlVectorInputM1 = new SoftwareProjekt.UserControls.CtlVectorInput();
@@ -47,8 +47,8 @@
             this.butFunctionX = new System.Windows.Forms.Button();
             this.picArrow = new System.Windows.Forms.PictureBox();
             this.grpAddInfo = new System.Windows.Forms.GroupBox();
-            this.butDet = new System.Windows.Forms.Button();
             this.txtDet = new System.Windows.Forms.TextBox();
+            this.butDet = new System.Windows.Forms.Button();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.ctlMathEqua = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.grpDataInputRight.SuspendLayout();
@@ -80,9 +80,9 @@
             this.ctlVectorInputM2.Name = "ctlVectorInputM2";
             this.ctlVectorInputM2.Size = new System.Drawing.Size(161, 102);
             this.ctlVectorInputM2.TabIndex = 6;
-            vector11.X1 = float.NaN;
-            vector11.X2 = float.NaN;
-            this.ctlVectorInputM2.Vector = vector11;
+            vector1.X1 = float.NaN;
+            vector1.X2 = float.NaN;
+            this.ctlVectorInputM2.Vector = vector1;
             // 
             // ctlVectorInputM1
             // 
@@ -93,9 +93,9 @@
             this.ctlVectorInputM1.Name = "ctlVectorInputM1";
             this.ctlVectorInputM1.Size = new System.Drawing.Size(161, 102);
             this.ctlVectorInputM1.TabIndex = 5;
-            vector12.X1 = float.NaN;
-            vector12.X2 = float.NaN;
-            this.ctlVectorInputM1.Vector = vector12;
+            vector2.X1 = float.NaN;
+            vector2.X2 = float.NaN;
+            this.ctlVectorInputM1.Vector = vector2;
             // 
             // grpDataInputLeft
             // 
@@ -120,9 +120,9 @@
             this.ctlVectorInputEV2.Name = "ctlVectorInputEV2";
             this.ctlVectorInputEV2.Size = new System.Drawing.Size(157, 105);
             this.ctlVectorInputEV2.TabIndex = 33;
-            vector13.X1 = float.NaN;
-            vector13.X2 = float.NaN;
-            this.ctlVectorInputEV2.Vector = vector13;
+            vector3.X1 = float.NaN;
+            vector3.X2 = float.NaN;
+            this.ctlVectorInputEV2.Vector = vector3;
             // 
             // ctlVectorInputEV1
             // 
@@ -133,9 +133,9 @@
             this.ctlVectorInputEV1.Name = "ctlVectorInputEV1";
             this.ctlVectorInputEV1.Size = new System.Drawing.Size(157, 105);
             this.ctlVectorInputEV1.TabIndex = 32;
-            vector14.X1 = float.NaN;
-            vector14.X2 = float.NaN;
-            this.ctlVectorInputEV1.Vector = vector14;
+            vector4.X1 = float.NaN;
+            vector4.X2 = float.NaN;
+            this.ctlVectorInputEV1.Vector = vector4;
             // 
             // ctlVectorInputX
             // 
@@ -146,9 +146,9 @@
             this.ctlVectorInputX.Name = "ctlVectorInputX";
             this.ctlVectorInputX.Size = new System.Drawing.Size(161, 102);
             this.ctlVectorInputX.TabIndex = 1;
-            vector15.X1 = float.NaN;
-            vector15.X2 = float.NaN;
-            this.ctlVectorInputX.Vector = vector15;
+            vector5.X1 = float.NaN;
+            vector5.X2 = float.NaN;
+            this.ctlVectorInputX.Vector = vector5;
             // 
             // cosInput
             // 
@@ -229,6 +229,15 @@
             this.grpAddInfo.TabStop = false;
             this.grpAddInfo.Text = "Zusatzinfos";
             // 
+            // txtDet
+            // 
+            this.txtDet.Location = new System.Drawing.Point(115, 36);
+            this.txtDet.MaxLength = 5;
+            this.txtDet.Name = "txtDet";
+            this.txtDet.ReadOnly = true;
+            this.txtDet.Size = new System.Drawing.Size(55, 22);
+            this.txtDet.TabIndex = 1;
+            // 
             // butDet
             // 
             this.butDet.AutoSize = true;
@@ -238,15 +247,6 @@
             this.butDet.TabIndex = 0;
             this.butDet.Text = "&Determinante";
             this.butDet.UseVisualStyleBackColor = true;
-            // 
-            // txtDet
-            // 
-            this.txtDet.Location = new System.Drawing.Point(115, 36);
-            this.txtDet.MaxLength = 5;
-            this.txtDet.Name = "txtDet";
-            this.txtDet.ReadOnly = true;
-            this.txtDet.Size = new System.Drawing.Size(55, 22);
-            this.txtDet.TabIndex = 1;
             // 
             // rtxtNotes
             // 
@@ -263,7 +263,7 @@
             this.ctlMathEqua.BackColor = System.Drawing.Color.Transparent;
             this.ctlMathEqua.Equation = "";
             this.ctlMathEqua.Filename = "teptsgn3.nai.tiff";
-            this.ctlMathEqua.Filepath = "C:\\Users\\michael.eimer\\AppData\\Local\\Temp\\";
+            this.ctlMathEqua.Filepath = "";
             this.ctlMathEqua.FontSize = 8;
             this.ctlMathEqua.Location = new System.Drawing.Point(691, 321);
             this.ctlMathEqua.Margin = new System.Windows.Forms.Padding(4);

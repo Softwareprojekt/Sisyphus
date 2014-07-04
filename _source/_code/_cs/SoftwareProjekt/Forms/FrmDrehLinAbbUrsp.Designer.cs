@@ -56,12 +56,11 @@ namespace SoftwareProjekt.Forms
             this.lblNotes = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
             this.cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
-            this.picMathEquatCenter = new System.Windows.Forms.PictureBox();
             this.picBoxArrow = new System.Windows.Forms.PictureBox();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
+            this.ctlMathEqua = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.grpDataInput.SuspendLayout();
             this.grpDataOutput.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMathEquatCenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxArrow)).BeginInit();
             this.SuspendLayout();
             // 
@@ -301,18 +300,6 @@ namespace SoftwareProjekt.Forms
             this.cosOutput.Size = new System.Drawing.Size(504, 286);
             this.cosOutput.TabIndex = 50;
             // 
-            // picMathEquatCenter
-            // 
-            this.picMathEquatCenter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.picMathEquatCenter.BackColor = System.Drawing.Color.Transparent;
-            this.picMathEquatCenter.Location = new System.Drawing.Point(670, 453);
-            this.picMathEquatCenter.Margin = new System.Windows.Forms.Padding(4);
-            this.picMathEquatCenter.Name = "picMathEquatCenter";
-            this.picMathEquatCenter.Size = new System.Drawing.Size(217, 95);
-            this.picMathEquatCenter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picMathEquatCenter.TabIndex = 48;
-            this.picMathEquatCenter.TabStop = false;
-            // 
             // picBoxArrow
             // 
             this.picBoxArrow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -335,15 +322,29 @@ namespace SoftwareProjekt.Forms
             this.rtxtNotes.TabIndex = 51;
             this.rtxtNotes.Text = "";
             // 
+            // ctlMathEqua
+            // 
+            this.ctlMathEqua.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctlMathEqua.BackColor = System.Drawing.Color.Transparent;
+            this.ctlMathEqua.Equation = "";
+            this.ctlMathEqua.Filename = "y4phqryw.pfy.tiff";
+            this.ctlMathEqua.Filepath = "";
+            this.ctlMathEqua.FontSize = 8;
+            this.ctlMathEqua.Location = new System.Drawing.Point(647, 442);
+            this.ctlMathEqua.Margin = new System.Windows.Forms.Padding(4);
+            this.ctlMathEqua.Name = "ctlMathEqua";
+            this.ctlMathEqua.Size = new System.Drawing.Size(272, 115);
+            this.ctlMathEqua.TabIndex = 52;
+            // 
             // FrmDrehLinAbbUrsp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1811, 962);
+            this.Controls.Add(this.ctlMathEqua);
             this.Controls.Add(this.rtxtNotes);
             this.Controls.Add(this.cosOutput);
             this.Controls.Add(this.butFunctionTransfX);
-            this.Controls.Add(this.picMathEquatCenter);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.cosInput);
@@ -361,7 +362,6 @@ namespace SoftwareProjekt.Forms
             this.grpDataInput.PerformLayout();
             this.grpDataOutput.ResumeLayout(false);
             this.grpDataOutput.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMathEquatCenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxArrow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -381,7 +381,6 @@ namespace SoftwareProjekt.Forms
         private System.Windows.Forms.Button butDeterminante;
         private System.Windows.Forms.TextBox txtDeterminante;
         private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.PictureBox picMathEquatCenter;
         private UserControls.CtlVectorInput ctlVectorInputX;
         private UserControls.CtlVectorInput ctlVectorEV2;
         private UserControls.CtlVectorInput ctlVectorEV1;
@@ -392,6 +391,7 @@ namespace SoftwareProjekt.Forms
         private UserControls.FloatInput _ctlAngle;
         private PictureBox picBoxArrow;
         private RichTextBox rtxtNotes;
+        private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEqua;
 
     }
 }

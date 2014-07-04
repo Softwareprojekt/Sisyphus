@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SoftwareProjekt.Classes.Math.Matrix matrix2 = new SoftwareProjekt.Classes.Math.Matrix();
-            SoftwareProjekt.Classes.Math.Vector vector2 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Matrix matrix1 = new SoftwareProjekt.Classes.Math.Matrix();
+            SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
             this.grpDataInput = new System.Windows.Forms.GroupBox();
             this._ctlScalarInput = new SoftwareProjekt.UserControls.FloatInput();
             this.ctlMatrixInput = new SoftwareProjekt.UserControls.CtlMatrixInput();
@@ -83,11 +83,11 @@
             this.ctlMatrixInput.Controlname = "Matrix M";
             this.ctlMatrixInput.Location = new System.Drawing.Point(195, 22);
             this.ctlMatrixInput.Margin = new System.Windows.Forms.Padding(5);
-            matrix2.X11 = float.NaN;
-            matrix2.X12 = float.NaN;
-            matrix2.X21 = float.NaN;
-            matrix2.X22 = float.NaN;
-            this.ctlMatrixInput.Matrix = matrix2;
+            matrix1.X11 = float.NaN;
+            matrix1.X12 = float.NaN;
+            matrix1.X21 = float.NaN;
+            matrix1.X22 = float.NaN;
+            this.ctlMatrixInput.Matrix = matrix1;
             this.ctlMatrixInput.MinimumSize = new System.Drawing.Size(131, 94);
             this.ctlMatrixInput.Name = "ctlMatrixInput";
             this.ctlMatrixInput.Size = new System.Drawing.Size(164, 127);
@@ -102,9 +102,9 @@
             this.ctlVectorInputX.Name = "ctlVectorInputX";
             this.ctlVectorInputX.Size = new System.Drawing.Size(169, 127);
             this.ctlVectorInputX.TabIndex = 1;
-            vector2.X1 = float.NaN;
-            vector2.X2 = float.NaN;
-            this.ctlVectorInputX.Vector = vector2;
+            vector1.X1 = float.NaN;
+            vector1.X2 = float.NaN;
+            this.ctlVectorInputX.Vector = vector1;
             // 
             // lblFactorA
             // 
@@ -250,7 +250,7 @@
             this.ctlMathEqua.BackColor = System.Drawing.Color.Transparent;
             this.ctlMathEqua.Equation = "";
             this.ctlMathEqua.Filename = "0o3ot0te.0fx.tiff";
-            this.ctlMathEqua.Filepath = "C:\\Users\\michael.eimer\\AppData\\Local\\Temp\\";
+            this.ctlMathEqua.Filepath = "";
             this.ctlMathEqua.FontSize = 8;
             this.ctlMathEqua.Location = new System.Drawing.Point(733, 346);
             this.ctlMathEqua.Margin = new System.Windows.Forms.Padding(4);

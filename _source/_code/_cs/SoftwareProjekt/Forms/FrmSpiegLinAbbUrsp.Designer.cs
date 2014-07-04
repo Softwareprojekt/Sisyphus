@@ -282,7 +282,7 @@
             this.ctlMathEqua.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ctlMathEqua.Equation = "";
             this.ctlMathEqua.Filename = "expr.gif";
-            this.ctlMathEqua.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";
+            this.ctlMathEqua.Filepath = "";
             this.ctlMathEqua.FontSize = 8;
             this.ctlMathEqua.Location = new System.Drawing.Point(705, 346);
             this.ctlMathEqua.Margin = new System.Windows.Forms.Padding(4);

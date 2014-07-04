@@ -47,9 +47,9 @@
             this.butFunctionEnd = new System.Windows.Forms.Button();
             this.picArrowToRight = new System.Windows.Forms.PictureBox();
             this.picArrowToLeft = new System.Windows.Forms.PictureBox();
-            this.ctlMathEquaToRight = new SoftwareProjekt.UserControls.MindMap.CtlMindMap();
             this.rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.ctlMathEquaToLeft = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
+            this.ctlMathEquaToRight = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.grpDataInput.SuspendLayout();
             this.grpDataInRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picArrowToRight)).BeginInit();
@@ -233,7 +233,7 @@
             this.picArrowToRight.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picArrowToRight.BackColor = System.Drawing.Color.Transparent;
             this.picArrowToRight.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
-            this.picArrowToRight.Location = new System.Drawing.Point(682, 117);
+            this.picArrowToRight.Location = new System.Drawing.Point(683, 117);
             this.picArrowToRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picArrowToRight.Name = "picArrowToRight";
             this.picArrowToRight.Size = new System.Drawing.Size(562, 330);
@@ -254,14 +254,6 @@
             this.picArrowToLeft.TabIndex = 75;
             this.picArrowToLeft.TabStop = false;
             // 
-            // ctlMathEquaToRight
-            // 
-            this.ctlMathEquaToRight.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctlMathEquaToRight.Location = new System.Drawing.Point(733, 223);
-            this.ctlMathEquaToRight.Name = "ctlMathEquaToRight";
-            this.ctlMathEquaToRight.Size = new System.Drawing.Size(298, 117);
-            this.ctlMathEquaToRight.TabIndex = 76;
-            // 
             // rtxtNotes
             // 
             this.rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -276,7 +268,7 @@
             this.ctlMathEquaToLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ctlMathEquaToLeft.Equation = "";
             this.ctlMathEquaToLeft.Filename = "ig4xigmq.ub5.tiff";
-            this.ctlMathEquaToLeft.Filepath = "C:\\Users\\michael.eimer\\AppData\\Local\\Temp\\";
+            this.ctlMathEquaToLeft.Filepath = "";
             this.ctlMathEquaToLeft.FontSize = 8;
             this.ctlMathEquaToLeft.Location = new System.Drawing.Point(847, 614);
             this.ctlMathEquaToLeft.Margin = new System.Windows.Forms.Padding(4);
@@ -284,14 +276,28 @@
             this.ctlMathEquaToLeft.Size = new System.Drawing.Size(378, 115);
             this.ctlMathEquaToLeft.TabIndex = 78;
             // 
+            // ctlMathEquaToRight
+            // 
+            this.ctlMathEquaToRight.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctlMathEquaToRight.BackColor = System.Drawing.Color.Transparent;
+            this.ctlMathEquaToRight.Equation = "";
+            this.ctlMathEquaToRight.Filename = "uwe4hlbl.yip.tiff";
+            this.ctlMathEquaToRight.Filepath = "";
+            this.ctlMathEquaToRight.FontSize = 8;
+            this.ctlMathEquaToRight.Location = new System.Drawing.Point(733, 229);
+            this.ctlMathEquaToRight.Margin = new System.Windows.Forms.Padding(4);
+            this.ctlMathEquaToRight.Name = "ctlMathEquaToRight";
+            this.ctlMathEquaToRight.Size = new System.Drawing.Size(248, 115);
+            this.ctlMathEquaToRight.TabIndex = 79;
+            // 
             // FrmUmkehrungLinAbb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1874, 1147);
+            this.Controls.Add(this.ctlMathEquaToRight);
             this.Controls.Add(this.ctlMathEquaToLeft);
             this.Controls.Add(this.rtxtNotes);
-            this.Controls.Add(this.ctlMathEquaToRight);
             this.Controls.Add(this.picArrowToRight);
             this.Controls.Add(this.butFunctionEnd);
             this.Controls.Add(this.grpDataInRight);
@@ -334,8 +340,8 @@
         private System.Windows.Forms.Button butFunctionEnd;
         private System.Windows.Forms.PictureBox picArrowToRight;
         private System.Windows.Forms.PictureBox picArrowToLeft;
-        private UserControls.MindMap.CtlMindMap ctlMathEquaToRight;
         private System.Windows.Forms.RichTextBox rtxtNotes;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToLeft;
+        private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToRight;
     }
 }
