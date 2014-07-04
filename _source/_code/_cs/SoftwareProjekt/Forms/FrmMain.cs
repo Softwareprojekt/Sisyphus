@@ -148,10 +148,10 @@ namespace SoftwareProjekt.Forms
             this.tabMenu.Controls.Add(this._cbExercise);
             this.tabMenu.Controls.Add(this.butTestExercise);
             this.tabMenu.Controls.Add(this.lblExercisebookTitle);
-            this.tabMenu.Location = new System.Drawing.Point(4, 22);
+            this.tabMenu.Location = new System.Drawing.Point(4, 25);
             this.tabMenu.Name = "tabMenu";
             this.tabMenu.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMenu.Size = new System.Drawing.Size(1223, 636);
+            this.tabMenu.Size = new System.Drawing.Size(1223, 633);
             this.tabMenu.TabIndex = 0;
             this.tabMenu.Text = "Start";
             this.tabMenu.UseVisualStyleBackColor = true;
@@ -162,7 +162,7 @@ namespace SoftwareProjekt.Forms
             this._cbExercise.FormattingEnabled = true;
             this._cbExercise.Location = new System.Drawing.Point(842, 74);
             this._cbExercise.Name = "_cbExercise";
-            this._cbExercise.Size = new System.Drawing.Size(281, 21);
+            this._cbExercise.Size = new System.Drawing.Size(281, 24);
             this._cbExercise.TabIndex = 2;
             // 
             // butTestExercise
@@ -182,7 +182,7 @@ namespace SoftwareProjekt.Forms
             this.lblExercisebookTitle.ForeColor = System.Drawing.Color.Blue;
             this.lblExercisebookTitle.Location = new System.Drawing.Point(17, 14);
             this.lblExercisebookTitle.Name = "lblExercisebookTitle";
-            this.lblExercisebookTitle.Size = new System.Drawing.Size(502, 24);
+            this.lblExercisebookTitle.Size = new System.Drawing.Size(629, 29);
             this.lblExercisebookTitle.TabIndex = 0;
             this.lblExercisebookTitle.Text = "Anzeige Arbeitsbuchname nur wenn Arbeitsbuch geöffnet!";
             this.lblExercisebookTitle.Visible = false;
@@ -191,10 +191,10 @@ namespace SoftwareProjekt.Forms
             // 
             this.tabNotebook.Controls.Add(this.picWorkbook);
             this.tabNotebook.Controls.Add(this.flpWorkbook);
-            this.tabNotebook.Location = new System.Drawing.Point(4, 22);
+            this.tabNotebook.Location = new System.Drawing.Point(4, 25);
             this.tabNotebook.Name = "tabNotebook";
             this.tabNotebook.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNotebook.Size = new System.Drawing.Size(1223, 636);
+            this.tabNotebook.Size = new System.Drawing.Size(1223, 633);
             this.tabNotebook.TabIndex = 1;
             this.tabNotebook.Text = "Arbeitsheft";
             this.tabNotebook.UseVisualStyleBackColor = true;
@@ -206,7 +206,7 @@ namespace SoftwareProjekt.Forms
             this.picWorkbook.Enabled = false;
             this.picWorkbook.Location = new System.Drawing.Point(7, 7);
             this.picWorkbook.Name = "picWorkbook";
-            this.picWorkbook.Size = new System.Drawing.Size(897, 623);
+            this.picWorkbook.Size = new System.Drawing.Size(897, 620);
             this.picWorkbook.TabIndex = 1;
             this.picWorkbook.TabStop = false;
             // 
@@ -218,7 +218,7 @@ namespace SoftwareProjekt.Forms
             this.flpWorkbook.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpWorkbook.Location = new System.Drawing.Point(910, 3);
             this.flpWorkbook.Name = "flpWorkbook";
-            this.flpWorkbook.Size = new System.Drawing.Size(310, 630);
+            this.flpWorkbook.Size = new System.Drawing.Size(310, 627);
             this.flpWorkbook.TabIndex = 0;
             this.flpWorkbook.WrapContents = false;
             // 
@@ -226,10 +226,10 @@ namespace SoftwareProjekt.Forms
             // 
             this.tabProtectArea.Controls.Add(this.gbxColor);
             this.tabProtectArea.Controls.Add(this.gbxExerciseSpecification);
-            this.tabProtectArea.Location = new System.Drawing.Point(4, 22);
+            this.tabProtectArea.Location = new System.Drawing.Point(4, 25);
             this.tabProtectArea.Name = "tabProtectArea";
             this.tabProtectArea.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProtectArea.Size = new System.Drawing.Size(1223, 636);
+            this.tabProtectArea.Size = new System.Drawing.Size(1223, 633);
             this.tabProtectArea.TabIndex = 2;
             this.tabProtectArea.Text = "Administration";
             this.tabProtectArea.UseVisualStyleBackColor = true;
@@ -304,7 +304,7 @@ namespace SoftwareProjekt.Forms
             this.tsbutAccept});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1255, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1255, 28);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -314,7 +314,7 @@ namespace SoftwareProjekt.Forms
             this.tsbutNewExercisebook.Image = ((System.Drawing.Image)(resources.GetObject("tsbutNewExercisebook.Image")));
             this.tsbutNewExercisebook.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutNewExercisebook.Name = "tsbutNewExercisebook";
-            this.tsbutNewExercisebook.Size = new System.Drawing.Size(114, 24);
+            this.tsbutNewExercisebook.Size = new System.Drawing.Size(143, 25);
             this.tsbutNewExercisebook.Text = "Arbeitsheft &anlegen";
             this.tsbutNewExercisebook.Click += new System.EventHandler(this.tsbutNewExercisebook_Click);
             // 
@@ -324,7 +324,7 @@ namespace SoftwareProjekt.Forms
             this.tsbutLoadExercisebook.Image = ((System.Drawing.Image)(resources.GetObject("tsbutLoadExercisebook.Image")));
             this.tsbutLoadExercisebook.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutLoadExercisebook.Name = "tsbutLoadExercisebook";
-            this.tsbutLoadExercisebook.Size = new System.Drawing.Size(101, 24);
+            this.tsbutLoadExercisebook.Size = new System.Drawing.Size(127, 25);
             this.tsbutLoadExercisebook.Text = "Arbeitsheft &laden";
             this.tsbutLoadExercisebook.Click += new System.EventHandler(this.tsbutLoadExercisebook_Click);
             // 
@@ -335,7 +335,7 @@ namespace SoftwareProjekt.Forms
             this.tsbutCloseExercisebook.Image = ((System.Drawing.Image)(resources.GetObject("tsbutCloseExercisebook.Image")));
             this.tsbutCloseExercisebook.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutCloseExercisebook.Name = "tsbutCloseExercisebook";
-            this.tsbutCloseExercisebook.Size = new System.Drawing.Size(122, 24);
+            this.tsbutCloseExercisebook.Size = new System.Drawing.Size(151, 25);
             this.tsbutCloseExercisebook.Text = "Arbeitsheft &schließen";
             this.tsbutCloseExercisebook.Click += new System.EventHandler(this.tsbutCloseExercisebook_Click);
             // 
@@ -345,14 +345,14 @@ namespace SoftwareProjekt.Forms
             this.tsbutExport.Image = ((System.Drawing.Image)(resources.GetObject("tsbutExport.Image")));
             this.tsbutExport.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutExport.Name = "tsbutExport";
-            this.tsbutExport.Size = new System.Drawing.Size(131, 24);
+            this.tsbutExport.Size = new System.Drawing.Size(166, 29);
             this.tsbutExport.Text = "Arbeitsheft &exportieren";
             this.tsbutExport.Visible = false;
             // 
             // tssExerciseBook
             // 
             this.tssExerciseBook.Name = "tssExerciseBook";
-            this.tssExerciseBook.Size = new System.Drawing.Size(6, 27);
+            this.tssExerciseBook.Size = new System.Drawing.Size(6, 28);
             // 
             // tsbutNewExercise
             // 
@@ -361,7 +361,7 @@ namespace SoftwareProjekt.Forms
             this.tsbutNewExercise.Image = ((System.Drawing.Image)(resources.GetObject("tsbutNewExercise.Image")));
             this.tsbutNewExercise.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutNewExercise.Name = "tsbutNewExercise";
-            this.tsbutNewExercise.Size = new System.Drawing.Size(78, 24);
+            this.tsbutNewExercise.Size = new System.Drawing.Size(96, 25);
             this.tsbutNewExercise.Text = "&Neue Übung";
             // 
             // tsbutLoadExercise
@@ -370,7 +370,7 @@ namespace SoftwareProjekt.Forms
             this.tsbutLoadExercise.Image = ((System.Drawing.Image)(resources.GetObject("tsbutLoadExercise.Image")));
             this.tsbutLoadExercise.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutLoadExercise.Name = "tsbutLoadExercise";
-            this.tsbutLoadExercise.Size = new System.Drawing.Size(79, 24);
+            this.tsbutLoadExercise.Size = new System.Drawing.Size(98, 29);
             this.tsbutLoadExercise.Text = "Übung laden";
             this.tsbutLoadExercise.Visible = false;
             // 
@@ -380,7 +380,7 @@ namespace SoftwareProjekt.Forms
             this.tsbutDeleteExercise.Image = ((System.Drawing.Image)(resources.GetObject("tsbutDeleteExercise.Image")));
             this.tsbutDeleteExercise.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutDeleteExercise.Name = "tsbutDeleteExercise";
-            this.tsbutDeleteExercise.Size = new System.Drawing.Size(91, 24);
+            this.tsbutDeleteExercise.Size = new System.Drawing.Size(111, 29);
             this.tsbutDeleteExercise.Text = "Übung löschen";
             this.tsbutDeleteExercise.Visible = false;
             // 
@@ -390,34 +390,34 @@ namespace SoftwareProjekt.Forms
             this.tsbutNewExerciseType.Image = ((System.Drawing.Image)(resources.GetObject("tsbutNewExerciseType.Image")));
             this.tsbutNewExerciseType.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutNewExerciseType.Name = "tsbutNewExerciseType";
-            this.tsbutNewExerciseType.Size = new System.Drawing.Size(84, 24);
+            this.tsbutNewExerciseType.Size = new System.Drawing.Size(103, 25);
             this.tsbutNewExerciseType.Text = "Neues Thema";
             this.tsbutNewExerciseType.Visible = false;
             // 
             // tssInstruction
             // 
             this.tssInstruction.Name = "tssInstruction";
-            this.tssInstruction.Size = new System.Drawing.Size(6, 27);
+            this.tssInstruction.Size = new System.Drawing.Size(6, 28);
             // 
             // tslblInstructions
             // 
             this.tslblInstructions.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tslblInstructions.ForeColor = System.Drawing.Color.OrangeRed;
             this.tslblInstructions.Name = "tslblInstructions";
-            this.tslblInstructions.Size = new System.Drawing.Size(254, 24);
+            this.tslblInstructions.Size = new System.Drawing.Size(321, 25);
             this.tslblInstructions.Text = "Bitte Arbeitsheft anlegen oder laden!";
             // 
             // tstbxInput
             // 
             this.tstbxInput.Name = "tstbxInput";
-            this.tstbxInput.Size = new System.Drawing.Size(100, 27);
+            this.tstbxInput.Size = new System.Drawing.Size(100, 28);
             this.tstbxInput.Visible = false;
             // 
             // tscbxInput
             // 
             this.tscbxInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tscbxInput.Name = "tscbxInput";
-            this.tscbxInput.Size = new System.Drawing.Size(121, 23);
+            this.tscbxInput.Size = new System.Drawing.Size(121, 28);
             this.tscbxInput.Visible = false;
             // 
             // tsbutAccept
@@ -426,7 +426,7 @@ namespace SoftwareProjekt.Forms
             this.tsbutAccept.Image = ((System.Drawing.Image)(resources.GetObject("tsbutAccept.Image")));
             this.tsbutAccept.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutAccept.Name = "tsbutAccept";
-            this.tsbutAccept.Size = new System.Drawing.Size(27, 19);
+            this.tsbutAccept.Size = new System.Drawing.Size(33, 25);
             this.tsbutAccept.Text = "OK";
             this.tsbutAccept.Visible = false;
             this.tsbutAccept.Click += new System.EventHandler(this.tsbutAccept_Click);
@@ -659,5 +659,25 @@ namespace SoftwareProjekt.Forms
             }
 
         }
+
+        //private void tsbutExport_Click(object sender, EventArgs e)
+        //{
+            
+
+        //    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+        //    saveFileDialog1.Filter = "PDF files (*.pdf)|*.pdf";
+        //    saveFileDialog1.Title = "Save an PDF File";
+        //    saveFileDialog1.ShowDialog();
+
+        //    if (saveFileDialog1.FileName != "")
+        //    {
+        //        System.IO.FileStream fs = (System.IO.FileStream)saveFileDialog1.OpenFile();
+
+        //        this.tsbutExport.Image.Save(fs, System.Drawing.Imaging.ImageFormat.Png);
+                
+        //    }
+        //}
+
+       
     }
 }
