@@ -46,6 +46,7 @@ namespace SoftwareProjekt.Forms
 
             _vectorInputX = new LineSegment(new PointF(0, 0), ctlVectorInputX.Vector);
 
+            this.ctlVectorInputX.TextChanged += this.OnTextChanged;
             cosInput.AddLineSegment(_vectorInputX);
         }
 
