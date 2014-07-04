@@ -259,7 +259,6 @@
             // 
             // ctlMathEqua
             // 
-            this.ctlMathEqua.Arrowdirection = SoftwareProjekt.Enums.EArrowDirection.up;
             this.ctlMathEqua.Equation = "";
             this.ctlMathEqua.Filename = "expr.gif";
             this.ctlMathEqua.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";

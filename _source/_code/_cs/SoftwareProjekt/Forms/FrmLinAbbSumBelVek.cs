@@ -58,9 +58,9 @@ namespace SoftwareProjekt.Forms
             _vectorInputY = new LineSegment(new PointF(0, 0), ctlVecInY.Vector, Pens.Blue);
             _vectorInputXplusY = new LineSegment(new PointF(0, 0), XplusY, Pens.Green);
 
-            coordinateSystem1.AddLineSegment(_vectorInputX);
-            coordinateSystem1.AddLineSegment(_vectorInputY);
-            coordinateSystem1.AddLineSegment(_vectorInputXplusY);
+            cosInput.AddLineSegment(_vectorInputX);
+            cosInput.AddLineSegment(_vectorInputY);
+            cosInput.AddLineSegment(_vectorInputXplusY);
         }
 
         public override Dictionary<string, Object> GetInputData()
@@ -84,7 +84,7 @@ namespace SoftwareProjekt.Forms
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
-            coordinateSystem2.ClearLineSegments();
+            cosResult.ClearLineSegments();
 
             Console.WriteLine(sender.ToString() + " " + e.ToString());
             //txtDeterminante1.Text = e.CalcValues["M1Det"].ToString();
@@ -93,9 +93,9 @@ namespace SoftwareProjekt.Forms
             _vectorOutputY = new LineSegment(new PointF(_vectorOutputX.Vector.X1, _vectorOutputX.Vector.X2), (Vector)e.CalcValues["OutputY"], Pens.Blue);
             _vectorOutputXplusY = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["OutputXplusY"], Pens.Green);
 
-            coordinateSystem2.AddLineSegment(_vectorOutputX);
-            coordinateSystem2.AddLineSegment(_vectorOutputY);
-            coordinateSystem2.AddLineSegment(_vectorOutputXplusY);
+            cosResult.AddLineSegment(_vectorOutputX);
+            cosResult.AddLineSegment(_vectorOutputY);
+            cosResult.AddLineSegment(_vectorOutputXplusY);
         }
 
 

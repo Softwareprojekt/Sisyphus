@@ -80,7 +80,7 @@ namespace SoftwareProjekt.Forms
         {
             if (this.CheckInputs())
             {
-                this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+               this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
             }
         }
 
@@ -98,7 +98,7 @@ namespace SoftwareProjekt.Forms
 
         private void butDeterminante_Click(object sender, System.EventArgs e)
         {
-            //this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
         }
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)

@@ -80,7 +80,6 @@
     <Compile Include="Classes\Xml\MathXmlGenerator.cs" />
     <Compile Include="Delegates\TextChangedHandler.cs" />
     <Compile Include="Enums\EIFSForms.cs" />
-    <Compile Include="Enums\EArrowDirection.cs" />
     <Compile Include="Enums\EMathType.cs" />
     <Compile Include="Enums\EMathSign.cs" />
     <Compile Include="Enums\EAlignType.cs" />
@@ -293,6 +292,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CoordinateSystem.resx">
       <DependentUpon>CoordinateSystem.cs</DependentUpon>

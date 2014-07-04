@@ -84,7 +84,6 @@ namespace SoftwareProjekt.Forms
             // 
             // ctlFormularTest
             // 
-            this.ctlFormularTest.Arrowdirection = EArrowDirection.right;
             this.ctlFormularTest.Equation = "";
             this.ctlFormularTest.Filename = "ze0ptxt3.heb.tiff";
             //this.ctlFormularTest.Filepath = "C:\\Users\\michael.eimer\\AppData\\Local\\Temp\\";

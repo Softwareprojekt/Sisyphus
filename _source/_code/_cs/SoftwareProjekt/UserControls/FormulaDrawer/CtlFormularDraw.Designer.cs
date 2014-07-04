@@ -29,39 +29,28 @@
         private void InitializeComponent()
         {
             this.picFormular = new System.Windows.Forms.PictureBox();
-            this.picArrow = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picFormular)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picArrow)).BeginInit();
             this.SuspendLayout();
             // 
             // picFormular
             // 
             this.picFormular.InitialImage = global::SoftwareProjekt.Properties.Resources.arrowToRight;
-            this.picFormular.Location = new System.Drawing.Point(144, 96);
+            this.picFormular.Location = new System.Drawing.Point(4, 4);
+            this.picFormular.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picFormular.Name = "picFormular";
-            this.picFormular.Size = new System.Drawing.Size(322, 100);
+            this.picFormular.Size = new System.Drawing.Size(369, 104);
             this.picFormular.TabIndex = 0;
             this.picFormular.TabStop = false;
             // 
-            // picArrow
-            // 
-            this.picArrow.BackColor = System.Drawing.Color.Transparent;
-            this.picArrow.Location = new System.Drawing.Point(6, 3);
-            this.picArrow.Name = "picArrow";
-            this.picArrow.Size = new System.Drawing.Size(573, 250);
-            this.picArrow.TabIndex = 1;
-            this.picArrow.TabStop = false;
-            // 
             // CtlFormularDraw
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.picFormular);
-            this.Controls.Add(this.picArrow);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CtlFormularDraw";
-            this.Size = new System.Drawing.Size(579, 261);
+            this.Size = new System.Drawing.Size(378, 115);
             ((System.ComponentModel.ISupportInitialize)(this.picFormular)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picArrow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -69,6 +58,5 @@
         #endregion
 
         private System.Windows.Forms.PictureBox picFormular;
-        private System.Windows.Forms.PictureBox picArrow;
     }
 }

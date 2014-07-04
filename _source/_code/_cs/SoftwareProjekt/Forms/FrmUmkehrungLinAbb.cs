@@ -140,5 +140,10 @@ namespace SoftwareProjekt.Forms
             ctlVectorInputY.Vector = (Vector)state["VectorY"];
             return true;
         }
+
+        private void butFunctionEnd_Click_1(object sender, EventArgs e)
+        {
+            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+        }
     }
 }
