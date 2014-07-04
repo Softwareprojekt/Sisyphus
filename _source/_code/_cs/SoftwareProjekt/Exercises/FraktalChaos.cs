@@ -20,6 +20,7 @@
 
 using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Classes.Math;
+using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,10 @@ namespace SoftwareProjekt.Exercises
 {
     class FraktalChaos : AbstractExercise
     {
+        public FraktalChaos()
+        {
+            this.Id = EExercises.FraktalerzeugungMitChaos;
+        }
         protected override void DoWork(IView view)
         {
             Dictionary<string, Object> dict = null;

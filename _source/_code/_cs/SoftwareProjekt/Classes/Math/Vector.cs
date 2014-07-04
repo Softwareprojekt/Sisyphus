@@ -325,5 +325,13 @@ namespace SoftwareProjekt.Classes.Math
             V.Normalize();
             return V;
         }
+
+        public static Vector AffineAbbildung(Vector original, Matrix matrix, Vector vector)
+        {
+            Vector v = new Vector(original.X1, original.X2);
+            v.Multiply(matrix);
+            v.Add(vector);
+            return v;
+        }
     }
 }

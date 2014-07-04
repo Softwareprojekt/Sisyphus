@@ -208,7 +208,7 @@
             this.grpSteps.Controls.Add(this._butCalculation);
             this.grpSteps.Location = new System.Drawing.Point(496, 429);
             this.grpSteps.Name = "grpSteps";
-            this.grpSteps.Size = new System.Drawing.Size(128, 157);
+            this.grpSteps.Size = new System.Drawing.Size(122, 137);
             this.grpSteps.TabIndex = 12;
             this.grpSteps.TabStop = false;
             this.grpSteps.Text = "Berechnungsschritte";
@@ -378,6 +378,7 @@
             this.Controls.Add(this.grpPics);
             this.Controls.Add(this.ctlMathEqua);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(1072, 819);
             this.Name = "FrmFraktalErzIFS";
             this.Text = "Fraktalerzeugung mit einem IFS";
             this.grpPics.ResumeLayout(false);

@@ -42,6 +42,7 @@ namespace SoftwareProjekt.UserControls
         private List<Circle> _circleList;
         private List<Polygon> _polygonList;
         private List<PointF> _pointsList;
+        private List<PointF> _pixelList;
 
         private IAxis _xAxis;
         private IAxis _yAxis;
@@ -63,6 +64,7 @@ namespace SoftwareProjekt.UserControls
             _circleList = new List<Circle>();
             _triangleList = new List<Triangle>();
             _polygonList = new List<Polygon>();
+            _pixelList = new List<PointF>();
             _tooltip = new ToolTip();
             _lastCursorPoint = new PointF(0.0f, 0.0f);
 
@@ -111,6 +113,13 @@ namespace SoftwareProjekt.UserControls
                 return;
             }
             this.Refresh();
+        }
+
+
+        public void AddPixel(PointF pixel)
+        {
+            _pixelList.Add(pixel);
+            this.invokeRefresh();
         }
 
         public void AddLineSegment(LineSegment lineSegment)
@@ -218,6 +227,7 @@ namespace SoftwareProjekt.UserControls
             _rectangleList.Clear();
             _circleList.Clear();
             _polygonList.Clear();
+            _pixelList.Clear();
             this.invokeRefresh();
         }
 
@@ -498,12 +508,13 @@ namespace SoftwareProjekt.UserControls
             DrawCircle(e.Graphics);
             DrawPolygons(e.Graphics);
             DrawPoints(e.Graphics);
+            DrawPixel(e.Graphics);
         }
 
         void setAxis()
         {
-            float xMax = 5;
-            float yMax = 5;
+            float xMax = .5f;
+            float yMax = .5f;
 
             foreach (LineSegment item in _lineSegmentList)
             {
@@ -547,6 +558,12 @@ namespace SoftwareProjekt.UserControls
                 if (item.Y > yMax) yMax = item.Y;
             }
 
+            foreach (PointF item in _pixelList)
+            {
+                if (item.X > xMax) xMax = item.X;
+                if (item.Y > yMax) yMax = item.Y;
+            }
+
             if (xMax > yMax)
             {
                 yMax = (int)Math.Ceiling(xMax);
@@ -558,13 +575,24 @@ namespace SoftwareProjekt.UserControls
                 xMax = (int)Math.Ceiling(yMax);
                 yMax = (int)Math.Ceiling(yMax);
             }
-            this.XAxis.EndValue = xMax;
-            this.YAxis.EndValue = yMax;
+            //this.XAxis.EndValue = ((int)Math.Ceiling(xMax / 10)) * 10;
+            //this.YAxis.EndValue = ((int)Math.Ceiling(yMax / 10)) * 10;
 
-            this.XAxis.Scale = xMax / 10;
-            this.YAxis.Scale = yMax / 10;
+            this.XAxis.EndValue = ((int)Math.Ceiling(xMax));
+            this.YAxis.EndValue = ((int)Math.Ceiling(yMax));
+
+            this.XAxis.Scale = this.XAxis.EndValue / 11;
+            this.YAxis.Scale = this.YAxis.EndValue / 11;
         }
 
+        private void DrawPixel(Graphics graphics)
+        {
+            foreach (PointF item in _pixelList)
+            {
+                PointF p = CalculateInternalCoordinates(item.X, item.Y);
+                graphics.FillRectangle(Brushes.Black, p.X, p.Y, 2, 2);
+            }
+        }
         private void DrawPolygons(Graphics graphics)
         {
             foreach (Polygon p in _polygonList)
