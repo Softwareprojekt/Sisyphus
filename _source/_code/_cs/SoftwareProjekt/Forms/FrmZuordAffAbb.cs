@@ -33,20 +33,83 @@ using SoftwareProjekt.Interfaces;
 
 namespace SoftwareProjekt.Forms
 {
-       
-    public partial class FrmZuordAffAbb : AbstractView 
+
+    public partial class FrmZuordAffAbb : AbstractView
     {
+        private Vector AB;
+        private Vector AC;
+        private Vector minusA;
+        private Vector minusB;
+
+        private Vector A2B2;
+        private Vector A2C2;
+        private Vector minusA2;
+
         private LineSegment _vectorInputA;
-        private LineSegment _vectorInputB;
-        private LineSegment _vectorInputC;
+        private LineSegment _vectorInputAB;
+        private LineSegment _vectorInputAC;
 
         private LineSegment _vectorInputA2;
-        private LineSegment _vectorInputB2;
-        private LineSegment _vectorInputC2;
+        private LineSegment _vectorInputA2B2;
+        private LineSegment _vectorInputA2C2;
+
+        private LineSegment _vectorOutputE1;
+        private LineSegment _vectorOutputE2;
+
+        private Line LineE1E2;
+        private Line LineBC;
+        private Line LineB2C2;
 
         public FrmZuordAffAbb()
         {
             InitializeComponent();
+
+            minusA = Vector.Multiply(ctlVectorInputA.Vector, -1f);
+            AB = Vector.Add(ctlVectorInputB.Vector, minusA);
+            AC = Vector.Add(ctlVectorInputC.Vector, minusA);
+
+            minusA2 = Vector.Multiply(ctlVectorInputA.Vector, -1f);
+            A2B2 = Vector.Add(ctlVectorInputB2.Vector, minusA2);
+            A2C2 = Vector.Add(ctlVectorInputC2.Vector, minusA2);
+
+            Vector E1 = new Vector(1f, 0f);
+            Vector E2 = new Vector(0f, 1f);
+
+            LineE1E2 = new Line(E2, new Vector(1f, -1f));
+            LineBC = new Line(AC, AB);
+            LineB2C2 = new Line(A2C2, A2B2);
+
+            _vectorInputA = new LineSegment(new PointF(0, 0), ctlVectorInputA.Vector, Pens.Green);
+            _vectorInputAB = new LineSegment(new PointF(0, 0), ctlVectorInputB.Vector, Pens.Red);
+            _vectorInputAC = new LineSegment(new PointF(0, 0), ctlVectorInputC.Vector, Pens.Blue);
+
+            _vectorInputA2 = new LineSegment(new PointF(0, 0), ctlVectorInputA2.Vector, Pens.Green);
+            _vectorInputA2B2 = new LineSegment(new PointF(0, 0), ctlVectorInputB2.Vector, Pens.Red);
+            _vectorInputA2C2 = new LineSegment(new PointF(0, 0), ctlVectorInputC2.Vector, Pens.Blue);
+
+            _vectorOutputE1 = new LineSegment(new PointF(0, 0), E1, Pens.Red);
+            _vectorOutputE2 = new LineSegment(new PointF(0, 0), E2, Pens.Blue);
+
+            this.ctlVectorInputA.TextChanged += this.OnTextChanged;
+            this.ctlVectorInputB.TextChanged += this.OnTextChanged;
+            this.ctlVectorInputC.TextChanged += this.OnTextChanged;
+
+            this.ctlVectorInputA2.TextChanged += this.OnTextChanged;
+            this.ctlVectorInputB2.TextChanged += this.OnTextChanged;
+            this.ctlVectorInputC2.TextChanged += this.OnTextChanged;
+
+            cosInputABC.AddLineSegment(_vectorInputA);
+            cosInputABC.AddLineSegment(_vectorInputAB);
+            cosInputABC.AddLineSegment(_vectorInputAC);
+            cosInputABC.AddLine(LineBC);
+
+            cosInputA2B2C2.AddLineSegment(_vectorInputA2);
+            cosInputA2B2C2.AddLineSegment(_vectorInputA2B2);
+            cosInputA2B2C2.AddLineSegment(_vectorInputA2C2);
+
+            cosOutput.AddLineSegment(_vectorOutputE1);
+            cosOutput.AddLineSegment(_vectorOutputE2);
+            cosOutput.AddLine(LineE1E2);
         }
 
         public override Dictionary<string, Object> GetInputData()
@@ -67,6 +130,11 @@ namespace SoftwareProjekt.Forms
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
             cosOutput.ClearLineSegments();
+
+            LineBC = new Line(ctlVectorInputB.Vector, (Vector)e.CalcValues["LineBC"]);
+            LineB2C2 = new Line(ctlVectorInputB2.Vector, (Vector)e.CalcValues["LineB2C2"]);
+            cosInputABC.AddLine(LineBC);
+            cosInputA2B2C2.AddLine(LineB2C2);
         }
 
         private void butFunction1X_Click(object sender, EventArgs e)
@@ -92,21 +160,46 @@ namespace SoftwareProjekt.Forms
             }
         }
 
-		protected override bool CheckInputs()
-		{
-			if (ctlVectorInputA.Vector.IsValid() && ctlVectorInputB.Vector.IsValid() && ctlVectorInputC.Vector.IsValid() && ctlVectorInputA2.Vector.IsValid() && ctlVectorInputB2.Vector.IsValid() && ctlVectorInputC2.Vector.IsValid())
-			{
+        protected override bool CheckInputs()
+        {
+            if (ctlVectorInputA.Vector.IsValid() && ctlVectorInputB.Vector.IsValid() && ctlVectorInputC.Vector.IsValid() && ctlVectorInputA2.Vector.IsValid() && ctlVectorInputB2.Vector.IsValid() && ctlVectorInputC2.Vector.IsValid())
+            {
 #if DEBUG
-				Console.WriteLine("SUCCESS @ Inputs are valid.");
+                Console.WriteLine("SUCCESS @ Inputs are valid.");
 #endif
-				return true;
-			}
+                return true;
+            }
 #if DEBUG
-			Console.WriteLine("ERROR @ Inputs are not valid.");
+            Console.WriteLine("ERROR @ Inputs are not valid.");
 #endif
-			return false;
-		}
-		
+            return false;
+        }
+
+        public void OnTextChanged(object sender, EventArgs e)
+        {
+            minusA = Vector.Multiply(ctlVectorInputA.Vector, -1f);
+            AB = Vector.Add(ctlVectorInputB.Vector, minusA);
+            AC = Vector.Add(ctlVectorInputC.Vector, minusA);
+
+            minusA2 = Vector.Multiply(ctlVectorInputA2.Vector, -1f);
+            A2B2 = Vector.Add(ctlVectorInputB2.Vector, minusA2);
+            A2C2 = Vector.Add(ctlVectorInputC2.Vector, minusA2);
+
+            _vectorInputA.Vector = ctlVectorInputA.Vector;
+            _vectorInputAB.StartPoint = new PointF(ctlVectorInputA.Vector.X1, ctlVectorInputA.Vector.X2);
+            _vectorInputAB.Vector = AB;
+            _vectorInputAC.StartPoint = new PointF(ctlVectorInputA.Vector.X1, ctlVectorInputA.Vector.X2);
+            _vectorInputAC.Vector = AC;
+
+            _vectorInputA2.Vector = ctlVectorInputA2.Vector;
+            _vectorInputA2B2.StartPoint = new PointF(ctlVectorInputA2.Vector.X1, ctlVectorInputA2.Vector.X2);
+            _vectorInputA2B2.Vector = A2B2;
+            _vectorInputA2C2.StartPoint = new PointF(ctlVectorInputA2.Vector.X1, ctlVectorInputA2.Vector.X2);
+            _vectorInputA2C2.Vector = A2C2;
+
+            cosInputABC.Refresh();
+            cosInputA2B2C2.Refresh();
+        }
 
         public override bool LoadState(Dictionary<string, object> state)
         {

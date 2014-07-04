@@ -53,12 +53,16 @@ namespace SoftwareProjekt.Exercises
 
             Vector minusA = Vector.Multiply(inputA, -1f);
             Vector minusA2 = Vector.Multiply(inputA2, -1f);
+            Vector minusB = Vector.Multiply(inputB, -1f);
+            Vector minusB2 = Vector.Multiply(inputB2, -1f);
 
             Vector AB = Vector.Add(inputB, minusA);
             Vector AC = Vector.Add(inputC, minusA);
+            Vector BC = Vector.Add(inputC, minusB);
 
             Vector A2B2 = Vector.Add(inputB2, minusA2);
             Vector A2C2 = Vector.Add(inputC2, minusA2);
+            Vector B2C2 = Vector.Add(inputC2, minusB2);
 
             Dictionary<string, Object> outputData = new Dictionary<string, object>();
 
@@ -67,6 +71,8 @@ namespace SoftwareProjekt.Exercises
 
             outputData.Add("VectorAB", AB);
             outputData.Add("VectorAC", AC);
+            outputData.Add("LineBC", BC);
+            outputData.Add("LineB2C2", B2C2);
             outputData.Add("VectorA2B2", A2B2);
             outputData.Add("VectorA2C2", A2C2);
             outputData.Add("M", outputM);
