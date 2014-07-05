@@ -742,7 +742,11 @@ namespace SoftwareProjekt.UserControls.MindMap
 
         private void CtlMindMap_MouseClick(object sender, MouseEventArgs e)
         {
-            Console.WriteLine("X: " + e.X + " Y: " + e.Y);
+
+#if DEBUG
+            Console.WriteLine("MindMap Measurement --> X: " + e.X + " Y: " + e.Y);
+#endif
+
         }
  
 

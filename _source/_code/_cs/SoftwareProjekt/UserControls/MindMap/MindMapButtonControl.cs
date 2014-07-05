@@ -173,11 +173,11 @@ namespace SoftwareProjekt.UserControls.MindMap
             switch (this.MachiningCondition)
             {
                 case EMachiningCondition.Aborted:
-                    linePen = Pens.Blue;
+                    linePen = Pens.Red;
                     break;
 
                 case EMachiningCondition.NotDone:
-                    linePen = Pens.Black;
+                    linePen = Pens.Blue;
                     break;
 
                 case EMachiningCondition.SaveExists:
