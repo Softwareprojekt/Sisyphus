@@ -97,7 +97,7 @@
             // 
             // ctlVectorInputEV2
             // 
-            this.ctlVectorInputEV2.Controlname = "Vector Input";
+            this.ctlVectorInputEV2.Text = "Vector Input";
             this.ctlVectorInputEV2.Location = new System.Drawing.Point(253, 24);
             this.ctlVectorInputEV2.MinimumSize = new System.Drawing.Size(102, 76);
             this.ctlVectorInputEV2.Name = "ctlVectorInputEV2";
@@ -109,7 +109,7 @@
             // 
             // ctlVectorInputEV1
             // 
-            this.ctlVectorInputEV1.Controlname = "Vector Input";
+            this.ctlVectorInputEV1.Text = "Vector Input";
             this.ctlVectorInputEV1.Location = new System.Drawing.Point(129, 24);
             this.ctlVectorInputEV1.MinimumSize = new System.Drawing.Size(102, 76);
             this.ctlVectorInputEV1.Name = "ctlVectorInputEV1";
@@ -121,7 +121,7 @@
             // 
             // ctlVectorInputX
             // 
-            this.ctlVectorInputX.Controlname = "Vector Input";
+            this.ctlVectorInputX.Text = "Vector Input";
             this.ctlVectorInputX.Location = new System.Drawing.Point(5, 24);
             this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(102, 76);
             this.ctlVectorInputX.Name = "ctlVectorInputX";
