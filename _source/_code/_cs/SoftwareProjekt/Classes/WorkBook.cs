@@ -28,6 +28,7 @@ using System.Xml;
 using SoftwareProjekt.Classes.Math;
 using System.Drawing;
 using System.Globalization;
+using SoftwareProjekt.Interfaces;
 
 namespace SoftwareProjekt.Classes
 {
@@ -37,6 +38,9 @@ namespace SoftwareProjekt.Classes
         private string _username;
         private readonly string _folderName = null;
         private List<WorkbookEntry> _workbookEntryList;
+
+        private List<IWorkbookObserver> _workbookObserverList;
+
         private Workbook()
         {
             _folderName = Path.Combine(Directory.GetCurrentDirectory(), "Workbooks");
@@ -49,6 +53,8 @@ namespace SoftwareProjekt.Classes
 
                 _workbookEntryList.Add(entry);
             }
+
+            _workbookObserverList = new List<IWorkbookObserver>();
         }
 
         public string Username
@@ -72,6 +78,11 @@ namespace SoftwareProjekt.Classes
                 try
                 {
                     this.Load();
+
+                    foreach (IWorkbookObserver observer in _workbookObserverList)
+                    {
+                        observer.Notify();
+                    }
                 }
                 catch (Exception e)
                 {
@@ -406,6 +417,12 @@ namespace SoftwareProjekt.Classes
                 MessageBox.Show("Could not save the form.\n" + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+
+            foreach (IWorkbookObserver observer in _workbookObserverList)
+            {
+                observer.Notify();
+            }
+
         }
 
         public void AddEntries(System.Windows.Forms.Control.ControlCollection collection, PictureBox picbox, RichTextBox notes)
@@ -416,6 +433,12 @@ namespace SoftwareProjekt.Classes
                 item.NotesTextBox = notes;
             }
             collection.AddRange(_workbookEntryList.ToArray());
+
+        }
+
+        public void RegisterObserver(IWorkbookObserver observer)
+        {
+            _workbookObserverList.Add(observer);
         }
 
         public void DeleteWorkbook()
@@ -463,6 +486,6 @@ namespace SoftwareProjekt.Classes
                 }
             }
         }
-
+        
     }
 }

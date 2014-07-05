@@ -137,6 +137,7 @@
     </Compile>
     <Compile Include="Classes\LinearTransformationTopic.cs" />
     <Compile Include="InitSisyphus.cs" />
+    <Compile Include="Interfaces\IWorkbookObserver.cs" />
     <Compile Include="Interfaces\IShape.cs" />
     <Compile Include="Interop\InteropMimeTex.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

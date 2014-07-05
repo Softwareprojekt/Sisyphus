@@ -33,7 +33,7 @@ using SoftwareProjekt.Delegates;
 
 namespace SoftwareProjekt.UserControls.MindMap
 {
-    public class CtlMindMap : UserControl
+    public class CtlMindMap : UserControl, IWorkbookObserver
     {
         private const string _filename = "config.xml";
         private List<MindMapTopicControl> _graphicalTopicList;
@@ -102,23 +102,8 @@ namespace SoftwareProjekt.UserControls.MindMap
             _xmlParser = new XmlMindMap();
             this.Paint += CtlMindMap_Paint;
 
+
             InitializeComponent();
-
-
-        /*    private MindMapButtonControl DrehungSpiegelungStreckung;
-        private MindMapButtonControl UmkehrungInverseMatrix;
-        private MindMapButtonControl GeometrischeEigenschaften;
-        private MindMapButtonControl VertraeglichkeitmitSummenundViel;
-        private MindMapButtonControl VertraeglichkeitLinarkombination;
-        private MindMapButtonControl MatrixAlsZuordnung;
-        private MindMapButtonControl hintereinanderAusfuehrung;
-        private MindMapButtonControl HintereinanderausfuehrungUmkehrbarkeit;
-        private MindMapButtonControl Zuordnungsvorschrift2Dreiecke;
-        private MindMapButtonControl geometrischeEigenschaftenAffAbb;
-        private MindMapButtonControl LGS;
-        private MindMapButtonControl IFS;
-        private MindMapButtonControl ChaosSpiel;*/
-
 
             DrehungSpiegelungStreckung.ButtonClicked += DrehungSpiegelungStreckung_ButtonClicked;
             UmkehrungInverseMatrix.ButtonClicked += DrehungSpiegelungStreckung_ButtonClicked;
@@ -133,6 +118,8 @@ namespace SoftwareProjekt.UserControls.MindMap
             LGS.ButtonClicked += DrehungSpiegelungStreckung_ButtonClicked;
             IFS.ButtonClicked += DrehungSpiegelungStreckung_ButtonClicked;
             ChaosSpiel.ButtonClicked += DrehungSpiegelungStreckung_ButtonClicked;
+
+            SoftwareProjekt.Classes.Workbook.Instance.RegisterObserver(this);
         }
 
         void DrehungSpiegelungStreckung_ButtonClicked(EExercises exerciseID)
@@ -748,8 +735,13 @@ namespace SoftwareProjekt.UserControls.MindMap
 #endif
 
         }
- 
 
-        
+
+
+
+        public void Notify()
+        {
+            this.BeginInvoke(new Action(() => { this.Refresh(); }));
+        }
     }
 }
