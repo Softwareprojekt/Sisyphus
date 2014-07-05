@@ -64,10 +64,13 @@ namespace SoftwareProjekt.Forms
             _vectorInputM1 = new LineSegment(new PointF(0, 0), ctlVectorInputM1.Vector, Pens.Red);
             _vectorInputM2 = new LineSegment(new PointF(0, 0), ctlVectorInputM2.Vector, Pens.Blue);
 
+            this.ctlVectorInputX.TextChanged += this.OnTextChanged;
             cosInput.AddLineSegment(_vectorInputX);
             cosInput.AddLineSegment(_vectorInputEV1);
             cosInput.AddLineSegment(_vectorInputEV2);
 
+            this.ctlVectorInputM1.TextChanged += this.OnTextChanged;
+            this.ctlVectorInputM2.TextChanged += this.OnTextChanged;
             cosOutput.AddLineSegment(_vectorInputM1);
             cosOutput.AddLineSegment(_vectorInputM2);
 
@@ -186,12 +189,13 @@ namespace SoftwareProjekt.Forms
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
             cosOutput.ClearLineSegments();
-            cosOutput.AddLineSegment(_vectorInputM1);
-            cosOutput.AddLineSegment(_vectorInputM2);
 
             _vectorOutputX = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["VectorX"], Pens.Black);
+            //txtDet.Text = e.CalcValues["detM"].ToString();
 
             cosOutput.AddLineSegment(_vectorOutputX);
+            cosOutput.AddLineSegment(_vectorInputM1);
+            cosOutput.AddLineSegment(_vectorInputM2);
         }
 
         private void butFunctionX_Click(object sender, EventArgs e)
@@ -215,6 +219,16 @@ namespace SoftwareProjekt.Forms
             Console.WriteLine("ERROR @ Inputs are not valid.");
 #endif
             return false;
+        }
+
+        public void OnTextChanged(object sender, EventArgs e)
+        {
+            cosInput.ClearLines();
+            _vectorInputX.Vector = ctlVectorInputX.Vector;
+            _vectorInputM1.Vector = ctlVectorInputM1.Vector;
+            _vectorInputM2.Vector = ctlVectorInputM2.Vector;
+            cosInput.Refresh();
+            cosOutput.Refresh();
         }
 
         public override bool LoadState(Dictionary<string, object> state)

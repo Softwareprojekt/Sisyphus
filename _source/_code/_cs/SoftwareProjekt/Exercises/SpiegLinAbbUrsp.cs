@@ -66,6 +66,7 @@ namespace SoftwareProjekt.Exercises
             outputData.Add("EV1", outputEV1);
             outputData.Add("EV2", outputEV2);
             outputData.Add("MDet", detM);
+            outputData.Add("Mirror", mirror);
 
             // call base dowork and pass the calculated data.
             base.Finalize(new ExerciseEventArgs(outputData));

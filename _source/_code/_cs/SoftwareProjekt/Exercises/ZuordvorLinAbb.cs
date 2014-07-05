@@ -53,12 +53,15 @@ namespace SoftwareProjekt.Exercises
 
             Dictionary<string, Object> outputData = new Dictionary<string, object>();
 
+            Matrix M = new Matrix(inputM1.X1, inputM1.X2, inputM2.X1, inputM2.X2);
+            float detM = M.Determinant;
             Vector M1multX1 = Vector.Multiply(inputM1, inputX.X1);
             Vector M2multX2 = Vector.Multiply(inputM2, inputX.X2);
 
             Vector outputX = Vector.Add(M1multX1, M2multX2);
 
             outputData.Add("VectorX", outputX);
+            outputData.Add("detM", detM);
 
             // call base dowork and pass the calculated data.
             base.Finalize(new ExerciseEventArgs(outputData));
