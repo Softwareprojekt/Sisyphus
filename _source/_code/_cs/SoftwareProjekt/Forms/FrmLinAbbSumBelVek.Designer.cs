@@ -63,7 +63,7 @@
             // 
             // ctlMaInScaleMat
             // 
-            this.ctlMaInScaleMat.Controlname = "Matrix Input";
+            //this.ctlMaInScaleMat.Controlname = "Matrix Input"; FIXME!!
             this.ctlMaInScaleMat.Location = new System.Drawing.Point(71, 143);
             this.ctlMaInScaleMat.Margin = new System.Windows.Forms.Padding(5);
             matrix1.X11 = float.NaN;
@@ -80,7 +80,7 @@
             // 
             this.ctlVecInY.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.ctlVecInY.Controlname = "Vector Input";
+            //this.ctlVecInY.Controlname = "Vector Input"; FIXME
             this.ctlVecInY.Location = new System.Drawing.Point(179, 31);
             this.ctlVecInY.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVecInY.MinimumSize = new System.Drawing.Size(136, 94);
@@ -93,7 +93,7 @@
             // 
             // ctlVecInX
             // 
-            this.ctlVecInX.Controlname = "Vector Input";
+            //this.ctlVecInX.Controlname = "Vector Input"; FIXME"!!
             this.ctlVecInX.Location = new System.Drawing.Point(8, 31);
             this.ctlVecInX.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVecInX.MinimumSize = new System.Drawing.Size(136, 94);

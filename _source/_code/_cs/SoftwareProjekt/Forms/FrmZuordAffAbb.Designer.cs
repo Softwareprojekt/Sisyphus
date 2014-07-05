@@ -84,7 +84,7 @@
             // 
             // ctlVectorInputC
             // 
-            this.ctlVectorInputC.Controlname = "Vector Input";
+            // this.ctlVectorInputC.Controlname = "Vector Input"; FIXME!!
             this.ctlVectorInputC.Location = new System.Drawing.Point(329, 21);
             this.ctlVectorInputC.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputC.MinimumSize = new System.Drawing.Size(136, 94);
@@ -97,7 +97,7 @@
             // 
             // ctlVectorInputB
             // 
-            this.ctlVectorInputB.Controlname = "Vector Input";
+            // this.ctlVectorInputB.Controlname = "Vector Input"; FIXME!!
             this.ctlVectorInputB.Location = new System.Drawing.Point(168, 20);
             this.ctlVectorInputB.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputB.MinimumSize = new System.Drawing.Size(136, 94);
@@ -110,7 +110,7 @@
             // 
             // ctlVectorInputA
             // 
-            this.ctlVectorInputA.Controlname = "Vector Input";
+            //this.ctlVectorInputA.Controlname = "Vector Input"; FIXME!!
             this.ctlVectorInputA.Location = new System.Drawing.Point(7, 21);
             this.ctlVectorInputA.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputA.MinimumSize = new System.Drawing.Size(136, 94);
@@ -137,7 +137,7 @@
             // 
             // ctlVectorInputC2
             // 
-            this.ctlVectorInputC2.Controlname = "Vector Input";
+            //this.ctlVectorInputC2.Controlname = "Vector Input"; FIXME!!
             this.ctlVectorInputC2.Location = new System.Drawing.Point(329, 21);
             this.ctlVectorInputC2.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputC2.MinimumSize = new System.Drawing.Size(136, 94);
@@ -150,7 +150,7 @@
             // 
             // ctlVectorInputB2
             // 
-            this.ctlVectorInputB2.Controlname = "Vector Input";
+            //this.ctlVectorInputB2.Controlname = "Vector Input"; FIXME!!
             this.ctlVectorInputB2.Location = new System.Drawing.Point(168, 21);
             this.ctlVectorInputB2.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputB2.MinimumSize = new System.Drawing.Size(136, 94);
@@ -163,7 +163,7 @@
             // 
             // ctlVectorInputA2
             // 
-            this.ctlVectorInputA2.Controlname = "Vector Input";
+            //this.ctlVectorInputA2.Controlname = "Vector Input"; FIXME!!
             this.ctlVectorInputA2.Location = new System.Drawing.Point(7, 21);
             this.ctlVectorInputA2.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputA2.MinimumSize = new System.Drawing.Size(136, 94);

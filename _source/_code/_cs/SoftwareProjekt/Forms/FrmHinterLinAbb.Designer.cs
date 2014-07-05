@@ -99,7 +99,7 @@
             // 
             // ctlVectorInputX
             // 
-            this.ctlVectorInputX.Controlname = "Vector Input";
+            //this.ctlVectorInputX.Controlname = "Vector Input"; // FIXME
             this.ctlVectorInputX.Location = new System.Drawing.Point(8, 29);
             this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(136, 94);
@@ -112,7 +112,7 @@
             // 
             // ctlMatrixInputM1
             // 
-            this.ctlMatrixInputM1.Controlname = "Matrix Input";
+            //this.ctlMatrixInputM1.Controlname = "Matrix Input"; FIXME!!
             this.ctlMatrixInputM1.Location = new System.Drawing.Point(199, 29);
             this.ctlMatrixInputM1.Margin = new System.Windows.Forms.Padding(5);
             matrix1.X11 = float.NaN;
@@ -212,7 +212,7 @@
             // 
             // ctlMatrixInputM2
             // 
-            this.ctlMatrixInputM2.Controlname = "Matrix Input";
+            //this.ctlMatrixInputM2.Controlname = "Matrix Input"; FIXME!!
             this.ctlMatrixInputM2.Location = new System.Drawing.Point(8, 28);
             this.ctlMatrixInputM2.Margin = new System.Windows.Forms.Padding(5);
             matrix2.X11 = float.NaN;
@@ -278,7 +278,7 @@
             // 
             // ctlVectorOutputX1
             // 
-            this.ctlVectorOutputX1.Controlname = "Vector Input";
+            //this.ctlVectorOutputX1.Controlname = "Vector Input"; FIXME!!
             this.ctlVectorOutputX1.Location = new System.Drawing.Point(8, 21);
             this.ctlVectorOutputX1.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorOutputX1.MinimumSize = new System.Drawing.Size(136, 94);
@@ -304,7 +304,7 @@
             // 
             // ctlVectorOutputX2
             // 
-            this.ctlVectorOutputX2.Controlname = "Vector Input";
+            // this.ctlVectorOutputX2.Controlname = "Vector Input"; FIXME!!
             this.ctlVectorOutputX2.Location = new System.Drawing.Point(8, 21);
             this.ctlVectorOutputX2.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorOutputX2.MinimumSize = new System.Drawing.Size(136, 94);

@@ -125,7 +125,15 @@ namespace SoftwareProjekt.Forms
         public Dictionary<string, object> SaveState()
         {
             Dictionary<string, object> dic = this.GetInputData();
-            dic.Add("Notes", rtxtNotes.Text);
+            try
+            {
+                dic.Add("Notes", rtxtNotes.Text);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+                Console.WriteLine(e.StackTrace); 
+            }
             return dic;
         }
     }
