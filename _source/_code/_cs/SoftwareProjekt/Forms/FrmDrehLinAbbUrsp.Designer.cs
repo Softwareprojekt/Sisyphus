@@ -390,7 +390,7 @@ namespace SoftwareProjekt.Forms
         private UserControls.CoordinateSystem cosOutput;
         private UserControls.FloatInput _ctlAngle;
         private PictureBox picBoxArrow;
-        private RichTextBox rtxtNotes;
+       // private RichTextBox rtxtNotes;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEqua;
 
     }

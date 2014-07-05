@@ -34,6 +34,7 @@ namespace SoftwareProjekt.UserControls.Workbook
     {
         private Dictionary<string, Object> _state;
         private PictureBox _picBox;
+        private RichTextBox _rtxtNotes;
         /// <summary>
         /// ctor
         /// </summary>
@@ -105,6 +106,14 @@ namespace SoftwareProjekt.UserControls.Workbook
                 _picBox = value;
             }
         }
+
+        public RichTextBox NotesTextBox
+        {
+            set
+            {
+                _rtxtNotes = value;
+            }
+        }
         public Image Screenshot { get; set; }
 
         private void InitializeComponent()
@@ -120,9 +129,15 @@ namespace SoftwareProjekt.UserControls.Workbook
 
         public void Clear()
         {
-            CreationDate = DateTime.Now;
-            Started = false;
+            this.CreationDate = DateTime.Now;
+            this.Started = false;
             _state = new Dictionary<string, object>();
+            if (this.Screenshot != null)
+            {
+                this.Screenshot.Dispose();
+                this.Screenshot = null;
+            }
+            
         }
 
         void WorkBookControl_Paint(object sender, PaintEventArgs e)
@@ -228,6 +243,12 @@ namespace SoftwareProjekt.UserControls.Workbook
 
             _picBox.Image = newImage;
             _picBox.Refresh();
+
+            if (this.State.ContainsKey("Notes"))
+            {
+                _rtxtNotes.Text = (string)this.State["Notes"];
+            }
+
         }
 
     }

@@ -408,13 +408,60 @@ namespace SoftwareProjekt.Classes
 
         }
 
-        public void AddEntries(System.Windows.Forms.Control.ControlCollection collection, PictureBox picbox)
+        public void AddEntries(System.Windows.Forms.Control.ControlCollection collection, PictureBox picbox, RichTextBox notes)
         {
             foreach (WorkbookEntry item in _workbookEntryList)
             {
                 item.PictureBox = picbox;
+                item.NotesTextBox = notes;
             }
             collection.AddRange(_workbookEntryList.ToArray());
+        }
+
+        public void DeleteWorkbook()
+        {
+            //delete Images
+            string dir = Path.Combine(_folderName, _username);
+            if (Directory.Exists(dir))
+            {
+                Directory.Delete(dir, true);
+            }
+            //delete xml
+            string file = Path.Combine(_folderName, _username + ".xml");
+            if (File.Exists(file))
+            {
+                File.Delete(file);
+            }
+            this.Username = null;
+        }
+
+        public void DeleteEntry(Enums.EExercises exerciseID)
+        {
+            foreach (WorkbookEntry item in _workbookEntryList)
+            {
+                if (item.ExerciseID == exerciseID)
+                {
+                    item.Clear();
+                    break;
+                }
+            }
+        }
+
+        public void GetEntryInfo(Enums.EExercises exerciseID, ref Image screenshot, ref string notice)
+        {
+            foreach (WorkbookEntry item in _workbookEntryList)
+            {
+                if (item.ExerciseID == exerciseID)
+                {
+                    screenshot = item.Screenshot;
+                    if (item.State.ContainsKey("Notes"))
+                    {
+                        notice = (string)item.State["Notes"];
+                    }
+                    break;
+                    
+                }
+            }
         }
 
     }
