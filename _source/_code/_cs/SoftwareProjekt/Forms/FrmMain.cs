@@ -22,12 +22,26 @@
 using SoftwareProjekt.UserControls.MindMap;
 using SoftwareProjekt.Classes;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.IO;
 using SoftwareProjekt.Exercises;
 using SoftwareProjekt.Enums;
 using System;
+
+// stuff for pdf export
+using org.pdfclown.documents;
+using files = org.pdfclown.files;
+using org.pdfclown.tools;
+using composition = org.pdfclown.documents.contents.composition;
+using org.pdfclown.documents.contents.fonts;
+using org.pdfclown.documents.interaction;
+using org.pdfclown.documents.interchange.metadata;
+using org.pdfclown.documents.interaction.viewer;
+using xObjects = org.pdfclown.documents.contents.xObjects;
+using entities = org.pdfclown.documents.contents.entities;
+using org.pdfclown.util.math.geom;
 
 namespace SoftwareProjekt.Forms
 {
@@ -63,6 +77,7 @@ namespace SoftwareProjekt.Forms
         private RichTextBox _rtxtNotes;
         private TabPage tabMenu;
         private CtlMindMap ctlMindMap1;
+        private SaveFileDialog sfdialExportPDF;
 
         private Dictionary<TabPage, ToolStripButton[]> _controlDictionary =
     new Dictionary<TabPage, ToolStripButton[]>();
@@ -123,6 +138,7 @@ namespace SoftwareProjekt.Forms
             this.tscbxInput = new System.Windows.Forms.ToolStripComboBox();
             this.tsbutAccept = new System.Windows.Forms.ToolStripButton();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.sfdialExportPDF = new System.Windows.Forms.SaveFileDialog();
             this.tabMainMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabNotebook.SuspendLayout();
@@ -289,7 +305,7 @@ namespace SoftwareProjekt.Forms
             this.tsbutAccept});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1255, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1255, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -299,7 +315,7 @@ namespace SoftwareProjekt.Forms
             this.tsbutNewExercisebook.Image = ((System.Drawing.Image)(resources.GetObject("tsbutNewExercisebook.Image")));
             this.tsbutNewExercisebook.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutNewExercisebook.Name = "tsbutNewExercisebook";
-            this.tsbutNewExercisebook.Size = new System.Drawing.Size(114, 22);
+            this.tsbutNewExercisebook.Size = new System.Drawing.Size(114, 24);
             this.tsbutNewExercisebook.Text = "Arbeitsheft &anlegen";
             this.tsbutNewExercisebook.Click += new System.EventHandler(this.tsbutNewExercisebook_Click);
             // 
@@ -309,7 +325,7 @@ namespace SoftwareProjekt.Forms
             this.tsbutLoadExercisebook.Image = ((System.Drawing.Image)(resources.GetObject("tsbutLoadExercisebook.Image")));
             this.tsbutLoadExercisebook.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutLoadExercisebook.Name = "tsbutLoadExercisebook";
-            this.tsbutLoadExercisebook.Size = new System.Drawing.Size(101, 22);
+            this.tsbutLoadExercisebook.Size = new System.Drawing.Size(101, 24);
             this.tsbutLoadExercisebook.Text = "Arbeitsheft &laden";
             this.tsbutLoadExercisebook.Click += new System.EventHandler(this.tsbutLoadExercisebook_Click);
             // 
@@ -320,7 +336,7 @@ namespace SoftwareProjekt.Forms
             this.tsbutCloseExercisebook.Image = ((System.Drawing.Image)(resources.GetObject("tsbutCloseExercisebook.Image")));
             this.tsbutCloseExercisebook.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutCloseExercisebook.Name = "tsbutCloseExercisebook";
-            this.tsbutCloseExercisebook.Size = new System.Drawing.Size(122, 22);
+            this.tsbutCloseExercisebook.Size = new System.Drawing.Size(122, 24);
             this.tsbutCloseExercisebook.Text = "Arbeitsheft &schließen";
             this.tsbutCloseExercisebook.Click += new System.EventHandler(this.tsbutCloseExercisebook_Click);
             // 
@@ -338,7 +354,7 @@ namespace SoftwareProjekt.Forms
             // tssExerciseBook
             // 
             this.tssExerciseBook.Name = "tssExerciseBook";
-            this.tssExerciseBook.Size = new System.Drawing.Size(6, 25);
+            this.tssExerciseBook.Size = new System.Drawing.Size(6, 27);
             // 
             // tsbutNewExercise
             // 
@@ -347,7 +363,7 @@ namespace SoftwareProjekt.Forms
             this.tsbutNewExercise.Image = ((System.Drawing.Image)(resources.GetObject("tsbutNewExercise.Image")));
             this.tsbutNewExercise.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutNewExercise.Name = "tsbutNewExercise";
-            this.tsbutNewExercise.Size = new System.Drawing.Size(78, 22);
+            this.tsbutNewExercise.Size = new System.Drawing.Size(78, 24);
             this.tsbutNewExercise.Text = "&Neue Übung";
             // 
             // tsbutLoadExercise
@@ -356,9 +372,10 @@ namespace SoftwareProjekt.Forms
             this.tsbutLoadExercise.Image = ((System.Drawing.Image)(resources.GetObject("tsbutLoadExercise.Image")));
             this.tsbutLoadExercise.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutLoadExercise.Name = "tsbutLoadExercise";
-            this.tsbutLoadExercise.Size = new System.Drawing.Size(79, 22);
+            this.tsbutLoadExercise.Size = new System.Drawing.Size(79, 24);
             this.tsbutLoadExercise.Text = "Übung laden";
             this.tsbutLoadExercise.Visible = false;
+            this.tsbutLoadExercise.Click += new System.EventHandler(this.tsbutLoadExercise_Click);
             // 
             // tsbutDeleteExercise
             // 
@@ -366,7 +383,7 @@ namespace SoftwareProjekt.Forms
             this.tsbutDeleteExercise.Image = ((System.Drawing.Image)(resources.GetObject("tsbutDeleteExercise.Image")));
             this.tsbutDeleteExercise.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutDeleteExercise.Name = "tsbutDeleteExercise";
-            this.tsbutDeleteExercise.Size = new System.Drawing.Size(91, 22);
+            this.tsbutDeleteExercise.Size = new System.Drawing.Size(91, 24);
             this.tsbutDeleteExercise.Text = "Übung löschen";
             this.tsbutDeleteExercise.Visible = false;
             this.tsbutDeleteExercise.Click += new System.EventHandler(this.tsbutDeleteExercise_Click);
@@ -377,34 +394,34 @@ namespace SoftwareProjekt.Forms
             this.tsbutNewExerciseType.Image = ((System.Drawing.Image)(resources.GetObject("tsbutNewExerciseType.Image")));
             this.tsbutNewExerciseType.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutNewExerciseType.Name = "tsbutNewExerciseType";
-            this.tsbutNewExerciseType.Size = new System.Drawing.Size(84, 22);
+            this.tsbutNewExerciseType.Size = new System.Drawing.Size(84, 24);
             this.tsbutNewExerciseType.Text = "Neues Thema";
             this.tsbutNewExerciseType.Visible = false;
             // 
             // tssInstruction
             // 
             this.tssInstruction.Name = "tssInstruction";
-            this.tssInstruction.Size = new System.Drawing.Size(6, 25);
+            this.tssInstruction.Size = new System.Drawing.Size(6, 27);
             // 
             // tslblInstructions
             // 
             this.tslblInstructions.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tslblInstructions.ForeColor = System.Drawing.Color.OrangeRed;
             this.tslblInstructions.Name = "tslblInstructions";
-            this.tslblInstructions.Size = new System.Drawing.Size(254, 22);
+            this.tslblInstructions.Size = new System.Drawing.Size(254, 24);
             this.tslblInstructions.Text = "Bitte Arbeitsheft anlegen oder laden!";
             // 
             // tstbxInput
             // 
             this.tstbxInput.Name = "tstbxInput";
-            this.tstbxInput.Size = new System.Drawing.Size(100, 25);
+            this.tstbxInput.Size = new System.Drawing.Size(100, 27);
             this.tstbxInput.Visible = false;
             // 
             // tscbxInput
             // 
             this.tscbxInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tscbxInput.Name = "tscbxInput";
-            this.tscbxInput.Size = new System.Drawing.Size(121, 25);
+            this.tscbxInput.Size = new System.Drawing.Size(121, 23);
             this.tscbxInput.Visible = false;
             // 
             // tsbutAccept
@@ -413,10 +430,14 @@ namespace SoftwareProjekt.Forms
             this.tsbutAccept.Image = ((System.Drawing.Image)(resources.GetObject("tsbutAccept.Image")));
             this.tsbutAccept.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbutAccept.Name = "tsbutAccept";
-            this.tsbutAccept.Size = new System.Drawing.Size(27, 22);
+            this.tsbutAccept.Size = new System.Drawing.Size(27, 19);
             this.tsbutAccept.Text = "OK";
             this.tsbutAccept.Visible = false;
             this.tsbutAccept.Click += new System.EventHandler(this.tsbutAccept_Click);
+            // 
+            // sfdialExportPDF
+            // 
+            this.sfdialExportPDF.Filter = "\"PDF files (*.pdf)|*.pdf";
             // 
             // FrmMain
             // 
@@ -641,14 +662,6 @@ namespace SoftwareProjekt.Forms
 
         }
 
-        private void tsbutExport_Click(object sender, EventArgs e)
-        {
-            Image img = null;
-            string notes = null;
-            //TODO: correct exercise
-            Workbook.Instance.GetEntryInfo(Enums.EExercises.DrehungLinAbbUmUrsprung, ref img, ref notes);
-        }
-
         private void tsbutDeleteExercise_Click(object sender, EventArgs e)
         {
             //TODO: correct exercise
@@ -656,24 +669,249 @@ namespace SoftwareProjekt.Forms
             //Workbook.Instance.DeleteWorkbook();
         }
 
-        //private void tsbutExport_Click(object sender, EventArgs e)
-        //{
-            
+        private void tsbutExport_Click(object sender, EventArgs e)
+        {
+            // 1. Opening the PDF file...
+            files.File file = new files.File();
 
-        //    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-        //    saveFileDialog1.Filter = "PDF files (*.pdf)|*.pdf";
-        //    saveFileDialog1.Title = "Save an PDF File";
-        //    saveFileDialog1.ShowDialog();
+            // 2. Get its corresponding document!
+            /* NOTE: a Document object is the high-level (semantic) representation of a PDF file. */
+            Document document = file.Document;
 
-        //    if (saveFileDialog1.FileName != "")
-        //    {
-        //        System.IO.FileStream fs = (System.IO.FileStream)saveFileDialog1.OpenFile();
+            // 3. Insert the contents into the document!
+            uint pageNum = 1;
+            string[] exerciseImages = GetImagePathes();
+            foreach (string exerciseImage in exerciseImages)
+            {
+                PopulateWithExerciseImage(document, exerciseImage, pageNum);
+                pageNum += 1;
+            }
+            //Populate(document);
 
-        //        this.tsbutExport.Image.Save(fs, System.Drawing.Imaging.ImageFormat.Png);
-                
-        //    }
-        //}
+            // 4. Serialize the PDF file using a specified path
+            string outputPath = PromptFileChoice();
+            string text = Serialize(file, Workbook.Instance.Username, outputPath);
+        }
 
-       
+        private void PopulateWithExerciseImage(Document document, string exerciseImage, uint pageNum)
+        //private void Populate(Document document)
+        {
+            // 1. Add the page to the document!
+            Page page = new Page(document,
+                PageFormat.GetSize(
+                PageFormat.SizeEnum.A4,
+                PageFormat.OrientationEnum.Landscape)
+            ); // Instantiates the page inside the document context.
+            document.Pages.Add(page); // Puts the page in the pages collection.
+
+            // 2. Create a content composer for the page!
+
+            composition.PrimitiveComposer composer = new composition.PrimitiveComposer(page);
+            //composition.BlockComposer composer = new composition.BlockComposer(page);
+
+            // 3. Inserting contents...
+            // Set the font to use!
+            var defaultFont = new StandardType1Font(
+                document,
+                StandardType1Font.FamilyEnum.Courier,
+                true,
+                false
+                );
+            composer.SetFont(defaultFont, 14);
+            composer.ShowText(
+              "Sisyphus, Arbeitsbuch: " + Workbook.Instance.Username,
+              new PointF(32, 48)
+              );
+
+            // -> No support of bmp nor png format!
+            try
+            {
+                System.Console.WriteLine(exerciseImage);
+
+                exerciseImage = GetJpeg(exerciseImage, pageNum);
+                entities::Image image = entities::Image.Get(exerciseImage);
+                xObjects::XObject imageXObject = image.ToXObject(document);
+                // Show the image!
+                composer.ShowXObject(
+                  imageXObject,
+                  new PointF(44, 78),
+                  GeomUtils.Scale(imageXObject.Size, new SizeF(image.Width / 2, 0))
+                );
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Reading Path failed: " + e.Message);
+                Console.WriteLine(e.StackTrace);
+            }
+            composer.SetFont(
+              new StandardType1Font(
+                document,
+                StandardType1Font.FamilyEnum.Courier,
+                true,
+                false
+                ),
+              12
+              );
+            // page number
+            composer.SetFont(defaultFont,11);
+            composer.ShowText(pageNum.ToString(), 
+                new PointF(page.Size.Width / 2 - 20, page.Size.Height - 50));
+            // 4. Flush the contents into the page!
+            composer.Flush();
+        }
+
+        // required for export to PDF!
+        private String GetJpeg(String inputImagePath, uint count)
+        {
+            var encoderParameters = new EncoderParameters(1);
+            Image img = Image.FromFile(inputImagePath);
+            string sepChar = System.IO.Path.DirectorySeparatorChar.ToString();
+            string tmpPath = Path.GetTempPath() + sepChar + count.ToString() + ".jpg";
+            encoderParameters.Param[0] = new EncoderParameter(Encoder.Quality, 72L);
+            img.Save(tmpPath, GetEncoder(ImageFormat.Jpeg), encoderParameters);
+            return tmpPath;
+        }
+
+        private ImageCodecInfo GetEncoder(ImageFormat format)
+        {
+
+            ImageCodecInfo[] codecs = ImageCodecInfo.GetImageDecoders();
+
+            foreach (ImageCodecInfo codec in codecs)
+            {
+                if (codec.FormatID == format.Guid)
+                {
+                    return codec;
+                }
+            }
+            return null;
+        }
+
+        private String[] GetImagePathes()
+        {
+            string currentDirectory = System.IO.Directory.GetCurrentDirectory();
+            string sepChar = System.IO.Path.DirectorySeparatorChar.ToString();
+            string bookPath = currentDirectory + sepChar + "Workbooks" + sepChar + Workbook.Instance.Username;
+            string[] availableImages = Directory.GetFiles(bookPath, "*.bmp", SearchOption.TopDirectoryOnly);
+            return availableImages;
+        }
+
+        private string Serialize(files::File file, string title, string path)
+        {
+            ApplyDocumentSettings(file.Document, title);
+
+            string outputFilePath = path;
+
+            try
+            { file.Save(outputFilePath, files::SerializationModeEnum.Standard); }
+            catch (Exception e)
+            {
+                Console.WriteLine("File writing failed: " + e.Message);
+                Console.WriteLine(e.StackTrace);
+            }
+            Console.WriteLine("\nOutput: " + outputFilePath);
+
+            return outputFilePath;
+
+        }
+
+        private void ApplyDocumentSettings(Document document, string title)
+        {
+            if (title == null)
+                return;
+
+            // Viewer preferences.
+            ViewerPreferences view = new ViewerPreferences(document); // Instantiates viewer preferences inside the document context.
+            document.ViewerPreferences = view; // Assigns the viewer preferences object to the viewer preferences function.
+            view.DisplayDocTitle = true;
+
+            // Document metadata.
+            Information info = document.Information;
+            info.Clear();
+            info.CreationDate = DateTime.Now;
+            info.Creator = GetType().FullName;
+            info.Title = "Sisyphus, Arbeitsbuch: " + title;
+        }
+
+        private string PromptFileChoice()
+        {
+            DialogResult pdfPath = sfdialExportPDF.ShowDialog();
+            sfdialExportPDF.Title = "Wähle einen Pfad mit Namen oder eine PDF Datei";
+            if (pdfPath == DialogResult.OK)
+            {
+                tslblInstructions.Text = sfdialExportPDF.FileName + " exportiert";
+                System.Console.WriteLine(sfdialExportPDF.FileName);
+                return sfdialExportPDF.FileName;
+            }
+            else return "Ausgabe";
+        }
+
+        private void tsbutLoadExercise_Click(object sender, EventArgs e)
+        {
+            //Image myImg = Image.FromFile("./test1");
+            //string directory = Workbook.Instance.Username;
+            Bitmap displayedBitmap = (Bitmap)picWorkbook.Image;
+
+            try
+            {
+                string[] availableImages = GetImagePathes();
+                foreach (string imgString in availableImages)
+                {
+                    Size sSize = picWorkbook.Image.Size;
+                    Bitmap exerciseImage = (Bitmap)resizeImage(Image.FromFile(imgString), sSize);
+
+                    if (compare(exerciseImage, displayedBitmap))
+                    {
+                        // open the exercise
+                        char[] extension = ".bmp".ToCharArray();
+                        String exercise = Path.GetFileName(imgString).TrimEnd(extension);
+                        this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(Enums.EClickedButton.StartExercise, (EExercises)Enum.Parse(typeof(EExercises), exercise)));
+                    }
+                }
+            }
+            catch (Exception e2)
+            {
+                Console.WriteLine("Reading Path failed: " + e2.Message);
+                Console.WriteLine(e2.StackTrace);
+            }
+        }
+
+        private bool compare(Bitmap bmp1, Bitmap bmp2)
+        {
+            bool equals = true;
+            bool flag = true;  //Inner loop isn't broken
+
+            //Test to see if we have the same size of image
+            if (bmp1.Size == bmp2.Size)
+            {
+                for (int x = 0; x < bmp1.Width; ++x)
+                {   // comparing through the whole height, would take too long and is not required
+                    for (int y = 0; y < 60; ++y)
+                    {
+                        if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
+                        {
+                            equals = false;
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (!flag)
+                    {
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                equals = false;
+            }
+            return equals;
+        }
+
+        public static Image resizeImage(Image imgToResize, Size size)
+        {
+            return (Image)(new Bitmap(imgToResize, size));
+        }     
     }
 }
