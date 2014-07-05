@@ -78,7 +78,7 @@
             this.butFx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butFx.Name = "butFx";
             this.butFx.Size = new System.Drawing.Size(118, 34);
-            this.butFx.TabIndex = 4;
+            this.butFx.TabIndex = 7;
             this.butFx.Text = "&Berechne f(x)";
             this.butFx.UseVisualStyleBackColor = true;
             this.butFx.Click += new System.EventHandler(this.butFx_Click);
@@ -93,26 +93,26 @@
             this.grpDataInput1.Name = "grpDataInput1";
             this.grpDataInput1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInput1.Size = new System.Drawing.Size(406, 138);
-            this.grpDataInput1.TabIndex = 35;
+            this.grpDataInput1.TabIndex = 6;
             this.grpDataInput1.TabStop = false;
             this.grpDataInput1.Text = "Dateneingabe";
             // 
             // ctlVectorInputX
             // 
-            this.ctlVectorInputX.Text = "Vektor x";
+            this.ctlVectorInputX.Controlname = "Vector Input";
             this.ctlVectorInputX.Location = new System.Drawing.Point(8, 29);
             this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInputX.Name = "ctlVectorInputX";
             this.ctlVectorInputX.Size = new System.Drawing.Size(181, 94);
-            this.ctlVectorInputX.TabIndex = 38;
+            this.ctlVectorInputX.TabIndex = 1;
             vector1.X1 = float.NaN;
             vector1.X2 = float.NaN;
             this.ctlVectorInputX.Vector = vector1;
             // 
             // ctlMatrixInputM1
             // 
-            this.ctlMatrixInputM1.Text = "Matrix M1";
+            this.ctlMatrixInputM1.Controlname = "Matrix Input";
             this.ctlMatrixInputM1.Location = new System.Drawing.Point(199, 29);
             this.ctlMatrixInputM1.Margin = new System.Windows.Forms.Padding(5);
             matrix1.X11 = float.NaN;
@@ -123,7 +123,7 @@
             this.ctlMatrixInputM1.MinimumSize = new System.Drawing.Size(131, 94);
             this.ctlMatrixInputM1.Name = "ctlMatrixInputM1";
             this.ctlMatrixInputM1.Size = new System.Drawing.Size(190, 104);
-            this.ctlMatrixInputM1.TabIndex = 37;
+            this.ctlMatrixInputM1.TabIndex = 1;
             // 
             // butDeterminante1
             // 
@@ -145,7 +145,7 @@
             this.cosInput.Margin = new System.Windows.Forms.Padding(4);
             this.cosInput.Name = "cosInput";
             this.cosInput.Size = new System.Drawing.Size(483, 373);
-            this.cosInput.TabIndex = 47;
+            this.cosInput.TabIndex = 2;
             // 
             // cosOutput1
             // 
@@ -155,7 +155,7 @@
             this.cosOutput1.Margin = new System.Windows.Forms.Padding(4);
             this.cosOutput1.Name = "cosOutput1";
             this.cosOutput1.Size = new System.Drawing.Size(475, 409);
-            this.cosOutput1.TabIndex = 48;
+            this.cosOutput1.TabIndex = 4;
             // 
             // cosOutput2
             // 
@@ -186,7 +186,7 @@
             this.lblHeader.Location = new System.Drawing.Point(839, 9);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(636, 29);
-            this.lblHeader.TabIndex = 52;
+            this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Thema: Hintereinanderausführung linearer Abbildungen";
             // 
             // txtVectorGx2
@@ -206,13 +206,13 @@
             this.grpDataInput2.Name = "grpDataInput2";
             this.grpDataInput2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInput2.Size = new System.Drawing.Size(233, 153);
-            this.grpDataInput2.TabIndex = 58;
+            this.grpDataInput2.TabIndex = 9;
             this.grpDataInput2.TabStop = false;
             this.grpDataInput2.Text = "Dateneingabe";
             // 
             // ctlMatrixInputM2
             // 
-            this.ctlMatrixInputM2.Text = "Matrix M2";
+            this.ctlMatrixInputM2.Controlname = "Matrix Input";
             this.ctlMatrixInputM2.Location = new System.Drawing.Point(8, 28);
             this.ctlMatrixInputM2.Margin = new System.Windows.Forms.Padding(5);
             matrix2.X11 = float.NaN;
@@ -223,7 +223,7 @@
             this.ctlMatrixInputM2.MinimumSize = new System.Drawing.Size(131, 94);
             this.ctlMatrixInputM2.Name = "ctlMatrixInputM2";
             this.ctlMatrixInputM2.Size = new System.Drawing.Size(205, 110);
-            this.ctlMatrixInputM2.TabIndex = 37;
+            this.ctlMatrixInputM2.TabIndex = 0;
             // 
             // butGx
             // 
@@ -233,7 +233,7 @@
             this.butGx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butGx.Name = "butGx";
             this.butGx.Size = new System.Drawing.Size(121, 34);
-            this.butGx.TabIndex = 7;
+            this.butGx.TabIndex = 10;
             this.butGx.Text = "&Berechne g(x)";
             this.butGx.UseVisualStyleBackColor = true;
             this.butGx.Click += new System.EventHandler(this.butGx_Click);
@@ -272,13 +272,13 @@
             this.grpDataOutput1.Name = "grpDataOutput1";
             this.grpDataOutput1.Padding = new System.Windows.Forms.Padding(4);
             this.grpDataOutput1.Size = new System.Drawing.Size(211, 137);
-            this.grpDataOutput1.TabIndex = 61;
+            this.grpDataOutput1.TabIndex = 8;
             this.grpDataOutput1.TabStop = false;
             this.grpDataOutput1.Text = "Zwischenergebnis ";
             // 
             // ctlVectorOutputX1
             // 
-            this.ctlVectorOutputX1.Text = "Ergebnisvektor";
+            this.ctlVectorOutputX1.Controlname = "Vector Input";
             this.ctlVectorOutputX1.Location = new System.Drawing.Point(8, 21);
             this.ctlVectorOutputX1.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorOutputX1.MinimumSize = new System.Drawing.Size(136, 94);
@@ -298,13 +298,13 @@
             this.grpDataOutput2.Name = "grpDataOutput2";
             this.grpDataOutput2.Padding = new System.Windows.Forms.Padding(4);
             this.grpDataOutput2.Size = new System.Drawing.Size(189, 115);
-            this.grpDataOutput2.TabIndex = 62;
+            this.grpDataOutput2.TabIndex = 12;
             this.grpDataOutput2.TabStop = false;
             this.grpDataOutput2.Text = "Endergebnis";
             // 
             // ctlVectorOutputX2
             // 
-            this.ctlVectorOutputX2.Text = "Ergenisvektor";
+            this.ctlVectorOutputX2.Controlname = "Vector Input";
             this.ctlVectorOutputX2.Location = new System.Drawing.Point(8, 21);
             this.ctlVectorOutputX2.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorOutputX2.MinimumSize = new System.Drawing.Size(136, 94);
@@ -336,7 +336,7 @@
             this.lblNote.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNote.Name = "lblNote";
             this.lblNote.Size = new System.Drawing.Size(71, 20);
-            this.lblNote.TabIndex = 66;
+            this.lblNote.TabIndex = 13;
             this.lblNote.Text = "Notizen:";
             // 
             // rtxtNotes
@@ -346,7 +346,7 @@
             this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtNotes.Name = "rtxtNotes";
             this.rtxtNotes.Size = new System.Drawing.Size(636, 152);
-            this.rtxtNotes.TabIndex = 65;
+            this.rtxtNotes.TabIndex = 14;
             this.rtxtNotes.Text = "";
             // 
             // ctlMathEquTotal
@@ -361,7 +361,7 @@
             this.ctlMathEquTotal.Margin = new System.Windows.Forms.Padding(4);
             this.ctlMathEquTotal.Name = "ctlMathEquTotal";
             this.ctlMathEquTotal.Size = new System.Drawing.Size(256, 115);
-            this.ctlMathEquTotal.TabIndex = 67;
+            this.ctlMathEquTotal.TabIndex = 1;
             // 
             // picArrowLeft
             // 
@@ -399,7 +399,7 @@
             this.ctlMathEquLeft.Margin = new System.Windows.Forms.Padding(4);
             this.ctlMathEquLeft.Name = "ctlMathEquLeft";
             this.ctlMathEquLeft.Size = new System.Drawing.Size(211, 77);
-            this.ctlMathEquLeft.TabIndex = 70;
+            this.ctlMathEquLeft.TabIndex = 3;
             // 
             // ctlMathEquRight
             // 
@@ -413,13 +413,13 @@
             this.ctlMathEquRight.Margin = new System.Windows.Forms.Padding(4);
             this.ctlMathEquRight.Name = "ctlMathEquRight";
             this.ctlMathEquRight.Size = new System.Drawing.Size(187, 65);
-            this.ctlMathEquRight.TabIndex = 71;
+            this.ctlMathEquRight.TabIndex = 5;
             // 
             // FrmHinterLinAbb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2276, 1182);
+            this.ClientSize = new System.Drawing.Size(1914, 1045);
             this.Controls.Add(this.ctlMathEquRight);
             this.Controls.Add(this.ctlMathEquLeft);
             this.Controls.Add(this.picArrowRight);

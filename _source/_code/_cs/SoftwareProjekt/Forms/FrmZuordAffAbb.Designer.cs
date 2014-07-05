@@ -78,45 +78,45 @@
             this.grpDataInput1.Name = "grpDataInput1";
             this.grpDataInput1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInput1.Size = new System.Drawing.Size(493, 127);
-            this.grpDataInput1.TabIndex = 15;
+            this.grpDataInput1.TabIndex = 8;
             this.grpDataInput1.TabStop = false;
             this.grpDataInput1.Text = "Dateneingabe";
             // 
             // ctlVectorInputC
             // 
-            this.ctlVectorInputC.Text = "Vektor c";
+            this.ctlVectorInputC.Controlname = "Vector Input";
             this.ctlVectorInputC.Location = new System.Drawing.Point(329, 21);
             this.ctlVectorInputC.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputC.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInputC.Name = "ctlVectorInputC";
             this.ctlVectorInputC.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInputC.TabIndex = 3;
+            this.ctlVectorInputC.TabIndex = 2;
             vector1.X1 = float.NaN;
             vector1.X2 = float.NaN;
             this.ctlVectorInputC.Vector = vector1;
             // 
             // ctlVectorInputB
             // 
-            this.ctlVectorInputB.Text = "Vektor b";
+            this.ctlVectorInputB.Controlname = "Vector Input";
             this.ctlVectorInputB.Location = new System.Drawing.Point(168, 20);
             this.ctlVectorInputB.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputB.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInputB.Name = "ctlVectorInputB";
             this.ctlVectorInputB.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInputB.TabIndex = 2;
+            this.ctlVectorInputB.TabIndex = 1;
             vector2.X1 = float.NaN;
             vector2.X2 = float.NaN;
             this.ctlVectorInputB.Vector = vector2;
             // 
             // ctlVectorInputA
             // 
-            this.ctlVectorInputA.Text = "Vektor a";
+            this.ctlVectorInputA.Controlname = "Vector Input";
             this.ctlVectorInputA.Location = new System.Drawing.Point(7, 21);
             this.ctlVectorInputA.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputA.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInputA.Name = "ctlVectorInputA";
             this.ctlVectorInputA.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInputA.TabIndex = 1;
+            this.ctlVectorInputA.TabIndex = 0;
             vector3.X1 = float.NaN;
             vector3.X2 = float.NaN;
             this.ctlVectorInputA.Vector = vector3;
@@ -131,45 +131,45 @@
             this.grpDataInput2.Name = "grpDataInput2";
             this.grpDataInput2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInput2.Size = new System.Drawing.Size(498, 132);
-            this.grpDataInput2.TabIndex = 16;
+            this.grpDataInput2.TabIndex = 10;
             this.grpDataInput2.TabStop = false;
             this.grpDataInput2.Text = "Dateneingabe";
             // 
             // ctlVectorInputC2
             // 
-            this.ctlVectorInputC2.Text = "Vektor c\'";
+            this.ctlVectorInputC2.Controlname = "Vector Input";
             this.ctlVectorInputC2.Location = new System.Drawing.Point(329, 21);
             this.ctlVectorInputC2.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputC2.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInputC2.Name = "ctlVectorInputC2";
             this.ctlVectorInputC2.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInputC2.TabIndex = 8;
+            this.ctlVectorInputC2.TabIndex = 2;
             vector4.X1 = float.NaN;
             vector4.X2 = float.NaN;
             this.ctlVectorInputC2.Vector = vector4;
             // 
             // ctlVectorInputB2
             // 
-            this.ctlVectorInputB2.Text = "Vektor b\'";
+            this.ctlVectorInputB2.Controlname = "Vector Input";
             this.ctlVectorInputB2.Location = new System.Drawing.Point(168, 21);
             this.ctlVectorInputB2.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputB2.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInputB2.Name = "ctlVectorInputB2";
             this.ctlVectorInputB2.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInputB2.TabIndex = 7;
+            this.ctlVectorInputB2.TabIndex = 1;
             vector5.X1 = float.NaN;
             vector5.X2 = float.NaN;
             this.ctlVectorInputB2.Vector = vector5;
             // 
             // ctlVectorInputA2
             // 
-            this.ctlVectorInputA2.Text = "Vektor a\'";
+            this.ctlVectorInputA2.Controlname = "Vector Input";
             this.ctlVectorInputA2.Location = new System.Drawing.Point(7, 21);
             this.ctlVectorInputA2.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputA2.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInputA2.Name = "ctlVectorInputA2";
             this.ctlVectorInputA2.Size = new System.Drawing.Size(153, 102);
-            this.ctlVectorInputA2.TabIndex = 6;
+            this.ctlVectorInputA2.TabIndex = 0;
             vector6.X1 = float.NaN;
             vector6.X2 = float.NaN;
             this.ctlVectorInputA2.Vector = vector6;
@@ -183,7 +183,7 @@
             this.butFx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butFx.Name = "butFx";
             this.butFx.Size = new System.Drawing.Size(277, 35);
-            this.butFx.TabIndex = 10;
+            this.butFx.TabIndex = 12;
             this.butFx.Text = "Berechne Gesamtergebnis";
             this.butFx.UseVisualStyleBackColor = false;
             this.butFx.Click += new System.EventHandler(this.butFx_Click);
@@ -195,7 +195,7 @@
             this.cosInputABC.Margin = new System.Windows.Forms.Padding(4);
             this.cosInputABC.Name = "cosInputABC";
             this.cosInputABC.Size = new System.Drawing.Size(508, 464);
-            this.cosInputABC.TabIndex = 25;
+            this.cosInputABC.TabIndex = 1;
             // 
             // cosOutput
             // 
@@ -204,7 +204,7 @@
             this.cosOutput.Margin = new System.Windows.Forms.Padding(4);
             this.cosOutput.Name = "cosOutput";
             this.cosOutput.Size = new System.Drawing.Size(508, 464);
-            this.cosOutput.TabIndex = 26;
+            this.cosOutput.TabIndex = 5;
             // 
             // lblNotes
             // 
@@ -224,7 +224,7 @@
             this.lblHeader.Location = new System.Drawing.Point(801, 9);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(671, 29);
-            this.lblHeader.TabIndex = 40;
+            this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Thema: Zuordnungsvorschrift affine Abbildungen studieren";
             // 
             // butFunction1X
@@ -234,7 +234,7 @@
             this.butFunction1X.Location = new System.Drawing.Point(652, 483);
             this.butFunction1X.Name = "butFunction1X";
             this.butFunction1X.Size = new System.Drawing.Size(109, 30);
-            this.butFunction1X.TabIndex = 4;
+            this.butFunction1X.TabIndex = 3;
             this.butFunction1X.Text = "Berechnen";
             this.butFunction1X.UseVisualStyleBackColor = true;
             this.butFunction1X.Click += new System.EventHandler(this.butFunction1X_Click);
@@ -246,7 +246,7 @@
             this.butInverseFunction1X.Location = new System.Drawing.Point(609, 1009);
             this.butInverseFunction1X.Name = "butInverseFunction1X";
             this.butInverseFunction1X.Size = new System.Drawing.Size(169, 35);
-            this.butInverseFunction1X.TabIndex = 5;
+            this.butInverseFunction1X.TabIndex = 11;
             this.butInverseFunction1X.Text = "Berechne Inverse";
             this.butInverseFunction1X.UseVisualStyleBackColor = true;
             this.butInverseFunction1X.Click += new System.EventHandler(this.butInverseFunction1X_Click);
@@ -258,7 +258,7 @@
             this.butFunction2X.Location = new System.Drawing.Point(1529, 1009);
             this.butFunction2X.Name = "butFunction2X";
             this.butFunction2X.Size = new System.Drawing.Size(109, 30);
-            this.butFunction2X.TabIndex = 9;
+            this.butFunction2X.TabIndex = 13;
             this.butFunction2X.Text = "Berechnen";
             this.butFunction2X.UseVisualStyleBackColor = true;
             this.butFunction2X.Click += new System.EventHandler(this.butFunction2X_Click);
@@ -270,7 +270,7 @@
             this.cosInputA2B2C2.Margin = new System.Windows.Forms.Padding(4);
             this.cosInputA2B2C2.Name = "cosInputA2B2C2";
             this.cosInputA2B2C2.Size = new System.Drawing.Size(508, 464);
-            this.cosInputA2B2C2.TabIndex = 27;
+            this.cosInputA2B2C2.TabIndex = 7;
             // 
             // picArrowToLeft
             // 
@@ -334,7 +334,7 @@
             this.ctlMathEquaToLeft.Margin = new System.Windows.Forms.Padding(4);
             this.ctlMathEquaToLeft.Name = "ctlMathEquaToLeft";
             this.ctlMathEquaToLeft.Size = new System.Drawing.Size(163, 82);
-            this.ctlMathEquaToLeft.TabIndex = 48;
+            this.ctlMathEquaToLeft.TabIndex = 2;
             // 
             // ctlMathEquaToRightMiddle
             // 
@@ -348,7 +348,7 @@
             this.ctlMathEquaToRightMiddle.Margin = new System.Windows.Forms.Padding(4);
             this.ctlMathEquaToRightMiddle.Name = "ctlMathEquaToRightMiddle";
             this.ctlMathEquaToRightMiddle.Size = new System.Drawing.Size(144, 65);
-            this.ctlMathEquaToRightMiddle.TabIndex = 49;
+            this.ctlMathEquaToRightMiddle.TabIndex = 4;
             // 
             // ctlFormularDraw1
             // 
@@ -362,7 +362,7 @@
             this.ctlFormularDraw1.Margin = new System.Windows.Forms.Padding(4);
             this.ctlFormularDraw1.Name = "ctlFormularDraw1";
             this.ctlFormularDraw1.Size = new System.Drawing.Size(144, 65);
-            this.ctlFormularDraw1.TabIndex = 50;
+            this.ctlFormularDraw1.TabIndex = 9;
             // 
             // ctlMathEquaToRightRight
             // 
@@ -376,13 +376,13 @@
             this.ctlMathEquaToRightRight.Margin = new System.Windows.Forms.Padding(4);
             this.ctlMathEquaToRightRight.Name = "ctlMathEquaToRightRight";
             this.ctlMathEquaToRightRight.Size = new System.Drawing.Size(144, 65);
-            this.ctlMathEquaToRightRight.TabIndex = 51;
+            this.ctlMathEquaToRightRight.TabIndex = 6;
             // 
             // FrmZuordAffAbb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2314, 1312);
+            this.ClientSize = new System.Drawing.Size(1914, 1045);
             this.Controls.Add(this.ctlMathEquaToRightRight);
             this.Controls.Add(this.ctlFormularDraw1);
             this.Controls.Add(this.ctlMathEquaToRightMiddle);

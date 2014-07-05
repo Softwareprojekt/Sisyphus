@@ -57,13 +57,13 @@
             this.grpDataInput.Name = "grpDataInput";
             this.grpDataInput.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInput.Size = new System.Drawing.Size(349, 263);
-            this.grpDataInput.TabIndex = 17;
+            this.grpDataInput.TabIndex = 4;
             this.grpDataInput.TabStop = false;
             this.grpDataInput.Text = "Dateneingabe";
             // 
             // ctlMaInScaleMat
             // 
-            this.ctlMaInScaleMat.Text = "Matrix M";
+            this.ctlMaInScaleMat.Controlname = "Matrix Input";
             this.ctlMaInScaleMat.Location = new System.Drawing.Point(71, 143);
             this.ctlMaInScaleMat.Margin = new System.Windows.Forms.Padding(5);
             matrix1.X11 = float.NaN;
@@ -74,13 +74,13 @@
             this.ctlMaInScaleMat.MinimumSize = new System.Drawing.Size(131, 94);
             this.ctlMaInScaleMat.Name = "ctlMaInScaleMat";
             this.ctlMaInScaleMat.Size = new System.Drawing.Size(192, 110);
-            this.ctlMaInScaleMat.TabIndex = 3;
+            this.ctlMaInScaleMat.TabIndex = 2;
             // 
             // ctlVecInY
             // 
             this.ctlVecInY.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.ctlVecInY.Text = "Vektor y";
+            this.ctlVecInY.Controlname = "Vector Input";
             this.ctlVecInY.Location = new System.Drawing.Point(179, 31);
             this.ctlVecInY.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVecInY.MinimumSize = new System.Drawing.Size(136, 94);
@@ -93,7 +93,7 @@
             // 
             // ctlVecInX
             // 
-            this.ctlVecInX.Text = "Vektor x";
+            this.ctlVecInX.Controlname = "Vector Input";
             this.ctlVecInX.Location = new System.Drawing.Point(8, 31);
             this.ctlVecInX.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVecInX.MinimumSize = new System.Drawing.Size(136, 94);
@@ -127,7 +127,7 @@
             this.cosInput.Margin = new System.Windows.Forms.Padding(4);
             this.cosInput.Name = "cosInput";
             this.cosInput.Size = new System.Drawing.Size(537, 373);
-            this.cosInput.TabIndex = 28;
+            this.cosInput.TabIndex = 1;
             // 
             // cosResult
             // 
@@ -138,7 +138,7 @@
             this.cosResult.Margin = new System.Windows.Forms.Padding(4);
             this.cosResult.Name = "cosResult";
             this.cosResult.Size = new System.Drawing.Size(543, 373);
-            this.cosResult.TabIndex = 29;
+            this.cosResult.TabIndex = 2;
             // 
             // lblNotes
             // 
@@ -149,7 +149,7 @@
             this.lblNotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(71, 20);
-            this.lblNotes.TabIndex = 31;
+            this.lblNotes.TabIndex = 6;
             this.lblNotes.Text = "Notizen:";
             // 
             // lblHeader
@@ -161,7 +161,7 @@
             this.lblHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(733, 29);
-            this.lblHeader.TabIndex = 32;
+            this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Thema:  Jede lin. Abb. verträgt sich mit Summe beliebiger Vektoren";
             // 
             // picBoxArrow
@@ -183,7 +183,7 @@
             this.rtxtNotes.Location = new System.Drawing.Point(657, 839);
             this.rtxtNotes.Name = "rtxtNotes";
             this.rtxtNotes.Size = new System.Drawing.Size(482, 181);
-            this.rtxtNotes.TabIndex = 52;
+            this.rtxtNotes.TabIndex = 7;
             this.rtxtNotes.Text = "";
             // 
             // ctlMathEqu
@@ -197,13 +197,13 @@
             this.ctlMathEqu.Margin = new System.Windows.Forms.Padding(4);
             this.ctlMathEqu.Name = "ctlMathEqu";
             this.ctlMathEqu.Size = new System.Drawing.Size(191, 115);
-            this.ctlMathEqu.TabIndex = 53;
+            this.ctlMathEqu.TabIndex = 3;
             // 
             // FrmLinAbbSumBelVek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1791, 1046);
+            this.ClientSize = new System.Drawing.Size(1791, 1045);
             this.Controls.Add(this.ctlMathEqu);
             this.Controls.Add(this.rtxtNotes);
             this.Controls.Add(this.picBoxArrow);

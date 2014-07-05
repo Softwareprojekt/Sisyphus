@@ -84,7 +84,7 @@
             this.cosOutput.Margin = new System.Windows.Forms.Padding(4);
             this.cosOutput.Name = "cosOutput";
             this.cosOutput.Size = new System.Drawing.Size(574, 456);
-            this.cosOutput.TabIndex = 2;
+            this.cosOutput.TabIndex = 3;
             // 
             // lblNotes
             // 
@@ -95,7 +95,7 @@
             this.lblNotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(71, 20);
-            this.lblNotes.TabIndex = 6;
+            this.lblNotes.TabIndex = 9;
             this.lblNotes.Text = "Notizen:";
             // 
             // grpDataInput
@@ -110,7 +110,7 @@
             this.grpDataInput.Name = "grpDataInput";
             this.grpDataInput.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInput.Size = new System.Drawing.Size(356, 235);
-            this.grpDataInput.TabIndex = 42;
+            this.grpDataInput.TabIndex = 4;
             this.grpDataInput.TabStop = false;
             this.grpDataInput.Text = "Dateneingabe";
             // 
@@ -122,7 +122,7 @@
             this.txtDeterminante.Name = "txtDeterminante";
             this.txtDeterminante.ReadOnly = true;
             this.txtDeterminante.Size = new System.Drawing.Size(62, 22);
-            this.txtDeterminante.TabIndex = 66;
+            this.txtDeterminante.TabIndex = 3;
             // 
             // butDeterminante
             // 
@@ -130,14 +130,14 @@
             this.butDeterminante.Location = new System.Drawing.Point(16, 172);
             this.butDeterminante.Name = "butDeterminante";
             this.butDeterminante.Size = new System.Drawing.Size(114, 41);
-            this.butDeterminante.TabIndex = 3;
+            this.butDeterminante.TabIndex = 2;
             this.butDeterminante.Text = "Determinante";
             this.butDeterminante.UseVisualStyleBackColor = true;
             this.butDeterminante.Click += new System.EventHandler(this.butDeterminante_Click);
             // 
             // ctlMatrixInput
             // 
-            this.ctlMatrixInput.Text = "Matrix M";
+            this.ctlMatrixInput.Controlname = "Matrix Input";
             this.ctlMatrixInput.Location = new System.Drawing.Point(181, 33);
             this.ctlMatrixInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             matrix1.X11 = float.NaN;
@@ -148,17 +148,17 @@
             this.ctlMatrixInput.MinimumSize = new System.Drawing.Size(131, 94);
             this.ctlMatrixInput.Name = "ctlMatrixInput";
             this.ctlMatrixInput.Size = new System.Drawing.Size(154, 107);
-            this.ctlMatrixInput.TabIndex = 2;
+            this.ctlMatrixInput.TabIndex = 1;
             // 
             // ctlVectorInputX
             // 
-            this.ctlVectorInputX.Text = "Vektor x";
+            this.ctlVectorInputX.Controlname = "Vector Input";
             this.ctlVectorInputX.Location = new System.Drawing.Point(7, 33);
             this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInputX.Name = "ctlVectorInputX";
             this.ctlVectorInputX.Size = new System.Drawing.Size(157, 105);
-            this.ctlVectorInputX.TabIndex = 1;
+            this.ctlVectorInputX.TabIndex = 0;
             vector1.X1 = float.NaN;
             vector1.X2 = float.NaN;
             this.ctlVectorInputX.Vector = vector1;
@@ -171,7 +171,7 @@
             this.butFx.Location = new System.Drawing.Point(633, 888);
             this.butFx.Name = "butFx";
             this.butFx.Size = new System.Drawing.Size(143, 51);
-            this.butFx.TabIndex = 4;
+            this.butFx.TabIndex = 6;
             this.butFx.Text = "Berechne f(x)";
             this.butFx.UseVisualStyleBackColor = true;
             this.butFx.Click += new System.EventHandler(this.butFx_Click);
@@ -184,7 +184,7 @@
             this.butUmkehrFx.Location = new System.Drawing.Point(861, 888);
             this.butUmkehrFx.Name = "butUmkehrFx";
             this.butUmkehrFx.Size = new System.Drawing.Size(236, 51);
-            this.butUmkehrFx.TabIndex = 5;
+            this.butUmkehrFx.TabIndex = 7;
             this.butUmkehrFx.Text = "Berechne Inverse von f(x)";
             this.butUmkehrFx.UseVisualStyleBackColor = true;
             this.butUmkehrFx.Click += new System.EventHandler(this.butUmkehrFx_Click);
@@ -198,19 +198,19 @@
             this.grpDataInRight.Name = "grpDataInRight";
             this.grpDataInRight.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDataInRight.Size = new System.Drawing.Size(173, 152);
-            this.grpDataInRight.TabIndex = 67;
+            this.grpDataInRight.TabIndex = 11;
             this.grpDataInRight.TabStop = false;
             this.grpDataInRight.Text = "Dateneingabe";
             // 
             // ctlVectorInputY
             // 
-            this.ctlVectorInputY.Text = "Vektor y";
+            this.ctlVectorInputY.Controlname = "Vector Input";
             this.ctlVectorInputY.Location = new System.Drawing.Point(9, 31);
             this.ctlVectorInputY.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputY.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInputY.Name = "ctlVectorInputY";
             this.ctlVectorInputY.Size = new System.Drawing.Size(157, 105);
-            this.ctlVectorInputY.TabIndex = 6;
+            this.ctlVectorInputY.TabIndex = 0;
             vector2.X1 = float.NaN;
             vector2.X2 = float.NaN;
             this.ctlVectorInputY.Vector = vector2;
@@ -223,7 +223,7 @@
             this.butFunctionEnd.Location = new System.Drawing.Point(1161, 888);
             this.butFunctionEnd.Name = "butFunctionEnd";
             this.butFunctionEnd.Size = new System.Drawing.Size(236, 51);
-            this.butFunctionEnd.TabIndex = 7;
+            this.butFunctionEnd.TabIndex = 8;
             this.butFunctionEnd.Text = "Berechne Inverse von f(y)";
             this.butFunctionEnd.UseVisualStyleBackColor = true;
             this.butFunctionEnd.Click += new System.EventHandler(this.butFunctionEnd_Click_1);
@@ -260,7 +260,7 @@
             this.rtxtNotes.Location = new System.Drawing.Point(683, 1012);
             this.rtxtNotes.Name = "rtxtNotes";
             this.rtxtNotes.Size = new System.Drawing.Size(626, 123);
-            this.rtxtNotes.TabIndex = 77;
+            this.rtxtNotes.TabIndex = 10;
             this.rtxtNotes.Text = "";
             // 
             // ctlMathEquaToLeft
@@ -274,7 +274,7 @@
             this.ctlMathEquaToLeft.Margin = new System.Windows.Forms.Padding(4);
             this.ctlMathEquaToLeft.Name = "ctlMathEquaToLeft";
             this.ctlMathEquaToLeft.Size = new System.Drawing.Size(378, 115);
-            this.ctlMathEquaToLeft.TabIndex = 78;
+            this.ctlMathEquaToLeft.TabIndex = 5;
             // 
             // ctlMathEquaToRight
             // 
@@ -288,13 +288,13 @@
             this.ctlMathEquaToRight.Margin = new System.Windows.Forms.Padding(4);
             this.ctlMathEquaToRight.Name = "ctlMathEquaToRight";
             this.ctlMathEquaToRight.Size = new System.Drawing.Size(248, 115);
-            this.ctlMathEquaToRight.TabIndex = 79;
+            this.ctlMathEquaToRight.TabIndex = 2;
             // 
             // FrmUmkehrungLinAbb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1874, 1147);
+            this.ClientSize = new System.Drawing.Size(1874, 1045);
             this.Controls.Add(this.ctlMathEquaToRight);
             this.Controls.Add(this.ctlMathEquaToLeft);
             this.Controls.Add(this.rtxtNotes);
