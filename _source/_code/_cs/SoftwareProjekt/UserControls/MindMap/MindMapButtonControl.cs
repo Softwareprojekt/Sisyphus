@@ -37,6 +37,15 @@ namespace SoftwareProjekt.UserControls.MindMap
 
         public event ExerciseClickEvent ButtonClicked;
 
+        public MindMapButtonControl()
+        {
+            _alignment = EAlignType.AlignLeft;
+            ExerciseID = EExercises.DrehungLinAbbUmUrsprung;
+            _buttonText = "Hallo Welt";
+            InitializeComponent();
+
+        }
+
         public MindMapButtonControl(string text, EExercises excerciseID, EAlignType alignment)
         {
             _alignment = alignment;
@@ -120,13 +129,13 @@ namespace SoftwareProjekt.UserControls.MindMap
         public EExercises ExerciseID
         {
             get;
-            private set;
+            set;
         }
 
         public EMachiningCondition MachiningCondition
         {
             get;
-            private set;
+            set;
         }
 
         private void InitializeComponent()
@@ -195,7 +204,7 @@ namespace SoftwareProjekt.UserControls.MindMap
 
                 case EAlignType.AlignLeft:
                     g.DrawLine(linePen, new Point(0, 15), new Point(this.Width - 30, 15));
-                    g.DrawString(_buttonText, new Font("Arial", 8.0f), new SolidBrush(linePen.Color), new PointF(this.Width - 30 - (_buttonText.Length * 4.5f), 1.5f));
+                    g.DrawString(_buttonText, new Font("Arial", 8.0f), new SolidBrush(linePen.Color), new PointF(this.Width - 40 - (_buttonText.Length * 5f), 1.5f));
                     break;
 
                 case EAlignType.AlignRight:

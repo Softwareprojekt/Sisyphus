@@ -107,7 +107,7 @@
             // 
             // ctlVectorInputEV2
             // 
-            this.ctlVectorInputEV2.Controlname = "Vector Input";
+            this.ctlVectorInputEV2.Text = "Vector Input";
             this.ctlVectorInputEV2.Location = new System.Drawing.Point(337, 30);
             this.ctlVectorInputEV2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ctlVectorInputEV2.MinimumSize = new System.Drawing.Size(136, 94);
@@ -120,7 +120,7 @@
             // 
             // ctlVectorInputEV1
             // 
-            this.ctlVectorInputEV1.Controlname = "Vector Input";
+            this.ctlVectorInputEV1.Text = "Vector Input";
             this.ctlVectorInputEV1.Location = new System.Drawing.Point(172, 30);
             this.ctlVectorInputEV1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ctlVectorInputEV1.MinimumSize = new System.Drawing.Size(136, 94);
@@ -133,7 +133,7 @@
             // 
             // ctlVectorInputX
             // 
-            this.ctlVectorInputX.Controlname = "Vector Input";
+            this.ctlVectorInputX.Text = "Vector Input";
             this.ctlVectorInputX.Location = new System.Drawing.Point(7, 30);
             this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(136, 94);

@@ -147,12 +147,7 @@ namespace SoftwareProjekt.UserControls.MindMap
         void MindMapTopicControl_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-
-            if (this._logicalTopic == null)
-            {
-                return;
-            }
-
+            
             g.DrawEllipse(Pens.Black, 0, 0, this.Width - 2, this.Height - 2);
 
             g.DrawString(this.TopicName, new Font("Arial", 12.0f), new SolidBrush(Color.Black),

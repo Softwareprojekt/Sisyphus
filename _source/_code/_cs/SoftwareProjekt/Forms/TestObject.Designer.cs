@@ -71,10 +71,6 @@ namespace SoftwareProjekt.Forms
             this.mindMap1.Size = new System.Drawing.Size(320, 320);
             this.mindMap1.TabIndex = 3;
 
-            if (mindMap1.ParseXML())
-            {
-                mindMap1.ArrangeMindMap();
-            }
             // 
             // TestObject
             // 

@@ -80,7 +80,7 @@
             // 
             // ctlMatrixInput
             // 
-            this.ctlMatrixInput.Controlname = "Matrix Input";
+            this.ctlMatrixInput.Text = "Matrix Input";
             this.ctlMatrixInput.Location = new System.Drawing.Point(195, 22);
             this.ctlMatrixInput.Margin = new System.Windows.Forms.Padding(5);
             matrix1.X11 = float.NaN;
@@ -95,7 +95,7 @@
             // 
             // ctlVectorInputX
             // 
-            this.ctlVectorInputX.Controlname = "Vector Input";
+            this.ctlVectorInputX.Text = "Vector Input";
             this.ctlVectorInputX.Location = new System.Drawing.Point(16, 22);
             this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(136, 94);
