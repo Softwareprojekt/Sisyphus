@@ -191,6 +191,7 @@ namespace SoftwareProjekt.Forms
             retVal.Add("VectorM2", ctlVectorInputM2.Vector);
             retVal.Add("EV1", ctlVectorInputEV1.Vector);
             retVal.Add("EV2", ctlVectorInputEV2.Vector);
+
             return retVal;
         }
 
@@ -264,6 +265,7 @@ namespace SoftwareProjekt.Forms
             ctlVectorInputX.Vector = (Vector)state["VectorX"];
             ctlVectorInputM1.Vector = (Vector)state["VectorM1"];
             ctlVectorInputM2.Vector = (Vector)state["VectorM2"];
+            _rtxtNotes.Text = state["Notes"].ToString();
 
             CreateFormula();
 

@@ -196,6 +196,7 @@ namespace SoftwareProjekt.Forms
             // 
             this._rtxtNotes.Location = new System.Drawing.Point(8, 498);
             this._rtxtNotes.Name = "_rtxtNotes";
+            this._rtxtNotes.ReadOnly = true;
             this._rtxtNotes.Size = new System.Drawing.Size(895, 132);
             this._rtxtNotes.TabIndex = 2;
             this._rtxtNotes.Text = "";

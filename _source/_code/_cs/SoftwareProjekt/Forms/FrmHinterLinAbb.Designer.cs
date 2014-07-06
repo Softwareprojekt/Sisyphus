@@ -486,5 +486,8 @@
         private System.Windows.Forms.PictureBox picArrowRight;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquLeft;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquRight;
+#if DEBUG
+        private System.Windows.Forms.RichTextBox _rtxtNotes;
+#endif
     }
 }

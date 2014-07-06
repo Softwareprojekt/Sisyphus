@@ -48,7 +48,7 @@
             this.cosInput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.picBoxArrow = new System.Windows.Forms.PictureBox();
-            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
+            this._rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.ctlMathEqua = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.grpDataInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxArrow)).BeginInit();
@@ -235,12 +235,12 @@
             // 
             // rtxtNotes
             // 
-            this.rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.rtxtNotes.Location = new System.Drawing.Point(707, 855);
-            this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(462, 166);
-            this.rtxtNotes.TabIndex = 7;
-            this.rtxtNotes.Text = "";
+            this._rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this._rtxtNotes.Location = new System.Drawing.Point(707, 855);
+            this._rtxtNotes.Name = "rtxtNotes";
+            this._rtxtNotes.Size = new System.Drawing.Size(462, 166);
+            this._rtxtNotes.TabIndex = 7;
+            this._rtxtNotes.Text = "";
             // 
             // ctlMathEqua
             // 
@@ -262,7 +262,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1858, 1045);
             this.Controls.Add(this.ctlMathEqua);
-            this.Controls.Add(this.rtxtNotes);
+            this.Controls.Add(this._rtxtNotes);
             this.Controls.Add(this.cosOutput);
             this.Controls.Add(this.cosInput);
             this.Controls.Add(this.lblHeader);
@@ -302,7 +302,9 @@
         private UserControls.CoordinateSystem cosOutput;
         private System.Windows.Forms.PictureBox picBoxArrow;
         private UserControls.FloatInput _ctlScalarInput;
-        private System.Windows.Forms.RichTextBox rtxtNotes;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEqua;
+#if DEBUG
+        private System.Windows.Forms.RichTextBox _rtxtNotes;
+#endif
     }
 }

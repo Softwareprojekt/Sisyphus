@@ -55,7 +55,7 @@
             this.picArrowToRightMiddle = new System.Windows.Forms.PictureBox();
             this.picArrowToRightBottom = new System.Windows.Forms.PictureBox();
             this.picArrowToRightRight = new System.Windows.Forms.PictureBox();
-            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
+            this._rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.ctlMathEquaToLeft = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.ctlMathEquaToRightMiddle = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.ctlFormularDraw1 = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
@@ -310,12 +310,12 @@
             // 
             // rtxtNotes
             // 
-            this.rtxtNotes.Location = new System.Drawing.Point(520, 976);
-            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(416, 79);
-            this.rtxtNotes.TabIndex = 47;
-            this.rtxtNotes.Text = "";
+            this._rtxtNotes.Location = new System.Drawing.Point(520, 976);
+            this._rtxtNotes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._rtxtNotes.Name = "rtxtNotes";
+            this._rtxtNotes.Size = new System.Drawing.Size(416, 79);
+            this._rtxtNotes.TabIndex = 47;
+            this._rtxtNotes.Text = "";
             // 
             // ctlMathEquaToLeft
             // 
@@ -376,7 +376,7 @@
             this.Controls.Add(this.ctlFormularDraw1);
             this.Controls.Add(this.ctlMathEquaToRightMiddle);
             this.Controls.Add(this.ctlMathEquaToLeft);
-            this.Controls.Add(this.rtxtNotes);
+            this.Controls.Add(this._rtxtNotes);
             this.Controls.Add(this.picArrowToRightRight);
             this.Controls.Add(this.picArrowToRightBottom);
             this.Controls.Add(this.picArrowToRightMiddle);
@@ -429,10 +429,12 @@
         private System.Windows.Forms.PictureBox picArrowToRightMiddle;
         private System.Windows.Forms.PictureBox picArrowToRightBottom;
         private System.Windows.Forms.PictureBox picArrowToRightRight;
-        private System.Windows.Forms.RichTextBox rtxtNotes;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToLeft;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToRightMiddle;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlFormularDraw1;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToRightRight;
+#if DEBUG
+        private System.Windows.Forms.RichTextBox _rtxtNotes;
+#endif
     }
 }

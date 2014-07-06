@@ -55,7 +55,7 @@
             this.butFx = new System.Windows.Forms.Button();
             this.ctlMathEqua = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.picBoxArrow = new System.Windows.Forms.PictureBox();
-            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
+            this._rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.grpDataInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxArrow)).BeginInit();
             this.SuspendLayout();
@@ -308,13 +308,13 @@
             // 
             // rtxtNotes
             // 
-            this.rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.rtxtNotes.Location = new System.Drawing.Point(672, 831);
-            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(457, 171);
-            this.rtxtNotes.TabIndex = 7;
-            this.rtxtNotes.Text = "";
+            this._rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this._rtxtNotes.Location = new System.Drawing.Point(672, 831);
+            this._rtxtNotes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._rtxtNotes.Name = "_rtxtNotes";
+            this._rtxtNotes.Size = new System.Drawing.Size(457, 171);
+            this._rtxtNotes.TabIndex = 7;
+            this._rtxtNotes.Text = "";
             // 
             // FrmSpiegLinAbbUrsp
             // 
@@ -322,7 +322,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1824, 1034);
             this.Controls.Add(this.ctlMathEqua);
-            this.Controls.Add(this.rtxtNotes);
+            this.Controls.Add(this._rtxtNotes);
             this.Controls.Add(this.butFx);
             this.Controls.Add(this.cosOutput);
             this.Controls.Add(this.cosInput);
@@ -366,7 +366,9 @@
         private System.Windows.Forms.Button butFx;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEqua;
         private System.Windows.Forms.PictureBox picBoxArrow;
-        private System.Windows.Forms.RichTextBox rtxtNotes;
         private UserControls.FloatInput ftxtAngle;
+#if DEBUG
+        private System.Windows.Forms.RichTextBox _rtxtNotes;
+#endif
     }
 }

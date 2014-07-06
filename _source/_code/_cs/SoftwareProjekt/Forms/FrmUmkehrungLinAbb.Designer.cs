@@ -47,7 +47,7 @@
             this.butFunctionEnd = new System.Windows.Forms.Button();
             this.picArrowToRight = new System.Windows.Forms.PictureBox();
             this.picArrowToLeft = new System.Windows.Forms.PictureBox();
-            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
+            this._rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.ctlMathEquaToLeft = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.ctlMathEquaToRight = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.grpDataInput.SuspendLayout();
@@ -256,12 +256,12 @@
             // 
             // rtxtNotes
             // 
-            this.rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.rtxtNotes.Location = new System.Drawing.Point(683, 1012);
-            this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(626, 123);
-            this.rtxtNotes.TabIndex = 10;
-            this.rtxtNotes.Text = "";
+            this._rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this._rtxtNotes.Location = new System.Drawing.Point(683, 1012);
+            this._rtxtNotes.Name = "rtxtNotes";
+            this._rtxtNotes.Size = new System.Drawing.Size(626, 123);
+            this._rtxtNotes.TabIndex = 10;
+            this._rtxtNotes.Text = "";
             // 
             // ctlMathEquaToLeft
             // 
@@ -297,7 +297,7 @@
             this.ClientSize = new System.Drawing.Size(1874, 1045);
             this.Controls.Add(this.ctlMathEquaToRight);
             this.Controls.Add(this.ctlMathEquaToLeft);
-            this.Controls.Add(this.rtxtNotes);
+            this.Controls.Add(this._rtxtNotes);
             this.Controls.Add(this.picArrowToRight);
             this.Controls.Add(this.butFunctionEnd);
             this.Controls.Add(this.grpDataInRight);
@@ -340,8 +340,10 @@
         private System.Windows.Forms.Button butFunctionEnd;
         private System.Windows.Forms.PictureBox picArrowToRight;
         private System.Windows.Forms.PictureBox picArrowToLeft;
-        private System.Windows.Forms.RichTextBox rtxtNotes;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToLeft;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToRight;
+#if DEBUG
+        private System.Windows.Forms.RichTextBox _rtxtNotes;
+#endif
     }
 }

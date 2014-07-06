@@ -443,10 +443,10 @@
         private System.Windows.Forms.Button _btnFern;
         private System.Windows.Forms.Button _btnSquare;
         private System.Windows.Forms.Label _lblIteration;
-#if DEBUG
-        private System.Windows.Forms.RichTextBox _rtxtNotes;
         private System.Windows.Forms.Label _lblSteps;
         private UserControls.FloatInput _txtSteps;
+#if DEBUG
+        private System.Windows.Forms.RichTextBox _rtxtNotes;
 #endif
     }
 }

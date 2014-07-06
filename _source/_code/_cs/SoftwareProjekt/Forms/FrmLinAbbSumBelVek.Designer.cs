@@ -41,7 +41,7 @@
             this.lblNotes = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
             this.picBoxArrow = new System.Windows.Forms.PictureBox();
-            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
+            this._rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.ctlMathEqu = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.grpDataInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxArrow)).BeginInit();
@@ -176,12 +176,12 @@
             // 
             // rtxtNotes
             // 
-            this.rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.rtxtNotes.Location = new System.Drawing.Point(657, 839);
-            this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(482, 181);
-            this.rtxtNotes.TabIndex = 7;
-            this.rtxtNotes.Text = "";
+            this._rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this._rtxtNotes.Location = new System.Drawing.Point(657, 839);
+            this._rtxtNotes.Name = "rtxtNotes";
+            this._rtxtNotes.Size = new System.Drawing.Size(482, 181);
+            this._rtxtNotes.TabIndex = 7;
+            this._rtxtNotes.Text = "";
             // 
             // ctlMathEqu
             // 
@@ -202,7 +202,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1791, 1045);
             this.Controls.Add(this.ctlMathEqu);
-            this.Controls.Add(this.rtxtNotes);
+            this.Controls.Add(this._rtxtNotes);
             this.Controls.Add(this.picBoxArrow);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.lblNotes);
@@ -232,7 +232,9 @@
         private UserControls.CtlMatrixInput ctlMaInScaleMat;
         private UserControls.CtlVectorInput ctlVecInY;
         private System.Windows.Forms.PictureBox picBoxArrow;
-        private System.Windows.Forms.RichTextBox rtxtNotes;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEqu;
+#if DEBUG
+        private System.Windows.Forms.RichTextBox _rtxtNotes;
+#endif
     }
 }

@@ -417,5 +417,8 @@
         private System.Windows.Forms.RadioButton _rbStep2;
         private System.Windows.Forms.RadioButton _rbStep1;
         private System.Windows.Forms.Button _btnSwap;
+#if DEBUG
+        private System.Windows.Forms.RichTextBox _rtxtNotes;
+#endif
     }
 }

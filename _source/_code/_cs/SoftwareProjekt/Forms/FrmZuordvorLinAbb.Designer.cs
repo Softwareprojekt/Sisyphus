@@ -34,7 +34,7 @@
             SoftwareProjekt.Classes.Math.Vector vector4 = new SoftwareProjekt.Classes.Math.Vector();
             SoftwareProjekt.Classes.Math.Vector vector5 = new SoftwareProjekt.Classes.Math.Vector();
             this.ctlMathEqua = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
-            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
+            this._rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.grpAddInfo = new System.Windows.Forms.GroupBox();
             this.txtDet = new System.Windows.Forms.TextBox();
             this.butDet = new System.Windows.Forms.Button();
@@ -72,13 +72,13 @@
             // 
             // rtxtNotes
             // 
-            this.rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.rtxtNotes.Location = new System.Drawing.Point(542, 717);
-            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(2);
-            this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(317, 93);
-            this.rtxtNotes.TabIndex = 9;
-            this.rtxtNotes.Text = "";
+            this._rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this._rtxtNotes.Location = new System.Drawing.Point(542, 717);
+            this._rtxtNotes.Margin = new System.Windows.Forms.Padding(2);
+            this._rtxtNotes.Name = "rtxtNotes";
+            this._rtxtNotes.Size = new System.Drawing.Size(317, 93);
+            this._rtxtNotes.TabIndex = 9;
+            this._rtxtNotes.Text = "";
             // 
             // grpAddInfo
             // 
@@ -272,7 +272,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1403, 820);
             this.Controls.Add(this.ctlMathEqua);
-            this.Controls.Add(this.rtxtNotes);
+            this.Controls.Add(this._rtxtNotes);
             this.Controls.Add(this.grpAddInfo);
             this.Controls.Add(this.butFunctionX);
             this.Controls.Add(this.lblHeader);
@@ -312,7 +312,9 @@
         private System.Windows.Forms.GroupBox grpAddInfo;
         private System.Windows.Forms.Button butDet;
         private System.Windows.Forms.TextBox txtDet;
-        private System.Windows.Forms.RichTextBox rtxtNotes;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEqua;
+#if DEBUG
+        private System.Windows.Forms.RichTextBox _rtxtNotes;
+#endif
     }
 }
