@@ -30,6 +30,7 @@ using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Classes.Math;
 using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
+using SoftwareProjekt.Classes.Xml;
 
 namespace SoftwareProjekt.Forms
 {
@@ -44,6 +45,10 @@ namespace SoftwareProjekt.Forms
         private LineSegment _vectorOutputX;
         private LineSegment _vectorOutputY;
         private LineSegment _vectorOutputXplusY;
+
+        private string _functionBlock1;
+        private string _functionBlock2;
+        private string _functionBlock3;
       
         public FrmLinAbbSumBelVek()
         {
@@ -61,6 +66,93 @@ namespace SoftwareProjekt.Forms
             cosInput.AddLineSegment(_vectorInputX);
             cosInput.AddLineSegment(_vectorInputY);
             cosInput.AddLineSegment(_vectorInputXplusY);
+
+            // f(x + y) mit Pfeilen
+            _functionBlock1 = "<mn>f</mn>\n";
+            _functionBlock1 += "<mo>&ApplyFunction;</mo>\n";
+            _functionBlock1 += "<mrow>\n";
+            _functionBlock1 += "<mo>(</mo>\n";
+            _functionBlock1 += "<mover>\n";
+            _functionBlock1 += "\t<mi>x</mi>\n";
+            _functionBlock1 += "\t<mo>&rarr;</mo>\n";
+            _functionBlock1 += "<mo>+</mo>\n";
+            _functionBlock1 += "\t<mi>y</mi>\n";
+            _functionBlock1 += "\t<mo>&rarr;</mo>\n";
+            _functionBlock1 += "</mover>\n";
+            _functionBlock1 += "<mo>)</mo>\n";
+            _functionBlock1 += "</mrow>\n";
+
+            // f(x)
+            _functionBlock2 = "<mn>f</mn>\n";
+            _functionBlock2 += "<mo>&ApplyFunction;</mo>\n";
+            _functionBlock2 += "<mrow>\n";
+            _functionBlock2 += "<mo>(</mo>\n";
+            _functionBlock2 += "<mover>\n";
+            _functionBlock2 += "\t<mi>x</mi>\n";
+            _functionBlock2 += "\t<mo>&rarr;</mo>\n";
+            _functionBlock2 += "</mover>\n";
+            _functionBlock2 += "<mo>)</mo>\n";
+            _functionBlock2 += "</mrow>\n";
+
+            // f(y)
+            _functionBlock3 = "<mn>f</mn>\n";
+            _functionBlock3 += "<mo>&ApplyFunction;</mo>\n";
+            _functionBlock3 += "<mrow>\n";
+            _functionBlock3 += "<mo>(</mo>\n";
+            _functionBlock3 += "<mover>\n";
+            _functionBlock3 += "\t<mi>y</mi>\n";
+            _functionBlock3 += "\t<mo>&rarr;</mo>\n";
+            _functionBlock3 += "</mover>\n";
+            _functionBlock3 += "<mo>)</mo>\n";
+            _functionBlock3 += "</mrow>\n";
+
+            CreateFormular();
+        }
+
+        private void CreateFormular()
+        {
+            MathXmlGenerator xmlGen = new MathXmlGenerator();
+
+            xmlGen.AddNode(_functionBlock1);
+
+            Matrix m = new Matrix();
+            m.X11 = (float.IsNaN(ctlMaInScaleMat.Matrix.X11)) ? 0.0f : ctlMaInScaleMat.Matrix.X11;
+            m.X21 = (float.IsNaN(ctlMaInScaleMat.Matrix.X21)) ? 0.0f : ctlMaInScaleMat.Matrix.X21;
+            m.X12 = (float.IsNaN(ctlMaInScaleMat.Matrix.X12)) ? 0.0f : ctlMaInScaleMat.Matrix.X12;
+            m.X22 = (float.IsNaN(ctlMaInScaleMat.Matrix.X22)) ? 0.0f : ctlMaInScaleMat.Matrix.X22;
+
+            Vector x = new Vector();            
+            x.X1 = (float.IsNaN (ctlVecInX.Vector.X1)) ? 0.0f : ctlVecInX.Vector.X1;
+            x.X2 = (float.IsNaN(ctlVecInX.Vector.X2)) ? 0.0f : ctlVecInX.Vector.X2;
+
+            Vector y = new Vector();            
+            x.X1 = (float.IsNaN (ctlVecInY.Vector.X1)) ? 0.0f : ctlVecInY.Vector.X1;
+            x.X2 = (float.IsNaN(ctlVecInY.Vector.X2)) ? 0.0f : ctlVecInY.Vector.X2;
+
+            xmlGen.AddSign(EMathSign.Assignment);
+            xmlGen.AddMatrix(m, Color.Blue, Color.Blue);
+            xmlGen.AddSign(EMathSign.Multiply);
+            xmlGen.AddNode("<mo>(</mo> \n");
+            xmlGen.AddNode("<mover>\n \t<mi>x</mi>\n \t<mo>&rarr;</mo>\n </mover>\n");
+            xmlGen.AddSign(EMathSign.Plus);
+            xmlGen.AddNode("<mover>\n \t<mi>y</mi>\n \t<mo>&rarr;</mo>\n </mover>\n");
+            xmlGen.AddNode("<mo>)</mo> \n");
+            xmlGen.AddSign(EMathSign.Assignment);
+            xmlGen.AddMatrix(m, Color.Blue, Color.Blue);
+            xmlGen.AddSign(EMathSign.Multiply);
+            xmlGen.AddNode("<mover>\n \t<mi>x</mi>\n \t<mo>&rarr;</mo>\n </mover>\n");
+            xmlGen.AddSign(EMathSign.Plus);
+            xmlGen.AddMatrix(m, Color.Blue, Color.Blue);
+            xmlGen.AddSign(EMathSign.Multiply);
+            xmlGen.AddNode("<mover>\n \t<mi>y</mi>\n \t<mo>&rarr;</mo>\n </mover>\n");
+            xmlGen.AddSign(EMathSign.Assignment);
+            xmlGen.AddNode(_functionBlock2);
+            xmlGen.AddSign(EMathSign.Plus);
+            xmlGen.AddNode(_functionBlock3);
+
+            xmlGen.Finish();
+            ctlMathEqu.WriteEquationToPicBox(xmlGen.XmlDoc);
+
         }
 
         public override Dictionary<string, Object> GetInputData()

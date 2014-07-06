@@ -63,7 +63,6 @@
             // 
             // ctlMaInScaleMat
             // 
-            this.ctlMaInScaleMat.Text = "Matrix Input";
             this.ctlMaInScaleMat.Location = new System.Drawing.Point(71, 143);
             this.ctlMaInScaleMat.Margin = new System.Windows.Forms.Padding(5);
             matrix1.X11 = float.NaN;
@@ -80,7 +79,6 @@
             // 
             this.ctlVecInY.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.ctlVecInY.Text = "Vector Input";
             this.ctlVecInY.Location = new System.Drawing.Point(179, 31);
             this.ctlVecInY.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVecInY.MinimumSize = new System.Drawing.Size(136, 94);
@@ -93,7 +91,6 @@
             // 
             // ctlVecInX
             // 
-            this.ctlVecInX.Text = "Vector Input";
             this.ctlVecInX.Location = new System.Drawing.Point(8, 31);
             this.ctlVecInX.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVecInX.MinimumSize = new System.Drawing.Size(136, 94);
@@ -193,10 +190,10 @@
             this.ctlMathEqu.Filename = "vl5vwf41.xla.tiff";
             this.ctlMathEqu.Filepath = "";
             this.ctlMathEqu.FontSize = 8;
-            this.ctlMathEqu.Location = new System.Drawing.Point(657, 362);
+            this.ctlMathEqu.Location = new System.Drawing.Point(630, 387);
             this.ctlMathEqu.Margin = new System.Windows.Forms.Padding(4);
             this.ctlMathEqu.Name = "ctlMathEqu";
-            this.ctlMathEqu.Size = new System.Drawing.Size(191, 115);
+            this.ctlMathEqu.Size = new System.Drawing.Size(485, 55);
             this.ctlMathEqu.TabIndex = 3;
             // 
             // FrmLinAbbSumBelVek
