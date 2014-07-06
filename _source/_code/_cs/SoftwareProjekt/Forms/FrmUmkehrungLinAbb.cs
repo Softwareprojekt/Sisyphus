@@ -37,8 +37,7 @@ namespace SoftwareProjekt.Forms
     public partial class FrmUmkehrungLinAbb : AbstractView
     {
         string _functionBlock;
-        string _xVector;
-
+      
         private LineSegment _vectorInputX;
         private LineSegment _vectorInputY;
 
@@ -66,31 +65,6 @@ namespace SoftwareProjekt.Forms
             _functionBlock += "</mover>\n";
             _functionBlock += "<mo>)</mo>\n";
             _functionBlock += "</mrow>\n";
-
-            // Vektor x
-            _xVector += "<mfenced open='(' close=')' separators=''>\n";
-            _xVector += "<mtable>\n";
-
-            _xVector += "\t<mtr>\n";
-            _xVector += "\t\t<mtd>\n";
-            _xVector += "\t\t\t<msub>\n";
-            _xVector += "\t\t\t\t<mi>x</mi>\n";
-            _xVector += "\t\t\t\t<mn>1</mn>\n";
-            _xVector += "\t\t\t</msub>\n";
-            _xVector += "\t\t</mtd>\n";
-            _xVector += "\t</mtr>\n";
-
-            _xVector += "\t<mtr>\n";
-            _xVector += "\t\t<mtd>\n";
-            _xVector += "\t\t\t<msub>\n";
-            _xVector += "\t\t\t\t<mi>x</mi>\n";
-            _xVector += "\t\t\t\t<mn>2</mn>\n";
-            _xVector += "\t\t\t</msub>\n";
-            _xVector += "\t\t</mtd>\n";
-            _xVector += "\t</mtr>\n";
-
-            _xVector += "</mtable>\n";
-            _xVector += "</mfenced>\n";
 
             CreateFormular();
 
@@ -126,8 +100,8 @@ namespace SoftwareProjekt.Forms
             // Malzeichen
             xmlGen.AddSign(EMathSign.Multiply);
 
-            // Vektor hinzufügen
-            xmlGen.AddNode(_xVector);
+            // Vektor x hinzufügen
+            xmlGen.AddVector(x, Color.Red);
 
             // = Zeichen
             xmlGen.AddSign(EMathSign.Assignment);
@@ -135,32 +109,34 @@ namespace SoftwareProjekt.Forms
             // Matrixelemente einfügen
             List<string> expressions = new List<string>();
             expressions.Add(m.X11.ToString());
-            expressions.Add("<msub><mi>x</mi><mn>1</mn></msub>");
+            expressions.Add(x.X1.ToString());
             expressions.Add(m.X12.ToString());
-            expressions.Add("<msub><mi>x</mi><mn>2</mn></msub>");
+            expressions.Add(x.X2.ToString());
             expressions.Add(m.X21.ToString());
-            expressions.Add("<msub><mi>x</mi><mn>1</mn></msub>");
+            expressions.Add(x.X1.ToString());
             expressions.Add(m.X22.ToString());
-            expressions.Add("<msub><mi>x</mi><mn>2</mn></msub>");
+            expressions.Add(x.X2.ToString());
 
             // Liste mit Farben
             List<Color> colors = new List<Color>();
             colors.Add(Color.Blue);
-            colors.Add(Color.Black);
+            colors.Add(Color.Red);
             colors.Add(Color.Blue);
-            colors.Add(Color.Black);
-
+            colors.Add(Color.Red);
             colors.Add(Color.Blue);
-            colors.Add(Color.Black);
+            colors.Add(Color.Red);
             colors.Add(Color.Blue);
-            colors.Add(Color.Black);
+            colors.Add(Color.Red);
+            
 
-            xmlGen.AddMathExpression(expressions, colors, EMathSign.Plus, EMathType.ComplexVector);
+            // alles zusammenbauen
+            xmlGen.AddMathExpression(expressions, colors, EMathSign.Plus, EMathType.ComplexVector);                     
 
+            // abschließen
             xmlGen.Finish();
 
+            // tiff erstellen und auf picbox platzieren
             ctlMathEquaToRight.WriteEquationToPicBox(xmlGen.XmlDoc);
-
         }
 
         public override Dictionary<string, Object> GetInputData()
