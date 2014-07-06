@@ -23,7 +23,7 @@ namespace SoftwareProjekt.Enums
 {
     public enum EExercises
     {
-        ZuordnungsvorschriftLinAbb = 1,
+        VertraeglichkeitMitLinearkomb = 1,
         LinAbbAusSumBelVek = 2,
         LinAbbMitVielfachemBelVek = 3,
         HintereinanderausfLinAbb = 4,

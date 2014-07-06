@@ -26,11 +26,11 @@ using System.Collections.Generic;
 
 namespace SoftwareProjekt.Exercises
 {
-    class ZuordvorLinAbb : AbstractExercise
+    class VertrMitLinearkomb : AbstractExercise
     {
-        public ZuordvorLinAbb()
+        public VertrMitLinearkomb()
         {
-            this.Id = Enums.EExercises.ZuordnungsvorschriftLinAbb;
+            this.Id = Enums.EExercises.VertraeglichkeitMitLinearkomb;
         }
 
         protected override void DoWork(IView view)

@@ -109,7 +109,7 @@
     <Compile Include="Exercises\TestExercise.cs" />
     <Compile Include="Exercises\UmkehrungLinAbb.cs" />
     <Compile Include="Exercises\ZuordAffAbb.cs" />
-    <Compile Include="Exercises\ZuordvorLinAbb.cs" />
+    <Compile Include="Exercises\VertrMitLinearkomb.cs" />
     <Compile Include="Forms\AbstractView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,11 +234,11 @@
     <Compile Include="Forms\FrmZuordAffAbb.Designer.cs">
       <DependentUpon>FrmZuordAffAbb.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmZuordvorLinAbb.cs">
+    <Compile Include="Forms\FrmVertrMitLinearkomb.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmZuordvorLinAbb.Designer.cs">
-      <DependentUpon>FrmZuordvorLinAbb.cs</DependentUpon>
+    <Compile Include="Forms\FrmVertrMitLinearkomb.Designer.cs">
+      <DependentUpon>FrmVertrMitLinearkomb.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Math\Line.cs" />
     <Compile Include="Interfaces\IAxis.cs" />
@@ -334,8 +334,8 @@
     <EmbeddedResource Include="Forms\FrmZuordAffAbb.resx">
       <DependentUpon>FrmZuordAffAbb.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmZuordvorLinAbb.resx">
-      <DependentUpon>FrmZuordvorLinAbb.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmVertrMitLinearkomb.resx">
+      <DependentUpon>FrmVertrMitLinearkomb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\FormulaDrawer\CtlFormularDraw.resx">
       <DependentUpon>CtlFormularDraw.cs</DependentUpon>

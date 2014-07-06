@@ -34,7 +34,7 @@ using SoftwareProjekt.Classes.Xml;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmZuordvorLinAbb : AbstractView
+    public partial class FrmVertrMitLinearkomb : AbstractView
     {
         string _functionBlock;
         string _xVector;
@@ -47,7 +47,7 @@ namespace SoftwareProjekt.Forms
 
         private LineSegment _vectorOutputX;
 
-        public FrmZuordvorLinAbb()
+        public FrmVertrMitLinearkomb()
         {
             InitializeComponent();
 
@@ -128,7 +128,7 @@ namespace SoftwareProjekt.Forms
             m.X12 = (float.IsNaN(ctlVectorInputM2.Vector.X1)) ? 0.0f : ctlVectorInputM2.Vector.X1;
             m.X22 = (float.IsNaN(ctlVectorInputM2.Vector.X2)) ? 0.0f : ctlVectorInputM2.Vector.X2;
 
-           
+
 
             xmlGen.AddMatrix(m, Color.Purple, Color.Violet);
             xmlGen.AddSign(EMathSign.Multiply);
@@ -200,11 +200,16 @@ namespace SoftwareProjekt.Forms
             cosOutput.ClearLineSegments();
 
             _vectorOutputX = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["VectorX"], Pens.Black);
-            //txtDet.Text = e.CalcValues["detM"].ToString();
+            txtDet.Invoke(new Action(() => txtDet.Text = e.CalcValues["detM"].ToString()));
 
             cosOutput.AddLineSegment(_vectorOutputX);
             cosOutput.AddLineSegment(_vectorInputM1);
             cosOutput.AddLineSegment(_vectorInputM2);
+
+            if (e.Final)
+            {
+                this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(Enums.EClickedButton.CloseProgressForm));
+            }
         }
 
         private void butFunctionX_Click(object sender, EventArgs e)
@@ -270,6 +275,16 @@ namespace SoftwareProjekt.Forms
             CreateFormula();
 
             return true;
+        }
+
+        private void txtDet_MouseEnter(object sender, EventArgs e)
+        {
+            txtDet.UseSystemPasswordChar = false;
+        }
+
+        private void txtDet_MouseLeave(object sender, EventArgs e)
+        {
+            txtDet.UseSystemPasswordChar = true;
         }
     }
 }

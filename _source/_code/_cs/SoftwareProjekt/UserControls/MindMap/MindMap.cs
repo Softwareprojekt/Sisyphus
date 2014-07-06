@@ -706,7 +706,7 @@ namespace SoftwareProjekt.UserControls.MindMap
             // 
             this.DrehungSpiegelungStreckung.BottomAlign = false;
             this.DrehungSpiegelungStreckung.ButtonText = "Verträglichkeit mit  Linearkombination";
-            this.DrehungSpiegelungStreckung.ExerciseID = SoftwareProjekt.Enums.EExercises.ZuordnungsvorschriftLinAbb;
+            this.DrehungSpiegelungStreckung.ExerciseID = SoftwareProjekt.Enums.EExercises.VertraeglichkeitMitLinearkomb;
             this.DrehungSpiegelungStreckung.LeftAlign = true;
             this.DrehungSpiegelungStreckung.Location = new System.Drawing.Point(433, 310);
             this.DrehungSpiegelungStreckung.MachiningCondition = SoftwareProjekt.Enums.EMachiningCondition.SaveExists;

@@ -145,8 +145,8 @@ namespace SoftwareProjekt.UserControls.Workbook
             string firstHalf = "";
             switch (this.ExerciseID)
             {
-                case SoftwareProjekt.Enums.EExercises.ZuordnungsvorschriftLinAbb:
-                    firstHalf = "Zuordungsvorschrift Linare Abbildung";
+                case SoftwareProjekt.Enums.EExercises.VertraeglichkeitMitLinearkomb:
+                    firstHalf = "Verträglichkeit mit Linearkombination";
                     break;
                 case SoftwareProjekt.Enums.EExercises.LinAbbAusSumBelVek:
                     firstHalf = "Lineare Abbildung aus Summe belibiger Vektoren";

@@ -77,9 +77,9 @@ namespace SoftwareProjekt.Classes
                             //TODO: 
                             switch (e.ExerciseId)
                             {
-                                case EExercises.ZuordnungsvorschriftLinAbb:
-                                    exercise = new ZuordvorLinAbb();
-                                    view = new FrmZuordvorLinAbb();
+                                case EExercises.VertraeglichkeitMitLinearkomb:
+                                    exercise = new VertrMitLinearkomb();
+                                    view = new FrmVertrMitLinearkomb();
                                     break;
                                 case EExercises.LinAbbAusSumBelVek:
                                     exercise = new LinAbbSumBelVek();
