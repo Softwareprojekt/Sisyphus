@@ -80,6 +80,11 @@ namespace SoftwareProjekt.Forms
 
             cosOutput1.AddLineSegment(_vectorOutputX1);
             cosOutput2.AddLineSegment(_vectorOutputX2);
+
+            if (e.Final)
+            {
+                this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(Enums.EClickedButton.CloseProgressForm));
+            }
         }
 
         private void butFx_Click(object sender, EventArgs e)

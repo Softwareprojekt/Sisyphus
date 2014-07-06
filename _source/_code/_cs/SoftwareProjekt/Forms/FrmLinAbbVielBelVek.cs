@@ -149,6 +149,11 @@ namespace SoftwareProjekt.Forms
             cosInput.AddLineSegment(_vectorInputXScaled);
             cosOutput.AddLineSegment(_vectorOutputX);
             cosOutput.AddLineSegment(_vectorOutputXScaled);
+
+            if (e.Final)
+            {
+                this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(Enums.EClickedButton.CloseProgressForm));
+            }
         }
 
         private void butFunctionAMultX_Click(object sender, EventArgs e)

@@ -18,20 +18,14 @@
  */
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Classes.Math;
+using SoftwareProjekt.Classes.Xml;
 using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
-using SoftwareProjekt.Classes.Math;
-using SoftwareProjekt.Classes.Xml;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
 
 namespace SoftwareProjekt.Forms
 {
@@ -192,6 +186,11 @@ namespace SoftwareProjekt.Forms
             cosOutput.AddLineSegment(_vectorOutputEV1);
             cosOutput.AddLineSegment(_vectorOutputEV2);
             cosOutput.AddLine(_MirrorLineOutput);
+
+            if (e.Final)
+            {
+                this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(Enums.EClickedButton.CloseProgressForm));
+            }
         }
 
         protected override bool CheckInputs()

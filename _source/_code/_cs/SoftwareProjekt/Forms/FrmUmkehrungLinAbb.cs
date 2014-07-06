@@ -256,6 +256,11 @@ namespace SoftwareProjekt.Forms
             cosInput.AddLineSegment(_vectorInputX);
             cosOutput.AddLineSegment(_vectorOutputX);
             cosOutput.AddLineSegment(_vectorInputY);
+
+            if (e.Final)
+            {
+                this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(Enums.EClickedButton.CloseProgressForm));
+            }
         }
 
         private void butDeterminante_Click(object sender, EventArgs e)

@@ -105,7 +105,7 @@ namespace SoftwareProjekt.Exercises
                 //Don't know why, but otherwise it doesn't work
                 System.Threading.Thread.Sleep(1);
 
-                if (i % (iter / steps) == 0)
+                if (i % (iter / steps) == 0 || i == iter)
                 {
                     Dictionary<string, Object> outputData = new Dictionary<string, object>();
                     outputData.Add("Points", pointList);

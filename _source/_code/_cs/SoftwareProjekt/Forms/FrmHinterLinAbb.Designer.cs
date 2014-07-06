@@ -55,7 +55,7 @@
             this.ctlVectorOutputX2 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.picBoxArrow = new System.Windows.Forms.PictureBox();
             this.lblNote = new System.Windows.Forms.Label();
-            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
+            this._rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.ctlMathEquTotal = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.picArrowLeft = new System.Windows.Forms.PictureBox();
             this.picArrowRight = new System.Windows.Forms.PictureBox();
@@ -341,13 +341,13 @@
             // 
             // rtxtNotes
             // 
-            this.rtxtNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtxtNotes.Location = new System.Drawing.Point(955, 1017);
-            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
-            this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(636, 152);
-            this.rtxtNotes.TabIndex = 14;
-            this.rtxtNotes.Text = "";
+            this._rtxtNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._rtxtNotes.Location = new System.Drawing.Point(955, 1017);
+            this._rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
+            this._rtxtNotes.Name = "rtxtNotes";
+            this._rtxtNotes.Size = new System.Drawing.Size(636, 152);
+            this._rtxtNotes.TabIndex = 14;
+            this._rtxtNotes.Text = "";
             // 
             // ctlMathEquTotal
             // 
@@ -426,7 +426,7 @@
             this.Controls.Add(this.picArrowLeft);
             this.Controls.Add(this.ctlMathEquTotal);
             this.Controls.Add(this.lblNote);
-            this.Controls.Add(this.rtxtNotes);
+            this.Controls.Add(this._rtxtNotes);
             this.Controls.Add(this.picBoxArrow);
             this.Controls.Add(this.grpDataOutput2);
             this.Controls.Add(this.grpDataOutput1);
@@ -480,7 +480,6 @@
         private UserControls.CtlMatrixInput ctlMatrixInputM2;
         private System.Windows.Forms.PictureBox picBoxArrow;
         private System.Windows.Forms.Label lblNote;
-        private System.Windows.Forms.RichTextBox rtxtNotes;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquTotal;
         private System.Windows.Forms.PictureBox picArrowLeft;
         private System.Windows.Forms.PictureBox picArrowRight;

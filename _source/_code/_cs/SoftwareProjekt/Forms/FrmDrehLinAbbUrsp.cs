@@ -116,6 +116,11 @@ namespace SoftwareProjekt.Forms
             cosOutput.AddLineSegment(_vectorOutputEV1);
             cosOutput.AddLineSegment(_vectorOutputEV2);
             cosOutput.AddLineSegment(_vectorOutputX);
+
+            if (e.Final)
+            {
+                this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(Enums.EClickedButton.CloseProgressForm));
+            }
         }
 
         protected override bool CheckInputs()

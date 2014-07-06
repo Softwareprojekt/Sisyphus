@@ -173,7 +173,7 @@ namespace SoftwareProjekt.UserControls.Workbook
                     firstHalf = "Fraktalerzeugung mit IFS";
                     break;
                 case SoftwareProjekt.Enums.EExercises.FraktalerzeugungMitChaos:
-                    firstHalf = "Fraktalerzeugung mit Caos";
+                    firstHalf = "Fraktalerzeugung mit Chaos";
                     break;
                 default:
                     break;

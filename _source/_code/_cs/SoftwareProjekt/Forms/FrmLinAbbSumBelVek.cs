@@ -188,6 +188,11 @@ namespace SoftwareProjekt.Forms
             cosResult.AddLineSegment(_vectorOutputX);
             cosResult.AddLineSegment(_vectorOutputY);
             cosResult.AddLineSegment(_vectorOutputXplusY);
+
+            if (e.Final)
+            {
+                this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(Enums.EClickedButton.CloseProgressForm));
+            }
         }
 
 

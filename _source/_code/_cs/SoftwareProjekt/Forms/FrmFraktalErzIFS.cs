@@ -277,6 +277,11 @@ namespace SoftwareProjekt.Forms
 
             _cosOutput.DoNotRefresh = false;
             _cosOutput.invokeRefresh();
+
+            if (e.Final)
+            {
+                this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(Enums.EClickedButton.CloseProgressForm));
+            }
         }
 
         public override Dictionary<string, object> GetInputData()

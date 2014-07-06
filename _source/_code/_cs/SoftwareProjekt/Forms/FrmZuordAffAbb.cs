@@ -213,6 +213,11 @@ namespace SoftwareProjekt.Forms
             MatrixInv = (Matrix)e.CalcValues["Minv"];
             cosInputABC.AddLine(LineBC);
             cosInputA2B2C2.AddLine(LineB2C2);
+
+            if (e.Final)
+            {
+                this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(Enums.EClickedButton.CloseProgressForm));
+            }
         }
 
         private void butFunction1X_Click(object sender, EventArgs e)

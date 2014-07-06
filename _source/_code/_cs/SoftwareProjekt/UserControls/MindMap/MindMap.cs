@@ -19,17 +19,11 @@
  */
 #endregion
 
-using SoftwareProjekt.Classes;
-using SoftwareProjekt.Classes.Xml;
+using SoftwareProjekt.Delegates;
 using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Reflection;
 using System.Windows.Forms;
-using SoftwareProjekt.Classes;
-using SoftwareProjekt.Delegates;
 
 namespace SoftwareProjekt.UserControls.MindMap
 {
