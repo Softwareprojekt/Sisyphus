@@ -110,6 +110,11 @@ namespace SoftwareProjekt.Forms
             _xVector += "</mtable>\n";
             _xVector += "</mfenced>\n";
 
+            CreateFormula();
+        }
+
+        private void CreateFormula()
+        {
             MathXmlGenerator xmlGen = new MathXmlGenerator();
 
             xmlGen.AddNode(_functionBlock);
@@ -117,10 +122,13 @@ namespace SoftwareProjekt.Forms
             xmlGen.AddSign(EMathSign.Assignment);
 
             Matrix m = new Matrix();
-            m.X11 = 0;
-            m.X12 = 0;
-            m.X21 = 0;
-            m.X22 = 0;
+
+            m.X11 = (float.IsNaN(ctlVectorInputM1.Vector.X1)) ? 0.0f : ctlVectorInputM1.Vector.X1;
+            m.X21 = (float.IsNaN(ctlVectorInputM1.Vector.X2)) ? 0.0f : ctlVectorInputM1.Vector.X2;
+            m.X12 = (float.IsNaN(ctlVectorInputM2.Vector.X1)) ? 0.0f : ctlVectorInputM2.Vector.X1;
+            m.X22 = (float.IsNaN(ctlVectorInputM2.Vector.X2)) ? 0.0f : ctlVectorInputM2.Vector.X2;
+
+           
 
             xmlGen.AddMatrix(m, Color.Purple, Color.Violet);
             xmlGen.AddSign(EMathSign.Multiply);
@@ -229,6 +237,8 @@ namespace SoftwareProjekt.Forms
             _vectorInputM2.Vector = ctlVectorInputM2.Vector;
             cosInput.Refresh();
             cosOutput.Refresh();
+
+            CreateFormula();
         }
 
         public override bool LoadState(Dictionary<string, object> state)
@@ -254,6 +264,9 @@ namespace SoftwareProjekt.Forms
             ctlVectorInputX.Vector = (Vector)state["VectorX"];
             ctlVectorInputM1.Vector = (Vector)state["VectorM1"];
             ctlVectorInputM2.Vector = (Vector)state["VectorM2"];
+
+            CreateFormula();
+
             return true;
         }
     }

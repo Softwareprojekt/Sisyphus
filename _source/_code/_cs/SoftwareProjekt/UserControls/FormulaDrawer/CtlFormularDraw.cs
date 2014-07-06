@@ -31,12 +31,20 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
             this.Equation = "";
             this.Filepath = GetGifFilePath();
             this._drawer = new MathML.Rendering.MathMLControl();
-            this._drawer.Size = new Size(1000, 1000);
+            this._drawer.Size = new Size(2000, 2000);
             this._drawer.BackColor = this.BackColor;
             this._drawer.ForeColor = System.Drawing.Color.Black;
             this._drawer.HorizontalShift = 0F;
             this._drawer.InputLocation = null;
             this._drawer.MathFontSizeInPoints = 8;
+
+            this.Resize += CtlFormularDraw_Resize;
+        }
+
+        void CtlFormularDraw_Resize(object sender, EventArgs e)
+        {
+            this.picFormular.Height = this.Height;
+            this.picFormular.Width = this.Width;
         }
 
         public string Equation
@@ -78,9 +86,13 @@ namespace SoftwareProjekt.UserControls.FormulaDrawer
                 mathmlDoc.LoadXml(equation);
 
                 _drawer.MathElement = (MathMLMathElement)mathmlDoc.DocumentElement;
-                _drawer.Save(this.Filepath + this.Filename, ImageFormat.Tiff);
+                this.Filepath = Path.GetTempPath();
+                this.Filename = Path.GetRandomFileName();
+                _drawer.Save(Filepath + this.Filename, ImageFormat.Tiff);
 
                 picFormular.Image = Image.FromFile(this.Filepath + this.Filename);
+
+                this.BeginInvoke(new Action(() => { this.Refresh(); }));
             }
             catch (Exception ex)
             {
