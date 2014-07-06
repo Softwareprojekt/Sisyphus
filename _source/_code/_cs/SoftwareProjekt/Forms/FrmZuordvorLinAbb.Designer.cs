@@ -65,9 +65,9 @@
             this.ctlMathEqua.Filename = "teptsgn3.nai.tiff";
             this.ctlMathEqua.Filepath = "";
             this.ctlMathEqua.FontSize = 8;
-            this.ctlMathEqua.Location = new System.Drawing.Point(522, 316);
+            this.ctlMathEqua.Location = new System.Drawing.Point(510, 284);
             this.ctlMathEqua.Name = "ctlMathEqua";
-            this.ctlMathEqua.Size = new System.Drawing.Size(358, 93);
+            this.ctlMathEqua.Size = new System.Drawing.Size(315, 93);
             this.ctlMathEqua.TabIndex = 2;
             // 
             // rtxtNotes
@@ -261,8 +261,8 @@
             this.picArrow.Location = new System.Drawing.Point(496, 172);
             this.picArrow.Margin = new System.Windows.Forms.Padding(2);
             this.picArrow.Name = "picArrow";
-            this.picArrow.Size = new System.Drawing.Size(562, 330);
-            this.picArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picArrow.Size = new System.Drawing.Size(435, 298);
+            this.picArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picArrow.TabIndex = 31;
             this.picArrow.TabStop = false;
             // 
