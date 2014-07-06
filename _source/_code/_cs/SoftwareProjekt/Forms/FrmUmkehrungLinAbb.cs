@@ -120,9 +120,6 @@ namespace SoftwareProjekt.Forms
             x.X1 = (float.IsNaN (ctlVectorInputX.Vector.X1)) ? 0.0f : ctlVectorInputX.Vector.X1;
             x.X2 = (float.IsNaN(ctlVectorInputX.Vector.X2)) ? 0.0f : ctlVectorInputX.Vector.X2;
 
-            y.X1 = (float.IsNaN(ctlVectorInputY.Vector.X1)) ? 0.0f : ctlVectorInputY.Vector.X1;
-            y.X2 = (float.IsNaN(ctlVectorInputY.Vector.X2)) ? 0.0f : ctlVectorInputY.Vector.X2;
-
             // Matrix hinzufügen
             xmlGen.AddMatrix(m, Color.Blue, Color.Blue);
 
