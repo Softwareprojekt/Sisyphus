@@ -37,6 +37,7 @@ namespace SoftwareProjekt.Forms
     public partial class FrmUmkehrungLinAbb : AbstractView
     {
         string _functionBlock;
+        string _functionBlock2;
       
         private LineSegment _vectorInputX;
         private LineSegment _vectorInputY;
@@ -85,15 +86,13 @@ namespace SoftwareProjekt.Forms
 
             // Matrix
             Matrix m = new Matrix();
-
             m.X11 = (float.IsNaN (ctlMatrixInput.Matrix.X11)) ? 0.0f : ctlMatrixInput.Matrix.X11;
             m.X21 = (float.IsNaN (ctlMatrixInput.Matrix.X21)) ? 0.0f : ctlMatrixInput.Matrix.X21;
             m.X12 = (float.IsNaN (ctlMatrixInput.Matrix.X12)) ? 0.0f : ctlMatrixInput.Matrix.X12;
             m.X22 = (float.IsNaN (ctlMatrixInput.Matrix.X22)) ? 0.0f : ctlMatrixInput.Matrix.X22;
             
             // Vektoren
-            Vector x = new Vector();
-            
+            Vector x = new Vector();            
             x.X1 = (float.IsNaN (ctlVectorInputX.Vector.X1)) ? 0.0f : ctlVectorInputX.Vector.X1;
             x.X2 = (float.IsNaN(ctlVectorInputX.Vector.X2)) ? 0.0f : ctlVectorInputX.Vector.X2;
 
@@ -131,7 +130,6 @@ namespace SoftwareProjekt.Forms
             colors.Add(Color.Blue);
             colors.Add(Color.Red);
             
-
             // alles zusammenbauen
             xmlGen.AddMathExpression(expressions, colors, EMathSign.Plus, EMathType.ComplexVector);                     
 
@@ -145,6 +143,88 @@ namespace SoftwareProjekt.Forms
 
         private void CreateFormularToLeft()
         {
+            MathXmlGenerator xmlGen = new MathXmlGenerator();
+
+            // f(y)^-1
+            _functionBlock2 = "<mn>f</mn>\n";
+            _functionBlock2 += "<mo>&ApplyFunction;</mo>\n";
+            _functionBlock2 += "<mrow>\n";
+            _functionBlock2 += "<mo>(</mo>\n";
+            _functionBlock2 += "<mover>\n";
+            _functionBlock2 += "\t<mi>y</mi>\n";
+            _functionBlock2 += "\t<mo>&rarr;</mo>\n";
+            _functionBlock2 += "</mover>\n";
+            _functionBlock2 += "<mo>)</mo>\n";
+            _functionBlock2 += "</mrow>\n";
+            xmlGen.AddNode(_functionBlock2);
+
+            // =
+            xmlGen.AddSign(EMathSign.Assignment);
+
+            // Matrix
+            Matrix m = new Matrix();
+            m.X11 = (float.IsNaN(ctlMatrixInput.Matrix.X11)) ? 0.0f : ctlMatrixInput.Matrix.X11;
+            m.X21 = (float.IsNaN(ctlMatrixInput.Matrix.X21)) ? 0.0f : ctlMatrixInput.Matrix.X21;
+            m.X12 = (float.IsNaN(ctlMatrixInput.Matrix.X12)) ? 0.0f : ctlMatrixInput.Matrix.X12;
+            m.X22 = (float.IsNaN(ctlMatrixInput.Matrix.X22)) ? 0.0f : ctlMatrixInput.Matrix.X22;
+                       
+
+            // Vektoren
+            Vector y = new Vector();            
+            y.X1 = (float.IsNaN (ctlVectorInputY.Vector.X1)) ? 0.0f : ctlVectorInputY.Vector.X1;
+            y.X2 = (float.IsNaN(ctlVectorInputY.Vector.X2)) ? 0.0f : ctlVectorInputY.Vector.X2;
+
+            // Matrix hinzufügen
+            xmlGen.AddMatrix(m, Color.Blue, Color.Blue);
+
+            // Malzeichen
+            xmlGen.AddSign(EMathSign.Multiply);
+
+            // Vektor y hinzufügen
+            xmlGen.AddVector(y, Color.Violet);
+
+            // = Zeichen
+            xmlGen.AddSign(EMathSign.Assignment);
+
+            // Matrixelemente einfügen
+            List<string> expressions = new List<string>();
+            expressions.Add(m.X11.ToString());
+            expressions.Add(y.X1.ToString());
+            expressions.Add(m.X12.ToString());
+            expressions.Add(y.X2.ToString());
+            expressions.Add(m.X21.ToString());
+            expressions.Add(y.X1.ToString());
+            expressions.Add(m.X22.ToString());
+            expressions.Add(y.X2.ToString());
+
+
+            // Liste mit Farben
+            List<Color> colors = new List<Color>();
+            colors.Add(Color.Blue);
+            colors.Add(Color.Violet);
+            colors.Add(Color.Blue);
+            colors.Add(Color.Violet);
+            colors.Add(Color.Blue);
+            colors.Add(Color.Violet);
+            colors.Add(Color.Blue);
+            colors.Add(Color.Violet);
+
+            // Inverse
+            Matrix m_inv = new Matrix();
+
+            xmlGen.AddMatrix(m_inv, Color.Yellow, Color.Yellow);
+
+            // Malzeichen
+            xmlGen.AddSign(EMathSign.Multiply);
+
+            // Vektor y hinzufügen
+            xmlGen.AddVector(y, Color.Violet);
+
+            // abschließen
+            xmlGen.Finish();
+
+            // tiff erstellen und auf picbox platzieren
+            ctlMathEquaToLeft.WriteEquationToPicBox(xmlGen.XmlDoc);
 
         }
 
