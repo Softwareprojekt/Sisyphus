@@ -52,6 +52,8 @@ namespace SoftwareProjekt.Forms
             _vectorInputX = new LineSegment(new PointF(0, 0), ctlVectorInputX.Vector, Pens.Black);
             _vectorInputY = new LineSegment(new PointF(0, 0), ctlVectorInputY.Vector, Pens.Black);
 
+            this.ctlVectorInputX.TextChanged += this.OnTextChanged;
+            this.ctlVectorInputY.TextChanged += this.OnTextChanged;
             cosInput.AddLineSegment(_vectorInputX);
             cosOutput.AddLineSegment(_vectorInputY);
             
@@ -242,7 +244,8 @@ namespace SoftwareProjekt.Forms
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
-            //cosOutput.ClearLineSegments();
+            cosOutput.ClearLineSegments();
+            cosInput.ClearLineSegments();
 
             Console.WriteLine(sender.ToString() + " " + e.ToString());
 
@@ -250,7 +253,9 @@ namespace SoftwareProjekt.Forms
             _vectorOutputY = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["VectorY"], Pens.Green);
 
             cosInput.AddLineSegment(_vectorOutputY);
+            cosInput.AddLineSegment(_vectorInputX);
             cosOutput.AddLineSegment(_vectorOutputX);
+            cosOutput.AddLineSegment(_vectorInputY);
         }
 
         private void butDeterminante_Click(object sender, EventArgs e)
@@ -294,7 +299,9 @@ namespace SoftwareProjekt.Forms
         public void OnTextChanged(object sender, EventArgs e)
         {
             _vectorInputX.Vector = ctlVectorInputX.Vector;
+            _vectorInputY.Vector = ctlVectorInputY.Vector;
             cosInput.Refresh();
+            cosOutput.Refresh();
         }
 
         public override bool LoadState(Dictionary<string, object> state)
