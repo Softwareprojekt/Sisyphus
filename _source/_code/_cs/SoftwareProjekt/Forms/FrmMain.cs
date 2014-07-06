@@ -78,6 +78,8 @@ namespace SoftwareProjekt.Forms
         private TabPage tabMenu;
         private CtlMindMap ctlMindMap1;
         private SaveFileDialog sfdialExportPDF;
+        private ToolStripButton tsbutReplace;
+        private ToolStripButton tsbutCancel;
 
         private Dictionary<TabPage, ToolStripButton[]> _controlDictionary =
     new Dictionary<TabPage, ToolStripButton[]>();
@@ -137,6 +139,8 @@ namespace SoftwareProjekt.Forms
             this.tstbxInput = new System.Windows.Forms.ToolStripTextBox();
             this.tscbxInput = new System.Windows.Forms.ToolStripComboBox();
             this.tsbutAccept = new System.Windows.Forms.ToolStripButton();
+            this.tsbutReplace = new System.Windows.Forms.ToolStripButton();
+            this.tsbutCancel = new System.Windows.Forms.ToolStripButton();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.sfdialExportPDF = new System.Windows.Forms.SaveFileDialog();
             this.tabMainMenu.SuspendLayout();
@@ -196,7 +200,6 @@ namespace SoftwareProjekt.Forms
             // 
             this._rtxtNotes.Location = new System.Drawing.Point(8, 498);
             this._rtxtNotes.Name = "_rtxtNotes";
-            this._rtxtNotes.ReadOnly = true;
             this._rtxtNotes.Size = new System.Drawing.Size(895, 132);
             this._rtxtNotes.TabIndex = 2;
             this._rtxtNotes.Text = "";
@@ -303,7 +306,9 @@ namespace SoftwareProjekt.Forms
             this.tslblInstructions,
             this.tstbxInput,
             this.tscbxInput,
-            this.tsbutAccept});
+            this.tsbutAccept,
+            this.tsbutReplace,
+            this.tsbutCancel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1255, 27);
@@ -417,6 +422,7 @@ namespace SoftwareProjekt.Forms
             this.tstbxInput.Name = "tstbxInput";
             this.tstbxInput.Size = new System.Drawing.Size(100, 27);
             this.tstbxInput.Visible = false;
+            this.tstbxInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tstbxInput_KeyDown);
             // 
             // tscbxInput
             // 
@@ -424,6 +430,7 @@ namespace SoftwareProjekt.Forms
             this.tscbxInput.Name = "tscbxInput";
             this.tscbxInput.Size = new System.Drawing.Size(121, 23);
             this.tscbxInput.Visible = false;
+            this.tscbxInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tscbxInput_KeyDown);
             // 
             // tsbutAccept
             // 
@@ -435,6 +442,28 @@ namespace SoftwareProjekt.Forms
             this.tsbutAccept.Text = "OK";
             this.tsbutAccept.Visible = false;
             this.tsbutAccept.Click += new System.EventHandler(this.tsbutAccept_Click);
+            // 
+            // tsbutReplace
+            // 
+            this.tsbutReplace.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbutReplace.Image = ((System.Drawing.Image)(resources.GetObject("tsbutReplace.Image")));
+            this.tsbutReplace.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbutReplace.Name = "tsbutReplace";
+            this.tsbutReplace.Size = new System.Drawing.Size(47, 19);
+            this.tsbutReplace.Text = "Ersetze";
+            this.tsbutReplace.Visible = false;
+            this.tsbutReplace.Click += new System.EventHandler(this.tsbutReplace_Click);
+            // 
+            // tsbutCancel
+            // 
+            this.tsbutCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbutCancel.Image = ((System.Drawing.Image)(resources.GetObject("tsbutCancel.Image")));
+            this.tsbutCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbutCancel.Name = "tsbutCancel";
+            this.tsbutCancel.Size = new System.Drawing.Size(69, 19);
+            this.tsbutCancel.Text = "Abbrechen";
+            this.tsbutCancel.Visible = false;
+            this.tsbutCancel.Click += new System.EventHandler(this.tsbutCancel_Click);
             // 
             // sfdialExportPDF
             // 
@@ -518,6 +547,7 @@ namespace SoftwareProjekt.Forms
                 {
                     tslblInstructions.Text = "Bitte Arbeitsheft anlegen oder laden";
                 }
+                else tsbutCloseExercisebook.Enabled = true;
                 showTabButtonsHideOthers(tabMenu);
                 this.tsbutAccept.Visible = false;
             }
@@ -541,18 +571,22 @@ namespace SoftwareProjekt.Forms
         private void tsbutNewExercisebook_Click(object sender, System.EventArgs e)
         {
             tslblInstructions.Text = "Bitte Namen eingeben: ";
+            tscbxInput.Visible = false;
             tstbxInput.Visible = true;
             tsbutAccept.Visible = true;
+            tstbxInput.Focus();
         }
 
         private void tsbutLoadExercisebook_Click(object sender, System.EventArgs e)
         {
             List<string> usernames = Workbook.Instance.GetAvailableWorkbooks();
+            tstbxInput.Visible = false;
             if (usernames.ToArray().Length > 1) // several choices of books
             {
                 tslblInstructions.Text = "Bitte Arbeitsbuch wählen: ";
                 tscbxInput.Visible = true;
                 tsbutAccept.Visible = true;
+                tscbxInput.Focus();
                 tscbxInput.ComboBox.ValueMember = "Benutzernamen:";
                 tscbxInput.ComboBox.Items.Clear();
                 tscbxInput.ComboBox.Items.AddRange(usernames.ToArray());
@@ -572,17 +606,21 @@ namespace SoftwareProjekt.Forms
 
         private void tsbutAccept_Click(object sender, System.EventArgs e)
         {
-            tsbutCloseExercisebook.Enabled = true;
-
+            if (tstbxInput.Text == "" && tscbxInput.Text == "")
+            {
+                tslblInstructions.Text = "Bitte Arbeitsbuchnamen eingeben!";
+                return;
+            }
             if (tscbxInput.Visible)
             {
+                // load existing book
                 tscbxInput.Visible = false;
                 Workbook.Instance.Username = tscbxInput.Text;
-                // load ExerciseBook
                 if (Workbook.Instance.Username != null) // otherwise parsing xml file failed
                 {
                     // instructions
                     tslblInstructions.Text = "Beginne eine Übung über die Mindmap oder öffne eine Existierende im Arbeitsheft.";
+                    tsbutCloseExercisebook.Enabled = true;
                 }
                 else
                 {
@@ -592,15 +630,39 @@ namespace SoftwareProjekt.Forms
             }
             else
             {
+                // create book, if none with this name exists! 
+                // otherwise ask user, how to proceed.  
                 tstbxInput.Visible = false;
-                // create ExerciseBook
-                Workbook.Instance.Username = tstbxInput.Text;
+                Workbook.Instance.Username = tstbxInput.Text; // must be assigned, even if it exists already
+                if (Exists(tstbxInput.Text))
+                {
+                    tslblInstructions.Text = "Arbeitsbuch existiert bereits! Ersetzen oder Abbrechen?";
+                    tsbutReplace.Visible = true;
+                    tsbutCancel.Visible = true;
+                    tsbutAccept.Visible = false;
+                    return;
+                }
                 tslblInstructions.Text = "";
                 tslblInstructions.Text = "Beginne eine Übung über die Mindmap.";
+                tsbutCloseExercisebook.Enabled = true;
             }
             tsbutAccept.Visible = false;
-            // tsbutNewExercise.Enabled = true; // Note: this should only be enabled if a topic was selected
-            // selecting a topic should only be possible if a exercisebook is open
+        }
+
+        private bool Exists(string bookName)
+        {
+            /*string currentDirectory = Directory.GetCurrentDirectory();
+            string sepChar = System.IO.Path.DirectorySeparatorChar.ToString();
+            string[] bookDirectories = Directory.GetDirectories(currentDirectory + sepChar + "Workbooks");
+            bookName = "Workbooks" + sepChar + bookName;
+            */
+            List<String> existingBookNames = Workbook.Instance.GetAvailableWorkbooks();
+            
+            foreach (string existingBookName in existingBookNames)
+            {
+                if (bookName == existingBookName) return true;
+            }
+            return false;
 
         }
 
@@ -637,11 +699,6 @@ namespace SoftwareProjekt.Forms
             }
         }
 
-        private void butTestExercise_Click(object sender, System.EventArgs e)
-        {
-           //this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(Enums.EClickedButton.StartExercise, (EExercises)Enum.Parse(typeof(EExercises), _cbExercise.SelectedItem.ToString())));
-        }
-
         private void tsbutCloseExercisebook_Click(object sender, System.EventArgs e)
         {
             Workbook.Instance.Username = null;
@@ -655,19 +712,12 @@ namespace SoftwareProjekt.Forms
         {
             // if the tabNotebook was selected even though there was
             // no workbook selected, cancel selection
-            if ((Workbook.Instance.Username == null) & (e.TabPage == tabNotebook))
+            if ((Workbook.Instance.Username == null) && (e.TabPage == tabNotebook))
             {
                 e.Cancel = true;
                 tslblInstructions.Text = "Vor Ansicht des Arbeitsheft ist ein Arbeitsbuch auszuwählen!";
             }
 
-        }
-
-        private void tsbutDeleteExercise_Click(object sender, EventArgs e)
-        {
-            //TODO: correct exercise
-            Workbook.Instance.DeleteEntry(Enums.EExercises.DrehungLinAbbUmUrsprung);
-            //Workbook.Instance.DeleteWorkbook();
         }
 
         private void tsbutExport_Click(object sender, EventArgs e)
@@ -850,8 +900,27 @@ namespace SoftwareProjekt.Forms
 
         private void tsbutLoadExercise_Click(object sender, EventArgs e)
         {
-            //Image myImg = Image.FromFile("./test1");
-            //string directory = Workbook.Instance.Username;
+            Enums.EExercises exercise = determineExercise();
+            if (exercise == Enums.EExercises.InvalidExercise) return;
+            this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(
+                Enums.EClickedButton.StartExercise, exercise));
+        }
+
+        private void tsbutDeleteExercise_Click(object sender, EventArgs e)
+        {
+            Enums.EExercises exercise = determineExercise();
+            if (exercise == Enums.EExercises.InvalidExercise)
+            {
+                this.tslblInstructions.Text = "Löschen der Übung fehlgeschlagen!";
+                return;
+            }
+            Workbook.Instance.DeleteEntry(exercise);
+            
+            this.tslblInstructions.Text = "Übung '" + exercise.ToString() + "' gelöscht!";
+        }
+
+        private Enums.EExercises determineExercise()
+        {
             Bitmap displayedBitmap = (Bitmap)picWorkbook.Image;
 
             try
@@ -867,7 +936,7 @@ namespace SoftwareProjekt.Forms
                         // open the exercise
                         char[] extension = ".bmp".ToCharArray();
                         String exercise = Path.GetFileName(imgString).TrimEnd(extension);
-                        this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(Enums.EClickedButton.StartExercise, (EExercises)Enum.Parse(typeof(EExercises), exercise)));
+                        return (EExercises)Enum.Parse(typeof(EExercises), exercise);
                     }
                 }
             }
@@ -876,6 +945,7 @@ namespace SoftwareProjekt.Forms
                 Console.WriteLine("Reading Path failed: " + e2.Message);
                 Console.WriteLine(e2.StackTrace);
             }
+            return Enums.EExercises.InvalidExercise;
         }
 
         private bool compare(Bitmap bmp1, Bitmap bmp2)
@@ -913,6 +983,38 @@ namespace SoftwareProjekt.Forms
         public static Image resizeImage(Image imgToResize, Size size)
         {
             return (Image)(new Bitmap(imgToResize, size));
-        }     
+        }
+
+        private void tstbxInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                tsbutAccept_Click(sender, e);
+            }
+
+        }
+
+        private void tscbxInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                tsbutAccept_Click(sender, e);
+            }
+        }
+
+        private void tsbutReplace_Click(object sender, EventArgs e)
+        {
+            Workbook.Instance.DeleteWorkbook();
+            tsbutReplace.Visible = false;
+            tsbutCancel.Visible = false;
+            tsbutAccept_Click(sender, e);
+        }
+
+        private void tsbutCancel_Click(object sender, EventArgs e)
+        {
+            tsbutReplace.Visible = false;
+            tsbutCancel.Visible = false;
+            tsbutCloseExercisebook_Click(sender, e);
+        }
     }
 }
