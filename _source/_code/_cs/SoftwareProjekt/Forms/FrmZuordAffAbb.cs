@@ -30,12 +30,16 @@ using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Classes.Math;
 using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
+using SoftwareProjekt.Classes.Xml;
 
 namespace SoftwareProjekt.Forms
 {
 
     public partial class FrmZuordAffAbb : AbstractView
     {
+        string _functionBlock;
+        string _xVector;
+
         private Vector AB;
         private Vector AC;
         private Vector minusA;
@@ -59,6 +63,8 @@ namespace SoftwareProjekt.Forms
         private Line LineE1E2;
         private Line LineBC;
         private Line LineB2C2;
+
+        private Matrix MatrixInv;
 
         public FrmZuordAffAbb()
         {
@@ -110,6 +116,77 @@ namespace SoftwareProjekt.Forms
             cosOutput.AddLineSegment(_vectorOutputE1);
             cosOutput.AddLineSegment(_vectorOutputE2);
             cosOutput.AddLine(LineE1E2);
+
+            _functionBlock = "<msub><mi>F</mi><mn>1</mn></msub>\n";
+            _functionBlock += "<mo>&ApplyFunction;</mo>\n";
+            _functionBlock += "<mrow>\n";
+            _functionBlock += "<mo>(</mo>\n";
+            _functionBlock += "<mover>\n";
+            _functionBlock += "\t<mi>&lambda;</mi>\n";
+            _functionBlock += "\t<mo>&rarr;</mo>\n";
+            _functionBlock += "</mover>\n";
+            _functionBlock += "<mo>)</mo>\n";
+            _functionBlock += "</mrow>\n";
+
+            _xVector += "<mfenced open='(' close=')' separators=''>\n";
+            _xVector += "<mtable>\n";
+
+            _xVector += "\t<mtr>\n";
+            _xVector += "\t\t<mtd>\n";
+            _xVector += "\t\t\t<msub>\n";
+            _xVector += "\t\t\t\t<mi>x</mi>\n";
+            _xVector += "\t\t\t\t<mn>1</mn>\n";
+            _xVector += "\t\t\t</msub>\n";
+            _xVector += "\t\t</mtd>\n";
+            _xVector += "\t</mtr>\n";
+
+            _xVector += "\t<mtr>\n";
+            _xVector += "\t\t<mtd>\n";
+            _xVector += "\t\t\t<msub>\n";
+            _xVector += "\t\t\t\t<mi>x</mi>\n";
+            _xVector += "\t\t\t\t<mn>2</mn>\n";
+            _xVector += "\t\t\t</msub>\n";
+            _xVector += "\t\t</mtd>\n";
+            _xVector += "\t</mtr>\n";
+
+            _xVector += "</mtable>\n";
+            _xVector += "</mfenced>\n";
+
+            CreateFormulaEquaToLeft();
+
+        }
+
+        private void CreateFormulaEquaToLeft()
+        {
+            MathXmlGenerator xmlGen = new MathXmlGenerator();
+
+            xmlGen.AddNode(_functionBlock);
+
+            xmlGen.AddSign(EMathSign.Assignment);
+
+            Matrix m = new Matrix();
+
+            m.X11 = AB.X1;
+            m.X21 = AB.X2;
+            m.X12 = AC.X1;
+            m.X22 = AC.X2;
+
+
+
+            xmlGen.AddMatrix(m, Color.Red, Color.Blue);
+            xmlGen.AddSign(EMathSign.Multiply);
+
+            xmlGen.AddNode("<mover>\n\t<mi>&lambda;</mi>\n\t<mo>&rarr;</mo>\n</mover>");
+
+            xmlGen.AddSign(EMathSign.Plus);
+
+            xmlGen.AddVector(ctlVectorInputA.Vector, Color.Green);
+
+
+            xmlGen.Finish();
+
+            ctlMathEquaToLeft.WriteEquationToPicBox(xmlGen.XmlDoc);
+        
         }
 
         public override Dictionary<string, Object> GetInputData()
@@ -133,6 +210,7 @@ namespace SoftwareProjekt.Forms
 
             LineBC = new Line(ctlVectorInputB.Vector, (Vector)e.CalcValues["LineBC"]);
             LineB2C2 = new Line(ctlVectorInputB2.Vector, (Vector)e.CalcValues["LineB2C2"]);
+            MatrixInv = (Matrix)e.CalcValues["Minv"];
             cosInputABC.AddLine(LineBC);
             cosInputA2B2C2.AddLine(LineB2C2);
         }
@@ -140,6 +218,7 @@ namespace SoftwareProjekt.Forms
         private void butFunction1X_Click(object sender, EventArgs e)
         {
             this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+            CreateFormulaEquaToLeft();
         }
 
         private void butInverseFunction1X_Click(object sender, EventArgs e)
@@ -241,5 +320,6 @@ namespace SoftwareProjekt.Forms
             ctlVectorInputC2.Vector = (Vector)state["VectorC2"];
             return true;
         }
+
     }
 }
