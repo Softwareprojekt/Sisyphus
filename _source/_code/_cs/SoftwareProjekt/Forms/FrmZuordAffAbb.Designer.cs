@@ -73,23 +73,21 @@
             this.grpDataInput1.Controls.Add(this.ctlVectorInputC);
             this.grpDataInput1.Controls.Add(this.ctlVectorInputB);
             this.grpDataInput1.Controls.Add(this.ctlVectorInputA);
-            this.grpDataInput1.Location = new System.Drawing.Point(12, 841);
-            this.grpDataInput1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpDataInput1.Location = new System.Drawing.Point(9, 683);
+            this.grpDataInput1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpDataInput1.Name = "grpDataInput1";
-            this.grpDataInput1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpDataInput1.Size = new System.Drawing.Size(493, 127);
+            this.grpDataInput1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpDataInput1.Size = new System.Drawing.Size(370, 103);
             this.grpDataInput1.TabIndex = 8;
             this.grpDataInput1.TabStop = false;
             this.grpDataInput1.Text = "Dateneingabe";
             // 
             // ctlVectorInputC
             // 
-            this.ctlVectorInputC.Text = "Vector Input";
-            this.ctlVectorInputC.Location = new System.Drawing.Point(329, 21);
-            this.ctlVectorInputC.Margin = new System.Windows.Forms.Padding(4);
-            this.ctlVectorInputC.MinimumSize = new System.Drawing.Size(136, 94);
+            this.ctlVectorInputC.Location = new System.Drawing.Point(247, 17);
+            this.ctlVectorInputC.MinimumSize = new System.Drawing.Size(102, 76);
             this.ctlVectorInputC.Name = "ctlVectorInputC";
-            this.ctlVectorInputC.Size = new System.Drawing.Size(153, 102);
+            this.ctlVectorInputC.Size = new System.Drawing.Size(115, 83);
             this.ctlVectorInputC.TabIndex = 2;
             vector1.X1 = float.NaN;
             vector1.X2 = float.NaN;
@@ -97,12 +95,10 @@
             // 
             // ctlVectorInputB
             // 
-            this.ctlVectorInputB.Text = "Vector Input";
-            this.ctlVectorInputB.Location = new System.Drawing.Point(168, 20);
-            this.ctlVectorInputB.Margin = new System.Windows.Forms.Padding(4);
-            this.ctlVectorInputB.MinimumSize = new System.Drawing.Size(136, 94);
+            this.ctlVectorInputB.Location = new System.Drawing.Point(126, 16);
+            this.ctlVectorInputB.MinimumSize = new System.Drawing.Size(102, 76);
             this.ctlVectorInputB.Name = "ctlVectorInputB";
-            this.ctlVectorInputB.Size = new System.Drawing.Size(153, 102);
+            this.ctlVectorInputB.Size = new System.Drawing.Size(115, 83);
             this.ctlVectorInputB.TabIndex = 1;
             vector2.X1 = float.NaN;
             vector2.X2 = float.NaN;
@@ -110,12 +106,10 @@
             // 
             // ctlVectorInputA
             // 
-            this.ctlVectorInputA.Text = "Vector Input";
-            this.ctlVectorInputA.Location = new System.Drawing.Point(7, 21);
-            this.ctlVectorInputA.Margin = new System.Windows.Forms.Padding(4);
-            this.ctlVectorInputA.MinimumSize = new System.Drawing.Size(136, 94);
+            this.ctlVectorInputA.Location = new System.Drawing.Point(5, 17);
+            this.ctlVectorInputA.MinimumSize = new System.Drawing.Size(102, 76);
             this.ctlVectorInputA.Name = "ctlVectorInputA";
-            this.ctlVectorInputA.Size = new System.Drawing.Size(153, 102);
+            this.ctlVectorInputA.Size = new System.Drawing.Size(115, 83);
             this.ctlVectorInputA.TabIndex = 0;
             vector3.X1 = float.NaN;
             vector3.X2 = float.NaN;
@@ -126,23 +120,21 @@
             this.grpDataInput2.Controls.Add(this.ctlVectorInputC2);
             this.grpDataInput2.Controls.Add(this.ctlVectorInputB2);
             this.grpDataInput2.Controls.Add(this.ctlVectorInputA2);
-            this.grpDataInput2.Location = new System.Drawing.Point(926, 841);
-            this.grpDataInput2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpDataInput2.Location = new System.Drawing.Point(694, 683);
+            this.grpDataInput2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpDataInput2.Name = "grpDataInput2";
-            this.grpDataInput2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpDataInput2.Size = new System.Drawing.Size(498, 132);
+            this.grpDataInput2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpDataInput2.Size = new System.Drawing.Size(374, 107);
             this.grpDataInput2.TabIndex = 10;
             this.grpDataInput2.TabStop = false;
             this.grpDataInput2.Text = "Dateneingabe";
             // 
             // ctlVectorInputC2
             // 
-            this.ctlVectorInputC2.Text = "Vector Input";
-            this.ctlVectorInputC2.Location = new System.Drawing.Point(329, 21);
-            this.ctlVectorInputC2.Margin = new System.Windows.Forms.Padding(4);
-            this.ctlVectorInputC2.MinimumSize = new System.Drawing.Size(136, 94);
+            this.ctlVectorInputC2.Location = new System.Drawing.Point(247, 17);
+            this.ctlVectorInputC2.MinimumSize = new System.Drawing.Size(102, 76);
             this.ctlVectorInputC2.Name = "ctlVectorInputC2";
-            this.ctlVectorInputC2.Size = new System.Drawing.Size(153, 102);
+            this.ctlVectorInputC2.Size = new System.Drawing.Size(115, 83);
             this.ctlVectorInputC2.TabIndex = 2;
             vector4.X1 = float.NaN;
             vector4.X2 = float.NaN;
@@ -150,12 +142,10 @@
             // 
             // ctlVectorInputB2
             // 
-            this.ctlVectorInputB2.Text = "Vector Input";
-            this.ctlVectorInputB2.Location = new System.Drawing.Point(168, 21);
-            this.ctlVectorInputB2.Margin = new System.Windows.Forms.Padding(4);
-            this.ctlVectorInputB2.MinimumSize = new System.Drawing.Size(136, 94);
+            this.ctlVectorInputB2.Location = new System.Drawing.Point(126, 17);
+            this.ctlVectorInputB2.MinimumSize = new System.Drawing.Size(102, 76);
             this.ctlVectorInputB2.Name = "ctlVectorInputB2";
-            this.ctlVectorInputB2.Size = new System.Drawing.Size(153, 102);
+            this.ctlVectorInputB2.Size = new System.Drawing.Size(115, 83);
             this.ctlVectorInputB2.TabIndex = 1;
             vector5.X1 = float.NaN;
             vector5.X2 = float.NaN;
@@ -163,12 +153,10 @@
             // 
             // ctlVectorInputA2
             // 
-            this.ctlVectorInputA2.Text = "Vector Input";
-            this.ctlVectorInputA2.Location = new System.Drawing.Point(7, 21);
-            this.ctlVectorInputA2.Margin = new System.Windows.Forms.Padding(4);
-            this.ctlVectorInputA2.MinimumSize = new System.Drawing.Size(136, 94);
+            this.ctlVectorInputA2.Location = new System.Drawing.Point(5, 17);
+            this.ctlVectorInputA2.MinimumSize = new System.Drawing.Size(102, 76);
             this.ctlVectorInputA2.Name = "ctlVectorInputA2";
-            this.ctlVectorInputA2.Size = new System.Drawing.Size(153, 102);
+            this.ctlVectorInputA2.Size = new System.Drawing.Size(115, 83);
             this.ctlVectorInputA2.TabIndex = 0;
             vector6.X1 = float.NaN;
             vector6.X2 = float.NaN;
@@ -179,10 +167,10 @@
             this.butFx.AutoSize = true;
             this.butFx.BackColor = System.Drawing.SystemColors.Highlight;
             this.butFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFx.Location = new System.Drawing.Point(1030, 1009);
-            this.butFx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.butFx.Location = new System.Drawing.Point(772, 820);
+            this.butFx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butFx.Name = "butFx";
-            this.butFx.Size = new System.Drawing.Size(277, 35);
+            this.butFx.Size = new System.Drawing.Size(233, 30);
             this.butFx.TabIndex = 12;
             this.butFx.Text = "Berechne Gesamtergebnis";
             this.butFx.UseVisualStyleBackColor = false;
@@ -191,29 +179,26 @@
             // cosInputABC
             // 
             this.cosInputABC.DoNotRefresh = false;
-            this.cosInputABC.Location = new System.Drawing.Point(2, 349);
-            this.cosInputABC.Margin = new System.Windows.Forms.Padding(4);
+            this.cosInputABC.Location = new System.Drawing.Point(2, 284);
             this.cosInputABC.Name = "cosInputABC";
-            this.cosInputABC.Size = new System.Drawing.Size(508, 464);
+            this.cosInputABC.Size = new System.Drawing.Size(381, 377);
             this.cosInputABC.TabIndex = 1;
             // 
             // cosOutput
             // 
             this.cosOutput.DoNotRefresh = false;
-            this.cosOutput.Location = new System.Drawing.Point(906, 349);
-            this.cosOutput.Margin = new System.Windows.Forms.Padding(4);
+            this.cosOutput.Location = new System.Drawing.Point(680, 284);
             this.cosOutput.Name = "cosOutput";
-            this.cosOutput.Size = new System.Drawing.Size(508, 464);
+            this.cosOutput.Size = new System.Drawing.Size(381, 377);
             this.cosOutput.TabIndex = 5;
             // 
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
             this.lblNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotes.Location = new System.Drawing.Point(690, 1178);
-            this.lblNotes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNotes.Location = new System.Drawing.Point(518, 957);
             this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(71, 20);
+            this.lblNotes.Size = new System.Drawing.Size(60, 17);
             this.lblNotes.TabIndex = 29;
             this.lblNotes.Text = "Notizen:";
             // 
@@ -221,9 +206,10 @@
             // 
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(801, 9);
+            this.lblHeader.Location = new System.Drawing.Point(601, 7);
+            this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(671, 29);
+            this.lblHeader.Size = new System.Drawing.Size(520, 25);
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Thema: Zuordnungsvorschrift affine Abbildungen studieren";
             // 
@@ -231,9 +217,10 @@
             // 
             this.butFunction1X.AutoSize = true;
             this.butFunction1X.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFunction1X.Location = new System.Drawing.Point(652, 483);
+            this.butFunction1X.Location = new System.Drawing.Point(489, 392);
+            this.butFunction1X.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butFunction1X.Name = "butFunction1X";
-            this.butFunction1X.Size = new System.Drawing.Size(109, 30);
+            this.butFunction1X.Size = new System.Drawing.Size(96, 27);
             this.butFunction1X.TabIndex = 3;
             this.butFunction1X.Text = "Berechnen";
             this.butFunction1X.UseVisualStyleBackColor = true;
@@ -243,9 +230,10 @@
             // 
             this.butInverseFunction1X.AutoSize = true;
             this.butInverseFunction1X.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butInverseFunction1X.Location = new System.Drawing.Point(609, 1009);
+            this.butInverseFunction1X.Location = new System.Drawing.Point(457, 820);
+            this.butInverseFunction1X.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butInverseFunction1X.Name = "butInverseFunction1X";
-            this.butInverseFunction1X.Size = new System.Drawing.Size(169, 35);
+            this.butInverseFunction1X.Size = new System.Drawing.Size(145, 28);
             this.butInverseFunction1X.TabIndex = 11;
             this.butInverseFunction1X.Text = "Berechne Inverse";
             this.butInverseFunction1X.UseVisualStyleBackColor = true;
@@ -255,9 +243,10 @@
             // 
             this.butFunction2X.AutoSize = true;
             this.butFunction2X.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFunction2X.Location = new System.Drawing.Point(1529, 1009);
+            this.butFunction2X.Location = new System.Drawing.Point(1147, 820);
+            this.butFunction2X.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butFunction2X.Name = "butFunction2X";
-            this.butFunction2X.Size = new System.Drawing.Size(109, 30);
+            this.butFunction2X.Size = new System.Drawing.Size(96, 27);
             this.butFunction2X.TabIndex = 13;
             this.butFunction2X.Text = "Berechnen";
             this.butFunction2X.UseVisualStyleBackColor = true;
@@ -266,19 +255,19 @@
             // cosInputA2B2C2
             // 
             this.cosInputA2B2C2.DoNotRefresh = false;
-            this.cosInputA2B2C2.Location = new System.Drawing.Point(1786, 349);
-            this.cosInputA2B2C2.Margin = new System.Windows.Forms.Padding(4);
+            this.cosInputA2B2C2.Location = new System.Drawing.Point(1340, 284);
             this.cosInputA2B2C2.Name = "cosInputA2B2C2";
-            this.cosInputA2B2C2.Size = new System.Drawing.Size(508, 464);
+            this.cosInputA2B2C2.Size = new System.Drawing.Size(381, 377);
             this.cosInputA2B2C2.TabIndex = 7;
             // 
             // picArrowToLeft
             // 
             this.picArrowToLeft.BackColor = System.Drawing.Color.Transparent;
             this.picArrowToLeft.Image = global::SoftwareProjekt.Properties.Resources.arrowToLeft;
-            this.picArrowToLeft.Location = new System.Drawing.Point(517, 263);
+            this.picArrowToLeft.Location = new System.Drawing.Point(388, 214);
+            this.picArrowToLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picArrowToLeft.Name = "picArrowToLeft";
-            this.picArrowToLeft.Size = new System.Drawing.Size(366, 205);
+            this.picArrowToLeft.Size = new System.Drawing.Size(274, 167);
             this.picArrowToLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picArrowToLeft.TabIndex = 43;
             this.picArrowToLeft.TabStop = false;
@@ -287,9 +276,10 @@
             // 
             this.picArrowToRightMiddle.BackColor = System.Drawing.Color.Transparent;
             this.picArrowToRightMiddle.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
-            this.picArrowToRightMiddle.Location = new System.Drawing.Point(517, 537);
+            this.picArrowToRightMiddle.Location = new System.Drawing.Point(388, 436);
+            this.picArrowToRightMiddle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picArrowToRightMiddle.Name = "picArrowToRightMiddle";
-            this.picArrowToRightMiddle.Size = new System.Drawing.Size(366, 205);
+            this.picArrowToRightMiddle.Size = new System.Drawing.Size(274, 167);
             this.picArrowToRightMiddle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picArrowToRightMiddle.TabIndex = 44;
             this.picArrowToRightMiddle.TabStop = false;
@@ -298,9 +288,10 @@
             // 
             this.picArrowToRightBottom.BackColor = System.Drawing.Color.Transparent;
             this.picArrowToRightBottom.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
-            this.picArrowToRightBottom.Location = new System.Drawing.Point(517, 774);
+            this.picArrowToRightBottom.Location = new System.Drawing.Point(388, 629);
+            this.picArrowToRightBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picArrowToRightBottom.Name = "picArrowToRightBottom";
-            this.picArrowToRightBottom.Size = new System.Drawing.Size(366, 205);
+            this.picArrowToRightBottom.Size = new System.Drawing.Size(274, 167);
             this.picArrowToRightBottom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picArrowToRightBottom.TabIndex = 45;
             this.picArrowToRightBottom.TabStop = false;
@@ -309,18 +300,20 @@
             // 
             this.picArrowToRightRight.BackColor = System.Drawing.Color.Transparent;
             this.picArrowToRightRight.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
-            this.picArrowToRightRight.Location = new System.Drawing.Point(1390, 537);
+            this.picArrowToRightRight.Location = new System.Drawing.Point(1042, 436);
+            this.picArrowToRightRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picArrowToRightRight.Name = "picArrowToRightRight";
-            this.picArrowToRightRight.Size = new System.Drawing.Size(366, 205);
+            this.picArrowToRightRight.Size = new System.Drawing.Size(274, 167);
             this.picArrowToRightRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picArrowToRightRight.TabIndex = 46;
             this.picArrowToRightRight.TabStop = false;
             // 
             // rtxtNotes
             // 
-            this.rtxtNotes.Location = new System.Drawing.Point(694, 1201);
+            this.rtxtNotes.Location = new System.Drawing.Point(520, 976);
+            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(553, 96);
+            this.rtxtNotes.Size = new System.Drawing.Size(416, 79);
             this.rtxtNotes.TabIndex = 47;
             this.rtxtNotes.Text = "";
             // 
@@ -330,10 +323,9 @@
             this.ctlMathEquaToLeft.Filename = "vabtnsuw.jmi.tiff";
             this.ctlMathEquaToLeft.Filepath = "";
             this.ctlMathEquaToLeft.FontSize = 8;
-            this.ctlMathEquaToLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.ctlMathEquaToLeft.Location = new System.Drawing.Point(457, 274);
+            this.ctlMathEquaToLeft.Location = new System.Drawing.Point(489, 275);
             this.ctlMathEquaToLeft.Name = "ctlMathEquaToLeft";
-            this.ctlMathEquaToLeft.Size = new System.Drawing.Size(191, 47);
+            this.ctlMathEquaToLeft.Size = new System.Drawing.Size(143, 38);
             this.ctlMathEquaToLeft.TabIndex = 2;
             // 
             // ctlMathEquaToRightMiddle
@@ -344,10 +336,9 @@
             this.ctlMathEquaToRightMiddle.Filename = "2de2yuws.mxz.tiff";
             this.ctlMathEquaToRightMiddle.Filepath = "";
             this.ctlMathEquaToRightMiddle.FontSize = 8;
-            this.ctlMathEquaToRightMiddle.Margin = new System.Windows.Forms.Padding(4);
-            this.ctlMathEquaToRightMiddle.Location = new System.Drawing.Point(416, 503);
+            this.ctlMathEquaToRightMiddle.Location = new System.Drawing.Point(409, 501);
             this.ctlMathEquaToRightMiddle.Name = "ctlMathEquaToRightMiddle";
-            this.ctlMathEquaToRightMiddle.Size = new System.Drawing.Size(169, 38);
+            this.ctlMathEquaToRightMiddle.Size = new System.Drawing.Size(127, 31);
             this.ctlMathEquaToRightMiddle.TabIndex = 4;
             // 
             // ctlFormularDraw1
@@ -358,10 +349,9 @@
             this.ctlFormularDraw1.Filename = "2de2yuws.mxz.tiff";
             this.ctlFormularDraw1.Filepath = "";
             this.ctlFormularDraw1.FontSize = 8;
-            this.ctlFormularDraw1.Margin = new System.Windows.Forms.Padding(4);
-            this.ctlFormularDraw1.Location = new System.Drawing.Point(416, 699);
+            this.ctlFormularDraw1.Location = new System.Drawing.Point(409, 699);
             this.ctlFormularDraw1.Name = "ctlFormularDraw1";
-            this.ctlFormularDraw1.Size = new System.Drawing.Size(169, 37);
+            this.ctlFormularDraw1.Size = new System.Drawing.Size(127, 30);
             this.ctlFormularDraw1.TabIndex = 9;
             // 
             // ctlMathEquaToRightRight
@@ -372,17 +362,16 @@
             this.ctlMathEquaToRightRight.Filename = "2de2yuws.mxz.tiff";
             this.ctlMathEquaToRightRight.Filepath = "";
             this.ctlMathEquaToRightRight.FontSize = 8;
-            this.ctlMathEquaToRightRight.Margin = new System.Windows.Forms.Padding(4);
-            this.ctlMathEquaToRightRight.Location = new System.Drawing.Point(1066, 503);
+            this.ctlMathEquaToRightRight.Location = new System.Drawing.Point(1067, 501);
             this.ctlMathEquaToRightRight.Name = "ctlMathEquaToRightRight";
-            this.ctlMathEquaToRightRight.Size = new System.Drawing.Size(177, 38);
+            this.ctlMathEquaToRightRight.Size = new System.Drawing.Size(133, 31);
             this.ctlMathEquaToRightRight.TabIndex = 6;
             // 
             // FrmZuordAffAbb
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1914, 1045);
+            this.ClientSize = new System.Drawing.Size(1436, 849);
             this.Controls.Add(this.ctlMathEquaToRightRight);
             this.Controls.Add(this.ctlFormularDraw1);
             this.Controls.Add(this.ctlMathEquaToRightMiddle);
@@ -403,7 +392,7 @@
             this.Controls.Add(this.butFx);
             this.Controls.Add(this.grpDataInput2);
             this.Controls.Add(this.grpDataInput1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmZuordAffAbb";
             this.Text = "Zuordnungsvorschrift einer affinen Abbildung";
             this.grpDataInput1.ResumeLayout(false);
