@@ -122,6 +122,12 @@ namespace SoftwareProjekt.UserControls
             this.invokeRefresh();
         }
 
+        public void AddPixel(PointF[] pixelArr)
+        {
+            _pixelList.AddRange(pixelArr);
+            this.invokeRefresh();
+        }
+
         public void AddLineSegment(LineSegment lineSegment)
         {
             _lineSegmentList.Add(lineSegment);

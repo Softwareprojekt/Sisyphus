@@ -57,7 +57,7 @@ namespace SoftwareProjekt.Forms
             this.lblHeader = new System.Windows.Forms.Label();
             this.cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.picBoxArrow = new System.Windows.Forms.PictureBox();
-            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
+            this._rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.ctlMathEqua = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.grpDataInput.SuspendLayout();
             this.grpDataOutput.SuspendLayout();
@@ -315,12 +315,12 @@ namespace SoftwareProjekt.Forms
             // 
             // rtxtNotes
             // 
-            this.rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.rtxtNotes.Location = new System.Drawing.Point(600, 756);
-            this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(569, 160);
-            this.rtxtNotes.TabIndex = 51;
-            this.rtxtNotes.Text = "";
+            this._rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this._rtxtNotes.Location = new System.Drawing.Point(600, 756);
+            this._rtxtNotes.Name = "rtxtNotes";
+            this._rtxtNotes.Size = new System.Drawing.Size(569, 160);
+            this._rtxtNotes.TabIndex = 51;
+            this._rtxtNotes.Text = "";
             // 
             // ctlMathEqua
             // 
@@ -342,7 +342,7 @@ namespace SoftwareProjekt.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1811, 962);
             this.Controls.Add(this.ctlMathEqua);
-            this.Controls.Add(this.rtxtNotes);
+            this.Controls.Add(this._rtxtNotes);
             this.Controls.Add(this.cosOutput);
             this.Controls.Add(this.butFunctionTransfX);
             this.Controls.Add(this.lblHeader);

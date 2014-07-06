@@ -45,7 +45,7 @@
             this.lblOrigPic = new System.Windows.Forms.Label();
             this.lblFraktal = new System.Windows.Forms.Label();
             this.lblNotes = new System.Windows.Forms.Label();
-            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
+            this._rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.grpSteps = new System.Windows.Forms.GroupBox();
             this._btnSwap = new System.Windows.Forms.Button();
             this._rbStep3 = new System.Windows.Forms.RadioButton();
@@ -192,12 +192,12 @@
             // 
             // rtxtNotes
             // 
-            this.rtxtNotes.Location = new System.Drawing.Point(293, 644);
-            this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(478, 124);
-            this.rtxtNotes.TabIndex = 7;
-            this.rtxtNotes.Text = "";
-            this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
+            this._rtxtNotes.Location = new System.Drawing.Point(293, 644);
+            this._rtxtNotes.Name = "rtxtNotes";
+            this._rtxtNotes.Size = new System.Drawing.Size(478, 124);
+            this._rtxtNotes.TabIndex = 7;
+            this._rtxtNotes.Text = "";
+            this._rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
             // 
             // grpSteps
             // 
@@ -371,7 +371,7 @@
             this.Controls.Add(this._vector_w2);
             this.Controls.Add(this.grpSteps);
             this.Controls.Add(this.lblNotes);
-            this.Controls.Add(this.rtxtNotes);
+            this.Controls.Add(this._rtxtNotes);
             this.Controls.Add(this.lblFraktal);
             this.Controls.Add(this.lblOrigPic);
             this.Controls.Add(this.lblHeader);

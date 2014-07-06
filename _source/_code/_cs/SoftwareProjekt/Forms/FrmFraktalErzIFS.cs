@@ -347,7 +347,7 @@ namespace SoftwareProjekt.Forms
             _vector_w2.Vector = (Vector)state["Vector_w2"];
             _vector_w3.Vector = (Vector)state["Vector_w3"];
 
-            rtxtNotes.Text = (string)state["Notes"];
+            _rtxtNotes.Text = (string)state["Notes"];
             return true;
         }
 

@@ -33,8 +33,7 @@ namespace SoftwareProjekt.Forms
 {
     public class AbstractView : Form, IView
     {
-
-        protected System.Windows.Forms.RichTextBox rtxtNotes;
+        protected System.Windows.Forms.RichTextBox _rtxtNotes;
         public Color inputColor
         {
             get { return _inputColor; }
@@ -125,7 +124,7 @@ namespace SoftwareProjekt.Forms
         public Dictionary<string, object> SaveState()
         {
             Dictionary<string, object> dic = this.GetInputData();
-            dic.Add("Notes", rtxtNotes.Text);
+            dic.Add("Notes", _rtxtNotes.Text);
             return dic;
         }
     }

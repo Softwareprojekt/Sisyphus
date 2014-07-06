@@ -24,6 +24,7 @@ using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace SoftwareProjekt.Exercises
 {
@@ -35,25 +36,75 @@ namespace SoftwareProjekt.Exercises
         }
         protected override void DoWork(IView view)
         {
-            Dictionary<string, Object> dict = null;
+            Dictionary<string, Object> inputData = null;
 
             // get data needed for calculations.
-            dict = view.GetInputData();
-
-            // to do
+            inputData = view.GetInputData();
 
             // check dict
-            //if (!dict.ContainsKey("Matrix1") || !dict.ContainsKey("Vector1"))
-            //{
-            //    return;
-            //}
+            if (!inputData.ContainsKey("Matrix1") || !inputData.ContainsKey("Matrix2") || !inputData.ContainsKey("Matrix3") || !inputData.ContainsKey("Matrix4")
+                || !inputData.ContainsKey("Vector1") || !inputData.ContainsKey("Vector2") || !inputData.ContainsKey("Vector3") || !inputData.ContainsKey("Vector4")
+                || !inputData.ContainsKey("Prob1") || !inputData.ContainsKey("Prob2") || !inputData.ContainsKey("Prob3") || !inputData.ContainsKey("Prob4")
+                || !inputData.ContainsKey("Iter"))
+            {
+                Console.WriteLine("ERROR @ Check Dict in FraktalChaos: Missing Data.");
+                return;
+            }
 
             // calculate...
-            
-            // to do
+            Matrix m1 = (Matrix)inputData["Matrix1"];
+            Matrix m2 = (Matrix)inputData["Matrix2"];
+            Matrix m3 = (Matrix)inputData["Matrix3"];
+            Matrix m4 = (Matrix)inputData["Matrix4"];
+
+            Vector v1 = (Vector)inputData["Vector1"];
+            Vector v2 = (Vector)inputData["Vector2"];
+            Vector v3 = (Vector)inputData["Vector3"];
+            Vector v4 = (Vector)inputData["Vector4"];
+
+            float prob1 = (float)inputData["Prob1"];
+            float prob2 = (float)inputData["Prob2"];
+            float prob3 = (float)inputData["Prob3"];
+            float prob4 = (float)inputData["Prob4"];
+
+            float iter = (float)inputData["Iter"];
+
+            float val1 = prob1;
+            float val2 = prob1 + prob2;
+            float val3 = prob1 + prob2 + prob3;
+            Vector lastPoint = new Vector(0, 0);
+
+            List<PointF> pointList = new List<PointF>();
+
+            for (int i = 0; i < iter; i++)
+            {
+                int random = new Random((int)DateTime.Now.Ticks).Next(0, 100);
+
+                //chooses the function to calculate
+                if (0 <= random && random < val1)
+                {
+                    lastPoint = Vector.AffineAbbildung(lastPoint, m1, v1);
+                }
+                else if (val1 <= random && random < val2)
+                {
+                    lastPoint = Vector.AffineAbbildung(lastPoint, m2, v2);
+                }
+                else if (val2 <= random && random < val3)
+                {
+                    lastPoint = Vector.AffineAbbildung(lastPoint, m3, v3);
+                }
+                else
+                {
+                    lastPoint = Vector.AffineAbbildung(lastPoint, m4, v4);
+                }
+                pointList.Add(new PointF(lastPoint.X1, lastPoint.X2));
+            }
+
+            Dictionary<string, Object> outputData = new Dictionary<string, object>();
+            outputData.Add("Points", pointList);
 
             // call base dowork and pass the calculated data.
-            base.Finalize(new ExerciseEventArgs(dict));
+            base.Finalize(new ExerciseEventArgs(outputData));
         }
     }
 }

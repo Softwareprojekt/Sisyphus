@@ -34,163 +34,75 @@ namespace SoftwareProjekt.Forms
 {
     public partial class FrmFraktalChaos : AbstractView
     {
-        /// <summary>
-        // **** 
-        // TODO: fix!!!!
-        // No Idea how this works!!!
-        /// </summary>
-
-        private List<PointF> _pointList;
-        private Vector _point;
         public FrmFraktalChaos()
         {
             InitializeComponent();
-
-            _ctlMatrix1.Matrix = new Matrix(0, 0, 0, 0);
-            _ctlMatrix2.Matrix = new Matrix(0, 0, 0, 0);
-            _ctlMatrix3.Matrix = new Matrix(0, 0, 0, 0);
-            _ctlMatrix4.Matrix = new Matrix(0, 0, 0, 0);
-
-            _ctlVector1.Vector = new Vector(0, 0);
-            _ctlVector2.Vector = new Vector(0, 0);
-            _ctlVector3.Vector = new Vector(0, 0);
-            _ctlVector4.Vector = new Vector(0, 0);
-
-            _txtProp1.Text = "25";
-            _txtProp2.Text = "25";
-            _txtProp3.Text = "25";
-            _txtProp4.Text = "25";
-
-            _txtIterationen.Text = "50000";
-
-            _pointList = new List<PointF>();
-            _point = new Vector();
-            cosFractal.CoordinateClick += cosFractal_CoordinateClick;
-        }
-
-        void cosFractal_CoordinateClick(float x, float y, MouseEventArgs e)
-        {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left)
-            {
-                _pointList.Add(new PointF(x, y));
-                cosFractal.Clear();
-                _point = new Vector(x, y);
-                cosFractal.AddPixel(new PointF(_point.X1, _point.X2));
-            }
-            if (e.Button == System.Windows.Forms.MouseButtons.Right)
-            {
-                ContextMenu cm = new ContextMenu();
-                MenuItem delPoints = new MenuItem("&Punkte löschen", new System.EventHandler(this.deletePoints_Click));
-                cm.MenuItems.Add(delPoints);
-                this.ContextMenu = cm;
-            }
-        }
-
-        private void deletePoints_Click(object sender, EventArgs e)
-        {
-            cosFractal.Clear();
-            _pointList.Clear();
-            _point = new Vector();
-        }
-
-        private void txtProbability_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNumIteration_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtProbability_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b')
-            {
-                e.Handled = true;
-            }
-
-        }
-
-        private void txtNumIteration_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b')
-            {
-                e.Handled = true;
-            }
-
         }
 
         private void rtxtNotes_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        { }
 
         private void butStart_Click(object sender, EventArgs e)
         {
-            // TODO: fix!!!!
-            // TODO: make this via MVC   
+            if (this.CheckInputs())
+            {
+                this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(Enums.EClickedButton.StartCalculation));
+            }
+        }
+
+        public override void ExerciseChanged(IExercise sender, Classes.EventArguments.ExerciseEventArgs e)
+        {
             cosFractal.Clear();
             cosFractal.DoNotRefresh = true;
-            if (_txtProp1.FloatValue + _txtProp2.FloatValue + _txtProp3.FloatValue + _txtProp4.FloatValue != 100f)
-            {
-                MessageBox.Show("Die gesammte Wahrscheinlichkeit muss bei 100% liegen");
-                return;
-            }
-            if (!_ctlMatrix1.Matrix.IsContractive())
-            {
-                MessageBox.Show("Matrix 1 ist nicht kontrahierend");
-                return;
-            }
-            else if (!_ctlMatrix2.Matrix.IsContractive())
-            {
-                MessageBox.Show("Matrix 2 ist nicht kontrahierend");
-                return;
-            }
-            else if (!_ctlMatrix3.Matrix.IsContractive())
-            {
-                MessageBox.Show("Matrix 3 ist nicht kontrahierend");
-                return;
-            }
-            else if (!_ctlMatrix4.Matrix.IsContractive())
-            {
-                MessageBox.Show("Matrix 4 ist nicht kontrahierend");
-                return;
-            }
 
-            float val1 = _txtProp1.FloatValue;
-            float val2 = _txtProp1.FloatValue + _txtProp2.FloatValue;
-            float val3 = _txtProp1.FloatValue + _txtProp2.FloatValue + _txtProp3.FloatValue;
-            Vector lastPoint = _point;
-            int i;
-            for (i = 0; i < _txtIterationen.FloatValue; i++)
-            {
-                int random = new Random((int)DateTime.Now.Ticks).Next(1, 101);
-                //cooses the Funciton to calulate
-                if (0 <= random && random < val1)
-                {
-                    lastPoint = Vector.AffineAbbildung(lastPoint, _ctlMatrix1.Matrix, _ctlVector1.Vector);
-                    cosFractal.AddPixel(new PointF(lastPoint.X1, lastPoint.X2));
-                }
-                else if (val1 <= random && random < val2)
-                {
-                    lastPoint = Vector.AffineAbbildung(lastPoint, _ctlMatrix2.Matrix, _ctlVector2.Vector);
-                    cosFractal.AddPixel(new PointF(lastPoint.X1, lastPoint.X2));
-                }
-                else if (val2 <= random && random < val3)
-                {
-                    lastPoint = Vector.AffineAbbildung(lastPoint, _ctlMatrix3.Matrix, _ctlVector3.Vector);
-                    cosFractal.AddPixel(new PointF(lastPoint.X1, lastPoint.X2));
-                }
-                else
-                {
-                    lastPoint = Vector.AffineAbbildung(lastPoint, _ctlMatrix4.Matrix, _ctlVector4.Vector);
-                    cosFractal.AddPixel(new PointF(lastPoint.X1, lastPoint.X2));
-                }
-            }
+            //TODO: refresh every (points / 10) points?
+            cosFractal.AddPixel(((List<PointF>)e.CalcValues["Points"]).ToArray());
 
             cosFractal.DoNotRefresh = false;
             cosFractal.invokeRefresh();
+        }
+
+        protected override bool CheckInputs()
+        {
+            if (_ctlMatrix1.Matrix.IsValid() && _ctlMatrix2.Matrix.IsValid() && _ctlMatrix3.Matrix.IsValid() && _ctlMatrix4.Matrix.IsValid() &&
+                _ctlVector1.Vector.IsValid() && _ctlVector1.Vector.IsValid() && _ctlVector1.Vector.IsValid() && _ctlVector1.Vector.IsValid() &&
+                _txtProp1.IsValid() && _txtProp2.IsValid() && _txtProp3.IsValid() && _txtProp4.IsValid() && _txtIterationen.IsValid())
+            {
+#if DEBUG
+                Console.WriteLine("SUCCESS @ Inputs are valid.");
+#endif
+                if (_txtProp1.FloatValue + _txtProp2.FloatValue + _txtProp3.FloatValue + _txtProp4.FloatValue != 100f)
+                {
+                    MessageBox.Show("Die gesamte Wahrscheinlichkeit muss bei 100% liegen.");
+                    return false;
+                }
+                if (!_ctlMatrix1.Matrix.IsContractive())
+                {
+                    MessageBox.Show("Matrix 1 ist nicht kontrahierend.");
+                    return false;
+                }
+                else if (!_ctlMatrix2.Matrix.IsContractive())
+                {
+                    MessageBox.Show("Matrix 2 ist nicht kontrahierend.");
+                    return false;
+                }
+                else if (!_ctlMatrix3.Matrix.IsContractive())
+                {
+                    MessageBox.Show("Matrix 3 ist nicht kontrahierend.");
+                    return false;
+                }
+                else if (!_ctlMatrix4.Matrix.IsContractive())
+                {
+                    MessageBox.Show("Matrix 4 ist nicht kontrahierend.");
+                    return false;
+                }
+
+                return true;
+            }
+#if DEBUG
+            Console.WriteLine("ERROR @ Inputs are not valid.");
+#endif
+            return false;
         }
 
         public override bool LoadState(Dictionary<string, object> state)
@@ -200,32 +112,33 @@ namespace SoftwareProjekt.Forms
             {
                 return false;
             }
-            else if (!state.ContainsKey("Matrix_w1") || !state.ContainsKey("Matrix_w2") || !state.ContainsKey("Matrix_w3") || !state.ContainsKey("Matrix_w4")
-                || !state.ContainsKey("Vector_w1") || !state.ContainsKey("Vector_w2") || !state.ContainsKey("Vector_w3") || !state.ContainsKey("Vector_w4")
-                || !state.ContainsKey("Prop1") || !state.ContainsKey("Prop2") || !state.ContainsKey("Prop3") || !state.ContainsKey("Prop4")
+            else if (!state.ContainsKey("Matrix1") || !state.ContainsKey("Matrix2") || !state.ContainsKey("Matrix3") || !state.ContainsKey("Matrix4")
+                || !state.ContainsKey("Vector1") || !state.ContainsKey("Vector2") || !state.ContainsKey("Vector3") || !state.ContainsKey("Vector4")
+                || !state.ContainsKey("Prob1") || !state.ContainsKey("Prob2") || !state.ContainsKey("Prob3") || !state.ContainsKey("Prob4")
                 || !state.ContainsKey("Iter") || !state.ContainsKey("Notes"))
             {
                 return false;
             }
 
-            _ctlMatrix1.Matrix = (SoftwareProjekt.Classes.Math.Matrix)state["Matrix_w1"];
-            _ctlMatrix2.Matrix = (SoftwareProjekt.Classes.Math.Matrix)state["Matrix_w2"];
-            _ctlMatrix3.Matrix = (SoftwareProjekt.Classes.Math.Matrix)state["Matrix_w3"];
-            _ctlMatrix4.Matrix = (SoftwareProjekt.Classes.Math.Matrix)state["Matrix_w4"];
+            _ctlMatrix1.Matrix = (SoftwareProjekt.Classes.Math.Matrix)state["Matrix1"];
+            _ctlMatrix2.Matrix = (SoftwareProjekt.Classes.Math.Matrix)state["Matrix2"];
+            _ctlMatrix3.Matrix = (SoftwareProjekt.Classes.Math.Matrix)state["Matrix3"];
+            _ctlMatrix4.Matrix = (SoftwareProjekt.Classes.Math.Matrix)state["Matrix4"];
 
-            _ctlVector1.Vector = (Vector)state["Vector_w1"];
-            _ctlVector2.Vector = (Vector)state["Vector_w2"];
-            _ctlVector3.Vector = (Vector)state["Vector_w3"];
-            _ctlVector4.Vector = (Vector)state["Vector_w4"];
+            _ctlVector1.Vector = (Vector)state["Vector1"];
+            _ctlVector2.Vector = (Vector)state["Vector2"];
+            _ctlVector3.Vector = (Vector)state["Vector3"];
+            _ctlVector4.Vector = (Vector)state["Vector4"];
 
             _txtIterationen.Text = state["Iter"].ToString();
 
-            _txtProp1.Text = (string)state["Prop1"].ToString();
-            _txtProp2.Text = (string)state["Prop2"].ToString();
-            _txtProp3.Text = (string)state["Prop3"].ToString();
-            _txtProp4.Text = (string)state["Prop4"].ToString();
+            _txtProp1.Text = state["Prob1"].ToString();
+            _txtProp2.Text = state["Prob2"].ToString();
+            _txtProp3.Text = state["Prob3"].ToString();
+            _txtProp4.Text = state["Prob4"].ToString();
 
-            //rtxtNotes.Text = (string)state["Notes"];
+            _rtxtNotes.Text = state["Notes"].ToString();
+
             return true;
         }
 
@@ -233,24 +146,22 @@ namespace SoftwareProjekt.Forms
         {
             Dictionary<string, Object> retVal = new Dictionary<string, object>();
 
-            retVal.Add("Matrix_w1", _ctlMatrix1.Matrix);
-            retVal.Add("Matrix_w2", _ctlMatrix2.Matrix);
-            retVal.Add("Matrix_w3", _ctlMatrix3.Matrix);
-            retVal.Add("Matrix_w4", _ctlMatrix4.Matrix);
+            retVal.Add("Matrix1", _ctlMatrix1.Matrix);
+            retVal.Add("Matrix2", _ctlMatrix2.Matrix);
+            retVal.Add("Matrix3", _ctlMatrix3.Matrix);
+            retVal.Add("Matrix4", _ctlMatrix4.Matrix);
 
-            retVal.Add("Vector_w1", _ctlVector1.Vector);
-            retVal.Add("Vector_w2", _ctlVector2.Vector);
-            retVal.Add("Vector_w3", _ctlVector3.Vector);
-            retVal.Add("Vector_w4", _ctlVector4.Vector);
+            retVal.Add("Vector1", _ctlVector1.Vector);
+            retVal.Add("Vector2", _ctlVector2.Vector);
+            retVal.Add("Vector3", _ctlVector3.Vector);
+            retVal.Add("Vector4", _ctlVector4.Vector);
 
             retVal.Add("Iter", _txtIterationen.FloatValue);
 
-            retVal.Add("Prop1", _txtProp1.FloatValue);
-            retVal.Add("Prop2", _txtProp2.FloatValue);
-            retVal.Add("Prop3", _txtProp3.FloatValue);
-            retVal.Add("Prop4", _txtProp4.FloatValue);
-
-            retVal.Add("Notes", rtxtNotes.Text);
+            retVal.Add("Prob1", _txtProp1.FloatValue);
+            retVal.Add("Prob2", _txtProp2.FloatValue);
+            retVal.Add("Prob3", _txtProp3.FloatValue);
+            retVal.Add("Prob4", _txtProp4.FloatValue);
 
             return retVal;
         }
@@ -277,7 +188,7 @@ namespace SoftwareProjekt.Forms
                 {
                     pic.Save(fileName);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     Console.WriteLine("ERROR @ Saveing bmp in Chaos game");
                     MessageBox.Show("Das Bild konnte nicht gespeichert werden");
@@ -285,7 +196,7 @@ namespace SoftwareProjekt.Forms
             }
         }
 
-        private void _btnSquere_Click(object sender, EventArgs e)
+        private void _btnSquare_Click(object sender, EventArgs e)
         {
             _ctlMatrix1.Matrix = new Matrix(0.5f, 0, 0, 0.5f);
             _ctlMatrix2.Matrix = new Matrix(0.5f, 0, 0, 0.5f);
@@ -330,6 +241,7 @@ namespace SoftwareProjekt.Forms
             this.cosFractal.XAxis.EndValue = 0.5f;
             this.cosFractal.YAxis.EndValue = 0.5f;
             this.cosFractal.invokeRefresh();
+
             _ctlMatrix1.Matrix = new Matrix(0, 0, 0, 0.5f);
             _ctlMatrix2.Matrix = new Matrix(0.42f, -0.42f, 0.42f, 0.42f);
             _ctlMatrix3.Matrix = new Matrix(0.42f, 0.42f, -0.42f, 0.42f);

@@ -39,7 +39,7 @@
             this.lblNumIteration = new System.Windows.Forms.Label();
             this.butSaveFractal = new System.Windows.Forms.Button();
             this.cosFractal = new SoftwareProjekt.UserControls.CoordinateSystem();
-            this.rtxtNotes = new System.Windows.Forms.RichTextBox();
+            this._rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.lblNotes = new System.Windows.Forms.Label();
             this.butStart = new System.Windows.Forms.Button();
             this.grpIFS = new System.Windows.Forms.GroupBox();
@@ -59,7 +59,7 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this._txtIterationen = new SoftwareProjekt.UserControls.FloatInput();
             this._grpChoices = new System.Windows.Forms.GroupBox();
-            this._btnSquere = new System.Windows.Forms.Button();
+            this._btnSquare = new System.Windows.Forms.Button();
             this._btnFern = new System.Windows.Forms.Button();
             this._btnTree = new System.Windows.Forms.Button();
             this.grpIFS.SuspendLayout();
@@ -99,15 +99,15 @@
             // 
             // rtxtNotes
             // 
-            this.rtxtNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this._rtxtNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtxtNotes.Location = new System.Drawing.Point(140, 620);
-            this.rtxtNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.rtxtNotes.Name = "rtxtNotes";
-            this.rtxtNotes.Size = new System.Drawing.Size(596, 152);
-            this.rtxtNotes.TabIndex = 6;
-            this.rtxtNotes.Text = "";
-            this.rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
+            this._rtxtNotes.Location = new System.Drawing.Point(140, 620);
+            this._rtxtNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._rtxtNotes.Name = "rtxtNotes";
+            this._rtxtNotes.Size = new System.Drawing.Size(596, 152);
+            this._rtxtNotes.TabIndex = 6;
+            this._rtxtNotes.Text = "";
+            this._rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
             // 
             // lblNotes
             // 
@@ -317,7 +317,7 @@
             this._grpChoices.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._grpChoices.Controls.Add(this._btnTree);
             this._grpChoices.Controls.Add(this._btnFern);
-            this._grpChoices.Controls.Add(this._btnSquere);
+            this._grpChoices.Controls.Add(this._btnSquare);
             this._grpChoices.Location = new System.Drawing.Point(362, 428);
             this._grpChoices.Name = "_grpChoices";
             this._grpChoices.Size = new System.Drawing.Size(199, 123);
@@ -325,16 +325,16 @@
             this._grpChoices.TabStop = false;
             this._grpChoices.Text = "Beispiele";
             // 
-            // _btnSquere
+            // _btnSquare
             // 
-            this._btnSquere.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._btnSquere.Location = new System.Drawing.Point(6, 19);
-            this._btnSquere.Name = "_btnSquere";
-            this._btnSquere.Size = new System.Drawing.Size(181, 28);
-            this._btnSquere.TabIndex = 0;
-            this._btnSquere.Text = "Quadrat";
-            this._btnSquere.UseVisualStyleBackColor = true;
-            this._btnSquere.Click += new System.EventHandler(this._btnSquere_Click);
+            this._btnSquare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this._btnSquare.Location = new System.Drawing.Point(6, 19);
+            this._btnSquare.Name = "_btnSquare";
+            this._btnSquare.Size = new System.Drawing.Size(181, 28);
+            this._btnSquare.TabIndex = 0;
+            this._btnSquare.Text = "Quadrat";
+            this._btnSquare.UseVisualStyleBackColor = true;
+            this._btnSquare.Click += new System.EventHandler(this._btnSquare_Click);
             // 
             // _btnFern
             // 
@@ -370,7 +370,7 @@
             this.Controls.Add(this.grpIFS);
             this.Controls.Add(this.butStart);
             this.Controls.Add(this.lblNotes);
-            this.Controls.Add(this.rtxtNotes);
+            this.Controls.Add(this._rtxtNotes);
             this.Controls.Add(this.cosFractal);
             this.Controls.Add(this.butSaveFractal);
             this.MinimumSize = new System.Drawing.Size(801, 714);
@@ -410,6 +410,6 @@
         private System.Windows.Forms.GroupBox _grpChoices;
         private System.Windows.Forms.Button _btnTree;
         private System.Windows.Forms.Button _btnFern;
-        private System.Windows.Forms.Button _btnSquere;
+        private System.Windows.Forms.Button _btnSquare;
     }
 }

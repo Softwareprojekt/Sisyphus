@@ -153,7 +153,7 @@ namespace SoftwareProjekt.Forms
 
             ctlVectorInputX.Vector = (Vector)state["VectorX"];
             _ctlAngle.Text = state["Angle"].ToString();
-            rtxtNotes.Text = state["Notes"].ToString();
+            _rtxtNotes.Text = state["Notes"].ToString();
             return true;
         }
 
