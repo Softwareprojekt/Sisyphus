@@ -50,6 +50,7 @@ namespace SoftwareProjekt.Classes.EventArguments
         public ExerciseEventArgs(Dictionary<string, Object> dict)
         {
             this.CalcValues = dict;
+            this.Final = true;
         }
 
         /// <summary>

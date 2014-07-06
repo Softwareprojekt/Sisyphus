@@ -35,7 +35,7 @@ namespace SoftwareProjekt.Exercises
         /// <summary>
         /// Name of exercise.
         /// </summary>
-        protected Thread _workingThread;
+        protected Thread _workingThread = null;
         private IView _view;
 
         public EExercises Id
@@ -48,7 +48,7 @@ namespace SoftwareProjekt.Exercises
         /// </summary>
         public void AbortWork()
         {
-            if (_workingThread.IsAlive)
+            if (_workingThread != null && _workingThread.IsAlive)
             {
                 _workingThread.Abort();
             }
@@ -104,11 +104,8 @@ namespace SoftwareProjekt.Exercises
         }
 
         /// <summary>
-        /// Much calculation.
+        /// Much calculation. Wow.
         /// </summary>
-        // TODO: find out which input arguments are needed here
-        // people who implement these methods should speak with each other, to clarify it;
-        // the output result needs also clarification! Not sure if result of Type Dictionary makes sense.
         protected abstract void DoWork(IView view);
     }
 }

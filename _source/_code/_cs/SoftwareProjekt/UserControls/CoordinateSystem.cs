@@ -596,7 +596,7 @@ namespace SoftwareProjekt.UserControls
             foreach (PointF item in _pixelList)
             {
                 PointF p = CalculateInternalCoordinates(item.X, item.Y);
-                graphics.FillRectangle(Brushes.Black, p.X, p.Y, 2, 2);
+                graphics.FillRectangle(Brushes.Black, p.X, p.Y, 1, 1);
             }
         }
         private void DrawPolygons(Graphics graphics)

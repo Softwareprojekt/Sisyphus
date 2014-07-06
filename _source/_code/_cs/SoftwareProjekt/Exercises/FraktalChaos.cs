@@ -21,6 +21,7 @@
 using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Classes.Math;
 using SoftwareProjekt.Enums;
+using SoftwareProjekt.Forms;
 using SoftwareProjekt.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,7 @@ namespace SoftwareProjekt.Exercises
         {
             this.Id = EExercises.FraktalerzeugungMitChaos;
         }
+
         protected override void DoWork(IView view)
         {
             Dictionary<string, Object> inputData = null;
@@ -45,7 +47,7 @@ namespace SoftwareProjekt.Exercises
             if (!inputData.ContainsKey("Matrix1") || !inputData.ContainsKey("Matrix2") || !inputData.ContainsKey("Matrix3") || !inputData.ContainsKey("Matrix4")
                 || !inputData.ContainsKey("Vector1") || !inputData.ContainsKey("Vector2") || !inputData.ContainsKey("Vector3") || !inputData.ContainsKey("Vector4")
                 || !inputData.ContainsKey("Prob1") || !inputData.ContainsKey("Prob2") || !inputData.ContainsKey("Prob3") || !inputData.ContainsKey("Prob4")
-                || !inputData.ContainsKey("Iter"))
+                || !inputData.ContainsKey("Iter") || !inputData.ContainsKey("Steps"))
             {
                 Console.WriteLine("ERROR @ Check Dict in FraktalChaos: Missing Data.");
                 return;
@@ -68,6 +70,7 @@ namespace SoftwareProjekt.Exercises
             float prob4 = (float)inputData["Prob4"];
 
             float iter = (float)inputData["Iter"];
+            float steps = (float)inputData["Steps"];
 
             float val1 = prob1;
             float val2 = prob1 + prob2;
@@ -76,7 +79,7 @@ namespace SoftwareProjekt.Exercises
 
             List<PointF> pointList = new List<PointF>();
 
-            for (int i = 0; i < iter; i++)
+            for (int i = 1; i <= iter; i++)
             {
                 int random = new Random((int)DateTime.Now.Ticks).Next(0, 100);
 
@@ -98,13 +101,20 @@ namespace SoftwareProjekt.Exercises
                     lastPoint = Vector.AffineAbbildung(lastPoint, m4, v4);
                 }
                 pointList.Add(new PointF(lastPoint.X1, lastPoint.X2));
+
+                //Don't know why, but otherwise it doesn't work
+                System.Threading.Thread.Sleep(1);
+
+                if (i % (iter / steps) == 0)
+                {
+                    Dictionary<string, Object> outputData = new Dictionary<string, object>();
+                    outputData.Add("Points", pointList);
+                    outputData.Add("CurrentIteration", i);
+                    // call base dowork and pass the calculated data.
+                    base.Finalize(new ExerciseEventArgs(outputData, (i == iter)));
+                }
+
             }
-
-            Dictionary<string, Object> outputData = new Dictionary<string, object>();
-            outputData.Add("Points", pointList);
-
-            // call base dowork and pass the calculated data.
-            base.Finalize(new ExerciseEventArgs(outputData));
         }
     }
 }

@@ -22,12 +22,8 @@ using SoftwareProjekt.Classes.Math;
 using SoftwareProjekt.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace SoftwareProjekt.Forms
@@ -37,6 +33,7 @@ namespace SoftwareProjekt.Forms
         public FrmFraktalChaos()
         {
             InitializeComponent();
+            _lblIteration.Text = "";
         }
 
         private void rtxtNotes_TextChanged(object sender, EventArgs e)
@@ -55,18 +52,26 @@ namespace SoftwareProjekt.Forms
             cosFractal.Clear();
             cosFractal.DoNotRefresh = true;
 
-            //TODO: refresh every (points / 10) points?
             cosFractal.AddPixel(((List<PointF>)e.CalcValues["Points"]).ToArray());
+
+            int currentIteration = (int)e.CalcValues["CurrentIteration"];
+            string step = "Iteration: " + currentIteration;
+            _lblIteration.Invoke(new Action(() => _lblIteration.Text = step));
 
             cosFractal.DoNotRefresh = false;
             cosFractal.invokeRefresh();
+
+            if (e.Final)
+            {
+                this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(Enums.EClickedButton.CloseProgressForm));
+            }
         }
 
         protected override bool CheckInputs()
         {
             if (_ctlMatrix1.Matrix.IsValid() && _ctlMatrix2.Matrix.IsValid() && _ctlMatrix3.Matrix.IsValid() && _ctlMatrix4.Matrix.IsValid() &&
                 _ctlVector1.Vector.IsValid() && _ctlVector1.Vector.IsValid() && _ctlVector1.Vector.IsValid() && _ctlVector1.Vector.IsValid() &&
-                _txtProp1.IsValid() && _txtProp2.IsValid() && _txtProp3.IsValid() && _txtProp4.IsValid() && _txtIterationen.IsValid())
+                _txtProp1.IsValid() && _txtProp2.IsValid() && _txtProp3.IsValid() && _txtProp4.IsValid() && _txtIterationen.IsValid() && _txtSteps.IsValid())
             {
 #if DEBUG
                 Console.WriteLine("SUCCESS @ Inputs are valid.");
@@ -115,7 +120,7 @@ namespace SoftwareProjekt.Forms
             else if (!state.ContainsKey("Matrix1") || !state.ContainsKey("Matrix2") || !state.ContainsKey("Matrix3") || !state.ContainsKey("Matrix4")
                 || !state.ContainsKey("Vector1") || !state.ContainsKey("Vector2") || !state.ContainsKey("Vector3") || !state.ContainsKey("Vector4")
                 || !state.ContainsKey("Prob1") || !state.ContainsKey("Prob2") || !state.ContainsKey("Prob3") || !state.ContainsKey("Prob4")
-                || !state.ContainsKey("Iter") || !state.ContainsKey("Notes"))
+                || !state.ContainsKey("Iter") || !state.ContainsKey("Notes") || !state.ContainsKey("Steps"))
             {
                 return false;
             }
@@ -131,6 +136,7 @@ namespace SoftwareProjekt.Forms
             _ctlVector4.Vector = (Vector)state["Vector4"];
 
             _txtIterationen.Text = state["Iter"].ToString();
+            _txtSteps.Text = state["Steps"].ToString();
 
             _txtProp1.Text = state["Prob1"].ToString();
             _txtProp2.Text = state["Prob2"].ToString();
@@ -162,6 +168,8 @@ namespace SoftwareProjekt.Forms
             retVal.Add("Prob2", _txtProp2.FloatValue);
             retVal.Add("Prob3", _txtProp3.FloatValue);
             retVal.Add("Prob4", _txtProp4.FloatValue);
+
+            retVal.Add("Steps", _txtSteps.FloatValue);
 
             return retVal;
         }
@@ -240,6 +248,7 @@ namespace SoftwareProjekt.Forms
         {
             this.cosFractal.XAxis.EndValue = 0.5f;
             this.cosFractal.YAxis.EndValue = 0.5f;
+            _lblIteration.Text = "Iteration: 0";
             this.cosFractal.invokeRefresh();
 
             _ctlMatrix1.Matrix = new Matrix(0, 0, 0, 0.5f);

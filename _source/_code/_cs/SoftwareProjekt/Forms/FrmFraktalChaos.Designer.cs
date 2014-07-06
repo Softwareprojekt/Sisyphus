@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SoftwareProjekt.Classes.Math.Vector vector9 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Matrix matrix9 = new SoftwareProjekt.Classes.Math.Matrix();
-            SoftwareProjekt.Classes.Math.Vector vector10 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Matrix matrix10 = new SoftwareProjekt.Classes.Math.Matrix();
-            SoftwareProjekt.Classes.Math.Vector vector11 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Matrix matrix11 = new SoftwareProjekt.Classes.Math.Matrix();
-            SoftwareProjekt.Classes.Math.Vector vector12 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Matrix matrix12 = new SoftwareProjekt.Classes.Math.Matrix();
+            SoftwareProjekt.Classes.Math.Vector vector5 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Matrix matrix5 = new SoftwareProjekt.Classes.Math.Matrix();
+            SoftwareProjekt.Classes.Math.Vector vector6 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Matrix matrix6 = new SoftwareProjekt.Classes.Math.Matrix();
+            SoftwareProjekt.Classes.Math.Vector vector7 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Matrix matrix7 = new SoftwareProjekt.Classes.Math.Matrix();
+            SoftwareProjekt.Classes.Math.Vector vector8 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Matrix matrix8 = new SoftwareProjekt.Classes.Math.Matrix();
             this.lblNumIteration = new System.Windows.Forms.Label();
             this.butSaveFractal = new System.Windows.Forms.Button();
             this.cosFractal = new SoftwareProjekt.UserControls.CoordinateSystem();
@@ -59,9 +59,12 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this._txtIterationen = new SoftwareProjekt.UserControls.FloatInput();
             this._grpChoices = new System.Windows.Forms.GroupBox();
-            this._btnSquare = new System.Windows.Forms.Button();
-            this._btnFern = new System.Windows.Forms.Button();
             this._btnTree = new System.Windows.Forms.Button();
+            this._btnFern = new System.Windows.Forms.Button();
+            this._btnSquare = new System.Windows.Forms.Button();
+            this._lblIteration = new System.Windows.Forms.Label();
+            this._lblSteps = new System.Windows.Forms.Label();
+            this._txtSteps = new SoftwareProjekt.UserControls.FloatInput();
             this.grpIFS.SuspendLayout();
             this._grpChoices.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +72,7 @@
             // lblNumIteration
             // 
             this.lblNumIteration.AutoSize = true;
-            this.lblNumIteration.Location = new System.Drawing.Point(24, 48);
+            this.lblNumIteration.Location = new System.Drawing.Point(9, 48);
             this.lblNumIteration.Name = "lblNumIteration";
             this.lblNumIteration.Size = new System.Drawing.Size(95, 13);
             this.lblNumIteration.TabIndex = 2;
@@ -78,7 +81,7 @@
             // butSaveFractal
             // 
             this.butSaveFractal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.butSaveFractal.Location = new System.Drawing.Point(445, 398);
+            this.butSaveFractal.Location = new System.Drawing.Point(401, 436);
             this.butSaveFractal.Name = "butSaveFractal";
             this.butSaveFractal.Size = new System.Drawing.Size(104, 23);
             this.butSaveFractal.TabIndex = 5;
@@ -97,14 +100,14 @@
             this.cosFractal.Size = new System.Drawing.Size(465, 343);
             this.cosFractal.TabIndex = 2;
             // 
-            // rtxtNotes
+            // _rtxtNotes
             // 
             this._rtxtNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._rtxtNotes.Location = new System.Drawing.Point(140, 620);
-            this._rtxtNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this._rtxtNotes.Name = "rtxtNotes";
-            this._rtxtNotes.Size = new System.Drawing.Size(596, 152);
+            this._rtxtNotes.Location = new System.Drawing.Point(12, 502);
+            this._rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
+            this._rtxtNotes.Name = "_rtxtNotes";
+            this._rtxtNotes.Size = new System.Drawing.Size(550, 167);
             this._rtxtNotes.TabIndex = 6;
             this._rtxtNotes.Text = "";
             this._rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
@@ -122,9 +125,9 @@
             // butStart
             // 
             this.butStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.butStart.Location = new System.Drawing.Point(362, 398);
+            this.butStart.Location = new System.Drawing.Point(401, 405);
             this.butStart.Name = "butStart";
-            this.butStart.Size = new System.Drawing.Size(75, 23);
+            this.butStart.Size = new System.Drawing.Size(104, 23);
             this.butStart.TabIndex = 4;
             this.butStart.Text = "&Start";
             this.butStart.UseVisualStyleBackColor = true;
@@ -167,18 +170,18 @@
             this._ctlVector4.Name = "_ctlVector4";
             this._ctlVector4.Size = new System.Drawing.Size(102, 89);
             this._ctlVector4.TabIndex = 11;
-            vector9.X1 = float.NaN;
-            vector9.X2 = float.NaN;
-            this._ctlVector4.Vector = vector9;
+            vector5.X1 = float.NaN;
+            vector5.X2 = float.NaN;
+            this._ctlVector4.Vector = vector5;
             // 
             // _ctlMatrix4
             // 
             this._ctlMatrix4.Location = new System.Drawing.Point(97, 304);
-            matrix9.X11 = float.NaN;
-            matrix9.X12 = float.NaN;
-            matrix9.X21 = float.NaN;
-            matrix9.X22 = float.NaN;
-            this._ctlMatrix4.Matrix = matrix9;
+            matrix5.X11 = float.NaN;
+            matrix5.X12 = float.NaN;
+            matrix5.X21 = float.NaN;
+            matrix5.X22 = float.NaN;
+            this._ctlMatrix4.Matrix = matrix5;
             this._ctlMatrix4.MinimumSize = new System.Drawing.Size(98, 76);
             this._ctlMatrix4.Name = "_ctlMatrix4";
             this._ctlMatrix4.Size = new System.Drawing.Size(125, 89);
@@ -199,18 +202,18 @@
             this._ctlVector3.Name = "_ctlVector3";
             this._ctlVector3.Size = new System.Drawing.Size(102, 89);
             this._ctlVector3.TabIndex = 8;
-            vector10.X1 = float.NaN;
-            vector10.X2 = float.NaN;
-            this._ctlVector3.Vector = vector10;
+            vector6.X1 = float.NaN;
+            vector6.X2 = float.NaN;
+            this._ctlVector3.Vector = vector6;
             // 
             // _ctlMatrix3
             // 
             this._ctlMatrix3.Location = new System.Drawing.Point(97, 209);
-            matrix10.X11 = float.NaN;
-            matrix10.X12 = float.NaN;
-            matrix10.X21 = float.NaN;
-            matrix10.X22 = float.NaN;
-            this._ctlMatrix3.Matrix = matrix10;
+            matrix6.X11 = float.NaN;
+            matrix6.X12 = float.NaN;
+            matrix6.X21 = float.NaN;
+            matrix6.X22 = float.NaN;
+            this._ctlMatrix3.Matrix = matrix6;
             this._ctlMatrix3.MinimumSize = new System.Drawing.Size(98, 76);
             this._ctlMatrix3.Name = "_ctlMatrix3";
             this._ctlMatrix3.Size = new System.Drawing.Size(125, 89);
@@ -218,12 +221,11 @@
             // 
             // _txtProp2
             // 
-            this._txtProp2.BackColor = System.Drawing.Color.White;
+            this._txtProp2.BackColor = System.Drawing.Color.Red;
             this._txtProp2.Location = new System.Drawing.Point(11, 134);
             this._txtProp2.Name = "_txtProp2";
             this._txtProp2.Size = new System.Drawing.Size(61, 20);
             this._txtProp2.TabIndex = 6;
-            this._txtProp2.Text = "25";
             // 
             // _ctlVector2
             // 
@@ -232,18 +234,18 @@
             this._ctlVector2.Name = "_ctlVector2";
             this._ctlVector2.Size = new System.Drawing.Size(102, 89);
             this._ctlVector2.TabIndex = 5;
-            vector11.X1 = float.NaN;
-            vector11.X2 = float.NaN;
-            this._ctlVector2.Vector = vector11;
+            vector7.X1 = float.NaN;
+            vector7.X2 = float.NaN;
+            this._ctlVector2.Vector = vector7;
             // 
             // _ctlMatrix2
             // 
             this._ctlMatrix2.Location = new System.Drawing.Point(97, 114);
-            matrix11.X11 = float.NaN;
-            matrix11.X12 = float.NaN;
-            matrix11.X21 = float.NaN;
-            matrix11.X22 = float.NaN;
-            this._ctlMatrix2.Matrix = matrix11;
+            matrix7.X11 = float.NaN;
+            matrix7.X12 = float.NaN;
+            matrix7.X21 = float.NaN;
+            matrix7.X22 = float.NaN;
+            this._ctlMatrix2.Matrix = matrix7;
             this._ctlMatrix2.MinimumSize = new System.Drawing.Size(98, 76);
             this._ctlMatrix2.Name = "_ctlMatrix2";
             this._ctlMatrix2.Size = new System.Drawing.Size(125, 89);
@@ -260,12 +262,11 @@
             // 
             // _txtProp1
             // 
-            this._txtProp1.BackColor = System.Drawing.Color.White;
+            this._txtProp1.BackColor = System.Drawing.Color.Red;
             this._txtProp1.Location = new System.Drawing.Point(11, 48);
             this._txtProp1.Name = "_txtProp1";
             this._txtProp1.Size = new System.Drawing.Size(61, 20);
             this._txtProp1.TabIndex = 2;
-            this._txtProp1.Text = "25";
             // 
             // _ctlVector1
             // 
@@ -274,18 +275,18 @@
             this._ctlVector1.Name = "_ctlVector1";
             this._ctlVector1.Size = new System.Drawing.Size(102, 89);
             this._ctlVector1.TabIndex = 1;
-            vector12.X1 = float.NaN;
-            vector12.X2 = float.NaN;
-            this._ctlVector1.Vector = vector12;
+            vector8.X1 = float.NaN;
+            vector8.X2 = float.NaN;
+            this._ctlVector1.Vector = vector8;
             // 
             // _ctlMatrix1
             // 
             this._ctlMatrix1.Location = new System.Drawing.Point(97, 19);
-            matrix12.X11 = float.NaN;
-            matrix12.X12 = float.NaN;
-            matrix12.X21 = float.NaN;
-            matrix12.X22 = float.NaN;
-            this._ctlMatrix1.Matrix = matrix12;
+            matrix8.X11 = float.NaN;
+            matrix8.X12 = float.NaN;
+            matrix8.X21 = float.NaN;
+            matrix8.X22 = float.NaN;
+            this._ctlMatrix1.Matrix = matrix8;
             this._ctlMatrix1.MinimumSize = new System.Drawing.Size(98, 76);
             this._ctlMatrix1.Name = "_ctlMatrix1";
             this._ctlMatrix1.Size = new System.Drawing.Size(125, 89);
@@ -297,7 +298,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(210, 9);
+            this.lblHeader.Location = new System.Drawing.Point(228, 9);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(334, 24);
             this.lblHeader.TabIndex = 7;
@@ -306,9 +307,9 @@
             // _txtIterationen
             // 
             this._txtIterationen.BackColor = System.Drawing.Color.White;
-            this._txtIterationen.Location = new System.Drawing.Point(126, 45);
+            this._txtIterationen.Location = new System.Drawing.Point(110, 45);
             this._txtIterationen.Name = "_txtIterationen";
-            this._txtIterationen.Size = new System.Drawing.Size(100, 20);
+            this._txtIterationen.Size = new System.Drawing.Size(46, 20);
             this._txtIterationen.TabIndex = 8;
             this._txtIterationen.Text = "1";
             // 
@@ -318,34 +319,12 @@
             this._grpChoices.Controls.Add(this._btnTree);
             this._grpChoices.Controls.Add(this._btnFern);
             this._grpChoices.Controls.Add(this._btnSquare);
-            this._grpChoices.Location = new System.Drawing.Point(362, 428);
+            this._grpChoices.Location = new System.Drawing.Point(569, 383);
             this._grpChoices.Name = "_grpChoices";
             this._grpChoices.Size = new System.Drawing.Size(199, 123);
             this._grpChoices.TabIndex = 9;
             this._grpChoices.TabStop = false;
             this._grpChoices.Text = "Beispiele";
-            // 
-            // _btnSquare
-            // 
-            this._btnSquare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._btnSquare.Location = new System.Drawing.Point(6, 19);
-            this._btnSquare.Name = "_btnSquare";
-            this._btnSquare.Size = new System.Drawing.Size(181, 28);
-            this._btnSquare.TabIndex = 0;
-            this._btnSquare.Text = "Quadrat";
-            this._btnSquare.UseVisualStyleBackColor = true;
-            this._btnSquare.Click += new System.EventHandler(this._btnSquare_Click);
-            // 
-            // _btnFern
-            // 
-            this._btnFern.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._btnFern.Location = new System.Drawing.Point(6, 50);
-            this._btnFern.Name = "_btnFern";
-            this._btnFern.Size = new System.Drawing.Size(181, 28);
-            this._btnFern.TabIndex = 1;
-            this._btnFern.Text = "Farn";
-            this._btnFern.UseVisualStyleBackColor = true;
-            this._btnFern.Click += new System.EventHandler(this._btnFern_Click);
             // 
             // _btnTree
             // 
@@ -358,11 +337,63 @@
             this._btnTree.UseVisualStyleBackColor = true;
             this._btnTree.Click += new System.EventHandler(this._btnTree_Click);
             // 
+            // _btnFern
+            // 
+            this._btnFern.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this._btnFern.Location = new System.Drawing.Point(6, 50);
+            this._btnFern.Name = "_btnFern";
+            this._btnFern.Size = new System.Drawing.Size(181, 28);
+            this._btnFern.TabIndex = 1;
+            this._btnFern.Text = "Farn";
+            this._btnFern.UseVisualStyleBackColor = true;
+            this._btnFern.Click += new System.EventHandler(this._btnFern_Click);
+            // 
+            // _btnSquare
+            // 
+            this._btnSquare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this._btnSquare.Location = new System.Drawing.Point(6, 19);
+            this._btnSquare.Name = "_btnSquare";
+            this._btnSquare.Size = new System.Drawing.Size(181, 28);
+            this._btnSquare.TabIndex = 0;
+            this._btnSquare.Text = "Quadrat";
+            this._btnSquare.UseVisualStyleBackColor = true;
+            this._btnSquare.Click += new System.EventHandler(this._btnSquare_Click);
+            // 
+            // _lblIteration
+            // 
+            this._lblIteration.AutoSize = true;
+            this._lblIteration.Location = new System.Drawing.Point(733, 45);
+            this._lblIteration.Name = "_lblIteration";
+            this._lblIteration.Size = new System.Drawing.Size(48, 13);
+            this._lblIteration.TabIndex = 10;
+            this._lblIteration.Text = "Iteration:";
+            // 
+            // _lblSteps
+            // 
+            this._lblSteps.AutoSize = true;
+            this._lblSteps.Location = new System.Drawing.Point(166, 48);
+            this._lblSteps.Name = "_lblSteps";
+            this._lblSteps.Size = new System.Drawing.Size(125, 13);
+            this._lblSteps.TabIndex = 11;
+            this._lblSteps.Text = "Anzahl Rendervorgänge:";
+            // 
+            // _txtSteps
+            // 
+            this._txtSteps.BackColor = System.Drawing.Color.White;
+            this._txtSteps.Location = new System.Drawing.Point(297, 45);
+            this._txtSteps.Name = "_txtSteps";
+            this._txtSteps.Size = new System.Drawing.Size(43, 20);
+            this._txtSteps.TabIndex = 12;
+            this._txtSteps.Text = "10";
+            // 
             // FrmFraktalChaos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 676);
+            this.Controls.Add(this._txtSteps);
+            this.Controls.Add(this._lblSteps);
+            this.Controls.Add(this._lblIteration);
             this.Controls.Add(this._grpChoices);
             this.Controls.Add(this._txtIterationen);
             this.Controls.Add(this.lblHeader);
@@ -373,7 +404,7 @@
             this.Controls.Add(this._rtxtNotes);
             this.Controls.Add(this.cosFractal);
             this.Controls.Add(this.butSaveFractal);
-            this.MinimumSize = new System.Drawing.Size(801, 714);
+            this.MinimumSize = new System.Drawing.Size(850, 715);
             this.Name = "FrmFraktalChaos";
             this.Text = "Fraktal rendern mit Chaosspiel ";
             this.grpIFS.ResumeLayout(false);
@@ -411,5 +442,11 @@
         private System.Windows.Forms.Button _btnTree;
         private System.Windows.Forms.Button _btnFern;
         private System.Windows.Forms.Button _btnSquare;
+        private System.Windows.Forms.Label _lblIteration;
+#if DEBUG
+        private System.Windows.Forms.RichTextBox _rtxtNotes;
+        private System.Windows.Forms.Label _lblSteps;
+        private UserControls.FloatInput _txtSteps;
+#endif
     }
 }

@@ -124,7 +124,9 @@ namespace SoftwareProjekt.Forms
         public Dictionary<string, object> SaveState()
         {
             Dictionary<string, object> dic = this.GetInputData();
+#if !DEBUG
             dic.Add("Notes", _rtxtNotes.Text);
+#endif
             return dic;
         }
     }
