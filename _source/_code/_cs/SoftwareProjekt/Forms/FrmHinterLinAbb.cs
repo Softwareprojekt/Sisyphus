@@ -86,7 +86,7 @@ namespace SoftwareProjekt.Forms
         {
             if (this.CheckInputs())
             {
-                //this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+                this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
             }
         }
 
@@ -99,7 +99,7 @@ namespace SoftwareProjekt.Forms
         {
             if (this.CheckInputs())
             {
-               // this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+               this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
             }
         }
 

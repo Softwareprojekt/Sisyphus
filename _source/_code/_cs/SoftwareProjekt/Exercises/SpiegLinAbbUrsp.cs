@@ -41,7 +41,7 @@ namespace SoftwareProjekt.Exercises
             inputData = view.GetInputData();
 
             // check dict
-            if (!inputData.ContainsKey("Winkel") || !inputData.ContainsKey("VectorX") || !inputData.ContainsKey("EV1") || !inputData.ContainsKey("EV2"))
+            if (!inputData.ContainsKey("Angle") || !inputData.ContainsKey("VectorX") || !inputData.ContainsKey("EV1") || !inputData.ContainsKey("EV2"))
             {
                 return;
             }
@@ -50,7 +50,7 @@ namespace SoftwareProjekt.Exercises
             Vector inputX = (Vector)inputData["VectorX"];
             Vector inputEV1 = (Vector)inputData["EV1"];
             Vector inputEV2 = (Vector)inputData["EV2"];
-            float angle = (float)inputData["Winkel"];
+            float angle = (float)inputData["Angle"];
 
             Line mirror = new Line(angle);
             Matrix M = new Matrix((float)System.Math.Cos(2 * angle), (float)System.Math.Sin(2 * angle), (float)System.Math.Sin(2 * angle), (float)-System.Math.Cos(2 * angle));
