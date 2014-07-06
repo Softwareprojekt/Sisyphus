@@ -57,13 +57,15 @@ namespace SoftwareProjekt.Exercises
 
             Dictionary<string, Object> outputData = new Dictionary<string, object>();
 
+            float detM = inputM.Determinant;
             //  This is the (calculated) Vector x shown in the second Coordinate System
             Vector outputX = Vector.Multiply(inputX, inputM);
             // This is the inverted (input) Matrix
-            Matrix invM = Matrix.Invert(inputM);
+            Matrix invM = new Matrix(0f, 0f, 0f, 0f);
+            if (detM != 0f) invM = Matrix.Invert(inputM);
             // This is the (calculated) Vector y shown in the first Coordinate System
             Vector outputY = Vector.Multiply(inputY, invM);
-            float detM = inputM.Determinant;
+            
 
             outputData.Add("VectorX", outputX);
             outputData.Add("VectorY", outputY);
