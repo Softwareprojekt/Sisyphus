@@ -30,6 +30,8 @@ using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Classes.Math;
 using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
+using SoftwareProjekt.Classes.Math;
+using SoftwareProjekt.Classes.Xml;
 
 namespace SoftwareProjekt.Forms
 {
@@ -45,6 +47,17 @@ namespace SoftwareProjekt.Forms
 
         private Line _MirrorLine;
         private Line _MirrorLineOutput;
+
+        string _expr1;
+        string _expr2;
+        string _expr3;
+        string _expr4;
+        string _expr5;
+        string _expr6;
+        string _expr7;
+        string _expr8;
+        string _functionBlock;
+
 
         public FrmSpiegLinAbbUrsp()
         {
@@ -69,7 +82,66 @@ namespace SoftwareProjekt.Forms
             cosInput.AddLineSegment(_vectorInputEV2);
             cosInput.AddLineSegment(_vectorInputX);
             cosInput.AddLine(_MirrorLine);
+
+            // f(x)
+            _functionBlock = "<mn>f</mn>\n";
+            _functionBlock += "<mo>&ApplyFunction;</mo>\n";
+            _functionBlock += "<mrow>\n";
+            _functionBlock += "<mo>(</mo>\n";
+            _functionBlock += "<mover>\n";
+            _functionBlock += "\t<mi>x</mi>\n";
+            _functionBlock += "\t<mo>&rarr;</mo>\n";
+            _functionBlock += "</mover>\n";
+            _functionBlock += "<mo>)</mo>\n";
+            _functionBlock += "</mrow>\n";
+
+            _expr1 = "cos (&phi;)";
+            _expr2 = "cos (&phi;)";
+            _expr3 = "sin (&phi;)";
+            _expr4 = "sin (&phi;)"; 
+
+            CreateFormular();
+
         }
+
+        private void CreateFormular()
+        {
+            MathXmlGenerator xml = new MathXmlGenerator();
+
+            // f(x)
+            xml.AddNode(_functionBlock);
+
+            // =
+            xml.AddSign(EMathSign.Assignment);      
+            
+            List<string> expressions1 = new List<string>();
+            expressions1.Add(_expr1);            
+            expressions1.Add(_expr2);            
+            expressions1.Add(_expr3);            
+            expressions1.Add(_expr4);            
+
+            List<Color> colors = new List<Color>();
+            colors.Add(Color.Red);
+            colors.Add(Color.Blue);
+            colors.Add(Color.Red);
+            colors.Add(Color.Blue);
+
+            // Malzeichen
+            xml.AddSign(EMathSign.Multiply);
+
+            // lambda mit Pfeil
+            xml.AddNode("<mover>\n \t<mi>&lambda;</mi>\n \t<mo>&rarr;</mo>\n </mover>\n");
+
+            xml.AddSign(EMathSign.Assignment);
+
+            xml.AddMathExpression(expressions1, colors, EMathSign.Minus, EMathType.Matrix);
+
+            xml.Finish();
+
+            ctlMathEqua.WriteEquationToPicBox(xml.XmlDoc);
+        }
+
+
 
         public override Dictionary<string, Object> GetInputData()
         {
