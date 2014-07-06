@@ -32,6 +32,9 @@ namespace SoftwareProjekt.Classes.EventArguments
             get;
             private set;
         }
+
+        public bool Final { get; private set; }
+
         /// <summary>
         /// Empty ctor.
         /// </summary>
@@ -47,6 +50,16 @@ namespace SoftwareProjekt.Classes.EventArguments
         public ExerciseEventArgs(Dictionary<string, Object> dict)
         {
             this.CalcValues = dict;
+        }
+
+        /// <summary>
+        /// Ctor to return processed values to view.
+        /// </summary>
+        /// <param name="dict">Dictionary with processed values.</param>
+        public ExerciseEventArgs(Dictionary<string, Object> dict, bool isFinal)
+        {
+            this.CalcValues = dict;
+            this.Final = isFinal;
         }
 
         public override string ToString()

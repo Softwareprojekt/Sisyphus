@@ -40,12 +40,14 @@ namespace SoftwareProjekt.Classes
 
         private AbstractView _mainForm;
 
+        private FrmProgress _progressForm;
         public Controller(AbstractView mainForm)
         {
             _exerciseList = new Dictionary<IView, IExercise>(10);
             _mainForm = mainForm;
             _mainForm.Controller = this;
             _mainForm.ViewChanged += this.HandleViewChanged;
+            _progressForm = new FrmProgress();
 
             Application.Run(mainForm);
         }
@@ -64,7 +66,9 @@ namespace SoftwareProjekt.Classes
                     switch (e.ClickedButton)
                     {
                         case EClickedButton.StartCalculation:
+                            _progressForm.Exercise = _exerciseList[sender];
                             _exerciseList[sender].StartWork();
+                            _progressForm.ShowDialog();
                             break;
                         case EClickedButton.StartExercise:
                             IExercise exercise = null;
@@ -118,6 +122,9 @@ namespace SoftwareProjekt.Classes
                             }
                             this.AddExercise(exercise, view);
                             break;
+                        case EClickedButton.CloseProgressForm:
+                            _progressForm.Invoke(new Action(() => _progressForm.Close()));
+                            break;
                         default:
                             throw new ArgumentException("Not a valid ClickedButton.", "e");
                     }
@@ -146,6 +153,7 @@ namespace SoftwareProjekt.Classes
 
         void view_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            _exerciseList[(IView)sender].AbortWork();
             this.RemoveExercise((IView)sender);
         }
 

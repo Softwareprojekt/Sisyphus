@@ -127,6 +127,12 @@
     <Compile Include="Forms\FrmFraktalChaos.Designer.cs">
       <DependentUpon>FrmFraktalChaos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmProgress.Designer.cs">
+      <DependentUpon>FrmProgress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TestObject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSpiegLinAbbUrsp.resx">
       <DependentUpon>FrmSpiegLinAbbUrsp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmProgress.resx">
+      <DependentUpon>FrmProgress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TestObject.resx">
       <DependentUpon>TestObject.cs</DependentUpon>

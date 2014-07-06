@@ -35,7 +35,7 @@ namespace SoftwareProjekt.Exercises
         /// <summary>
         /// Name of exercise.
         /// </summary>
-        protected CancellationToken _abortToken;
+        protected Thread _workingThread;
         private IView _view;
 
         public EExercises Id
@@ -48,20 +48,10 @@ namespace SoftwareProjekt.Exercises
         /// </summary>
         public void AbortWork()
         {
-            // see 2nd example from: http://blogs.msdn.com/b/pfxteam/archive/2009/05/22/9635790.aspx
-            // not really sure how to use it in StartWork or DoWork
-
-            ManualResetEvent mre = new ManualResetEvent(false);
-            //register a callback that will set the MRE
-            CancellationTokenRegistration registration =
-               _abortToken.Register(() => mre.Set());
-            using (registration)
+            if (_workingThread.IsAlive)
             {
-                mre.WaitOne();
-                if (_abortToken.IsCancellationRequested) //did cancellation wake us?
-                    throw new OperationCanceledException(_abortToken);
-            } //dispose the registration, which performs the deregisteration. 
-
+                _workingThread.Abort();
+            }
         }
 
         /// <summary>
@@ -83,7 +73,9 @@ namespace SoftwareProjekt.Exercises
         public void StartWork()
         {
             // create a separate thread for DoWork()
-            Task.Factory.StartNew(() => DoWork(_view), _abortToken);
+            _workingThread = new Thread(() => this.DoWork(_view));
+            _workingThread.Name = this.Id.ToString();
+            _workingThread.Start();
         }
 
         /// <summary>

@@ -25,5 +25,6 @@ namespace SoftwareProjekt.Enums
     {
         StartCalculation,
         StartExercise,
+        CloseProgressForm,
     }
 }
