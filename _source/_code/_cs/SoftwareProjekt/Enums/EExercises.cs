@@ -33,5 +33,7 @@ namespace SoftwareProjekt.Enums
         ZuordungsvorschriftEinerAffAbb = 8,
         FraktalerzeugungMitIFS = 9,
         FraktalerzeugungMitChaos = 10,
+
+        InvalidExercise = 100
     }
 }

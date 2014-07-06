@@ -183,6 +183,10 @@ namespace SoftwareProjekt.UserControls.MindMap
                 case EMachiningCondition.SaveExists:
                     linePen = Pens.Green;
                     break;
+
+                case EMachiningCondition.NotValid:
+                    linePen = Pens.Red;
+                    break;
             }
             
             switch (_alignment)

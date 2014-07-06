@@ -26,5 +26,6 @@ namespace SoftwareProjekt.Enums
         SaveExists,
         Aborted,
         NotDone,
+        NotValid
     }
 }

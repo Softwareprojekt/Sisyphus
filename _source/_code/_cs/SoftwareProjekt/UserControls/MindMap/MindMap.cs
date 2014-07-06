@@ -35,11 +35,6 @@ namespace SoftwareProjekt.UserControls.MindMap
 {
     public class CtlMindMap : UserControl, IWorkbookObserver
     {
-        private const string _filename = "config.xml";
-        private List<MindMapTopicControl> _graphicalTopicList;
-        private List<ITopic> _logicalTopicList;
-        private List<dynamic> _dynamicExternalDll;
-        private XmlMindMap _xmlParser;
         private MindMapButtonControl DrehungSpiegelungStreckung;
         private MindMapButtonControl UmkehrungInverseMatrix;
         private MindMapTopicControl topicLinAbb;
@@ -96,10 +91,6 @@ namespace SoftwareProjekt.UserControls.MindMap
 
         public CtlMindMap()
         {
-            _graphicalTopicList = new List<MindMapTopicControl>();
-            _logicalTopicList = new List<ITopic>();
-            _dynamicExternalDll = new List<dynamic>();
-            _xmlParser = new XmlMindMap();
             this.Paint += CtlMindMap_Paint;
 
 
@@ -124,9 +115,12 @@ namespace SoftwareProjekt.UserControls.MindMap
 
         void DrehungSpiegelungStreckung_ButtonClicked(EExercises exerciseID)
         {
-            if (MindMapExerciseSelected != null)
+            if (exerciseID != EExercises.InvalidExercise)
             {
-                MindMapExerciseSelected(exerciseID);
+                if (MindMapExerciseSelected != null)
+                {
+                    MindMapExerciseSelected(exerciseID);
+                }
             }
         }
 
@@ -134,7 +128,7 @@ namespace SoftwareProjekt.UserControls.MindMap
         {
             SoftwareProjekt.Classes.Workbook workbook = SoftwareProjekt.Classes.Workbook.Instance;
 
-            DrehungSpiegelungStreckung.MachiningCondition = (workbook.GetEntryState(DrehungSpiegelungStreckung.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
+            /*DrehungSpiegelungStreckung.MachiningCondition = (workbook.GetEntryState(DrehungSpiegelungStreckung.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
             UmkehrungInverseMatrix.MachiningCondition = (workbook.GetEntryState(UmkehrungInverseMatrix.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
             GeometrischeEigenschaften.MachiningCondition = (workbook.GetEntryState(GeometrischeEigenschaften.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
             VertraeglichkeitmitSummenundViel.MachiningCondition = (workbook.GetEntryState(VertraeglichkeitmitSummenundViel.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
@@ -147,7 +141,124 @@ namespace SoftwareProjekt.UserControls.MindMap
             LGS.MachiningCondition = (workbook.GetEntryState(LGS.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
             IFS.MachiningCondition = (workbook.GetEntryState(IFS.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
             ChaosSpiel.MachiningCondition = (workbook.GetEntryState(ChaosSpiel.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
-            
+            */
+
+            if (DrehungSpiegelungStreckung.ExerciseID == EExercises.InvalidExercise)
+            {
+                DrehungSpiegelungStreckung.MachiningCondition = EMachiningCondition.NotValid;
+            }
+            else
+            {
+                DrehungSpiegelungStreckung.MachiningCondition = (workbook.GetEntryState(DrehungSpiegelungStreckung.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
+            }
+
+            if (UmkehrungInverseMatrix.ExerciseID == EExercises.InvalidExercise)
+            {
+                UmkehrungInverseMatrix.MachiningCondition = EMachiningCondition.NotValid;
+            }
+            else
+            {
+                UmkehrungInverseMatrix.MachiningCondition = (workbook.GetEntryState(UmkehrungInverseMatrix.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
+            }
+
+            if (GeometrischeEigenschaften.ExerciseID == EExercises.InvalidExercise)
+            {
+                GeometrischeEigenschaften.MachiningCondition = EMachiningCondition.NotValid;
+            }
+            else
+            {
+                GeometrischeEigenschaften.MachiningCondition = (workbook.GetEntryState(GeometrischeEigenschaften.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
+            }
+
+            if (VertraeglichkeitmitSummenundViel.ExerciseID == EExercises.InvalidExercise)
+            {
+                VertraeglichkeitmitSummenundViel.MachiningCondition = EMachiningCondition.NotValid;
+            }
+            else
+            {
+                VertraeglichkeitmitSummenundViel.MachiningCondition = (workbook.GetEntryState(VertraeglichkeitmitSummenundViel.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
+            }
+
+            if (VertraeglichkeitLinarkombination.ExerciseID == EExercises.InvalidExercise)
+            {
+                VertraeglichkeitLinarkombination.MachiningCondition = EMachiningCondition.NotValid;
+            }
+            else
+            {
+                VertraeglichkeitLinarkombination.MachiningCondition = (workbook.GetEntryState(VertraeglichkeitLinarkombination.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
+            }
+
+            if (MatrixAlsZuordnung.ExerciseID == EExercises.InvalidExercise)
+            {
+                MatrixAlsZuordnung.MachiningCondition = EMachiningCondition.NotValid;
+            }
+            else
+            {
+                MatrixAlsZuordnung.MachiningCondition = (workbook.GetEntryState(MatrixAlsZuordnung.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
+            }
+
+            if (hintereinanderAusfuehrung.ExerciseID == EExercises.InvalidExercise)
+            {
+                hintereinanderAusfuehrung.MachiningCondition = EMachiningCondition.NotValid;
+            }
+            else
+            {
+                hintereinanderAusfuehrung.MachiningCondition = (workbook.GetEntryState(hintereinanderAusfuehrung.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
+            }
+
+            if (HintereinanderausfuehrungUmkehrbarkeit.ExerciseID == EExercises.InvalidExercise)
+            {
+                HintereinanderausfuehrungUmkehrbarkeit.MachiningCondition = EMachiningCondition.NotValid;
+            }
+            else
+            {
+                HintereinanderausfuehrungUmkehrbarkeit.MachiningCondition = (workbook.GetEntryState(HintereinanderausfuehrungUmkehrbarkeit.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
+            }
+
+            if (Zuordnungsvorschrift2Dreiecke.ExerciseID == EExercises.InvalidExercise)
+            {
+                Zuordnungsvorschrift2Dreiecke.MachiningCondition = EMachiningCondition.NotValid;
+            }
+            else
+            {
+                Zuordnungsvorschrift2Dreiecke.MachiningCondition = (workbook.GetEntryState(Zuordnungsvorschrift2Dreiecke.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
+            }
+
+            if (geometrischeEigenschaftenAffAbb.ExerciseID == EExercises.InvalidExercise)
+            {
+                geometrischeEigenschaftenAffAbb.MachiningCondition = EMachiningCondition.NotValid;
+            }
+            else
+            {
+                geometrischeEigenschaftenAffAbb.MachiningCondition = (workbook.GetEntryState(geometrischeEigenschaftenAffAbb.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
+            }
+
+            if (LGS.ExerciseID == EExercises.InvalidExercise)
+            {
+                LGS.MachiningCondition = EMachiningCondition.NotValid;
+            }
+            else
+            {
+                LGS.MachiningCondition = (workbook.GetEntryState(LGS.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
+            }
+
+            if (IFS.ExerciseID == EExercises.InvalidExercise)
+            {
+                IFS.MachiningCondition = EMachiningCondition.NotValid;
+            }
+            else
+            {
+                IFS.MachiningCondition = (workbook.GetEntryState(IFS.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
+            }
+
+            if (ChaosSpiel.ExerciseID == EExercises.InvalidExercise)
+            {
+                ChaosSpiel.MachiningCondition = EMachiningCondition.NotValid;
+            }
+            else
+            {
+                ChaosSpiel.MachiningCondition = (workbook.GetEntryState(ChaosSpiel.ExerciseID).Count == 0) ? EMachiningCondition.NotDone : EMachiningCondition.SaveExists;
+            }
 
         }
 
@@ -155,24 +266,20 @@ namespace SoftwareProjekt.UserControls.MindMap
 
         private void InitializeComponent()
         {
-            this.parallelTopic = new SoftwareProjekt.UserControls.MindMap.MindMapTopicControl();
-            this.ChaosSpiel = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
-            this.IFS = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
-            this.LGS = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
-            this.geometrischeEigenschaftenAffAbb = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
-            this.fraktaleTopic = new SoftwareProjekt.UserControls.MindMap.MindMapTopicControl();
-            this.Zuordnungsvorschrift2Dreiecke = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
-            this.HintereinanderausfuehrungUmkehrbarkeit = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
-            this.hintereinanderAusfuehrung = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
-            this.MatrixAlsZuordnung = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
-            this.VertraeglichkeitLinarkombination = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
-            this.VertraeglichkeitmitSummenundViel = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
-            this.GeometrischeEigenschaften = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
-            this.affAbbildungTopic = new SoftwareProjekt.UserControls.MindMap.MindMapTopicControl();
-            this.topicLinAbb = new SoftwareProjekt.UserControls.MindMap.MindMapTopicControl();
-            this.UmkehrungInverseMatrix = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
-            this.DrehungSpiegelungStreckung = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape28 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape27 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape26 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape25 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape24 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape23 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape22 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape21 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape20 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape19 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape18 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape17 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape16 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape15 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape14 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape13 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -188,224 +295,27 @@ namespace SoftwareProjekt.UserControls.MindMap
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape16 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape17 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape18 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape19 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape20 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape21 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape22 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape23 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape24 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape25 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape26 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape27 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape28 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.parallelTopic = new SoftwareProjekt.UserControls.MindMap.MindMapTopicControl();
+            this.fraktaleTopic = new SoftwareProjekt.UserControls.MindMap.MindMapTopicControl();
+            this.affAbbildungTopic = new SoftwareProjekt.UserControls.MindMap.MindMapTopicControl();
+            this.topicLinAbb = new SoftwareProjekt.UserControls.MindMap.MindMapTopicControl();
+            this.HintereinanderausfuehrungUmkehrbarkeit = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
+            this.IFS = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
+            this.VertraeglichkeitLinarkombination = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
+            this.VertraeglichkeitmitSummenundViel = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
+            this.Zuordnungsvorschrift2Dreiecke = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
+            this.DrehungSpiegelungStreckung = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
+            this.geometrischeEigenschaftenAffAbb = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
+            this.MatrixAlsZuordnung = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
+            this.UmkehrungInverseMatrix = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
+            this.hintereinanderAusfuehrung = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
+            this.GeometrischeEigenschaften = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
+            this.LGS = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
+            this.ChaosSpiel = new SoftwareProjekt.UserControls.MindMap.MindMapButtonControl();
             this.SuspendLayout();
-            // 
-            // parallelTopic
-            // 
-            this.parallelTopic.Location = new System.Drawing.Point(755, 75);
-            this.parallelTopic.Name = "parallelTopic";
-            this.parallelTopic.Size = new System.Drawing.Size(232, 50);
-            this.parallelTopic.TabIndex = 18;
-            this.parallelTopic.TopicName = "Parallelverschiebungen";
-            // 
-            // ChaosSpiel
-            // 
-            this.ChaosSpiel.BottomAlign = false;
-            this.ChaosSpiel.ButtonText = "Chaos - Spiel";
-            this.ChaosSpiel.ExerciseID = SoftwareProjekt.Enums.EExercises.FraktalerzeugungMitChaos;
-            this.ChaosSpiel.LeftAlign = false;
-            this.ChaosSpiel.Location = new System.Drawing.Point(866, 582);
-            this.ChaosSpiel.Name = "ChaosSpiel";
-            this.ChaosSpiel.RightAlign = true;
-            this.ChaosSpiel.Size = new System.Drawing.Size(153, 27);
-            this.ChaosSpiel.TabIndex = 17;
-            this.ChaosSpiel.TopAlign = false;
-            // 
-            // IFS
-            // 
-            this.IFS.BottomAlign = false;
-            this.IFS.ButtonText = "IFS";
-            this.IFS.ExerciseID = SoftwareProjekt.Enums.EExercises.FraktalerzeugungMitIFS;
-            this.IFS.LeftAlign = false;
-            this.IFS.Location = new System.Drawing.Point(845, 549);
-            this.IFS.Name = "IFS";
-            this.IFS.RightAlign = true;
-            this.IFS.Size = new System.Drawing.Size(111, 27);
-            this.IFS.TabIndex = 16;
-            this.IFS.TopAlign = false;
-            // 
-            // LGS
-            // 
-            this.LGS.BottomAlign = false;
-            this.LGS.ButtonText = "LGS";
-            this.LGS.ExerciseID = SoftwareProjekt.Enums.EExercises.ZuordungsvorschriftEinerAffAbb;
-            this.LGS.LeftAlign = true;
-            this.LGS.Location = new System.Drawing.Point(1059, 246);
-            this.LGS.Name = "LGS";
-            this.LGS.RightAlign = false;
-            this.LGS.Size = new System.Drawing.Size(135, 27);
-            this.LGS.TabIndex = 15;
-            this.LGS.TopAlign = false;
-            // 
-            // geometrischeEigenschaftenAffAbb
-            // 
-            this.geometrischeEigenschaftenAffAbb.BottomAlign = false;
-            this.geometrischeEigenschaftenAffAbb.ButtonText = "Geometrische Eigenscha fte n";
-            this.geometrischeEigenschaftenAffAbb.ExerciseID = SoftwareProjekt.Enums.EExercises.ZuordungsvorschriftEinerAffAbb;
-            this.geometrischeEigenschaftenAffAbb.LeftAlign = true;
-            this.geometrischeEigenschaftenAffAbb.Location = new System.Drawing.Point(986, 165);
-            this.geometrischeEigenschaftenAffAbb.Name = "geometrischeEigenschaftenAffAbb";
-            this.geometrischeEigenschaftenAffAbb.RightAlign = false;
-            this.geometrischeEigenschaftenAffAbb.Size = new System.Drawing.Size(208, 27);
-            this.geometrischeEigenschaftenAffAbb.TabIndex = 14;
-            this.geometrischeEigenschaftenAffAbb.TopAlign = false;
-            // 
-            // fraktaleTopic
-            // 
-            this.fraktaleTopic.Location = new System.Drawing.Point(1044, 499);
-            this.fraktaleTopic.Name = "fraktaleTopic";
-            this.fraktaleTopic.Size = new System.Drawing.Size(150, 50);
-            this.fraktaleTopic.TabIndex = 13;
-            this.fraktaleTopic.TopicName = "Fraktale";
-            // 
-            // Zuordnungsvorschrift2Dreiecke
-            // 
-            this.Zuordnungsvorschrift2Dreiecke.BottomAlign = false;
-            this.Zuordnungsvorschrift2Dreiecke.ButtonText = "Zuordnungsvorschrift durch 2 Dreiecke";
-            this.Zuordnungsvorschrift2Dreiecke.ExerciseID = SoftwareProjekt.Enums.EExercises.ZuordungsvorschriftEinerAffAbb;
-            this.Zuordnungsvorschrift2Dreiecke.LeftAlign = false;
-            this.Zuordnungsvorschrift2Dreiecke.Location = new System.Drawing.Point(574, 438);
-            this.Zuordnungsvorschrift2Dreiecke.Name = "Zuordnungsvorschrift2Dreiecke";
-            this.Zuordnungsvorschrift2Dreiecke.RightAlign = true;
-            this.Zuordnungsvorschrift2Dreiecke.Size = new System.Drawing.Size(285, 27);
-            this.Zuordnungsvorschrift2Dreiecke.TabIndex = 12;
-            this.Zuordnungsvorschrift2Dreiecke.TopAlign = false;
-            // 
-            // HintereinanderausfuehrungUmkehrbarkeit
-            // 
-            this.HintereinanderausfuehrungUmkehrbarkeit.BottomAlign = false;
-            this.HintereinanderausfuehrungUmkehrbarkeit.ButtonText = "Hintereinanderausführung und Umkehrbarkeit";
-            this.HintereinanderausfuehrungUmkehrbarkeit.ExerciseID = SoftwareProjekt.Enums.EExercises.ZuordungsvorschriftEinerAffAbb;
-            this.HintereinanderausfuehrungUmkehrbarkeit.LeftAlign = false;
-            this.HintereinanderausfuehrungUmkehrbarkeit.Location = new System.Drawing.Point(493, 386);
-            this.HintereinanderausfuehrungUmkehrbarkeit.Name = "HintereinanderausfuehrungUmkehrbarkeit";
-            this.HintereinanderausfuehrungUmkehrbarkeit.RightAlign = true;
-            this.HintereinanderausfuehrungUmkehrbarkeit.Size = new System.Drawing.Size(285, 27);
-            this.HintereinanderausfuehrungUmkehrbarkeit.TabIndex = 11;
-            this.HintereinanderausfuehrungUmkehrbarkeit.TopAlign = false;
-            // 
-            // hintereinanderAusfuehrung
-            // 
-            this.hintereinanderAusfuehrung.BottomAlign = false;
-            this.hintereinanderAusfuehrung.ButtonText = "Hintereinanderausführung";
-            this.hintereinanderAusfuehrung.ExerciseID = SoftwareProjekt.Enums.EExercises.HintereinanderausfLinAbb;
-            this.hintereinanderAusfuehrung.LeftAlign = false;
-            this.hintereinanderAusfuehrung.Location = new System.Drawing.Point(138, 98);
-            this.hintereinanderAusfuehrung.Name = "hintereinanderAusfuehrung";
-            this.hintereinanderAusfuehrung.RightAlign = true;
-            this.hintereinanderAusfuehrung.Size = new System.Drawing.Size(208, 27);
-            this.hintereinanderAusfuehrung.TabIndex = 10;
-            this.hintereinanderAusfuehrung.TopAlign = false;
-            // 
-            // MatrixAlsZuordnung
-            // 
-            this.MatrixAlsZuordnung.BottomAlign = false;
-            this.MatrixAlsZuordnung.ButtonText = "Matrix als Zuordnungsvorschrift";
-            this.MatrixAlsZuordnung.ExerciseID = SoftwareProjekt.Enums.EExercises.ZuordnungsvorschriftLinAbb;
-            this.MatrixAlsZuordnung.LeftAlign = false;
-            this.MatrixAlsZuordnung.Location = new System.Drawing.Point(3, 165);
-            this.MatrixAlsZuordnung.Name = "MatrixAlsZuordnung";
-            this.MatrixAlsZuordnung.RightAlign = true;
-            this.MatrixAlsZuordnung.Size = new System.Drawing.Size(208, 27);
-            this.MatrixAlsZuordnung.TabIndex = 9;
-            this.MatrixAlsZuordnung.TopAlign = false;
-            // 
-            // VertraeglichkeitLinarkombination
-            // 
-            this.VertraeglichkeitLinarkombination.BottomAlign = false;
-            this.VertraeglichkeitLinarkombination.ButtonText = "Verträglichkeit Linearkombination";
-            this.VertraeglichkeitLinarkombination.ExerciseID = SoftwareProjekt.Enums.EExercises.DrehungLinAbbUmUrsprung;
-            this.VertraeglichkeitLinarkombination.LeftAlign = false;
-            this.VertraeglichkeitLinarkombination.Location = new System.Drawing.Point(-22, 243);
-            this.VertraeglichkeitLinarkombination.Name = "VertraeglichkeitLinarkombination";
-            this.VertraeglichkeitLinarkombination.RightAlign = true;
-            this.VertraeglichkeitLinarkombination.Size = new System.Drawing.Size(233, 27);
-            this.VertraeglichkeitLinarkombination.TabIndex = 8;
-            this.VertraeglichkeitLinarkombination.TopAlign = false;
-            // 
-            // VertraeglichkeitmitSummenundViel
-            // 
-            this.VertraeglichkeitmitSummenundViel.BottomAlign = false;
-            this.VertraeglichkeitmitSummenundViel.ButtonText = "Verträglichkeit mit Summen und Vielfachen";
-            this.VertraeglichkeitmitSummenundViel.ExerciseID = SoftwareProjekt.Enums.EExercises.LinAbbAusSumBelVek;
-            this.VertraeglichkeitmitSummenundViel.LeftAlign = false;
-            this.VertraeglichkeitmitSummenundViel.Location = new System.Drawing.Point(30, 412);
-            this.VertraeglichkeitmitSummenundViel.Name = "VertraeglichkeitmitSummenundViel";
-            this.VertraeglichkeitmitSummenundViel.RightAlign = true;
-            this.VertraeglichkeitmitSummenundViel.Size = new System.Drawing.Size(269, 27);
-            this.VertraeglichkeitmitSummenundViel.TabIndex = 7;
-            this.VertraeglichkeitmitSummenundViel.TopAlign = false;
-            // 
-            // GeometrischeEigenschaften
-            // 
-            this.GeometrischeEigenschaften.BottomAlign = false;
-            this.GeometrischeEigenschaften.ButtonText = "Geometrische Eigenschaften";
-            this.GeometrischeEigenschaften.ExerciseID = SoftwareProjekt.Enums.EExercises.DrehungLinAbbUmUrsprung;
-            this.GeometrischeEigenschaften.LeftAlign = false;
-            this.GeometrischeEigenschaften.Location = new System.Drawing.Point(3, 327);
-            this.GeometrischeEigenschaften.Name = "GeometrischeEigenschaften";
-            this.GeometrischeEigenschaften.RightAlign = true;
-            this.GeometrischeEigenschaften.Size = new System.Drawing.Size(208, 27);
-            this.GeometrischeEigenschaften.TabIndex = 6;
-            this.GeometrischeEigenschaften.TopAlign = false;
-            // 
-            // affAbbildungTopic
-            // 
-            this.affAbbildungTopic.Location = new System.Drawing.Point(845, 310);
-            this.affAbbildungTopic.Name = "affAbbildungTopic";
-            this.affAbbildungTopic.Size = new System.Drawing.Size(207, 50);
-            this.affAbbildungTopic.TabIndex = 5;
-            this.affAbbildungTopic.TopicName = "Affine Abbildungen";
-            // 
-            // topicLinAbb
-            // 
-            this.topicLinAbb.Location = new System.Drawing.Point(295, 223);
-            this.topicLinAbb.Name = "topicLinAbb";
-            this.topicLinAbb.Size = new System.Drawing.Size(178, 59);
-            this.topicLinAbb.TabIndex = 4;
-            this.topicLinAbb.TopicName = "Lineare Abbildung";
-            // 
-            // UmkehrungInverseMatrix
-            // 
-            this.UmkehrungInverseMatrix.BottomAlign = false;
-            this.UmkehrungInverseMatrix.ButtonText = "Umkehrung <--> inverse Matrix";
-            this.UmkehrungInverseMatrix.ExerciseID = SoftwareProjekt.Enums.EExercises.UmkehrungLinAbb;
-            this.UmkehrungInverseMatrix.LeftAlign = true;
-            this.UmkehrungInverseMatrix.Location = new System.Drawing.Point(443, 131);
-            this.UmkehrungInverseMatrix.Name = "UmkehrungInverseMatrix";
-            this.UmkehrungInverseMatrix.RightAlign = false;
-            this.UmkehrungInverseMatrix.Size = new System.Drawing.Size(208, 27);
-            this.UmkehrungInverseMatrix.TabIndex = 2;
-            this.UmkehrungInverseMatrix.TopAlign = false;
-            // 
-            // DrehungSpiegelungStreckung
-            // 
-            this.DrehungSpiegelungStreckung.BottomAlign = false;
-            this.DrehungSpiegelungStreckung.ButtonText = "Drehung, Spiegelung, Streckung";
-            this.DrehungSpiegelungStreckung.ExerciseID = SoftwareProjekt.Enums.EExercises.SpiegelungLinAbbanUrspungsgeraden;
-            this.DrehungSpiegelungStreckung.LeftAlign = true;
-            this.DrehungSpiegelungStreckung.Location = new System.Drawing.Point(433, 310);
-            this.DrehungSpiegelungStreckung.Name = "DrehungSpiegelungStreckung";
-            this.DrehungSpiegelungStreckung.RightAlign = false;
-            this.DrehungSpiegelungStreckung.Size = new System.Drawing.Size(218, 27);
-            this.DrehungSpiegelungStreckung.TabIndex = 1;
-            this.DrehungSpiegelungStreckung.TopAlign = false;
             // 
             // shapeContainer1
             // 
@@ -444,6 +354,110 @@ namespace SoftwareProjekt.UserControls.MindMap
             this.shapeContainer1.Size = new System.Drawing.Size(1223, 636);
             this.shapeContainer1.TabIndex = 19;
             this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape28
+            // 
+            this.lineShape28.Name = "lineShape28";
+            this.lineShape28.X1 = 825;
+            this.lineShape28.X2 = 845;
+            this.lineShape28.Y1 = 333;
+            this.lineShape28.Y2 = 327;
+            // 
+            // lineShape27
+            // 
+            this.lineShape27.Name = "lineShape27";
+            this.lineShape27.X1 = 834;
+            this.lineShape27.X2 = 844;
+            this.lineShape27.Y1 = 313;
+            this.lineShape27.Y2 = 328;
+            // 
+            // lineShape26
+            // 
+            this.lineShape26.Name = "lineShape26";
+            this.lineShape26.X1 = 474;
+            this.lineShape26.X2 = 485;
+            this.lineShape26.Y1 = 253;
+            this.lineShape26.Y2 = 263;
+            // 
+            // lineShape25
+            // 
+            this.lineShape25.Name = "lineShape25";
+            this.lineShape25.X1 = 473;
+            this.lineShape25.X2 = 489;
+            this.lineShape25.Y1 = 252;
+            this.lineShape25.Y2 = 247;
+            // 
+            // lineShape24
+            // 
+            this.lineShape24.Name = "lineShape24";
+            this.lineShape24.X1 = 1092;
+            this.lineShape24.X2 = 1107;
+            this.lineShape24.Y1 = 493;
+            this.lineShape24.Y2 = 498;
+            // 
+            // lineShape23
+            // 
+            this.lineShape23.Name = "lineShape23";
+            this.lineShape23.X1 = 1108;
+            this.lineShape23.X2 = 1108;
+            this.lineShape23.Y1 = 482;
+            this.lineShape23.Y2 = 498;
+            // 
+            // lineShape22
+            // 
+            this.lineShape22.Name = "lineShape22";
+            this.lineShape22.X1 = 1000;
+            this.lineShape22.X2 = 1001;
+            this.lineShape22.Y1 = 361;
+            this.lineShape22.Y2 = 375;
+            // 
+            // lineShape21
+            // 
+            this.lineShape21.Name = "lineShape21";
+            this.lineShape21.X1 = 1002;
+            this.lineShape21.X2 = 1014;
+            this.lineShape21.Y1 = 361;
+            this.lineShape21.Y2 = 365;
+            // 
+            // lineShape20
+            // 
+            this.lineShape20.Name = "lineShape20";
+            this.lineShape20.X1 = 928;
+            this.lineShape20.X2 = 922;
+            this.lineShape20.Y1 = 298;
+            this.lineShape20.Y2 = 309;
+            // 
+            // lineShape19
+            // 
+            this.lineShape19.Name = "lineShape19";
+            this.lineShape19.X1 = 911;
+            this.lineShape19.X2 = 921;
+            this.lineShape19.Y1 = 301;
+            this.lineShape19.Y2 = 310;
+            // 
+            // lineShape18
+            // 
+            this.lineShape18.Name = "lineShape18";
+            this.lineShape18.X1 = 1020;
+            this.lineShape18.X2 = 1116;
+            this.lineShape18.Y1 = 597;
+            this.lineShape18.Y2 = 547;
+            // 
+            // lineShape17
+            // 
+            this.lineShape17.Name = "lineShape17";
+            this.lineShape17.X1 = 956;
+            this.lineShape17.X2 = 1044;
+            this.lineShape17.Y1 = 564;
+            this.lineShape17.Y2 = 526;
+            // 
+            // lineShape16
+            // 
+            this.lineShape16.Name = "lineShape16";
+            this.lineShape16.X1 = 878;
+            this.lineShape16.X2 = 777;
+            this.lineShape16.Y1 = 351;
+            this.lineShape16.Y2 = 401;
             // 
             // lineShape15
             // 
@@ -565,110 +579,6 @@ namespace SoftwareProjekt.UserControls.MindMap
             this.lineShape1.Y1 = 281;
             this.lineShape1.Y2 = 326;
             // 
-            // lineShape16
-            // 
-            this.lineShape16.Name = "lineShape16";
-            this.lineShape16.X1 = 878;
-            this.lineShape16.X2 = 777;
-            this.lineShape16.Y1 = 351;
-            this.lineShape16.Y2 = 401;
-            // 
-            // lineShape17
-            // 
-            this.lineShape17.Name = "lineShape17";
-            this.lineShape17.X1 = 956;
-            this.lineShape17.X2 = 1044;
-            this.lineShape17.Y1 = 564;
-            this.lineShape17.Y2 = 526;
-            // 
-            // lineShape18
-            // 
-            this.lineShape18.Name = "lineShape18";
-            this.lineShape18.X1 = 1020;
-            this.lineShape18.X2 = 1116;
-            this.lineShape18.Y1 = 597;
-            this.lineShape18.Y2 = 547;
-            // 
-            // lineShape19
-            // 
-            this.lineShape19.Name = "lineShape19";
-            this.lineShape19.X1 = 911;
-            this.lineShape19.X2 = 921;
-            this.lineShape19.Y1 = 301;
-            this.lineShape19.Y2 = 310;
-            // 
-            // lineShape20
-            // 
-            this.lineShape20.Name = "lineShape20";
-            this.lineShape20.X1 = 928;
-            this.lineShape20.X2 = 922;
-            this.lineShape20.Y1 = 298;
-            this.lineShape20.Y2 = 309;
-            // 
-            // lineShape21
-            // 
-            this.lineShape21.Name = "lineShape21";
-            this.lineShape21.X1 = 1002;
-            this.lineShape21.X2 = 1014;
-            this.lineShape21.Y1 = 361;
-            this.lineShape21.Y2 = 365;
-            // 
-            // lineShape22
-            // 
-            this.lineShape22.Name = "lineShape22";
-            this.lineShape22.X1 = 1000;
-            this.lineShape22.X2 = 1001;
-            this.lineShape22.Y1 = 361;
-            this.lineShape22.Y2 = 375;
-            // 
-            // lineShape23
-            // 
-            this.lineShape23.Name = "lineShape23";
-            this.lineShape23.X1 = 1108;
-            this.lineShape23.X2 = 1108;
-            this.lineShape23.Y1 = 482;
-            this.lineShape23.Y2 = 498;
-            // 
-            // lineShape24
-            // 
-            this.lineShape24.Name = "lineShape24";
-            this.lineShape24.X1 = 1092;
-            this.lineShape24.X2 = 1107;
-            this.lineShape24.Y1 = 493;
-            this.lineShape24.Y2 = 498;
-            // 
-            // lineShape25
-            // 
-            this.lineShape25.Name = "lineShape25";
-            this.lineShape25.X1 = 473;
-            this.lineShape25.X2 = 489;
-            this.lineShape25.Y1 = 252;
-            this.lineShape25.Y2 = 247;
-            // 
-            // lineShape26
-            // 
-            this.lineShape26.Name = "lineShape26";
-            this.lineShape26.X1 = 474;
-            this.lineShape26.X2 = 485;
-            this.lineShape26.Y1 = 253;
-            this.lineShape26.Y2 = 263;
-            // 
-            // lineShape27
-            // 
-            this.lineShape27.Name = "lineShape27";
-            this.lineShape27.X1 = 834;
-            this.lineShape27.X2 = 844;
-            this.lineShape27.Y1 = 313;
-            this.lineShape27.Y2 = 328;
-            // 
-            // lineShape28
-            // 
-            this.lineShape28.Name = "lineShape28";
-            this.lineShape28.X1 = 825;
-            this.lineShape28.X2 = 845;
-            this.lineShape28.Y1 = 333;
-            this.lineShape28.Y2 = 327;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -696,28 +606,242 @@ namespace SoftwareProjekt.UserControls.MindMap
             this.label3.TabIndex = 22;
             this.label3.Text = "Speziallfall / Verallgemeinerung";
             // 
+            // parallelTopic
+            // 
+            this.parallelTopic.Location = new System.Drawing.Point(755, 75);
+            this.parallelTopic.Name = "parallelTopic";
+            this.parallelTopic.Size = new System.Drawing.Size(232, 50);
+            this.parallelTopic.TabIndex = 18;
+            this.parallelTopic.TopicName = "Parallelverschiebungen";
+            // 
+            // fraktaleTopic
+            // 
+            this.fraktaleTopic.Location = new System.Drawing.Point(1044, 499);
+            this.fraktaleTopic.Name = "fraktaleTopic";
+            this.fraktaleTopic.Size = new System.Drawing.Size(150, 50);
+            this.fraktaleTopic.TabIndex = 13;
+            this.fraktaleTopic.TopicName = "Fraktale";
+            // 
+            // affAbbildungTopic
+            // 
+            this.affAbbildungTopic.Location = new System.Drawing.Point(845, 310);
+            this.affAbbildungTopic.Name = "affAbbildungTopic";
+            this.affAbbildungTopic.Size = new System.Drawing.Size(207, 50);
+            this.affAbbildungTopic.TabIndex = 5;
+            this.affAbbildungTopic.TopicName = "Affine Abbildungen";
+            // 
+            // topicLinAbb
+            // 
+            this.topicLinAbb.Location = new System.Drawing.Point(295, 223);
+            this.topicLinAbb.Name = "topicLinAbb";
+            this.topicLinAbb.Size = new System.Drawing.Size(178, 59);
+            this.topicLinAbb.TabIndex = 4;
+            this.topicLinAbb.TopicName = "Lineare Abbildung";
+            // 
+            // HintereinanderausfuehrungUmkehrbarkeit
+            // 
+            this.HintereinanderausfuehrungUmkehrbarkeit.BottomAlign = false;
+            this.HintereinanderausfuehrungUmkehrbarkeit.ButtonText = "Hintereinanderausführung und Umkehrbarkeit";
+            this.HintereinanderausfuehrungUmkehrbarkeit.ExerciseID = SoftwareProjekt.Enums.EExercises.InvalidExercise;
+            this.HintereinanderausfuehrungUmkehrbarkeit.LeftAlign = false;
+            this.HintereinanderausfuehrungUmkehrbarkeit.Location = new System.Drawing.Point(493, 386);
+            this.HintereinanderausfuehrungUmkehrbarkeit.MachiningCondition = SoftwareProjekt.Enums.EMachiningCondition.SaveExists;
+            this.HintereinanderausfuehrungUmkehrbarkeit.Name = "HintereinanderausfuehrungUmkehrbarkeit";
+            this.HintereinanderausfuehrungUmkehrbarkeit.RightAlign = true;
+            this.HintereinanderausfuehrungUmkehrbarkeit.Size = new System.Drawing.Size(285, 27);
+            this.HintereinanderausfuehrungUmkehrbarkeit.TabIndex = 11;
+            this.HintereinanderausfuehrungUmkehrbarkeit.TopAlign = false;
+            // 
+            // IFS
+            // 
+            this.IFS.BottomAlign = false;
+            this.IFS.ButtonText = "IFS";
+            this.IFS.ExerciseID = SoftwareProjekt.Enums.EExercises.FraktalerzeugungMitIFS;
+            this.IFS.LeftAlign = false;
+            this.IFS.Location = new System.Drawing.Point(845, 549);
+            this.IFS.MachiningCondition = SoftwareProjekt.Enums.EMachiningCondition.SaveExists;
+            this.IFS.Name = "IFS";
+            this.IFS.RightAlign = true;
+            this.IFS.Size = new System.Drawing.Size(111, 27);
+            this.IFS.TabIndex = 16;
+            this.IFS.TopAlign = false;
+            // 
+            // VertraeglichkeitLinarkombination
+            // 
+            this.VertraeglichkeitLinarkombination.BottomAlign = false;
+            this.VertraeglichkeitLinarkombination.ButtonText = "Spiegelung an einer Ursprungsgeraden";
+            this.VertraeglichkeitLinarkombination.ExerciseID = SoftwareProjekt.Enums.EExercises.SpiegelungLinAbbanUrspungsgeraden;
+            this.VertraeglichkeitLinarkombination.LeftAlign = false;
+            this.VertraeglichkeitLinarkombination.Location = new System.Drawing.Point(-22, 243);
+            this.VertraeglichkeitLinarkombination.MachiningCondition = SoftwareProjekt.Enums.EMachiningCondition.SaveExists;
+            this.VertraeglichkeitLinarkombination.Name = "VertraeglichkeitLinarkombination";
+            this.VertraeglichkeitLinarkombination.RightAlign = true;
+            this.VertraeglichkeitLinarkombination.Size = new System.Drawing.Size(233, 27);
+            this.VertraeglichkeitLinarkombination.TabIndex = 8;
+            this.VertraeglichkeitLinarkombination.TopAlign = false;
+            // 
+            // VertraeglichkeitmitSummenundViel
+            // 
+            this.VertraeglichkeitmitSummenundViel.BottomAlign = false;
+            this.VertraeglichkeitmitSummenundViel.ButtonText = "Verträglichkeit mit Vielfachen bel. Vektoren";
+            this.VertraeglichkeitmitSummenundViel.ExerciseID = SoftwareProjekt.Enums.EExercises.LinAbbMitVielfachemBelVek;
+            this.VertraeglichkeitmitSummenundViel.LeftAlign = false;
+            this.VertraeglichkeitmitSummenundViel.Location = new System.Drawing.Point(30, 412);
+            this.VertraeglichkeitmitSummenundViel.MachiningCondition = SoftwareProjekt.Enums.EMachiningCondition.SaveExists;
+            this.VertraeglichkeitmitSummenundViel.Name = "VertraeglichkeitmitSummenundViel";
+            this.VertraeglichkeitmitSummenundViel.RightAlign = true;
+            this.VertraeglichkeitmitSummenundViel.Size = new System.Drawing.Size(269, 27);
+            this.VertraeglichkeitmitSummenundViel.TabIndex = 7;
+            this.VertraeglichkeitmitSummenundViel.TopAlign = false;
+            // 
+            // Zuordnungsvorschrift2Dreiecke
+            // 
+            this.Zuordnungsvorschrift2Dreiecke.BottomAlign = false;
+            this.Zuordnungsvorschrift2Dreiecke.ButtonText = "Zuordnungsvorschrift durch 2 Dreiecke";
+            this.Zuordnungsvorschrift2Dreiecke.ExerciseID = SoftwareProjekt.Enums.EExercises.ZuordungsvorschriftEinerAffAbb;
+            this.Zuordnungsvorschrift2Dreiecke.LeftAlign = false;
+            this.Zuordnungsvorschrift2Dreiecke.Location = new System.Drawing.Point(574, 438);
+            this.Zuordnungsvorschrift2Dreiecke.MachiningCondition = SoftwareProjekt.Enums.EMachiningCondition.SaveExists;
+            this.Zuordnungsvorschrift2Dreiecke.Name = "Zuordnungsvorschrift2Dreiecke";
+            this.Zuordnungsvorschrift2Dreiecke.RightAlign = true;
+            this.Zuordnungsvorschrift2Dreiecke.Size = new System.Drawing.Size(285, 27);
+            this.Zuordnungsvorschrift2Dreiecke.TabIndex = 12;
+            this.Zuordnungsvorschrift2Dreiecke.TopAlign = false;
+            // 
+            // DrehungSpiegelungStreckung
+            // 
+            this.DrehungSpiegelungStreckung.BottomAlign = false;
+            this.DrehungSpiegelungStreckung.ButtonText = "Verträglichkeit mit  Linearkombination";
+            this.DrehungSpiegelungStreckung.ExerciseID = SoftwareProjekt.Enums.EExercises.ZuordnungsvorschriftLinAbb;
+            this.DrehungSpiegelungStreckung.LeftAlign = true;
+            this.DrehungSpiegelungStreckung.Location = new System.Drawing.Point(433, 310);
+            this.DrehungSpiegelungStreckung.MachiningCondition = SoftwareProjekt.Enums.EMachiningCondition.SaveExists;
+            this.DrehungSpiegelungStreckung.Name = "DrehungSpiegelungStreckung";
+            this.DrehungSpiegelungStreckung.RightAlign = false;
+            this.DrehungSpiegelungStreckung.Size = new System.Drawing.Size(239, 27);
+            this.DrehungSpiegelungStreckung.TabIndex = 1;
+            this.DrehungSpiegelungStreckung.TopAlign = false;
+            // 
+            // geometrischeEigenschaftenAffAbb
+            // 
+            this.geometrischeEigenschaftenAffAbb.BottomAlign = false;
+            this.geometrischeEigenschaftenAffAbb.ButtonText = "Geometrische Eigenscha fte n";
+            this.geometrischeEigenschaftenAffAbb.ExerciseID = SoftwareProjekt.Enums.EExercises.InvalidExercise;
+            this.geometrischeEigenschaftenAffAbb.LeftAlign = true;
+            this.geometrischeEigenschaftenAffAbb.Location = new System.Drawing.Point(986, 165);
+            this.geometrischeEigenschaftenAffAbb.MachiningCondition = SoftwareProjekt.Enums.EMachiningCondition.SaveExists;
+            this.geometrischeEigenschaftenAffAbb.Name = "geometrischeEigenschaftenAffAbb";
+            this.geometrischeEigenschaftenAffAbb.RightAlign = false;
+            this.geometrischeEigenschaftenAffAbb.Size = new System.Drawing.Size(208, 27);
+            this.geometrischeEigenschaftenAffAbb.TabIndex = 14;
+            this.geometrischeEigenschaftenAffAbb.TopAlign = false;
+            // 
+            // MatrixAlsZuordnung
+            // 
+            this.MatrixAlsZuordnung.BottomAlign = false;
+            this.MatrixAlsZuordnung.ButtonText = "Drehung um den Ursprung";
+            this.MatrixAlsZuordnung.ExerciseID = SoftwareProjekt.Enums.EExercises.DrehungLinAbbUmUrsprung;
+            this.MatrixAlsZuordnung.LeftAlign = false;
+            this.MatrixAlsZuordnung.Location = new System.Drawing.Point(3, 165);
+            this.MatrixAlsZuordnung.MachiningCondition = SoftwareProjekt.Enums.EMachiningCondition.SaveExists;
+            this.MatrixAlsZuordnung.Name = "MatrixAlsZuordnung";
+            this.MatrixAlsZuordnung.RightAlign = true;
+            this.MatrixAlsZuordnung.Size = new System.Drawing.Size(208, 27);
+            this.MatrixAlsZuordnung.TabIndex = 9;
+            this.MatrixAlsZuordnung.TopAlign = false;
+            // 
+            // UmkehrungInverseMatrix
+            // 
+            this.UmkehrungInverseMatrix.BottomAlign = false;
+            this.UmkehrungInverseMatrix.ButtonText = "Umkehrung <--> inverse Matrix";
+            this.UmkehrungInverseMatrix.ExerciseID = SoftwareProjekt.Enums.EExercises.UmkehrungLinAbb;
+            this.UmkehrungInverseMatrix.LeftAlign = true;
+            this.UmkehrungInverseMatrix.Location = new System.Drawing.Point(443, 131);
+            this.UmkehrungInverseMatrix.MachiningCondition = SoftwareProjekt.Enums.EMachiningCondition.SaveExists;
+            this.UmkehrungInverseMatrix.Name = "UmkehrungInverseMatrix";
+            this.UmkehrungInverseMatrix.RightAlign = false;
+            this.UmkehrungInverseMatrix.Size = new System.Drawing.Size(208, 27);
+            this.UmkehrungInverseMatrix.TabIndex = 2;
+            this.UmkehrungInverseMatrix.TopAlign = false;
+            // 
+            // hintereinanderAusfuehrung
+            // 
+            this.hintereinanderAusfuehrung.BottomAlign = false;
+            this.hintereinanderAusfuehrung.ButtonText = "Hintereinanderausführung <--> Matrixmultiplikation";
+            this.hintereinanderAusfuehrung.ExerciseID = SoftwareProjekt.Enums.EExercises.HintereinanderausfLinAbb;
+            this.hintereinanderAusfuehrung.LeftAlign = false;
+            this.hintereinanderAusfuehrung.Location = new System.Drawing.Point(41, 98);
+            this.hintereinanderAusfuehrung.MachiningCondition = SoftwareProjekt.Enums.EMachiningCondition.SaveExists;
+            this.hintereinanderAusfuehrung.Name = "hintereinanderAusfuehrung";
+            this.hintereinanderAusfuehrung.RightAlign = true;
+            this.hintereinanderAusfuehrung.Size = new System.Drawing.Size(305, 27);
+            this.hintereinanderAusfuehrung.TabIndex = 10;
+            this.hintereinanderAusfuehrung.TopAlign = false;
+            // 
+            // GeometrischeEigenschaften
+            // 
+            this.GeometrischeEigenschaften.BottomAlign = false;
+            this.GeometrischeEigenschaften.ButtonText = "Verträglichkeit mit Summen bel. Vektoren";
+            this.GeometrischeEigenschaften.ExerciseID = SoftwareProjekt.Enums.EExercises.LinAbbAusSumBelVek;
+            this.GeometrischeEigenschaften.LeftAlign = false;
+            this.GeometrischeEigenschaften.Location = new System.Drawing.Point(-11, 316);
+            this.GeometrischeEigenschaften.MachiningCondition = SoftwareProjekt.Enums.EMachiningCondition.SaveExists;
+            this.GeometrischeEigenschaften.Name = "GeometrischeEigenschaften";
+            this.GeometrischeEigenschaften.RightAlign = true;
+            this.GeometrischeEigenschaften.Size = new System.Drawing.Size(244, 27);
+            this.GeometrischeEigenschaften.TabIndex = 6;
+            this.GeometrischeEigenschaften.TopAlign = false;
+            // 
+            // LGS
+            // 
+            this.LGS.BottomAlign = false;
+            this.LGS.ButtonText = "LGS";
+            this.LGS.ExerciseID = SoftwareProjekt.Enums.EExercises.InvalidExercise;
+            this.LGS.LeftAlign = true;
+            this.LGS.Location = new System.Drawing.Point(1059, 246);
+            this.LGS.MachiningCondition = SoftwareProjekt.Enums.EMachiningCondition.SaveExists;
+            this.LGS.Name = "LGS";
+            this.LGS.RightAlign = false;
+            this.LGS.Size = new System.Drawing.Size(135, 27);
+            this.LGS.TabIndex = 15;
+            this.LGS.TopAlign = false;
+            // 
+            // ChaosSpiel
+            // 
+            this.ChaosSpiel.BottomAlign = false;
+            this.ChaosSpiel.ButtonText = "Chaos - Spiel";
+            this.ChaosSpiel.ExerciseID = SoftwareProjekt.Enums.EExercises.FraktalerzeugungMitChaos;
+            this.ChaosSpiel.LeftAlign = false;
+            this.ChaosSpiel.Location = new System.Drawing.Point(866, 582);
+            this.ChaosSpiel.MachiningCondition = SoftwareProjekt.Enums.EMachiningCondition.SaveExists;
+            this.ChaosSpiel.Name = "ChaosSpiel";
+            this.ChaosSpiel.RightAlign = true;
+            this.ChaosSpiel.Size = new System.Drawing.Size(153, 27);
+            this.ChaosSpiel.TabIndex = 17;
+            this.ChaosSpiel.TopAlign = false;
+            // 
             // CtlMindMap
             // 
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.parallelTopic);
-            this.Controls.Add(this.fraktaleTopic);
             this.Controls.Add(this.affAbbildungTopic);
+            this.Controls.Add(this.fraktaleTopic);
             this.Controls.Add(this.topicLinAbb);
-            this.Controls.Add(this.HintereinanderausfuehrungUmkehrbarkeit);
-            this.Controls.Add(this.IFS);
             this.Controls.Add(this.VertraeglichkeitLinarkombination);
-            this.Controls.Add(this.VertraeglichkeitmitSummenundViel);
-            this.Controls.Add(this.Zuordnungsvorschrift2Dreiecke);
-            this.Controls.Add(this.DrehungSpiegelungStreckung);
             this.Controls.Add(this.geometrischeEigenschaftenAffAbb);
-            this.Controls.Add(this.MatrixAlsZuordnung);
-            this.Controls.Add(this.UmkehrungInverseMatrix);
-            this.Controls.Add(this.hintereinanderAusfuehrung);
             this.Controls.Add(this.GeometrischeEigenschaften);
+            this.Controls.Add(this.MatrixAlsZuordnung);
+            this.Controls.Add(this.VertraeglichkeitmitSummenundViel);
+            this.Controls.Add(this.UmkehrungInverseMatrix);
+            this.Controls.Add(this.IFS);
+            this.Controls.Add(this.hintereinanderAusfuehrung);
+            this.Controls.Add(this.Zuordnungsvorschrift2Dreiecke);
             this.Controls.Add(this.LGS);
+            this.Controls.Add(this.HintereinanderausfuehrungUmkehrbarkeit);
             this.Controls.Add(this.ChaosSpiel);
+            this.Controls.Add(this.DrehungSpiegelungStreckung);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "CtlMindMap";
             this.Size = new System.Drawing.Size(1223, 636);
@@ -735,8 +859,6 @@ namespace SoftwareProjekt.UserControls.MindMap
 #endif
 
         }
-
-
 
 
         public void Notify()
