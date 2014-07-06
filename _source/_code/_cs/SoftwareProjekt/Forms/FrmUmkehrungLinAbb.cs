@@ -30,11 +30,15 @@ using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Classes.Math;
 using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
+using SoftwareProjekt.Classes.Xml;
 
 namespace SoftwareProjekt.Forms
 {
     public partial class FrmUmkehrungLinAbb : AbstractView
     {
+        string _functionBlock;
+        string _xVector;
+
         private LineSegment _vectorInputX;
         private LineSegment _vectorInputY;
 
@@ -50,6 +54,116 @@ namespace SoftwareProjekt.Forms
 
             cosInput.AddLineSegment(_vectorInputX);
             cosOutput.AddLineSegment(_vectorInputY);
+            
+            // f(x)
+            _functionBlock = "<mn>f</mn>\n";
+            _functionBlock += "<mo>&ApplyFunction;</mo>\n";
+            _functionBlock += "<mrow>\n";
+            _functionBlock += "<mo>(</mo>\n";
+            _functionBlock += "<mover>\n";
+            _functionBlock += "\t<mi>x</mi>\n";
+            _functionBlock += "\t<mo>&rarr;</mo>\n";
+            _functionBlock += "</mover>\n";
+            _functionBlock += "<mo>)</mo>\n";
+            _functionBlock += "</mrow>\n";
+
+            // Vektor x
+            _xVector += "<mfenced open='(' close=')' separators=''>\n";
+            _xVector += "<mtable>\n";
+
+            _xVector += "\t<mtr>\n";
+            _xVector += "\t\t<mtd>\n";
+            _xVector += "\t\t\t<msub>\n";
+            _xVector += "\t\t\t\t<mi>x</mi>\n";
+            _xVector += "\t\t\t\t<mn>1</mn>\n";
+            _xVector += "\t\t\t</msub>\n";
+            _xVector += "\t\t</mtd>\n";
+            _xVector += "\t</mtr>\n";
+
+            _xVector += "\t<mtr>\n";
+            _xVector += "\t\t<mtd>\n";
+            _xVector += "\t\t\t<msub>\n";
+            _xVector += "\t\t\t\t<mi>x</mi>\n";
+            _xVector += "\t\t\t\t<mn>2</mn>\n";
+            _xVector += "\t\t\t</msub>\n";
+            _xVector += "\t\t</mtd>\n";
+            _xVector += "\t</mtr>\n";
+
+            _xVector += "</mtable>\n";
+            _xVector += "</mfenced>\n";
+
+            CreateFormular();
+
+        }
+
+        private void CreateFormular()
+        {
+            MathXmlGenerator xmlGen = new MathXmlGenerator();
+
+            // f(x)
+            xmlGen.AddNode(_functionBlock);
+
+            // =
+            xmlGen.AddSign(EMathSign.Assignment);
+
+            // Matrix
+            Matrix m = new Matrix();
+
+            m.X11 = (float.IsNaN (ctlMatrixInput.Matrix.X11)) ? 0.0f : ctlMatrixInput.Matrix.X11;
+            m.X21 = (float.IsNaN (ctlMatrixInput.Matrix.X21)) ? 0.0f : ctlMatrixInput.Matrix.X21;
+            m.X12 = (float.IsNaN (ctlMatrixInput.Matrix.X12)) ? 0.0f : ctlMatrixInput.Matrix.X12;
+            m.X22 = (float.IsNaN (ctlMatrixInput.Matrix.X22)) ? 0.0f : ctlMatrixInput.Matrix.X22;
+            
+            // Vektoren
+            Vector x = new Vector();
+            
+            x.X1 = (float.IsNaN (ctlVectorInputX.Vector.X1)) ? 0.0f : ctlVectorInputX.Vector.X1;
+            x.X2 = (float.IsNaN(ctlVectorInputX.Vector.X2)) ? 0.0f : ctlVectorInputX.Vector.X2;
+
+            y.X1 = (float.IsNaN(ctlVectorInputY.Vector.X1)) ? 0.0f : ctlVectorInputY.Vector.X1;
+            y.X2 = (float.IsNaN(ctlVectorInputY.Vector.X2)) ? 0.0f : ctlVectorInputY.Vector.X2;
+
+            // Matrix hinzufügen
+            xmlGen.AddMatrix(m, Color.Blue, Color.Blue);
+
+            // Malzeichen
+            xmlGen.AddSign(EMathSign.Multiply);
+
+            // Vektor hinzufügen
+            xmlGen.AddNode(_xVector);
+
+            // = Zeichen
+            xmlGen.AddSign(EMathSign.Assignment);
+
+            // Matrixelemente einfügen
+            List<string> expressions = new List<string>();
+            expressions.Add(m.X11.ToString());
+            expressions.Add("<msub><mi>x</mi><mn>1</mn></msub>");
+            expressions.Add(m.X12.ToString());
+            expressions.Add("<msub><mi>x</mi><mn>2</mn></msub>");
+            expressions.Add(m.X21.ToString());
+            expressions.Add("<msub><mi>x</mi><mn>1</mn></msub>");
+            expressions.Add(m.X22.ToString());
+            expressions.Add("<msub><mi>x</mi><mn>2</mn></msub>");
+
+            // Liste mit Farben
+            List<Color> colors = new List<Color>();
+            colors.Add(Color.Blue);
+            colors.Add(Color.Black);
+            colors.Add(Color.Blue);
+            colors.Add(Color.Black);
+
+            colors.Add(Color.Blue);
+            colors.Add(Color.Black);
+            colors.Add(Color.Blue);
+            colors.Add(Color.Black);
+
+            xmlGen.AddMathExpression(expressions, colors, EMathSign.Plus, EMathType.ComplexVector);
+
+            xmlGen.Finish();
+
+            ctlMathEquaToRight.WriteEquationToPicBox(xmlGen.XmlDoc);
+
         }
 
         public override Dictionary<string, Object> GetInputData()
