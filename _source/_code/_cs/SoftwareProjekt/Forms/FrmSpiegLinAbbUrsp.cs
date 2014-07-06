@@ -95,13 +95,19 @@ namespace SoftwareProjekt.Forms
             _functionBlock += "<mo>)</mo>\n";
             _functionBlock += "</mrow>\n";
 
+            // 1. Matrix
             _expr1 = "cos (&phi;)";
             _expr2 = "cos (&phi;)";
             _expr3 = "sin (&phi;)";
-            _expr4 = "sin (&phi;)"; 
+            _expr4 = "sin (&phi;)";
+
+            // 2. Matrix 
+            _expr5 = "cos (&phi;)";
+            _expr6 = "-sin (&phi;)";
+            _expr6 = "sin (&phi;)";
+            _expr7 = "cos (&phi;)";
 
             CreateFormular();
-
         }
 
         private void CreateFormular()
@@ -114,6 +120,7 @@ namespace SoftwareProjekt.Forms
             // =
             xml.AddSign(EMathSign.Assignment);      
             
+            // Matrix 1
             List<string> expressions1 = new List<string>();
             expressions1.Add(_expr1);            
             expressions1.Add(_expr2);            
@@ -134,15 +141,21 @@ namespace SoftwareProjekt.Forms
 
             xml.AddSign(EMathSign.Assignment);
 
+            // Matrix 2
+            List<string> expressions2 = new List<string>();
+            expressions2.Add(_expr5);
+            expressions2.Add(_expr6);
+            expressions2.Add(_expr7);
+            expressions2.Add(_expr8); 
+            
             xml.AddMathExpression(expressions1, colors, EMathSign.Minus, EMathType.Matrix);
+            xml.AddMathExpression(expressions2, colors, EMathSign.Minus, EMathType.Matrix);
 
             xml.Finish();
 
             ctlMathEqua.WriteEquationToPicBox(xml.XmlDoc);
         }
-
-
-
+        
         public override Dictionary<string, Object> GetInputData()
         {
             Dictionary<string, Object> retVal = new Dictionary<string, object>();

@@ -30,6 +30,8 @@ using SoftwareProjekt.Classes.EventArguments;
 using SoftwareProjekt.Classes.Math;
 using SoftwareProjekt.Enums;
 using SoftwareProjekt.Interfaces;
+using SoftwareProjekt.Classes.Xml;
+
 namespace SoftwareProjekt.Forms
 {
     public partial class FrmLinAbbVielBelVek : AbstractView
@@ -39,6 +41,9 @@ namespace SoftwareProjekt.Forms
         private LineSegment _vectorInputXScaled;
         private LineSegment _vectorOutputXScaled;
 
+        string _functionBlock;
+        string _functionBlock2;
+
         public FrmLinAbbVielBelVek()
         {
             InitializeComponent();
@@ -46,6 +51,70 @@ namespace SoftwareProjekt.Forms
             _vectorInputX = new LineSegment(new PointF(0, 0), ctlVectorInputX.Vector, Pens.Blue);
 
             cosInput.AddLineSegment(_vectorInputX);
+
+            // &alpha;
+            // f(alpha * x)
+            _functionBlock = "<mn>f</mn>\n";
+            _functionBlock += "<mo>&ApplyFunction;</mo>\n";
+            _functionBlock += "<mrow>\n";
+            _functionBlock += "<mo>(</mo>\n";
+            _functionBlock += "<mover>\n";
+            _functionBlock += "\t<mi>&alpha; * x</mi>\n";
+            _functionBlock += "\t<mo>&rarr;</mo>\n";
+            _functionBlock += "</mover>\n";
+            _functionBlock += "<mo>)</mo>\n";
+            _functionBlock += "</mrow>\n";
+
+            // f(x)
+            _functionBlock2 = "<mn>f</mn>\n";
+            _functionBlock2 += "<mo>&ApplyFunction;</mo>\n";
+            _functionBlock2 += "<mrow>\n";
+            _functionBlock2 += "<mo>(</mo>\n";
+            _functionBlock2 += "<mover>\n";
+            _functionBlock2 += "\t<mi>x</mi>\n";
+            _functionBlock2 += "\t<mo>&rarr;</mo>\n";
+            _functionBlock2 += "</mover>\n";
+            _functionBlock2 += "<mo>)</mo>\n";
+            _functionBlock2 += "</mrow>\n";
+
+            CreateFormular();
+        }
+
+        private void CreateFormular()
+        {
+            MathXmlGenerator xmlGen = new MathXmlGenerator();
+
+            xmlGen.AddNode(_functionBlock);
+            xmlGen.AddSign(EMathSign.Assignment);
+
+            Matrix m = new Matrix();
+            m.X11 = (float.IsNaN(ctlMatrixInput.Matrix.X11)) ? 0.0f : ctlMatrixInput.Matrix.X11;
+            m.X21 = (float.IsNaN(ctlMatrixInput.Matrix.X21)) ? 0.0f : ctlMatrixInput.Matrix.X21;
+            m.X12 = (float.IsNaN(ctlMatrixInput.Matrix.X12)) ? 0.0f : ctlMatrixInput.Matrix.X12;
+            m.X22 = (float.IsNaN(ctlMatrixInput.Matrix.X22)) ? 0.0f : ctlMatrixInput.Matrix.X22;
+
+            Vector x = new Vector();
+            x.X1 = (float.IsNaN(ctlVectorInputX.Vector.X1)) ? 0.0f : ctlVectorInputX.Vector.X1;
+            x.X2 = (float.IsNaN(ctlVectorInputX.Vector.X2)) ? 0.0f : ctlVectorInputX.Vector.X2;
+
+            xmlGen.AddMatrix(m, Color.Blue, Color.Blue);
+            xmlGen.AddSign(EMathSign.Multiply);
+            xmlGen.AddNode("<mi>&alpha;</mi>");
+            xmlGen.AddSign(EMathSign.Multiply);
+            xmlGen.AddNode("<mover>\n \t<mi>x</mi>\n \t<mo>&rarr;</mo>\n </mover>\n");
+            xmlGen.AddSign(EMathSign.Assignment);
+            xmlGen.AddNode("<mi>&alpha;</mi>");
+            xmlGen.AddSign(EMathSign.Multiply);
+            xmlGen.AddMatrix(m, Color.Blue, Color.Blue);
+            xmlGen.AddSign(EMathSign.Multiply);
+            xmlGen.AddNode("<mover>\n \t<mi>x</mi>\n \t<mo>&rarr;</mo>\n </mover>\n");
+            xmlGen.AddSign(EMathSign.Assignment);
+            xmlGen.AddNode("<mi>&alpha;</mi>");
+            xmlGen.AddSign(EMathSign.Multiply);
+            xmlGen.AddNode(_functionBlock2);
+
+            xmlGen.Finish();
+            ctlMathEqua.WriteEquationToPicBox(xmlGen.XmlDoc);
         }
 
         public override Dictionary<string, Object> GetInputData()

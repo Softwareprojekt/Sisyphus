@@ -80,7 +80,6 @@
             // 
             // ctlMatrixInput
             // 
-            this.ctlMatrixInput.Text = "Matrix Input";
             this.ctlMatrixInput.Location = new System.Drawing.Point(195, 22);
             this.ctlMatrixInput.Margin = new System.Windows.Forms.Padding(5);
             matrix1.X11 = float.NaN;
@@ -95,7 +94,6 @@
             // 
             // ctlVectorInputX
             // 
-            this.ctlVectorInputX.Text = "Vector Input";
             this.ctlVectorInputX.Location = new System.Drawing.Point(16, 22);
             this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(5);
             this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(136, 94);
@@ -252,10 +250,10 @@
             this.ctlMathEqua.Filename = "0o3ot0te.0fx.tiff";
             this.ctlMathEqua.Filepath = "";
             this.ctlMathEqua.FontSize = 8;
-            this.ctlMathEqua.Location = new System.Drawing.Point(733, 346);
+            this.ctlMathEqua.Location = new System.Drawing.Point(666, 358);
             this.ctlMathEqua.Margin = new System.Windows.Forms.Padding(4);
             this.ctlMathEqua.Name = "ctlMathEqua";
-            this.ctlMathEqua.Size = new System.Drawing.Size(243, 81);
+            this.ctlMathEqua.Size = new System.Drawing.Size(460, 81);
             this.ctlMathEqua.TabIndex = 2;
             // 
             // FrmLinAbbVielBelVek
