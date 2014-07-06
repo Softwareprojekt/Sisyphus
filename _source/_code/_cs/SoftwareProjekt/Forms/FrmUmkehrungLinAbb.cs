@@ -66,11 +66,14 @@ namespace SoftwareProjekt.Forms
             _functionBlock += "<mo>)</mo>\n";
             _functionBlock += "</mrow>\n";
 
-            CreateFormular();
+            // Erzeugt Formel für "Pfeil nach rechts"
+            CreateFormularToRight();
+            // Erzeugt Formel für "Pfeil nach rechts"
+            CreateFormularToLeft();
 
         }
 
-        private void CreateFormular()
+        private void CreateFormularToRight()
         {
             MathXmlGenerator xmlGen = new MathXmlGenerator();
 
@@ -138,6 +141,13 @@ namespace SoftwareProjekt.Forms
             // tiff erstellen und auf picbox platzieren
             ctlMathEquaToRight.WriteEquationToPicBox(xmlGen.XmlDoc);
         }
+
+
+        private void CreateFormularToLeft()
+        {
+
+        }
+
 
         public override Dictionary<string, Object> GetInputData()
         {
