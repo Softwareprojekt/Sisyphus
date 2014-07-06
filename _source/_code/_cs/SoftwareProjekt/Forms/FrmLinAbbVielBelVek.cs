@@ -50,6 +50,7 @@ namespace SoftwareProjekt.Forms
 
             _vectorInputX = new LineSegment(new PointF(0, 0), ctlVectorInputX.Vector, Pens.Blue);
 
+            this.ctlVectorInputX.TextChanged += this.OnTextChanged;
             cosInput.AddLineSegment(_vectorInputX);
 
             // &alpha;
@@ -173,7 +174,11 @@ namespace SoftwareProjekt.Forms
             return false;
 		}
 
-
+        public void OnTextChanged(object sender, EventArgs e)
+        {
+            _vectorInputX.Vector = ctlVectorInputX.Vector;
+            cosInput.Refresh();
+        }
 
         public override bool LoadState(Dictionary<string, object> state)
         {
