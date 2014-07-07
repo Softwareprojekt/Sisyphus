@@ -593,11 +593,19 @@ namespace SoftwareProjekt.UserControls
 
         private void DrawPixel(Graphics graphics)
         {
-            foreach (PointF item in _pixelList)
+            try
             {
-                PointF p = CalculateInternalCoordinates(item.X, item.Y);
-                graphics.FillRectangle(Brushes.Black, p.X, p.Y, 1, 1);
+                foreach (PointF item in _pixelList)
+                {
+                    PointF p = CalculateInternalCoordinates(item.X, item.Y);
+                    graphics.FillRectangle(Brushes.Black, p.X, p.Y, 1, 1);
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR @ Coordinate system: Draw Pixel.\n" + ex.Message);
+            }
+            
         }
         private void DrawPolygons(Graphics graphics)
         {

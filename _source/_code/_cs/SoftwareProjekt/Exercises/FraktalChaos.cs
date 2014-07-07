@@ -78,10 +78,10 @@ namespace SoftwareProjekt.Exercises
             Vector lastPoint = new Vector(0, 0);
 
             List<PointF> pointList = new List<PointF>();
-
+            Random r = new Random();
             for (int i = 1; i <= iter; i++)
             {
-                int random = new Random((int)DateTime.Now.Ticks).Next(0, 100);
+                int random = r.Next(0, 100);
 
                 //chooses the function to calculate
                 if (0 <= random && random < val1)
@@ -103,7 +103,7 @@ namespace SoftwareProjekt.Exercises
                 pointList.Add(new PointF(lastPoint.X1, lastPoint.X2));
 
                 //Don't know why, but otherwise it doesn't work
-                System.Threading.Thread.Sleep(1);
+                //System.Threading.Thread.Sleep(1);
 
                 if (i % (iter / steps) == 0 || i == iter)
                 {

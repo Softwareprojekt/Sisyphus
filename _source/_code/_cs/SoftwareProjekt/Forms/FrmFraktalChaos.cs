@@ -52,7 +52,11 @@ namespace SoftwareProjekt.Forms
             cosFractal.Clear();
             cosFractal.DoNotRefresh = true;
 
-            cosFractal.AddPixel(((List<PointF>)e.CalcValues["Points"]).ToArray());
+            //Get the second half for better looking
+            List<PointF> pList = (List<PointF>)e.CalcValues["Points"];
+            pList = pList.GetRange(pList.Count / 2, pList.Count / 2);
+
+            cosFractal.AddPixel(pList.ToArray());
 
             int currentIteration = (int)e.CalcValues["CurrentIteration"];
             string step = "Iteration: " + currentIteration;
