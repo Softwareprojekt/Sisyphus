@@ -273,7 +273,7 @@ namespace SoftwareProjekt.Forms
             this.lblNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblNotes.AutoSize = true;
             this.lblNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotes.Location = new System.Drawing.Point(348, 585);
+            this.lblNotes.Location = new System.Drawing.Point(348, 625);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(60, 17);
             this.lblNotes.TabIndex = 44;
@@ -314,7 +314,7 @@ namespace SoftwareProjekt.Forms
             // _rtxtNotes
             // 
             this._rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._rtxtNotes.Location = new System.Drawing.Point(351, 610);
+            this._rtxtNotes.Location = new System.Drawing.Point(351, 650);
             this._rtxtNotes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._rtxtNotes.Name = "_rtxtNotes";
             this._rtxtNotes.Size = new System.Drawing.Size(478, 124);

@@ -104,7 +104,7 @@
             // 
             this._rtxtNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._rtxtNotes.Location = new System.Drawing.Point(9, 575);
+            this._rtxtNotes.Location = new System.Drawing.Point(9, 635);
             this._rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
             this._rtxtNotes.Name = "_rtxtNotes";
             this._rtxtNotes.Size = new System.Drawing.Size(478, 124);
@@ -116,7 +116,7 @@
             // 
             this.lblNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(9, 554);
+            this.lblNotes.Location = new System.Drawing.Point(9, 614);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(46, 13);
             this.lblNotes.TabIndex = 4;
