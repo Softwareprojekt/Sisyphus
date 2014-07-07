@@ -38,7 +38,7 @@ namespace SoftwareProjekt.Forms
     {
         string _functionBlock;
         string _functionBlock2;
-      
+
         private LineSegment _vectorInputX;
         private LineSegment _vectorInputY;
 
@@ -52,11 +52,13 @@ namespace SoftwareProjekt.Forms
             _vectorInputX = new LineSegment(new PointF(0, 0), ctlVectorInputX.Vector, Pens.Black);
             _vectorInputY = new LineSegment(new PointF(0, 0), ctlVectorInputY.Vector, Pens.Black);
 
-            this.ctlVectorInputX.TextChanged += this.OnTextChanged;
-            this.ctlVectorInputY.TextChanged += this.OnTextChanged;
+            ctlVectorInputX.TextChanged += this.OnTextChanged;
+            ctlVectorInputY.TextChanged += this.OnTextChanged;
+            ctlMatrixInput.TextChanged += this.OnTextChanged;
+
             cosInput.AddLineSegment(_vectorInputX);
             cosOutput.AddLineSegment(_vectorInputY);
-            
+
             // f(x)
             _functionBlock = "<mn>f</mn>\n";
             _functionBlock += "<mo>&ApplyFunction;</mo>\n";
@@ -100,14 +102,14 @@ namespace SoftwareProjekt.Forms
 
             // Matrix
             Matrix m = new Matrix();
-            m.X11 = (float.IsNaN (ctlMatrixInput.Matrix.X11)) ? 0.0f : ctlMatrixInput.Matrix.X11;
-            m.X21 = (float.IsNaN (ctlMatrixInput.Matrix.X21)) ? 0.0f : ctlMatrixInput.Matrix.X21;
-            m.X12 = (float.IsNaN (ctlMatrixInput.Matrix.X12)) ? 0.0f : ctlMatrixInput.Matrix.X12;
-            m.X22 = (float.IsNaN (ctlMatrixInput.Matrix.X22)) ? 0.0f : ctlMatrixInput.Matrix.X22;
-            
+            m.X11 = (float.IsNaN(ctlMatrixInput.Matrix.X11)) ? 0.0f : ctlMatrixInput.Matrix.X11;
+            m.X21 = (float.IsNaN(ctlMatrixInput.Matrix.X21)) ? 0.0f : ctlMatrixInput.Matrix.X21;
+            m.X12 = (float.IsNaN(ctlMatrixInput.Matrix.X12)) ? 0.0f : ctlMatrixInput.Matrix.X12;
+            m.X22 = (float.IsNaN(ctlMatrixInput.Matrix.X22)) ? 0.0f : ctlMatrixInput.Matrix.X22;
+
             // Vektoren
-            Vector x = new Vector();            
-            x.X1 = (float.IsNaN (ctlVectorInputX.Vector.X1)) ? 0.0f : ctlVectorInputX.Vector.X1;
+            Vector x = new Vector();
+            x.X1 = (float.IsNaN(ctlVectorInputX.Vector.X1)) ? 0.0f : ctlVectorInputX.Vector.X1;
             x.X2 = (float.IsNaN(ctlVectorInputX.Vector.X2)) ? 0.0f : ctlVectorInputX.Vector.X2;
 
             // Matrix hinzufügen
@@ -143,9 +145,9 @@ namespace SoftwareProjekt.Forms
             colors.Add(Color.Red);
             colors.Add(Color.Blue);
             colors.Add(Color.Red);
-            
+
             // alles zusammenbauen
-            xmlGen.AddMathExpression(expressions, colors, EMathSign.Plus, EMathType.ComplexVector);                     
+            xmlGen.AddMathExpression(expressions, colors, EMathSign.Plus, EMathType.ComplexVector);
 
             // abschließen
             xmlGen.Finish();
@@ -158,7 +160,7 @@ namespace SoftwareProjekt.Forms
         private void CreateFormularToLeft()
         {
             MathXmlGenerator xmlGen = new MathXmlGenerator();
-           
+
             xmlGen.AddNode(_functionBlock2);
 
             // =
@@ -170,11 +172,11 @@ namespace SoftwareProjekt.Forms
             m.X21 = (float.IsNaN(ctlMatrixInput.Matrix.X21)) ? 0.0f : ctlMatrixInput.Matrix.X21;
             m.X12 = (float.IsNaN(ctlMatrixInput.Matrix.X12)) ? 0.0f : ctlMatrixInput.Matrix.X12;
             m.X22 = (float.IsNaN(ctlMatrixInput.Matrix.X22)) ? 0.0f : ctlMatrixInput.Matrix.X22;
-                       
+
 
             // Vektoren
-            Vector y = new Vector();            
-            y.X1 = (float.IsNaN (ctlVectorInputY.Vector.X1)) ? 0.0f : ctlVectorInputY.Vector.X1;
+            Vector y = new Vector();
+            y.X1 = (float.IsNaN(ctlVectorInputY.Vector.X1)) ? 0.0f : ctlVectorInputY.Vector.X1;
             y.X2 = (float.IsNaN(ctlVectorInputY.Vector.X2)) ? 0.0f : ctlVectorInputY.Vector.X2;
 
             // Matrix hinzufügen
@@ -212,8 +214,12 @@ namespace SoftwareProjekt.Forms
             colors.Add(Color.Blue);
             colors.Add(Color.Violet);
 
-            // Inverse
             Matrix m_inv = new Matrix();
+            if (ctlMatrixInput.Matrix.Determinant != 0)
+            {
+                // Inverse
+                m_inv = Matrix.Invert(ctlMatrixInput.Matrix);
+            }
 
             xmlGen.AddMatrix(m_inv, Color.Red, Color.Red);
 
@@ -290,6 +296,12 @@ namespace SoftwareProjekt.Forms
 
         protected override bool CheckInputs()
         {
+            if (ctlMatrixInput.Matrix.Determinant == 0)
+            {
+                MessageBox.Show("Die Determinante der Matrix ist 0.");
+                return false;
+            }
+
             if (ctlVectorInputX.Vector.IsValid() && ctlVectorInputY.Vector.IsValid() && ctlMatrixInput.Matrix.IsValid())
             {
 #if DEBUG
@@ -307,6 +319,8 @@ namespace SoftwareProjekt.Forms
         {
             _vectorInputX.Vector = ctlVectorInputX.Vector;
             _vectorInputY.Vector = ctlVectorInputY.Vector;
+            CreateFormularToLeft();
+            CreateFormularToRight();
             cosInput.Refresh();
             cosOutput.Refresh();
         }
