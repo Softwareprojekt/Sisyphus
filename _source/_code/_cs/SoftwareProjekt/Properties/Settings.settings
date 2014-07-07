@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SoftwareProjekt.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="inputColorSetting" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">64, 0, 0</Value>
+    </Setting>
+    <Setting Name="resultColorSetting" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">DarkGreen</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

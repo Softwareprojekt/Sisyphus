@@ -85,6 +85,10 @@ namespace SoftwareProjekt.Forms
 
         public FrmMain()
         {
+            //load color settings 
+            this.inputColor = Properties.Settings.Default.inputColorSetting;
+            this.resultColor = Properties.Settings.Default.resultColorSetting;
+
             InitializeComponent();
             _controlDictionary = InitializeDictionary();
             SoftwareProjekt.Classes.Workbook.Instance.AddEntries(flpWorkbook.Controls, picWorkbook, _rtxtNotes);
@@ -661,6 +665,8 @@ namespace SoftwareProjekt.Forms
             {
                 tslblInstructions.Text = "Hinweis: Übungen neu öffnen, damit Änderungen wirksam werden!";
                 this.inputColor = colorDialog1.Color;
+                Properties.Settings.Default.inputColorSetting = this.inputColor;
+                Properties.Settings.Default.Save();
             }
         }
 
@@ -671,6 +677,8 @@ namespace SoftwareProjekt.Forms
             {
                 tslblInstructions.Text = "Hinweis: Übungen neu öffnen, damit Änderungen wirksam werden!";
                 this.resultColor = colorDialog1.Color;
+                Properties.Settings.Default.resultColorSetting = this.resultColor;
+                Properties.Settings.Default.Save();
             }
         }
 
