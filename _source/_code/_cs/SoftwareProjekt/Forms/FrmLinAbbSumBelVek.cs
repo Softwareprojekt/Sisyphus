@@ -34,7 +34,7 @@ using SoftwareProjekt.Classes.Xml;
 
 namespace SoftwareProjekt.Forms
 {
-    public partial class FrmLinAbbSumBelVek : AbstractView  
+    public partial class FrmLinAbbSumBelVek : AbstractView
     {
         private Vector XplusY;
 
@@ -49,15 +49,16 @@ namespace SoftwareProjekt.Forms
         private string _functionBlock1;
         private string _functionBlock2;
         private string _functionBlock3;
-      
+
         public FrmLinAbbSumBelVek()
         {
             InitializeComponent();
 
             XplusY = Vector.Add(ctlVecInX.Vector, ctlVecInY.Vector);
 
-            this.ctlVecInX.TextChanged += this.OnTextChanged;
-            this.ctlVecInY.TextChanged += this.OnTextChanged;
+            ctlVecInX.TextChanged += this.OnTextChanged;
+            ctlVecInY.TextChanged += this.OnTextChanged;
+            ctlMaInScaleMat.TextChanged += this.OnTextChanged;
 
             _vectorInputX = new LineSegment(new PointF(0, 0), ctlVecInX.Vector, Pens.Black);
             _vectorInputY = new LineSegment(new PointF(0, 0), ctlVecInY.Vector, Pens.Blue);
@@ -106,10 +107,10 @@ namespace SoftwareProjekt.Forms
             _functionBlock3 += "<mo>)</mo>\n";
             _functionBlock3 += "</mrow>\n";
 
-            CreateFormular();
+            CreateFormula();
         }
 
-        private void CreateFormular()
+        private void CreateFormula()
         {
             MathXmlGenerator xmlGen = new MathXmlGenerator();
 
@@ -121,30 +122,30 @@ namespace SoftwareProjekt.Forms
             m.X12 = (float.IsNaN(ctlMaInScaleMat.Matrix.X12)) ? 0.0f : ctlMaInScaleMat.Matrix.X12;
             m.X22 = (float.IsNaN(ctlMaInScaleMat.Matrix.X22)) ? 0.0f : ctlMaInScaleMat.Matrix.X22;
 
-            Vector x = new Vector();            
-            x.X1 = (float.IsNaN (ctlVecInX.Vector.X1)) ? 0.0f : ctlVecInX.Vector.X1;
+            Vector x = new Vector();
+            x.X1 = (float.IsNaN(ctlVecInX.Vector.X1)) ? 0.0f : ctlVecInX.Vector.X1;
             x.X2 = (float.IsNaN(ctlVecInX.Vector.X2)) ? 0.0f : ctlVecInX.Vector.X2;
 
-            Vector y = new Vector();            
-            x.X1 = (float.IsNaN (ctlVecInY.Vector.X1)) ? 0.0f : ctlVecInY.Vector.X1;
-            x.X2 = (float.IsNaN(ctlVecInY.Vector.X2)) ? 0.0f : ctlVecInY.Vector.X2;
+            Vector y = new Vector();
+            y.X1 = (float.IsNaN(ctlVecInY.Vector.X1)) ? 0.0f : ctlVecInY.Vector.X1;
+            y.X2 = (float.IsNaN(ctlVecInY.Vector.X2)) ? 0.0f : ctlVecInY.Vector.X2;
 
             xmlGen.AddSign(EMathSign.Assignment);
-            xmlGen.AddMatrix(m, Color.Blue, Color.Blue);
+            xmlGen.AddNode("<mo>M</mo> \n");
             xmlGen.AddSign(EMathSign.Multiply);
             xmlGen.AddNode("<mo>(</mo> \n");
             xmlGen.AddNode("<mover>\n \t<mi>x</mi>\n \t<mo>&rarr;</mo>\n </mover>\n");
             xmlGen.AddSign(EMathSign.Plus);
             xmlGen.AddNode("<mover>\n \t<mi>y</mi>\n \t<mo>&rarr;</mo>\n </mover>\n");
-            xmlGen.AddNode("<mo>)</mo> \n");
+            xmlGen.AddNode("<mo>)</mo>");
             xmlGen.AddSign(EMathSign.Assignment);
             xmlGen.AddMatrix(m, Color.Blue, Color.Blue);
             xmlGen.AddSign(EMathSign.Multiply);
-            xmlGen.AddNode("<mover>\n \t<mi>x</mi>\n \t<mo>&rarr;</mo>\n </mover>\n");
+            xmlGen.AddVector(x, Color.Red);
             xmlGen.AddSign(EMathSign.Plus);
             xmlGen.AddMatrix(m, Color.Blue, Color.Blue);
             xmlGen.AddSign(EMathSign.Multiply);
-            xmlGen.AddNode("<mover>\n \t<mi>y</mi>\n \t<mo>&rarr;</mo>\n </mover>\n");
+            xmlGen.AddVector(y, Color.Green);
             xmlGen.AddSign(EMathSign.Assignment);
             xmlGen.AddNode(_functionBlock2);
             xmlGen.AddSign(EMathSign.Plus);
@@ -179,7 +180,7 @@ namespace SoftwareProjekt.Forms
             cosResult.ClearLineSegments();
 
             Console.WriteLine(sender.ToString() + " " + e.ToString());
-            //txtDeterminante1.Text = e.CalcValues["M1Det"].ToString();
+            txtDet.Invoke(new Action(() => txtDet.Text = e.CalcValues["M1Det"].ToString()));
 
             _vectorOutputX = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["OutputX"], Pens.Black);
             _vectorOutputY = new LineSegment(new PointF(_vectorOutputX.Vector.X1, _vectorOutputX.Vector.X2), (Vector)e.CalcValues["OutputY"], Pens.Blue);
@@ -195,14 +196,13 @@ namespace SoftwareProjekt.Forms
             }
         }
 
-
-        private void dutDeterminante_Click(object sender, EventArgs e)
-        {
-            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
-        }
-
         protected override bool CheckInputs()
         {
+            if (ctlMaInScaleMat.Matrix.Determinant == 0)
+            {
+                MessageBox.Show("Die Determinante der Matrix ist 0.");
+                return false;
+            }
             if (ctlMaInScaleMat.Matrix.IsValid() && ctlVecInX.Vector.IsValid() && ctlVecInY.Vector.IsValid())
             {
 #if DEBUG
@@ -222,7 +222,9 @@ namespace SoftwareProjekt.Forms
             _vectorInputY.StartPoint = new PointF(ctlVecInX.Vector.X1, ctlVecInX.Vector.X2);
             _vectorInputY.Vector = ctlVecInY.Vector;
             _vectorInputXplusY.Vector = Vector.Add(ctlVecInX.Vector, ctlVecInY.Vector);
-            Refresh();
+
+            cosInput.Refresh();
+            this.CreateFormula();
         }
 
         public override bool LoadState(Dictionary<string, object> state)
@@ -232,18 +234,27 @@ namespace SoftwareProjekt.Forms
             {
                 return false;
             }
-            else if (!state.ContainsKey("VectorX"))
-            {
-                return false;
-            }
-            else if (!state.ContainsKey("VectorY"))
+            else if (!state.ContainsKey("VectorX") || !state.ContainsKey("VectorY"))
             {
                 return false;
             }
 
             ctlVecInX.Vector = (Vector)state["VectorX"];
             ctlVecInY.Vector = (Vector)state["VectorY"];
+            ctlMaInScaleMat.Matrix = (Matrix)state["MatrixM1"];
+
+            _rtxtNotes.Text = state["Notes"].ToString();
+
             return true;
+        }
+        private void txtDeterminante_MouseEnter(object sender, EventArgs e)
+        {
+            txtDet.UseSystemPasswordChar = false;
+        }
+
+        private void txtDeterminante_MouseLeave(object sender, EventArgs e)
+        {
+            txtDet.UseSystemPasswordChar = true;
         }
     }
 }

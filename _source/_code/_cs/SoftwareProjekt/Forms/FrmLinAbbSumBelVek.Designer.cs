@@ -43,8 +43,11 @@
             this.picBoxArrow = new System.Windows.Forms.PictureBox();
             this._rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.ctlMathEqu = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
+            this.grpAddInfo = new System.Windows.Forms.GroupBox();
+            this.txtDet = new System.Windows.Forms.TextBox();
             this.grpDataInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxArrow)).BeginInit();
+            this.grpAddInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpDataInput
@@ -192,12 +195,38 @@
             this.ctlMathEqu.Size = new System.Drawing.Size(490, 85);
             this.ctlMathEqu.TabIndex = 3;
             // 
+            // grpAddInfo
+            // 
+            this.grpAddInfo.Controls.Add(this.txtDet);
+            this.grpAddInfo.Location = new System.Drawing.Point(453, 205);
+            this.grpAddInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.grpAddInfo.Name = "grpAddInfo";
+            this.grpAddInfo.Padding = new System.Windows.Forms.Padding(2);
+            this.grpAddInfo.Size = new System.Drawing.Size(126, 46);
+            this.grpAddInfo.TabIndex = 52;
+            this.grpAddInfo.TabStop = false;
+            this.grpAddInfo.Text = "Determinante";
+            // 
+            // txtDet
+            // 
+            this.txtDet.Location = new System.Drawing.Point(4, 17);
+            this.txtDet.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDet.MaxLength = 5;
+            this.txtDet.Name = "txtDet";
+            this.txtDet.ReadOnly = true;
+            this.txtDet.Size = new System.Drawing.Size(113, 20);
+            this.txtDet.TabIndex = 1;
+            this.txtDet.UseSystemPasswordChar = true;
+            this.txtDet.MouseEnter += new System.EventHandler(this.txtDeterminante_MouseEnter);
+            this.txtDet.MouseLeave += new System.EventHandler(this.txtDeterminante_MouseLeave);
+            // 
             // FrmLinAbbSumBelVek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1343, 849);
             this.Controls.Add(this.ctlMathEqu);
+            this.Controls.Add(this.grpAddInfo);
             this.Controls.Add(this._rtxtNotes);
             this.Controls.Add(this.picBoxArrow);
             this.Controls.Add(this.lblHeader);
@@ -210,6 +239,8 @@
             this.Text = "Lineare Abbildungen und Summe von Vektoren";
             this.grpDataInput.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxArrow)).EndInit();
+            this.grpAddInfo.ResumeLayout(false);
+            this.grpAddInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,6 +259,8 @@
         private UserControls.CtlVectorInput ctlVecInY;
         private System.Windows.Forms.PictureBox picBoxArrow;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEqu;
+        private System.Windows.Forms.GroupBox grpAddInfo;
+        private System.Windows.Forms.TextBox txtDet;
 #if DEBUG
         private System.Windows.Forms.RichTextBox _rtxtNotes;
 #endif
