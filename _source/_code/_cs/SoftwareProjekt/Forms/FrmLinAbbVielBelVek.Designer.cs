@@ -240,10 +240,10 @@
             // _rtxtNotes
             // 
             this._rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._rtxtNotes.Location = new System.Drawing.Point(530, 695);
-            this._rtxtNotes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this._rtxtNotes.Location = new System.Drawing.Point(358, 580);
+            this._rtxtNotes.Margin = new System.Windows.Forms.Padding(2);
             this._rtxtNotes.Name = "_rtxtNotes";
-            this._rtxtNotes.Size = new System.Drawing.Size(348, 136);
+            this._rtxtNotes.Size = new System.Drawing.Size(478, 124);
             this._rtxtNotes.TabIndex = 7;
             this._rtxtNotes.Text = "";
             // 
@@ -268,6 +268,7 @@
             this.Controls.Add(this.ctlMathEqua);
             this.Controls.Add(this.cosOutput);
             this.Controls.Add(this.cosInput);
+            this.Controls.Add(this._rtxtNotes);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.butFunctionAMultX);
