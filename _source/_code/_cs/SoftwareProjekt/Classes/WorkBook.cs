@@ -438,7 +438,10 @@ namespace SoftwareProjekt.Classes
 
         public void RegisterObserver(IWorkbookObserver observer)
         {
-            _workbookObserverList.Add(observer);
+            if (observer != null)
+            {
+                _workbookObserverList.Add(observer);
+            }
         }
 
         public void DeleteWorkbook(string username)
@@ -467,6 +470,11 @@ namespace SoftwareProjekt.Classes
                     item.Clear();
                     break;
                 }
+            }
+
+            foreach (IWorkbookObserver ob in _workbookObserverList)
+            {
+                ob.Notify();
             }
         }
 
