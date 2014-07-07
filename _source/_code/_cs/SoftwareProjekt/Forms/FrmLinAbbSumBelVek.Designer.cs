@@ -181,7 +181,7 @@
             // _rtxtNotes
             // 
             this._rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._rtxtNotes.Location = new System.Drawing.Point(493, 682);
+            this._rtxtNotes.Location = new System.Drawing.Point(358, 580);
             this._rtxtNotes.Margin = new System.Windows.Forms.Padding(2);
             this._rtxtNotes.Name = "_rtxtNotes";
             this._rtxtNotes.Size = new System.Drawing.Size(478, 124);
