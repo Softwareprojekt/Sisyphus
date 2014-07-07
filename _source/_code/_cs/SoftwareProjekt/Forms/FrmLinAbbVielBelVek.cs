@@ -192,13 +192,15 @@ namespace SoftwareProjekt.Forms
             {
                 return false;
             }
-            else if (!state.ContainsKey("VectorX") || !state.ContainsKey("Scalar"))
+            else if (!state.ContainsKey("VectorX") || !state.ContainsKey("Scalar") || !state.ContainsKey("MatrixM1") || !state.ContainsKey("Notes"))
             {
                 return false;
             }
 
             ctlVectorInputX.Vector = (Vector)state["VectorX"];
+            ctlMatrixInput.Matrix = (Matrix)state["MatrixM1"];
             _ctlScalarInput.Text = state["Scalar"].ToString();
+            _rtxtNotes.Text = (string)state["Notes"];
             return true;
         }
     }
