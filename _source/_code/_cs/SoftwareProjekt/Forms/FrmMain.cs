@@ -597,6 +597,7 @@ namespace SoftwareProjekt.Forms
                 Workbook.Instance.Username = usernameString;
                 if (Workbook.Instance.Username != null) // otherwise parsing xml file failed
                 {
+                    tsbutCloseExercisebook.Enabled = true;
                     tslblInstructions.Text = "Arbeitsheft '" + usernameString + "' geladen.";
                 }
                 else tslblInstructions.Text = "Laden des Arbeitsheft fehlgeschlagen!";
@@ -633,15 +634,20 @@ namespace SoftwareProjekt.Forms
                 // create book, if none with this name exists! 
                 // otherwise ask user, how to proceed.  
                 tstbxInput.Visible = false;
-                Workbook.Instance.Username = tstbxInput.Text; // must be assigned, even if it exists already
                 if (Exists(tstbxInput.Text))
                 {
+                    // following is only relevant if the workbook to create, is already open
+                    if (Workbook.Instance.Username == tstbxInput.Text)
+                    {
+                        Workbook.Instance.Username = null;
+                    }
                     tslblInstructions.Text = "Arbeitsbuch existiert bereits! Ersetzen oder Abbrechen?";
                     tsbutReplace.Visible = true;
                     tsbutCancel.Visible = true;
                     tsbutAccept.Visible = false;
                     return;
                 }
+                Workbook.Instance.Username = tstbxInput.Text;
                 tslblInstructions.Text = "";
                 tslblInstructions.Text = "Beginne eine Übung über die Mindmap.";
                 tsbutCloseExercisebook.Enabled = true;
@@ -651,19 +657,12 @@ namespace SoftwareProjekt.Forms
 
         private bool Exists(string bookName)
         {
-            /*string currentDirectory = Directory.GetCurrentDirectory();
-            string sepChar = System.IO.Path.DirectorySeparatorChar.ToString();
-            string[] bookDirectories = Directory.GetDirectories(currentDirectory + sepChar + "Workbooks");
-            bookName = "Workbooks" + sepChar + bookName;
-            */
             List<String> existingBookNames = Workbook.Instance.GetAvailableWorkbooks();
-            
             foreach (string existingBookName in existingBookNames)
             {
                 if (bookName == existingBookName) return true;
             }
             return false;
-
         }
 
         private void butColorInput_Click(object sender, System.EventArgs e)
@@ -777,16 +776,17 @@ namespace SoftwareProjekt.Forms
             // -> No support of bmp nor png format!
             try
             {
-                System.Console.WriteLine(exerciseImage);
-
                 exerciseImage = GetJpeg(exerciseImage, pageNum);
                 entities::Image image = entities::Image.Get(exerciseImage);
                 xObjects::XObject imageXObject = image.ToXObject(document);
                 // Show the image!
+                float imageWidth = image.Width / 2 + 50;
+                System.Console.WriteLine(imageWidth);
+                if (imageWidth > 700.0) imageWidth = 700;
                 composer.ShowXObject(
                   imageXObject,
                   new PointF(44, 78),
-                  GeomUtils.Scale(imageXObject.Size, new SizeF(image.Width / 2, 0))
+                  GeomUtils.Scale(imageXObject.Size, new SizeF(imageWidth, 0))
                 );
 
             }
@@ -923,48 +923,55 @@ namespace SoftwareProjekt.Forms
         {
             Bitmap displayedBitmap = (Bitmap)picWorkbook.Image;
 
-            try
+            string[] availableImages = GetImagePathes();
+            foreach (string imgString in availableImages)
             {
-                string[] availableImages = GetImagePathes();
-                foreach (string imgString in availableImages)
+                Size sSize = picWorkbook.Image.Size;
+                Bitmap exerciseImage = (Bitmap)resizeImage(Image.FromFile(imgString), sSize);
+                System.Console.WriteLine(imgString);
+                if (compare(exerciseImage, displayedBitmap))
                 {
-                    Size sSize = picWorkbook.Image.Size;
-                    Bitmap exerciseImage = (Bitmap)resizeImage(Image.FromFile(imgString), sSize);
-
-                    if (compare(exerciseImage, displayedBitmap))
+                    // open the exercise
+                    char[] extension = ".bmp".ToCharArray();
+                    String exercise = Path.GetFileName(imgString).TrimEnd(extension);
+                        
+                    try
                     {
-                        // open the exercise
-                        char[] extension = ".bmp".ToCharArray();
-                        String exercise = Path.GetFileName(imgString).TrimEnd(extension);
+                        // bb was trimmed off, probably with '.bmp'
+                        if (exercise == "ZuordnungsvorschriftLinA" ||
+                            exercise == "HintereinanderausfLinA" ||
+                            exercise == "UmkehrungLinA")
+                        {
+                            exercise += "bb";
+                        }
                         return (EExercises)Enum.Parse(typeof(EExercises), exercise);
                     }
+                    catch (Exception e2)
+                    {
+                        Console.WriteLine("Reading Path failed: " + e2.Message);
+                        Console.WriteLine(e2.StackTrace);
+                    }                
                 }
             }
-            catch (Exception e2)
-            {
-                Console.WriteLine("Reading Path failed: " + e2.Message);
-                Console.WriteLine(e2.StackTrace);
-            }
+
             return Enums.EExercises.InvalidExercise;
         }
 
         private bool compare(Bitmap bmp1, Bitmap bmp2)
         {
-            bool equals = true;
             bool flag = true;  //Inner loop isn't broken
 
             //Test to see if we have the same size of image
             if (bmp1.Size == bmp2.Size)
             {
-                for (int x = 0; x < bmp1.Width; ++x)
-                {   // comparing through the whole height, would take too long and is not required
-                    for (int y = 0; y < 60; ++y)
+                // comparing through the whole size is not required
+                for (int x = 220; x < bmp1.Width-220; ++x)
+                {   
+                    for (int y = 12; y < 60; ++y)
                     {
-                        if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
+                        if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y) )
                         {
-                            equals = false;
-                            flag = false;
-                            break;
+                            return false;
                         }
                     }
                     if (!flag)
@@ -975,9 +982,9 @@ namespace SoftwareProjekt.Forms
             }
             else
             {
-                equals = false;
+                return false;
             }
-            return equals;
+            return true;
         }
 
         public static Image resizeImage(Image imgToResize, Size size)
@@ -1004,7 +1011,8 @@ namespace SoftwareProjekt.Forms
 
         private void tsbutReplace_Click(object sender, EventArgs e)
         {
-            Workbook.Instance.DeleteWorkbook(Workbook.Instance.Username);
+            picWorkbook.Dispose();
+            Workbook.Instance.DeleteWorkbook(tstbxInput.Text);
             tsbutReplace.Visible = false;
             tsbutCancel.Visible = false;
             tsbutAccept_Click(sender, e);
