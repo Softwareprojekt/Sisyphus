@@ -94,7 +94,7 @@
             this.grpPics.Controls.Add(this._radCircle);
             this.grpPics.Controls.Add(this._butSelectPic);
             this.grpPics.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpPics.Location = new System.Drawing.Point(88, 440);
+            this.grpPics.Location = new System.Drawing.Point(88, 429);
             this.grpPics.Margin = new System.Windows.Forms.Padding(2);
             this.grpPics.Name = "grpPics";
             this.grpPics.Padding = new System.Windows.Forms.Padding(2);
@@ -163,7 +163,7 @@
             // 
             this.lblOrigPic.AutoSize = true;
             this.lblOrigPic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrigPic.Location = new System.Drawing.Point(177, 391);
+            this.lblOrigPic.Location = new System.Drawing.Point(145, 378);
             this.lblOrigPic.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOrigPic.Name = "lblOrigPic";
             this.lblOrigPic.Size = new System.Drawing.Size(78, 20);
@@ -174,7 +174,7 @@
             // 
             this.lblFraktal.AutoSize = true;
             this.lblFraktal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFraktal.Location = new System.Drawing.Point(849, 391);
+            this.lblFraktal.Location = new System.Drawing.Point(813, 378);
             this.lblFraktal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFraktal.Name = "lblFraktal";
             this.lblFraktal.Size = new System.Drawing.Size(103, 20);
@@ -184,7 +184,7 @@
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(293, 625);
+            this.lblNotes.Location = new System.Drawing.Point(293, 570);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(46, 13);
             this.lblNotes.TabIndex = 11;
@@ -206,7 +206,7 @@
             this.grpSteps.Controls.Add(this._rbStep2);
             this.grpSteps.Controls.Add(this._rbStep1);
             this.grpSteps.Controls.Add(this._butCalculation);
-            this.grpSteps.Location = new System.Drawing.Point(496, 429);
+            this.grpSteps.Location = new System.Drawing.Point(467, 403);
             this.grpSteps.Name = "grpSteps";
             this.grpSteps.Size = new System.Drawing.Size(122, 137);
             this.grpSteps.TabIndex = 12;
@@ -263,18 +263,20 @@
             this.ctlMathEqua.Filename = "expr.gif";
             this.ctlMathEqua.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";
             this.ctlMathEqua.FontSize = 8;
-            this.ctlMathEqua.Location = new System.Drawing.Point(381, 166);
+            this.ctlMathEqua.Location = new System.Drawing.Point(351, 167);
             this.ctlMathEqua.Name = "ctlMathEqua";
             this.ctlMathEqua.Size = new System.Drawing.Size(361, 158);
             this.ctlMathEqua.TabIndex = 13;
             // 
             // _vector_w2
             // 
-            this._vector_w2.Location = new System.Drawing.Point(561, 166);
+            this._vector_w2.EnableText = true;
+            this._vector_w2.Location = new System.Drawing.Point(531, 167);
             this._vector_w2.MinimumSize = new System.Drawing.Size(102, 76);
             this._vector_w2.Name = "_vector_w2";
             this._vector_w2.Size = new System.Drawing.Size(125, 89);
             this._vector_w2.TabIndex = 2;
+            this._vector_w2.Text = "Vektor w2";
             vector1.X1 = float.NaN;
             vector1.X2 = float.NaN;
             this._vector_w2.Vector = vector1;
@@ -282,77 +284,87 @@
             // _cosInput
             // 
             this._cosInput.DoNotRefresh = false;
-            this._cosInput.Location = new System.Drawing.Point(88, 84);
+            this._cosInput.Location = new System.Drawing.Point(46, 84);
             this._cosInput.Name = "_cosInput";
-            this._cosInput.Size = new System.Drawing.Size(287, 288);
+            this._cosInput.Size = new System.Drawing.Size(320, 274);
             this._cosInput.TabIndex = 16;
             // 
             // _cosOutput
             // 
             this._cosOutput.DoNotRefresh = false;
-            this._cosOutput.Location = new System.Drawing.Point(748, 84);
+            this._cosOutput.Location = new System.Drawing.Point(718, 84);
             this._cosOutput.Name = "_cosOutput";
-            this._cosOutput.Size = new System.Drawing.Size(287, 288);
+            this._cosOutput.Size = new System.Drawing.Size(320, 274);
             this._cosOutput.TabIndex = 17;
             // 
             // _vector_w3
             // 
-            this._vector_w3.Location = new System.Drawing.Point(561, 261);
+            this._vector_w3.EnableText = true;
+            this._vector_w3.Location = new System.Drawing.Point(531, 262);
             this._vector_w3.MinimumSize = new System.Drawing.Size(102, 76);
             this._vector_w3.Name = "_vector_w3";
             this._vector_w3.Size = new System.Drawing.Size(125, 89);
             this._vector_w3.TabIndex = 4;
+            this._vector_w3.Text = "Vektor w3";
             vector2.X1 = float.NaN;
             vector2.X2 = float.NaN;
             this._vector_w3.Vector = vector2;
             // 
             // _vector_w1
             // 
-            this._vector_w1.Location = new System.Drawing.Point(561, 71);
+            this._vector_w1.EnableText = true;
+            this._vector_w1.Location = new System.Drawing.Point(531, 72);
             this._vector_w1.MinimumSize = new System.Drawing.Size(102, 76);
             this._vector_w1.Name = "_vector_w1";
             this._vector_w1.Size = new System.Drawing.Size(125, 89);
             this._vector_w1.TabIndex = 18;
+            this._vector_w1.Text = "Vektor w1";
             vector3.X1 = float.NaN;
             vector3.X2 = float.NaN;
             this._vector_w1.Vector = vector3;
             // 
             // _matrix_w1
             // 
-            this._matrix_w1.Location = new System.Drawing.Point(430, 71);
             matrix1.X11 = float.NaN;
             matrix1.X12 = float.NaN;
             matrix1.X21 = float.NaN;
             matrix1.X22 = float.NaN;
             this._matrix_w1.Matrix = matrix1;
+            this._matrix_w1.EnableText = true;
+            this._matrix_w1.Location = new System.Drawing.Point(400, 72);
             this._matrix_w1.MinimumSize = new System.Drawing.Size(98, 76);
             this._matrix_w1.Name = "_matrix_w1";
+            this._matrix_w1.Text = "Matrix w1";
             this._matrix_w1.Size = new System.Drawing.Size(125, 89);
             this._matrix_w1.TabIndex = 19;
             // 
             // _matrix_w2
             // 
-            this._matrix_w2.Location = new System.Drawing.Point(430, 166);
             matrix2.X11 = float.NaN;
             matrix2.X12 = float.NaN;
             matrix2.X21 = float.NaN;
             matrix2.X22 = float.NaN;
             this._matrix_w2.Matrix = matrix2;
+            this._matrix_w2.EnableText = true;
+            this._matrix_w2.Location = new System.Drawing.Point(400, 167);
             this._matrix_w2.MinimumSize = new System.Drawing.Size(98, 76);
             this._matrix_w2.Name = "_matrix_w2";
+            this._matrix_w2.Text = "Matrix w2";
             this._matrix_w2.Size = new System.Drawing.Size(125, 89);
             this._matrix_w2.TabIndex = 19;
             // 
             // _matrix_w3
             // 
-            this._matrix_w3.Location = new System.Drawing.Point(430, 261);
             matrix3.X11 = float.NaN;
             matrix3.X12 = float.NaN;
             matrix3.X21 = float.NaN;
             matrix3.X22 = float.NaN;
             this._matrix_w3.Matrix = matrix3;
+            this._matrix_w3.EnableText = true;
+            this._matrix_w3.Location = new System.Drawing.Point(400, 262);
             this._matrix_w3.MinimumSize = new System.Drawing.Size(98, 76);
             this._matrix_w3.Name = "_matrix_w3";
+            this._matrix_w3.Text = "Matrix w3";
             this._matrix_w3.Size = new System.Drawing.Size(125, 89);
             this._matrix_w3.TabIndex = 19;
             // 
@@ -360,7 +372,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1076, 777);
+            this.ClientSize = new System.Drawing.Size(1063, 706);
             this.Controls.Add(this._matrix_w3);
             this.Controls.Add(this._matrix_w2);
             this.Controls.Add(this._matrix_w1);
@@ -377,8 +389,9 @@
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.grpPics);
             this.Controls.Add(this.ctlMathEqua);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(1072, 819);
+            this.MaximizeBox = false;
             this.Name = "FrmFraktalErzIFS";
             this.Text = "Fraktalerzeugung mit einem IFS";
             this.grpPics.ResumeLayout(false);
