@@ -69,6 +69,18 @@ namespace SoftwareProjekt.Forms
             _functionBlock += "<mo>)</mo>\n";
             _functionBlock += "</mrow>\n";
 
+            // f(y)^-1
+            _functionBlock2 = "<mn>f</mn>\n";
+            _functionBlock2 += "<mo>&ApplyFunction;</mo>\n";
+            _functionBlock2 += "<mrow>\n";
+            _functionBlock2 += "<mo>(</mo>\n";
+            _functionBlock2 += "<mover>\n";
+            _functionBlock2 += "\t<mi>y</mi>\n";
+            _functionBlock2 += "\t<mo>&rarr;</mo>\n";
+            _functionBlock2 += "</mover>\n";
+            _functionBlock2 += "<mo>)</mo>\n";
+            _functionBlock2 += "</mrow>\n";
+
             // Erzeugt Formel für "Pfeil nach rechts"
             CreateFormularToRight();
             // Erzeugt Formel für "Pfeil nach rechts"
@@ -146,18 +158,7 @@ namespace SoftwareProjekt.Forms
         private void CreateFormularToLeft()
         {
             MathXmlGenerator xmlGen = new MathXmlGenerator();
-
-            // f(y)^-1
-            _functionBlock2 = "<mn>f</mn>\n";
-            _functionBlock2 += "<mo>&ApplyFunction;</mo>\n";
-            _functionBlock2 += "<mrow>\n";
-            _functionBlock2 += "<mo>(</mo>\n";
-            _functionBlock2 += "<mover>\n";
-            _functionBlock2 += "\t<mi>y</mi>\n";
-            _functionBlock2 += "\t<mo>&rarr;</mo>\n";
-            _functionBlock2 += "</mover>\n";
-            _functionBlock2 += "<mo>)</mo>\n";
-            _functionBlock2 += "</mrow>\n";
+           
             xmlGen.AddNode(_functionBlock2);
 
             // =
@@ -214,7 +215,7 @@ namespace SoftwareProjekt.Forms
             // Inverse
             Matrix m_inv = new Matrix();
 
-            xmlGen.AddMatrix(m_inv, Color.Yellow, Color.Yellow);
+            xmlGen.AddMatrix(m_inv, Color.Red, Color.Red);
 
             // Malzeichen
             xmlGen.AddSign(EMathSign.Multiply);

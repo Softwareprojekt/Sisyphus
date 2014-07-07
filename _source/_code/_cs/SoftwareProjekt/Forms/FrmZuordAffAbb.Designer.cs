@@ -53,18 +53,15 @@
             this.cosInputA2B2C2 = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.picArrowToLeft = new System.Windows.Forms.PictureBox();
             this.picArrowToRightMiddle = new System.Windows.Forms.PictureBox();
-            this.picArrowToRightBottom = new System.Windows.Forms.PictureBox();
             this.picArrowToRightRight = new System.Windows.Forms.PictureBox();
             this._rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.ctlMathEquaToLeft = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
-            this.ctlMathEquaToRightMiddle = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
-            this.ctlFormularDraw1 = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
+            this.ctlMathEquaToRightLeft = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.ctlMathEquaToRightRight = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this.grpDataInput1.SuspendLayout();
             this.grpDataInput2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picArrowToLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picArrowToRightMiddle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picArrowToRightBottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picArrowToRightRight)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,9 +71,9 @@
             this.grpDataInput1.Controls.Add(this.ctlVectorInputB);
             this.grpDataInput1.Controls.Add(this.ctlVectorInputA);
             this.grpDataInput1.Location = new System.Drawing.Point(9, 683);
-            this.grpDataInput1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpDataInput1.Margin = new System.Windows.Forms.Padding(2);
             this.grpDataInput1.Name = "grpDataInput1";
-            this.grpDataInput1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpDataInput1.Padding = new System.Windows.Forms.Padding(2);
             this.grpDataInput1.Size = new System.Drawing.Size(370, 103);
             this.grpDataInput1.TabIndex = 8;
             this.grpDataInput1.TabStop = false;
@@ -121,9 +118,9 @@
             this.grpDataInput2.Controls.Add(this.ctlVectorInputB2);
             this.grpDataInput2.Controls.Add(this.ctlVectorInputA2);
             this.grpDataInput2.Location = new System.Drawing.Point(694, 683);
-            this.grpDataInput2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpDataInput2.Margin = new System.Windows.Forms.Padding(2);
             this.grpDataInput2.Name = "grpDataInput2";
-            this.grpDataInput2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpDataInput2.Padding = new System.Windows.Forms.Padding(2);
             this.grpDataInput2.Size = new System.Drawing.Size(374, 107);
             this.grpDataInput2.TabIndex = 10;
             this.grpDataInput2.TabStop = false;
@@ -168,7 +165,7 @@
             this.butFx.BackColor = System.Drawing.SystemColors.Highlight;
             this.butFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butFx.Location = new System.Drawing.Point(772, 820);
-            this.butFx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butFx.Margin = new System.Windows.Forms.Padding(2);
             this.butFx.Name = "butFx";
             this.butFx.Size = new System.Drawing.Size(233, 30);
             this.butFx.TabIndex = 12;
@@ -217,8 +214,8 @@
             // 
             this.butFunction1X.AutoSize = true;
             this.butFunction1X.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFunction1X.Location = new System.Drawing.Point(489, 392);
-            this.butFunction1X.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butFunction1X.Location = new System.Drawing.Point(489, 425);
+            this.butFunction1X.Margin = new System.Windows.Forms.Padding(2);
             this.butFunction1X.Name = "butFunction1X";
             this.butFunction1X.Size = new System.Drawing.Size(96, 27);
             this.butFunction1X.TabIndex = 3;
@@ -231,7 +228,7 @@
             this.butInverseFunction1X.AutoSize = true;
             this.butInverseFunction1X.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butInverseFunction1X.Location = new System.Drawing.Point(457, 820);
-            this.butInverseFunction1X.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butInverseFunction1X.Margin = new System.Windows.Forms.Padding(2);
             this.butInverseFunction1X.Name = "butInverseFunction1X";
             this.butInverseFunction1X.Size = new System.Drawing.Size(145, 28);
             this.butInverseFunction1X.TabIndex = 11;
@@ -244,7 +241,7 @@
             this.butFunction2X.AutoSize = true;
             this.butFunction2X.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butFunction2X.Location = new System.Drawing.Point(1147, 820);
-            this.butFunction2X.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butFunction2X.Margin = new System.Windows.Forms.Padding(2);
             this.butFunction2X.Name = "butFunction2X";
             this.butFunction2X.Size = new System.Drawing.Size(96, 27);
             this.butFunction2X.TabIndex = 13;
@@ -264,8 +261,8 @@
             // 
             this.picArrowToLeft.BackColor = System.Drawing.Color.Transparent;
             this.picArrowToLeft.Image = global::SoftwareProjekt.Properties.Resources.arrowToLeft;
-            this.picArrowToLeft.Location = new System.Drawing.Point(388, 214);
-            this.picArrowToLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picArrowToLeft.Location = new System.Drawing.Point(388, 254);
+            this.picArrowToLeft.Margin = new System.Windows.Forms.Padding(2);
             this.picArrowToLeft.Name = "picArrowToLeft";
             this.picArrowToLeft.Size = new System.Drawing.Size(274, 167);
             this.picArrowToLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -276,43 +273,31 @@
             // 
             this.picArrowToRightMiddle.BackColor = System.Drawing.Color.Transparent;
             this.picArrowToRightMiddle.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
-            this.picArrowToRightMiddle.Location = new System.Drawing.Point(388, 436);
-            this.picArrowToRightMiddle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picArrowToRightMiddle.Location = new System.Drawing.Point(388, 466);
+            this.picArrowToRightMiddle.Margin = new System.Windows.Forms.Padding(2);
             this.picArrowToRightMiddle.Name = "picArrowToRightMiddle";
             this.picArrowToRightMiddle.Size = new System.Drawing.Size(274, 167);
             this.picArrowToRightMiddle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picArrowToRightMiddle.TabIndex = 44;
             this.picArrowToRightMiddle.TabStop = false;
             // 
-            // picArrowToRightBottom
-            // 
-            this.picArrowToRightBottom.BackColor = System.Drawing.Color.Transparent;
-            this.picArrowToRightBottom.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
-            this.picArrowToRightBottom.Location = new System.Drawing.Point(388, 629);
-            this.picArrowToRightBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.picArrowToRightBottom.Name = "picArrowToRightBottom";
-            this.picArrowToRightBottom.Size = new System.Drawing.Size(274, 167);
-            this.picArrowToRightBottom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picArrowToRightBottom.TabIndex = 45;
-            this.picArrowToRightBottom.TabStop = false;
-            // 
             // picArrowToRightRight
             // 
             this.picArrowToRightRight.BackColor = System.Drawing.Color.Transparent;
             this.picArrowToRightRight.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
             this.picArrowToRightRight.Location = new System.Drawing.Point(1042, 436);
-            this.picArrowToRightRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picArrowToRightRight.Margin = new System.Windows.Forms.Padding(2);
             this.picArrowToRightRight.Name = "picArrowToRightRight";
             this.picArrowToRightRight.Size = new System.Drawing.Size(274, 167);
             this.picArrowToRightRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picArrowToRightRight.TabIndex = 46;
             this.picArrowToRightRight.TabStop = false;
             // 
-            // rtxtNotes
+            // _rtxtNotes
             // 
             this._rtxtNotes.Location = new System.Drawing.Point(520, 976);
-            this._rtxtNotes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this._rtxtNotes.Name = "rtxtNotes";
+            this._rtxtNotes.Margin = new System.Windows.Forms.Padding(2);
+            this._rtxtNotes.Name = "_rtxtNotes";
             this._rtxtNotes.Size = new System.Drawing.Size(416, 79);
             this._rtxtNotes.TabIndex = 47;
             this._rtxtNotes.Text = "";
@@ -322,37 +307,24 @@
             this.ctlMathEquaToLeft.Equation = "";
             this.ctlMathEquaToLeft.Filename = "vabtnsuw.jmi.tiff";
             this.ctlMathEquaToLeft.Filepath = "";
-            this.ctlMathEquaToLeft.FontSize = 8;
-            this.ctlMathEquaToLeft.Location = new System.Drawing.Point(489, 275);
+            this.ctlMathEquaToLeft.FontSize = 11;
+            this.ctlMathEquaToLeft.Location = new System.Drawing.Point(420, 311);
             this.ctlMathEquaToLeft.Name = "ctlMathEquaToLeft";
-            this.ctlMathEquaToLeft.Size = new System.Drawing.Size(143, 38);
+            this.ctlMathEquaToLeft.Size = new System.Drawing.Size(231, 57);
             this.ctlMathEquaToLeft.TabIndex = 2;
             // 
-            // ctlMathEquaToRightMiddle
+            // ctlMathEquaToRightLeft
             // 
-            this.ctlMathEquaToRightMiddle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctlMathEquaToRightMiddle.BackColor = System.Drawing.Color.Transparent;
-            this.ctlMathEquaToRightMiddle.Equation = "";
-            this.ctlMathEquaToRightMiddle.Filename = "2de2yuws.mxz.tiff";
-            this.ctlMathEquaToRightMiddle.Filepath = "";
-            this.ctlMathEquaToRightMiddle.FontSize = 8;
-            this.ctlMathEquaToRightMiddle.Location = new System.Drawing.Point(409, 501);
-            this.ctlMathEquaToRightMiddle.Name = "ctlMathEquaToRightMiddle";
-            this.ctlMathEquaToRightMiddle.Size = new System.Drawing.Size(127, 31);
-            this.ctlMathEquaToRightMiddle.TabIndex = 4;
-            // 
-            // ctlFormularDraw1
-            // 
-            this.ctlFormularDraw1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ctlFormularDraw1.BackColor = System.Drawing.Color.Transparent;
-            this.ctlFormularDraw1.Equation = "";
-            this.ctlFormularDraw1.Filename = "2de2yuws.mxz.tiff";
-            this.ctlFormularDraw1.Filepath = "";
-            this.ctlFormularDraw1.FontSize = 8;
-            this.ctlFormularDraw1.Location = new System.Drawing.Point(409, 699);
-            this.ctlFormularDraw1.Name = "ctlFormularDraw1";
-            this.ctlFormularDraw1.Size = new System.Drawing.Size(127, 30);
-            this.ctlFormularDraw1.TabIndex = 9;
+            this.ctlMathEquaToRightLeft.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctlMathEquaToRightLeft.BackColor = System.Drawing.Color.Transparent;
+            this.ctlMathEquaToRightLeft.Equation = "";
+            this.ctlMathEquaToRightLeft.Filename = "2de2yuws.mxz.tiff";
+            this.ctlMathEquaToRightLeft.Filepath = "";
+            this.ctlMathEquaToRightLeft.FontSize = 8;
+            this.ctlMathEquaToRightLeft.Location = new System.Drawing.Point(267, 518);
+            this.ctlMathEquaToRightLeft.Name = "ctlMathEquaToRightLeft";
+            this.ctlMathEquaToRightLeft.Size = new System.Drawing.Size(358, 64);
+            this.ctlMathEquaToRightLeft.TabIndex = 4;
             // 
             // ctlMathEquaToRightRight
             // 
@@ -361,24 +333,22 @@
             this.ctlMathEquaToRightRight.Equation = "";
             this.ctlMathEquaToRightRight.Filename = "2de2yuws.mxz.tiff";
             this.ctlMathEquaToRightRight.Filepath = "";
-            this.ctlMathEquaToRightRight.FontSize = 8;
-            this.ctlMathEquaToRightRight.Location = new System.Drawing.Point(1067, 501);
+            this.ctlMathEquaToRightRight.FontSize = 11;
+            this.ctlMathEquaToRightRight.Location = new System.Drawing.Point(1055, 493);
             this.ctlMathEquaToRightRight.Name = "ctlMathEquaToRightRight";
-            this.ctlMathEquaToRightRight.Size = new System.Drawing.Size(133, 31);
+            this.ctlMathEquaToRightRight.Size = new System.Drawing.Size(232, 52);
             this.ctlMathEquaToRightRight.TabIndex = 6;
             // 
             // FrmZuordAffAbb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1436, 849);
+            this.ClientSize = new System.Drawing.Size(1436, 889);
             this.Controls.Add(this.ctlMathEquaToRightRight);
-            this.Controls.Add(this.ctlFormularDraw1);
-            this.Controls.Add(this.ctlMathEquaToRightMiddle);
+            this.Controls.Add(this.ctlMathEquaToRightLeft);
             this.Controls.Add(this.ctlMathEquaToLeft);
             this.Controls.Add(this._rtxtNotes);
             this.Controls.Add(this.picArrowToRightRight);
-            this.Controls.Add(this.picArrowToRightBottom);
             this.Controls.Add(this.picArrowToRightMiddle);
             this.Controls.Add(this.picArrowToLeft);
             this.Controls.Add(this.butFunction2X);
@@ -392,14 +362,13 @@
             this.Controls.Add(this.butFx);
             this.Controls.Add(this.grpDataInput2);
             this.Controls.Add(this.grpDataInput1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmZuordAffAbb";
             this.Text = "Zuordnungsvorschrift einer affinen Abbildung";
             this.grpDataInput1.ResumeLayout(false);
             this.grpDataInput2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picArrowToLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picArrowToRightMiddle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picArrowToRightBottom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picArrowToRightRight)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -427,11 +396,9 @@
         private UserControls.CoordinateSystem cosInputA2B2C2;
         private System.Windows.Forms.PictureBox picArrowToLeft;
         private System.Windows.Forms.PictureBox picArrowToRightMiddle;
-        private System.Windows.Forms.PictureBox picArrowToRightBottom;
         private System.Windows.Forms.PictureBox picArrowToRightRight;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToLeft;
-        private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToRightMiddle;
-        private UserControls.FormulaDrawer.CtlFormularDraw ctlFormularDraw1;
+        private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToRightLeft;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToRightRight;
 #if DEBUG
         private System.Windows.Forms.RichTextBox _rtxtNotes;

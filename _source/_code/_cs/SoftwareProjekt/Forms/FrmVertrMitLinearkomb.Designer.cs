@@ -63,10 +63,10 @@
             this.ctlMathEqua.Equation = "";
             this.ctlMathEqua.Filename = "teptsgn3.nai.tiff";
             this.ctlMathEqua.Filepath = "";
-            this.ctlMathEqua.FontSize = 8;
-            this.ctlMathEqua.Location = new System.Drawing.Point(510, 284);
+            this.ctlMathEqua.FontSize = 11;
+            this.ctlMathEqua.Location = new System.Drawing.Point(456, 293);
             this.ctlMathEqua.Name = "ctlMathEqua";
-            this.ctlMathEqua.Size = new System.Drawing.Size(315, 93);
+            this.ctlMathEqua.Size = new System.Drawing.Size(433, 54);
             this.ctlMathEqua.TabIndex = 2;
             // 
             // _rtxtNotes
@@ -248,10 +248,10 @@
             this.picArrow.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picArrow.BackColor = System.Drawing.Color.Transparent;
             this.picArrow.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
-            this.picArrow.Location = new System.Drawing.Point(496, 172);
+            this.picArrow.Location = new System.Drawing.Point(435, 172);
             this.picArrow.Margin = new System.Windows.Forms.Padding(2);
             this.picArrow.Name = "picArrow";
-            this.picArrow.Size = new System.Drawing.Size(435, 298);
+            this.picArrow.Size = new System.Drawing.Size(496, 298);
             this.picArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picArrow.TabIndex = 31;
             this.picArrow.TabStop = false;

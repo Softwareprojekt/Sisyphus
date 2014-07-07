@@ -38,6 +38,9 @@ namespace SoftwareProjekt.Forms
     public partial class FrmZuordAffAbb : AbstractView
     {
         string _functionBlock;
+        string _functionBlock1;
+        string _functionBlock2;
+        string _functionBlock3;
         string _xVector;
 
         private Vector AB;
@@ -81,6 +84,8 @@ namespace SoftwareProjekt.Forms
             Vector E1 = new Vector(1f, 0f);
             Vector E2 = new Vector(0f, 1f);
 
+            MatrixInv = new Matrix();
+
             LineE1E2 = new Line(E2, new Vector(1f, -1f));
             LineBC = new Line(AC, AB);
             LineB2C2 = new Line(A2C2, A2B2);
@@ -117,20 +122,44 @@ namespace SoftwareProjekt.Forms
             cosOutput.AddLineSegment(_vectorOutputE2);
             cosOutput.AddLine(LineE1E2);
 
-            _functionBlock = "<msub><mi>F</mi><mn>1</mn></msub>\n";
+            //f1(x)
+            _functionBlock = "<msub><mi>f</mi><mn>1</mn></msub>\n";
             _functionBlock += "<mo>&ApplyFunction;</mo>\n";
             _functionBlock += "<mrow>\n";
             _functionBlock += "<mo>(</mo>\n";
             _functionBlock += "<mover>\n";
-            _functionBlock += "\t<mi>&lambda;</mi>\n";
+            _functionBlock += "\t<mi>x</mi>\n";
             _functionBlock += "\t<mo>&rarr;</mo>\n";
             _functionBlock += "</mover>\n";
             _functionBlock += "<mo>)</mo>\n";
             _functionBlock += "</mrow>\n";
 
+            //f1(y)
+            _functionBlock1 = "<msub><mi>f</mi><mn>1</mn></msub>\n";
+            _functionBlock1 += "<mo>&ApplyFunction;</mo>\n";
+            _functionBlock1 += "<mrow>\n";
+            _functionBlock1 += "<mo>(</mo>\n";
+            _functionBlock1 += "<mover>\n";
+            _functionBlock1 += "\t<mi>y</mi>\n";
+            _functionBlock1 += "\t<mo>&rarr;</mo>\n";
+            _functionBlock1 += "</mover>\n";
+            _functionBlock1 += "<mo>)</mo>\n";
+            _functionBlock1 += "</mrow>\n";
+
+            //f2(x)
+            _functionBlock2 = "<msub><mi>f</mi><mn>2</mn></msub>\n";
+            _functionBlock2 += "<mo>&ApplyFunction;</mo>\n";
+            _functionBlock2 += "<mrow>\n";
+            _functionBlock2 += "<mo>(</mo>\n";
+            _functionBlock2 += "<mover>\n";
+            _functionBlock2 += "\t<mi>x</mi>\n";
+            _functionBlock2 += "\t<mo>&rarr;</mo>\n";
+            _functionBlock2 += "</mover>\n";
+            _functionBlock2 += "<mo>)</mo>\n";
+            _functionBlock2 += "</mrow>\n";
+
             _xVector += "<mfenced open='(' close=')' separators=''>\n";
             _xVector += "<mtable>\n";
-
             _xVector += "\t<mtr>\n";
             _xVector += "\t\t<mtd>\n";
             _xVector += "\t\t\t<msub>\n";
@@ -139,7 +168,6 @@ namespace SoftwareProjekt.Forms
             _xVector += "\t\t\t</msub>\n";
             _xVector += "\t\t</mtd>\n";
             _xVector += "\t</mtr>\n";
-
             _xVector += "\t<mtr>\n";
             _xVector += "\t\t<mtd>\n";
             _xVector += "\t\t\t<msub>\n";
@@ -148,12 +176,79 @@ namespace SoftwareProjekt.Forms
             _xVector += "\t\t\t</msub>\n";
             _xVector += "\t\t</mtd>\n";
             _xVector += "\t</mtr>\n";
-
             _xVector += "</mtable>\n";
             _xVector += "</mfenced>\n";
 
             CreateFormulaEquaToLeft();
+            CreateFormulaEquaToRightRight();
+            CreateFormulaEquaToRightLeft();
 
+        }
+
+
+        private void CreateFormulaEquaToRightLeft()
+        {
+            MathXmlGenerator xmlGen = new MathXmlGenerator();
+            Matrix m = new Matrix();
+            m.X11 = AB.X1;
+            m.X21 = AB.X2;
+            m.X12 = AC.X1;
+            m.X22 = AC.X2;
+
+            Vector x = new Vector();
+            x.X1 = (float.IsNaN(ctlVectorInputA.Vector.X1)) ? 0.0f : ctlVectorInputA.Vector.X1;
+            x.X2 = (float.IsNaN(ctlVectorInputA.Vector.X2)) ? 0.0f : ctlVectorInputA.Vector.X2;
+            
+            MatrixInv.X11 = 1;
+            MatrixInv.X12 = 1;
+            MatrixInv.X21 = 1;
+            MatrixInv.X22 = 1;
+
+            xmlGen.AddNode(_functionBlock1);
+            xmlGen.AddSign(EMathSign.Assignment);      
+            xmlGen.AddMatrix(m, Color.Red, Color.Blue);
+            xmlGen.AddSign(EMathSign.Multiply);
+            xmlGen.AddNode("<mo>(</mo>");
+            xmlGen.AddNode("<mover>\n \t<mi>y</mi>\n \t<mo>&rarr;</mo>\n </mover>\n");
+            xmlGen.AddSign(EMathSign.Minus);
+            xmlGen.AddVector(x, Color.Green);
+            xmlGen.AddNode("<mo>)</mo>");
+            xmlGen.AddSign(EMathSign.Assignment);
+            xmlGen.AddMatrix(MatrixInv, Color.Black, Color.Black);
+            xmlGen.AddSign(EMathSign.Multiply);
+            xmlGen.AddNode("<mover>\n \t<mi>y</mi>\n \t<mo>&rarr;</mo>\n </mover>\n");
+            xmlGen.AddSign(EMathSign.Minus);
+            xmlGen.AddMatrix(m, Color.Red, Color.Blue);
+            xmlGen.AddSign(EMathSign.Multiply);
+            xmlGen.AddVector(x, Color.Green);
+
+            xmlGen.Finish();
+            ctlMathEquaToRightLeft.WriteEquationToPicBox(xmlGen.XmlDoc);  
+        }
+
+        private void CreateFormulaEquaToRightRight()
+        {
+            MathXmlGenerator xmlGen = new MathXmlGenerator();
+
+            xmlGen.AddNode(_functionBlock2);
+            xmlGen.AddSign(EMathSign.Assignment);
+
+            Matrix m = new Matrix();
+            m.X11 = AB.X1;
+            m.X21 = AB.X2;
+            m.X12 = AC.X1;
+            m.X22 = AC.X2;
+
+            xmlGen.AddMatrix(m, Color.Red, Color.Blue);
+            xmlGen.AddSign(EMathSign.Multiply);
+           
+            xmlGen.AddNode("<mover>\n\t<mi>x</mi>\n\t<mo>&rarr;</mo>\n</mover>");
+            xmlGen.AddSign(EMathSign.Plus);
+            xmlGen.AddVector(ctlVectorInputA.Vector, Color.Green);
+
+
+            xmlGen.Finish();
+            ctlMathEquaToRightRight.WriteEquationToPicBox(xmlGen.XmlDoc);  
         }
 
         private void CreateFormulaEquaToLeft()
@@ -165,28 +260,19 @@ namespace SoftwareProjekt.Forms
             xmlGen.AddSign(EMathSign.Assignment);
 
             Matrix m = new Matrix();
-
             m.X11 = AB.X1;
             m.X21 = AB.X2;
             m.X12 = AC.X1;
             m.X22 = AC.X2;
 
-
-
             xmlGen.AddMatrix(m, Color.Red, Color.Blue);
             xmlGen.AddSign(EMathSign.Multiply);
-
-            xmlGen.AddNode("<mover>\n\t<mi>&lambda;</mi>\n\t<mo>&rarr;</mo>\n</mover>");
-
+            xmlGen.AddNode("<mover>\n\t<mi>x</mi>\n\t<mo>&rarr;</mo>\n</mover>");
             xmlGen.AddSign(EMathSign.Plus);
-
             xmlGen.AddVector(ctlVectorInputA.Vector, Color.Green);
 
-
             xmlGen.Finish();
-
-            ctlMathEquaToLeft.WriteEquationToPicBox(xmlGen.XmlDoc);
-        
+            ctlMathEquaToLeft.WriteEquationToPicBox(xmlGen.XmlDoc);        
         }
 
         public override Dictionary<string, Object> GetInputData()

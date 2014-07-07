@@ -60,6 +60,7 @@ namespace SoftwareProjekt.Forms
 
             m1 = new Matrix();
             m2 = new Matrix();
+
             x = new Vector();
             // f(x)
             _functionBlock = "<mn>f</mn>\n";

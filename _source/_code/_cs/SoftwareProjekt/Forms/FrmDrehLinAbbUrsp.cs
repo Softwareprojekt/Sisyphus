@@ -45,6 +45,8 @@ namespace SoftwareProjekt.Forms
         private LineSegment _vectorOutputEV1;
         private LineSegment _vectorOutputEV2;
 
+        private string _functionBlock;
+
         public FrmDrehLinAbbUrsp()
         {
             InitializeComponent();           
@@ -64,20 +66,29 @@ namespace SoftwareProjekt.Forms
             cosInput.AddLineSegment(_vectorInputEV2);
             cosInput.AddLineSegment(_vectorInputX);
 
+            // f(x)
+            _functionBlock = "<mn>f</mn>\n";
+            _functionBlock += "<mo>&ApplyFunction;</mo>\n";
+            _functionBlock += "<mrow>\n";
+            _functionBlock += "<mo>(</mo>\n";
+            _functionBlock += "<mover>\n";
+            _functionBlock += "\t<mi>x</mi>\n";
+            _functionBlock += "\t<mo>&rarr;</mo>\n";
+            _functionBlock += "</mover>\n";
+            _functionBlock += "<mo>)</mo>\n";
+            _functionBlock += "</mrow>\n";
+
             CreateFormular();
         }
 
         private void CreateFormular()
         {
             MathXmlGenerator xmlGen = new MathXmlGenerator();
-            xmlGen.AddNode("<mi>f</mi>");
-            xmlGen.AddNode("<mo>(</mo>");
-            xmlGen.AddNode("<mover>");
-            xmlGen.AddNode("\t<mi>x</mi>");
-            xmlGen.AddNode("\t<mo>&rarr;</mo>");
-            xmlGen.AddNode("</mover>");
-            xmlGen.AddNode("<mo>)</mo>");
+            xmlGen.AddNode(_functionBlock);
             xmlGen.AddSign(EMathSign.Assignment);
+
+            xmlGen.Finish();
+            ctlMathEqua.WriteEquationToPicBox(xmlGen.XmlDoc);
         }
 
         private void butFunctionTransfX_Click(object sender, EventArgs e)
