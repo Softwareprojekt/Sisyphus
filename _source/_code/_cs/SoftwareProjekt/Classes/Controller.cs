@@ -145,6 +145,10 @@ namespace SoftwareProjekt.Classes
             // check workbook for existing entries for this exercise.
             view.LoadState(Workbook.Instance.GetEntryState(exercise.Id));
 
+            // change colors of input and result vectors
+            view.inputColor = _mainForm.inputColor;
+            view.resultColor = _mainForm.resultColor;
+
             // add exercise and view to list.
             _exerciseList.Add(view, exercise);
 
