@@ -28,6 +28,10 @@ namespace SoftwareProjekt.Exercises
 {
     class ZuordAffAbb : AbstractExercise
     {
+        public ZuordAffAbb()
+        {
+            this.Id = Enums.EExercises.ZuordungsvorschriftEinerAffAbb;
+        }
         protected override void DoWork(IView view)
         {
             Dictionary<string, Object> inputData = null;
