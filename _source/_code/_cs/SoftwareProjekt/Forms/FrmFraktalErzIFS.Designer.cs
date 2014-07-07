@@ -184,7 +184,7 @@
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(293, 570);
+            this.lblNotes.Location = new System.Drawing.Point(293, 620);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(46, 13);
             this.lblNotes.TabIndex = 11;
@@ -372,7 +372,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 706);
+            this.ClientSize = new System.Drawing.Size(1095, 784);
             this.Controls.Add(this._matrix_w3);
             this.Controls.Add(this._matrix_w2);
             this.Controls.Add(this._matrix_w1);

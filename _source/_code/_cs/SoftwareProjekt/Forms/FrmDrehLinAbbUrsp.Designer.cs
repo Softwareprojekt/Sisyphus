@@ -317,7 +317,7 @@ namespace SoftwareProjekt.Forms
             this._rtxtNotes.Location = new System.Drawing.Point(351, 610);
             this._rtxtNotes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._rtxtNotes.Name = "_rtxtNotes";
-            this._rtxtNotes.Size = new System.Drawing.Size(370, 131);
+            this._rtxtNotes.Size = new System.Drawing.Size(478, 124);
             this._rtxtNotes.TabIndex = 51;
             this._rtxtNotes.Text = "";
             // 

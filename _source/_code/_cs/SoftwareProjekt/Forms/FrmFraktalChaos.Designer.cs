@@ -104,10 +104,10 @@
             // 
             this._rtxtNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._rtxtNotes.Location = new System.Drawing.Point(12, 502);
+            this._rtxtNotes.Location = new System.Drawing.Point(9, 575);
             this._rtxtNotes.Margin = new System.Windows.Forms.Padding(4);
             this._rtxtNotes.Name = "_rtxtNotes";
-            this._rtxtNotes.Size = new System.Drawing.Size(550, 167);
+            this._rtxtNotes.Size = new System.Drawing.Size(478, 124);
             this._rtxtNotes.TabIndex = 6;
             this._rtxtNotes.Text = "";
             this._rtxtNotes.TextChanged += new System.EventHandler(this.rtxtNotes_TextChanged);
@@ -398,7 +398,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1079, 745);
+            this.ClientSize = new System.Drawing.Size(1095, 784);
             this.Controls.Add(this._txtSteps);
             this.Controls.Add(this._lblSteps);
             this.Controls.Add(this._lblIteration);
