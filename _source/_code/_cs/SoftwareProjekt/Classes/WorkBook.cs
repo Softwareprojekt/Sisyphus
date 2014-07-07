@@ -44,8 +44,8 @@ namespace SoftwareProjekt.Classes
         private Workbook()
         {
             _folderName = Path.Combine(Directory.GetCurrentDirectory(), "Workbooks");
-
-            _workbookEntryList = new List<WorkbookEntry>(Enum.GetNames(typeof(Enums.EExercises)).Length);
+         
+            _workbookEntryList = new List<WorkbookEntry>(Enum.GetNames(typeof(Enums.EExercises)).Length - 1);
             for (int i = 1; i < _workbookEntryList.Capacity + 1; i++)
             {
                 WorkbookEntry entry = new WorkbookEntry();
@@ -441,21 +441,21 @@ namespace SoftwareProjekt.Classes
             _workbookObserverList.Add(observer);
         }
 
-        public void DeleteWorkbook()
+        public void DeleteWorkbook(string username)
         {
+            this.Username = null;
             //delete Images
-            string dir = Path.Combine(_folderName, _username);
+            string dir = Path.Combine(_folderName, username);
             if (Directory.Exists(dir))
             {
                 Directory.Delete(dir, true);
             }
             //delete xml
-            string file = Path.Combine(_folderName, _username + ".xml");
+            string file = Path.Combine(_folderName, username + ".xml");
             if (File.Exists(file))
             {
                 File.Delete(file);
             }
-            this.Username = null;
         }
 
         public void DeleteEntry(Enums.EExercises exerciseID)

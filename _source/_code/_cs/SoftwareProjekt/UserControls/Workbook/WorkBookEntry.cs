@@ -179,34 +179,7 @@ namespace SoftwareProjekt.UserControls.Workbook
                     break;
             }
             firstHalf += "\n\nZuletzt geändert:\n" + this.CreationDate.ToString();
-            //string secondHalf = this.CreationDate.ToString();
-
-            //if (this.State != null)
-            //{
-            //    Dictionary<string, object>.Enumerator enumerator = this.State.GetEnumerator();
-            //    while (enumerator.MoveNext())
-            //    {
-            //        if (enumerator.Current.Value.GetType() == (typeof(string)))
-            //        {
-            //            firstHalf += "\n" + "Notizen:\n" + (string)enumerator.Current.Value;
-            //        }
-            //        if (enumerator.Current.Value.GetType() == (typeof(SoftwareProjekt.Classes.Math.Matrix)))
-            //        {
-            //            SoftwareProjekt.Classes.Math.Matrix m = (SoftwareProjekt.Classes.Math.Matrix)enumerator.Current.Value;
-            //            secondHalf += "\n" + "Matrix: (" + m.X11 + ", " + m.X12 + ", " + m.X21 + ", " + m.X22 + ")\n";
-            //        }
-            //        if (enumerator.Current.Value.GetType() == (typeof(Vector)))
-            //        {
-            //            Vector v = (Vector)enumerator.Current.Value;
-            //            secondHalf += "\n" + "Vector: (" + v.X1 + ", " + v.X2 + ")\n";
-            //        }
-
-            //        if (enumerator.Current.Value.GetType() == (typeof(float)))
-            //        {
-            //            secondHalf += "\n" + "Value:\n" + (float)enumerator.Current.Value;
-            //        }
-            //    }
-            //}
+            
             Graphics g = e.Graphics;
             Font drawFont = new Font("Arial", 12);
             SolidBrush drawBrush;
@@ -221,13 +194,13 @@ namespace SoftwareProjekt.UserControls.Workbook
             this.Width = this.Parent.Width - 100;
             g.DrawRectangle(Pens.Black, 0, 0, this.Width - 1, this.Height - 1); //draw a frame
             g.DrawString(firstHalf, drawFont, drawBrush, new Rectangle(10, 10, this.Width - 10, this.Height - 1)); //draw Exercisename (first half of control)
-            //g.DrawString(secondHalf, drawFont, drawBrush, new Rectangle(this.Width / 2 + 1, 10, this.Width - 1, this.Height - 1));    //draw Date (second half of control)
 
         }
         void WorkbookEntry_Click(object sender, EventArgs e)
         {
             if (this.Screenshot == null)
             {
+                _picBox.Image = null;
                 return;
             }
 
