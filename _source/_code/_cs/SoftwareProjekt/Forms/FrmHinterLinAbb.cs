@@ -55,7 +55,10 @@ namespace SoftwareProjekt.Forms
 
             _vectorInputX = new LineSegment(new PointF(0, 0), ctlVectorInputX.Vector);
 
-            this.ctlVectorInputX.TextChanged += this.OnTextChanged;
+            ctlVectorInputX.TextChanged += this.OnTextChanged;
+            ctlMatrixInputM1.TextChanged += this.OnTextChanged;
+            ctlMatrixInputM2.TextChanged += OnTextChanged;
+
             cosInput.AddLineSegment(_vectorInputX);
 
             m1 = new Matrix();
@@ -105,7 +108,6 @@ namespace SoftwareProjekt.Forms
             CreateFormularRightArrow();
         }
 
-
         private void CreateFormularTopArrow()
         {
             MathXmlGenerator xmlGen = new MathXmlGenerator();
@@ -115,10 +117,10 @@ namespace SoftwareProjekt.Forms
             m1.X12 = (float.IsNaN(ctlMatrixInputM1.Matrix.X12)) ? 0.0f : ctlMatrixInputM1.Matrix.X12;
             m1.X22 = (float.IsNaN(ctlMatrixInputM1.Matrix.X22)) ? 0.0f : ctlMatrixInputM1.Matrix.X22;
 
-            m2.X11 = (float.IsNaN(ctlMatrixInputM1.Matrix.X11)) ? 0.0f : ctlMatrixInputM1.Matrix.X11;
-            m2.X21 = (float.IsNaN(ctlMatrixInputM1.Matrix.X21)) ? 0.0f : ctlMatrixInputM1.Matrix.X21;
-            m2.X12 = (float.IsNaN(ctlMatrixInputM1.Matrix.X12)) ? 0.0f : ctlMatrixInputM1.Matrix.X12;
-            m2.X22 = (float.IsNaN(ctlMatrixInputM1.Matrix.X22)) ? 0.0f : ctlMatrixInputM1.Matrix.X22;
+            m2.X11 = (float.IsNaN(ctlMatrixInputM2.Matrix.X11)) ? 0.0f : ctlMatrixInputM2.Matrix.X11;
+            m2.X21 = (float.IsNaN(ctlMatrixInputM2.Matrix.X21)) ? 0.0f : ctlMatrixInputM2.Matrix.X21;
+            m2.X12 = (float.IsNaN(ctlMatrixInputM2.Matrix.X12)) ? 0.0f : ctlMatrixInputM2.Matrix.X12;
+            m2.X22 = (float.IsNaN(ctlMatrixInputM2.Matrix.X22)) ? 0.0f : ctlMatrixInputM2.Matrix.X22;
 
             x.X1 = (float.IsNaN(ctlVectorInputX.Vector.X1)) ? 0.0f : ctlVectorInputX.Vector.X1;
             x.X2 = (float.IsNaN(ctlVectorInputX.Vector.X2)) ? 0.0f : ctlVectorInputX.Vector.X2;
@@ -179,10 +181,10 @@ namespace SoftwareProjekt.Forms
 
             xmlGen.AddNode(_functionBlock1);
 
-            m2.X11 = (float.IsNaN(ctlMatrixInputM1.Matrix.X11)) ? 0.0f : ctlMatrixInputM1.Matrix.X11;
-            m2.X21 = (float.IsNaN(ctlMatrixInputM1.Matrix.X21)) ? 0.0f : ctlMatrixInputM1.Matrix.X21;
-            m2.X12 = (float.IsNaN(ctlMatrixInputM1.Matrix.X12)) ? 0.0f : ctlMatrixInputM1.Matrix.X12;
-            m2.X22 = (float.IsNaN(ctlMatrixInputM1.Matrix.X22)) ? 0.0f : ctlMatrixInputM1.Matrix.X22;
+            m2.X11 = (float.IsNaN(ctlMatrixInputM2.Matrix.X11)) ? 0.0f : ctlMatrixInputM2.Matrix.X11;
+            m2.X21 = (float.IsNaN(ctlMatrixInputM2.Matrix.X21)) ? 0.0f : ctlMatrixInputM2.Matrix.X21;
+            m2.X12 = (float.IsNaN(ctlMatrixInputM2.Matrix.X12)) ? 0.0f : ctlMatrixInputM2.Matrix.X12;
+            m2.X22 = (float.IsNaN(ctlMatrixInputM2.Matrix.X22)) ? 0.0f : ctlMatrixInputM2.Matrix.X22;
 
             x.X1 = (float.IsNaN(ctlVectorInputX.Vector.X1)) ? 0.0f : ctlVectorInputX.Vector.X1;
             x.X2 = (float.IsNaN(ctlVectorInputX.Vector.X2)) ? 0.0f : ctlVectorInputX.Vector.X2;
@@ -277,6 +279,17 @@ namespace SoftwareProjekt.Forms
         public void OnTextChanged(object sender, EventArgs e)
         {
             _vectorInputX.Vector = ctlVectorInputX.Vector;
+            CreateFormularLeftArrow();
+            CreateFormularRightArrow();
+            CreateFormularTopArrow();
+            cosInput.Refresh();
+        }
+
+        void ctlMatrixInputM2_TextChanged(object sender, EventArgs e)
+        {
+            _vectorInputX.Vector = ctlVectorInputX.Vector;
+            CreateFormularRightArrow();
+            CreateFormularTopArrow();
             cosInput.Refresh();
         }
 
