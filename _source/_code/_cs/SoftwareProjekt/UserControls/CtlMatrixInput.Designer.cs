@@ -110,9 +110,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grpMatrixEingabe;
-        private SoftwareProjekt.UserControls.FloatInput txtEle22;
-        private SoftwareProjekt.UserControls.FloatInput txtEle21;
-        private SoftwareProjekt.UserControls.FloatInput txtEle12;
-        private SoftwareProjekt.UserControls.FloatInput txtEle11;
+        public SoftwareProjekt.UserControls.FloatInput txtEle22;
+        public SoftwareProjekt.UserControls.FloatInput txtEle21;
+        public SoftwareProjekt.UserControls.FloatInput txtEle12;
+        public SoftwareProjekt.UserControls.FloatInput txtEle11;
     }
 }
