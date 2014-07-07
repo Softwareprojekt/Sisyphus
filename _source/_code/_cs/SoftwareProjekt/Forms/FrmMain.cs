@@ -1004,7 +1004,7 @@ namespace SoftwareProjekt.Forms
 
         private void tsbutReplace_Click(object sender, EventArgs e)
         {
-            Workbook.Instance.DeleteWorkbook();
+            Workbook.Instance.DeleteWorkbook(Workbook.Instance.Username);
             tsbutReplace.Visible = false;
             tsbutCancel.Visible = false;
             tsbutAccept_Click(sender, e);

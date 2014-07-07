@@ -290,7 +290,6 @@ namespace SoftwareProjekt.Forms
 
             retVal.Add("Form", _inputForm);
 
-
             retVal.Add("InputForms", _cosInput.getShapes());
 
             retVal.Add("Steps",
