@@ -55,18 +55,19 @@
             this.grpDataInput.Controls.Add(this.ctlMaInScaleMat);
             this.grpDataInput.Controls.Add(this.ctlVecInY);
             this.grpDataInput.Controls.Add(this.ctlVecInX);
-            this.grpDataInput.Location = new System.Drawing.Point(69, 522);
+            this.grpDataInput.Location = new System.Drawing.Point(27, 518);
             this.grpDataInput.Margin = new System.Windows.Forms.Padding(2);
             this.grpDataInput.Name = "grpDataInput";
             this.grpDataInput.Padding = new System.Windows.Forms.Padding(2);
-            this.grpDataInput.Size = new System.Drawing.Size(262, 214);
+            this.grpDataInput.Size = new System.Drawing.Size(305, 216);
             this.grpDataInput.TabIndex = 4;
             this.grpDataInput.TabStop = false;
             this.grpDataInput.Text = "Dateneingabe";
             // 
             // ctlMaInScaleMat
             // 
-            this.ctlMaInScaleMat.Location = new System.Drawing.Point(53, 116);
+            this.ctlMaInScaleMat.EnableText = true;
+            this.ctlMaInScaleMat.Location = new System.Drawing.Point(83, 116);
             this.ctlMaInScaleMat.Margin = new System.Windows.Forms.Padding(4);
             matrix1.X11 = float.NaN;
             matrix1.X12 = float.NaN;
@@ -75,18 +76,20 @@
             this.ctlMaInScaleMat.Matrix = matrix1;
             this.ctlMaInScaleMat.MinimumSize = new System.Drawing.Size(98, 76);
             this.ctlMaInScaleMat.Name = "ctlMaInScaleMat";
+            this.ctlMaInScaleMat.ReadOnly = false;
             this.ctlMaInScaleMat.Size = new System.Drawing.Size(144, 89);
             this.ctlMaInScaleMat.TabIndex = 2;
             // 
             // ctlVecInY
             // 
-            this.ctlVecInY.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.ctlVecInY.Location = new System.Drawing.Point(134, 25);
+            this.ctlVecInY.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctlVecInY.EnableText = true;
+            this.ctlVecInY.Location = new System.Drawing.Point(155, 19);
             this.ctlVecInY.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVecInY.MinimumSize = new System.Drawing.Size(102, 76);
             this.ctlVecInY.Name = "ctlVecInY";
-            this.ctlVecInY.Size = new System.Drawing.Size(121, 83);
+            this.ctlVecInY.ReadOnly = false;
+            this.ctlVecInY.Size = new System.Drawing.Size(144, 89);
             this.ctlVecInY.TabIndex = 2;
             vector1.X1 = float.NaN;
             vector1.X2 = float.NaN;
@@ -94,11 +97,13 @@
             // 
             // ctlVecInX
             // 
-            this.ctlVecInX.Location = new System.Drawing.Point(6, 25);
+            this.ctlVecInX.EnableText = true;
+            this.ctlVecInX.Location = new System.Drawing.Point(6, 19);
             this.ctlVecInX.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVecInX.MinimumSize = new System.Drawing.Size(102, 76);
             this.ctlVecInX.Name = "ctlVecInX";
-            this.ctlVecInX.Size = new System.Drawing.Size(121, 83);
+            this.ctlVecInX.ReadOnly = false;
+            this.ctlVecInX.Size = new System.Drawing.Size(144, 89);
             this.ctlVecInX.TabIndex = 1;
             vector2.X1 = float.NaN;
             vector2.X2 = float.NaN;
@@ -109,7 +114,7 @@
             this.butFuncionXPlusY.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.butFuncionXPlusY.AutoSize = true;
             this.butFuncionXPlusY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFuncionXPlusY.Location = new System.Drawing.Point(620, 548);
+            this.butFuncionXPlusY.Location = new System.Drawing.Point(488, 496);
             this.butFuncionXPlusY.Margin = new System.Windows.Forms.Padding(2);
             this.butFuncionXPlusY.Name = "butFuncionXPlusY";
             this.butFuncionXPlusY.Size = new System.Drawing.Size(118, 34);
@@ -123,9 +128,9 @@
             this.cosInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.cosInput.DoNotRefresh = false;
-            this.cosInput.Location = new System.Drawing.Point(10, 188);
+            this.cosInput.Location = new System.Drawing.Point(12, 179);
             this.cosInput.Name = "cosInput";
-            this.cosInput.Size = new System.Drawing.Size(403, 303);
+            this.cosInput.Size = new System.Drawing.Size(320, 274);
             this.cosInput.TabIndex = 1;
             // 
             // cosResult
@@ -133,9 +138,9 @@
             this.cosResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cosResult.DoNotRefresh = false;
-            this.cosResult.Location = new System.Drawing.Point(923, 188);
+            this.cosResult.Location = new System.Drawing.Point(747, 179);
             this.cosResult.Name = "cosResult";
-            this.cosResult.Size = new System.Drawing.Size(407, 303);
+            this.cosResult.Size = new System.Drawing.Size(320, 274);
             this.cosResult.TabIndex = 2;
             // 
             // lblNotes
@@ -143,7 +148,7 @@
             this.lblNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblNotes.AutoSize = true;
             this.lblNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotes.Location = new System.Drawing.Point(490, 663);
+            this.lblNotes.Location = new System.Drawing.Point(358, 559);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(60, 17);
             this.lblNotes.TabIndex = 6;
@@ -154,7 +159,7 @@
             this.lblHeader.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(387, 7);
+            this.lblHeader.Location = new System.Drawing.Point(255, 7);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(576, 24);
             this.lblHeader.TabIndex = 0;
@@ -165,11 +170,11 @@
             this.picBoxArrow.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picBoxArrow.BackColor = System.Drawing.Color.Transparent;
             this.picBoxArrow.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
-            this.picBoxArrow.Location = new System.Drawing.Point(454, 208);
+            this.picBoxArrow.Location = new System.Drawing.Point(353, 208);
             this.picBoxArrow.Margin = new System.Windows.Forms.Padding(2);
             this.picBoxArrow.Name = "picBoxArrow";
-            this.picBoxArrow.Size = new System.Drawing.Size(562, 330);
-            this.picBoxArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picBoxArrow.Size = new System.Drawing.Size(389, 223);
+            this.picBoxArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBoxArrow.TabIndex = 51;
             this.picBoxArrow.TabStop = false;
             // 
@@ -179,7 +184,7 @@
             this._rtxtNotes.Location = new System.Drawing.Point(493, 682);
             this._rtxtNotes.Margin = new System.Windows.Forms.Padding(2);
             this._rtxtNotes.Name = "_rtxtNotes";
-            this._rtxtNotes.Size = new System.Drawing.Size(362, 148);
+            this._rtxtNotes.Size = new System.Drawing.Size(478, 124);
             this._rtxtNotes.TabIndex = 7;
             this._rtxtNotes.Text = "";
             // 
@@ -190,15 +195,15 @@
             this.ctlMathEqu.Filename = "vl5vwf41.xla.tiff";
             this.ctlMathEqu.Filepath = "";
             this.ctlMathEqu.FontSize = 11;
-            this.ctlMathEqu.Location = new System.Drawing.Point(473, 333);
+            this.ctlMathEqu.Location = new System.Drawing.Point(377, 280);
             this.ctlMathEqu.Name = "ctlMathEqu";
-            this.ctlMathEqu.Size = new System.Drawing.Size(490, 85);
+            this.ctlMathEqu.Size = new System.Drawing.Size(301, 75);
             this.ctlMathEqu.TabIndex = 3;
             // 
             // grpAddInfo
             // 
             this.grpAddInfo.Controls.Add(this.txtDet);
-            this.grpAddInfo.Location = new System.Drawing.Point(453, 205);
+            this.grpAddInfo.Location = new System.Drawing.Point(453, 208);
             this.grpAddInfo.Margin = new System.Windows.Forms.Padding(2);
             this.grpAddInfo.Name = "grpAddInfo";
             this.grpAddInfo.Padding = new System.Windows.Forms.Padding(2);
@@ -224,7 +229,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1343, 849);
+            this.ClientSize = new System.Drawing.Size(1079, 745);
             this.Controls.Add(this.ctlMathEqu);
             this.Controls.Add(this.grpAddInfo);
             this.Controls.Add(this._rtxtNotes);
@@ -235,6 +240,8 @@
             this.Controls.Add(this.cosInput);
             this.Controls.Add(this.butFuncionXPlusY);
             this.Controls.Add(this.grpDataInput);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FrmLinAbbSumBelVek";
             this.Text = "Lineare Abbildungen und Summe von Vektoren";
             this.grpDataInput.ResumeLayout(false);
