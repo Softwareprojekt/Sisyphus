@@ -173,6 +173,7 @@ namespace SoftwareProjekt.Forms
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
             cosOutput.ClearLineSegments();
+            cosOutput.ClearLines();
 
             Console.WriteLine(sender.ToString() + " " + e.ToString());
 
