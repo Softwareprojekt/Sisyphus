@@ -225,13 +225,14 @@ namespace SoftwareProjekt.Forms
             {
                 return false;
             }
-            else if (!state.ContainsKey("VectorX") || !state.ContainsKey("Angle"))
+            else if (!state.ContainsKey("VectorX") || !state.ContainsKey("Angle") || !state.ContainsKey("Notes"))
             {
                 return false;
             }
 
             ctlVectorInputX.Vector = (Vector)state["VectorX"];
             ftxtAngle.Text = state["Angle"].ToString();
+            _rtxtNotes.Text = (string)state["Notes"];
             return true;
         }
     }

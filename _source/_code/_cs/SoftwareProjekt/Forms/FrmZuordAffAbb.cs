@@ -402,6 +402,10 @@ namespace SoftwareProjekt.Forms
             {
                 return false;
             }
+            else if (!state.ContainsKey("Notes"))
+            {
+                return false;
+            }
 
             ctlVectorInputA.Vector = (Vector)state["VectorA"];
             ctlVectorInputB.Vector = (Vector)state["VectorB"];
@@ -409,6 +413,7 @@ namespace SoftwareProjekt.Forms
             ctlVectorInputA2.Vector = (Vector)state["VectorA2"];
             ctlVectorInputB2.Vector = (Vector)state["VectorB2"];
             ctlVectorInputC2.Vector = (Vector)state["VectorC2"];
+            _rtxtNotes.Text = (string)state["Notes"];
             return true;
         }
 

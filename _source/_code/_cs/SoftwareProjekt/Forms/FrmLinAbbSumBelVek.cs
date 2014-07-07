@@ -246,8 +246,10 @@ namespace SoftwareProjekt.Forms
             ctlVecInX.Vector = (Vector)state["VectorX"];
             ctlVecInY.Vector = (Vector)state["VectorY"];
             ctlMaInScaleMat.Matrix = (Matrix)state["MatrixM1"];
-
-            _rtxtNotes.Text = state["Notes"].ToString();
+            if (state.ContainsKey("Notes"))
+            {
+                _rtxtNotes.Text = state["Notes"].ToString();
+            }
 
             return true;
         }
