@@ -86,6 +86,25 @@ namespace SoftwareProjekt.UserControls
         }
 
         /// <summary>
+        /// Property Enable txtEle
+        /// </summary>
+        [Browsable(true)]
+        public new bool EnableText
+        {
+            get
+            {
+                return txtEle11.Enabled && txtEle12.Enabled && txtEle21.Enabled && txtEle22.Enabled;
+            }
+            set
+            {
+                txtEle11.Enabled = value;
+                txtEle12.Enabled = value;
+                txtEle21.Enabled = value;
+                txtEle22.Enabled = value;
+            }
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         private void txtEle11_TextChanged(object sender, EventArgs e)
