@@ -117,6 +117,7 @@ namespace SoftwareProjekt.Forms
             // ctlVectorEV2
             // 
             this.ctlVectorEV2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ctlVectorEV2.EnableText = false;
             this.ctlVectorEV2.Location = new System.Drawing.Point(292, 27);
             this.ctlVectorEV2.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorEV2.MinimumSize = new System.Drawing.Size(136, 94);
@@ -126,9 +127,11 @@ namespace SoftwareProjekt.Forms
             vector7.X1 = float.NaN;
             vector7.X2 = float.NaN;
             this.ctlVectorEV2.Vector = vector7;
+            this.ctlVectorEV2.Text = "Einheitsvektor e1";
             // 
             // ctlVectorEV1
             // 
+            this.ctlVectorEV1.EnableText = false;
             this.ctlVectorEV1.Location = new System.Drawing.Point(149, 27);
             this.ctlVectorEV1.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorEV1.MinimumSize = new System.Drawing.Size(136, 94);
@@ -138,9 +141,11 @@ namespace SoftwareProjekt.Forms
             vector8.X1 = float.NaN;
             vector8.X2 = float.NaN;
             this.ctlVectorEV1.Vector = vector8;
+            this.ctlVectorEV1.Text = "Einheitsvektor e1";
             // 
             // ctlVectorInputX
             // 
+            this.ctlVectorInputX.EnableText = true;
             this.ctlVectorInputX.Location = new System.Drawing.Point(6, 27);
             this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(136, 94);
@@ -150,6 +155,7 @@ namespace SoftwareProjekt.Forms
             vector9.X1 = float.NaN;
             vector9.X2 = float.NaN;
             this.ctlVectorInputX.Vector = vector9;
+            this.ctlVectorInputX.Text = "Vektor";
             // 
             // lblAngle
             // 
@@ -200,6 +206,7 @@ namespace SoftwareProjekt.Forms
             // 
             // ctlVectorOutputEV2
             // 
+            this.ctlVectorOutputEV2.EnableText = false;
             this.ctlVectorOutputEV2.Location = new System.Drawing.Point(293, 20);
             this.ctlVectorOutputEV2.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorOutputEV2.MinimumSize = new System.Drawing.Size(136, 94);
@@ -209,9 +216,11 @@ namespace SoftwareProjekt.Forms
             vector10.X1 = float.NaN;
             vector10.X2 = float.NaN;
             this.ctlVectorOutputEV2.Vector = vector10;
+            this.ctlVectorOutputEV2.Text = "Einheitsvektor e2";
             // 
             // ctlVectorOutputEV1
             // 
+            this.ctlVectorOutputEV1.EnableText = false;
             this.ctlVectorOutputEV1.Location = new System.Drawing.Point(150, 20);
             this.ctlVectorOutputEV1.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorOutputEV1.MinimumSize = new System.Drawing.Size(136, 94);
@@ -221,9 +230,11 @@ namespace SoftwareProjekt.Forms
             vector11.X1 = float.NaN;
             vector11.X2 = float.NaN;
             this.ctlVectorOutputEV1.Vector = vector11;
+            this.ctlVectorOutputEV1.Text = "Einheitsvektor e1";
             // 
             // ctlVectorOutputX
             // 
+            this.ctlVectorOutputX.EnableText = false;
             this.ctlVectorOutputX.Location = new System.Drawing.Point(7, 20);
             this.ctlVectorOutputX.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorOutputX.MinimumSize = new System.Drawing.Size(136, 94);
@@ -233,6 +244,7 @@ namespace SoftwareProjekt.Forms
             vector12.X1 = float.NaN;
             vector12.X2 = float.NaN;
             this.ctlVectorOutputX.Vector = vector12;
+            this.ctlVectorOutputX.Text = "Vektor";
             // 
             // txtDeterminante
             // 
