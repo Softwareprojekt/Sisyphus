@@ -68,6 +68,10 @@ namespace SoftwareProjekt.Forms
             cosInput.AddLineSegment(_vectorInputY);
             cosInput.AddLineSegment(_vectorInputXplusY);
 
+            ctlVecInX.Text = "Vector x";
+            ctlVecInY.Text = "Vector y";
+            ctlMaInScaleMat.Text = "Matrix M";
+
             // f(x + y) mit Pfeilen
             _functionBlock1 = "<mn>f</mn>\n";
             _functionBlock1 += "<mo>&ApplyFunction;</mo>\n";
