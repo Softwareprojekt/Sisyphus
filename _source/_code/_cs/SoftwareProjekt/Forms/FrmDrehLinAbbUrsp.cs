@@ -47,17 +47,7 @@ namespace SoftwareProjekt.Forms
 
         public FrmDrehLinAbbUrsp()
         {
-            InitializeComponent();
-
-            MathXmlGenerator xmlGen = new MathXmlGenerator();
-            xmlGen.AddNode("<mi>f</mi>");
-            xmlGen.AddNode("<mo>(</mo>");
-            xmlGen.AddNode("<mover>");
-            xmlGen.AddNode("\t<mi>x</mi>");
-            xmlGen.AddNode("\t<mo>&rarr;</mo>");
-            xmlGen.AddNode("</mover>");
-            xmlGen.AddNode("<mo>)</mo>");
-            xmlGen.AddSign(EMathSign.Assignment);
+            InitializeComponent();           
 
             this.ctlVectorEV1.txtEle11.Text = "1";
             this.ctlVectorEV1.txtEle21.Text = "0";
@@ -73,6 +63,21 @@ namespace SoftwareProjekt.Forms
             cosInput.AddLineSegment(_vectorInputEV1);
             cosInput.AddLineSegment(_vectorInputEV2);
             cosInput.AddLineSegment(_vectorInputX);
+
+            CreateFormular();
+        }
+
+        private void CreateFormular()
+        {
+            MathXmlGenerator xmlGen = new MathXmlGenerator();
+            xmlGen.AddNode("<mi>f</mi>");
+            xmlGen.AddNode("<mo>(</mo>");
+            xmlGen.AddNode("<mover>");
+            xmlGen.AddNode("\t<mi>x</mi>");
+            xmlGen.AddNode("\t<mo>&rarr;</mo>");
+            xmlGen.AddNode("</mover>");
+            xmlGen.AddNode("<mo>)</mo>");
+            xmlGen.AddSign(EMathSign.Assignment);
         }
 
         private void butFunctionTransfX_Click(object sender, EventArgs e)

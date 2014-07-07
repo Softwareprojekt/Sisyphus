@@ -343,7 +343,7 @@
             this.ctlMathEquTotal.Equation = "";
             this.ctlMathEquTotal.Filename = "w5ua4041.efj.tiff";
             this.ctlMathEquTotal.Filepath = "";
-            this.ctlMathEquTotal.FontSize = 11;
+            this.ctlMathEquTotal.FontSize = 9;
             this.ctlMathEquTotal.Location = new System.Drawing.Point(668, 145);
             this.ctlMathEquTotal.Name = "ctlMathEquTotal";
             this.ctlMathEquTotal.Size = new System.Drawing.Size(441, 93);
