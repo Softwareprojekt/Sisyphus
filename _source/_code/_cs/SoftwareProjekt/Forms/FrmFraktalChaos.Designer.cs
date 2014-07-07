@@ -81,7 +81,7 @@
             // butSaveFractal
             // 
             this.butSaveFractal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.butSaveFractal.Location = new System.Drawing.Point(401, 436);
+            this.butSaveFractal.Location = new System.Drawing.Point(401, 505);
             this.butSaveFractal.Name = "butSaveFractal";
             this.butSaveFractal.Size = new System.Drawing.Size(104, 23);
             this.butSaveFractal.TabIndex = 5;
@@ -95,9 +95,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cosFractal.DoNotRefresh = false;
-            this.cosFractal.Location = new System.Drawing.Point(362, 34);
+            this.cosFractal.Location = new System.Drawing.Point(433, 34);
             this.cosFractal.Name = "cosFractal";
-            this.cosFractal.Size = new System.Drawing.Size(465, 343);
+            this.cosFractal.Size = new System.Drawing.Size(520, 412);
             this.cosFractal.TabIndex = 2;
             // 
             // _rtxtNotes
@@ -116,7 +116,7 @@
             // 
             this.lblNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblNotes.AutoSize = true;
-            this.lblNotes.Location = new System.Drawing.Point(9, 485);
+            this.lblNotes.Location = new System.Drawing.Point(9, 554);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(46, 13);
             this.lblNotes.TabIndex = 4;
@@ -125,7 +125,7 @@
             // butStart
             // 
             this.butStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.butStart.Location = new System.Drawing.Point(401, 405);
+            this.butStart.Location = new System.Drawing.Point(401, 474);
             this.butStart.Name = "butStart";
             this.butStart.Size = new System.Drawing.Size(104, 23);
             this.butStart.TabIndex = 4;
@@ -148,7 +148,7 @@
             this.grpIFS.Controls.Add(this._txtProp1);
             this.grpIFS.Controls.Add(this._ctlVector1);
             this.grpIFS.Controls.Add(this._ctlMatrix1);
-            this.grpIFS.Location = new System.Drawing.Point(4, 71);
+            this.grpIFS.Location = new System.Drawing.Point(12, 71);
             this.grpIFS.Name = "grpIFS";
             this.grpIFS.Size = new System.Drawing.Size(336, 411);
             this.grpIFS.TabIndex = 3;
@@ -165,6 +165,7 @@
             // 
             // _ctlVector4
             // 
+            this._ctlVector4.EnableText = true;
             this._ctlVector4.Location = new System.Drawing.Point(228, 304);
             this._ctlVector4.MinimumSize = new System.Drawing.Size(102, 76);
             this._ctlVector4.Name = "_ctlVector4";
@@ -176,6 +177,7 @@
             // 
             // _ctlMatrix4
             // 
+            this._ctlMatrix4.EnableText = true;
             this._ctlMatrix4.Location = new System.Drawing.Point(97, 304);
             matrix5.X11 = float.NaN;
             matrix5.X12 = float.NaN;
@@ -197,6 +199,7 @@
             // 
             // _ctlVector3
             // 
+            this._ctlVector3.EnableText = true;
             this._ctlVector3.Location = new System.Drawing.Point(228, 209);
             this._ctlVector3.MinimumSize = new System.Drawing.Size(102, 76);
             this._ctlVector3.Name = "_ctlVector3";
@@ -208,6 +211,7 @@
             // 
             // _ctlMatrix3
             // 
+            this._ctlMatrix3.EnableText = true;
             this._ctlMatrix3.Location = new System.Drawing.Point(97, 209);
             matrix6.X11 = float.NaN;
             matrix6.X12 = float.NaN;
@@ -229,6 +233,7 @@
             // 
             // _ctlVector2
             // 
+            this._ctlVector2.EnableText = true;
             this._ctlVector2.Location = new System.Drawing.Point(228, 114);
             this._ctlVector2.MinimumSize = new System.Drawing.Size(102, 76);
             this._ctlVector2.Name = "_ctlVector2";
@@ -240,6 +245,7 @@
             // 
             // _ctlMatrix2
             // 
+            this._ctlMatrix2.EnableText = true;
             this._ctlMatrix2.Location = new System.Drawing.Point(97, 114);
             matrix7.X11 = float.NaN;
             matrix7.X12 = float.NaN;
@@ -270,6 +276,7 @@
             // 
             // _ctlVector1
             // 
+            this._ctlVector1.EnableText = true;
             this._ctlVector1.Location = new System.Drawing.Point(228, 19);
             this._ctlVector1.MinimumSize = new System.Drawing.Size(102, 76);
             this._ctlVector1.Name = "_ctlVector1";
@@ -281,6 +288,7 @@
             // 
             // _ctlMatrix1
             // 
+            this._ctlMatrix1.EnableText = true;
             this._ctlMatrix1.Location = new System.Drawing.Point(97, 19);
             matrix8.X11 = float.NaN;
             matrix8.X12 = float.NaN;
@@ -319,7 +327,7 @@
             this._grpChoices.Controls.Add(this._btnTree);
             this._grpChoices.Controls.Add(this._btnFern);
             this._grpChoices.Controls.Add(this._btnSquare);
-            this._grpChoices.Location = new System.Drawing.Point(569, 383);
+            this._grpChoices.Location = new System.Drawing.Point(582, 452);
             this._grpChoices.Name = "_grpChoices";
             this._grpChoices.Size = new System.Drawing.Size(199, 123);
             this._grpChoices.TabIndex = 9;
@@ -390,7 +398,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 676);
+            this.ClientSize = new System.Drawing.Size(1079, 745);
             this.Controls.Add(this._txtSteps);
             this.Controls.Add(this._lblSteps);
             this.Controls.Add(this._lblIteration);
@@ -404,7 +412,8 @@
             this.Controls.Add(this._rtxtNotes);
             this.Controls.Add(this.cosFractal);
             this.Controls.Add(this.butSaveFractal);
-            this.MinimumSize = new System.Drawing.Size(850, 715);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MinimizeBox = false;
             this.Name = "FrmFraktalChaos";
             this.Text = "Fraktal rendern mit Chaosspiel ";
             this.grpIFS.ResumeLayout(false);
