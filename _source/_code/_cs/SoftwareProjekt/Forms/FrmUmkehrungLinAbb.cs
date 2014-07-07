@@ -251,6 +251,7 @@ namespace SoftwareProjekt.Forms
 
             _vectorOutputX = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["VectorX"], Pens.Blue);
             _vectorOutputY = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["VectorY"], Pens.Green);
+            txtDeterminante.Invoke(new Action(() => txtDeterminante.Text = e.CalcValues["MatrixDet"].ToString()));
 
             cosInput.AddLineSegment(_vectorOutputY);
             cosInput.AddLineSegment(_vectorInputX);
@@ -333,6 +334,16 @@ namespace SoftwareProjekt.Forms
         private void butFunctionEnd_Click_1(object sender, EventArgs e)
         {
             this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
+        }
+
+        private void txtDeterminante_MouseEnter(object sender, EventArgs e)
+        {
+            txtDeterminante.UseSystemPasswordChar = false;
+        }
+
+        private void txtDeterminante_MouseLeave(object sender, EventArgs e)
+        {
+            txtDeterminante.UseSystemPasswordChar = true;
         }
     }
 }

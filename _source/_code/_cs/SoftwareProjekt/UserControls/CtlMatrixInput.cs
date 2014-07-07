@@ -69,6 +69,10 @@ namespace SoftwareProjekt.UserControls
             }
         }
 
+        /// <summary>
+        /// Property for name of GroupBox.
+        /// </summary>
+        [Browsable(true)]
         public new string Text
         {
             get

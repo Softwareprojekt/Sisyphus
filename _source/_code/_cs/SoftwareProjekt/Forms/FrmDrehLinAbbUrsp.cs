@@ -112,6 +112,7 @@ namespace SoftwareProjekt.Forms
             _vectorOutputEV1 = new LineSegment(new PointF(0f, 0f), ctlVectorOutputEV1.Vector, Pens.Blue);
             _vectorOutputEV2 = new LineSegment(new PointF(0f, 0f), ctlVectorOutputEV2.Vector, Pens.Red);
             _vectorOutputX = new LineSegment(new PointF(0f, 0f), ctlVectorOutputX.Vector, Pens.Black);
+            txtDeterminante.Invoke(new Action(() => txtDeterminante.Text = e.CalcValues["MDet"].ToString()));
 
             cosOutput.AddLineSegment(_vectorOutputEV1);
             cosOutput.AddLineSegment(_vectorOutputEV2);
@@ -170,6 +171,16 @@ namespace SoftwareProjekt.Forms
             //CoordinateSystem[] cordsList = { this.cosInput };
             this.ChangeFontColors(vectors, matrices, this.inputColor);
             this.ChangeFontColors(vectors2, matrices, this.resultColor);
+        }
+
+        private void txtDeterminante_MouseEnter(object sender, EventArgs e)
+        {
+            txtDeterminante.UseSystemPasswordChar = false;
+        }
+
+        private void txtDeterminante_MouseLeave(object sender, EventArgs e)
+        {
+            txtDeterminante.UseSystemPasswordChar = true;
         }
     }
 }
