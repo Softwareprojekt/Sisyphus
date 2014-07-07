@@ -70,6 +70,22 @@ namespace SoftwareProjekt.UserControls
             }
         }
 
+        /// <summary>
+        /// Property Enable txtEle
+        /// </summary>
+        [Browsable(true)]
+        public new bool EnableText
+        {
+            get
+            {
+                return txtEle11.Enabled && txtEle21.Enabled;
+            }
+            set
+            {
+                txtEle11.Enabled = value;
+                txtEle21.Enabled = value;
+            }
+        }
 
         /// <summary>
         /// Property for name of GroupBox.
