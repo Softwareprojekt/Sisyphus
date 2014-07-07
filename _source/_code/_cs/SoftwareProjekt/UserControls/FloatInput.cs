@@ -13,11 +13,12 @@ namespace SoftwareProjekt.UserControls
         {
             FloatValue = float.NaN;
             this.MouseClick += FloatInput_MouseClick;
+           
         }
 
         void FloatInput_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left && this.Text == "NaN")
+            if (e.Button == System.Windows.Forms.MouseButtons.Left && this.Text == "NaN" && !this.ReadOnly)
             {
                 this.Text = "";
             }
@@ -30,11 +31,22 @@ namespace SoftwareProjekt.UserControls
             base.OnKeyPress(e);
         }
 
-        protected override void OnTextChanged(EventArgs e)
+        protected override void OnReadOnlyChanged(EventArgs e)
         {
-            float f = float.NaN;
+            if (this.ReadOnly)
+            {
+                this.BackColor = System.Drawing.Color.White;
+            }
+            else
+            {
+                this.BackColor = System.Drawing.Color.Red;
+            }
+            base.OnReadOnlyChanged(e);
+        }
 
-            if (!this.Parse(this.Text.Replace(',', '.'), out f))
+        protected override void OnEnabledChanged(EventArgs e)
+        {
+            if (this.Enabled)
             {
                 this.BackColor = System.Drawing.Color.Red;
             }
@@ -42,7 +54,21 @@ namespace SoftwareProjekt.UserControls
             {
                 this.BackColor = System.Drawing.Color.White;
             }
+ 	         base.OnEnabledChanged(e);
+        }
+        
 
+        protected override void OnTextChanged(EventArgs e)
+        {
+            float f = float.NaN;
+            if (!this.Parse(this.Text.Replace(',', '.'), out f) || float.IsNaN(f))
+            {
+                this.BackColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                this.BackColor = System.Drawing.Color.White;
+            }
 
             this.FloatValue = f;
             base.OnTextChanged(e);

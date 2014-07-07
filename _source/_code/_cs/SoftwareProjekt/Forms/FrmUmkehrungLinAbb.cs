@@ -45,12 +45,18 @@ namespace SoftwareProjekt.Forms
         private LineSegment _vectorOutputX;
         private LineSegment _vectorOutputY;
 
+        private Matrix _invMatrix; 
         public FrmUmkehrungLinAbb()
         {
             InitializeComponent();
 
             _vectorInputX = new LineSegment(new PointF(0, 0), ctlVectorInputX.Vector, Pens.Black);
             _vectorInputY = new LineSegment(new PointF(0, 0), ctlVectorInputY.Vector, Pens.Black);
+            _invMatrix = new Matrix();
+
+            ctlVectorInputX.Text = "Vektor x";
+            ctlMatrixInput.Text = "Matrix M";
+            ctlVectorInputY.Text = "Vektor y";
 
             ctlVectorInputX.TextChanged += this.OnTextChanged;
             ctlVectorInputY.TextChanged += this.OnTextChanged;
@@ -214,14 +220,7 @@ namespace SoftwareProjekt.Forms
             colors.Add(Color.Blue);
             colors.Add(Color.Violet);
 
-            Matrix m_inv = new Matrix();
-            if (ctlMatrixInput.Matrix.Determinant != 0)
-            {
-                // Inverse
-                m_inv = Matrix.Invert(ctlMatrixInput.Matrix);
-            }
-
-            xmlGen.AddMatrix(m_inv, Color.Red, Color.Red);
+            xmlGen.AddMatrix(_invMatrix, Color.Red, Color.Red);
 
             // Malzeichen
             xmlGen.AddSign(EMathSign.Multiply);
@@ -258,6 +257,7 @@ namespace SoftwareProjekt.Forms
 
             _vectorOutputX = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["VectorX"], Pens.Blue);
             _vectorOutputY = new LineSegment(new PointF(0f, 0f), (Vector)e.CalcValues["VectorY"], Pens.Green);
+            _invMatrix = (Matrix)e.CalcValues["invMatrix"];
             txtDeterminante.Invoke(new Action(() => txtDeterminante.Text = e.CalcValues["MatrixDet"].ToString()));
 
             cosInput.AddLineSegment(_vectorOutputY);
@@ -265,15 +265,12 @@ namespace SoftwareProjekt.Forms
             cosOutput.AddLineSegment(_vectorOutputX);
             cosOutput.AddLineSegment(_vectorInputY);
 
+            this.CreateFormularToLeft();
+
             if (e.Final)
             {
                 this.OnViewChanged(new Classes.EventArguments.ViewEventArgs(Enums.EClickedButton.CloseProgressForm));
             }
-        }
-
-        private void butDeterminante_Click(object sender, EventArgs e)
-        {
-            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
         }
 
         private void butFx_Click(object sender, EventArgs e)
@@ -283,17 +280,6 @@ namespace SoftwareProjekt.Forms
                 this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
             }
         }
-
-        private void butUmkehrFx_Click(object sender, EventArgs e)
-        {
-            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
-        }
-
-        private void butFunctionEnd_Click(object sender, EventArgs e)
-        {
-            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
-        }
-
         protected override bool CheckInputs()
         {
             if (ctlMatrixInput.Matrix.Determinant == 0)
@@ -309,6 +295,8 @@ namespace SoftwareProjekt.Forms
 #endif
                 return true;
             }
+
+            MessageBox.Show("Nicht alle Daten sind gültig oder eingegeben.");
 #if DEBUG
             Console.WriteLine("ERROR @ Inputs are not valid.");
 #endif
@@ -319,8 +307,8 @@ namespace SoftwareProjekt.Forms
         {
             _vectorInputX.Vector = ctlVectorInputX.Vector;
             _vectorInputY.Vector = ctlVectorInputY.Vector;
-            CreateFormularToLeft();
-            CreateFormularToRight();
+            this.CreateFormularToLeft();
+            this.CreateFormularToRight();
             cosInput.Refresh();
             cosOutput.Refresh();
         }
@@ -332,24 +320,18 @@ namespace SoftwareProjekt.Forms
             {
                 return false;
             }
-            else if (!state.ContainsKey("VectorX"))
-            {
-                return false;
-            }
-            else if (!state.ContainsKey("VectorY"))
+            else if (!state.ContainsKey("VectorX") || !state.ContainsKey("VectorY") || !state.ContainsKey("Notes") || !state.ContainsKey("Matrix"))
             {
                 return false;
             }
 
             ctlVectorInputX.Vector = (Vector)state["VectorX"];
             ctlVectorInputY.Vector = (Vector)state["VectorY"];
+            ctlMatrixInput.Matrix = (Matrix)state["Matrix"];
+            _rtxtNotes.Text = (string)state["Notes"];
             return true;
         }
 
-        private void butFunctionEnd_Click_1(object sender, EventArgs e)
-        {
-            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
-        }
 
         private void txtDeterminante_MouseEnter(object sender, EventArgs e)
         {

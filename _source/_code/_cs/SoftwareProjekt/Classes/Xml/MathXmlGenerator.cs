@@ -271,7 +271,7 @@ namespace SoftwareProjekt.Classes.Xml
                             tmpString += "\t\t\t<mi color='" + GetRGBString(colors[2]) + "'>" + tmpParseContainer[2].Rest + "</mi>\n";
                         }
 
-                        tmpString += PrintSign(EMathSign.Multiply , 3);
+                        tmpString += PrintSign(EMathSign.Multiply, 3);
 
                         if (tmpParseContainer[3].Rest == null)
                         {
@@ -329,7 +329,7 @@ namespace SoftwareProjekt.Classes.Xml
                             tmpString += "\t\t\t<mi color='" + GetRGBString(colors[6]) + "'>" + tmpParseContainer[6].Rest + "</mi>\n";
                         }
 
-                        tmpString += PrintSign(EMathSign.Multiply , 3);
+                        tmpString += PrintSign(EMathSign.Multiply, 3);
 
                         if (tmpParseContainer[7].Rest == null)
                         {
@@ -620,24 +620,24 @@ namespace SoftwareProjekt.Classes.Xml
             _xmlDoc += "\t<mtr>\n";
 
             _xmlDoc += "\t\t<mtd>\n";
-            _xmlDoc += "\t\t\t<mn color='" + GetRGBString(column1Color) + "'>" + mat.X11 + "</mn>\n";
+            _xmlDoc += "\t\t\t<mn color='" + GetRGBString(column1Color) + "'>" + System.Math.Round(mat.X11, 3) + "</mn>\n";
             _xmlDoc += "\t\t</mtd>\n";
 
             _xmlDoc += "\t\t<mtd>\n";
-            _xmlDoc += "\t\t\t<mn color='" + GetRGBString(column2Color) + "'>" + mat.X12 + "</mn>\n";
+            _xmlDoc += "\t\t\t<mn color='" + GetRGBString(column2Color) + "'>" + System.Math.Round(mat.X12, 3) + "</mn>\n";
             _xmlDoc += "\t\t</mtd>\n";
-            
+
 
             _xmlDoc += "\t</mtr>\n";
 
             _xmlDoc += "\t<mtr>\n";
-            
+
             _xmlDoc += "\t\t<mtd>\n";
-            _xmlDoc += "\t\t\t<mn color='" + GetRGBString(column1Color) + "'>" + mat.X21 + "</mn>\n";
+            _xmlDoc += "\t\t\t<mn color='" + GetRGBString(column1Color) + "'>" + System.Math.Round(mat.X21, 3) + "</mn>\n";
             _xmlDoc += "\t\t</mtd>\n";
 
             _xmlDoc += "\t\t<mtd>\n";
-            _xmlDoc += "\t\t\t<mn color='" + GetRGBString(column2Color) + "'>" + mat.X22 + "</mn>\n";           
+            _xmlDoc += "\t\t\t<mn color='" + GetRGBString(column2Color) + "'>" + System.Math.Round(mat.X22, 3) + "</mn>\n";
             _xmlDoc += "\t\t</mtd>\n";
 
             _xmlDoc += "\t</mtr>\n";

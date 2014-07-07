@@ -34,6 +34,7 @@ namespace SoftwareProjekt.UserControls
     public partial class CtlMatrixInput : UserControl
     {
         private Matrix _matrix = null;
+        private bool _readOnly;
         public new event TextChangedHandler TextChanged;
 
         public CtlMatrixInput()
@@ -66,6 +67,22 @@ namespace SoftwareProjekt.UserControls
                     return;
                 }
                 this.Refresh();
+            }
+        }
+
+        public bool ReadOnly 
+        {
+            get
+            {
+                return _readOnly;
+            }
+            set
+            {
+                _readOnly = value;
+                this.txtEle11.ReadOnly = value;
+                this.txtEle12.ReadOnly = value;
+                this.txtEle21.ReadOnly = value;
+                this.txtEle22.ReadOnly = value;
             }
         }
 

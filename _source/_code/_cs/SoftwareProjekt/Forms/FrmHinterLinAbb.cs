@@ -61,6 +61,12 @@ namespace SoftwareProjekt.Forms
 
             cosInput.AddLineSegment(_vectorInputX);
 
+            ctlVectorInputX.Text = "Vektor x";
+            ctlMatrixInputM1.Text = "Matrix M1";
+            ctlMatrixInputM2.Text = "Matrix M2";
+            ctlVectorOutputX1.Text = "Vector f(x)";
+            ctlVectorOutputX2.Text = "Vector g(x)";
+
             m1 = new Matrix();
             m2 = new Matrix();
 
@@ -90,12 +96,12 @@ namespace SoftwareProjekt.Forms
             _functionBlock1 += "</mrow>\n";
 
             //g(f(x))
-            _functionBlock2 +="<mrow>";
+            _functionBlock2 += "<mrow>";
             _functionBlock2 += "\t\t<mi>g</mi><mo>&ApplyFunction;</mo>";
             _functionBlock2 += "\t\t<mo>(</mo>";
             _functionBlock2 += "\t\t<mi>f</mi><mo>&ApplyFunction;</mo>";
             _functionBlock2 += "\t\t<mo>(</mo>";
-            _functionBlock2 += "\t\t<mover accent=" + "\" true \""  + ">";
+            _functionBlock2 += "\t\t<mover accent=" + "\" true \"" + ">";
             _functionBlock2 += "\t\t\t\t<mi>x</mi>";
             _functionBlock2 += "\t\t\t<mo>&rarr;</mo>";
             _functionBlock2 += "\t\t</mover>";
@@ -149,7 +155,7 @@ namespace SoftwareProjekt.Forms
 
             xmlGen.Finish();
             ctlMathEquTotal.WriteEquationToPicBox(xmlGen.XmlDoc);
-           
+
         }
 
         private void CreateFormularLeftArrow()
@@ -157,12 +163,12 @@ namespace SoftwareProjekt.Forms
             MathXmlGenerator xmlGen = new MathXmlGenerator();
 
             xmlGen.AddNode(_functionBlock);
-            
+
             m1.X11 = (float.IsNaN(ctlMatrixInputM1.Matrix.X11)) ? 0.0f : ctlMatrixInputM1.Matrix.X11;
             m1.X21 = (float.IsNaN(ctlMatrixInputM1.Matrix.X21)) ? 0.0f : ctlMatrixInputM1.Matrix.X21;
             m1.X12 = (float.IsNaN(ctlMatrixInputM1.Matrix.X12)) ? 0.0f : ctlMatrixInputM1.Matrix.X12;
             m1.X22 = (float.IsNaN(ctlMatrixInputM1.Matrix.X22)) ? 0.0f : ctlMatrixInputM1.Matrix.X22;
-           
+
             x.X1 = (float.IsNaN(ctlVectorInputX.Vector.X1)) ? 0.0f : ctlVectorInputX.Vector.X1;
             x.X2 = (float.IsNaN(ctlVectorInputX.Vector.X2)) ? 0.0f : ctlVectorInputX.Vector.X2;
 
@@ -209,10 +215,6 @@ namespace SoftwareProjekt.Forms
             return retVal;
         }
 
-        private void dutDeterminante_Click(object sender, EventArgs e)
-        {
-            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
-        }
 
         public override void ExerciseChanged(IExercise sender, ExerciseEventArgs e)
         {
@@ -243,24 +245,6 @@ namespace SoftwareProjekt.Forms
             }
         }
 
-        private void butDeterminante2_Click(object sender, EventArgs e)
-        {
-            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
-        }
-
-        private void butGx_Click(object sender, EventArgs e)
-        {
-            if (this.CheckInputs())
-            {
-               this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
-            }
-        }
-
-        private void butGFx_Click(object sender, EventArgs e)
-        {
-            this.OnViewChanged(new ViewEventArgs(EClickedButton.StartCalculation));
-        }
-
         protected override bool CheckInputs()
         {
             if (ctlMatrixInputM1.Matrix.IsValid() && ctlMatrixInputM2.Matrix.IsValid() && ctlVectorInputX.Vector.IsValid())
@@ -270,6 +254,8 @@ namespace SoftwareProjekt.Forms
 #endif
                 return true;
             }
+
+            MessageBox.Show("Nicht alle Daten sind gültig oder eingegeben.");
 #if DEBUG
             Console.WriteLine("ERROR @ Inputs are not valid.");
 #endif
@@ -300,12 +286,15 @@ namespace SoftwareProjekt.Forms
             {
                 return false;
             }
-            else if (!state.ContainsKey("VectorX"))
+            else if (!state.ContainsKey("VectorX") || !state.ContainsKey("MatrixM1") || !state.ContainsKey("MatrixM2") || !state.ContainsKey("Notes"))
             {
                 return false;
             }
 
             ctlVectorInputX.Vector = (Vector)state["VectorX"];
+            ctlMatrixInputM1.Matrix = (Matrix)state["MatrixM1"];
+            ctlMatrixInputM2.Matrix = (Matrix)state["MatrixM2"];
+            _rtxtNotes.Text = (String)state["Notes"];
             return true;
         }
     }
