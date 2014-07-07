@@ -67,7 +67,7 @@ namespace SoftwareProjekt.Classes.Xml
 
         private string MathMLNumber(float number, System.Drawing.Color col)
         {
-            return "<mn color='" + GetRGBString(col) + "'>" + number + "</mn>\n";
+            return "<mn color='" + GetRGBString(col) + "'>" + System.Math.Round(number, 3) + "</mn>\n";
         }
 
         public string PrintSign(EMathSign sign, int tabs = 0)

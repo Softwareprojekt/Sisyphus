@@ -84,6 +84,7 @@
             // 
             // ctlVectorInputX
             // 
+            this.ctlVectorInputX.EnableText = true;
             this.ctlVectorInputX.Location = new System.Drawing.Point(6, 24);
             this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(102, 76);
@@ -97,6 +98,7 @@
             // 
             // ctlMatrixInputM1
             // 
+            this.ctlMatrixInputM1.EnableText = true;
             this.ctlMatrixInputM1.Location = new System.Drawing.Point(149, 24);
             this.ctlMatrixInputM1.Margin = new System.Windows.Forms.Padding(4);
             matrix5.X11 = float.NaN;
@@ -194,6 +196,7 @@
             // 
             // ctlMatrixInputM2
             // 
+            this.ctlMatrixInputM2.EnableText = true;
             this.ctlMatrixInputM2.Location = new System.Drawing.Point(6, 23);
             this.ctlMatrixInputM2.Margin = new System.Windows.Forms.Padding(4);
             matrix6.X11 = float.NaN;
@@ -232,7 +235,7 @@
             // 
             // ctlVectorOutputX1
             // 
-            this.ctlVectorOutputX1.Enabled = false;
+            this.ctlVectorOutputX1.EnableText = false;
             this.ctlVectorOutputX1.Location = new System.Drawing.Point(6, 17);
             this.ctlVectorOutputX1.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorOutputX1.MinimumSize = new System.Drawing.Size(102, 76);
@@ -257,7 +260,7 @@
             // 
             // ctlVectorOutputX2
             // 
-            this.ctlVectorOutputX2.Enabled = false;
+            this.ctlVectorOutputX2.EnableText = false;
             this.ctlVectorOutputX2.Location = new System.Drawing.Point(6, 17);
             this.ctlVectorOutputX2.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorOutputX2.MinimumSize = new System.Drawing.Size(102, 76);
