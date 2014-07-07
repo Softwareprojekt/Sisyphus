@@ -241,6 +241,9 @@ namespace SoftwareProjekt.Forms
             this.txtDeterminante.ReadOnly = true;
             this.txtDeterminante.Size = new System.Drawing.Size(60, 22);
             this.txtDeterminante.TabIndex = 41;
+            this.txtDeterminante.UseSystemPasswordChar = true;
+            this.txtDeterminante.MouseEnter += new System.EventHandler(this.txtDeterminante_MouseEnter);
+            this.txtDeterminante.MouseLeave += new System.EventHandler(this.txtDeterminante_MouseLeave);
             // 
             // butDeterminante
             // 
