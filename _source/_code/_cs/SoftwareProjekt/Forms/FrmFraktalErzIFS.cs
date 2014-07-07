@@ -29,6 +29,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
+using SoftwareProjekt.UserControls;
 
 
 /* TODO in this form:
@@ -386,6 +387,13 @@ namespace SoftwareProjekt.Forms
 
             _cosInput.DoNotRefresh = false;
             _cosInput.invokeRefresh();
+        }
+
+        private void FrmFraktalErzIFS_Shown(object sender, EventArgs e)
+        {
+            CtlVectorInput[] vectors = { this._vector_w1, this._vector_w2, this._vector_w3 };
+            CtlMatrixInput[] matrices = { this._matrix_w1, this._matrix_w2, this._matrix_w3 };
+            this.ChangeFontColors(vectors, matrices, this.inputColor);
         }
     }
 }

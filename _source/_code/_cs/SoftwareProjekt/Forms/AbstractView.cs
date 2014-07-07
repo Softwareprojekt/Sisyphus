@@ -73,8 +73,10 @@ namespace SoftwareProjekt.Forms
             }
             foreach (CtlMatrixInput m in matrices)
             {
-                // FIXME
-                m.ForeColor = col;
+                m.txtEle11.ForeColor = col;
+                m.txtEle12.ForeColor = col;
+                m.txtEle21.ForeColor = col;
+                m.txtEle22.ForeColor = col;
             }
             // probably too much work needed to change colors of CoordinateSystem
         }
