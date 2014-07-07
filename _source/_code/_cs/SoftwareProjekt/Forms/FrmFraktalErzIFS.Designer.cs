@@ -51,7 +51,6 @@
             this._rbStep3 = new System.Windows.Forms.RadioButton();
             this._rbStep2 = new System.Windows.Forms.RadioButton();
             this._rbStep1 = new System.Windows.Forms.RadioButton();
-            this.ctlMathEqua = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
             this._vector_w2 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this._cosInput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this._cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
@@ -190,10 +189,10 @@
             this.lblNotes.TabIndex = 11;
             this.lblNotes.Text = "Notizen:";
             // 
-            // rtxtNotes
+            // _rtxtNotes
             // 
             this._rtxtNotes.Location = new System.Drawing.Point(293, 644);
-            this._rtxtNotes.Name = "rtxtNotes";
+            this._rtxtNotes.Name = "_rtxtNotes";
             this._rtxtNotes.Size = new System.Drawing.Size(478, 124);
             this._rtxtNotes.TabIndex = 7;
             this._rtxtNotes.Text = "";
@@ -256,17 +255,6 @@
             this._rbStep1.TabStop = true;
             this._rbStep1.Text = "1";
             this._rbStep1.UseVisualStyleBackColor = true;
-            // 
-            // ctlMathEqua
-            // 
-            this.ctlMathEqua.Equation = "";
-            this.ctlMathEqua.Filename = "expr.gif";
-            this.ctlMathEqua.Filepath = "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE";
-            this.ctlMathEqua.FontSize = 8;
-            this.ctlMathEqua.Location = new System.Drawing.Point(351, 167);
-            this.ctlMathEqua.Name = "ctlMathEqua";
-            this.ctlMathEqua.Size = new System.Drawing.Size(361, 158);
-            this.ctlMathEqua.TabIndex = 13;
             // 
             // _vector_w2
             // 
@@ -388,7 +376,6 @@
             this.Controls.Add(this.lblOrigPic);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.grpPics);
-            this.Controls.Add(this.ctlMathEqua);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -416,7 +403,6 @@
         private System.Windows.Forms.Label lblFraktal;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.GroupBox grpSteps;
-        private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEqua;
         private UserControls.CtlVectorInput _vector_w2;
         private UserControls.CoordinateSystem _cosInput;
         private UserControls.CoordinateSystem _cosOutput;
