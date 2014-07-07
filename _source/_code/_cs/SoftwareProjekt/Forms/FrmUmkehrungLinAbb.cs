@@ -185,8 +185,12 @@ namespace SoftwareProjekt.Forms
             y.X1 = (float.IsNaN(ctlVectorInputY.Vector.X1)) ? 0.0f : ctlVectorInputY.Vector.X1;
             y.X2 = (float.IsNaN(ctlVectorInputY.Vector.X2)) ? 0.0f : ctlVectorInputY.Vector.X2;
 
+            xmlGen.AddNode("<msup>");
+
             // Matrix hinzufügen
             xmlGen.AddMatrix(m, Color.Blue, Color.Blue);
+            xmlGen.AddNode("<mn>-1</mn>");
+            xmlGen.AddNode("</msup>");
 
             // Malzeichen
             xmlGen.AddSign(EMathSign.Multiply);
