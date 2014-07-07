@@ -51,9 +51,9 @@ namespace SoftwareProjekt.Forms
             this.ctlVectorOutputEV1 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.ctlVectorOutputX = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.txtDeterminante = new System.Windows.Forms.TextBox();
-            this.butDeterminante = new System.Windows.Forms.Button();
             this.cosInput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.lblNotes = new System.Windows.Forms.Label();
+            this.lblDet = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
             this.cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
             this.picBoxArrow = new System.Windows.Forms.PictureBox();
@@ -69,7 +69,7 @@ namespace SoftwareProjekt.Forms
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1036, 255);
+            this.label7.Location = new System.Drawing.Point(746, 255);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(187, 17);
@@ -80,7 +80,7 @@ namespace SoftwareProjekt.Forms
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(162, 255);
+            this.label6.Location = new System.Drawing.Point(9, 255);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(183, 17);
@@ -94,10 +94,10 @@ namespace SoftwareProjekt.Forms
             this.grpDataInput.Controls.Add(this.ctlVectorEV1);
             this.grpDataInput.Controls.Add(this.ctlVectorInputX);
             this.grpDataInput.Controls.Add(this.lblAngle);
-            this.grpDataInput.Location = new System.Drawing.Point(32, 63);
-            this.grpDataInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpDataInput.Location = new System.Drawing.Point(12, 63);
+            this.grpDataInput.Margin = new System.Windows.Forms.Padding(2);
             this.grpDataInput.Name = "grpDataInput";
-            this.grpDataInput.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpDataInput.Padding = new System.Windows.Forms.Padding(2);
             this.grpDataInput.Size = new System.Drawing.Size(434, 177);
             this.grpDataInput.TabIndex = 26;
             this.grpDataInput.TabStop = false;
@@ -118,7 +118,7 @@ namespace SoftwareProjekt.Forms
             // 
             this.ctlVectorEV2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ctlVectorEV2.Location = new System.Drawing.Point(292, 27);
-            this.ctlVectorEV2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorEV2.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorEV2.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorEV2.Name = "ctlVectorEV2";
             this.ctlVectorEV2.Size = new System.Drawing.Size(136, 94);
@@ -130,7 +130,7 @@ namespace SoftwareProjekt.Forms
             // ctlVectorEV1
             // 
             this.ctlVectorEV1.Location = new System.Drawing.Point(149, 27);
-            this.ctlVectorEV1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorEV1.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorEV1.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorEV1.Name = "ctlVectorEV1";
             this.ctlVectorEV1.Size = new System.Drawing.Size(136, 94);
@@ -142,7 +142,7 @@ namespace SoftwareProjekt.Forms
             // ctlVectorInputX
             // 
             this.ctlVectorInputX.Location = new System.Drawing.Point(6, 27);
-            this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorInputX.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorInputX.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorInputX.Name = "ctlVectorInputX";
             this.ctlVectorInputX.Size = new System.Drawing.Size(136, 94);
@@ -166,8 +166,8 @@ namespace SoftwareProjekt.Forms
             // 
             this.butFunctionTransfX.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.butFunctionTransfX.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFunctionTransfX.Location = new System.Drawing.Point(633, 122);
-            this.butFunctionTransfX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butFunctionTransfX.Location = new System.Drawing.Point(496, 131);
+            this.butFunctionTransfX.Margin = new System.Windows.Forms.Padding(2);
             this.butFunctionTransfX.Name = "butFunctionTransfX";
             this.butFunctionTransfX.Size = new System.Drawing.Size(78, 33);
             this.butFunctionTransfX.TabIndex = 5;
@@ -177,23 +177,31 @@ namespace SoftwareProjekt.Forms
             // 
             // grpDataOutput
             // 
-            this.grpDataOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpDataOutput.Controls.Add(this.lblDet);
             this.grpDataOutput.Controls.Add(this.ctlVectorOutputEV2);
             this.grpDataOutput.Controls.Add(this.ctlVectorOutputEV1);
             this.grpDataOutput.Controls.Add(this.ctlVectorOutputX);
             this.grpDataOutput.Controls.Add(this.txtDeterminante);
-            this.grpDataOutput.Controls.Add(this.butDeterminante);
-            this.grpDataOutput.Location = new System.Drawing.Point(891, 63);
+            this.grpDataOutput.Location = new System.Drawing.Point(635, 63);
             this.grpDataOutput.Name = "grpDataOutput";
-            this.grpDataOutput.Size = new System.Drawing.Size(442, 168);
+            this.grpDataOutput.Size = new System.Drawing.Size(434, 177);
             this.grpDataOutput.TabIndex = 41;
             this.grpDataOutput.TabStop = false;
             this.grpDataOutput.Text = "Ausgabe";
             // 
+            // lblDet
+            // 
+            this.lblDet.AutoSize = true;
+            this.lblDet.Location = new System.Drawing.Point(6, 153);
+            this.lblDet.Name = "lblDet";
+            this.lblDet.Size = new System.Drawing.Size(73, 13);
+            this.lblDet.TabIndex = 50;
+            this.lblDet.Text = "Determinante:";
+            // 
             // ctlVectorOutputEV2
             // 
             this.ctlVectorOutputEV2.Location = new System.Drawing.Point(293, 20);
-            this.ctlVectorOutputEV2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorOutputEV2.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorOutputEV2.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorOutputEV2.Name = "ctlVectorOutputEV2";
             this.ctlVectorOutputEV2.Size = new System.Drawing.Size(136, 94);
@@ -205,7 +213,7 @@ namespace SoftwareProjekt.Forms
             // ctlVectorOutputEV1
             // 
             this.ctlVectorOutputEV1.Location = new System.Drawing.Point(150, 20);
-            this.ctlVectorOutputEV1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorOutputEV1.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorOutputEV1.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorOutputEV1.Name = "ctlVectorOutputEV1";
             this.ctlVectorOutputEV1.Size = new System.Drawing.Size(136, 94);
@@ -217,7 +225,7 @@ namespace SoftwareProjekt.Forms
             // ctlVectorOutputX
             // 
             this.ctlVectorOutputX.Location = new System.Drawing.Point(7, 20);
-            this.ctlVectorOutputX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ctlVectorOutputX.Margin = new System.Windows.Forms.Padding(4);
             this.ctlVectorOutputX.MinimumSize = new System.Drawing.Size(136, 94);
             this.ctlVectorOutputX.Name = "ctlVectorOutputX";
             this.ctlVectorOutputX.Size = new System.Drawing.Size(136, 94);
@@ -229,38 +237,23 @@ namespace SoftwareProjekt.Forms
             // txtDeterminante
             // 
             this.txtDeterminante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtDeterminante.Location = new System.Drawing.Point(98, 128);
-            this.txtDeterminante.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDeterminante.Location = new System.Drawing.Point(84, 150);
+            this.txtDeterminante.Margin = new System.Windows.Forms.Padding(2);
             this.txtDeterminante.MaxLength = 5;
             this.txtDeterminante.Name = "txtDeterminante";
             this.txtDeterminante.ReadOnly = true;
-            this.txtDeterminante.Size = new System.Drawing.Size(46, 20);
+            this.txtDeterminante.Size = new System.Drawing.Size(96, 20);
             this.txtDeterminante.TabIndex = 41;
             this.txtDeterminante.UseSystemPasswordChar = true;
             this.txtDeterminante.MouseEnter += new System.EventHandler(this.txtDeterminante_MouseEnter);
             this.txtDeterminante.MouseLeave += new System.EventHandler(this.txtDeterminante_MouseLeave);
             // 
-            // butDeterminante
-            // 
-            this.butDeterminante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.butDeterminante.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butDeterminante.Location = new System.Drawing.Point(7, 125);
-            this.butDeterminante.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.butDeterminante.Name = "butDeterminante";
-            this.butDeterminante.Size = new System.Drawing.Size(86, 24);
-            this.butDeterminante.TabIndex = 6;
-            this.butDeterminante.Text = "Determinante";
-            this.butDeterminante.UseVisualStyleBackColor = true;
-            this.butDeterminante.Click += new System.EventHandler(this.butDeterminante_Click);
-            // 
             // cosInput
             // 
-            this.cosInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.cosInput.DoNotRefresh = false;
-            this.cosInput.Location = new System.Drawing.Point(32, 285);
+            this.cosInput.Location = new System.Drawing.Point(12, 288);
             this.cosInput.Name = "cosInput";
-            this.cosInput.Size = new System.Drawing.Size(378, 232);
+            this.cosInput.Size = new System.Drawing.Size(320, 274);
             this.cosInput.TabIndex = 42;
             // 
             // lblNotes
@@ -268,7 +261,7 @@ namespace SoftwareProjekt.Forms
             this.lblNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblNotes.AutoSize = true;
             this.lblNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotes.Location = new System.Drawing.Point(447, 596);
+            this.lblNotes.Location = new System.Drawing.Point(348, 585);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(60, 17);
             this.lblNotes.TabIndex = 44;
@@ -279,7 +272,7 @@ namespace SoftwareProjekt.Forms
             this.lblHeader.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(460, 7);
+            this.lblHeader.Location = new System.Drawing.Point(328, 7);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(430, 25);
@@ -288,34 +281,31 @@ namespace SoftwareProjekt.Forms
             // 
             // cosOutput
             // 
-            this.cosOutput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.cosOutput.DoNotRefresh = false;
-            this.cosOutput.Location = new System.Drawing.Point(955, 285);
+            this.cosOutput.Location = new System.Drawing.Point(749, 288);
             this.cosOutput.Name = "cosOutput";
-            this.cosOutput.Size = new System.Drawing.Size(378, 232);
+            this.cosOutput.Size = new System.Drawing.Size(320, 274);
             this.cosOutput.TabIndex = 50;
             // 
             // picBoxArrow
             // 
-            this.picBoxArrow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.picBoxArrow.BackColor = System.Drawing.Color.Transparent;
             this.picBoxArrow.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
-            this.picBoxArrow.Location = new System.Drawing.Point(464, 275);
-            this.picBoxArrow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picBoxArrow.Location = new System.Drawing.Point(351, 285);
+            this.picBoxArrow.Margin = new System.Windows.Forms.Padding(2);
             this.picBoxArrow.Name = "picBoxArrow";
-            this.picBoxArrow.Size = new System.Drawing.Size(562, 330);
-            this.picBoxArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picBoxArrow.Size = new System.Drawing.Size(370, 252);
+            this.picBoxArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBoxArrow.TabIndex = 49;
             this.picBoxArrow.TabStop = false;
             // 
             // _rtxtNotes
             // 
             this._rtxtNotes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this._rtxtNotes.Location = new System.Drawing.Point(450, 614);
+            this._rtxtNotes.Location = new System.Drawing.Point(351, 610);
             this._rtxtNotes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this._rtxtNotes.Name = "_rtxtNotes";
-            this._rtxtNotes.Size = new System.Drawing.Size(428, 131);
+            this._rtxtNotes.Size = new System.Drawing.Size(370, 131);
             this._rtxtNotes.TabIndex = 51;
             this._rtxtNotes.Text = "";
             // 
@@ -327,16 +317,16 @@ namespace SoftwareProjekt.Forms
             this.ctlMathEqua.Filename = "y4phqryw.pfy.tiff";
             this.ctlMathEqua.Filepath = "";
             this.ctlMathEqua.FontSize = 12;
-            this.ctlMathEqua.Location = new System.Drawing.Point(497, 389);
+            this.ctlMathEqua.Location = new System.Drawing.Point(369, 365);
             this.ctlMathEqua.Name = "ctlMathEqua";
-            this.ctlMathEqua.Size = new System.Drawing.Size(430, 93);
+            this.ctlMathEqua.Size = new System.Drawing.Size(281, 89);
             this.ctlMathEqua.TabIndex = 52;
             // 
             // FrmDrehLinAbbUrsp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1358, 782);
+            this.ClientSize = new System.Drawing.Size(1095, 784);
             this.Controls.Add(this.ctlMathEqua);
             this.Controls.Add(this._rtxtNotes);
             this.Controls.Add(this.cosOutput);
@@ -349,8 +339,9 @@ namespace SoftwareProjekt.Forms
             this.Controls.Add(this.label6);
             this.Controls.Add(this.grpDataInput);
             this.Controls.Add(this.picBoxArrow);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MinimumSize = new System.Drawing.Size(1310, 768);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimizeBox = false;
             this.Name = "FrmDrehLinAbbUrsp";
             this.Text = "Drehung linearer Abbildungen am Ursprung";
             this.Shown += new System.EventHandler(this.FrmDrehLinAbbUrsp_Shown);
@@ -374,7 +365,6 @@ namespace SoftwareProjekt.Forms
         private System.Windows.Forms.GroupBox grpDataOutput;
         private SoftwareProjekt.UserControls.CoordinateSystem cosInput;
         private System.Windows.Forms.Label lblNotes;
-        private System.Windows.Forms.Button butDeterminante;
         private System.Windows.Forms.TextBox txtDeterminante;
         private System.Windows.Forms.Label lblHeader;
         private UserControls.CtlVectorInput ctlVectorInputX;
@@ -387,6 +377,7 @@ namespace SoftwareProjekt.Forms
         private UserControls.FloatInput _ctlAngle;
         private PictureBox picBoxArrow;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEqua;
+        private Label lblDet;
 #if DEBUG
         private System.Windows.Forms.RichTextBox _rtxtNotes;
 #endif
