@@ -35,21 +35,19 @@
             // picFormular
             // 
             this.picFormular.InitialImage = global::SoftwareProjekt.Properties.Resources.arrowToRight;
-            this.picFormular.Location = new System.Drawing.Point(4, 4);
-            this.picFormular.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picFormular.Location = new System.Drawing.Point(3, 3);
             this.picFormular.Name = "picFormular";
-            this.picFormular.Size = new System.Drawing.Size(369, 104);
+            this.picFormular.Size = new System.Drawing.Size(277, 84);
             this.picFormular.TabIndex = 0;
             this.picFormular.TabStop = false;
             // 
             // CtlFormularDraw
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.picFormular);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CtlFormularDraw";
-            this.Size = new System.Drawing.Size(378, 115);
+            this.Size = new System.Drawing.Size(284, 93);
             ((System.ComponentModel.ISupportInitialize)(this.picFormular)).EndInit();
             this.ResumeLayout(false);
 
