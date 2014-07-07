@@ -74,7 +74,7 @@
             // 
             this.butFx.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.butFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butFx.Location = new System.Drawing.Point(387, 691);
+            this.butFx.Location = new System.Drawing.Point(339, 728);
             this.butFx.Margin = new System.Windows.Forms.Padding(2);
             this.butFx.Name = "butFx";
             this.butFx.Size = new System.Drawing.Size(88, 28);
@@ -88,7 +88,7 @@
             this.grpDataInput1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.grpDataInput1.Controls.Add(this.ctlVectorInputX);
             this.grpDataInput1.Controls.Add(this.ctlMatrixInputM1);
-            this.grpDataInput1.Location = new System.Drawing.Point(22, 651);
+            this.grpDataInput1.Location = new System.Drawing.Point(22, 688);
             this.grpDataInput1.Margin = new System.Windows.Forms.Padding(2);
             this.grpDataInput1.Name = "grpDataInput1";
             this.grpDataInput1.Padding = new System.Windows.Forms.Padding(2);
@@ -141,16 +141,16 @@
             this.cosInput.DoNotRefresh = false;
             this.cosInput.Location = new System.Drawing.Point(10, 323);
             this.cosInput.Name = "cosInput";
-            this.cosInput.Size = new System.Drawing.Size(362, 303);
+            this.cosInput.Size = new System.Drawing.Size(360, 360);
             this.cosInput.TabIndex = 2;
             // 
             // cosOutput1
             // 
             this.cosOutput1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cosOutput1.DoNotRefresh = false;
-            this.cosOutput1.Location = new System.Drawing.Point(657, 293);
+            this.cosOutput1.Location = new System.Drawing.Point(559, 305);
             this.cosOutput1.Name = "cosOutput1";
-            this.cosOutput1.Size = new System.Drawing.Size(356, 332);
+            this.cosOutput1.Size = new System.Drawing.Size(360, 360);
             this.cosOutput1.TabIndex = 4;
             // 
             // cosOutput2
@@ -158,9 +158,9 @@
             this.cosOutput2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cosOutput2.DoNotRefresh = false;
-            this.cosOutput2.Location = new System.Drawing.Point(1324, 323);
+            this.cosOutput2.Location = new System.Drawing.Point(1147, 323);
             this.cosOutput2.Name = "cosOutput2";
-            this.cosOutput2.Size = new System.Drawing.Size(373, 303);
+            this.cosOutput2.Size = new System.Drawing.Size(360, 360);
             this.cosOutput2.TabIndex = 49;
             // 
             // lblNotes
@@ -177,7 +177,7 @@
             this.lblHeader.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.Location = new System.Drawing.Point(629, 7);
+            this.lblHeader.Location = new System.Drawing.Point(581, 7);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(494, 25);
@@ -196,7 +196,7 @@
             // 
             this.grpDataInput2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.grpDataInput2.Controls.Add(this.ctlMatrixInputM2);
-            this.grpDataInput2.Location = new System.Drawing.Point(769, 651);
+            this.grpDataInput2.Location = new System.Drawing.Point(1088, 688);
             this.grpDataInput2.Margin = new System.Windows.Forms.Padding(2);
             this.grpDataInput2.Name = "grpDataInput2";
             this.grpDataInput2.Padding = new System.Windows.Forms.Padding(2);
@@ -223,7 +223,7 @@
             // 
             this.butGx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.butGx.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butGx.Location = new System.Drawing.Point(1081, 691);
+            this.butGx.Location = new System.Drawing.Point(1267, 728);
             this.butGx.Margin = new System.Windows.Forms.Padding(2);
             this.butGx.Name = "butGx";
             this.butGx.Size = new System.Drawing.Size(91, 28);
@@ -237,7 +237,7 @@
             this.butGFx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.butGFx.BackColor = System.Drawing.SystemColors.Highlight;
             this.butGFx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butGFx.Location = new System.Drawing.Point(1488, 681);
+            this.butGFx.Location = new System.Drawing.Point(1569, 718);
             this.butGFx.Margin = new System.Windows.Forms.Padding(2);
             this.butGFx.Name = "butGFx";
             this.butGFx.Size = new System.Drawing.Size(130, 37);
@@ -251,7 +251,7 @@
             this.txtResultOfTransf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtResultOfTransf.AutoSize = true;
             this.txtResultOfTransf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtResultOfTransf.Location = new System.Drawing.Point(1460, 665);
+            this.txtResultOfTransf.Location = new System.Drawing.Point(1541, 702);
             this.txtResultOfTransf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtResultOfTransf.Name = "txtResultOfTransf";
             this.txtResultOfTransf.Size = new System.Drawing.Size(208, 15);
@@ -262,7 +262,7 @@
             // 
             this.grpDataOutput1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.grpDataOutput1.Controls.Add(this.ctlVectorOutputX1);
-            this.grpDataOutput1.Location = new System.Drawing.Point(481, 651);
+            this.grpDataOutput1.Location = new System.Drawing.Point(432, 688);
             this.grpDataOutput1.Name = "grpDataOutput1";
             this.grpDataOutput1.Size = new System.Drawing.Size(158, 111);
             this.grpDataOutput1.TabIndex = 8;
@@ -285,9 +285,9 @@
             // 
             this.grpDataOutput2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.grpDataOutput2.Controls.Add(this.ctlVectorOutputX2);
-            this.grpDataOutput2.Location = new System.Drawing.Point(1177, 651);
+            this.grpDataOutput2.Location = new System.Drawing.Point(1363, 688);
             this.grpDataOutput2.Name = "grpDataOutput2";
-            this.grpDataOutput2.Size = new System.Drawing.Size(142, 93);
+            this.grpDataOutput2.Size = new System.Drawing.Size(142, 101);
             this.grpDataOutput2.TabIndex = 12;
             this.grpDataOutput2.TabStop = false;
             this.grpDataOutput2.Text = "Endergebnis";
@@ -308,11 +308,11 @@
             // 
             this.picBoxArrow.BackColor = System.Drawing.Color.Transparent;
             this.picBoxArrow.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
-            this.picBoxArrow.Location = new System.Drawing.Point(646, 32);
+            this.picBoxArrow.Location = new System.Drawing.Point(414, 54);
             this.picBoxArrow.Margin = new System.Windows.Forms.Padding(2);
             this.picBoxArrow.Name = "picBoxArrow";
-            this.picBoxArrow.Size = new System.Drawing.Size(562, 330);
-            this.picBoxArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picBoxArrow.Size = new System.Drawing.Size(597, 217);
+            this.picBoxArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxArrow.TabIndex = 63;
             this.picBoxArrow.TabStop = false;
             // 
@@ -321,7 +321,7 @@
             this.lblNote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNote.AutoSize = true;
             this.lblNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNote.Location = new System.Drawing.Point(713, 807);
+            this.lblNote.Location = new System.Drawing.Point(596, 688);
             this.lblNote.Name = "lblNote";
             this.lblNote.Size = new System.Drawing.Size(60, 17);
             this.lblNote.TabIndex = 13;
@@ -330,7 +330,7 @@
             // _rtxtNotes
             // 
             this._rtxtNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._rtxtNotes.Location = new System.Drawing.Point(716, 826);
+            this._rtxtNotes.Location = new System.Drawing.Point(599, 711);
             this._rtxtNotes.Name = "_rtxtNotes";
             this._rtxtNotes.Size = new System.Drawing.Size(478, 124);
             this._rtxtNotes.TabIndex = 14;
@@ -344,9 +344,9 @@
             this.ctlMathEquTotal.Filename = "w5ua4041.efj.tiff";
             this.ctlMathEquTotal.Filepath = "";
             this.ctlMathEquTotal.FontSize = 9;
-            this.ctlMathEquTotal.Location = new System.Drawing.Point(668, 145);
+            this.ctlMathEquTotal.Location = new System.Drawing.Point(449, 144);
             this.ctlMathEquTotal.Name = "ctlMathEquTotal";
-            this.ctlMathEquTotal.Size = new System.Drawing.Size(441, 93);
+            this.ctlMathEquTotal.Size = new System.Drawing.Size(444, 56);
             this.ctlMathEquTotal.TabIndex = 1;
             // 
             // picArrowLeft
@@ -354,10 +354,10 @@
             this.picArrowLeft.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.picArrowLeft.BackColor = System.Drawing.Color.Transparent;
             this.picArrowLeft.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
-            this.picArrowLeft.Location = new System.Drawing.Point(377, 363);
+            this.picArrowLeft.Location = new System.Drawing.Point(336, 363);
             this.picArrowLeft.Margin = new System.Windows.Forms.Padding(2);
             this.picArrowLeft.Name = "picArrowLeft";
-            this.picArrowLeft.Size = new System.Drawing.Size(262, 198);
+            this.picArrowLeft.Size = new System.Drawing.Size(218, 194);
             this.picArrowLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picArrowLeft.TabIndex = 68;
             this.picArrowLeft.TabStop = false;
@@ -367,10 +367,10 @@
             this.picArrowRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.picArrowRight.BackColor = System.Drawing.Color.Transparent;
             this.picArrowRight.Image = global::SoftwareProjekt.Properties.Resources.arrowToRight;
-            this.picArrowRight.Location = new System.Drawing.Point(1026, 363);
+            this.picArrowRight.Location = new System.Drawing.Point(924, 363);
             this.picArrowRight.Margin = new System.Windows.Forms.Padding(2);
             this.picArrowRight.Name = "picArrowRight";
-            this.picArrowRight.Size = new System.Drawing.Size(262, 198);
+            this.picArrowRight.Size = new System.Drawing.Size(218, 194);
             this.picArrowRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picArrowRight.TabIndex = 69;
             this.picArrowRight.TabStop = false;
@@ -383,9 +383,9 @@
             this.ctlMathEquLeft.Filename = "trjeitwn.3w0.tiff";
             this.ctlMathEquLeft.Filepath = "";
             this.ctlMathEquLeft.FontSize = 11;
-            this.ctlMathEquLeft.Location = new System.Drawing.Point(387, 428);
+            this.ctlMathEquLeft.Location = new System.Drawing.Point(364, 435);
             this.ctlMathEquLeft.Name = "ctlMathEquLeft";
-            this.ctlMathEquLeft.Size = new System.Drawing.Size(158, 63);
+            this.ctlMathEquLeft.Size = new System.Drawing.Size(128, 44);
             this.ctlMathEquLeft.TabIndex = 3;
             // 
             // ctlMathEquRight
@@ -396,16 +396,16 @@
             this.ctlMathEquRight.Filename = "trjeitwn.3w0.tiff";
             this.ctlMathEquRight.Filepath = "";
             this.ctlMathEquRight.FontSize = 11;
-            this.ctlMathEquRight.Location = new System.Drawing.Point(1040, 435);
+            this.ctlMathEquRight.Location = new System.Drawing.Point(949, 435);
             this.ctlMathEquRight.Name = "ctlMathEquRight";
-            this.ctlMathEquRight.Size = new System.Drawing.Size(183, 53);
+            this.ctlMathEquRight.Size = new System.Drawing.Size(128, 44);
             this.ctlMathEquRight.TabIndex = 5;
             // 
             // FrmHinterLinAbb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1436, 849);
+            this.ClientSize = new System.Drawing.Size(1517, 886);
             this.Controls.Add(this.ctlMathEquRight);
             this.Controls.Add(this.ctlMathEquLeft);
             this.Controls.Add(this.picArrowRight);
@@ -427,6 +427,7 @@
             this.Controls.Add(this.cosInput);
             this.Controls.Add(this.butFx);
             this.Controls.Add(this.grpDataInput1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmHinterLinAbb";
             this.Text = "Hintereinanderausführung linearer Abbildungen";
