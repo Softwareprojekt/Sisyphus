@@ -111,6 +111,9 @@ namespace SoftwareProjekt.Forms
             _xVector += "</mfenced>\n";
 
             CreateFormula();
+
+            this.ctlVectorInputEV1.Text = "Einheitsvektor e1";
+            this.ctlVectorInputEV2.Text = "Einheitsvektor e2";
         }
 
         private void CreateFormula()
