@@ -133,7 +133,7 @@ namespace SoftwareProjekt.Forms
 
 
 
-            xmlGen.AddMatrix(m, Color.Purple, Color.Violet);
+            xmlGen.AddMatrix(m, Color.Red, Color.Blue);
             xmlGen.AddSign(EMathSign.Multiply);
 
             xmlGen.AddNode(_xVector);
@@ -151,14 +151,14 @@ namespace SoftwareProjekt.Forms
 
             List<Color> colors = new List<Color>();
 
-            colors.Add(Color.Purple);
+            colors.Add(Color.Red);
             colors.Add(Color.Black);
-            colors.Add(Color.Violet);
+            colors.Add(Color.Blue);
             colors.Add(Color.Black);
 
-            colors.Add(Color.Purple);
+            colors.Add(Color.Red);
             colors.Add(Color.Black);
-            colors.Add(Color.Violet);
+            colors.Add(Color.Blue);
             colors.Add(Color.Black);
 
             xmlGen.AddMathExpression(expressions, colors, EMathSign.Plus, EMathType.ComplexVector);
@@ -168,7 +168,7 @@ namespace SoftwareProjekt.Forms
             xmlGen.AddSign(EMathSign.Multiply);
 
             Vector v1 = new Vector(m.X11, m.X21);
-            xmlGen.AddVector(v1, Color.Purple);
+            xmlGen.AddVector(v1, Color.Red);
 
             xmlGen.AddSign(EMathSign.Plus);
 
@@ -176,7 +176,7 @@ namespace SoftwareProjekt.Forms
             xmlGen.AddSign(EMathSign.Multiply);
 
             Vector v2 = new Vector(m.X12, m.X22);
-            xmlGen.AddVector(v2, Color.Violet);
+            xmlGen.AddVector(v2, Color.Blue);
 
 
 
