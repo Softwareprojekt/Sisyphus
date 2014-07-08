@@ -28,17 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SoftwareProjekt.Classes.Math.Vector vector1 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector2 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector3 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector4 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector5 = new SoftwareProjekt.Classes.Math.Vector();
-            SoftwareProjekt.Classes.Math.Vector vector6 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector7 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector8 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector9 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector10 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector11 = new SoftwareProjekt.Classes.Math.Vector();
+            SoftwareProjekt.Classes.Math.Vector vector12 = new SoftwareProjekt.Classes.Math.Vector();
             this.grpDataInput1 = new System.Windows.Forms.GroupBox();
+            this.rdbPointC = new System.Windows.Forms.RadioButton();
+            this.rdbPointB = new System.Windows.Forms.RadioButton();
+            this.rdbPointA = new System.Windows.Forms.RadioButton();
             this.ctlVectorInputC = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.ctlVectorInputB = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.ctlVectorInputA = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.grpDataInput2 = new System.Windows.Forms.GroupBox();
+            this.rdbPointC2 = new System.Windows.Forms.RadioButton();
+            this.rdbPointB2 = new System.Windows.Forms.RadioButton();
+            this.rdbPointA2 = new System.Windows.Forms.RadioButton();
             this.ctlVectorInputC2 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.ctlVectorInputB2 = new SoftwareProjekt.UserControls.CtlVectorInput();
             this.ctlVectorInputA2 = new SoftwareProjekt.UserControls.CtlVectorInput();
@@ -67,6 +73,9 @@
             // 
             // grpDataInput1
             // 
+            this.grpDataInput1.Controls.Add(this.rdbPointC);
+            this.grpDataInput1.Controls.Add(this.rdbPointB);
+            this.grpDataInput1.Controls.Add(this.rdbPointA);
             this.grpDataInput1.Controls.Add(this.ctlVectorInputC);
             this.grpDataInput1.Controls.Add(this.ctlVectorInputB);
             this.grpDataInput1.Controls.Add(this.ctlVectorInputA);
@@ -74,23 +83,55 @@
             this.grpDataInput1.Margin = new System.Windows.Forms.Padding(2);
             this.grpDataInput1.Name = "grpDataInput1";
             this.grpDataInput1.Padding = new System.Windows.Forms.Padding(2);
-            this.grpDataInput1.Size = new System.Drawing.Size(305, 216);
+            this.grpDataInput1.Size = new System.Drawing.Size(305, 275);
             this.grpDataInput1.TabIndex = 8;
             this.grpDataInput1.TabStop = false;
             this.grpDataInput1.Text = "Dateneingabe";
             // 
+            // rdbPointC
+            // 
+            this.rdbPointC.AutoSize = true;
+            this.rdbPointC.Location = new System.Drawing.Point(113, 239);
+            this.rdbPointC.Name = "rdbPointC";
+            this.rdbPointC.Size = new System.Drawing.Size(63, 17);
+            this.rdbPointC.TabIndex = 5;
+            this.rdbPointC.Text = "Punkt &C";
+            this.rdbPointC.UseVisualStyleBackColor = true;
+            // 
+            // rdbPointB
+            // 
+            this.rdbPointB.AutoSize = true;
+            this.rdbPointB.Location = new System.Drawing.Point(177, 113);
+            this.rdbPointB.Name = "rdbPointB";
+            this.rdbPointB.Size = new System.Drawing.Size(63, 17);
+            this.rdbPointB.TabIndex = 4;
+            this.rdbPointB.Text = "Punkt &B";
+            this.rdbPointB.UseVisualStyleBackColor = true;
+            // 
+            // rdbPointA
+            // 
+            this.rdbPointA.AutoSize = true;
+            this.rdbPointA.Checked = true;
+            this.rdbPointA.Location = new System.Drawing.Point(41, 113);
+            this.rdbPointA.Name = "rdbPointA";
+            this.rdbPointA.Size = new System.Drawing.Size(63, 17);
+            this.rdbPointA.TabIndex = 3;
+            this.rdbPointA.TabStop = true;
+            this.rdbPointA.Text = "Punkt &A";
+            this.rdbPointA.UseVisualStyleBackColor = true;
+            // 
             // ctlVectorInputC
             // 
             this.ctlVectorInputC.EnableText = true;
-            this.ctlVectorInputC.Location = new System.Drawing.Point(86, 113);
+            this.ctlVectorInputC.Location = new System.Drawing.Point(82, 144);
             this.ctlVectorInputC.MinimumSize = new System.Drawing.Size(102, 76);
             this.ctlVectorInputC.Name = "ctlVectorInputC";
             this.ctlVectorInputC.ReadOnly = false;
             this.ctlVectorInputC.Size = new System.Drawing.Size(144, 89);
             this.ctlVectorInputC.TabIndex = 2;
-            vector1.X1 = float.NaN;
-            vector1.X2 = float.NaN;
-            this.ctlVectorInputC.Vector = vector1;
+            vector7.X1 = float.NaN;
+            vector7.X2 = float.NaN;
+            this.ctlVectorInputC.Vector = vector7;
             // 
             // ctlVectorInputB
             // 
@@ -101,9 +142,9 @@
             this.ctlVectorInputB.ReadOnly = false;
             this.ctlVectorInputB.Size = new System.Drawing.Size(144, 89);
             this.ctlVectorInputB.TabIndex = 1;
-            vector2.X1 = float.NaN;
-            vector2.X2 = float.NaN;
-            this.ctlVectorInputB.Vector = vector2;
+            vector8.X1 = float.NaN;
+            vector8.X2 = float.NaN;
+            this.ctlVectorInputB.Vector = vector8;
             // 
             // ctlVectorInputA
             // 
@@ -114,12 +155,15 @@
             this.ctlVectorInputA.ReadOnly = false;
             this.ctlVectorInputA.Size = new System.Drawing.Size(144, 89);
             this.ctlVectorInputA.TabIndex = 0;
-            vector3.X1 = float.NaN;
-            vector3.X2 = float.NaN;
-            this.ctlVectorInputA.Vector = vector3;
+            vector9.X1 = float.NaN;
+            vector9.X2 = float.NaN;
+            this.ctlVectorInputA.Vector = vector9;
             // 
             // grpDataInput2
             // 
+            this.grpDataInput2.Controls.Add(this.rdbPointC2);
+            this.grpDataInput2.Controls.Add(this.rdbPointB2);
+            this.grpDataInput2.Controls.Add(this.rdbPointA2);
             this.grpDataInput2.Controls.Add(this.ctlVectorInputC2);
             this.grpDataInput2.Controls.Add(this.ctlVectorInputB2);
             this.grpDataInput2.Controls.Add(this.ctlVectorInputA2);
@@ -127,23 +171,55 @@
             this.grpDataInput2.Margin = new System.Windows.Forms.Padding(2);
             this.grpDataInput2.Name = "grpDataInput2";
             this.grpDataInput2.Padding = new System.Windows.Forms.Padding(2);
-            this.grpDataInput2.Size = new System.Drawing.Size(305, 216);
+            this.grpDataInput2.Size = new System.Drawing.Size(305, 265);
             this.grpDataInput2.TabIndex = 10;
             this.grpDataInput2.TabStop = false;
             this.grpDataInput2.Text = "Dateneingabe";
             // 
+            // rdbPointC2
+            // 
+            this.rdbPointC2.AutoSize = true;
+            this.rdbPointC2.Location = new System.Drawing.Point(121, 239);
+            this.rdbPointC2.Name = "rdbPointC2";
+            this.rdbPointC2.Size = new System.Drawing.Size(65, 17);
+            this.rdbPointC2.TabIndex = 5;
+            this.rdbPointC2.Text = "Punkt &C\'";
+            this.rdbPointC2.UseVisualStyleBackColor = true;
+            // 
+            // rdbPointB2
+            // 
+            this.rdbPointB2.AutoSize = true;
+            this.rdbPointB2.Location = new System.Drawing.Point(184, 117);
+            this.rdbPointB2.Name = "rdbPointB2";
+            this.rdbPointB2.Size = new System.Drawing.Size(65, 17);
+            this.rdbPointB2.TabIndex = 4;
+            this.rdbPointB2.Text = "Punkt &B\'";
+            this.rdbPointB2.UseVisualStyleBackColor = true;
+            // 
+            // rdbPointA2
+            // 
+            this.rdbPointA2.AutoSize = true;
+            this.rdbPointA2.Checked = true;
+            this.rdbPointA2.Location = new System.Drawing.Point(37, 117);
+            this.rdbPointA2.Name = "rdbPointA2";
+            this.rdbPointA2.Size = new System.Drawing.Size(65, 17);
+            this.rdbPointA2.TabIndex = 3;
+            this.rdbPointA2.TabStop = true;
+            this.rdbPointA2.Text = "Punkt A\'";
+            this.rdbPointA2.UseVisualStyleBackColor = true;
+            // 
             // ctlVectorInputC2
             // 
             this.ctlVectorInputC2.EnableText = true;
-            this.ctlVectorInputC2.Location = new System.Drawing.Point(91, 113);
+            this.ctlVectorInputC2.Location = new System.Drawing.Point(92, 144);
             this.ctlVectorInputC2.MinimumSize = new System.Drawing.Size(102, 76);
             this.ctlVectorInputC2.Name = "ctlVectorInputC2";
             this.ctlVectorInputC2.ReadOnly = false;
             this.ctlVectorInputC2.Size = new System.Drawing.Size(144, 89);
             this.ctlVectorInputC2.TabIndex = 2;
-            vector4.X1 = float.NaN;
-            vector4.X2 = float.NaN;
-            this.ctlVectorInputC2.Vector = vector4;
+            vector10.X1 = float.NaN;
+            vector10.X2 = float.NaN;
+            this.ctlVectorInputC2.Vector = vector10;
             // 
             // ctlVectorInputB2
             // 
@@ -154,9 +230,9 @@
             this.ctlVectorInputB2.ReadOnly = false;
             this.ctlVectorInputB2.Size = new System.Drawing.Size(144, 89);
             this.ctlVectorInputB2.TabIndex = 1;
-            vector5.X1 = float.NaN;
-            vector5.X2 = float.NaN;
-            this.ctlVectorInputB2.Vector = vector5;
+            vector11.X1 = float.NaN;
+            vector11.X2 = float.NaN;
+            this.ctlVectorInputB2.Vector = vector11;
             // 
             // ctlVectorInputA2
             // 
@@ -167,9 +243,9 @@
             this.ctlVectorInputA2.ReadOnly = false;
             this.ctlVectorInputA2.Size = new System.Drawing.Size(144, 89);
             this.ctlVectorInputA2.TabIndex = 0;
-            vector6.X1 = float.NaN;
-            vector6.X2 = float.NaN;
-            this.ctlVectorInputA2.Vector = vector6;
+            vector12.X1 = float.NaN;
+            vector12.X2 = float.NaN;
+            this.ctlVectorInputA2.Vector = vector12;
             // 
             // butFx
             // 
@@ -192,6 +268,7 @@
             this.cosInputABC.Name = "cosInputABC";
             this.cosInputABC.Size = new System.Drawing.Size(320, 274);
             this.cosInputABC.TabIndex = 1;
+            this.cosInputABC.CoordinateClick += new SoftwareProjekt.UserControls.CoordinateSystemClickHandler(this.cosInputABC_CoordinateClick);
             // 
             // cosOutput
             // 
@@ -268,6 +345,7 @@
             this.cosInputA2B2C2.Name = "cosInputA2B2C2";
             this.cosInputA2B2C2.Size = new System.Drawing.Size(320, 274);
             this.cosInputA2B2C2.TabIndex = 7;
+            this.cosInputA2B2C2.CoordinateClick += new SoftwareProjekt.UserControls.CoordinateSystemClickHandler(this.cosInputA2B2C2_CoordinateClick);
             // 
             // picArrowToLeft
             // 
@@ -381,7 +459,9 @@
             this.Name = "FrmZuordAffAbb";
             this.Text = "Zuordnungsvorschrift einer affinen Abbildung";
             this.grpDataInput1.ResumeLayout(false);
+            this.grpDataInput1.PerformLayout();
             this.grpDataInput2.ResumeLayout(false);
+            this.grpDataInput2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picArrowToLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picArrowToRightMiddle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picArrowToRightRight)).EndInit();
@@ -417,6 +497,12 @@
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToRightRight;
 #if DEBUG
         private System.Windows.Forms.RichTextBox _rtxtNotes;
+        private System.Windows.Forms.RadioButton rdbPointC;
+        private System.Windows.Forms.RadioButton rdbPointB;
+        private System.Windows.Forms.RadioButton rdbPointA;
+        private System.Windows.Forms.RadioButton rdbPointC2;
+        private System.Windows.Forms.RadioButton rdbPointB2;
+        private System.Windows.Forms.RadioButton rdbPointA2;
 #endif
     }
 }

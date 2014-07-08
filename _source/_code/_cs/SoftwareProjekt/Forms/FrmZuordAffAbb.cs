@@ -417,5 +417,47 @@ namespace SoftwareProjekt.Forms
             return true;
         }
 
+        private void cosInputABC_CoordinateClick(float x, float y, MouseEventArgs e)
+        {
+            if (this.rdbPointA.Checked)
+            {
+                this.ctlVectorInputA.txtEle11.Text = x.ToString();
+                this.ctlVectorInputA.txtEle21.Text = y.ToString();
+            }
+            if (this.rdbPointB.Checked)
+            {
+                cosInputABC.ClearLines();
+                this.ctlVectorInputB.txtEle11.Text = x.ToString();
+                this.ctlVectorInputB.txtEle21.Text = y.ToString();
+            }
+            if (this.rdbPointC.Checked)
+            {
+                cosInputABC.ClearLines();
+                this.ctlVectorInputC.txtEle11.Text = x.ToString();
+                this.ctlVectorInputC.txtEle21.Text = y.ToString();
+            }
+        }
+
+        private void cosInputA2B2C2_CoordinateClick(float x, float y, MouseEventArgs e)
+        {
+            if (this.rdbPointA2.Checked)
+            {
+                this.ctlVectorInputA2.txtEle11.Text = x.ToString();
+                this.ctlVectorInputA2.txtEle21.Text = y.ToString();
+            }
+            if (this.rdbPointB2.Checked)
+            {
+                cosInputA2B2C2.ClearLines();
+                this.ctlVectorInputB2.txtEle11.Text = x.ToString();
+                this.ctlVectorInputB2.txtEle21.Text = y.ToString();
+            }
+            if (this.rdbPointC2.Checked)
+            {
+                cosInputA2B2C2.ClearLines();
+                this.ctlVectorInputC2.txtEle11.Text = x.ToString();
+                this.ctlVectorInputC2.txtEle21.Text = y.ToString();
+            }
+        }
+
     }
 }
