@@ -902,6 +902,11 @@ namespace SoftwareProjekt.Forms
 
         private void tsbutDeleteExercise_Click(object sender, EventArgs e)
         {
+            if (picWorkbook.Image == null)
+            {
+                this.tslblInstructions.Text = "Vor Löschen der Übung, die jeweilige Übung auswählen!";
+                return;
+            }
             Enums.EExercises exercise = determineExercise();
             if (exercise == Enums.EExercises.InvalidExercise)
             {
@@ -922,7 +927,7 @@ namespace SoftwareProjekt.Forms
             {
                 Size sSize = picWorkbook.Image.Size;
                 Bitmap exerciseImage = (Bitmap)resizeImage(Image.FromFile(imgString), sSize);
-                System.Console.WriteLine(imgString);
+                //System.Console.WriteLine(imgString);
                 if (compare(exerciseImage, displayedBitmap))
                 {
                     // open the exercise
