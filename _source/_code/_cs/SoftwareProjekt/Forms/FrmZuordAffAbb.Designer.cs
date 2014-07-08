@@ -495,14 +495,14 @@
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToLeft;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToRightLeft;
         private UserControls.FormulaDrawer.CtlFormularDraw ctlMathEquaToRightRight;
-#if DEBUG
-        private System.Windows.Forms.RichTextBox _rtxtNotes;
         private System.Windows.Forms.RadioButton rdbPointC;
         private System.Windows.Forms.RadioButton rdbPointB;
         private System.Windows.Forms.RadioButton rdbPointA;
         private System.Windows.Forms.RadioButton rdbPointC2;
         private System.Windows.Forms.RadioButton rdbPointB2;
         private System.Windows.Forms.RadioButton rdbPointA2;
+#if DEBUG
+        private System.Windows.Forms.RichTextBox _rtxtNotes;
 #endif
     }
 }
