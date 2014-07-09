@@ -34,8 +34,8 @@
             SoftwareProjekt.Classes.Math.Vector vector4 = new SoftwareProjekt.Classes.Math.Vector();
             SoftwareProjekt.Classes.Math.Vector vector5 = new SoftwareProjekt.Classes.Math.Vector();
             this.cosOutput = new SoftwareProjekt.UserControls.CoordinateSystem();
-            this.picArrow = new System.Windows.Forms.PictureBox();
             this.ctlMathEqua = new SoftwareProjekt.UserControls.FormulaDrawer.CtlFormularDraw();
+            this.picArrow = new System.Windows.Forms.PictureBox();
             this._rtxtNotes = new System.Windows.Forms.RichTextBox();
             this.butFunctionX = new System.Windows.Forms.Button();
             this.lblHeader = new System.Windows.Forms.Label();
@@ -65,6 +65,19 @@
             this.cosOutput.Size = new System.Drawing.Size(320, 274);
             this.cosOutput.TabIndex = 3;
             // 
+            // ctlMathEqua
+            // 
+            this.ctlMathEqua.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctlMathEqua.BackColor = System.Drawing.Color.Transparent;
+            this.ctlMathEqua.Equation = "";
+            this.ctlMathEqua.Filename = "teptsgn3.nai.tiff";
+            this.ctlMathEqua.Filepath = "";
+            this.ctlMathEqua.FontSize = 9;
+            this.ctlMathEqua.Location = new System.Drawing.Point(312, 233);
+            this.ctlMathEqua.Name = "ctlMathEqua";
+            this.ctlMathEqua.Size = new System.Drawing.Size(400, 52);
+            this.ctlMathEqua.TabIndex = 2;
+            // 
             // picArrow
             // 
             this.picArrow.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -77,19 +90,6 @@
             this.picArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picArrow.TabIndex = 31;
             this.picArrow.TabStop = false;
-            // 
-            // ctlMathEqua
-            // 
-            this.ctlMathEqua.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctlMathEqua.BackColor = System.Drawing.Color.Transparent;
-            this.ctlMathEqua.Equation = "";
-            this.ctlMathEqua.Filename = "teptsgn3.nai.tiff";
-            this.ctlMathEqua.Filepath = "";
-            this.ctlMathEqua.FontSize = 11;
-            this.ctlMathEqua.Location = new System.Drawing.Point(312, 233);
-            this.ctlMathEqua.Name = "ctlMathEqua";
-            this.ctlMathEqua.Size = new System.Drawing.Size(400, 52);
-            this.ctlMathEqua.TabIndex = 2;
             // 
             // _rtxtNotes
             // 
