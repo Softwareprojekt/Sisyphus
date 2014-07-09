@@ -338,6 +338,7 @@
             this.Controls.Add(this.picBoxArrow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "FrmSpiegLinAbbUrsp";
             this.Text = "Spiegelung lineare Abbildung am Ursprung";
             this.grpDataInput.ResumeLayout(false);

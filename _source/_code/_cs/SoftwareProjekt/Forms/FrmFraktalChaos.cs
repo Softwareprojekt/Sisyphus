@@ -253,7 +253,6 @@ namespace SoftwareProjekt.Forms
             this.cosFractal.XAxis.EndValue = 0.5f;
             this.cosFractal.YAxis.EndValue = 0.5f;
             _lblIteration.Text = "Iteration: 0";
-            this.cosFractal.invokeRefresh();
 
             _ctlMatrix1.Matrix = new Matrix(0, 0, 0, 0.5f);
             _ctlMatrix2.Matrix = new Matrix(0.42f, -0.42f, 0.42f, 0.42f);

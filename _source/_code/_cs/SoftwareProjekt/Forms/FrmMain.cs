@@ -466,6 +466,7 @@ namespace SoftwareProjekt.Forms
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmMain";
             this.Text = "Hauptfenster";
             this.tabMainMenu.ResumeLayout(false);

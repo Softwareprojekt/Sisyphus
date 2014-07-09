@@ -353,7 +353,7 @@ namespace SoftwareProjekt.Forms
             this.Controls.Add(this.picBoxArrow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "FrmDrehLinAbbUrsp";
             this.Text = "Drehung linearer Abbildungen am Ursprung";
             this.Shown += new System.EventHandler(this.FrmDrehLinAbbUrsp_Shown);

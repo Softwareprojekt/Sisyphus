@@ -413,7 +413,7 @@
             this.Controls.Add(this.cosFractal);
             this.Controls.Add(this.butSaveFractal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "FrmFraktalChaos";
             this.Text = "Fraktal rendern mit Chaosspiel ";
             this.grpIFS.ResumeLayout(false);
